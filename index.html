@@ -1,0 +1,1029 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>從時空到控制</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=3">
+<script>
+MathJax = {
+  tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
+  chtml: { scale: 1.02 }
+};
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <a class="book-title" href="#top">從時空到控制</a>
+  <nav>
+    <a href="#part-1">第一章</a>
+  </nav>
+</header>
+
+<div class="layout">
+
+<aside class="sidebar">
+  <nav>
+    <p class="sb-title">目錄</p>
+    <ol class="sb-parts">
+      <li>
+        <a href="#part-1">一、狹義相對論</a>
+        <ol class="sb-secs">
+          <li><a href="#sec-1-1">1.1　兩個前提</a></li>
+          <li><a href="#sec-1-2">1.2　時間膨脹</a></li>
+          <li><a href="#sec-1-3">1.3　長度收縮</a></li>
+          <li><a href="#sec-1-4">1.4　Lorentz 變換</a></li>
+          <li><a href="#sec-1-5">1.5　速度合成則</a></li>
+          <li><a href="#sec-1-6">1.6　動量不守恆？</a></li>
+          <li><a href="#sec-1-7">1.7　動量的修正</a></li>
+          <li><a href="#sec-1-8">1.8　能量的修正</a></li>
+          <li><a href="#sec-1-9">1.9　動量與能量的關係</a></li>
+        </ol>
+      </li>
+      <li>
+        <a href="#part-2">二、廣義相對論</a>
+        <ol class="sb-secs">
+          <li><a href="#sec-2-1">2.1　複習：Doppler 效應</a></li>
+          <li><a href="#sec-2-2">2.2　加速的火箭：上下的鐘</a></li>
+          <li><a href="#sec-2-3">2.3　人類的猜測：加速度＝重力</a></li>
+        </ol>
+      </li>
+      <li class="pending">三、電磁學</li>
+      <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
+      <li class="pending">五、相似系統</li>
+      <li class="pending">六、控制學</li>
+      <li class="pending">七、對照：古典・現代控制 vs Schrödinger・Dirac</li>
+      <li class="pending">八、對照：最優控制 vs Hamiltonian</li>
+    </ol>
+  </nav>
+</aside>
+
+<main class="wrap" id="top">
+
+<h1 id="part-1"><span class="part-label">第一部・狹義相對論</span>第一章　狹義相對論</h1>
+
+<h2 id="sec-1-1">1.1　兩個前提</h2>
+
+<p>整章只用兩個前提：</p>
+
+<div class="box concept">
+  <span class="box-label">前提</span>
+  <p><strong>相對性原理</strong>：物理定律在所有慣性基準（不加速的觀察者）中形式相同。</p>
+  <p><strong>光速不變</strong>：真空中光速 \(c\) 對所有慣性觀察者都相同，與光源或觀察者的運動無關。</p>
+</div>
+
+<p>第二條是實驗事實（Michelson–Morley 實驗測不到任何方向的光速差異）。
+它與「速度相加」的日常直覺矛盾，所以時間與空間的觀念必須修改。以下逐一算出要修改成什麼樣子。</p>
+
+<h2 id="sec-1-2">1.2　時間膨脹：向車頂發射的光</h2>
+
+<p>電車地板有光源，向正上方的天花板鏡子發光，光反射回地板。地板到鏡子高度為 \(L\)。</p>
+
+<p><strong>車上基準</strong>：光直上直下，來回耗時 \(\dfrac{2L}{c}\)。</p>
+
+<p><strong>地上基準</strong>：光來回期間電車在移動，所以光走的是斜線，總路徑比 \(2L\) 長。
+光速仍是 \(c\)，路徑較長，耗時就比 \(\dfrac{2L}{c}\) 長。</p>
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <g>
+    <rect x="60" y="40" width="120" height="8" fill="currentColor" opacity=".8"/>
+    <rect x="60" y="230" width="120" height="8" fill="currentColor" opacity=".8"/>
+    <line x1="120" y1="52" x2="120" y2="228" stroke="#e0a800" stroke-width="3"/>
+    <polygon points="120,60 114,74 126,74" fill="#e0a800"/>
+    <text x="120" y="285" text-anchor="middle" fill="currentColor">車上基準：直上直下</text>
+    <foreignObject x="138" y="131.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:left;color:currentColor;opacity:.7">\(L\)</div></foreignObject>
+  </g>
+  <g>
+    <rect x="330" y="40" width="90" height="8" fill="currentColor" opacity=".35"/>
+    <rect x="330" y="230" width="90" height="8" fill="currentColor" opacity=".35"/>
+    <rect x="530" y="40" width="90" height="8" fill="currentColor" opacity=".8"/>
+    <rect x="530" y="230" width="90" height="8" fill="currentColor" opacity=".8"/>
+    <line x1="375" y1="234" x2="475" y2="48" stroke="#e0a800" stroke-width="3"/>
+    <line x1="475" y1="48" x2="575" y2="234" stroke="#e0a800" stroke-width="3"/>
+    <polygon points="569,222 578,236 561,236" fill="#e0a800"/>
+    <!-- 單程的直角三角形：斜邊 c、底 v、垂直邊 √(c²−v²) -->
+    <line x1="475" y1="48" x2="475" y2="234" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
+    <foreignObject x="272" y="131.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:right;color:#e0a800">\(c\)</div></foreignObject>
+    <line x1="375" y1="250" x2="475" y2="250" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+    <line x1="375" y1="246" x2="375" y2="254" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+    <line x1="475" y1="246" x2="475" y2="254" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+    <foreignObject x="355" y="252.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+    <foreignObject x="481" y="177.65" width="140" height="23.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;text-align:left;color:currentColor">\(\sqrt{c^2-v^2}\)</div></foreignObject>
+    <line x1="445" y1="20" x2="505" y2="20" stroke="currentColor" stroke-width="1.5" marker-end="url(#arr)" opacity=".6"/>
+    <foreignObject x="293" y="11.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:right;color:currentColor;opacity:.7">\(v\)</div></foreignObject>
+    <text x="475" y="285" text-anchor="middle" fill="currentColor">地上基準：斜線，路徑較長</text>
+  </g>
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor" opacity=".6"/>
+    </marker>
+  </defs>
+</svg>
+<figcaption>同一道光，兩個基準看到的路徑。</figcaption>
+</figure>
+
+<p>算出到底耗時多久。由上圖，光爬升 \(L\) 需時：</p>
+
+$$
+T = \frac{L}{\sqrt{c^2-v^2}} = \frac{L}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+$$
+
+<p>車上經過 \(\dfrac{L}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-(v/c)^2}}\) 倍。
+這個因子之後不斷出現，記作：</p>
+
+$$
+\boxed{\;\gamma \equiv \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}} \;>\; 1\;}
+$$
+
+<p>同一個現象，地上基準測得的時間比車上基準長 \(\gamma\) 倍——<strong>運動中的時鐘走得慢</strong>。</p>
+
+<h2 id="sec-1-3">1.3　長度收縮</h2>
+
+<p>列車以 \(v\) 掠過地面上相距 \(L_{\text{地}}\) 的兩點。
+速度＝長度／時間，而這個相對速度，車上與地上測得的大小必須相同：</p>
+
+$$
+v = \frac{L_{\text{地}}}{T_{\text{地}}} = \frac{L_{\text{車}}}{T_{\text{車}}}
+$$
+
+<p>「經過甲點」與「經過乙點」兩個事件都發生在車頭同一位置，
+車上的鐘正是 1.2 節走得慢的那個：\(T_{\text{車}} = T_{\text{地}}/\gamma\)。
+分母變小，分子必須跟著變小，比值才能不變：</p>
+
+$$
+\boxed{\;L_{\text{車}} = \frac{L_{\text{地}}}{\gamma} = \sqrt{1-\left(\frac{v}{c}\right)^2}\; L_{\text{地}}\;}
+$$
+
+<p>運動中的觀察者測地面的長度，縮短 \(1/\gamma\) 倍；由相對性原理，地上測運動中的列車也一樣短
+（沿運動方向；垂直方向不變）。合併 1.2 與 1.3：
+<strong>有相對速度，看對方在做慢動作，而且看扁他。</strong></p>
+
+<h2 id="sec-1-4">1.4　Lorentz 變換</h2>
+
+<p>事件在基準 1 的座標為 \((x,\ t)\)，在基準 2（以 \(v\) 前進）的座標為 \((x',\ t')\)。
+用 1.3、1.2 的結論直接組出換算式。</p>
+
+<p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \(t'\)，地面原點位於 \(-vt'\)，
+所以事件離地面原點的距離，用基準 2 的尺量是 \(x' + vt'\)。
+但這段距離在地面上的長度是 \(x\)，而基準 2 看地面的長度縮短 \(1/\gamma\) 倍（1.3 節）：</p>
+
+$$
+x' + vt' = \frac{x}{\gamma}
+\qquad\Longrightarrow\qquad
+x = \gamma\,(x' + vt')
+$$
+
+<p><strong>第二式（對稱性）</strong>：把時間乘上 \(c\) 寫成 \(ct\)，單位就是距離——
+時間和位置是同一種量，\(c\) 只是換算常數。第一式即</p>
+
+$$
+x = \gamma\left(x' + \tfrac{v}{c}\cdot ct'\right)
+$$
+
+<p>光速不變說：\(x = ct\) 與 \(x' = ct'\) 是同一條光——\(x\) 與 \(ct\) 地位完全對稱。
+把第一式的 \(x \leftrightarrow ct\)、\(x' \leftrightarrow ct'\) 互換，式子必須照樣成立，直接得：</p>
+
+$$
+ct = \gamma\left(ct' + \tfrac{v}{c}\cdot x'\right)
+$$
+
+<p>（驗證：代入 \(x' = ct'\)，兩式右邊相等，得 \(x = ct\)——光在兩個基準都是光速。）</p>
+
+<p>第二式除以 \(c\) 還原回 \(t\)，整理：</p>
+
+$$
+\boxed{\;x = \gamma\,(x' + v t'), \qquad t = \gamma\left(t' + \frac{v}{c^2}\,x'\right)\;}
+$$
+
+<p>這就是<strong>Lorentz 變換</strong>。反變換把 \(v\) 換成 \(-v\)：</p>
+
+$$
+x' = \gamma\,(x - v t), \qquad t' = \gamma\left(t - \frac{v}{c^2}\,x\right)
+$$
+
+<p>1.2 的時間膨脹是特例：取 \(x' = 0\)，得 \(t = \gamma t'\)。
+當 \(v \ll c\) 時 \(\gamma \to 1\)、\(\frac{v}{c^2}x' \to 0\)，退回伽利略變換
+\(x = x' + vt\)、\(t = t'\)。</p>
+
+<h2 id="sec-1-5">1.5　新的速度合成則</h2>
+
+<p>物體從原點出發等速運動，基準 1 測得速度 \(v = \dfrac{x}{t}\)，
+基準 2 測得 \(v' = \dfrac{x'}{t'}\)，基準間速度為 \(v_0\)。將 Lorentz 變換代入：</p>
+
+$$
+v = \frac{x}{t} = \frac{\gamma(x' + v_0 t')}{\gamma\left(t' + \frac{v_0}{c^2}x'\right)}
+= \frac{\frac{x'}{t'} + v_0}{1 + \frac{v_0}{c^2}\frac{x'}{t'}}
+$$
+
+$$
+\boxed{\;v = \frac{v' + v_0}{1 + \dfrac{v' v_0}{c^2}}\;}
+$$
+
+<p>這條式子取代 \(v = v' + v_0\)。驗證三種情況：</p>
+
+<p><strong>日常速度</strong>：\(v', v_0 \ll c\) 時分母趨近 1，回到 \(v = v' + v_0\)。
+日常生活察覺不到差異，理所當然。</p>
+
+<p><strong>光</strong>：代入 \(v' = c\)：</p>
+
+$$
+v = \frac{c + v_0}{1 + \frac{v_0}{c}} = \frac{(c+v_0)\,c}{c + v_0} = c
+$$
+
+<p>不論 \(v_0\) 多大，結果都是 \(c\)——光速不變被公式自動保證。</p>
+
+<p><strong>高速疊加</strong>：以 \(0.9c\) 行駛的電車上，把球以 \(0.9c\)（相對電車）向前丟。地上看：</p>
+
+$$
+v = \frac{0.9c + 0.9c}{1 + 0.9^2} = \frac{1.8c}{1.81} \approx 0.994c
+$$
+
+<p>怎麼疊都不會超過 \(c\)。</p>
+
+
+<h2 id="sec-1-6">1.6　動量不守恆？</h2>
+
+<p>質量同為 \(m\) 的 A、B 以速率 \(v\) 相向飛來，正面對撞後黏成一體 C（質量 \(M\)）。
+左右對稱，C 必定靜止。</p>
+
+<figure>
+<svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="15">
+  <defs>
+    <marker id="arrP" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <circle cx="110" cy="70" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="110" y="45" text-anchor="middle" fill="currentColor">A</text>
+  <foreignObject x="40" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(m\)</div></foreignObject>
+  <line x1="130" y1="70" x2="215" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrP)"/>
+  <foreignObject x="102" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+
+  <circle cx="320" cy="70" r="11" fill="#3584e4"/>
+  <text x="320" y="42" text-anchor="middle" fill="currentColor">C（合體後靜止）</text>
+  <foreignObject x="250" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(M\)</div></foreignObject>
+
+  <circle cx="530" cy="70" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="530" y="45" text-anchor="middle" fill="currentColor">B</text>
+  <foreignObject x="460" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(m\)</div></foreignObject>
+  <line x1="510" y1="70" x2="425" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrP)"/>
+  <foreignObject x="398" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+</svg>
+<figcaption>圖 1-2　正面對撞。左右對稱，合體後 C 靜止。</figcaption>
+</figure>
+
+<p>換到跟著 B 移動的基準（記 \('\)，B 靜止）：</p>
+
+<figure>
+<svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="15">
+  <defs>
+    <marker id="arrS" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <circle cx="90" cy="70" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="90" y="45" text-anchor="middle" fill="currentColor">A</text>
+  <foreignObject x="20" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(m\)</div></foreignObject>
+  <line x1="110" y1="70" x2="235" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrS)"/>
+  <foreignObject x="102" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v'_{A}\)</div></foreignObject>
+
+  <circle cx="340" cy="70" r="11" fill="#3584e4"/>
+  <text x="340" y="42" text-anchor="middle" fill="currentColor">C（合體）</text>
+  <foreignObject x="270" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(M\)</div></foreignObject>
+  <line x1="356" y1="70" x2="430" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrS)"/>
+  <foreignObject x="323" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+
+  <circle cx="545" cy="70" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="545" y="45" text-anchor="middle" fill="currentColor">B（靜止）</text>
+  <foreignObject x="475" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(m\)</div></foreignObject>
+</svg>
+<figcaption>圖 1-3　跟著 B 移動的基準：A 以 \(v'_{A}\) 撞上靜止的 B，合成 C 以 \(v\) 前進。</figcaption>
+</figure>
+
+<p>相對論之前，速度直接相加：
+\(v'_{A} = 2v\)、\(v'_{C} = v\)，動量 \(p = mv\) 的守恆式為</p>
+
+$$
+m\,(2v) = M\,v
+\qquad\Longrightarrow\qquad
+M = 2m
+$$
+
+<p>動量守恆順便給出質量守恆。但 1.5 節已經知道速度不能直接相加，真正的速度是</p>
+
+$$
+v'_{A} = \frac{2v}{1+\left(\frac{v}{c}\right)^2}\,, \qquad v'_{C} = v
+$$
+
+<p>代回守恆式：\(m\,v'_{A} = Mv\)。若 \(M = 2m\)，左邊小於右邊，等號不成立。
+我們選擇保住守恆律——這只是人類的假設，不然沒有抓手——於是 \(p = mv\) 這個定義非修不可。</p>
+
+<h2 id="sec-1-7">1.7　動量的修正</h2>
+
+<p>設修正後的動量為</p>
+
+$$
+p = k(v)\, m v
+$$
+
+<p>\(k\) 是所有物體共用的修正函數，\(k(0) = 1\)。
+\(k\) 無單位，所以它只能依賴無單位的 \(\frac{v}{c}\)；\(v \ll c\) 時 \(k \approx 1\)，回到牛頓。
+B 基準的動量守恆式變成</p>
+
+$$
+k(v'_{A})\, m\, v'_{A} = k(v)\, M v \tag{1}
+$$
+
+<p>缺 \(M\)。讓整場對撞多帶一個<strong>縱向</strong>速度——
+換到往下以 \(u\) 移動的基準，所有東西多了向上的 \(u\)：</p>
+
+<figure>
+<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="15">
+  <defs>
+    <marker id="arrQ" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <circle cx="110" cy="130" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="110" y="165" text-anchor="middle" fill="currentColor">A</text>
+  <line x1="130" y1="130" x2="215" y2="130" stroke="currentColor" stroke-width="2" marker-end="url(#arrQ)"/>
+  <foreignObject x="102" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <line x1="110" y1="118" x2="110" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrQ)"/>
+  <foreignObject x="26" y="75.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+
+  <circle cx="320" cy="110" r="11" fill="#3584e4"/>
+  <text x="320" y="165" text-anchor="middle" fill="currentColor">C</text>
+  <line x1="320" y1="94" x2="320" y2="46" stroke="currentColor" stroke-width="2" marker-end="url(#arrQ)"/>
+  <foreignObject x="266" y="51.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+
+  <circle cx="530" cy="130" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="530" y="165" text-anchor="middle" fill="currentColor">B</text>
+  <line x1="510" y1="130" x2="425" y2="130" stroke="currentColor" stroke-width="2" marker-end="url(#arrQ)"/>
+  <foreignObject x="398" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <line x1="530" y1="118" x2="530" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrQ)"/>
+  <foreignObject x="476" y="75.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+</svg>
+<figcaption>圖 1-4　同一場對撞，換到往下以 \(u\) 移動的基準看：所有速度多了向上的 \(u\)。</figcaption>
+</figure>
+
+<p>共同漂移 \(u\) 給每個縱向動量乘上同一個因子 \(k(u)\)，其餘由橫向速率決定：</p>
+
+$$
+\begin{aligned}
+\text{A}&:\ k(u)\,k(v)\,mu\\
+\text{B}&:\ k(u)\,k(v)\,mu\\
+\text{C}&:\ k(u)\,k(0)\,Mu = k(u)\,Mu
+\end{aligned}
+$$
+
+<p>縱向動量守恆：</p>
+
+$$
+k(u)\,k(v)\,mu + k(u)\,k(v)\,mu = k(u)\,Mu
+$$
+
+<p>兩邊除以 \(k(u)\,u\)：</p>
+
+$$
+2\,k(v)\, m = M \tag{2}
+$$
+
+<p>把 \(v'_{A} = \dfrac{2v}{1+\left(\frac{v}{c}\right)^2}\) 與 (2) 的 \(M = 2k(v)m\) 代入 (1)：</p>
+
+$$
+k(v'_{A})\; m\;\frac{2v}{1+\left(\frac{v}{c}\right)^2} \;=\; k(v)\cdot 2k(v)m \cdot v
+$$
+
+<p>兩邊除以 \(2mv\)：</p>
+
+$$
+\frac{k(v'_{A})}{1+\left(\frac{v}{c}\right)^2} = k(v)^2
+\qquad\Longrightarrow\qquad
+k(v'_{A}) = k(v)^2\left(1+\left(\tfrac{v}{c}\right)^2\right) \tag{3}
+$$
+
+<p>還差一條。B 基準看到的這場對撞，是「A 以 \(v'_{A}\) 撞上靜止的 B，合成 C 以 \(v\) 前進」——
+對它重施故技：全體共同帶上縱向的 \(u\)，橫向照舊。</p>
+
+<figure>
+<svg viewBox="0 0 640 190" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="15">
+  <defs>
+    <marker id="arrR" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <circle cx="90" cy="130" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="90" y="165" text-anchor="middle" fill="currentColor">A</text>
+  <line x1="110" y1="130" x2="235" y2="130" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
+  <foreignObject x="102" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v'_{A}\)</div></foreignObject>
+  <line x1="90" y1="118" x2="90" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
+  <foreignObject x="6" y="75.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+
+  <circle cx="340" cy="130" r="11" fill="#3584e4"/>
+  <text x="340" y="165" text-anchor="middle" fill="currentColor">C（合體）</text>
+  <line x1="356" y1="130" x2="430" y2="130" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
+  <foreignObject x="323" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <line x1="340" y1="114" x2="340" y2="66" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
+  <foreignObject x="256" y="71.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+
+  <circle cx="545" cy="130" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
+  <text x="545" y="165" text-anchor="middle" fill="currentColor">B（橫向靜止）</text>
+  <line x1="545" y1="118" x2="545" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
+  <foreignObject x="461" y="75.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
+</svg>
+<figcaption>圖 1-5　圖 1-3 的對撞，全體再共同帶上縱向的 \(u\)。</figcaption>
+</figure>
+
+<p>縱向動量守恆：</p>
+
+$$
+k(u)\,k(v'_{A})\,mu + k(u)\,k(0)\,mu = k(u)\,k(v)\,Mu
+$$
+
+<p>兩邊除以 \(k(u)\,mu\)，再用 (2) 的 \(M = 2k(v)m\)：</p>
+
+$$
+k(v'_{A}) + 1 = k(v)\,\frac{M}{m} = 2k(v)^2
+\qquad\Longrightarrow\qquad
+k(v'_{A}) = 2k(v)^2 - 1 \tag{4}
+$$
+
+<p>(3)、(4) 聯立，消去 \(k(v'_{A})\)：</p>
+
+$$
+2k(v)^2 - 1 = k(v)^2\left(1+\left(\tfrac{v}{c}\right)^2\right)
+\qquad\Longrightarrow\qquad
+k(v)^2\left(1-\left(\tfrac{v}{c}\right)^2\right) = 1
+$$
+
+$$
+k(v) = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}} = \gamma
+\qquad\Longrightarrow\qquad
+\boxed{\;p = \gamma m v\;}
+$$
+
+<p>修正函數不多不少，正是 1.2 節的 \(\gamma\)。
+順帶 (2) 說 \(M = 2\gamma m > 2m\)：合體後的質量比 \(2m\) 大——
+動量守恆保住了，質量守恆沒有。</p>
+
+<h2 id="sec-1-8">1.8　能量的修正</h2>
+
+<p>1.7 節的結尾：\(M = 2\gamma m\)，質量守恆破了。這個 \(\gamma m\) 到底是啥？
+把 \(\gamma\) 逐項展開看看：</p>
+
+$$
+\gamma = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+= 1 + \tfrac12\left(\tfrac{v}{c}\right)^2 + \tfrac38\left(\tfrac{v}{c}\right)^4 + \tfrac{5}{16}\left(\tfrac{v}{c}\right)^6 + \cdots
+$$
+
+$$
+\gamma m = m + \frac{\tfrac12 m v^2}{c^2} + \frac{\tfrac38 m v^4}{c^4} + \cdots
+$$
+
+<p>第二項的分子是牛頓動能 \(\tfrac12 mv^2\)，卻整個被 \(c^2\) 除著——怪怪的。
+那就兩邊乘上 \(c^2\)（一切都是人類的嘗試，不神聖）：</p>
+
+$$
+\gamma m c^2 = mc^2 + \tfrac12 m v^2 + \tfrac38\, \frac{m v^4}{c^2} + \cdots
+$$
+
+<p>順眼了：第二項正是牛頓動能，後面的項是高速修正（\(v \ll c\) 時小到可忽略）；
+第一項與運動無關——物體光是存在，就帶著 \(mc^2\)。
+於是 \(M = 2\gamma m\) 兩邊乘上 \(c^2\)，猜測這可能是能量：</p>
+
+$$
+Mc^2 = \gamma m c^2 + \gamma m c^2
+$$
+
+<p>「動能＋一筆固定存款」——人類目前猜測，這個量就是能量：</p>
+
+$$
+\boxed{\;E = \gamma m c^2\;}
+\qquad\qquad
+v = 0:\ \boxed{\;E_0 = mc^2\;}
+$$
+
+<h2 id="sec-1-9">1.9　動量與能量的關係</h2>
+
+<p>手上兩條式子，都含著隨基準而變的 \(v\)：</p>
+
+$$
+E = \gamma m c^2, \qquad p = \gamma m v
+$$
+
+<p>把 \(v\) 消掉。平方相減，用 \(\gamma^2\left(1-\frac{v^2}{c^2}\right) = 1\)：</p>
+
+$$
+E^2 - (pc)^2
+= \gamma^2 m^2 c^4 - \gamma^2 m^2 v^2 c^2
+= \gamma^2 m^2 c^4 \left(1 - \frac{v^2}{c^2}\right)
+= (mc^2)^2
+$$
+
+$$
+\boxed{\;E^2 - (pc)^2 = (mc^2)^2\;}
+$$
+
+<p>\(E\) 與 \(p\) 各自隨基準改變，但這個組合卻對所有基準都是同一差——\(mc^2\) 的平方。</p>
+
+<p>改成相除，消掉的就是質量：</p>
+
+$$
+\frac{E}{pc} = \frac{\gamma m c^2}{\gamma m v c}
+\qquad\Longrightarrow\qquad
+\boxed{\;\frac{E}{pc} = \frac{c}{v}\;}
+$$
+
+<p>這兩條框起來的式子裡沒有 \(\gamma\)，所以連 \(v = c\) 都能用——比 \(E = \gamma mc^2\)、\(p = \gamma mv\) 更廣。
+代 \(m = 0\) 進第一條：\(E = pc\)；再代進第二條：\(\frac{c}{v} = \frac{E}{pc} = 1\)——
+質量為零的粒子照樣有能量與動量，但被迫永遠以光速跑，這是否暗示就是光子？
+反過來，\(v = c \Rightarrow E = pc \Rightarrow m = 0\)：這是否暗示以光速跑的東西必定沒有質量？</p>
+
+<p>低速檢查：把第一條開根號、逐項展開（\(\sqrt{1+x} = 1 + \tfrac12 x - \tfrac18 x^2 + \cdots\)）：</p>
+
+$$
+E = mc^2\sqrt{1+\left(\tfrac{p}{mc}\right)^2}
+= mc^2 + \frac{p^2}{2m} - \frac{p^4}{8m^3c^2} + \cdots
+$$
+
+<p>第二項正是牛頓動能的動量寫法 \(\dfrac{p^2}{2m}\)，其後是高速修正。</p>
+
+<figure>
+<svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" font-family="Noto Serif TC, serif" font-size="22" font-style="italic">
+  <!-- 直角三角形：底 pc、直角邊 mc²、斜邊 E -->
+  <polygon points="120,260 520,260 520,60" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <!-- 斜邊強調 -->
+  <line x1="120" y1="260" x2="520" y2="60" stroke="#e0a800" stroke-width="3.5"/>
+  <!-- 直角記號 -->
+  <polyline points="496,260 496,236 520,236" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+  <!-- 標籤 -->
+  <foreignObject x="250" y="275.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:center;color:currentColor">\(pc\)</div></foreignObject>
+  <foreignObject x="548" y="147.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:left;color:currentColor">\(mc^2\)</div></foreignObject>
+  <foreignObject x="242" y="125.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:center;color:#e0a800">\(E\)</div></foreignObject>
+  <!-- 底角的角弧：cos(底角) = 底/斜 = pc/E = v/c -->
+  <path d="M160,260 A40,40 0 0 0 155.8,242.1" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+  <!-- 共用左頂點的相似小三角形：斜邊 c、底 v、直角邊 √(c²−v²)；斜邊與 E 共線 -->
+  <polyline points="120,260 280,260 280,180" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".85"/>
+  <polyline points="268,260 268,248 280,248" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+  <foreignObject x="56" y="190.9" width="140" height="32.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:18px;text-align:right;color:#e0a800">\(c\)</div></foreignObject>
+  <foreignObject x="130" y="235.9" width="140" height="32.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:18px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <foreignObject x="290" y="210.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(\sqrt{c^2-v^2}\)</div></foreignObject>
+</svg>
+</figure>
+
+<!-- ==================== 第二部・第二章 ==================== -->
+
+<h1 id="part-2"><span class="part-label">第二部・廣義相對論</span>第二章　廣義相對論</h1>
+
+<h2 id="sec-2-1">2.1　複習：Doppler 效應</h2>
+
+<p>聲音在空氣中以 \(v\) 傳播。波源每秒發出 \(f_0\) 個波前，相鄰波前相距</p>
+
+$$
+\lambda = \frac{v}{f_0}
+$$
+
+<figure>
+<svg viewBox="0 0 800 265" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrD" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto-start-reverse">
+      <path d="M0,0 L6,3 L0,6 z" fill="currentColor"/>
+    </marker>
+    <marker id="arrDim" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto-start-reverse">
+      <path d="M0,0 L4,2 L0,4 z" fill="currentColor"/>
+    </marker>
+  </defs>
+  <g>
+    <circle cx="130" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="130" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="130" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="130" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="130" cy="130" r="5" fill="#e0a800"/>
+    <circle cx="245" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="245" y1="117" x2="245" y2="140" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="238" y1="128" x2="252" y2="128" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="245" y1="140" x2="239" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="245" y1="140" x2="251" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="180" y1="130" x2="205" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
+    <foreignObject x="122.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda\)</div></foreignObject>
+    <text x="150" y="255" text-anchor="middle" fill="currentColor">波源、觀察者都靜止</text>
+  </g>
+  <g>
+    <circle cx="380" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="390" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="400" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="410" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="420" cy="130" r="5" fill="#e0a800"/>
+    <line x1="425" y1="14" x2="460" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
+    <foreignObject x="275" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:right;color:currentColor">\(v_s\)</div></foreignObject>
+    <circle cx="495" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="495" y1="117" x2="495" y2="140" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="488" y1="128" x2="502" y2="128" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="495" y1="140" x2="489" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="495" y1="140" x2="501" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="435" y1="130" x2="450" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
+    <rect x="433" y="103" width="19" height="17" style="fill:var(--bg)"/>
+    <foreignObject x="372.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda'\)</div></foreignObject>
+    <text x="400" y="255" text-anchor="middle" fill="currentColor">波源朝觀察者移動，前方波前被壓縮</text>
+  </g>
+  <g>
+    <circle cx="640" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="640" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="640" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="640" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="640" cy="130" r="5" fill="#e0a800"/>
+    <circle cx="755" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="755" y1="117" x2="755" y2="140" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="748" y1="128" x2="762" y2="128" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="755" y1="140" x2="749" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="755" y1="140" x2="761" y2="152" stroke="currentColor" stroke-width="1.6"/>
+    <line x1="775" y1="14" x2="745" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
+    <foreignObject x="779" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(v_o\)</div></foreignObject>
+    <text x="660" y="255" text-anchor="middle" fill="currentColor">觀察者朝波源移動，波前間距不變</text>
+  </g>
+</svg>
+</figure>
+
+<p><strong>波源以 \(v_s\) 朝觀察者移動</strong>：相鄰波前發出相隔 \(\dfrac{1}{f_0}\)，
+其間前一個波前走 \(\dfrac{v}{f_0}\)，波源前進 \(\dfrac{v_s}{f_0}\)：</p>
+
+$$
+\lambda' = \frac{v}{f_0} - \frac{v_s}{f_0} = \frac{v - v_s}{f_0}
+\qquad\Longrightarrow\qquad
+f = \frac{v}{\lambda'} = \frac{v}{(v - v_s)/f_0} = f_0\,\frac{v}{v - v_s}
+$$
+
+<p><strong>觀察者以 \(v_o\) 朝波源移動</strong>：波前間距仍是 \(\lambda\)，但以 \(v + v_o\) 掠過觀察者：</p>
+
+$$
+f = \frac{v + v_o}{\lambda} = f_0\,\frac{v + v_o}{v}
+$$
+
+<p><strong>兩者同時發生</strong>：觀察者以 \(v + v_o\) 掠過壓縮後的 \(\lambda'\)：</p>
+
+$$
+f = \frac{v + v_o}{\lambda'} = f_0\,\frac{v + v_o}{v - v_s}
+$$
+
+<p>遠離時 \(v_s \to -v_s\)、\(v_o \to -v_o\)。合併寫成（靠近取上號、遠離取下號）：</p>
+
+$$
+\boxed{\; f = f_0\,\frac{v \pm v_o}{v \mp v_s} \;}
+$$
+
+<h2 id="sec-2-2">2.2　加速的火箭：上下的鐘</h2>
+
+<p>火箭以加速度 \(a\) 向上加速，底到頂高 \(h\)。底部每隔 \(T_{\text{下}}\) 向上發一道光，
+頂部每隔 \(T_{\text{上}}\) 收到一道。\(T_{\text{上}}\) 是多少？</p>
+
+<figure>
+<svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrE" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <!-- 左：發光那一刻，火箭速度 v -->
+  <g transform="translate(-110,0)">
+    <path d="M250,230 L250,60 Q290,-5 330,60 L330,230 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="250,196 228,238 250,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="330,196 352,238 330,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M276,232 Q290,272 304,232" fill="#e0a800" opacity=".7"/>
+    <circle cx="290" cy="212" r="5" fill="#e0a800"/>
+    <rect x="272" y="68" width="36" height="5" fill="currentColor" opacity=".8"/>
+    <line x1="290" y1="200" x2="290" y2="168" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrG)"/>
+  </g>
+  <line x1="100" y1="185" x2="100" y2="105" stroke="currentColor" stroke-width="2" marker-end="url(#arrE)"/>
+  <foreignObject x="0" y="135.75" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(a\)</div></foreignObject>
+  <line x1="234" y1="104" x2="234" y2="62" stroke="currentColor" stroke-width="2" marker-end="url(#arrE)"/>
+  <foreignObject x="164" y="40.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <line x1="262" y1="70" x2="262" y2="212" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+  <line x1="257" y1="70" x2="267" y2="70" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+  <line x1="257" y1="212" x2="267" y2="212" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+  <foreignObject x="270" y="131.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(h\)</div></foreignObject>
+  <foreignObject x="270" y="198.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(T_{\text{下}}\)</div></foreignObject>
+  <text x="180" y="278" text-anchor="middle" fill="currentColor">發光那一刻</text>
+  <!-- 中：飛行時間 T₁ -->
+  <line x1="300" y1="145" x2="372" y2="145" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrE)" opacity=".6"/>
+  <foreignObject x="266" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\frac{h}{c-v}\)</div></foreignObject>
+  <!-- 右：光抵達頂部，頂部速度 v + aT₁ -->
+  <g transform="translate(190,0)">
+    <path d="M250,230 L250,60 Q290,-5 330,60 L330,230 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="250,196 228,238 250,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="330,196 352,238 330,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M276,232 Q290,272 304,232" fill="#e0a800" opacity=".7"/>
+    <circle cx="290" cy="212" r="5" fill="#e0a800"/>
+    <rect x="272" y="68" width="36" height="5" fill="currentColor" opacity=".8"/>
+    <line x1="290" y1="112" x2="290" y2="80" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrG)"/>
+  </g>
+  <foreignObject x="360" y="57.75" width="75" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(T_{\text{上}}\)</div></foreignObject>
+  <line x1="534" y1="104" x2="534" y2="62" stroke="currentColor" stroke-width="2" marker-end="url(#arrE)"/>
+  <foreignObject x="542" y="75.75" width="98" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(v + a\frac{h}{c-v}\)</div></foreignObject>
+  <text x="480" y="278" text-anchor="middle" fill="currentColor">光抵達頂部</text>
+</svg>
+</figure>
+
+<h3>【方法一】</h3>
+
+<p>火箭在加速，不是慣性基準——發光那一刻火箭速度為 \(v\)。
+光飛到頂部需時 \(\Delta T\)：光走了 \(c\,\Delta T\)，頂部跑了 \(v\,\Delta T + \tfrac12 a\,\Delta T^2\)，兩者之差是 \(h\)：</p>
+
+$$
+h = c\,\Delta T - v\,\Delta T - \tfrac12 a\,\Delta T^2
+$$
+
+<p>最後一項極小，丟掉：</p>
+
+$$
+(c - v)\,\Delta T = h
+\qquad\Longrightarrow\qquad
+\Delta T = \frac{h}{c - v}
+$$
+
+<p>這條式子在相對論裡成立嗎？速度不是不能直接相加？——1.5 的合成則管的是<strong>換基準</strong>：
+同一個物體，基準 1 量到 \(v\)、基準 2 量到 \(v'\)，兩者怎麼換。這裡沒有換基準：
+光的位置 \(c\,\Delta T\)、頂部的位置 \(h + v\,\Delta T + \tfrac12 a\,\Delta T^2\)，
+全是同一個慣性基準、同一套鐘尺量出來的座標，「光追上頂部」就是兩個座標相等，座標相減是純算術。
+\(c - v\) 也不是任何東西的速度，是間距縮小的速率——這種量本來就可以超過 \(c\)（兩道光對開，間距以 \(2c\) 縮小，完全合法）。</p>
+
+<p>這段時間頂部被加速，收到光時速度為 \(v + a\dfrac{h}{c - v}\)。</p>
+
+<p>套 Doppler 公式——波源以 \(v\) 朝觀察者、觀察者以 \(v + a\dfrac{h}{c - v}\) 遠離：\(f = f_0\,\dfrac{c - v_o}{c - v_s}\)。
+代 \(v_s = v\)、\(v_o = v + a\dfrac{h}{c - v}\)、\(f_0 = \dfrac{1}{T_{\text{下}}}\)、\(f = \dfrac{1}{T_{\text{上}}}\)：</p>
+
+$$
+\frac{1}{T_{\text{上}}} = \frac{1}{T_{\text{下}}}\,\frac{c - v - a\dfrac{h}{c - v}}{c - v}
+= \frac{1}{T_{\text{下}}}\left(1 - \frac{ah}{(c - v)^2}\right)
+$$
+
+<p>逐項展開 \(\dfrac{1}{1-x} = 1 + x + x^2 + \cdots\)：</p>
+
+$$
+\frac{ah}{(c - v)^2}
+= \frac{ah}{c^2}\cdot\frac{1}{\left(1 - \frac{v}{c}\right)^2}
+= \frac{ah}{c^2}\left(1 + \frac{v}{c} + \left(\frac{v}{c}\right)^2 + \cdots\right)^2
+= \frac{ah}{c^2} + 2\,\frac{ah}{c^2}\cdot\frac{v}{c} + \cdots
+$$
+
+<p>第二項起都是 \(\dfrac{ah}{c^2}\) 再乘上 \(\dfrac{v}{c}\) 的次方——火箭速度太慢，全部丟掉：</p>
+
+$$
+\frac{1}{T_{\text{上}}} = \frac{1}{T_{\text{下}}}\left(1 - \frac{ah}{c^2}\right)
+\qquad\Longrightarrow\qquad
+T_{\text{上}} = \frac{T_{\text{下}}}{1 - \dfrac{ah}{c^2}}
+$$
+
+<p>逐項展開 \(\dfrac{1}{1-x} = 1 + x + x^2 + \cdots\)，留一次項：</p>
+
+$$
+T_{\text{上}} = T_{\text{下}}\left(1 + \frac{ah}{c^2} + \left(\frac{ah}{c^2}\right)^2 + \cdots\right)
+\qquad\Longrightarrow\qquad
+\boxed{\; \frac{T_{\text{上}} - T_{\text{下}}}{T_{\text{下}}} = \frac{ah}{c^2} \;}
+$$
+
+<h3>【方法二】</h3>
+
+<p>不套 Doppler，直接追兩道光。第一道光需時 \(\dfrac{h}{c - v}\)（同上）；
+第二道光晚 \(T_{\text{下}}\) 發出，火箭速度已是 \(v + a\,T_{\text{下}}\)，需時 \(\dfrac{h}{c - v - a\,T_{\text{下}}}\)。
+第二道光晚 \(T_{\text{下}}\) 出發、又多了兩段飛行時間之差，頂部收到的間隔：</p>
+
+$$
+T_{\text{上}} = T_{\text{下}} + \frac{h}{c - v - a\,T_{\text{下}}} - \frac{h}{c - v}
+= T_{\text{下}} + \frac{h\,(c - v) - h\,(c - v - a\,T_{\text{下}})}{(c - v - a\,T_{\text{下}})(c - v)}
+= T_{\text{下}} + \frac{a\,h\,T_{\text{下}}}{(c - v)(c - v - a\,T_{\text{下}})}
+$$
+
+$$
+\frac{T_{\text{上}} - T_{\text{下}}}{T_{\text{下}}}
+= \frac{ah}{(c - v)(c - v - a\,T_{\text{下}})}
+= \frac{ah}{c^2}\cdot\frac{1}{1 - \dfrac{v}{c}}\cdot\frac{1}{1 - \dfrac{v + a\,T_{\text{下}}}{c}}
+$$
+
+<p>兩個因子各逐項展開 \(\dfrac{1}{1-x} = 1 + x + x^2 + \cdots\)：</p>
+
+$$
+\frac{T_{\text{上}} - T_{\text{下}}}{T_{\text{下}}}
+= \frac{ah}{c^2}\left(1 + \frac{v}{c} + \left(\frac{v}{c}\right)^2 + \cdots\right)\left(1 + \frac{v + a\,T_{\text{下}}}{c} + \left(\frac{v + a\,T_{\text{下}}}{c}\right)^2 + \cdots\right)
+= \frac{ah}{c^2} + \frac{ah}{c^2}\cdot\frac{v}{c} + \frac{ah}{c^2}\cdot\frac{v + a\,T_{\text{下}}}{c} + \cdots
+$$
+
+<p>第二項起都是 \(\dfrac{ah}{c^2}\) 再乘上火箭速度除以 \(c\)，丟掉：</p>
+
+$$
+\frac{T_{\text{上}} - T_{\text{下}}}{T_{\text{下}}} = \frac{ah}{c^2}
+$$
+
+<p>與方法一相同。</p>
+
+
+<p>\(T_{\text{上}} - T_{\text{下}} > 0\)，所以 \(T_{\text{上}} > T_{\text{下}}\)。</p>
+
+<p>上面已經到了第 10 秒了，下面怎麼才到了 8 秒，才剛傳來第 8 秒的時針反射光！</p>
+
+<p>這與 1.2「運動中的鐘慢」不同——兩個鐘之間沒有相對速度——是加速度帶來的新機制。</p>
+
+<figure>
+<svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrE2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrG2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <g transform="translate(30,0)">
+    <path d="M250,230 L250,60 Q290,-5 330,60 L330,230 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="250,196 228,238 250,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="330,196 352,238 330,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M276,232 Q290,272 304,232" fill="#e0a800" opacity=".7"/>
+  </g>
+  <line x1="230" y1="185" x2="230" y2="105" stroke="currentColor" stroke-width="2" marker-end="url(#arrE2)"/>
+  <foreignObject x="130" y="135.75" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(a\)</div></foreignObject>
+  <circle cx="320" cy="95" r="16" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="320" y1="95" x2="326.9" y2="91.0" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="320" y1="95" x2="326.0" y2="105.4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="320" cy="95" r="1.6" fill="currentColor"/>
+  <circle cx="320" cy="200" r="16" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="320" y1="200" x2="325.7" y2="194.3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+  <line x1="320" y1="200" x2="332.0" y2="200.0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+  <circle cx="320" cy="200" r="1.6" fill="currentColor"/>
+  <line x1="320" y1="180" x2="320" y2="117" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrG2)"/>
+  <text x="392" y="100" fill="currentColor">頂部的鐘走得快</text>
+  <text x="392" y="205" fill="currentColor">底部的鐘走得慢</text>
+</svg>
+</figure>
+
+<p>對比的基準點在哪裡？取決於把「測量起點（原點）」設在火箭的哪裡。</p>
+
+<p><strong>1. 關鍵在於公式裡的那個「1」</strong></p>
+
+$$
+T_{\text{上}} = T_{\text{下}}\left(1 + \frac{ah}{c^2}\right)
+$$
+
+<p>「1」完全等同於沒有加速度（\(a = 0\)，等速火箭）時的標準時間流速；\(\dfrac{ah}{c^2}\) 是加速度 \(a\) 與高度差 \(h\) 帶來的修正。
+推導時以火箭底部為原點（\(h = 0\)），底部的公式就是</p>
+
+$$
+T = T_{\text{標準}} \times (1 + 0) = T_{\text{標準}}
+$$
+
+<p>有加速度的火箭底與沒有加速度的火箭底，鐘的走速（底片張數密度）一樣；頂部 \(h > 0\)，底片張數變多（時間變快）。</p>
+
+<p><strong>2. 如果把基準點改設在「火箭中心」呢？</strong></p>
+
+<p>原點可以自由選擇。火箭高 100 公尺，把正中間（50 公尺處）設為原點（\(h = 0\)）：中心的走速與無加速火箭底片張數一樣（時間流速一樣），頂部（100 公尺處，\(h = 50\)）底片張數變多（時間變快），底部（0 公尺處，\(h = -50\)）底片張數變少（時間變慢）。把基準原點設在哪裡，在物理學上稱為「局部慣性系」的選擇。</p>
+
+
+
+<h2 id="sec-2-3">2.3　人類的猜測：加速度＝重力</h2>
+
+<p>站在地面，腳底被地面頂著；站在 2.2 那艘以 \(a = g\) 加速的火箭裡，腳底一樣被地板頂著。關在艙裡，分不出兩者——
+人類於是猜測：<strong>加速度與重力是同一件事</strong>（等效原理，Einstein 1907）。這只是猜測，不然沒有抓手。</p>
+
+<figure>
+<svg viewBox="0 0 640 290" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrEqK" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrEq" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <g transform="translate(-110,0)">
+    <path d="M250,230 L250,60 Q290,-5 330,60 L330,230 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="250,196 228,238 250,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="330,196 352,238 330,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <path d="M276,232 Q290,272 304,232" fill="#e0a800" opacity=".7"/>
+    <circle cx="290" cy="95" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="290" y1="95" x2="296.1" y2="91.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="290" y1="95" x2="295.2" y2="104.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="290" cy="95" r="1.5" fill="currentColor"/>
+    <circle cx="290" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="290" y1="200" x2="294.9" y2="195.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="290" y1="200" x2="300.5" y2="200.0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="290" cy="200" r="1.5" fill="currentColor"/>
+    <line x1="290" y1="182" x2="290" y2="115" stroke="#e0a800" stroke-width="2.2" marker-end="url(#arrEq)"/>
+  </g>
+  <line x1="100" y1="185" x2="100" y2="105" stroke="currentColor" stroke-width="2" marker-end="url(#arrEqK)"/>
+  <foreignObject x="0" y="135.75" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(a\)</div></foreignObject>
+  <text x="180" y="278" text-anchor="middle" fill="currentColor">太空中：加速</text>
+  <g transform="translate(190,0)">
+    <path d="M250,230 L250,60 Q290,-5 330,60 L330,230 Z" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="250,196 228,238 250,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <polygon points="330,196 352,238 330,238" fill="none" stroke="currentColor" stroke-width="2"/>
+    <circle cx="290" cy="95" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="290" y1="95" x2="296.1" y2="91.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="290" y1="95" x2="295.2" y2="104.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="290" cy="95" r="1.5" fill="currentColor"/>
+    <circle cx="290" cy="200" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+    <line x1="290" y1="200" x2="294.9" y2="195.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+    <line x1="290" y1="200" x2="300.5" y2="200.0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+    <circle cx="290" cy="200" r="1.5" fill="currentColor"/>
+    <line x1="290" y1="182" x2="290" y2="115" stroke="#e0a800" stroke-width="2.2" marker-end="url(#arrEq)"/>
+  </g>
+  <line x1="350" y1="239" x2="610" y2="239" stroke="currentColor" stroke-width="2.5" opacity=".7"/>
+  <line x1="560" y1="105" x2="560" y2="185" stroke="currentColor" stroke-width="2" marker-end="url(#arrEqK)"/>
+  <foreignObject x="568" y="135.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(g\)</div></foreignObject>
+  <text x="480" y="278" text-anchor="middle" fill="currentColor">地面上：重力</text>
+</svg>
+</figure>
+
+<p>把 2.2 的 \(a\) 換成 \(g\)：</p>
+
+$$
+\boxed{\; \frac{T_{\text{上}} - T_{\text{下}}}{T_{\text{下}}} = \frac{gh}{c^2} \;}
+$$
+
+<p>高處的鐘比低處快——實驗事實：1960 年 Pound 與 Rebka 在 22.5 m 的塔裡用 Fe-57 原子核發出的光量到這個差，吻合到 10%；
+之後從一萬公里高的衛星（1976，\(7\times10^{-5}\)）到 33 cm（2010）、1 mm 高的原子雲（2022），六十多年沒有一次偏離 \(\dfrac{gh}{c^2}\)。
+GPS 衛星的鐘在高處每天比地面快 45 μs（運動的鐘慢 7 μs，淨快 38 μs），不修正，定位每天累積十公里誤差。</p>
+
+<h3>【引力幾何化的最簡例：光往下彎】</h3>
+
+<p>一道光水平前進，波前上下兩端高度差 \(h\)。上端的鐘比下端快 \(\dfrac{gh}{c^2}\) 的比例：用同一支鐘看，上端的光速是 \(c + c\,\dfrac{gh}{c^2}\)，比下端多 \(c\,\dfrac{gh}{c^2}\)，
+波前上端跑得多、下端跑得少，整個波前向下轉。光線垂直於波前，所以光往下彎。</p>
+
+<figure>
+<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrK" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrKg" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <line x1="60" y1="230" x2="620" y2="230" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <line x1="60" y1="70" x2="60" y2="150" stroke="currentColor" stroke-width="2" marker-end="url(#arrK)"/>
+  <foreignObject x="20" y="100.75" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(g\)</div></foreignObject>
+  <path d="M120,80 Q400,80 600,150" fill="none" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrKg)"/>
+  <line x1="120.0" y1="50.0" x2="120.0" y2="110.0" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <line x1="257.0" y1="54.4" x2="253.0" y2="114.3" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <line x1="384.3" y1="67.8" x2="375.7" y2="127.2" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <line x1="502.0" y1="90.2" x2="488.0" y2="148.6" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <line x1="589.1" y1="114.7" x2="570.5" y2="171.7" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <text x="120" y="40" text-anchor="middle" fill="currentColor">波前</text>
+  <text x="560" y="60" text-anchor="middle" fill="currentColor">上端時間快、跑得多</text>
+  <text x="560" y="205" text-anchor="middle" fill="currentColor">下端時間慢、跑得少</text>
+</svg>
+</figure>
+
+<p>波前轉動的角速度＝上下端速度差除以 \(h\)：</p>
+
+$$
+\frac{c\,\dfrac{gh}{c^2}}{h} = \frac{g}{c}
+$$
+
+<p>每秒偏轉 \(\dfrac{g}{c}\)。一顆以速度 \(c\) 水平丟出的石頭，垂直速度每秒增加 \(g\)，方向每秒也偏 \(\dfrac{g}{c}\)——一模一樣。
+推導裡沒有任何「力」，只用了不同高度的時間走速不同，光就往下彎。引力是否根本不是力，而是時空的形狀？——這是「引力幾何化」的猜測。</p>
+
+<p>Einstein 1911 年用這個時間論證算出掠過太陽的光偏折 0.83″（用今日的太陽數據算是 0.87″）；1915 年的方程說空間也扭曲，偏折加倍成 1.75″；1919 年 Eddington 的日食觀測看到的是後者。
+空間那一半，這裡的時間論證推不出來。</p>
+
+<h3>【電荷也是幾何？最簡例：多一個捲起來的維度】</h3>
+
+<p>電荷從哪來？一個猜測（Kaluza 1921、Klein 1926）：空間多一個維度，捲成周長 \(L\) 的小圓，小到看不見。
+沿著小圓跑的動量，就是我們叫作「電荷」的東西。</p>
+
+<figure>
+<svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrKK" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="100" y1="80" x2="540" y2="80" stroke="currentColor" stroke-width="1.6"/>
+  <line x1="100" y1="140" x2="540" y2="140" stroke="currentColor" stroke-width="1.6"/>
+  <ellipse cx="100" cy="110" rx="14" ry="30" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  <path d="M540,80 A14,30 0 0 1 540,140" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  <path d="M540,80 A14,30 0 0 0 540,140" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="4 3" opacity=".6"/>
+  <polyline points="150.0,110.0 153.5,115.6 157.0,121.0 160.5,126.1 164.0,130.5 167.5,134.3 171.0,137.1 174.5,139.1 178.0,139.9" fill="none" stroke="#e0a800" stroke-width="2.2"/>
+  <polyline points="178.0,139.9 181.5,139.8 185.0,138.5 188.5,136.3 192.0,133.1 195.5,129.1 199.0,124.5 202.5,119.3 206.0,113.8 209.5,108.1 213.0,102.5 216.5,97.2 220.0,92.4 223.5,88.1 227.0,84.7 230.5,82.1 234.0,80.5 237.5,80.0" fill="none" stroke="#e0a800" stroke-width="2.2" stroke-dasharray="4 3" opacity=".55"/>
+  <polyline points="237.5,80.0 241.0,80.5 244.5,82.1 248.0,84.7 251.5,88.1 255.0,92.4 258.5,97.2 262.0,102.5 265.5,108.1 269.0,113.8 272.5,119.3 276.0,124.5 279.5,129.1 283.0,133.1 286.5,136.3 290.0,138.5 293.5,139.8 297.0,139.9" fill="none" stroke="#e0a800" stroke-width="2.2"/>
+  <polyline points="297.0,139.9 300.5,139.1 304.0,137.1 307.5,134.3 311.0,130.5 314.5,126.1 318.0,121.0 321.5,115.6 325.0,110.0 328.5,104.4 332.0,99.0 335.5,93.9 339.0,89.5 342.5,85.7 346.0,82.9 349.5,80.9 353.0,80.1" fill="none" stroke="#e0a800" stroke-width="2.2" stroke-dasharray="4 3" opacity=".55"/>
+  <polyline points="353.0,80.1 356.5,80.2 360.0,81.5 363.5,83.7 367.0,86.9 370.5,90.9 374.0,95.5 377.5,100.7 381.0,106.2 384.5,111.9 388.0,117.5 391.5,122.8 395.0,127.6 398.5,131.9 402.0,135.3 405.5,137.9 409.0,139.5 412.5,140.0" fill="none" stroke="#e0a800" stroke-width="2.2"/>
+  <polyline points="412.5,140.0 416.0,139.5 419.5,137.9 423.0,135.3 426.5,131.9 430.0,127.6 433.5,122.8 437.0,117.5 440.5,111.9 444.0,106.2 447.5,100.7 451.0,95.5 454.5,90.9 458.0,86.9 461.5,83.7 465.0,81.5 468.5,80.2 472.0,80.1" fill="none" stroke="#e0a800" stroke-width="2.2" stroke-dasharray="4 3" opacity=".55"/>
+  <polyline points="472.0,80.1 475.5,80.9 479.0,82.9 482.5,85.7 486.0,89.5 489.5,93.9 493.0,99.0 496.5,104.4 500.0,110.0" fill="none" stroke="#e0a800" stroke-width="2.2"/>
+  <line x1="120" y1="185" x2="520" y2="185" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrKK)" opacity=".7"/>
+  <text x="320" y="205" text-anchor="middle" fill="currentColor">我們看得見的空間</text>
+  <line x1="100" y1="78" x2="100" y2="40" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+  <text x="37" y="30" fill="currentColor">捲起來的小圓，周長</text>
+  <foreignObject x="166" y="15.75" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(L\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>沿小圓繞一圈的波必須接回自己，周長是波長的整數倍：</p>
+
+$$
+n\,\lambda = L \qquad (n = 0, \pm 1, \pm 2, \cdots)
+$$
+
+<p>動量與波長成反比（de Broglie：動量＝Planck 常數／波長），所以沿小圓的動量只能是「Planck 常數／\(L\)」的整數倍——電荷只能是某個單位的整數倍，正負對應繞行的兩個方向，\(n = 0\) 是不繞的波、不帶電。
+「為什麼電荷都是同一單位的整數倍、為什麼有正有負」在這個猜測裡有了幾何答案。
+用 Klein 1926 年的換算，\(L\) 約 \(10^{-32}\) m，比原子核小十七個量級。
+但它同時預言帶一單位電荷的粒子質量約 \(10^{17}\) GeV（Planck 質量 \(10^{19}\) GeV 的百分之一），與電子的 \(5\times10^{-4}\) GeV 差二十個量級——這個矛盾是它後來被擱置的主因；現代弦論保留了「捲起來的維度」，把電子當成 \(n = 0\) 的模式。
+另一個幾何猜測是 Misner 與 Wheeler 1957 年的「沒有電荷的電荷」：電場線穿過一條時空蟲洞，從外面看一端像正電荷、另一端像負電荷，其實哪裡都沒有電荷——但這種電荷可以是任意值，解釋不了量子化，Wheeler 自己後來放棄。
+現代規範理論把電荷看成粒子在一個「內部小圓」上的繞數（Weyl 1929、Wu–Yang 1975）：也是幾何，只是那個圓不在我們的時空裡。</p>
+
+<p>實驗：額外維度至今毫無證據——桌上重力實驗到 30 μm、LHC 到 \(10^{-19}\) m 以下都沒有；質子與電子的電荷精確相反到 \(10^{-21}\)（相對值）；標準模型把電荷當輸入，解釋不了為什麼量子化。</p>
+
+</main>
+
+</div>
+
+<footer class="site">《從時空到控制》</footer>
+
+</body>
+</html>
