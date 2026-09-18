@@ -972,13 +972,91 @@ $$
 <p>每秒偏轉 \(\dfrac{g}{c}\)。一顆以速度 \(c\) 水平丟出的石頭，垂直速度每秒增加 \(g\)，方向每秒也偏 \(\dfrac{g}{c}\)——一模一樣。
 推導裡沒有任何「力」，只用了不同高度的時間走速不同，光就往下彎。引力是否根本不是力，而是時空的形狀？——這是「引力幾何化」的猜測。</p>
 
-<p>Einstein 1911 年用這個時間論證算出掠過太陽的光偏折 0.83″（用今日的太陽數據算是 0.87″）；1915 年的方程說空間也扭曲，偏折加倍成 1.75″；1919 年 Eddington 的日食觀測看到的是後者。
-空間那一半，這裡的時間論證推不出來。</p>
+<h3>【質量能量化：沒有質量的質量】</h3>
 
-<h3>【電荷也是幾何？最簡例：多一個捲起來的維度】</h3>
+<p>兩道能量各為 \(E\) 的光反向對飛，關在一個無質量的盒子裡。盒子整體：能量 \(2E\)，動量 \(\dfrac{E}{c} - \dfrac{E}{c} = 0\)（1.9：光的 \(E = pc\)）。
+代入 1.9 的 \(E^2 - (pc)^2 = (Mc^2)^2\)：</p>
 
-<p>電荷從哪來？一個猜測（Kaluza 1921、Klein 1926）：空間多一個維度，捲成周長 \(L\) 的小圓，小到看不見。
-沿著小圓跑的動量，就是我們叫作「電荷」的東西。</p>
+$$
+(2E)^2 - 0 = (Mc^2)^2
+\qquad\Longrightarrow\qquad
+M = \frac{2E}{c^2}
+$$
+
+<figure>
+<svg viewBox="0 0 640 200" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrM" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <rect x="170" y="40" width="300" height="120" fill="none" stroke="currentColor" stroke-width="2.5"/>
+  <line x1="320" y1="85" x2="440" y2="85" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrM)"/>
+  <line x1="320" y1="115" x2="200" y2="115" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrM)"/>
+  <foreignObject x="380" y="60.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(E\)</div></foreignObject>
+  <foreignObject x="260" y="130.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(E\)</div></foreignObject>
+  <foreignObject x="490" y="90.75" width="140" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(M = \dfrac{2E}{c^2}\)</div></foreignObject>
+  <text x="320" y="188" text-anchor="middle" fill="currentColor">盒子無質量，裡面只有光</text>
+</svg>
+</figure>
+
+<p>裡面沒有任何有質量的東西，盒子卻有質量——推它會抗拒，放在地上會有重量。</p>
+
+<p>這不是空想，是量得到的事實。質子由夸克與膠子組成：膠子沒有質量，三個夸克的靜止質量合計只佔質子質量的 1%，剩下的 99% 是關在裡面的運動能與場能（格點 QCD，2018）。
+你身上絕大部分的重量，就是這種沒有質量的質量。</p>
+
+<p>反過來的過程也量得到。質子與中子結合成氘核時，放出一顆能量 2.224 MeV 的光，氘核就比兩者相加輕了這麼多。
+2005 年的實驗一邊用光的波長量能量、一邊用離子在磁場中的迴旋頻率量質量，兩邊核對 \(E = mc^2\)，差距不到 0.00004%。</p>
+
+
+<h3>【能量幾何化的最簡例：位能就是鐘的快慢】</h3>
+
+<p>一顆質量 \(m\) 的石頭抬高 \(h\)，位能多了 \(mgh\)。拆開來寫：</p>
+
+$$
+mgh = mc^2\cdot\frac{gh}{c^2}
+$$
+
+<p>\(mc^2\) 是 1.8 的靜止能量；\(\dfrac{gh}{c^2}\) 是 2.2 的結果，上端的鐘每秒比下端多走的秒數。石頭在高處的總能量：</p>
+
+$$
+mc^2 + mgh = mc^2\left(1 + \frac{gh}{c^2}\right)
+$$
+
+<p>括號裡正是高處鐘的走速（下端的鐘為 1）。靜止石頭的能量＝\(mc^2\) 乘上它所在處鐘的走速。</p>
+
+<figure>
+<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrDimPE" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto-start-reverse"><path d="M0,0 L4,2 L0,4 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="60" y1="228" x2="620" y2="228" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <line x1="100" y1="195" x2="100" y2="85" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDimPE)" marker-end="url(#arrDimPE)"/>
+  <line x1="88" y1="85" x2="160" y2="85" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+  <line x1="88" y1="195" x2="160" y2="195" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".45"/>
+  <foreignObject x="50" y="130.75" width="42" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(h\)</div></foreignObject>
+  <text x="215" y="42" text-anchor="middle" fill="currentColor">鐘的走速</text>
+  <text x="440" y="42" text-anchor="middle" fill="currentColor">靜止石頭的能量</text>
+  <circle cx="180" cy="85" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="180" y1="85" x2="186.1" y2="81.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <line x1="180" y1="85" x2="185.2" y2="94.1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="180" cy="85" r="1.5" fill="currentColor"/>
+  <circle cx="180" cy="195" r="14" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="180" y1="195" x2="184.9" y2="190.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <line x1="180" y1="195" x2="190.5" y2="195" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+  <circle cx="180" cy="195" r="1.5" fill="currentColor"/>
+  <foreignObject x="205" y="68" width="120" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(1 + \dfrac{gh}{c^2}\)</div></foreignObject>
+  <foreignObject x="205" y="185.75" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(1\)</div></foreignObject>
+  <circle cx="380" cy="85" r="11" fill="#3584e4"/>
+  <circle cx="380" cy="195" r="11" fill="#3584e4"/>
+  <foreignObject x="405" y="68" width="230" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(mc^2\left(1 + \dfrac{gh}{c^2}\right)\)</div></foreignObject>
+  <foreignObject x="405" y="185.75" width="230" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(mc^2\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>光往下彎、石頭有位能，用的是同一張時間地形圖。位能是否根本不在石頭裡，而是石頭所在處時間的快慢？——這是「能量幾何化」的猜測。</p>
+
+<h3>【質量幾何化的最簡例：看不見方向上的動量】</h3>
+
+<p>一個猜測（Kaluza 1921、Klein 1926）：空間多一個維度，捲成周長 \(L\) 的小圓，小到看不見。</p>
 
 <figure>
 <svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -1011,10 +1089,24 @@ $$
 n\,\lambda = L \qquad (n = 0, \pm 1, \pm 2, \cdots)
 $$
 
-<p>動量與波長成反比（de Broglie：動量＝Planck 常數／波長），所以沿小圓的動量只能是「Planck 常數／\(L\)」的整數倍——電荷只能是某個單位的整數倍，正負對應繞行的兩個方向，\(n = 0\) 是不繞的波、不帶電。
-「為什麼電荷都是同一單位的整數倍、為什麼有正有負」在這個猜測裡有了幾何答案。
-用 Klein 1926 年的換算，\(L\) 約 \(10^{-32}\) m，比原子核小十七個量級。
-但它同時預言帶一單位電荷的粒子質量約 \(10^{17}\) GeV（Planck 質量 \(10^{19}\) GeV 的百分之一），與電子的 \(5\times10^{-4}\) GeV 差二十個量級——這個矛盾是它後來被擱置的主因；現代弦論保留了「捲起來的維度」，把電子當成 \(n = 0\) 的模式。
+<p>動量與波長成反比（de Broglie：動量＝Planck 常數／波長），所以沿小圓的動量只能是「Planck 常數／\(L\)」的整數倍，\(n = 0\) 是不繞的波。</p>
+
+<p>一顆粒子在我們的三維空間裡靜止，卻沿著小圓跑：它的動量 \(p\) 全在我們看不見的方向。
+設它在五維裡沒有質量，1.9 的 \(m = 0\) 給 \(E = pc\)；我們看不見 \(p\)，只看到一顆靜止、能量 \(E\) 的東西，照 1.8 讀成 \(E = mc^2\)：</p>
+
+$$
+mc^2 = pc
+\qquad\Longrightarrow\qquad
+m = \frac{p}{c} = \frac{n \cdot \text{Planck 常數}}{L\,c}
+$$
+
+<p>「靜止質量」＝隱藏維度裡的動量，整個由幾何（\(L\)）決定。</p>
+
+<h3>【電荷也是幾何？最簡例：同一個小圓上的動量】</h3>
+
+<p>電荷從哪來？同一張圖：Kaluza–Klein 說，沿小圓跑的動量就是我們叫作「電荷」的東西——只能是「Planck 常數／\(L\)」的整數倍，正負對應繞行的兩個方向，\(n = 0\) 不帶電。
+「為什麼電荷都是同一單位的整數倍、為什麼有正有負」在這個猜測裡有了幾何答案，而且同一個 \(n\) 同時給出電荷與質量。
+用 Klein 1926 年的換算，\(L\) 約 \(10^{-32}\) m，比原子核小十七個量級；代回上一小節的質量公式，\(n = 1\) 的粒子質量約 \(10^{17}\) GeV，與電子的 \(5\times10^{-4}\) GeV 差二十個量級——這個矛盾是 Kaluza–Klein 被擱置的主因；現代弦論保留了捲起來的維度，把電子當成 \(n = 0\) 的模式，質量另有來源。
 另一個幾何猜測是 Misner 與 Wheeler 1957 年的「沒有電荷的電荷」：電場線穿過一條時空蟲洞，從外面看一端像正電荷、另一端像負電荷，其實哪裡都沒有電荷——但這種電荷可以是任意值，解釋不了量子化，Wheeler 自己後來放棄。
 現代規範理論把電荷看成粒子在一個「內部小圓」上的繞數（Weyl 1929、Wu–Yang 1975）：也是幾何，只是那個圓不在我們的時空裡。</p>
 
