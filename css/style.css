@@ -177,6 +177,7 @@ figure {
   text-align: center;
 }
 figure svg { max-width: 100%; height: auto; }
+figure video, figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
 figcaption {
   font-size: .88rem;
   color: var(--fg-soft);
