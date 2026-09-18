@@ -178,6 +178,7 @@ figure {
 }
 figure svg { max-width: 100%; height: auto; }
 figure video, figure img { max-width: 100%; height: auto; display: block; margin: 0 auto; }
+figure img.mirror { transform: scaleX(-1); }
 figcaption {
   font-size: .88rem;
   color: var(--fg-soft);
