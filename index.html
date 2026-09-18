@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>從時空到控制</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=4">
+<link rel="stylesheet" href="css/style.css?v=5">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -78,7 +78,7 @@ MathJax = {
 <p>我們的三維空間，其實是一本立體的翻頁書（pop-up flip book）：每一頁不是一張照片，而是一整個三維世界。這是世界的幾何化。</p>
 
 <figure class="media">
-<img src="media/popup3DFlipBook.gif" alt="立體翻頁書" width="1400" height="933" loading="lazy">
+<img src="media/popup3DFlipBook.gif" alt="立體翻頁書" width="1400" height="933" loading="lazy" class="mirror">
 </figure>
 
 <p>Einstein 提出兩個假設：</p>
@@ -1021,7 +1021,7 @@ $$
 2005 年的實驗一邊用光的波長量能量、一邊用離子在磁場中的迴旋頻率量質量，兩邊核對 \(E = mc^2\)，差距不到 0.00004%。</p>
 
 
-<h3>【能量幾何化的最簡例：位能就是鐘的快慢】</h3>
+<h3>【位能幾何化的最簡例：位能就是鐘的快慢】</h3>
 
 <p>一顆質量 \(m\) 的石頭抬高 \(h\)，位能多了 \(mgh\)。拆開來寫：</p>
 
@@ -1066,7 +1066,356 @@ $$
 </svg>
 </figure>
 
-<p>光往下彎、石頭有位能，用的是同一張時間地形圖。位能是否根本不在石頭裡，而是石頭所在處時間的快慢？——這是「能量幾何化」的猜測。</p>
+<p>光往下彎、石頭有位能，用的是同一張時間地形圖。位能是否根本不在石頭裡，而是石頭所在處時間的快慢？——這是「位能幾何化」的猜測。</p>
+
+
+<p>\(\dfrac{gh}{c^2}\) 是 2.2 丟掉高次項的結果。不丟，有兩個精確版本。</p>
+
+<p><strong>等加速的火箭</strong>：以火箭自己的尺量 \(h\)、以底部量到的加速度為 \(g\)，上下鐘的比值精確就是 \(1 + \dfrac{gh}{c^2}\)，一項都不必丟。四步。</p>
+
+<p>一、把 1.4 的變換代入 \((ct)^2 - x^2\)：</p>
+
+$$
+(ct)^2 - x^2
+= \gamma^2\left[\left(ct' + \tfrac{v}{c}\,x'\right)^2 - \left(x' + \tfrac{v}{c}\,ct'\right)^2\right]
+= \gamma^2\left(1 - \tfrac{v^2}{c^2}\right)\left[(ct')^2 - x'^2\right]
+= (ct')^2 - x'^2
+$$
+
+<p>換基準，這個差不變。</p>
+
+<p>二、火箭底部的世界線取雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g}\right)^2\)。兩邊對 \(t\) 微分：</p>
+
+$$
+2x\,\frac{dx}{dt} - 2c^2 t = 0
+\qquad\Longrightarrow\qquad
+v = \frac{c^2 t}{x}
+$$
+
+<p>再微分一次：</p>
+
+$$
+\frac{dv}{dt}
+= \frac{c^2}{x} - \frac{c^2 t\,v}{x^2}
+= \frac{c^2}{x^3}\left(x^2 - c^2 t^2\right)
+= \frac{c^2}{x^3}\cdot\frac{c^4}{g^2}
+$$
+
+<p>\(t = 0\) 時 \(x = \dfrac{c^2}{g}\)、\(v = 0\)，代入得 \(\dfrac{dv}{dt} = g\)。由一，這條雙曲線在任何慣性基準看都是同一條；換到與火箭某一瞬間同速的基準，那一瞬間就是它的 \(t = 0\)，加速度是 \(g\)。火箭每一瞬間都感覺到 \(g\)——這就是等加速。</p>
+
+<p>三、與火箭某一瞬間同速 \(v\) 的基準，它的「同一時刻」是 \(t' = 0\)。由 1.4，\(ct' = \gamma\left(ct - \tfrac{v}{c}\,x\right) = 0\)，即 \(ct = \tfrac{v}{c}\,x\)：一條過原點的直線。火箭那一點的 \(v = \dfrac{c^2 t}{x}\) 正好落在這條線上。所以火箭每一瞬間的「同時線」都過同一個點：原點是轉軸，同時線像指針掃過。</p>
+
+<p>四、火箭頂部在底部上方 \(h\)（火箭自己的尺）：世界線是同心的另一條雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g} + h\right)^2\)。它是底部那條以原點為中心放大 \(\dfrac{c^2/g + h}{c^2/g}\) 倍的圖形；同時線是過原點的直線，放大後還是自己。鐘自己走的時間：切成小段，每段在同速基準裡 \(\Delta x' = 0\)，由一，\((c\,\Delta t')^2 = (c\,\Delta t)^2 - (\Delta x)^2\)；全部座標放大幾倍，每一段的鐘時間就放大幾倍。所以兩條同時線之間：</p>
+
+$$
+\frac{T_{\text{上}}}{T_{\text{下}}}
+= \frac{\dfrac{c^2}{g} + h}{\dfrac{c^2}{g}}
+= 1 + \frac{gh}{c^2}
+$$
+
+<p>沒有近似。順帶：頂部感覺到的加速度是 \(\dfrac{c^2}{c^2/g + h} = \dfrac{g}{1 + gh/c^2}\)，比底部小。</p>
+
+<figure>
+<svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrRd" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrRdDim" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto-start-reverse"><path d="M0,0 L4,2 L0,4 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="60" y1="175" x2="620" y2="175" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrRd)" opacity=".7"/>
+  <line x1="90" y1="330" x2="90" y2="30" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrRd)" opacity=".7"/>
+  <foreignObject x="596" y="181.75" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(x\)</div></foreignObject>
+  <foreignObject x="48" y="30.75" width="38" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(ct\)</div></foreignObject>
+  <line x1="90" y1="175" x2="230" y2="35" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
+  <line x1="90" y1="175" x2="190" y2="275" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
+  <polyline points="313.6,275.0 311.8,271.0 310.1,267.0 308.5,263.0 306.9,259.0 305.4,255.0 304.0,251.0 302.6,247.0 301.2,243.0 300.0,239.0 298.8,235.0 297.7,231.0 296.6,227.0 295.7,223.0 294.8,219.0 294.0,215.0 293.2,211.0 292.5,207.0 292.0,203.0 291.4,199.0 291.0,195.0 290.6,191.0 290.4,187.0 290.2,183.0 290.0,179.0 290.0,175.0 290.0,171.0 290.2,167.0 290.4,163.0 290.6,159.0 291.0,155.0 291.4,151.0 292.0,147.0 292.5,143.0 293.2,139.0 294.0,135.0 294.8,131.0 295.7,127.0 296.6,123.0 297.7,119.0 298.8,115.0 300.0,111.0 301.2,107.0 302.6,103.0 304.0,99.0 305.4,95.0 306.9,91.0 308.5,87.0 310.1,83.0 311.8,79.0 313.6,75.0 315.4,71.0 317.3,67.0 319.2,63.0 321.2,59.0 323.2,55.0 325.3,51.0 327.5,47.0 329.6,43.0 331.9,39.0 334.1,35.0" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+  <polyline points="406.2,275.0 405.0,271.0 403.8,267.0 402.6,263.0 401.5,259.0 400.5,255.0 399.5,251.0 398.5,247.0 397.6,243.0 396.8,239.0 395.9,235.0 395.2,231.0 394.5,227.0 393.8,223.0 393.2,219.0 392.7,215.0 392.2,211.0 391.7,207.0 391.3,203.0 391.0,199.0 390.7,195.0 390.4,191.0 390.2,187.0 390.1,183.0 390.0,179.0 390.0,175.0 390.0,171.0 390.1,167.0 390.2,163.0 390.4,159.0 390.7,155.0 391.0,151.0 391.3,147.0 391.7,143.0 392.2,139.0 392.7,135.0 393.2,131.0 393.8,127.0 394.5,123.0 395.2,119.0 395.9,115.0 396.8,111.0 397.6,107.0 398.5,103.0 399.5,99.0 400.5,95.0 401.5,91.0 402.6,87.0 403.8,83.0 405.0,79.0 406.2,75.0 407.5,71.0 408.8,67.0 410.2,63.0 411.6,59.0 413.1,55.0 414.6,51.0 416.2,47.0 417.8,43.0 419.4,39.0 421.1,35.0" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
+  <line x1="90" y1="175" x2="470" y2="42.0" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity=".6"/>
+  <line x1="90" y1="175" x2="470" y2="270.0" stroke="currentColor" stroke-width="1" stroke-dasharray="6 4" opacity=".6"/>
+  <polyline points="296.6,226.6 295.5,222.4 294.6,218.2 293.8,214.0 293.0,209.8 292.3,205.6 291.7,201.4 291.2,197.2 290.8,192.9 290.5,188.7 290.2,184.5 290.1,180.3 290.0,176.1 290.0,171.9 290.1,167.7 290.3,163.5 290.6,159.2 291.0,155.0 291.5,150.8 292.0,146.6 292.6,142.4 293.4,138.2 294.2,134.0 295.1,129.8 296.0,125.5 297.1,121.3 298.2,117.1 299.4,112.9 300.7,108.7 302.1,104.5 303.5,100.3" fill="none" stroke="#e0a800" stroke-width="3.2"/>
+  <polyline points="399.8,252.5 398.3,246.1 396.9,239.8 395.7,233.5 394.5,227.2 393.5,220.9 392.6,214.5 391.8,208.2 391.2,201.9 390.7,195.6 390.3,189.3 390.1,183.0 390.0,176.6 390.0,170.3 390.2,164.0 390.5,157.7 390.9,151.4 391.5,145.0 392.2,138.7 393.0,132.4 394.0,126.1 395.0,119.8 396.2,113.5 397.6,107.1 399.0,100.8 400.6,94.5 402.3,88.2 404.1,81.9 406.1,75.5 408.1,69.2 410.3,62.9" fill="none" stroke="#e0a800" stroke-width="3.2"/>
+  <line x1="90" y1="300" x2="290" y2="300" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrRdDim)" marker-end="url(#arrRdDim)"/>
+  <line x1="290" y1="175" x2="290" y2="300" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
+  <foreignObject x="298" y="290.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(c^2/g\)</div></foreignObject>
+  <line x1="90" y1="326" x2="390" y2="326" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrRdDim)" marker-end="url(#arrRdDim)"/>
+  <line x1="390" y1="175" x2="390" y2="326" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
+  <foreignObject x="398" y="316.75" width="100" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(c^2/g + h\)</div></foreignObject>
+  <text x="76" y="169" text-anchor="end" fill="currentColor">轉軸</text>
+  <text x="334.13111231467406" y="26" text-anchor="middle" fill="currentColor">火箭底部</text>
+  <text x="429.058907144937" y="26" text-anchor="middle" fill="currentColor">火箭頂部</text>
+  <text x="478" y="40.0" text-anchor="start" fill="currentColor">同時線</text>
+  <text x="478" y="275.0" text-anchor="start" fill="currentColor">同時線</text>
+  <foreignObject x="240" y="140.75" width="42" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(T_{\text{下}}\)</div></foreignObject>
+  <foreignObject x="418" y="140.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(T_{\text{上}}\)</div></foreignObject>
+</svg>
+</figure>
+
+<p><strong>真實的星球</strong>：地球的 \(g\) 隨高度變小，等加速火箭只能模擬地表附近一小段。整顆星球外面的鐘走速，本書推不出來——要解 Einstein 方程（Schwarzschild 1916），這裡借用結果。離質量 \(M\) 的星球中心 \(r\) 處，靜止的鐘的走速（以無限遠處的鐘為 1）：</p>
+
+$$
+\sqrt{1 - \frac{2GM}{rc^2}}
+$$
+
+<p>\(G\) 是牛頓的重力常數，\(\dfrac{GM}{r^2}\) 是牛頓的 \(g\)。靜止石頭的能量仍是 \(mc^2\) 乘上鐘的走速：</p>
+
+$$
+E = mc^2\sqrt{1 - \frac{2GM}{rc^2}}
+$$
+
+<p>逐項展開（\(\sqrt{1-x} = 1 - \tfrac12 x - \tfrac18 x^2 - \cdots\)）：</p>
+
+$$
+E = mc^2 - \frac{GMm}{r} - \frac{G^2M^2m}{2\,r^2c^2} - \cdots
+$$
+
+<p>第二項是牛頓的位能 \(-\dfrac{GMm}{r}\)，第三項起是牛頓沒有的修正。兩個高度相比：</p>
+
+$$
+\frac{T_{\text{上}}}{T_{\text{下}}}
+= \sqrt{\frac{1 - \dfrac{2GM}{(r+h)\,c^2}}{1 - \dfrac{2GM}{rc^2}}}
+$$
+
+<p>只留 \(h\) 的一次項、再丟掉 \(\dfrac{2GM}{rc^2}\)（地球表面是 \(1.4\times10^{-9}\)），回到 \(1 + \dfrac{GMh}{r^2c^2} = 1 + \dfrac{gh}{c^2}\)。鐘走速在 \(r = \dfrac{2GM}{c^2}\) 處歸零——那是黑洞的邊界。</p>
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrSch" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="80" y1="250" x2="600" y2="250" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrSch)" opacity=".7"/>
+  <line x1="80" y1="250" x2="80" y2="40" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrSch)" opacity=".7"/>
+  <line x1="80" y1="70" x2="600" y2="70" stroke="currentColor" stroke-width="1" stroke-dasharray="5 4" opacity=".5"/>
+  <foreignObject x="40" y="60.75" width="32" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(1\)</div></foreignObject>
+  <polyline points="142.5,250.0 145.6,210.7 148.8,195.7 151.9,185.0 155.0,176.5 158.1,169.5 161.2,163.5 164.4,158.3 167.5,153.8 170.6,149.7 173.8,146.1 176.9,142.8 180.0,139.8 183.1,137.0 186.2,134.5 189.4,132.2 192.5,130.0 195.6,128.0 198.8,126.1 201.9,124.4 205.0,122.7 208.1,121.2 211.2,119.7 214.4,118.4 217.5,117.1 220.6,115.8 223.8,114.7 226.9,113.6 230.0,112.5 233.1,111.5 236.2,110.6 239.4,109.7 242.5,108.8 245.6,108.0 248.8,107.2 251.9,106.4 255.0,105.7 258.1,105.0 261.2,104.3 264.4,103.7 267.5,103.0 270.6,102.4 273.8,101.9 276.9,101.3 280.0,100.8 283.1,100.2 286.2,99.7 289.4,99.2 292.5,98.8 295.6,98.3 298.8,97.9 301.9,97.4 305.0,97.0 308.1,96.6 311.2,96.2 314.4,95.9 317.5,95.5 320.6,95.1 323.7,94.8 326.9,94.4 330.0,94.1 333.1,93.8 336.2,93.5 339.4,93.2 342.5,92.9 345.6,92.6 348.7,92.3 351.9,92.0 355.0,91.8 358.1,91.5 361.2,91.3 364.4,91.0 367.5,90.8 370.6,90.5 373.7,90.3 376.9,90.1 380.0,89.8 383.1,89.6 386.2,89.4 389.4,89.2 392.5,89.0 395.6,88.8 398.7,88.6 401.9,88.4 405.0,88.2 408.1,88.0 411.2,87.9 414.4,87.7 417.5,87.5 420.6,87.3 423.7,87.2 426.9,87.0 430.0,86.9 433.1,86.7 436.2,86.6 439.4,86.4 442.5,86.3 445.6,86.1 448.7,86.0 451.9,85.8 455.0,85.7 458.1,85.5 461.2,85.4 464.4,85.3 467.5,85.2 470.6,85.0 473.7,84.9 476.9,84.8 480.0,84.7 483.1,84.5 486.2,84.4 489.4,84.3 492.5,84.2 495.6,84.1 498.7,84.0 501.9,83.9 505.0,83.8 508.1,83.7 511.2,83.6 514.4,83.5 517.5,83.4 520.6,83.3 523.7,83.2 526.9,83.1 530.0,83.0 533.1,82.9 536.2,82.8 539.4,82.7 542.5,82.6 545.6,82.5 548.7,82.4 551.9,82.3 555.0,82.3 558.1,82.2 561.2,82.1 564.4,82.0 567.5,81.9 570.6,81.9 573.7,81.8 576.9,81.7 580.0,81.6" fill="none" stroke="currentColor" stroke-width="2.4"/>
+  <line x1="167.5" y1="122.6" x2="455.0" y2="66.3" stroke="#e0a800" stroke-width="2"/>
+  <circle cx="267.5" cy="103.0" r="4" fill="#e0a800"/>
+  <line x1="267.5" y1="103.0" x2="267.5" y2="250" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
+  <foreignObject x="247.5" y="262.75" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(r\)</div></foreignObject>
+  <rect x="458" y="34" width="178" height="40" style="fill:var(--bg)"/>
+  <foreignObject x="462" y="38" width="175" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{切線：}1 + \dfrac{gh}{c^2}\)</div></foreignObject>
+  <text x="600" y="108" text-anchor="middle" fill="currentColor">精確</text>
+  <text x="80" y="30" text-anchor="middle" fill="currentColor">鐘的走速</text>
+  <text x="560" y="290" text-anchor="end" fill="currentColor">離星球中心的距離</text>
+  <foreignObject x="102.5" y="257" width="80" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\dfrac{2GM}{c^2}\)</div></foreignObject>
+</svg>
+</figure>
+
+<h3>【能量幾何化的最簡例：同一顆光，不同高度不同能量】</h3>
+
+<p>一顆石頭靜止在高 \(h\) 處，能量 \(mc^2\left(1 + \dfrac{gh}{c^2}\right)\)。放手，落到底部時速度 \(v\)，能量 \(\gamma mc^2\)。能量守恆（人類的假設）：</p>
+
+$$
+\gamma mc^2 = mc^2\left(1 + \frac{gh}{c^2}\right)
+$$
+
+<p>在底部把石頭整個變成光（正負電子相撞就是這樣變成光的），光的能量 \(\gamma mc^2\)。把光射向上端，在上端把光變回一顆靜止的石頭，要花 \(mc^2\)。若光到上端時能量還是 \(\gamma mc^2\)，就白賺 \(mgh\)，再放手、再來一次——永動機。要不白賺，光爬到上端的能量必須剛好是 \(mc^2\)：</p>
+
+$$
+\frac{E_{\text{上}}}{E_{\text{下}}} = \frac{mc^2}{\gamma mc^2} = \frac{1}{1 + \dfrac{gh}{c^2}} = \frac{T_{\text{下}}}{T_{\text{上}}}
+$$
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrCy" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrCyG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="arrCyDim" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto-start-reverse"><path d="M0,0 L4,2 L0,4 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="60" y1="262" x2="620" y2="262" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <line x1="95" y1="215" x2="95" y2="80" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrCyDim)" marker-end="url(#arrCyDim)"/>
+  <foreignObject x="50" y="138.25" width="38" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(h\)</div></foreignObject>
+  <circle cx="180" cy="80" r="11" fill="#3584e4"/>
+  <circle cx="180" cy="215" r="11" fill="#3584e4"/>
+  <line x1="180" y1="96" x2="180" y2="197" stroke="currentColor" stroke-width="2" marker-end="url(#arrCy)"/>
+  <text x="168" y="152" text-anchor="end" fill="currentColor">放手</text>
+  <foreignObject x="85" y="25" width="190" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(mc^2\left(1 + \dfrac{gh}{c^2}\right)\)</div></foreignObject>
+  <foreignObject x="140" y="233.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\gamma mc^2\)</div></foreignObject>
+  <line x1="200" y1="215" x2="400" y2="215" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrCy)" opacity=".8"/>
+  <text x="300" y="207" text-anchor="middle" fill="currentColor">變成光</text>
+  <line x1="420" y1="211" x2="420" y2="86" stroke="#e0a800" stroke-width="3" marker-end="url(#arrCyG)"/>
+  <text x="432" y="152" text-anchor="start" fill="#e0a800">光往上爬</text>
+  <line x1="400" y1="80" x2="200" y2="80" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrCy)" opacity=".8"/>
+  <text x="300" y="72" text-anchor="middle" fill="currentColor">變回石頭</text>
+  <foreignObject x="435" y="205.75" width="200" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(E_{\text{下}}\,\text{（當地）} = \gamma mc^2\)</div></foreignObject>
+  <foreignObject x="435" y="70.75" width="200" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(E_{\text{上}}\,\text{（當地）} = mc^2\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>同一顆光，往上爬，能量變少，比例正好是下端鐘走速比上端鐘走速 \(T_{\text{下}}/T_{\text{上}}\)。反過來讀：用下端的鐘量，上端那顆光的能量＝它在上端當地的能量 \(E_{\text{上}}\) 乘上上端鐘的走速 \(1 + \dfrac{gh}{c^2}\)，等於 \(E_{\text{下}}\)——守恆。上一小節的石頭是同一條規則：當地能量 \(mc^2\)，乘上鐘的走速。能量隨鐘的走速換算，同一個東西換到鐘走得快的地方，用基準鐘看能量就多——這是「能量幾何化」的猜測。</p>
+
+<p>實驗：Pound 與 Rebka 1960 年量的正是這個——Fe-57 原子核發出的光爬 22.5 m，能量少了 \(\dfrac{gh}{c^2} = 2.5\times10^{-15}\)，吻合到 10%；1965 年 Pound 與 Snider 做到 1%。2.2 說上端每秒收到的節拍也少了同樣的比例：光的能量與頻率同比例變化，是否暗示光的能量正比於頻率？</p>
+
+<h3>【動能幾何化的最簡例：斜邊比直角邊】</h3>
+
+<p>1.2 的光鐘：地上基準看光走斜邊，車上基準看光走直角邊，斜邊比直角邊是 \(\dfrac{c}{\sqrt{c^2 - v^2}} = \gamma\)。以地面的鐘為準：車上的鐘走 1 秒，地面過了 \(\gamma\) 秒。1.8 的能量：</p>
+
+$$
+E = \gamma mc^2 = mc^2 \times \frac{\text{斜邊}}{\text{直角邊}}
+$$
+
+<p>動能是多出來的部分：</p>
+
+$$
+E - mc^2 = mc^2\,(\gamma - 1) = mc^2 \times \frac{\text{斜邊} - \text{直角邊}}{\text{直角邊}}
+$$
+
+<p>動能＝自己的鐘比地面的鐘慢了多少，乘上 \(mc^2\)。位能是「所在處的鐘」比基準快多少，動能是「自己的鐘」比所在處的鐘慢多少，都是鐘的比值。一顆在高 \(h\) 處以速度 \(v\) 運動的石頭，兩個比值相乘：</p>
+
+$$
+E = mc^2\left(1 + \frac{gh}{c^2}\right)\gamma
+$$
+
+<figure>
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <line x1="150" y1="230" x2="330" y2="70" stroke="#e0a800" stroke-width="3"/>
+  <line x1="330" y1="230" x2="330" y2="70" stroke="#e0a800" stroke-width="3" stroke-dasharray="7 5"/>
+  <line x1="150" y1="230" x2="330" y2="230" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+  <polyline points="316,230 316,216 330,216" fill="none" stroke="currentColor" stroke-width="1" opacity=".6"/>
+  <foreignObject x="160" y="128.75" width="70" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(c\)</div></foreignObject>
+  <foreignObject x="338" y="140.75" width="110" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\sqrt{c^2 - v^2}\)</div></foreignObject>
+  <foreignObject x="200" y="242.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <text x="240" y="60" text-anchor="middle" fill="#e0a800">斜邊：地上看</text>
+  <text x="338" y="186" text-anchor="start" fill="#e0a800">直角邊：車上看</text>
+  <text x="470" y="58" text-anchor="middle" fill="currentColor">地面的鐘</text>
+  <circle cx="470" cy="105" r="22" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="470" y1="105" x2="484.3" y2="96.8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="470" cy="105" r="1.5" fill="currentColor"/>
+  <foreignObject x="430" y="142.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\gamma\ \text{秒}\)</div></foreignObject>
+  <text x="570" y="58" text-anchor="middle" fill="currentColor">車上的鐘</text>
+  <circle cx="570" cy="105" r="22" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="570" y1="105" x2="580.6" y2="92.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="570" cy="105" r="1.5" fill="currentColor"/>
+  <foreignObject x="530" y="142.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(1\ \text{秒}\)</div></foreignObject>
+  <foreignObject x="410" y="198" width="230" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(E = mc^2\,\dfrac{c}{\sqrt{c^2 - v^2}} = \gamma mc^2\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>實驗：CERN 1977 年儲存環裡的緲子，動量由磁場定出 \(\gamma = 29.3\)，量到的壽命是靜止時的 29.3 倍，吻合到千分之二——自己的鐘慢了 29.3 倍，能量就是靜止時的 29.3 倍。</p>
+
+<h3>【質量幾何化的最簡例：同一支箭的長度】</h3>
+
+<p>1.9：\(E^2 - (pc)^2 = (mc^2)^2\)，對所有基準同一差。畫出來：橫軸 \(pc\)、縱軸 \(E\)，一顆粒子是一支從原點出發的箭。換基準，箭的高（\(E\)）與寬（\(pc\)）都變，箭頭沿雙曲線滑動，\(\text{高}^2 - \text{寬}^2\) 不變——這是時空幾何裡的「長度」：轉動一根尺，長度不變（\((ct)^2 - x^2\) 同一個模樣，見上文等加速火箭的第一步）。</p>
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrEn" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrEnG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+  </defs>
+  <line x1="140" y1="260" x2="140" y2="30" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrEn)" opacity=".7"/>
+  <line x1="140" y1="260" x2="600" y2="260" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrEn)" opacity=".7"/>
+  <foreignObject x="128" y="32.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(E\)</div></foreignObject>
+  <foreignObject x="560" y="268.75" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(pc\)</div></foreignObject>
+  <polyline points="140.0,110.0 145.0,109.9 150.0,109.7 155.0,109.3 160.0,108.7 165.0,107.9 170.0,107.0 175.0,106.0 180.0,104.8 185.0,103.4 190.0,101.9 195.0,100.2 200.0,98.4 205.0,96.5 210.0,94.5 215.0,92.3 220.0,90.0 225.0,87.6 230.0,85.1 235.0,82.4 240.0,79.7 245.0,76.9 250.0,74.0 255.0,71.0 260.0,67.9 265.0,64.7 270.0,61.5 275.0,58.2 280.0,54.8 285.0,51.4 290.0,47.9 295.0,44.3 300.0,40.7 305.0,37.0 310.0,33.3 315.0,29.5 320.0,25.7" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
+  <line x1="140" y1="260" x2="340" y2="60" stroke="#e0a800" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
+  <line x1="140" y1="260" x2="140" y2="110.0" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrEn)"/>
+  <line x1="140" y1="260" x2="252.5" y2="72.5" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrEn)"/>
+  <line x1="140" y1="260" x2="300" y2="100" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrEnG)"/>
+  <line x1="252.5" y1="72.5" x2="252.5" y2="260" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+  <line x1="252.5" y1="72.5" x2="140" y2="72.5" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"/>
+  <foreignObject x="52" y="175.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(mc^2\)</div></foreignObject>
+  <text x="132" y="98" text-anchor="end" fill="currentColor">靜止</text>
+  <text x="262.5" y="90" text-anchor="start" fill="currentColor">運動</text>
+  <foreignObject x="212.5" y="268.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\gamma m v c\)</div></foreignObject>
+  <foreignObject x="52" y="63.25" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(\gamma m c^2\)</div></foreignObject>
+  <foreignObject x="308" y="100.75" width="150" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{光子：}E = pc\)</div></foreignObject>
+  <foreignObject x="340" y="190.75" width="200" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(E^2 - (pc)^2 = (mc^2)^2\)</div></foreignObject>
+  <text x="430" y="235" text-anchor="middle" fill="currentColor" opacity=".8">換基準，箭頭沿虛線滑動</text>
+</svg>
+</figure>
+
+<p>質量＝箭的長度。能量＝箭的高（時間方向的分量），動量＝箭的寬（空間方向的分量），動能＝箭比自己的長度多出的高 \(E - mc^2\)。靜止時箭直立，高就是長 \(mc^2\)。光子 \(m = 0\)：長度為零的箭，貼著 \(E = pc\) 這條線，有高有寬，卻沒有長度——1.9 說它被迫永遠以光速跑。質量是不是根本就是一個「長度」？——這是「質量幾何化」的猜測。</p>
+
+<h3>【質量幾何化的最簡例：靜止的粒子是一個鐘】</h3>
+
+<p>de Broglie 1924 年的猜測：一顆靜止的粒子裡有一個以頻率 \(f\) 振動的東西，振動的能量與靜止能量是同一份：</p>
+
+$$
+\text{Planck 常數} \times f = mc^2
+\qquad\Longrightarrow\qquad
+m = \frac{\text{Planck 常數}}{c^2}\, f
+$$
+
+<p>質量＝這個鐘走的快慢，乘上常數。電子的 \(f\) 是 \(1.2\times10^{20}\) Hz，銫原子是 \(3.0\times10^{25}\) Hz。</p>
+
+<figure>
+<svg viewBox="0 0 640 220" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrCk" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="arrCkG" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="arrCkDim" markerUnits="userSpaceOnUse" markerWidth="4" markerHeight="4" refX="4" refY="2" orient="auto-start-reverse"><path d="M0,0 L4,2 L0,4 z" fill="currentColor"/></marker>
+  </defs>
+  <circle cx="150" cy="105" r="42" fill="none" stroke="currentColor" stroke-width="1.6"/>
+  <line x1="188.0" y1="105.0" x2="192.0" y2="105.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="182.9" y1="124.0" x2="186.4" y2="126.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="169.0" y1="137.9" x2="171.0" y2="141.4" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="150.0" y1="143.0" x2="150.0" y2="147.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="131.0" y1="137.9" x2="129.0" y2="141.4" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="117.1" y1="124.0" x2="113.6" y2="126.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="112.0" y1="105.0" x2="108.0" y2="105.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="117.1" y1="86.0" x2="113.6" y2="84.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="131.0" y1="72.1" x2="129.0" y2="68.6" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="150.0" y1="67.0" x2="150.0" y2="63.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="169.0" y1="72.1" x2="171.0" y2="68.6" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="182.9" y1="86.0" x2="186.4" y2="84.0" stroke="currentColor" stroke-width="1.2"/>
+  <line x1="150" y1="105" x2="170.6" y2="80.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="150" cy="105" r="9" fill="#3584e4"/>
+  <path d="M99.3,86.5 A54,54 0 0 1 168.5,54.3" fill="none" stroke="#e0a800" stroke-width="2" marker-end="url(#arrCkG)"/>
+  <foreignObject x="208" y="55.75" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(f\)</div></foreignObject>
+  <text x="150" y="190" text-anchor="middle" fill="currentColor">靜止的粒子＝一個鐘</text>
+  <line x1="290" y1="105" x2="610" y2="105" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrCk)" opacity=".7"/>
+  <foreignObject x="598" y="113.75" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(t\)</div></foreignObject>
+  <polyline points="290.0,105.0 293.0,96.8 296.0,89.1 299.0,82.3 302.0,76.7 305.0,72.7 308.0,70.4 311.0,70.1 314.0,71.7 317.0,75.2 320.0,80.3 323.0,86.7 326.0,94.2 329.0,102.3 332.0,110.5 335.0,118.4 338.0,125.6 341.0,131.6 344.0,136.2 347.0,139.0 350.0,140.0 353.0,139.0 356.0,136.2 359.0,131.6 362.0,125.6 365.0,118.4 368.0,110.5 371.0,102.3 374.0,94.2 377.0,86.7 380.0,80.3 383.0,75.2 386.0,71.7 389.0,70.1 392.0,70.4 395.0,72.7 398.0,76.7 401.0,82.3 404.0,89.1 407.0,96.8 410.0,105.0 413.0,113.2 416.0,120.9 419.0,127.7 422.0,133.3 425.0,137.3 428.0,139.6 431.0,139.9 434.0,138.3 437.0,134.8 440.0,129.7 443.0,123.3 446.0,115.8 449.0,107.7 452.0,99.5 455.0,91.6 458.0,84.4 461.0,78.4 464.0,73.8 467.0,71.0 470.0,70.0 473.0,71.0 476.0,73.8 479.0,78.4 482.0,84.4 485.0,91.6 488.0,99.5 491.0,107.7 494.0,115.8 497.0,123.3 500.0,129.7 503.0,134.8 506.0,138.3 509.0,139.9 512.0,139.6 515.0,137.3 518.0,133.3 521.0,127.7 524.0,120.9 527.0,113.2 530.0,105.0 533.0,96.8 536.0,89.1 539.0,82.3 542.0,76.7 545.0,72.7 548.0,70.4 551.0,70.1 554.0,71.7 557.0,75.2 560.0,80.3 563.0,86.7 566.0,94.2 569.0,102.3 572.0,110.5 575.0,118.4 578.0,125.6 581.0,131.6 584.0,136.2 587.0,139.0 590.0,140.0" fill="none" stroke="#e0a800" stroke-width="2.2"/>
+  <line x1="310" y1="62" x2="390" y2="62" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrCkDim)" marker-end="url(#arrCkDim)"/>
+  <foreignObject x="310" y="17" width="80" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(\dfrac{1}{f}\)</div></foreignObject>
+  <foreignObject x="330" y="161" width="300" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(m = \dfrac{\text{Planck 常數}}{c^2}\, f\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>實驗：2013 年 Müller 團隊做出一個鐘，節拍直接來自銫原子的這個 \(f\)——用質量報時；同一套裝置反過來量微觀質量，精度 \(4\times10^{-9}\)。2019 年起，公斤不再是巴黎那塊金屬，而是由 Planck 常數（定為 \(6.62607015\times10^{-34}\) J·s）與 \(c\)、秒定義；SI 手冊把定義反解成 1 kg ＝ \(1.4755\times10^{40}\) × Planck 常數 × 銫原子鐘頻率 ÷ \(c^2\)——質量的定義就是頻率乘上常數。質量是不是根本就是一個頻率？——這也是「質量幾何化」的猜測。</p>
+
+<h3>【質量幾何化的最簡例：質量是時間地形的坡度】</h3>
+
+<p>上面說鐘的走速每升高一公尺多 \(\dfrac{g}{c^2}\)；地表 \(\dfrac{g}{c^2} = 1.1\times10^{-16}\) 每公尺。反過來：不丟石頭、不用秤，量兩個高度的鐘差就得到 \(g\)：</p>
+
+$$
+g = c^2 \times \text{坡度}
+$$
+
+<p>牛頓：\(g = \dfrac{GM}{r^2}\)，所以</p>
+
+$$
+M = \frac{c^2 r^2}{G} \times \text{坡度}
+$$
+
+<p>地球：坡度 \(1.1\times10^{-16}\) 每公尺、\(r = 6371\) km，得 \(M = 6.0\times10^{24}\) kg——用兩個鐘秤地球。質量在這裡不是「多少東西」，而是「周圍時間地形有多陡」。質量如何造出這個地形是 Einstein 方程的內容，本書推不出來，這裡只借了牛頓的 \(\dfrac{1}{r^2}\)。</p>
+
+<figure>
+<svg viewBox="0 0 640 280" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrSl" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0,0 L6,3 L0,6 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="100" y1="230" x2="600" y2="230" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrSl)" opacity=".7"/>
+  <line x1="100" y1="230" x2="100" y2="40" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrSl)" opacity=".7"/>
+  <line x1="100" y1="200.0" x2="540" y2="90.0" stroke="#e0a800" stroke-width="2.4"/>
+  <line x1="95" y1="200" x2="105" y2="200" stroke="currentColor" stroke-width="1.5"/>
+  <foreignObject x="56" y="190.75" width="36" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(1\)</div></foreignObject>
+  <polyline points="300,150.0 380,150.0 380,130.0" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".7"/>
+  <text x="340" y="168.0" text-anchor="middle" fill="currentColor">1 m</text>
+  <foreignObject x="386" y="134" width="60" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\dfrac{g}{c^2}\)</div></foreignObject>
+  <circle cx="180" cy="164.0" r="13" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="180" y1="164.0" x2="188.4" y2="159.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="180" cy="164.0" r="1.5" fill="currentColor"/>
+  <circle cx="460" cy="94.0" r="13" fill="none" stroke="currentColor" stroke-width="1.8"/>
+  <line x1="460" y1="94.0" x2="468.4" y2="89.1" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+  <circle cx="460" cy="94.0" r="1.5" fill="currentColor"/>
+  <text x="600" y="252" text-anchor="end" fill="currentColor">高度</text>
+  <text x="100" y="30" text-anchor="middle" fill="currentColor">鐘的走速</text>
+  <foreignObject x="400" y="178" width="235" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(M = \dfrac{c^2 r^2}{G}\times\text{坡度}\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>實驗：2010 年 NIST 把兩個離子鐘中的一個抬高 33 cm，就量到坡度；2020 年東京晴空塔，兩台可搬運的光晶格鐘一台在地面、一台在 450 m 觀景台，量到 \(4.9\times10^{-14}\) 的鐘差，與 \(\dfrac{gh}{c^2}\) 吻合到 \(10^{-5}\)；用鐘量高度已成為大地測量的新方法。</p>
+
 
 <h3>【質量幾何化的最簡例：看不見方向上的動量】</h3>
 
