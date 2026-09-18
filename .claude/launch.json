@@ -3,8 +3,8 @@
   "configurations": [
     {
       "name": "physics-book",
-      "runtimeExecutable": "sh",
-      "runtimeArgs": ["-c", "cd /private/tmp/claude-501/-Users-jerming-Downloads/09882c84-876a-44fa-a5a7-36c9c8f23ed3/scratchpad/physics-book-preview && exec python3 -m http.server 8931"],
+      "runtimeExecutable": "ruby",
+      "runtimeArgs": ["-run", "-e", "httpd", "/Users/jerming/GitHub/physics", "-p", "8931"],
       "port": 8931
     }
   ]
