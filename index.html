@@ -652,51 +652,62 @@ $$
     </marker>
   </defs>
   <g>
-    <circle cx="130" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="130" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="130" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="130" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="130" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="0s" repeatCount="indefinite"/></circle>
+    <circle cx="130" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="130" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
+    <circle cx="130" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="3s" repeatCount="indefinite"/></circle>
     <circle cx="130" cy="130" r="5" fill="#e0a800"/>
     <circle cx="245" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
     <line x1="245" y1="117" x2="245" y2="140" stroke="currentColor" stroke-width="1.6"/>
     <line x1="238" y1="128" x2="252" y2="128" stroke="currentColor" stroke-width="1.6"/>
     <line x1="245" y1="140" x2="239" y2="152" stroke="currentColor" stroke-width="1.6"/>
     <line x1="245" y1="140" x2="251" y2="152" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="180" y1="130" x2="205" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
-    <foreignObject x="122.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda\)</div></foreignObject>
+    <g><animateTransform attributeName="transform" type="translate" from="0 0" to="25 0" dur="1s" repeatCount="indefinite"/>
+      <line x1="155" y1="130" x2="180" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
+      <foreignObject x="97.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda\)</div></foreignObject>
+    </g>
     <text x="150" y="255" text-anchor="middle" fill="currentColor">波源、觀察者都靜止</text>
   </g>
   <g>
-    <circle cx="380" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="390" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="400" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="410" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="420" cy="130" r="5" fill="#e0a800"/>
-    <line x1="425" y1="14" x2="460" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
-    <foreignObject x="275" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:right;color:currentColor">\(v_s\)</div></foreignObject>
+    <circle cx="380" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" values="0;0;125" keyTimes="0;0.000;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.001;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="390" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" values="0;0;100" keyTimes="0;0.200;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.200;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="400" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" values="0;0;75" keyTimes="0;0.400;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.400;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="410" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" values="0;0;50" keyTimes="0;0.600;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.600;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="420" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" values="0;0;25" keyTimes="0;0.800;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0.8;0.8;0" keyTimes="0;0.800;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <circle cx="380" cy="130" r="5" fill="#e0a800"><animateTransform attributeName="transform" type="translate" from="0 0" to="50 0" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.04;0.9;1" dur="5s" repeatCount="indefinite"/></circle>
+    <g><animateTransform attributeName="transform" type="translate" from="0 0" to="50 0" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.04;0.9;1" dur="5s" repeatCount="indefinite"/>
+      <line x1="373" y1="14" x2="408" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
+      <foreignObject x="229" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:right;color:currentColor">\(v_s\)</div></foreignObject>
+    </g>
     <circle cx="495" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
     <line x1="495" y1="117" x2="495" y2="140" stroke="currentColor" stroke-width="1.6"/>
     <line x1="488" y1="128" x2="502" y2="128" stroke="currentColor" stroke-width="1.6"/>
     <line x1="495" y1="140" x2="489" y2="152" stroke="currentColor" stroke-width="1.6"/>
     <line x1="495" y1="140" x2="501" y2="152" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="435" y1="130" x2="450" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
-    <rect x="433" y="103" width="19" height="17" style="fill:var(--bg)"/>
-    <foreignObject x="372.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda'\)</div></foreignObject>
+    <g><animateTransform attributeName="transform" type="translate" values="-45 0;-45 0;-20 0;-35 0;-10 0;-25 0;0 0;-15 0;10 0" keyTimes="0;0.2;0.4;0.4;0.6;0.6;0.8;0.8;1" dur="5s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;0;1;1;0" keyTimes="0;0.2;0.21;0.9;1" dur="5s" repeatCount="indefinite"/>
+      <line x1="435" y1="130" x2="450" y2="130" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrDim)" marker-end="url(#arrDim)"/>
+      <rect x="433" y="103" width="19" height="17" style="fill:var(--bg)"/>
+      <foreignObject x="372.5" y="102.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:center;color:currentColor">\(\lambda'\)</div></foreignObject>
+    </g>
     <text x="400" y="255" text-anchor="middle" fill="currentColor">波源朝觀察者移動，前方波前被壓縮</text>
   </g>
   <g>
-    <circle cx="640" cy="130" r="25" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="640" cy="130" r="50" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="640" cy="130" r="75" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
-    <circle cx="640" cy="130" r="100" fill="none" stroke="currentColor" stroke-width="1.3" opacity=".8"/>
+    <circle cx="640" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="0s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="1s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="1s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="2s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="2s" repeatCount="indefinite"/></circle>
+    <circle cx="640" cy="130" r="0" fill="none" stroke="currentColor" stroke-width="1.3"><animate attributeName="r" from="0" to="100" dur="4s" begin="3s" repeatCount="indefinite"/><animate attributeName="opacity" values="0.8;0.8;0" keyTimes="0;0.7;1" dur="4s" begin="3s" repeatCount="indefinite"/></circle>
     <circle cx="640" cy="130" r="5" fill="#e0a800"/>
-    <circle cx="755" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="755" y1="117" x2="755" y2="140" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="748" y1="128" x2="762" y2="128" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="755" y1="140" x2="749" y2="152" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="755" y1="140" x2="761" y2="152" stroke="currentColor" stroke-width="1.6"/>
-    <line x1="775" y1="14" x2="745" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
-    <foreignObject x="779" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(v_o\)</div></foreignObject>
+    <g>
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="-40 0" dur="4s" repeatCount="indefinite"/>
+      <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.12;0.88;1" dur="4s" repeatCount="indefinite"/>
+      <circle cx="755" cy="112" r="5" fill="none" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="755" y1="117" x2="755" y2="140" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="748" y1="128" x2="762" y2="128" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="755" y1="140" x2="749" y2="152" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="755" y1="140" x2="761" y2="152" stroke="currentColor" stroke-width="1.6"/>
+      <line x1="759" y1="14" x2="729" y2="14" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrD)" opacity=".7"/>
+      <foreignObject x="763" y="3.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(v_o\)</div></foreignObject>
+    </g>
     <text x="660" y="255" text-anchor="middle" fill="currentColor">觀察者朝波源移動，波前間距不變</text>
   </g>
 </svg>
