@@ -69,7 +69,7 @@
 
     // 三條軸
     var xTicks = []; for (var i = 0; i < pages; i++) xTicks.push(new THREE.Vector3(i * spacing, 0, 0));
-    var xTail = opts.wheel ? 0.3 : 0.9;
+    var xTail = opts.beth ? 0.3 : 0.9;
     axis(scene, new THREE.Vector3(-0.8, 0, 0), new THREE.Vector3(xEnd + xTail, 0, 0), xTicks, new THREE.Vector3(0, 0, 1), 0.07);
     var yT = [], zT = []; [-1, 1].forEach(function (s) { yT.push(new THREE.Vector3(0, s * r, 0)); zT.push(new THREE.Vector3(0, 0, s * r)); });
     axis(scene, new THREE.Vector3(0, -r * 1.9, 0), new THREE.Vector3(0, r * 1.9, 0), yT, new THREE.Vector3(1, 0, 0), 0.06);
@@ -86,15 +86,20 @@
       if (opts.numbers) { var sp = labelSprite(String(n + 1), '#bdbdbd', 0.32); sp.position.set(n * spacing, pageSize / 2 + 0.2, 0); scene.add(sp); }
     }
 
-    // 相位箭頭
-    var N = opts.arrows, dx = xEnd / (N - 1);
+    // 相位箭頭（波包模式：格點從視野左外延伸到右外，長度乘上高斯包絡）
+    var pk = opts.packet || null;
+    var gridA = 0, gridB = xEnd, pkA = 0, pkB = 0;
+    if (pk) { pkA = -pk.outL; pkB = xEnd + pk.outR; gridA = pkA - 3 * pk.sigma; gridB = pkB + 3 * pk.sigma; }
+    var N = pk ? Math.round((gridB - gridA) / pk.dx) + 1 : opts.arrows;
+    var dx = (gridB - gridA) / (N - 1);
     var arrows = [], xs = [];
     var hi = opts.highlight;
     for (var j = 0; j < N; j++) {
       var a = arrow(r, j === hi ? BLUE_HI : BLUE, j === hi ? 1 : 0.85, 0.02, 0.06, 0.24);
-      a.position.x = j * dx; xs.push(j * dx);
+      a.position.x = gridA + j * dx; xs.push(gridA + j * dx);
       scene.add(a); arrows.push(a);
     }
+    if (pk) omega = k * pk.speed;                           // 相速度＝群速度：整段螺旋剛性前進
     // 箭尖連線（螺旋）
     var tipPos = new Float32Array(N * 3);
     var tipGeo = new THREE.BufferGeometry(); tipGeo.setAttribute('position', new THREE.BufferAttribute(tipPos, 3));
@@ -108,27 +113,30 @@
       scene.add(vArrow); scene.add(aArrow);
     }
 
-    // 輪子
-    var wheel = null;
-    if (opts.wheel) {
-      wheel = new THREE.Group();
-      var wmat = new THREE.MeshBasicMaterial({ color: GRAY });
-      var ring = new THREE.Mesh(new THREE.TorusGeometry(r * 1.6, 0.045, 10, 64), wmat);
-      ring.rotation.y = Math.PI / 2; wheel.add(ring);
-      for (var s = 0; s < 6; s++) {
-        var spoke = new THREE.Mesh(new THREE.CylinderGeometry(0.022, 0.022, r * 3.2, 8), wmat);
-        spoke.rotation.x = s * Math.PI / 6; wheel.add(spoke);
-      }
-      wheel.add(new THREE.Mesh(new THREE.SphereGeometry(0.08, 16, 12), wmat));
-      wheel.position.x = xEnd + 0.3;
-      scene.add(wheel);
+    // Beth 1936：細絲吊著的波片（細絲沿光的前進方向，扭轉軸＝光軸）
+    var plate = null, plateX = xEnd + 0.3, fiberEnd = xEnd + 1.5;
+    if (opts.beth) {
+      plate = new THREE.Group();
+      var disk = new THREE.Mesh(new THREE.CylinderGeometry(r * 1.5, r * 1.5, 0.04, 48),
+        new THREE.MeshBasicMaterial({ color: 0xcfd8dc, transparent: true, opacity: 0.28, depthWrite: false }));
+      disk.rotation.z = Math.PI / 2; plate.add(disk);
+      var rim = new THREE.Mesh(new THREE.TorusGeometry(r * 1.5, 0.02, 8, 64), new THREE.MeshBasicMaterial({ color: GRAY }));
+      rim.rotation.y = Math.PI / 2; plate.add(rim);
+      var stripe = new THREE.Mesh(new THREE.BoxGeometry(0.05, r * 2.9, 0.035), new THREE.MeshBasicMaterial({ color: GRAY }));
+      plate.add(stripe);                                   // 一條直徑，看得出扭轉
+      plate.position.x = plateX;
+      scene.add(plate);
+      scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(plateX, 0, 0), new THREE.Vector3(fiberEnd, 0, 0)]),
+        new THREE.LineBasicMaterial({ color: 0xe8e8e8 })));                     // 細絲
+      var support = new THREE.Mesh(new THREE.BoxGeometry(0.08, 0.5, 0.5), new THREE.MeshBasicMaterial({ color: GRAY }));
+      support.position.x = fiberEnd + 0.04; scene.add(support);                 // 固定端
     }
 
     var camMain = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
     var camEnd = new THREE.PerspectiveCamera(30, 1, 0.1, 100);
     camEnd.position.set(-4.2, r * 0.9, r * 1.3); camEnd.lookAt(xEnd * 0.35, 0, 0);
-    var cx = (opts.wheel ? xEnd + 0.3 : xEnd) / 2;
-    var dist = (opts.wheel ? xEnd + 0.3 : xEnd) * 0.6 + 1.9;
+    var cx = (opts.beth ? fiberEnd : xEnd) / 2;
+    var dist = (opts.beth ? fiberEnd : xEnd) * 0.6 + 1.9;
     var split = opts.endView ? 0.64 : 1;
 
     var W = 640, H = opts.height;
@@ -144,12 +152,23 @@
     var tmp = new THREE.Vector3(), dirV = new THREE.Vector3(), dirA = new THREE.Vector3(), up = new THREE.Vector3(0, 1, 0);
     var frames = 0, start = null;
     function update(time) {
+      var xc = pk ? pkA + ((pk.speed * time) % (pkB - pkA)) : 0;
+      var jMin = N, jMax = -1;
       for (var j = 0; j < N; j++) {
         var phi = k * xs[j] - omega * time;
+        var e = 1;
+        if (pk) {
+          var d = (xs[j] - xc) / pk.sigma;
+          e = Math.exp(-0.5 * d * d);
+          arrows[j].visible = e > 0.04;
+          arrows[j].scale.setScalar(Math.max(e, 0.001));
+          if (e > 0.04) { if (j < jMin) jMin = j; jMax = j; }
+        }
         arrows[j].rotation.x = phi;
-        tipPos[3 * j] = xs[j]; tipPos[3 * j + 1] = r * Math.cos(phi); tipPos[3 * j + 2] = r * Math.sin(phi);
+        tipPos[3 * j] = xs[j]; tipPos[3 * j + 1] = r * e * Math.cos(phi); tipPos[3 * j + 2] = r * e * Math.sin(phi);
       }
       tipGeo.attributes.position.needsUpdate = true;
+      if (pk) tipGeo.setDrawRange(jMax >= jMin ? jMin : 0, jMax >= jMin ? jMax - jMin + 1 : 0);
       if (vArrow) {
         var ph = k * xs[hi] - omega * time;
         tmp.set(xs[hi], r * Math.cos(ph), r * Math.sin(ph));
@@ -158,7 +177,7 @@
         vArrow.position.copy(tmp); vArrow.quaternion.setFromUnitVectors(up, dirV);
         aArrow.position.copy(tmp); aArrow.quaternion.setFromUnitVectors(up, dirA);
       }
-      if (wheel) wheel.rotation.x = k * (xEnd + 0.3) - omega * time;
+      if (plate) plate.rotation.x = 0.35 * (1 - Math.cos(2 * Math.PI * time / 4));   // 固定扭力下的扭擺：在 0 與最大扭角之間來回
 
       var az = -0.85 + 0.3 * Math.sin(time * 0.18);
       camMain.position.set(cx + dist * Math.sin(az), 1.6 + 0.3 * Math.sin(time * 0.12), dist * Math.cos(az));
@@ -190,11 +209,128 @@
     return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
   }
 
+
+  // 多字標籤（寬度自動）
+  function textSprite(text, cssColor, height) {
+    var fs = 56, pad = 12;
+    var c = document.createElement('canvas'), g = c.getContext('2d');
+    g.font = '600 ' + fs + 'px "Noto Sans TC", sans-serif';
+    var w = Math.ceil(g.measureText(text).width) + pad * 2;
+    c.width = w; c.height = fs + pad * 2;
+    g = c.getContext('2d');
+    g.font = '600 ' + fs + 'px "Noto Sans TC", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.fillStyle = cssColor; g.fillText(text, w / 2, c.height / 2 + 2);
+    var tex = new THREE.CanvasTexture(c); tex.minFilter = THREE.LinearFilter;
+    var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
+    sp.scale.set(height * w / c.height, height, 1);
+    return sp;
+  }
+
+  // 2.4：從側面看螺旋＝簡諧運動（3D 螺旋投影到牆上）
+  function setupShm(fig) {
+    var canvas = document.createElement('canvas'), renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(BG, 1);
+    canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
+    var svg = fig.querySelector('svg');
+    fig.insertBefore(canvas, fig.firstChild);
+    if (svg) svg.style.display = 'none';
+
+    var scene = new THREE.Scene();
+    var R = 0.7, WZ = -1.5, v = 0.7, T = 3, om = 2 * Math.PI / T, S = 6, NS = 181, L = v * S;
+    var MX = -0.6, CEIL = R + 0.7, BX = L + 0.7, BASE = -R - 0.3, BH = 1.3;
+    renderer.localClippingEnabled = true;
+
+    // 三條軸
+    axis(scene, new THREE.Vector3(-0.4, 0, 0), new THREE.Vector3(L + 0.4, 0, 0), [], new THREE.Vector3(0, 0, 1), 0.06);
+    axis(scene, new THREE.Vector3(0, -R * 1.5, 0), new THREE.Vector3(0, R * 1.5, 0), [new THREE.Vector3(0, R, 0), new THREE.Vector3(0, -R, 0)], new THREE.Vector3(1, 0, 0), 0.06);
+    axis(scene, new THREE.Vector3(0, 0, WZ + 0.1), new THREE.Vector3(0, 0, R * 1.5), [new THREE.Vector3(0, 0, R), new THREE.Vector3(0, 0, -R)], new THREE.Vector3(1, 0, 0), 0.06);
+
+    // 牆
+    var x0 = MX - 0.55, x1 = L + 0.5, y0 = BASE - 0.45, y1 = CEIL + 0.3;
+    var wallGeo = new THREE.PlaneGeometry(x1 - x0, y1 - y0);
+    var wall = new THREE.Mesh(wallGeo, new THREE.MeshBasicMaterial({ color: GRAY, transparent: true, opacity: 0.05, side: THREE.DoubleSide, depthWrite: false }));
+    wall.position.set((x0 + x1) / 2, (y0 + y1) / 2, WZ - 0.01); scene.add(wall);
+    var wallEdge = new THREE.LineSegments(new THREE.EdgesGeometry(wallGeo), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.3 }));
+    wallEdge.position.copy(wall.position); scene.add(wallEdge);
+    // 牆上的時間軸（影子的中線）
+    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, WZ), new THREE.Vector3(L, 0, WZ)]),
+      new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.35 })));
+
+    // 旋轉的箭頭與它尖端畫出的螺旋
+    var arr = arrow(R, BLUE, 1, 0.025, 0.07, 0.26); scene.add(arr);
+    function dynLine(n, mat) {
+      var pos = new Float32Array(n * 3), geo = new THREE.BufferGeometry();
+      geo.setAttribute('position', new THREE.BufferAttribute(pos, 3));
+      var line = new THREE.Line(geo, mat); scene.add(line);
+      return { pos: pos, geo: geo, line: line };
+    }
+    var hPts = [];
+    for (var i = 0; i < NS; i++) { var s0 = S * i / (NS - 1); hPts.push(new THREE.Vector3(v * s0, R * Math.cos(-om * s0), R * Math.sin(-om * s0))); }
+    var helixMesh = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(hPts), 360, 0.022, 8, false),
+      new THREE.MeshBasicMaterial({ color: BLUE, transparent: true, opacity: 0.9 }));
+    scene.add(helixMesh);
+    // 牆上的影子：一條向 +x 流動的正弦管，只顯示 0 ≤ x ≤ L
+    var lam = v * T, sPts = [];
+    for (var i2 = 0; i2 <= 240; i2++) { var xx = -lam + (L + lam) * i2 / 240; sPts.push(new THREE.Vector3(xx, R * Math.cos(om * xx / v), WZ + 0.01)); }
+    var shadowMesh = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(sPts), 480, 0.02, 6, false),
+      new THREE.MeshBasicMaterial({ color: GOLD, clippingPlanes: [new THREE.Plane(new THREE.Vector3(1, 0, 0), 0), new THREE.Plane(new THREE.Vector3(-1, 0, 0), L)] }));
+    scene.add(shadowMesh);
+    var dropLine = dynLine(2, new THREE.LineDashedMaterial({ color: 0xdddddd, dashSize: 0.06, gapSize: 0.05, transparent: true, opacity: 0.7 }));
+    var toMass = dynLine(2, new THREE.LineDashedMaterial({ color: 0xdddddd, dashSize: 0.06, gapSize: 0.05, transparent: true, opacity: 0.7 }));
+
+    // 牆上的彈簧與質量
+    var ceilPts = [new THREE.Vector3(MX - 0.28, CEIL, WZ), new THREE.Vector3(MX + 0.28, CEIL, WZ)];
+    for (var h = 0; h < 6; h++) { ceilPts.push(new THREE.Vector3(MX - 0.25 + h * 0.1, CEIL, WZ), new THREE.Vector3(MX - 0.31 + h * 0.1, CEIL + 0.08, WZ)); }
+    scene.add(new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(ceilPts), new THREE.LineBasicMaterial({ color: GRAY })));
+    var NSP = 16, spring = dynLine(NSP, new THREE.LineBasicMaterial({ color: 0xe8e8e8 }));
+    var mass = new THREE.Mesh(new THREE.BoxGeometry(0.24, 0.24, 0.06), new THREE.MeshBasicMaterial({ color: GOLD }));
+    scene.add(mass);
+
+    var sl = textSprite('彈簧', '#e4e2dd', 0.2); sl.position.set(MX, BASE - 0.2, WZ); scene.add(sl);
+    var wl = textSprite('簡諧運動', '#e0a800', 0.2); wl.position.set(L / 2, BASE - 0.2, WZ); scene.add(wl);
+
+    var cam = new THREE.PerspectiveCamera(34, 2, 0.1, 100);
+    var cx = (x0 + x1) / 2, zc = WZ / 2, dist = 6.1;
+    var Wd = 640, Hd = 300;
+    function resize() { Wd = Math.min(fig.clientWidth || 640, 640); Hd = Math.round(Wd * 300 / 640); renderer.setSize(Wd, Hd, false); cam.aspect = Wd / Hd; cam.updateProjectionMatrix(); }
+    resize(); window.addEventListener('resize', resize);
+    var visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(canvas);
+
+    var frames = 0, start = null;
+    function update(t) {
+      var th = om * t, y = R * Math.cos(th);
+      arr.rotation.x = th;
+      helixMesh.rotation.x = th;
+      shadowMesh.position.x = (v * t) % lam;
+      dropLine.pos.set([0, y, R * Math.sin(th), 0, y, WZ], 0); dropLine.geo.attributes.position.needsUpdate = true; dropLine.line.computeLineDistances();
+      toMass.pos.set([0, y, WZ, MX + 0.12, y, WZ], 0); toMass.geo.attributes.position.needsUpdate = true; toMass.line.computeLineDistances();
+      var top = CEIL, bot = y + 0.12, len = bot - top;
+      spring.pos.set([MX, top, WZ, MX, top + len * 0.08, WZ], 0);
+      for (var k2 = 1; k2 <= NSP - 4; k2++) spring.pos.set([MX + (k2 % 2 ? 0.09 : -0.09), top + len * (0.08 + 0.84 * (k2 - 0.5) / (NSP - 4)), WZ], 3 * (k2 + 1));
+      spring.pos.set([MX, top + len * 0.92, WZ], 3 * (NSP - 2)); spring.pos.set([MX, bot, WZ], 3 * (NSP - 1));
+      spring.geo.attributes.position.needsUpdate = true;
+      mass.position.set(MX, y, WZ);
+      var az = -0.38 + 0.08 * Math.sin(t * 0.15);
+      cam.position.set(cx - dist * Math.sin(az), 1.9 + 0.12 * Math.sin(t * 0.1), zc + dist * Math.cos(az));
+      cam.lookAt(cx, 0.1, zc);
+      renderer.render(scene, cam);
+      frames++;
+    }
+    function frame(now) { requestAnimationFrame(frame); if (!visible || document.hidden) return; if (start === null) start = now; update((now - start) / 1000); }
+    requestAnimationFrame(frame);
+    return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
+  }
+
   function init() {
     var a = document.getElementById('helix3d-a'), b = document.getElementById('helix3d-b');
     window.__helix3d = {};
-    if (a) window.__helix3d.a = setup(a, { height: 320, pages: 9, spacing: 0.7, radius: 0.7, arrows: 37, highlight: 15, numbers: true, tipArrows: true, endView: true, turnSeconds: 2.4 });
-    if (b) window.__helix3d.b = setup(b, { height: 250, pages: 7, spacing: 0.7, radius: 0.55, arrows: 29, highlight: -1, numbers: false, tipArrows: false, endView: false, wheel: true, turnSeconds: 2.4 });
+    var shm = document.getElementById('shm3d');
+    if (shm) window.__helix3d.shm = setupShm(shm);
+    if (a) window.__helix3d.a = setup(a, { height: 320, pages: 9, spacing: 0.7, radius: 0.7, highlight: -1, numbers: true, tipArrows: false, endView: false, packet: { sigma: 0.8, speed: 1.6, outL: 4.2, outR: 6.4, dx: 0.156 } });
+    if (b) window.__helix3d.b = setup(b, { height: 250, pages: 7, spacing: 0.7, radius: 0.55, arrows: 29, highlight: -1, numbers: false, tipArrows: false, endView: false, beth: true, turnSeconds: 2.4 });
   }
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', init); else init();
 })();
