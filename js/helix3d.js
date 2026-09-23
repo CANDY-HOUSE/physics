@@ -324,11 +324,99 @@
     return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
   }
 
+
+  // 2.5：螺旋繞成甜甜圈的駐波（兩道反向繞行的螺旋疊加）
+  function setupTorus(fig) {
+    var canvas = document.createElement('canvas'), renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(BG, 1);
+    canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
+    fig.insertBefore(canvas, fig.firstChild);
+
+    var scene = new THREE.Scene();
+    var RM = 1.7, A = 0.55, NW = 5, T = 2.4, om = 2 * Math.PI / T, NA = 80, NK = 400;
+    var up = new THREE.Vector3(0, 1, 0);
+
+    // 淡淡的甜甜圈表面與中心圓
+    var torusGeo = new THREE.TorusGeometry(RM, A, 24, 120);
+    var torus = new THREE.Mesh(torusGeo, new THREE.MeshBasicMaterial({ color: GRAY, transparent: true, opacity: 0.05, side: THREE.DoubleSide, depthWrite: false }));
+    torus.rotation.x = Math.PI / 2; scene.add(torus);
+    var wire = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.TorusGeometry(RM, A, 10, 60)), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.08 }));
+    wire.rotation.x = Math.PI / 2; scene.add(wire);
+    var ringPts = [];
+    for (var i = 0; i <= 180; i++) { var q = 2 * Math.PI * i / 180; ringPts.push(new THREE.Vector3(RM * Math.cos(q), 0, RM * Math.sin(q))); }
+    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ringPts), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.5 })));
+
+    // 兩道反向繞行的螺旋（形狀固定，整條繞 y 軸轉 ±ωt/NW）
+    function knot(sign, color) {
+      var pts = [];
+      for (var i = 0; i <= NK; i++) {
+        var th = 2 * Math.PI * i / NK, ph = sign * NW * th;
+        var rr = RM + A * Math.cos(ph);
+        pts.push(new THREE.Vector3(rr * Math.cos(th), A * Math.sin(ph), rr * Math.sin(th)));
+      }
+      var m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 800, 0.016, 6, true),
+        new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.55 }));
+      scene.add(m); return m;
+    }
+    var k1 = knot(1, BLUE), k2 = knot(-1, GOLD);
+
+    // 駐波：兩道螺旋的平均。每一處的箭頭一起轉（相位＝能量），長度 |cos(NW θ)| 固定，節點不動
+    var arrows = [], thetas = [];
+    for (var j = 0; j < NA; j++) {
+      var th = 2 * Math.PI * j / NA;
+      var a = arrow(A, BLUE_HI, 0.95, 0.018, 0.05, 0.18);
+      a.position.set(RM * Math.cos(th), 0, RM * Math.sin(th));
+      scene.add(a); arrows.push(a); thetas.push(th);
+    }
+    var tipPos = new Float32Array((NA + 1) * 3), tipGeo = new THREE.BufferGeometry();
+    tipGeo.setAttribute('position', new THREE.BufferAttribute(tipPos, 3));
+    scene.add(new THREE.Line(tipGeo, new THREE.LineBasicMaterial({ color: BLUE_HI, transparent: true, opacity: 0.6 })));
+
+    var cam = new THREE.PerspectiveCamera(36, 2, 0.1, 100);
+    var Wd = 640, Hd = 320;
+    function resize() { Wd = Math.min(fig.clientWidth || 640, 640); Hd = Math.round(Wd * 320 / 640); renderer.setSize(Wd, Hd, false); cam.aspect = Wd / Hd; cam.updateProjectionMatrix(); }
+    resize(); window.addEventListener('resize', resize);
+    var visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(canvas);
+
+    var dir = new THREE.Vector3(), rhat = new THREE.Vector3();
+    var frames = 0, start = null;
+    function update(t) {
+      k1.rotation.y = -om * t / NW;       // 螺旋 1 往一個方向繞
+      k2.rotation.y = om * t / NW;        // 螺旋 2 往反方向繞
+      var ps = -om * t;
+      for (var j = 0; j < NA; j++) {
+        var th = thetas[j], amp = Math.cos(NW * th);
+        rhat.set(Math.cos(th), 0, Math.sin(th));
+        var psi = amp >= 0 ? ps : ps + Math.PI;
+        dir.copy(rhat).multiplyScalar(Math.cos(psi)).addScaledVector(up, Math.sin(psi));
+        arrows[j].quaternion.setFromUnitVectors(up, dir);
+        var s = Math.abs(amp); arrows[j].scale.setScalar(Math.max(s, 0.001)); arrows[j].visible = s > 0.04;
+        var base = arrows[j].position;
+        tipPos[3 * j] = base.x + A * amp * Math.cos(ps) * rhat.x; tipPos[3 * j + 1] = A * amp * Math.sin(ps); tipPos[3 * j + 2] = base.z + A * amp * Math.cos(ps) * rhat.z;
+      }
+      tipPos[3 * NA] = tipPos[0]; tipPos[3 * NA + 1] = tipPos[1]; tipPos[3 * NA + 2] = tipPos[2];
+      tipGeo.attributes.position.needsUpdate = true;
+      var az = 0.5 + 0.35 * Math.sin(t * 0.12);
+      cam.position.set(5.2 * Math.sin(az), 2.6 + 0.2 * Math.sin(t * 0.1), 5.2 * Math.cos(az));
+      cam.lookAt(0, -0.1, 0);
+      renderer.render(scene, cam);
+      frames++;
+    }
+    function frame(now) { requestAnimationFrame(frame); if (!visible || document.hidden) return; if (start === null) start = now; update((now - start) / 1000); }
+    requestAnimationFrame(frame);
+    return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
+  }
+
   function init() {
     var a = document.getElementById('helix3d-a'), b = document.getElementById('helix3d-b');
     window.__helix3d = {};
     var shm = document.getElementById('shm3d');
     if (shm) window.__helix3d.shm = setupShm(shm);
+    var tor = document.getElementById('torus3d');
+    if (tor) window.__helix3d.torus = setupTorus(tor);
     if (a) window.__helix3d.a = setup(a, { height: 320, pages: 9, spacing: 0.7, radius: 0.7, highlight: -1, numbers: true, tipArrows: false, endView: false, packet: { sigma: 0.8, speed: 1.6, outL: 4.2, outR: 6.4, dx: 0.156 } });
     if (b) window.__helix3d.b = setup(b, { height: 250, pages: 7, spacing: 0.7, radius: 0.55, arrows: 29, highlight: -1, numbers: false, tipArrows: false, endView: false, beth: true, turnSeconds: 2.4 });
   }
