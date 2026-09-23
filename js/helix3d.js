@@ -37,7 +37,7 @@
     scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints([from, to]), mat));
     var dir = new THREE.Vector3().subVectors(to, from).normalize();
     [[to, dir], [from, dir.clone().negate()]].forEach(function (e) {
-      var cone = new THREE.Mesh(new THREE.ConeGeometry(0.05, 0.16, 12), new THREE.MeshBasicMaterial({ color: GRAY }));
+      var cone = new THREE.Mesh(new THREE.ConeGeometry(0.04, 0.18, 12), new THREE.MeshBasicMaterial({ color: GRAY }));
       cone.position.copy(e[0]);
       cone.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), e[1]);
       scene.add(cone);
@@ -91,7 +91,7 @@
     var arrows = [], xs = [];
     var hi = opts.highlight;
     for (var j = 0; j < N; j++) {
-      var a = arrow(r, j === hi ? BLUE_HI : BLUE, j === hi ? 1 : 0.85, 0.02, 0.08, 0.2);
+      var a = arrow(r, j === hi ? BLUE_HI : BLUE, j === hi ? 1 : 0.85, 0.02, 0.06, 0.24);
       a.position.x = j * dx; xs.push(j * dx);
       scene.add(a); arrows.push(a);
     }
@@ -103,8 +103,8 @@
     // 尖端的速度／加速度（掛在高亮箭頭上）
     var vArrow = null, aArrow = null;
     if (opts.tipArrows) {
-      vArrow = arrow(0.7, GOLD, 1, 0.022, 0.085, 0.2);
-      aArrow = arrow(0.5, RED, 1, 0.022, 0.085, 0.2);
+      vArrow = arrow(0.7, GOLD, 1, 0.022, 0.065, 0.26);
+      aArrow = arrow(0.5, RED, 1, 0.022, 0.065, 0.26);
       scene.add(vArrow); scene.add(aArrow);
     }
 
