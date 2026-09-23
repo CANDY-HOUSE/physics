@@ -1023,12 +1023,20 @@ GPS 衛星的鐘在高處每天比地面快 45 μs（運動的鐘慢 7 μs，淨
   <line x1="60" y1="230" x2="620" y2="230" stroke="currentColor" stroke-width="2" opacity=".6"/>
   <line x1="60" y1="70" x2="60" y2="150" stroke="currentColor" stroke-width="2" marker-end="url(#arrK)"/>
   <foreignObject x="20" y="100.75" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(g\)</div></foreignObject>
-  <path d="M120,80 Q400,80 600,150" fill="none" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrKg)"/>
-  <line x1="120.0" y1="50.0" x2="120.0" y2="110.0" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
-  <line x1="257.0" y1="54.4" x2="253.0" y2="114.3" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
-  <line x1="384.3" y1="67.8" x2="375.7" y2="127.2" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
-  <line x1="502.0" y1="90.2" x2="488.0" y2="148.6" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
-  <line x1="589.1" y1="114.7" x2="570.5" y2="171.7" stroke="currentColor" stroke-width="1.6" opacity=".75"/>
+  <g>
+    <animate attributeName="opacity" values="1;1;0" keyTimes="0;0.94;1" dur="5.0s" repeatCount="indefinite"/>
+    <path d="M120,80 Q400,80 600,150" fill="none" stroke="#e0a800" stroke-width="2.5" stroke-dasharray="487.3 487.3" stroke-dashoffset="487.3"><animate attributeName="stroke-dashoffset" values="487.3;0;0" keyTimes="0;0.8;1" dur="5.0s" repeatCount="indefinite"/></path>
+    <line x1="120.0" y1="50.0" x2="120.0" y2="110.0" stroke="currentColor" stroke-width="1.6" opacity="0"><animate attributeName="opacity" values="0.75;0.75" keyTimes="0;1" dur="5.0s" repeatCount="indefinite"/></line>
+    <line x1="257.0" y1="54.4" x2="253.0" y2="114.3" stroke="currentColor" stroke-width="1.6" opacity="0"><animate attributeName="opacity" values="0;0;0.75;0.75" keyTimes="0;0.2218;0.2228;1" dur="5.0s" repeatCount="indefinite"/></line>
+    <line x1="384.3" y1="67.8" x2="375.7" y2="127.2" stroke="currentColor" stroke-width="1.6" opacity="0"><animate attributeName="opacity" values="0;0;0.75;0.75" keyTimes="0;0.4281;0.4291;1" dur="5.0s" repeatCount="indefinite"/></line>
+    <line x1="502.0" y1="90.2" x2="488.0" y2="148.6" stroke="currentColor" stroke-width="1.6" opacity="0"><animate attributeName="opacity" values="0;0;0.75;0.75" keyTimes="0;0.6204;0.6214;1" dur="5.0s" repeatCount="indefinite"/></line>
+    <line x1="589.1" y1="114.7" x2="570.5" y2="171.7" stroke="currentColor" stroke-width="1.6" opacity="0"><animate attributeName="opacity" values="0;0;0.75;0.75" keyTimes="0;0.7651;0.7661;1" dur="5.0s" repeatCount="indefinite"/></line>
+    <g>
+      <animateMotion path="M120,80 Q400,80 600,150" rotate="auto" keyPoints="0;1;1" keyTimes="0;0.8;1" calcMode="linear" dur="5.0s" repeatCount="indefinite"/>
+      <line x1="0" y1="-30" x2="0" y2="30" stroke="currentColor" stroke-width="1.8"/>
+      <polygon points="-15,-7.5 0,0 -15,7.5" fill="#e0a800"/>
+    </g>
+  </g>
   <text x="120" y="40" text-anchor="middle" fill="currentColor">波前</text>
   <text x="560" y="60" text-anchor="middle" fill="currentColor">上端時間快、跑得多</text>
   <text x="560" y="205" text-anchor="middle" fill="currentColor">下端時間慢、跑得少</text>
