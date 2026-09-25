@@ -410,6 +410,90 @@
     return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
   }
 
+
+  // 2.5：猜測——電子是一顆繞兩圈的光子（Williamson 與 van der Mark 1997）
+  function setupDoubleLoop(fig) {
+    var canvas = document.createElement('canvas'), renderer;
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    renderer.setClearColor(BG, 1);
+    canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
+    fig.insertBefore(canvas, fig.firstChild);
+
+    var scene = new THREE.Scene();
+    var RM = 1.5, A = 0.6, TL = 3, om = 2 * Math.PI / TL;       // 一圈 3 秒，兩圈 6 秒
+    var up = new THREE.Vector3(0, 1, 0);
+    function pathPoint(s, out) {                                  // s：繞大圓的角度；繞管子的角度是 s/2
+      var ph = s / 2, rr = RM + A * Math.cos(ph);
+      return (out || new THREE.Vector3()).set(rr * Math.cos(s), A * Math.sin(ph), rr * Math.sin(s));
+    }
+
+    // 淡淡的甜甜圈
+    var torus = new THREE.Mesh(new THREE.TorusGeometry(RM, A, 24, 120), new THREE.MeshBasicMaterial({ color: GRAY, transparent: true, opacity: 0.05, side: THREE.DoubleSide, depthWrite: false }));
+    torus.rotation.x = Math.PI / 2; scene.add(torus);
+    var wire = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.TorusGeometry(RM, A, 10, 60)), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.07 }));
+    wire.rotation.x = Math.PI / 2; scene.add(wire);
+
+    // 光子的路徑：繞大圓兩圈、繞管子一圈才首尾相接
+    var pts = [];
+    for (var i = 0; i <= 480; i++) pts.push(pathPoint(4 * Math.PI * i / 480));
+    scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 960, 0.015, 6, true),
+      new THREE.MeshBasicMaterial({ color: GOLD, transparent: true, opacity: 0.45 })));
+
+    // 光子與它身上的電場箭頭（從管子中心指向光子；繞一圈翻轉，繞兩圈才復原）
+    var photon = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 14), new THREE.MeshBasicMaterial({ color: GOLD }));
+    scene.add(photon);
+    var efield = arrow(0.75, BLUE_HI, 1, 0.022, 0.065, 0.24); scene.add(efield);
+    var trail = [], NT = 60;
+    var trailPos = new Float32Array(NT * 3), trailGeo = new THREE.BufferGeometry();
+    trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
+    scene.add(new THREE.Line(trailGeo, new THREE.LineBasicMaterial({ color: GOLD })));
+
+    // 外圍：從遠處看，電場都朝外，像一個電荷
+    var golden = Math.PI * (3 - Math.sqrt(5)), NR = 30, RO = 3.1;
+    for (var k = 0; k < NR; k++) {
+      var yv = 1 - 2 * (k + 0.5) / NR, rad = Math.sqrt(1 - yv * yv), th = golden * k;
+      var d = new THREE.Vector3(rad * Math.cos(th), yv, rad * Math.sin(th));
+      var fa = arrow(0.38, BLUE, 0.45, 0.012, 0.04, 0.14);
+      fa.position.copy(d).multiplyScalar(RO); fa.quaternion.setFromUnitVectors(up, d); scene.add(fa);
+    }
+
+    var lap1 = textSprite('第 1 圈', '#e4e2dd', 0.34), lap2 = textSprite('第 2 圈', '#e4e2dd', 0.34);
+    [lap1, lap2].forEach(function (sp) { sp.position.set(0, 1.35, 0); scene.add(sp); });
+
+    var cam = new THREE.PerspectiveCamera(36, 2, 0.1, 100);
+    var Wd = 640, Hd = 320;
+    function resize() { Wd = Math.min(fig.clientWidth || 640, 640); Hd = Math.round(Wd * 320 / 640); renderer.setSize(Wd, Hd, false); cam.aspect = Wd / Hd; cam.updateProjectionMatrix(); }
+    resize(); window.addEventListener('resize', resize);
+    var visible = true;
+    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(canvas);
+
+    var p = new THREE.Vector3(), core = new THREE.Vector3(), dir = new THREE.Vector3(), tmp = new THREE.Vector3();
+    var frames = 0, start = null;
+    function update(t) {
+      var s = (om * t) % (4 * Math.PI);
+      pathPoint(s, p); photon.position.copy(p);
+      core.set(RM * Math.cos(s), 0, RM * Math.sin(s));             // 管子中心
+      dir.copy(p).sub(core).normalize();
+      efield.position.copy(p); efield.quaternion.setFromUnitVectors(up, dir);
+      for (var i = 0; i < NT; i++) {
+        pathPoint(s - 0.9 * i / (NT - 1), tmp);
+        trailPos[3 * i] = tmp.x; trailPos[3 * i + 1] = tmp.y; trailPos[3 * i + 2] = tmp.z;
+      }
+      trailGeo.attributes.position.needsUpdate = true;
+      var second = s >= 2 * Math.PI;
+      lap1.visible = !second; lap2.visible = second;
+      var az = 0.7 + 0.3 * Math.sin(t * 0.1);
+      cam.position.set(5.9 * Math.sin(az), 2.7 + 0.2 * Math.sin(t * 0.08), 5.9 * Math.cos(az));
+      cam.lookAt(0, 0.25, 0);
+      renderer.render(scene, cam);
+      frames++;
+    }
+    function frame(now) { requestAnimationFrame(frame); if (!visible || document.hidden) return; if (start === null) start = now; update((now - start) / 1000); }
+    requestAnimationFrame(frame);
+    return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
+  }
+
   function init() {
     var a = document.getElementById('helix3d-a'), b = document.getElementById('helix3d-b');
     window.__helix3d = {};
@@ -417,6 +501,8 @@
     if (shm) window.__helix3d.shm = setupShm(shm);
     var tor = document.getElementById('torus3d');
     if (tor) window.__helix3d.torus = setupTorus(tor);
+    var dl = document.getElementById('loop3d');
+    if (dl) window.__helix3d.loop = setupDoubleLoop(dl);
     if (a) window.__helix3d.a = setup(a, { height: 320, pages: 9, spacing: 0.7, radius: 0.7, highlight: -1, numbers: true, tipArrows: false, endView: false, packet: { sigma: 0.8, speed: 1.6, outL: 4.2, outR: 6.4, dx: 0.156 } });
     if (b) window.__helix3d.b = setup(b, { height: 250, pages: 7, spacing: 0.7, radius: 0.55, arrows: 29, highlight: -1, numbers: false, tipArrows: false, endView: false, beth: true, turnSeconds: 2.4 });
   }
