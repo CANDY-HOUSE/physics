@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>從時空到控制</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=6">
+<link rel="stylesheet" href="css/style.css?v=12">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -17,17 +17,15 @@ MathJax = {
 <body>
 
 <header class="site">
+  <button class="menu-btn" type="button" aria-label="目錄" aria-controls="sidebar" aria-expanded="false"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 1h14M1 6h14M1 11h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
   <a class="book-title" href="#top">從時空到控制</a>
-  <nav>
-    <a href="#part-1">第一章</a>
-  </nav>
 </header>
 
 <div class="layout">
 
-<aside class="sidebar">
+<aside class="sidebar" id="sidebar">
   <nav>
-    <p class="sb-title">目錄</p>
+    <button class="sb-close" type="button" aria-label="關閉目錄">×</button>
     <ol class="sb-parts">
       <li>
         <a href="#part-1">一、狹義相對論</a>
@@ -62,6 +60,7 @@ MathJax = {
     </ol>
   </nav>
 </aside>
+<div class="menu-backdrop"></div>
 
 <main class="wrap" id="top">
 
@@ -1745,6 +1744,22 @@ $$
 
 <footer class="site">《從時空到控制》</footer>
 
+<script>
+(function () {
+  var btn = document.querySelector('.menu-btn'), sb = document.getElementById('sidebar'), bd = document.querySelector('.menu-backdrop');
+  if (!btn || !sb || !bd) return;
+  function set(open) {
+    document.body.classList.toggle('menu-open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  }
+  btn.addEventListener('click', function () { set(!document.body.classList.contains('menu-open')); });
+  bd.addEventListener('click', function () { set(false); });
+  sb.addEventListener('click', function (e) { if (e.target.closest('a, .sb-close')) set(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { set(false); btn.focus(); }
+  });
+})();
+</script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=28"></script>
 

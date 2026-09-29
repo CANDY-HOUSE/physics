@@ -70,14 +70,6 @@ header.site .book-title {
   color: var(--fg);
   text-decoration: none;
 }
-header.site nav { margin-left: auto; }
-header.site nav a {
-  color: var(--fg-soft);
-  text-decoration: none;
-  margin-left: 1rem;
-  font-size: .9rem;
-}
-header.site nav a:hover { color: var(--accent); }
 
 /* ---------- 標題 ---------- */
 h1, h2, h3 {
@@ -150,6 +142,7 @@ mjx-container[display="true"] {
   overflow-x: auto;
   overflow-y: hidden;
   max-width: 100%;
+  min-width: 0 !important;  /* 蓋掉 MathJax 對帶編號公式寫死的 min-width，否則長公式會撐寬整頁 */
   padding: .25rem 0;
 }
 
@@ -202,12 +195,6 @@ figcaption {
   font-size: .88rem;
   line-height: 1.7;
 }
-.sidebar .sb-title {
-  font-weight: 700;
-  letter-spacing: .12em;
-  color: var(--fg-soft);
-  margin: 0 0 .75rem;
-}
 .sidebar ol { list-style: none; margin: 0; padding: 0; }
 .sidebar ol.sb-parts > li { margin: .55rem 0; color: var(--fg-soft); }
 .sidebar ol.sb-parts > li.pending { opacity: .55; }
@@ -221,8 +208,68 @@ figcaption {
 .sidebar ol.sb-secs a { color: var(--fg-soft); }
 .sidebar ol.sb-secs a:hover { color: var(--accent); }
 .layout > .wrap { flex: 1; min-width: 0; }
+/* 手機：頁首固定在上方，按選單鈕從左側滑出側欄 */
+.menu-btn, .sb-close, .menu-backdrop { display: none; }
 @media (max-width: 900px) {
-  .sidebar { display: none; }
+  header.site {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--bg);
+    align-items: center;
+    padding: .6rem 1rem;
+  }
+  .menu-btn {
+    display: inline-flex;
+    align-items: center;
+    font: inherit;
+    font-size: .9rem;
+    color: var(--fg);
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: .45rem .6rem;
+    cursor: pointer;
+  }
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 110;
+    width: min(82vw, 300px);
+    max-height: none;
+    background: var(--bg);
+    overscroll-behavior: contain;
+    transform: translateX(-100%);
+    visibility: hidden;
+    transition: transform .25s ease, visibility 0s linear .25s;
+  }
+  body.menu-open .sidebar { transform: none; visibility: visible; transition: transform .25s ease; }
+  .sb-close {
+    display: block;
+    margin: -.4rem -.25rem 0 auto;
+    font-size: 1.6rem;
+    line-height: 1;
+    color: var(--fg-soft);
+    background: none;
+    border: 0;
+    padding: 0 .25rem;
+    cursor: pointer;
+  }
+  .menu-backdrop {
+    display: block;
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    background: rgba(0, 0, 0, .4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+  }
+  body.menu-open .menu-backdrop { opacity: 1; pointer-events: auto; }
+  body.menu-open { overflow: hidden; }
+  h1[id], h2[id], h3[id] { scroll-margin-top: 4.5rem; }
 }
 
 /* ---------- 首頁目錄 ---------- */
