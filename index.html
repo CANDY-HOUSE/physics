@@ -159,7 +159,7 @@ $$
 T = \frac{L}{\sqrt{c^2-v^2}} = \frac{L}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
 $$
 
-<p>車上經過 \(\dfrac{L}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-(v/c)^2}}\) 倍。
+<p>車上經過 \(\dfrac{L}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\) 倍。
 這個因子之後不斷出現，記作：</p>
 
 $$
@@ -178,14 +178,14 @@ v = \frac{L_{\text{地}}}{T_{\text{地}}} = \frac{L_{\text{車}}}{T_{\text{車}}
 $$
 
 <p>「經過甲點」與「經過乙點」兩個事件都發生在車頭同一位置，
-車上的鐘正是 1.2 節走得慢的那個：\(T_{\text{車}} = T_{\text{地}}/\gamma\)。
+車上的鐘正是 1.2 節走得慢的那個：\(T_{\text{車}} = \dfrac{T_{\text{地}}}{\gamma}\)。
 分母變小，分子必須跟著變小，比值才能不變：</p>
 
 $$
 \boxed{\;L_{\text{車}} = \frac{L_{\text{地}}}{\gamma} = \sqrt{1-\left(\frac{v}{c}\right)^2}\; L_{\text{地}}\;}
 $$
 
-<p>運動中的觀察者測地面的長度，縮短 \(1/\gamma\) 倍；由相對性原理，地上測運動中的列車也一樣短
+<p>運動中的觀察者測地面的長度，縮短 \(\dfrac{1}{\gamma}\) 倍；由相對性原理，地上測運動中的列車也一樣短
 （沿運動方向；垂直方向不變）。合併 1.2 與 1.3：
 <strong>有相對速度，看對方在做慢動作，而且看扁他。</strong></p>
 
@@ -196,7 +196,7 @@ $$
 
 <p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \(t'\)，地面原點位於 \(-vt'\)，
 所以事件離地面原點的距離，用基準 2 的尺量是 \(x' + vt'\)。
-但這段距離在地面上的長度是 \(x\)，而基準 2 看地面的長度縮短 \(1/\gamma\) 倍（1.3 節）：</p>
+但這段距離在地面上的長度是 \(x\)，而基準 2 看地面的長度縮短 \(\dfrac{1}{\gamma}\) 倍（1.3 節）：</p>
 
 $$
 x' + vt' = \frac{x}{\gamma}
@@ -728,7 +728,7 @@ $$
 $$
 \lambda' = \frac{v}{f_0} - \frac{v_s}{f_0} = \frac{v - v_s}{f_0}
 \qquad\Longrightarrow\qquad
-f = \frac{v}{\lambda'} = \frac{v}{(v - v_s)/f_0} = f_0\,\frac{v}{v - v_s}
+f = \frac{v}{\lambda'} = \frac{v}{\dfrac{v - v_s}{f_0}} = f_0\,\frac{v}{v - v_s}
 $$
 
 <p><strong>觀察者以 \(v_o\) 朝波源移動</strong>：波前間距仍是 \(\lambda\)，但以 \(v + v_o\) 掠過觀察者：</p>
@@ -1339,7 +1339,7 @@ $$
 
 <p>三、與火箭某一瞬間同速 \(v\) 的基準，它的「同一時刻」是 \(t' = 0\)。由 1.4，\(ct' = \gamma\left(ct - \tfrac{v}{c}\,x\right) = 0\)，即 \(ct = \tfrac{v}{c}\,x\)：一條過原點的直線。火箭那一點的 \(v = \dfrac{c^2 t}{x}\) 正好落在這條線上。所以火箭每一瞬間的「同時線」都過同一個點：原點是轉軸，同時線像指針掃過。</p>
 
-<p>四、火箭頂部在底部上方 \(h\)（火箭自己的尺）：世界線是同心的另一條雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g} + h\right)^2\)。它是底部那條以原點為中心放大 \(\dfrac{c^2/g + h}{c^2/g}\) 倍的圖形；同時線是過原點的直線，放大後還是自己。鐘自己走的時間：切成小段，每段在同速基準裡 \(\Delta x' = 0\)，由一，\((c\,\Delta t')^2 = (c\,\Delta t)^2 - (\Delta x)^2\)；全部座標放大幾倍，每一段的鐘時間就放大幾倍。所以兩條同時線之間：</p>
+<p>四、火箭頂部在底部上方 \(h\)（火箭自己的尺）：世界線是同心的另一條雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g} + h\right)^2\)。它是底部那條以原點為中心放大 \(\dfrac{\frac{c^2}{g} + h}{\frac{c^2}{g}}\) 倍的圖形；同時線是過原點的直線，放大後還是自己。鐘自己走的時間：切成小段，每段在同速基準裡 \(\Delta x' = 0\)，由一，\((c\,\Delta t')^2 = (c\,\Delta t)^2 - (\Delta x)^2\)；全部座標放大幾倍，每一段的鐘時間就放大幾倍。所以兩條同時線之間：</p>
 
 $$
 \frac{T_{\text{上}}}{T_{\text{下}}}
@@ -1347,10 +1347,10 @@ $$
 = 1 + \frac{gh}{c^2}
 $$
 
-<p>沒有近似。順帶：頂部感覺到的加速度是 \(\dfrac{c^2}{c^2/g + h} = \dfrac{g}{1 + gh/c^2}\)，比底部小。</p>
+<p>沒有近似。順帶：頂部感覺到的加速度是 \(\dfrac{c^2}{\frac{c^2}{g} + h} = \dfrac{g}{1 + \frac{gh}{c^2}}\)，比底部小。</p>
 
 <figure>
-<svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <marker id="arrRd" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
     <marker id="arrRdDim" markerUnits="userSpaceOnUse" markerWidth="6" markerHeight="4" refX="4.3" refY="2" orient="auto-start-reverse"><path d="M0,0 L6,2 L0,4 z" fill="currentColor"/></marker>
@@ -1369,10 +1369,10 @@ $$
   <polyline points="399.8,252.5 398.3,246.1 396.9,239.8 395.7,233.5 394.5,227.2 393.5,220.9 392.6,214.5 391.8,208.2 391.2,201.9 390.7,195.6 390.3,189.3 390.1,183.0 390.0,176.6 390.0,170.3 390.2,164.0 390.5,157.7 390.9,151.4 391.5,145.0 392.2,138.7 393.0,132.4 394.0,126.1 395.0,119.8 396.2,113.5 397.6,107.1 399.0,100.8 400.6,94.5 402.3,88.2 404.1,81.9 406.1,75.5 408.1,69.2 410.3,62.9" fill="none" stroke="#e0a800" stroke-width="3.2"/>
   <line x1="90" y1="300" x2="290" y2="300" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrRdDim)" marker-end="url(#arrRdDim)"/>
   <line x1="290" y1="175" x2="290" y2="300" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
-  <foreignObject x="298" y="290.75" width="80" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(c^2/g\)</div></foreignObject>
+  <foreignObject x="298" y="283" width="80" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\dfrac{c^2}{g}\)</div></foreignObject>
   <line x1="90" y1="326" x2="390" y2="326" stroke="currentColor" stroke-width="1.2" marker-start="url(#arrRdDim)" marker-end="url(#arrRdDim)"/>
   <line x1="390" y1="175" x2="390" y2="326" stroke="currentColor" stroke-width="1" stroke-dasharray="2 3" opacity=".5"/>
-  <foreignObject x="398" y="316.75" width="100" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(c^2/g + h\)</div></foreignObject>
+  <foreignObject x="398" y="309" width="100" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\dfrac{c^2}{g} + h\)</div></foreignObject>
   <text x="76" y="169" text-anchor="end" fill="currentColor">轉軸</text>
   <text x="334.13111231467406" y="26" text-anchor="middle" fill="currentColor">火箭底部</text>
   <text x="429.058907144937" y="26" text-anchor="middle" fill="currentColor">火箭頂部</text>
@@ -1474,7 +1474,7 @@ $$
 </svg>
 </figure>
 
-<p>同一顆光，往上爬，能量變少，比例正好是下端鐘走速比上端鐘走速 \(T_{\text{下}}/T_{\text{上}}\)。反過來讀：用下端的鐘量，上端那顆光的能量＝它在上端當地的能量 \(E_{\text{上}}\) 乘上上端鐘的走速 \(1 + \dfrac{gh}{c^2}\)，等於 \(E_{\text{下}}\)——守恆。上一小節的石頭是同一條規則：當地能量 \(mc^2\)，乘上鐘的走速。能量隨鐘的走速換算，同一個東西換到鐘走得快的地方，用基準鐘看能量就多——這是「能量幾何化」的猜測。</p>
+<p>同一顆光，往上爬，能量變少，比例正好是下端鐘走速比上端鐘走速 \(\dfrac{T_{\text{下}}}{T_{\text{上}}}\)。反過來讀：用下端的鐘量，上端那顆光的能量＝它在上端當地的能量 \(E_{\text{上}}\) 乘上上端鐘的走速 \(1 + \dfrac{gh}{c^2}\)，等於 \(E_{\text{下}}\)——守恆。上一小節的石頭是同一條規則：當地能量 \(mc^2\)，乘上鐘的走速。能量隨鐘的走速換算，同一個東西換到鐘走得快的地方，用基準鐘看能量就多——這是「能量幾何化」的猜測。</p>
 
 <p>實驗：Pound 與 Rebka 1960 年量的正是這個——Fe-57 原子核發出的光爬 22.5 m，能量少了 \(\dfrac{gh}{c^2} = 2.5\times10^{-15}\)，吻合到 10%；1965 年 Pound 與 Snider 做到 1%。2.2 說上端每秒收到的節拍也少了同樣的比例：光的能量與頻率同比例變化，是否暗示光的能量正比於頻率？</p>
 
@@ -1931,17 +1931,17 @@ $$
 
 <h2 id="sec-3-1">3.1　磁就是電（未完工）</h2>
 
-<p>同一個電磁現象，在某一個基準看來是電的作用，在另一個基準看來卻可能是磁的作用；但是兩個基準算出來的運動結果完全相同。這一節只用靜電學和第一章的相對論，完全不用任何關於磁的定律，就能算出通電導線對一個運動中的電荷所施加的磁力。這個論證來自 Purcell（1965）。</p>
+<p>這一節只用靜電學和第一章的相對論，算出通電導線對運動電荷的磁力（Purcell 1965）。</p>
 
 <h3>【方法一】</h3>
 
-<p><strong>基準 1</strong>：假設一條導線裡有兩排電荷。正電荷的線密度是 \(\lambda\)，它們以速度 \(v\) 向右移動；負電荷的線密度是 \(-\lambda\)，它們以同樣的速度 \(v\) 向左移動。因為正負電荷的密度互相抵消，所以這條導線不帶電；但是兩排電荷都在移動，所以導線上有電流：</p>
+<p><strong>地面基準</strong>：導線裡有兩排電荷：正電荷的線密度是 \(\lambda\)，以 \(v\) 向右移動；負電荷的線密度是 \(-\lambda\)，以 \(v\) 向左移動。導線不帶電，電流是：</p>
 
 $$
 I = 2\lambda v
 $$
 
-<p>另外，在距離導線 \(s\) 的地方，有一個電荷 \(q\) 以速度 \(u\) 向右移動，而且 \(u\) 比 \(v\) 小。由於導線不帶電，所以在基準 1 裡，電荷 \(q\) 不受任何電力。</p>
+<p>距離導線 \(s\) 處，電荷 \(q\) 以 \(u\) 向右移動（\(u < v\)）。導線不帶電，所以 \(q\) 不受電力。</p>
 
 <figure>
 <svg viewBox="0 0 640 390" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -1953,7 +1953,7 @@ $$
     <clipPath id="clip31a"><rect x="70" y="40" width="490" height="52" rx="26"/></clipPath>
     <clipPath id="clip31b"><rect x="70" y="230" width="490" height="52" rx="26"/></clipPath>
   </defs>
-  <text x="20" y="24" fill="currentColor">基準 1：兩排電荷一樣密，所以導線不帶電</text>
+  <text x="20" y="24" fill="currentColor">地面基準：兩排電荷一樣密，所以導線不帶電</text>
   <rect x="70" y="40" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
   <g clip-path="url(#clip31a)"><g>
     <animateTransform attributeName="transform" type="translate" from="0 0" to="-30.0 0" dur="0.833s" repeatCount="indefinite"/>
@@ -1979,7 +1979,7 @@ $$
     <line x1="160" y1="158" x2="196" y2="158" stroke="currentColor" stroke-width="2" marker-end="url(#arr31c)"/>
     <foreignObject x="204" y="144.5" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(u\)</div></foreignObject>
   </g>
-  <text x="20" y="214" fill="currentColor">基準 2：跟著</text><foreignObject x="104" y="200" width="14" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:center;color:currentColor">\(q\)</div></foreignObject><text x="120" y="214" fill="currentColor">一起跑；負電荷排得比較密，所以導線帶負電</text>
+  <foreignObject x="20" y="199" width="600" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:currentColor;line-height:1.3">\(q\) 基準：跟著 \(q\) 一起跑；負電荷排得比較密，所以導線帶負電</div></foreignObject>
   <rect x="70" y="230" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
   <g clip-path="url(#clip31b)"><g>
     <animateTransform attributeName="transform" type="translate" from="0 0" to="-19.99 0" dur="0.394s" repeatCount="indefinite"/>
@@ -2001,32 +2001,32 @@ $$
   <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
   <g>
     <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31r)"/>
-    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_2\)</div></foreignObject>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_q\)</div></foreignObject>
   </g>
 </svg>
 </figure>
 
-<p><strong>基準 2</strong>：現在換到另一個基準。這個基準以速度 \(u\) 向右移動，也就是跟著電荷 \(q\) 一起跑，所以在這個基準裡，\(q\) 是靜止的。用 1.5 的速度合成公式，可以把電荷在基準 1 裡的速度換成基準 2 裡的速度。因為基準 1 相對於基準 2 以速度 \(-u\) 移動，所以 1.5 式子裡的基準間速度要代入 \(-u\)。正電荷在基準 1 裡的速度是 \(v\)，換到基準 2 就變成 \(\dfrac{v-u}{1-vu/c^2}\)；負電荷在基準 1 裡的速度是 \(-v\)，換到基準 2 就變成 \(\dfrac{-v-u}{1+vu/c^2} = -\dfrac{v+u}{1+vu/c^2}\)，其中的負號表示向左。把兩排電荷的速率合起來寫成：</p>
+<p><strong>\(q\) 基準</strong>：跟著 \(q\) 以 \(u\) 向右移動，\(q\) 此刻靜止。由 1.5 的速度合成（基準間速度代入 \(-u\)），正電荷以 \(v_+\) 向右、負電荷以 \(v_-\) 向左移動：</p>
 
 $$
 v_\pm = \frac{v \mp u}{1 \mp \dfrac{vu}{c^2}}
 $$
 
-<p>其中正電荷以 \(v_+\) 向右移動，負電荷以 \(v_-\) 向左移動。因為 \(v_-\) 比 \(v_+\) 大，所以在基準 2 裡，負電荷跑得比正電荷快。1.3 告訴我們，物體跑得越快，長度就縮得越多；因此電荷之間的間距也縮得越多，負電荷就排得比正電荷更密。假設電荷靜止時的線密度是 \(\lambda_0\)，那麼當電荷以速度 \(v\) 移動時，間距縮短為原來的 \(\dfrac{1}{\gamma}\)，密度就變成原來的 \(\gamma\) 倍：</p>
+<p>\(v_-\) 比 \(v_+\) 大。由 1.3，跑得越快排得越密；設電荷靜止時的線密度是 \(\lambda_0\)：</p>
 
 $$
 \lambda = \gamma\,\lambda_0, \qquad \lambda_\pm = \pm\,\gamma_\pm\,\lambda_0
-\qquad \left(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}},\ \ \gamma_\pm = \frac{1}{\sqrt{1 - v_\pm^2/c^2}}\right)
+\qquad \left(\gamma = \frac{1}{\sqrt{1 - \frac{v^2}{c^2}}},\ \ \gamma_\pm = \frac{1}{\sqrt{1 - \frac{v_\pm^2}{c^2}}}\right)
 $$
 
-<p>接下來計算 \(\gamma_\pm\)。先把 \(v_\pm\) 代入 \(1 - \dfrac{v_\pm^2}{c^2}\)，通分之後得到：</p>
+<p>代入 \(v_\pm\)：</p>
 
 $$
 1 - \frac{v_\pm^2}{c^2}
 = \frac{\left(1 \mp \frac{vu}{c^2}\right)^2 - \frac{(v \mp u)^2}{c^2}}{\left(1 \mp \frac{vu}{c^2}\right)^2}
 $$
 
-<p>把分子展開以後，含 \(vu\) 的兩項正好互相抵消，剩下的部分可以分解成兩個因式相乘：</p>
+<p>分子展開後，含 \(vu\) 的兩項互相抵消：</p>
 
 $$
 \begin{aligned}
@@ -2037,47 +2037,47 @@ $$
 \end{aligned}
 $$
 
-<p>所以</p>
-
-$$
-1 - \frac{v_\pm^2}{c^2} = \frac{\left(1 - \frac{v^2}{c^2}\right)\left(1 - \frac{u^2}{c^2}\right)}{\left(1 \mp \frac{vu}{c^2}\right)^2}
-$$
-
-<p>把這個結果開根號再取倒數，就得到：</p>
+<p>開根號、取倒數：</p>
 
 $$
 \gamma_\pm = \gamma\,\frac{1 \mp \dfrac{vu}{c^2}}{\sqrt{1 - \dfrac{u^2}{c^2}}}
 $$
 
-<p>把兩排電荷的密度加起來，再用 \(\gamma\lambda_0 = \lambda\)，就得到導線在基準 2 裡的淨電荷密度：</p>
+<p>兩排加起來（\(\gamma\lambda_0 = \lambda\)）：</p>
 
 $$
 \begin{aligned}
 \lambda_{\text{淨}} = \lambda_+ + \lambda_- = \lambda_0\,(\gamma_+ - \gamma_-)
-&= \gamma\lambda_0\,\frac{\left(1 - \frac{vu}{c^2}\right) - \left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}\\
-&= \lambda\,\frac{-2vu/c^2}{\sqrt{1 - u^2/c^2}}
-= -\frac{2\lambda v u}{c^2\sqrt{1 - u^2/c^2}}
+&= \gamma\lambda_0\,\frac{\left(1 - \frac{vu}{c^2}\right) - \left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - \frac{u^2}{c^2}}}\\
+&= -\frac{2\lambda v u}{c^2\sqrt{1 - \frac{u^2}{c^2}}}
 \end{aligned}
 $$
 
-<p>也就是說，在基準 1 裡不帶電的導線，到了基準 2 裡卻帶了負電。</p>
-
-<p>根據 Gauss 定律，一條帶電的長直線在距離 \(s\) 處產生的電場是 \(\dfrac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}\)，其中 \(\varepsilon_0\) 是真空的電容率。因此在基準 2 裡，靜止的電荷 \(q\) 會受到一個電力：</p>
+<p>地面基準裡不帶電的導線，在 \(q\) 基準裡帶負電。帶電長直線的電場是 \(\dfrac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}\)（Gauss 定律），所以靜止的 \(q\) 受到電力：</p>
 
 $$
-F_2 = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
-= -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s\sqrt{1 - u^2/c^2}}
+F_q = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
+= -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s\sqrt{1 - \frac{u^2}{c^2}}}
 $$
 
-<p>式子裡的負號表示這個力指向導線；也就是說，導線吸引電荷 \(q\)。</p>
-
-<p>既然 \(q\) 在基準 2 裡受力，那麼它在基準 1 裡也必定受力。可是「力」到底是什麼？這個世界根本就不存在什麼「力」，力其實只是動量的變化÷時間？</p>
+<p>負號表示吸引。換回地面基準之前先問：這個世界根本就不存在什麼「力」，力其實只是動量的變化÷時間？</p>
 
 $$
 F = \frac{dp}{dt}
 $$
 
-<p>照這個看法，換基準時不必問「力」怎麼變，只要分別問動量的變化 \(dp\) 和時間 \(dt\) 怎麼變。下圖一步一步說明：</p>
+<p>\(y\) 是垂直 \(\perp\) 於導線之座標軸。討論 \(q\) 在 \(q\) 基準靜止的瞬間：</p>
+
+$$
+\begin{aligned}
+&\frac{dy_q}{dt_q} = 0 = \frac{dy_{\text{地}}}{dt_{\text{地}}} \;\Rightarrow\; \gamma_q = 1,\quad \gamma_{\text{地}} = \frac{1}{\sqrt{1 - \dfrac{u^2}{c^2}}}\\[4pt]
+&dt_{\text{地}} = \gamma_{\text{地}}\,dt_q\ \text{（1.2）},\quad dy_{\text{地}} = dy_q = dy\ \text{（1.3）}\\[4pt]
+&dp_{\perp q} = d\Big(\gamma_q m\,\frac{dy}{dt_q}\Big) = \gamma_q m\,d\frac{dy}{dt_q} + m\,\underbrace{\frac{dy}{dt_q}}_{0}\,d\gamma_q = m\,d\frac{dy}{dt_q}\\[4pt]
+&dp_{\perp\text{地}} = d\Big(\gamma_{\text{地}} m\,\frac{dy}{dt_{\text{地}}}\Big) = \gamma_{\text{地}} m\,d\frac{dy}{dt_{\text{地}}} + m\,\underbrace{\frac{dy}{dt_{\text{地}}}}_{0}\,d\gamma_{\text{地}} = \gamma_{\text{地}} m\,d\frac{dy}{dt_{\text{地}}}\\[4pt]
+&F_{\text{地}} = \frac{dp_{\perp\text{地}}}{dt_{\text{地}}} = \frac{\gamma_{\text{地}} m\,d\dfrac{dy}{dt_{\text{地}}}}{\gamma_{\text{地}}\,dt_q} = \frac{m\,d\dfrac{dy}{\gamma_{\text{地}}\,dt_q}}{dt_q} = \frac{F_q}{\gamma_{\text{地}}} = -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s}\\[4pt]
+&c^2 = \frac{1}{\varepsilon_0\mu_0}\ \text{（見 3.2）},\quad I = 2\lambda v \;\Rightarrow\; F_{\text{地}} = -\frac{2\lambda v}{2\pi\varepsilon_0 c^2}\,\frac{qu}{s} = -\,qu\left(\frac{\mu_0 I}{2\pi s}\right)
+\end{aligned}
+$$
 
 <figure>
 <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2089,13 +2089,13 @@ $$
   </defs>
   <rect x="0" y="0" width="640" height="420" rx="10" fill="#0b0b0f"/>
   <line x1="320" y1="20" x2="320" y2="330" stroke="#8a8a8a" stroke-opacity=".35"/>
-  <foreignObject x="20" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#58c4dd">基準 2：\(q\) 靜止</div></foreignObject>
+  <foreignObject x="20" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#58c4dd">\(q\) 基準：\(q\) 起初靜止</div></foreignObject>
   <line x1="20" y1="70" x2="300" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <text x="300" y="62" text-anchor="end" fill="#8a8a8a" font-size="12">導線</text>
   <polyline points="150.0,210.0 150.0,209.8 150.0,209.4 150.0,208.6 150.0,207.6 150.0,206.2 150.0,204.6 150.0,202.6 150.0,200.4 150.0,197.8 150.0,195.0 150.0,191.8 150.0,188.4 150.0,184.6 150.0,180.6 150.0,176.2 150.0,171.6 150.0,166.6 150.0,161.4 150.0,155.8 150.0,150.0" fill="none" stroke="#e4e2dd" stroke-opacity=".25" stroke-dasharray="3 4"/>
   <g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 0;0 0;0 0" keyTimes="0.0000;0.0833;0.2500;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -60;0 -60;0 0" keyTimes="0.0000;0.0833;0.2500;0.9667;1.0000" dur="12.0s" repeatCount="indefinite" calcMode="spline" keySplines="0 0 1 1;0.5 0 1 1;0 0 1 1;0 0 1 1"/><circle r="7" fill="#e4e2dd" cx="150" cy="210"/><foreignObject x="120" y="216" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e4e2dd">\(q\)</div></foreignObject></g></g>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="184" y1="208" x2="184" y2="152" stroke="#8a8a8a" stroke-width="1.2" marker-start="url(#fpd)" marker-end="url(#fpd)"/><text x="192" y="185" fill="#e4e2dd" font-size="13">垂直位移</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="150" y1="140" x2="150" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="158" y="98" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\Delta p_\perp\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="150" y1="140" x2="150" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="158" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(dp_{\perp q}\)</div></foreignObject></g>
   <circle cx="110" cy="290" r="26" fill="none" stroke="#e4e2dd" stroke-opacity=".7" stroke-width="1.5"/>
   <line x1="110.0" y1="268.0" x2="110.0" y2="264.0" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="121.0" y1="270.9" x2="123.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
@@ -2111,18 +2111,18 @@ $$
   <line x1="99.0" y1="270.9" x2="97.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="110" y1="290" x2="110" y2="270" stroke="#58c4dd" stroke-width="2.5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="0 110 290;0 110 290;90.0 110 290;90.0 110 290;0 110 290" keyTimes="0.0000;0.0833;0.2500;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></line>
   <circle cx="110" cy="290" r="2.5" fill="#58c4dd"/>
-  <foreignObject x="146" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">\(q\) 自己的鐘</div></foreignObject>
+  <foreignObject x="146" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">\(q\) 基準的鐘</div></foreignObject>
   <text x="146" y="306" fill="#58c4dd" font-size="13">走過的時間</text>
   <rect x="283" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;96.0;96.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;154.0;154.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="276" y1="250" x2="308" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_2\)</div></foreignObject></g>
-  <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">基準 1：\(q\) 以 \(u\) 向右移動</div></foreignObject>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_q\)</div></foreignObject></g>
+  <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">地面基準：\(q\) 以 \(u\) 向右移動</div></foreignObject>
   <line x1="340" y1="70" x2="620" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <text x="620" y="62" text-anchor="end" fill="#8a8a8a" font-size="12">導線</text>
   <polyline points="380.0,210.0 386.0,209.8 392.0,209.4 398.0,208.6 404.0,207.6 410.0,206.2 416.0,204.6 422.0,202.6 428.0,200.4 434.0,197.8 440.0,195.0 446.0,191.8 452.0,188.4 458.0,184.6 464.0,180.6 470.0,176.2 476.0,171.6 482.0,166.6 488.0,161.4 494.0,155.8 500.0,150.0" fill="none" stroke="#e4e2dd" stroke-opacity=".25" stroke-dasharray="3 4"/>
   <g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;120 0;120 0;0 0" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -60;0 -60;0 0" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite" calcMode="spline" keySplines="0 0 1 1;0.5 0 1 1;0 0 1 1;0 0 1 1"/><circle r="7" fill="#e4e2dd" cx="380" cy="210"/><foreignObject x="350" y="216" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e4e2dd">\(q\)</div></foreignObject></g></g>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="534" y1="208" x2="534" y2="152" stroke="#8a8a8a" stroke-width="1.2" marker-start="url(#fpd)" marker-end="url(#fpd)"/><text x="542" y="185" fill="#e4e2dd" font-size="13">垂直位移</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="500" y1="140" x2="500" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="508" y="98" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\Delta p_\perp\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="500" y1="140" x2="500" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="508" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(dp_{\perp\text{地}}\)</div></foreignObject></g>
   <circle cx="430" cy="290" r="26" fill="none" stroke="#e4e2dd" stroke-opacity=".7" stroke-width="1.5"/>
   <line x1="430.0" y1="268.0" x2="430.0" y2="264.0" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="441.0" y1="270.9" x2="443.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
@@ -2138,50 +2138,30 @@ $$
   <line x1="419.0" y1="270.9" x2="417.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="430" y1="290" x2="430" y2="270" stroke="#e0a800" stroke-width="2.5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="0 430 290;0 430 290;135.0 430 290;135.0 430 290;0 430 290" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></line>
   <circle cx="430" cy="290" r="2.5" fill="#e0a800"/>
-  <foreignObject x="466" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">基準 1 的鐘</div></foreignObject>
+  <foreignObject x="466" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">地面基準的鐘</div></foreignObject>
   <text x="466" y="306" fill="#e0a800" font-size="13">走過的時間較長</text>
   <rect x="603" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;64.0;64.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;186.0;186.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="596" y1="250" x2="628" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_1\)</div></foreignObject></g>
-  <foreignObject x="340" y="324" width="290" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;text-align:right;color:#8a8a8a">\(\text{（圖中 } u \approx 0.75c\text{，時間差 1.5 倍）}\)</div></foreignObject>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="343" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">兩邊的垂直位移相同（1.3），\(q\) 自己的鐘也相同，所以垂直動量的變化相同。</div></foreignObject></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="371" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是基準 1 量到的時間比較長；力＝動量的變化÷時間，所以基準 1 的力比較小。</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_{\text{地}}\)</div></foreignObject></g>
+  <foreignObject x="340" y="324" width="290" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;text-align:right;color:#8a8a8a">\(\text{（圖中 } u = \tfrac{\sqrt5}{3}\,c\text{，時間差 1.5 倍）}\)</div></foreignObject>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="343" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">兩邊的垂直位移相同（1.3），垂直動量也相同。</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="371" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是地面基準量到的時間比較長；力＝動量的變化÷時間，所以地面基準的力比較小。</div></foreignObject></g>
 </svg>
 </figure>
 
-<p>兩個基準量到的垂直動量變化 \(dp\) 相同，但是基準 1 量到的時間 \(dt\) 長了 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍，所以兩者相除得到的 \(F\)，在基準 1 裡就小了同樣的倍數：</p>
-
-$$
-F_1 = \sqrt{1 - \frac{u^2}{c^2}}\;F_2 = -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s}
-$$
-
-<p>再利用 \(c^2 = \dfrac{1}{\varepsilon_0\mu_0}\)（其中 \(\mu_0\) 是真空的磁導率，這個關係的來歷見 3.2），以及電流 \(I = 2\lambda v\)，可以得到：</p>
-
-$$
-\frac{\lambda v}{\pi\varepsilon_0 c^2} = \frac{I}{2}\cdot\frac{\mu_0}{\pi} = \frac{\mu_0 I}{2\pi}
-$$
-
-<p>所以結果可以改寫成：</p>
-
-$$
-F_1 = -\,qu\left(\frac{\mu_0 I}{2\pi s}\right)
-$$
-
-<p>括號裡的量，正好就是一條長直導線在距離 \(s\) 處產生的磁場。因此，這個結果和在基準 1 裡直接用 Lorentz 力（電荷 × 速度 × 磁場）算出來的磁力完全一樣。</p>
-
-<p>在基準 2 裡，導線帶電而 \(q\) 靜止，\(q\) 的動量被電力改變。在基準 1 裡，導線並不帶電，\(q\) 的動量卻仍然在改變；我們把這個改變稱為磁力。可是，如果力只是 \(\dfrac{dp}{dt}\)，電力和磁力就不是兩種東西，而是同一個動量變化，在兩個基準裡被取了不同的名字。讓導線在基準 2 裡帶電的，是 1.3 的長度收縮；讓 \(\dfrac{dp}{dt}\) 在基準 1 裡變小的，是 1.2 的時間膨脹。磁力是否根本不是一種力，而只是時空的長度收縮與時間膨脹？</p>
+<p>括號裡正是長直導線的磁場；這就是 Lorentz 力（電荷 × 速度 × 磁場）。在 \(q\) 基準裡，\(q\) 的動量被電力改變；在地面基準裡，導線不帶電，\(q\) 的動量卻同樣在改變，我們稱之為磁力。磁力是否根本不是一種力，而只是時空的長度收縮（1.3）與時間膨脹（1.2）？</p>
 
 <h3>【方法二】</h3>
 
-<p>在真實的金屬導線裡，帶正電的金屬離子（也就是原子失去外層電子之後剩下的部分）固定不動，只有脫離原子的自由電子會沿著導線移動。現在我們就用這種導線，把同樣的結論再推導一次。</p>
+<p>真實的金屬導線裡，正離子不動，只有自由電子移動。</p>
 
-<p><strong>基準 1</strong>：正電荷靜止不動，線密度是 \(\lambda\)；負電荷的線密度是 \(-\lambda\)，它們以速度 \(v\) 向左移動。因為正負電荷的密度互相抵消，所以導線仍然不帶電；但是負電荷在移動，所以導線上有電流。這一次只有一排電荷在移動，所以電流是：</p>
+<p><strong>地面基準</strong>：正電荷靜止，線密度是 \(\lambda\)；負電荷的線密度是 \(-\lambda\)，以 \(v\) 向左移動。導線不帶電，電流是：</p>
 
 $$
 I = \lambda v
 $$
 
-<p>電荷 \(q\) 和方法一一樣，在距離導線 \(s\) 的地方以速度 \(u\) 向右移動。由於導線不帶電，所以在基準 1 裡，電荷 \(q\) 不受任何電力。</p>
+<p>電荷 \(q\) 同樣在距離導線 \(s\) 處以 \(u\) 向右移動。</p>
 
 <figure>
 <svg viewBox="0 0 640 390" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2193,7 +2173,7 @@ $$
     <clipPath id="clip31c"><rect x="70" y="40" width="490" height="52" rx="26"/></clipPath>
     <clipPath id="clip31d"><rect x="70" y="230" width="490" height="52" rx="26"/></clipPath>
   </defs>
-  <text x="20" y="24" fill="currentColor">基準 1：正電荷不動；兩排電荷一樣密，所以導線不帶電</text>
+  <text x="20" y="24" fill="currentColor">地面基準：正電荷不動；兩排電荷一樣密，所以導線不帶電</text>
   <rect x="70" y="40" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
   <g clip-path="url(#clip31c)"><g>
     <animateTransform attributeName="transform" type="translate" from="0 0" to="-30.0 0" dur="0.833s" repeatCount="indefinite"/>
@@ -2215,7 +2195,7 @@ $$
     <line x1="160" y1="158" x2="196" y2="158" stroke="currentColor" stroke-width="2" marker-end="url(#arr31Bc)"/>
     <foreignObject x="204" y="144.5" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(u\)</div></foreignObject>
   </g>
-  <text x="20" y="214" fill="currentColor">基準 2：跟著</text><foreignObject x="104" y="200" width="14" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:center;color:currentColor">\(q\)</div></foreignObject><text x="120" y="214" fill="currentColor">一起跑；兩排電荷都變密，但是負電荷更密，所以導線帶負電</text>
+  <foreignObject x="20" y="199" width="600" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:currentColor;line-height:1.3">\(q\) 基準：跟著 \(q\) 一起跑；兩排電荷都變密，但是負電荷更密，所以導線帶負電</div></foreignObject>
   <rect x="70" y="230" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
   <g clip-path="url(#clip31d)"><g>
     <animateTransform attributeName="transform" type="translate" from="0 0" to="-19.99 0" dur="0.394s" repeatCount="indefinite"/>
@@ -2237,56 +2217,48 @@ $$
   <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
   <g>
     <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31Br)"/>
-    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_2\)</div></foreignObject>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_q\)</div></foreignObject>
   </g>
 </svg>
 </figure>
 
-<p><strong>基準 2</strong>：和方法一一樣，換到以速度 \(u\) 向右移動的基準，也就是跟著電荷 \(q\) 一起跑，所以在這個基準裡，\(q\) 是靜止的。</p>
-
-<p>先看正電荷。正電荷在基準 1 裡靜止，所以 \(\lambda\) 就是它們靜止時的線密度。到了基準 2，它們以速度 \(u\) 向左移動；根據 1.3，它們之間的間距會縮短為原來的 \(\sqrt{1 - u^2/c^2}\) 倍，所以密度就變成原來的 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍：</p>
+<p><strong>\(q\) 基準</strong>：跟著 \(q\) 跑。正電荷以 \(u\) 向左移動，由 1.3 變密：</p>
 
 $$
-\lambda_+ = \frac{\lambda}{\sqrt{1 - u^2/c^2}}
+\lambda_+ = \frac{\lambda}{\sqrt{1 - \frac{u^2}{c^2}}}
 $$
 
-<p>再看負電荷。負電荷在基準 1 裡以速度 \(v\) 向左移動，這和方法一的負電荷完全一樣，所以它們在基準 2 裡的速度也和方法一相同。在基準 1 裡，負電荷線密度的大小 \(\lambda\) 已經是它們靜止時的 \(\gamma\) 倍（\(\gamma\) 和方法一相同），所以它們靜止時線密度的大小是 \(\dfrac{\lambda}{\gamma}\)。再把方法一算出的 \(\gamma_- = \gamma\,\dfrac{1 + vu/c^2}{\sqrt{1 - u^2/c^2}}\) 代進去，就得到：</p>
+<p>負電荷的運動和方法一相同，靜止時的線密度是 \(\dfrac{\lambda}{\gamma}\)；代入方法一的 \(\gamma_-\)：</p>
 
 $$
 \lambda_- = -\,\gamma_-\,\frac{\lambda}{\gamma}
-= -\,\gamma\,\frac{1 + \frac{vu}{c^2}}{\sqrt{1 - u^2/c^2}}\cdot\frac{\lambda}{\gamma}
-= -\,\frac{\lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}
+= -\,\gamma\,\frac{1 + \frac{vu}{c^2}}{\sqrt{1 - \frac{u^2}{c^2}}}\cdot\frac{\lambda}{\gamma}
+= -\,\frac{\lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - \frac{u^2}{c^2}}}
 $$
 
-<p>把兩者加起來，就得到導線在基準 2 裡的淨電荷密度：</p>
+<p>加起來：</p>
 
 $$
 \lambda_{\text{淨}} = \lambda_+ + \lambda_-
-= \frac{\lambda - \lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}
-= -\,\frac{\lambda v u}{c^2\sqrt{1 - u^2/c^2}}
-= -\,\frac{I u}{c^2\sqrt{1 - u^2/c^2}}
+= \frac{\lambda - \lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - \frac{u^2}{c^2}}}
+= -\,\frac{\lambda v u}{c^2\sqrt{1 - \frac{u^2}{c^2}}}
+= -\,\frac{I u}{c^2\sqrt{1 - \frac{u^2}{c^2}}}
 $$
 
-<p>雖然正電荷和負電荷在基準 2 裡都變密了，但是從上面兩個式子可以看出：和基準 1 相比，正電荷的密度變成 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍，負電荷的密度卻變成 \(\dfrac{1 + vu/c^2}{\sqrt{1 - u^2/c^2}}\) 倍，多了一個大於 1 的因子 \(1 + \dfrac{vu}{c^2}\)。這個因子之所以出現，是因為負電荷在基準 1 裡本來就向左跑，而基準 2 向右移動。所以負電荷變密得比較多，導線仍然帶負電。</p>
-
-<p>上式的最後一步，用到了方法二的電流 \(I = \lambda v\)。如果把方法一的結果 \(-\dfrac{2\lambda vu}{c^2\sqrt{1 - u^2/c^2}}\) 用方法一的電流 \(I = 2\lambda v\) 改寫，得到的也正好是 \(-\dfrac{Iu}{c^2\sqrt{1 - u^2/c^2}}\)。也就是說，只要電流 \(I\) 相同，兩種導線在基準 2 裡的淨電荷密度就完全相同。</p>
-
-<p>因此，接下來的步驟也和方法一完全相同。在基準 2 裡，靜止的電荷 \(q\) 受到的電力是：</p>
+<p>負電荷多了因子 \(1 + \dfrac{vu}{c^2}\)，所以導線帶負電。用 \(I\) 寫出的結果和方法一（\(I = 2\lambda v\)）完全相同，以下步驟也相同：</p>
 
 $$
-F_2 = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
-= -\,\frac{qIu}{2\pi\varepsilon_0 c^2\, s\sqrt{1 - u^2/c^2}}
+F_q = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
+= -\,\frac{qIu}{2\pi\varepsilon_0 c^2\, s\sqrt{1 - \frac{u^2}{c^2}}}
 $$
 
-<p>換回基準 1 時，同樣只要記得力就是 \(\dfrac{dp}{dt}\)：垂直方向的動量變化 \(dp\) 在兩個基準裡相同，基準 1 量到的時間 \(dt\) 卻長了 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍，所以 \(F_1\) 是 \(F_2\) 的 \(\sqrt{1 - u^2/c^2}\) 倍。再利用 \(c^2 = \dfrac{1}{\varepsilon_0\mu_0}\)，就得到：</p>
-
 $$
-F_1 = \sqrt{1 - \frac{u^2}{c^2}}\;F_2
+F_{\text{地}} = \frac{F_q}{\gamma_{\text{地}}}
 = -\,\frac{qIu}{2\pi\varepsilon_0 c^2\, s}
 = -\,qu\left(\frac{\mu_0 I}{2\pi s}\right)
 $$
 
-<p>結果和方法一完全一樣，也正是長直導線對運動電荷的磁力。可見這個力只取決於電流 \(I\)，而和導線裡是哪一種電荷在移動無關。</p>
+<p>磁力只取決於電流 \(I\)，和導線裡是哪一種電荷在移動無關。</p>
 
 <h2 id="sec-3-2">3.2　Maxwell 方程（未完工）</h2>
 
@@ -2366,9 +2338,9 @@ $$
 
 <h3>【第二步：等速運動的電荷，電場被壓扁】</h3>
 
-<p>現在讓電荷 \(q\) 以速度 \(v\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為基準 1；跟著 \(q\) 一起跑的基準稱為基準 2。在基準 2 裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；基準 2 裡的量都加上一撇。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.1 不同。在基準 1 裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
+<p>現在讓電荷 \(q\) 以速度 \(v\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；\(q\) 基準裡的量都加上一撇。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.1 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
 
-<p><strong>垂直方向</strong>：和 3.1 一樣，只要記得力就是 \(\dfrac{dp}{dt}\)。\(Q\) 在基準 1 裡靜止，在基準 2 裡則以 \(v\) 向左移動，角色正好和 3.1 對調：</p>
+<p><strong>垂直方向</strong>：和 3.1 一樣，只要記得力就是 \(\dfrac{dp}{dt}\)。\(Q\) 在地面基準裡靜止，在 \(q\) 基準裡則以 \(v\) 向左移動，角色正好和 3.1 對調：</p>
 
 <figure>
 <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2380,7 +2352,7 @@ $$
   </defs>
   <rect x="0" y="0" width="640" height="420" rx="10" fill="#0b0b0f"/>
   <line x1="320" y1="20" x2="320" y2="330" stroke="#8a8a8a" stroke-opacity=".35"/>
-  <foreignObject x="20" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#58c4dd">基準 1：\(Q\) 靜止</div></foreignObject>
+  <foreignObject x="20" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#58c4dd">地面基準：\(Q\) 靜止</div></foreignObject>
   <line x1="20" y1="70" x2="300" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <foreignObject x="220" y="44" width="80" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:12px;text-align:left;color:#8a8a8a;line-height:1.3">\(q\) 的路線</div></foreignObject>
   <circle r="6" cy="70" cx="40" fill="#fc6255"><animate attributeName="cx" values="40;280" dur="12.0s" repeatCount="indefinite"/></circle>
@@ -2408,7 +2380,7 @@ $$
   <rect x="283" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;96.0;96.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;154.0;154.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="276" y1="250" x2="308" y2="250" stroke="#8a8a8a"/>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F\)</div></foreignObject></g>
-  <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">基準 2：\(Q\) 以 \(v\) 向左移動</div></foreignObject>
+  <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(q\) 基準：\(Q\) 以 \(v\) 向左移動</div></foreignObject>
   <line x1="340" y1="70" x2="620" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <foreignObject x="540" y="44" width="80" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:12px;text-align:left;color:#8a8a8a;line-height:1.3">\(q\) 的路線</div></foreignObject>
   <circle r="6" cy="70" cx="480" fill="#fc6255"/>
@@ -2431,56 +2403,59 @@ $$
   <line x1="419.0" y1="270.9" x2="417.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="430" y1="290" x2="430" y2="270" stroke="#e0a800" stroke-width="2.5" stroke-linecap="round"><animateTransform attributeName="transform" type="rotate" values="0 430 290;0 430 290;135.0 430 290;135.0 430 290;0 430 290" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></line>
   <circle cx="430" cy="290" r="2.5" fill="#e0a800"/>
-  <foreignObject x="466" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">基準 2 的鐘</div></foreignObject>
+  <foreignObject x="466" y="271" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:13px;text-align:left;color:#e4e2dd;line-height:1.3">\(q\) 基準的鐘</div></foreignObject>
   <text x="466" y="306" fill="#e0a800" font-size="13">走過的時間較長</text>
   <rect x="603" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;64.0;64.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;186.0;186.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="596" y1="250" x2="628" y2="250" stroke="#8a8a8a"/>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F'\)</div></foreignObject></g>
   <foreignObject x="340" y="324" width="290" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;text-align:right;color:#8a8a8a">\(\text{（圖中 } v \approx 0.75c\text{，時間差 1.5 倍）}\)</div></foreignObject>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="343" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">兩邊的垂直位移相同（1.3），\(Q\) 自己的鐘也相同，所以垂直動量的變化 \(dp\) 相同。</div></foreignObject></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="371" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是基準 2 量到的時間 \(dt\) 比較長，所以基準 1 的 \(dp/dt\) 是基準 2 的 \(\gamma\) 倍。</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="369" width="600" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是 \(q\) 基準量到的時間 \(dt\) 比較長，所以地面基準的 \(\frac{dp}{dt}\) 是 \(q\) 基準的 \(\gamma\) 倍。</div></foreignObject></g>
 </svg>
 </figure>
 
-<p>垂直方向的 \(dp\) 在兩個基準裡相同；\(Q\) 在基準 1 裡靜止，基準 2 量到的 \(dt\) 卻長了 \(\gamma\) 倍，所以基準 1 裡的 \(\dfrac{dp}{dt}\) 是基準 2 的 \(\gamma\) 倍。根據假設三，基準 2 裡的 \(\dfrac{dp}{dt}\) 等於 \(Q\) 乘上 Coulomb 電場，即使 \(Q\) 在那裡是運動的；因此：</p>
+<p>垂直方向的 \(dp\) 在兩個基準裡相同；\(Q\) 在地面基準裡靜止，\(q\) 基準量到的 \(dt\) 卻長了 \(\gamma\) 倍，所以地面基準裡的 \(\dfrac{dp}{dt}\) 是 \(q\) 基準的 \(\gamma\) 倍。根據假設三，\(q\) 基準裡的 \(\dfrac{dp}{dt}\) 等於 \(Q\) 乘上 Coulomb 電場，即使 \(Q\) 在那裡是運動的；因此：</p>
 
 $$
 E_\perp = \gamma\,E'_\perp
 $$
 
-<p><strong>平行方向</strong>：讓 \(Q\) 在基準 1 裡從靜止開始，花一段很短的時間 \(dt\)，沿著運動方向得到一個很小的速度 \(dw\)；設 \(Q\) 的質量是 \(m\)。根據 1.5 的速度合成（基準 1 相對於基準 2 以速度 \(-v\) 移動，所以和 3.1 一樣，1.5 式子裡的基準間速度要代入 \(-v\)），\(Q\) 在基準 2 裡的速度 \(u'\) 從 \(-v\) 變成 \(\dfrac{dw - v}{1 - v\,dw/c^2}\)。因為 \(dw\) 很小，所以 \(\dfrac{1}{1 - v\,dw/c^2} \approx 1 + \dfrac{v\,dw}{c^2}\)（兩者相乘等於 \(1 - \dfrac{v^2dw^2}{c^4}\)，和 1 只差一個極小的量）；再丟掉含 \(dw^2\) 的項，這個速度的變化就是：</p>
+<p><strong>平行方向</strong>：設 \(Q\) 的質量是 \(m\)，在地面基準裡沿著運動方向的速度是 \(w\)；我們看 \(Q\) 在地面基準裡靜止（\(w = 0\)）的那一瞬間。根據 1.5 的速度合成（地面基準相對於 \(q\) 基準以速度 \(-v\) 移動，所以和 3.1 一樣，1.5 式子裡的基準間速度要代入 \(-v\)），\(Q\) 在 \(q\) 基準裡的速度是 \(u' = \dfrac{w - v}{1 - \frac{vw}{c^2}}\)。對 \(w\) 微分：</p>
 
 $$
-du' = \frac{dw - v}{1 - v\,dw/c^2} - (-v) \approx (dw - v)\left(1 + \frac{v\,dw}{c^2}\right) + v \approx dw\left(1 - \frac{v^2}{c^2}\right) = \frac{dw}{\gamma^2}
+\frac{du'}{dw} = \frac{\left(1 - \frac{vw}{c^2}\right) + (w - v)\frac{v}{c^2}}{\left(1 - \frac{vw}{c^2}\right)^2} = \frac{1 - \frac{v^2}{c^2}}{\left(1 - \frac{vw}{c^2}\right)^2}
+\qquad\xrightarrow{\ w\,=\,0\ }\qquad 1 - \frac{v^2}{c^2} = \frac{1}{\gamma^2}
 $$
 
-<p>根據 1.7，動量是 \(m\gamma u\)，其中 \(\gamma = \dfrac{1}{\sqrt{1 - u^2/c^2}}\) 隨速度 \(u\) 而變。先算 \(\gamma\) 對速度的變化率：</p>
+<p>也就是說，在這一瞬間 \(du' = \dfrac{dw}{\gamma^2}\)。</p>
+
+<p>根據 1.7，動量是 \(m\gamma u\)，其中 \(\gamma = \dfrac{1}{\sqrt{1 - \frac{u^2}{c^2}}}\) 隨速度 \(u\) 而變。先算 \(\gamma\) 對速度的變化率：</p>
 
 $$
-\frac{d\gamma}{du} = -\frac12\left(1 - \frac{u^2}{c^2}\right)^{-3/2}\cdot\left(-\frac{2u}{c^2}\right) = \frac{u/c^2}{\left(1 - u^2/c^2\right)^{3/2}}
+\frac{d\gamma}{du} = -\frac12\left(1 - \frac{u^2}{c^2}\right)^{-\frac{3}{2}}\cdot\left(-\frac{2u}{c^2}\right) = \frac{u}{c^2\left(1 - \frac{u^2}{c^2}\right)^{\frac{3}{2}}}
 $$
 
 <p>再用乘積的微分：</p>
 
 $$
 \frac{d(\gamma u)}{du} = \gamma + u\,\frac{d\gamma}{du}
-= \frac{\left(1 - u^2/c^2\right) + u^2/c^2}{\left(1 - u^2/c^2\right)^{3/2}}
-= \frac{1}{\left(1 - u^2/c^2\right)^{3/2}} = \gamma^3
+= \frac{\left(1 - \frac{u^2}{c^2}\right) + \frac{u^2}{c^2}}{\left(1 - \frac{u^2}{c^2}\right)^{\frac{3}{2}}}
+= \frac{1}{\left(1 - \frac{u^2}{c^2}\right)^{\frac{3}{2}}} = \gamma^3
 $$
 
-<p>在基準 2 裡，\(Q\) 的速率是 \(v\)，所以這裡的 \(\gamma\) 就是 \(\dfrac{1}{\sqrt{1 - v^2/c^2}}\)；從這裡開始，\(\gamma\) 一律指這個值。因此基準 2 裡的動量變化是 \(m\gamma^3\,du' = m\gamma^3\,\dfrac{dw}{\gamma^2} = m\gamma\,dw\)；基準 1 裡，\(Q\) 幾乎靜止，動量變化是 \(m\,dw\)。基準 2 量到的時間是 \(\gamma\,dt\)，所以兩個基準裡的 \(\dfrac{dp}{dt}\) 是：</p>
+<p>在 \(q\) 基準裡，\(Q\) 的速率是 \(v\)，所以這裡的 \(\gamma\) 就是 \(\dfrac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\)；從這裡開始，\(\gamma\) 一律指這個值。因此 \(q\) 基準裡的動量變化是 \(m\gamma^3\,du' = m\gamma^3\,\dfrac{dw}{\gamma^2} = m\gamma\,dw\)；地面基準裡，\(Q\) 在這一瞬間靜止，\(\dfrac{d(\gamma w)}{dw} = 1\)，動量變化是 \(m\,dw\)。在這一瞬間，\(Q\) 在 \(q\) 基準裡的速率正好是 \(v\)，所以 \(q\) 基準量到的時間 \(dt' = \gamma\,dt\)，兩個基準裡的 \(\dfrac{dp}{dt}\) 是：</p>
 
 $$
 F'_\parallel = \frac{m\gamma\,dw}{\gamma\,dt} = \frac{m\,dw}{dt} = F_\parallel
 $$
 
-<p>根據假設三，基準 2 裡的力是 \(F'_\parallel = QE'_\parallel\)（即使 \(Q\) 在那裡是運動的）；\(Q\) 在基準 1 裡靜止，所以 \(F_\parallel = QE_\parallel\)。兩個力相同，因此平行方向的電場也相同：</p>
+<p>根據假設三，\(q\) 基準裡的力是 \(F'_\parallel = QE'_\parallel\)（即使 \(Q\) 在那裡是運動的）；\(Q\) 在地面基準裡靜止，所以 \(F_\parallel = QE_\parallel\)。兩個力相同，因此平行方向的電場也相同：</p>
 
 $$
 E_\parallel = E'_\parallel
 $$
 
-<p><strong>結果</strong>：設此刻 \(q\) 在原點，基準 1 裡有一點在 \(q\) 的前方 \(X\)、側面 \(y\) 處。根據 1.3，基準 1 量到的前後距離 \(X\) 是收縮過的，這段距離在基準 2 裡是 \(\gamma X\)；側面距離則不變。所以在基準 2 裡，這一點到 \(q\) 的距離是 \(D = \sqrt{\gamma^2X^2 + y^2}\)，Coulomb 電場的前後分量和側面分量分別是 \(\dfrac{q\gamma X}{4\pi\varepsilon_0 D^3}\) 和 \(\dfrac{qy}{4\pi\varepsilon_0 D^3}\)。因為平行分量不變、垂直分量乘上 \(\gamma\)，所以基準 1 裡電場的前後分量和側面分量分別是：</p>
+<p><strong>結果</strong>：設此刻 \(q\) 在原點，地面基準裡有一點在 \(q\) 的前方 \(X\)、側面 \(y\) 處。根據 1.3，地面基準量到的前後距離 \(X\) 是收縮過的，這段距離在 \(q\) 基準裡是 \(\gamma X\)；側面距離則不變。所以在 \(q\) 基準裡，這一點到 \(q\) 的距離是 \(D = \sqrt{\gamma^2X^2 + y^2}\)，Coulomb 電場的前後分量和側面分量分別是 \(\dfrac{q\gamma X}{4\pi\varepsilon_0 D^3}\) 和 \(\dfrac{qy}{4\pi\varepsilon_0 D^3}\)。因為平行分量不變、垂直分量乘上 \(\gamma\)，所以地面基準裡電場的前後分量和側面分量分別是：</p>
 
 $$
 E_\parallel = \frac{q\gamma X}{4\pi\varepsilon_0 D^3}, \qquad E_\perp = \frac{q\gamma y}{4\pi\varepsilon_0 D^3}
@@ -2499,8 +2474,8 @@ $$
 <p>電場的大小是 \(\dfrac{q\gamma R}{4\pi\varepsilon_0 D^3}\)，代入以後：</p>
 
 $$
-E = \frac{q\gamma R}{4\pi\varepsilon_0\,\gamma^3R^3\left(1 - \beta^2\sin^2\theta\right)^{3/2}}
-= \frac{q}{4\pi\varepsilon_0 R^2}\cdot\frac{1 - \beta^2}{\left(1 - \beta^2\sin^2\theta\right)^{3/2}}
+E = \frac{q\gamma R}{4\pi\varepsilon_0\,\gamma^3R^3\left(1 - \beta^2\sin^2\theta\right)^{\frac{3}{2}}}
+= \frac{q}{4\pi\varepsilon_0 R^2}\cdot\frac{1 - \beta^2}{\left(1 - \beta^2\sin^2\theta\right)^{\frac{3}{2}}}
 $$
 
 <p>在正側面（\(\theta = 90^\circ\)），電場是同樣距離的 Coulomb 電場的 \(\gamma\) 倍；在正前方和正後方（\(\theta = 0^\circ\) 和 \(180^\circ\)），只有 \(\dfrac{1}{\gamma^2}\) 倍。電荷以 \(0.9c\) 運動時，側面的電場增強為 2.29 倍，前後的電場減弱為 0.19 倍：電場被壓成一張餅。</p>
@@ -2545,30 +2520,30 @@ $$
 <p>電場被壓扁之後，穿出一個以電荷此刻位置為球心的球面的電通量，是否仍然是 \(\dfrac{q}{\varepsilon_0}\)？電場從球心筆直向外指，所以處處垂直穿出球面。把球面依夾角切成許多環帶：夾角在 \(\theta\) 與 \(\theta + d\theta\) 之間的環帶，周長是 \(2\pi R\sin\theta\)、寬度是 \(R\,d\theta\)，面積是 \(2\pi R^2\sin\theta\,d\theta\)；設 \(k = \cos\theta\)，\(\sin\theta\,d\theta\) 就是 \(k\) 的變化量的大小，所以環帶面積是 \(2\pi R^2\,dk\)。再設 \(a^2 = 1 - \beta^2\)，則 \(1 - \beta^2\sin^2\theta = 1 - \beta^2(1 - k^2) = a^2 + \beta^2k^2\)。於是：</p>
 
 $$
-\Phi = \frac{q\,a^2}{4\pi\varepsilon_0}\cdot 2\pi\int_{-1}^{1}\frac{dk}{\left(a^2 + \beta^2k^2\right)^{3/2}}
+\Phi = \frac{q\,a^2}{4\pi\varepsilon_0}\cdot 2\pi\int_{-1}^{1}\frac{dk}{\left(a^2 + \beta^2k^2\right)^{\frac{3}{2}}}
 = \frac{q\,a^2}{4\pi\varepsilon_0}\cdot 2\pi\cdot\frac{2}{a^2}
 = \frac{q}{\varepsilon_0}
 $$
 
-<p>其中用到 \(\dfrac{1}{\left(a^2 + \beta^2k^2\right)^{3/2}}\) 的反導函數是 \(\dfrac{k}{a^2\sqrt{a^2 + \beta^2k^2}}\)；代入 \(k = \pm 1\)，並利用 \(a^2 + \beta^2 = 1\)，就得到 \(\dfrac{2}{a^2}\)。電通量不變。這個電場仍然從電荷此刻的位置筆直向外指，而且在每個方向上都和距離的平方成反比，所以第一步的細圓錐論證照樣成立：任何包住電荷的封閉曲面，穿出的電通量都是 \(\dfrac{q}{\varepsilon_0}\)。也就是說，運動的電荷同樣滿足第一條方程；3.1 在基準 2 裡對運動中的導線使用 Gauss 定律，靠的正是這個結果。實驗上，高速電子束旁邊這張「電場餅」，已經可以用光學方法直接量到（Wilke 等人 2002）。</p>
+<p>其中用到 \(\dfrac{1}{\left(a^2 + \beta^2k^2\right)^{\frac{3}{2}}}\) 的反導函數是 \(\dfrac{k}{a^2\sqrt{a^2 + \beta^2k^2}}\)；代入 \(k = \pm 1\)，並利用 \(a^2 + \beta^2 = 1\)，就得到 \(\dfrac{2}{a^2}\)。電通量不變。這個電場仍然從電荷此刻的位置筆直向外指，而且在每個方向上都和距離的平方成反比，所以第一步的細圓錐論證照樣成立：任何包住電荷的封閉曲面，穿出的電通量都是 \(\dfrac{q}{\varepsilon_0}\)。也就是說，運動的電荷同樣滿足第一條方程；3.1 在 \(q\) 基準裡對運動中的導線使用 Gauss 定律，靠的正是這個結果。實驗上，高速電子束旁邊這張「電場餅」，已經可以用光學方法直接量到（Wilke 等人 2002）。</p>
 
 <h3>【第三步：跟速度有關的那一部分力，就是磁力】</h3>
 
-<p>現在讓試驗電荷 \(Q\) 也在運動：在基準 1 裡，它以速度 \(u\) 沿著同一個方向（向右）移動。我們看它在垂直方向受的力。</p>
+<p>現在讓試驗電荷 \(Q\) 也在運動：在地面基準裡，它以速度 \(u\) 沿著同一個方向（向右）移動。我們看它在垂直方向受的力。</p>
 
-<p>力就是 \(\dfrac{dp}{dt}\)。垂直方向的 \(dp\) 在兩個基準裡相同，所以兩個基準裡的力之比，就是時間 \(dt\) 之比的倒數。根據 1.4，\(t = \gamma\left(t' + \dfrac{v}{c^2}x'\right)\)，所以 \(Q\) 走一小段時，基準 1 的時間與基準 2 的時間之比是：</p>
+<p>力就是 \(\dfrac{dp}{dt}\)。垂直方向的 \(dp\) 在兩個基準裡相同，所以兩個基準裡的力之比，就是時間 \(dt\) 之比的倒數。根據 1.4，\(t = \gamma\left(t' + \dfrac{v}{c^2}x'\right)\)，所以 \(Q\) 走一小段時，地面基準的時間與 \(q\) 基準的時間之比是：</p>
 
 $$
 \frac{dt}{dt'} = \gamma\left(1 + \frac{v}{c^2}\,\frac{dx'}{dt'}\right) = \gamma\left(1 + \frac{v\,u'}{c^2}\right)
 $$
 
-<p>其中 \(u'\) 是 \(Q\) 在基準 2 裡的速度。根據 1.5 的速度合成（基準間速度同樣代入 \(-v\)），\(u' = \dfrac{u - v}{1 - uv/c^2}\)，所以：</p>
+<p>其中 \(u'\) 是 \(Q\) 在 \(q\) 基準裡的速度。根據 1.5 的速度合成（基準間速度同樣代入 \(-v\)），\(u' = \dfrac{u - v}{1 - \frac{uv}{c^2}}\)，所以：</p>
 
 $$
 1 + \frac{v\,u'}{c^2} = \frac{\left(1 - \frac{uv}{c^2}\right) + \frac{v(u - v)}{c^2}}{1 - \frac{uv}{c^2}} = \frac{1 - \frac{v^2}{c^2}}{1 - \frac{uv}{c^2}}
 $$
 
-<p>因此 \(\dfrac{dt}{dt'} = \dfrac{\gamma\left(1 - v^2/c^2\right)}{1 - uv/c^2} = \dfrac{1}{\gamma\left(1 - uv/c^2\right)}\)（用到 \(1 - \dfrac{v^2}{c^2} = \dfrac{1}{\gamma^2}\)）。力和時間成反比，所以基準 1 裡垂直方向的力是：</p>
+<p>因此 \(\dfrac{dt}{dt'} = \dfrac{\gamma\left(1 - \frac{v^2}{c^2}\right)}{1 - \frac{uv}{c^2}} = \dfrac{1}{\gamma\left(1 - \frac{uv}{c^2}\right)}\)（用到 \(1 - \dfrac{v^2}{c^2} = \dfrac{1}{\gamma^2}\)）。力和時間成反比，所以地面基準裡垂直方向的力是：</p>
 
 $$
 F_\perp = \gamma\left(1 - \frac{uv}{c^2}\right)F'_\perp
@@ -2586,7 +2561,7 @@ $$
 B = \frac{v}{c^2}\,E_\perp \qquad\Longrightarrow\qquad F_\perp = Q\,(E_\perp - uB)
 $$
 
-<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec v\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec u\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \(u = v\) 時，\(F_\perp = \left(1 - \dfrac{v^2}{c^2}\right)QE_\perp = \dfrac{QE_\perp}{\gamma^2} = \dfrac{F'_\perp}{\gamma}\)，正是 3.1 換回基準 1 時用的規則。</p>
+<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec v\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec u\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \(u = v\) 時，\(F_\perp = \left(1 - \dfrac{v^2}{c^2}\right)QE_\perp = \dfrac{QE_\perp}{\gamma^2} = \dfrac{F'_\perp}{\gamma}\)，正是 3.1 換回地面基準時用的規則。</p>
 
 <p>這裡只算了 \(Q\) 沿著運動方向移動時，垂直方向的力。\(Q\) 往其他方向移動時，用同樣的方法也能算出同一個 Lorentz 力，但是需要知道動量在換基準時怎麼改變，那是 3.3 的內容。Lorentz 力的形式，從 Thomson 在 1897 年用電場和磁場偏轉陰極射線，到今天的大型強子對撞機用磁鐵讓質子轉彎，都一再被證實。</p>
 
@@ -2815,13 +2790,13 @@ $$
 <p>第五步的 Ampère 定律只看電流。現在讓一個電荷 \(q\) 以速度 \(v\) 沿著一個半徑為 \(s\) 的圓環的軸線，穿過這個圓環。電荷在圓環左邊時，沒有任何電流穿過圓環所圍的圓盤；可是電荷在運動，所以圓環上處處都有磁場。設 \(X\) 是電荷到圓盤的距離。圓環上每一點到軸線的距離都是 \(s\)，所以把第二步結果中的側面距離 \(y\) 換成 \(s\)，就得到圓環上電場的垂直分量；再用第三步的 \(B = \dfrac{v}{c^2}E_\perp\) 算出磁場，然後沿著圓環繞一圈：</p>
 
 $$
-\oint\vec B\cdot d\vec l = 2\pi s\times\frac{v}{c^2}\cdot\frac{q\gamma s}{4\pi\varepsilon_0\left(\gamma^2X^2 + s^2\right)^{3/2}}
-= \frac{\mu_0\,q\gamma v s^2}{2\left(\gamma^2X^2 + s^2\right)^{3/2}}
+\oint\vec B\cdot d\vec l = 2\pi s\times\frac{v}{c^2}\cdot\frac{q\gamma s}{4\pi\varepsilon_0\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}
+= \frac{\mu_0\,q\gamma v s^2}{2\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}
 $$
 
 <p>它從來不是零，可是穿過圓盤的電流幾乎一直是零。只看電流的 Ampère 定律，在這裡錯了。</p>
 
-<p>缺的是什麼？電荷逐漸靠近時，穿過圓盤的電通量逐漸增加。在基準 2 裡，電荷靜止，電場就是 Coulomb 電場，而電荷到圓盤的距離是 \(\gamma X\)。從電荷看過去，圓盤的邊緣張開一個半角為 \(\alpha\) 的圓錐；用第二步的環帶，把 \(k\) 從 \(\cos\alpha\) 加到 1，這個圓錐佔全部方向的比例是 \(\dfrac{1 - \cos\alpha}{2}\)，其中 \(\cos\alpha = \dfrac{\gamma X}{\sqrt{\gamma^2X^2 + s^2}}\)。穿過圓盤的電通量只用到沿著運動方向的電場分量；第二步說這個分量在兩個基準裡相同，而圓盤垂直於運動方向，圓盤上各點在兩個基準裡是同時的，面積也不收縮，所以基準 1 裡穿過圓盤的電通量和基準 2 相同。電荷在圓盤左邊時：</p>
+<p>缺的是什麼？電荷逐漸靠近時，穿過圓盤的電通量逐漸增加。在 \(q\) 基準裡，電荷靜止，電場就是 Coulomb 電場，而電荷到圓盤的距離是 \(\gamma X\)。從電荷看過去，圓盤的邊緣張開一個半角為 \(\alpha\) 的圓錐；用第二步的環帶，把 \(k\) 從 \(\cos\alpha\) 加到 1，這個圓錐佔全部方向的比例是 \(\dfrac{1 - \cos\alpha}{2}\)，其中 \(\cos\alpha = \dfrac{\gamma X}{\sqrt{\gamma^2X^2 + s^2}}\)。穿過圓盤的電通量只用到沿著運動方向的電場分量；第二步說這個分量在兩個基準裡相同，而圓盤垂直於運動方向，圓盤上各點在兩個基準裡是同時的，面積也不收縮，所以地面基準裡穿過圓盤的電通量和 \(q\) 基準相同。電荷在圓盤左邊時：</p>
 
 $$
 \Phi_E = \frac{q}{2\varepsilon_0}\left(1 - \frac{\gamma X}{\sqrt{\gamma^2X^2 + s^2}}\right)
@@ -2831,15 +2806,15 @@ $$
 
 $$
 \frac{d}{dX}\left(\frac{\gamma X}{\sqrt{\gamma^2X^2 + s^2}}\right)
-= \frac{\gamma\left(\gamma^2X^2 + s^2\right) - \gamma X\cdot\gamma^2X}{\left(\gamma^2X^2 + s^2\right)^{3/2}}
-= \frac{\gamma s^2}{\left(\gamma^2X^2 + s^2\right)^{3/2}}
+= \frac{\gamma\left(\gamma^2X^2 + s^2\right) - \gamma X\cdot\gamma^2X}{\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}
+= \frac{\gamma s^2}{\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}
 $$
 
 <p>\(\Phi_E\) 的式子裡，這一項前面有負號，而 \(X\) 又在減少，兩個負號相乘，所以電通量在增加，它的變化率是：</p>
 
 $$
-\frac{d\Phi_E}{dt} = \frac{q}{2\varepsilon_0}\cdot\left(-\frac{\gamma s^2}{\left(\gamma^2X^2 + s^2\right)^{3/2}}\right)\cdot(-v)
-= \frac{q}{2\varepsilon_0}\cdot\frac{\gamma s^2 v}{\left(\gamma^2X^2 + s^2\right)^{3/2}}
+\frac{d\Phi_E}{dt} = \frac{q}{2\varepsilon_0}\cdot\left(-\frac{\gamma s^2}{\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}\right)\cdot(-v)
+= \frac{q}{2\varepsilon_0}\cdot\frac{\gamma s^2 v}{\left(\gamma^2X^2 + s^2\right)^{\frac{3}{2}}}
 $$
 
 <p>電荷穿過以後，電場改從圓盤的另一面穿出，\(\Phi_E = -\dfrac{q}{2\varepsilon_0}\left(1 - \dfrac{\gamma X}{\sqrt{\gamma^2X^2 + s^2}}\right)\)，而 \(X\) 每秒增加 \(v\)；兩個負號再次抵消，得到同樣的結果。把它乘上 \(\mu_0\varepsilon_0\)，正好就是上面的 \(\oint\vec B\cdot d\vec l\)。也就是說，在電荷穿過圓盤以外的每一刻：</p>
