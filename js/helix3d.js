@@ -841,6 +841,93 @@
 
 
   // ───────── 駐波圖鑑：14 種振動，共用一個 WebGL 引擎，各畫到自己的 2D 畫布 ─────────
+  // 2.6：地球儀上的箭頭沿三角形走一圈，一路不轉，回到起點卻轉了；轉角＝面積÷半徑²
+  function setupHolonomy(fig) {
+    return stage(fig, 400, function (scene, cam) {
+      var R = 1.5, up = new THREE.Vector3(0, 1, 0), X = new THREE.Vector3(1, 0, 0);
+      var LOOK = new THREE.Vector3(0.15, 0.2, 0.15), DIR = new THREE.Vector3(0.4265, 0.669, 0.6086), CAM = DIR.clone().multiplyScalar(6.6).add(LOOK);   // 仰角 42°、方位 35°
+      var SCREEN_UP = up.clone().addScaledVector(DIR, -up.dot(DIR)).normalize();   // 畫面上「往上」對應的世界方向
+      var N = new THREE.Vector3(0, R, 0), V0 = new THREE.Vector3(0, 0, 1), RT = R * 1.006;
+      scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+      var sun = new THREE.DirectionalLight(0xffffff, 0.75); sun.position.set(3, 5, 6); scene.add(sun);
+      scene.add(new THREE.Mesh(new THREE.SphereGeometry(R, 64, 48), new THREE.MeshLambertMaterial({ color: 0x24465a })));
+      // 經緯線：每 30°
+      var gridMat = new THREE.LineBasicMaterial({ color: 0xbfeaf5, transparent: true, opacity: 0.18 }), RG = R * 1.002;
+      for (var la = -60; la <= 60; la += 30) {
+        var p = [], th = la * Math.PI / 180;
+        for (var i = 0; i <= 96; i++) { var q = 2 * Math.PI * i / 96; p.push(new THREE.Vector3(RG * Math.cos(th) * Math.sin(q), RG * Math.sin(th), RG * Math.cos(th) * Math.cos(q))); }
+        scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(p), gridMat));
+      }
+      for (var lo = 0; lo < 180; lo += 30) {
+        var p2 = [], l = lo * Math.PI / 180;
+        for (var j = 0; j <= 96; j++) { var q2 = 2 * Math.PI * j / 96; p2.push(new THREE.Vector3(RG * Math.sin(q2) * Math.sin(l), RG * Math.cos(q2), RG * Math.sin(q2) * Math.cos(l))); }
+        scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(p2), gridMat));
+      }
+      // 三條大圓弧：北極 → 赤道經度 0 → 赤道經度 φ → 北極；沿大圓走，平行移動＝繞同一軸轉
+      function legsFor(phi) {
+        var a3 = new THREE.Vector3(Math.cos(phi), 0, -Math.sin(phi));
+        return [{ axis: X, ang: Math.PI / 2 }, { axis: up, ang: phi }, { axis: a3, ang: -Math.PI / 2 }];
+      }
+      function state(legs, s, out) {                  // s ∈ [0, 3]：走到第幾段
+        var p = N.clone(), v = V0.clone(), qn = new THREE.Quaternion();
+        for (var k = 0; k < 3; k++) {
+          var f = Math.min(Math.max(s - k, 0), 1); if (f <= 0) break;
+          qn.setFromAxisAngle(legs[k].axis, legs[k].ang * f); p.applyQuaternion(qn); v.applyQuaternion(qn);
+        }
+        out.p = p; out.v = v; return out;
+      }
+      var CYCLES = [Math.PI / 2, Math.PI / 4], SEG = 90, cyc = CYCLES.map(function (phi) {
+        var legs = legsFor(phi), g = new THREE.Group(); g.visible = false; scene.add(g);
+        var pts = [], st = {};
+        for (var i = 0; i <= 3 * SEG; i++) { state(legs, i / SEG, st); pts.push(st.p.clone().multiplyScalar(RT / R)); }
+        var trailMat = new THREE.MeshBasicMaterial({ color: BLUE, transparent: true, opacity: 1 });
+        var trail = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts), 3 * SEG, 0.022, 8, false), trailMat); g.add(trail);
+        // 三角形的面：極角 0–90°、經度 0–φ
+        var n = 24, pos = [], idx = [], RP = R * 1.003;
+        for (var a = 0; a <= n; a++) for (var b = 0; b <= n; b++) { var th2 = Math.PI / 2 * a / n, lb = phi * b / n; pos.push(RP * Math.sin(th2) * Math.sin(lb), RP * Math.cos(th2), RP * Math.sin(th2) * Math.cos(lb)); }
+        for (var a2 = 0; a2 < n; a2++) for (var b2 = 0; b2 < n; b2++) { var i0 = a2 * (n + 1) + b2; idx.push(i0, i0 + n + 1, i0 + 1, i0 + 1, i0 + n + 1, i0 + n + 2); }
+        var pg = new THREE.BufferGeometry(); pg.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3)); pg.setIndex(idx);
+        var patchMat = new THREE.MeshBasicMaterial({ color: BLUE, transparent: true, opacity: 0, side: THREE.DoubleSide, depthWrite: false });
+        g.add(new THREE.Mesh(pg, patchMat));
+        // 北極上的轉角弧
+        var arcPts = [], AR = 0.5;
+        for (var c = 0; c <= 40; c++) { var ac = phi * c / 40; arcPts.push(new THREE.Vector3(AR * Math.sin(ac), R + 0.03, AR * Math.cos(ac))); }
+        var arcMat = new THREE.MeshBasicMaterial({ color: GOLD, transparent: true, opacity: 1 });
+        var arc = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(arcPts), 40, 0.014, 6, false), arcMat); g.add(arc);
+        var deg = Math.round(phi * 180 / Math.PI);
+        var turnLbl = textSprite('轉了 ' + deg + '°', '#e0a800', 0.3);
+        turnLbl.position.copy(N).addScaledVector(SCREEN_UP, 0.5); g.add(turnLbl);
+        var areaLbl = new THREE.Group(), al1 = textSprite('面積 ÷ 半徑²', '#bfeaf5', 0.19), al2 = textSprite('＝ ' + (deg === 90 ? 'π/2' : 'π/4') + ' ＝ ' + deg + '°', '#bfeaf5', 0.19);
+        al1.position.copy(SCREEN_UP).multiplyScalar(0.13); al2.position.copy(SCREEN_UP).multiplyScalar(-0.13); areaLbl.add(al1); areaLbl.add(al2);
+        var ta = 0.6 * Math.PI / 2, la2 = phi / 2; areaLbl.position.set(1.12 * R * Math.sin(ta) * Math.sin(la2), 1.12 * R * Math.cos(ta), 1.12 * R * Math.sin(ta) * Math.cos(la2)); g.add(areaLbl);
+        return { legs: legs, g: g, trail: trail, trailMat: trailMat, patchMat: patchMat, arc: arc, arcMat: arcMat, turnLbl: turnLbl, areaLbl: areaLbl, phi: phi };
+      });
+      var mover = arrow(0.8, GOLD, 1, 0.03, 0.085, 0.26); scene.add(mover);
+      var ghost = arrow(0.8, 0xe8e8e8, 0.7, 0.03, 0.085, 0.26); ghost.position.copy(N).multiplyScalar(1.02); ghost.quaternion.setFromUnitVectors(up, V0); scene.add(ghost);
+      var T = 10, st2 = {};
+      cam.position.copy(CAM); cam.lookAt(LOOK);
+      return function (t) {
+        var k = Math.floor(t / T) % CYCLES.length, u = t % T, C = cyc[k];
+        cyc.forEach(function (c, i) { c.g.visible = i === k; });
+        var fade = 1 - smooth((u - 9.2) / 0.8), show = smooth(u / 0.6) * fade;
+        var s = 3 * Math.min(Math.max((u - 0.6) / 4.8, 0), 1);
+        s = Math.floor(s) + smooth(s - Math.floor(s)); if (s > 3) s = 3;
+        state(C.legs, s, st2);
+        mover.position.copy(st2.p).multiplyScalar(1.02); mover.quaternion.setFromUnitVectors(up, st2.v.clone().normalize());
+        mover.userData.mat.opacity = show; mover.userData.mat.depthWrite = show >= 1;
+        ghost.userData.mat.opacity = 0.7 * (u > 0.6 ? 1 : 0) * fade;
+        var lens = [Math.PI / 2, C.phi, Math.PI / 2], done = 0; for (var m = 0; m < 3; m++) done += lens[m] * Math.min(Math.max(s - m, 0), 1);
+        C.trail.geometry.setDrawRange(0, Math.round(3 * SEG * done / (Math.PI + C.phi)) * 8 * 6); C.trailMat.opacity = fade;   // Tube 依弧長取樣
+        var e = smooth((u - 5.6) / 1.0);
+        C.patchMat.opacity = 0.32 * e * fade;
+        C.arc.geometry.setDrawRange(0, Math.round(40 * e) * 6 * 6); C.arcMat.opacity = fade;
+        C.turnLbl.material.opacity = e * fade; C.areaLbl.children.forEach(function (sp) { sp.material.opacity = smooth((u - 6.2) / 0.8) * fade; });
+        var sw = 0.07 * Math.sin(2 * Math.PI * t / (T * CYCLES.length));
+        cam.position.set(CAM.x * Math.cos(sw) + CAM.z * Math.sin(sw), CAM.y, -CAM.x * Math.sin(sw) + CAM.z * Math.cos(sw)); cam.lookAt(LOOK);
+      };
+    });
+  }
+
   function setupModes(container) {
     var figs = [].slice.call(container.querySelectorAll('canvas[data-mode]'));
     if (!figs.length) return null;
@@ -1002,7 +1089,7 @@
     if (dl) window.__helix3d.loop = setupDoubleLoop(dl);
     var un = document.getElementById('unify3d');
     if (un) window.__helix3d.unify = setupUnify(un);
-    [['shapes3d', setupShapes, 'shapes'], ['order3d', setupOrder, 'order'], ['squash3d', setupSquash, 'squash'], ['eleven3d', setupEleven, 'eleven']].forEach(function (e) { var el = document.getElementById(e[0]); if (el) window.__helix3d[e[2]] = e[1](el); });
+    [['shapes3d', setupShapes, 'shapes'], ['order3d', setupOrder, 'order'], ['squash3d', setupSquash, 'squash'], ['eleven3d', setupEleven, 'eleven'], ['holo3d', setupHolonomy, 'holo']].forEach(function (e) { var el = document.getElementById(e[0]); if (el) window.__helix3d[e[2]] = e[1](el); });
     var md = document.getElementById('modes3d');
     if (md) window.__helix3d.modes = setupModes(md);
     if (a) window.__helix3d.a = setup(a, { height: 320, pages: 9, spacing: 0.7, radius: 0.7, highlight: -1, numbers: true, tipArrows: false, endView: false, packet: { sigma: 0.8, speed: 1.6, outL: 4.2, outR: 6.4, dx: 0.156 } });
