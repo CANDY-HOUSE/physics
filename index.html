@@ -49,12 +49,14 @@ MathJax = {
           <li><a href="#sec-2-3">2.3　引力幾何化。人類的猜測：加速度＝重力</a></li>
           <li><a href="#sec-2-4">2.4　E = hν 的能量幾何化</a></li>
           <li><a href="#sec-2-5">2.5　（未完工）</a></li>
+          <li><a href="#sec-2-6">2.6　（未完工）</a></li>
         </ol>
       </li>
       <li>
         <a href="#part-3">三、電磁學</a>
         <ol class="sb-secs">
-          <li><a href="#sec-3-1">3.1　（未完工）</a></li>
+          <li><a href="#sec-3-1">3.1　磁就是電（未完工）</a></li>
+          <li><a href="#sec-3-2">3.2　（未完工）</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -1743,11 +1745,352 @@ $$
 <figure><canvas data-mode="t11" width="640" height="420"></canvas><figcaption>甜甜圈上的駐波：沿兩個方向各一個波長</figcaption></figure>
 </div>
 
+<h2 id="sec-2-6">2.6　（未完工）</h2>
+
+<p>2.3 猜引力是時空的形狀，2.5 猜電荷是看不見的小圓上的動量。兩件事能不能用同一把尺量？這把尺是：<strong>拿一支箭頭繞一圈，途中始終不轉它，回來時它轉了多少。</strong></p>
+
+<h3>【曲率：繞一圈回來差多少】</h3>
+
+<p>在平面上拿一支箭頭沿三角形走一圈，途中始終不轉它——回到起點，箭頭和出發時一模一樣。</p>
+
+<p>在地球儀上做同一件事。箭頭從北極出發，指著前進方向，沿經線往南走到赤道；路線轉向東，箭頭不轉，仍指著南——變成指向路線的右側；沿赤道走四分之一圈，路線轉向北，箭頭仍指著南——變成指向身後；沿經線走回北極，箭頭指著剛剛走來的那條經線，和出發時差了 90°。</p>
+
+<figure id="holo3d">
+<figcaption>箭頭沿球面三角形走一圈，一路不轉，回到起點卻轉了：轉角＝面積÷半徑²</figcaption>
+</figure>
+
+<p>三角形的三個角都是 90°，內角和 270°，比平面多出 90°——正好是箭頭轉的角度。它等於三角形的面積除以半徑平方（Girard 1629）：</p>
+
+$$
+\text{轉角} = \frac{\text{面積}}{R^2} = \frac{\tfrac18 \times 4\pi R^2}{R^2} = \frac{\pi}{2} = 90^\circ
+$$
+
+<p>把東行那段縮成八分之一圈，面積減半，轉角也減半，變成 45°。平面上的三角形再大，轉角都是零；同樣面積的三角形，球越小，\(\dfrac{1}{R^2}\) 越大，轉得越多。\(\dfrac{1}{R^2}\) 就是球面的<strong>曲率</strong>。曲率不必用公式定義：繞一小圈回來，方向差了多少，再除以圈住的面積。</p>
+
+<h3>【引力：陀螺儀繞地球一圈】</h3>
+
+<p>在太空中，一路不轉的箭頭就是陀螺儀：沒有外力矩，轉軸自己不會轉。如果地球周圍的時空是平的，陀螺儀繞地球一圈回來，轉軸紋絲不動；如果時空是彎的，它就會像地球儀上的箭頭，回來時轉了一點。</p>
+
+<figure>
+<svg viewBox="0 -24 640 324" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrGP" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="arrGPg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
+  </defs>
+  <circle cx="220" cy="150" r="44" fill="#3584e4" fill-opacity=".18" stroke="#3584e4" stroke-width="1.5"/>
+  <text x="220" y="155" text-anchor="middle" fill="currentColor">地球</text>
+  <circle cx="220" cy="150" r="108" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 5" opacity=".55"/>
+  <path d="M249.8,46.2 A108,108 0 0,0 201.2,43.6" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7" marker-end="url(#arrGPg)"/>
+  <line x1="328" y1="150" x2="328" y2="92" stroke="currentColor" stroke-width="3" opacity=".4" marker-end="url(#arrGPg)"/>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.75;0.8;1" dur="10s" repeatCount="indefinite"/>
+    <path d="M328,120 A30,30 0 0,0 317.7,121.8" fill="none" stroke="#e0a800" stroke-width="1.5"/>
+    <text x="300" y="98" text-anchor="end" fill="#e0a800">多轉了</text>
+  </g>
+  <g>
+    <animateMotion dur="10s" repeatCount="indefinite" path="M328,150 A108,108 0 1,0 112,150 A108,108 0 1,0 328,150" keyPoints="0;1;1" keyTimes="0;0.75;1" calcMode="linear"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0;-20;-20" keyTimes="0;0.75;1" dur="10s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-58" stroke="#e0a800" stroke-width="3" marker-end="url(#arrGP)"/>
+    </g>
+    <circle r="5" fill="currentColor"/>
+  </g>
+  <text x="390" y="118" fill="currentColor">陀螺儀：一路不轉的箭頭</text>
+  <text x="390" y="146" fill="currentColor">繞地球一圈回來，多轉了一點</text>
+  <text x="390" y="174" fill="currentColor" opacity=".7" font-size="13">（圖中把轉角放大了約六千萬倍）</text>
+</svg>
+</figure>
+
+<p>2004 年，Gravity Probe B 把四顆陀螺儀送上繞過南北極的軌道，量了一年。廣義相對論預言：轉軸每年多轉 6.606 角秒（約 0.0018°），方向與繞行方向相同。量到每年 6.602 角秒，誤差約千分之三（Everitt 等人 2011）。這就是地球儀上的箭頭，只是地球儀換成了地球周圍的時空。</p>
+
+<h3>【電磁：電子的相位箭頭繞磁場一圈】</h3>
+
+<p>電子也帶著一支箭頭：2.4 的相位箭頭。讓電子分成上下兩路，繞過中間一小塊磁場，在另一側會合。磁場被超導體完全包住，電子走過的地方，磁場是零。</p>
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <path d="M70,150 C190,30 400,30 520,150" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+  <path d="M70,150 C190,270 400,270 520,150" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".45"/>
+  <circle cx="295" cy="150" r="36" fill="#fc6255" fill-opacity=".22" stroke="#bdbdbd" stroke-width="5"/>
+  <text x="295" y="155" text-anchor="middle" fill="currentColor">磁場</text>
+  <text x="295" y="207" text-anchor="middle" fill="currentColor" opacity=".8" font-size="13">外面包著超導體</text>
+  <text x="295" y="28" text-anchor="middle" fill="currentColor">電子只走在磁場外面</text>
+  <circle cx="62" cy="150" r="5" fill="currentColor"/>
+  <text x="62" y="180" text-anchor="middle" fill="currentColor">電子</text>
+  <g>
+    <animateMotion dur="8s" repeatCount="indefinite" path="M70,150 C190,30 400,30 520,150" keyPoints="0;1;1" keyTimes="0;0.7;1" calcMode="linear"/>
+    <circle r="13" fill="none" stroke="#e0a800" stroke-width="1.2" opacity=".6"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0;-765;-765" keyTimes="0;0.7;1" dur="8s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-7" stroke="#e0a800" stroke-width="2"/>
+      <path d="M-2.4,-6.5 L0,-13 L2.4,-6.5 z" fill="#e0a800"/>
+    </g>
+  </g>
+  <g>
+    <animateMotion dur="8s" repeatCount="indefinite" path="M70,150 C190,270 400,270 520,150" keyPoints="0;1;1" keyTimes="0;0.7;1" calcMode="linear"/>
+    <circle r="13" fill="none" stroke="#3584e4" stroke-width="1.2" opacity=".6"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="0;-675;-675" keyTimes="0;0.7;1" dur="8s" repeatCount="indefinite"/>
+      <line x1="0" y1="0" x2="0" y2="-7" stroke="#3584e4" stroke-width="2"/>
+      <path d="M-2.4,-6.5 L0,-13 L2.4,-6.5 z" fill="#3584e4"/>
+    </g>
+  </g>
+  <g opacity="0">
+    <animate attributeName="opacity" values="0;0;1;1" keyTimes="0;0.7;0.75;1" dur="8s" repeatCount="indefinite"/>
+    <path d="M505.9,135.9 A20,20 0 0,1 534.1,135.9" fill="none" stroke="currentColor" stroke-width="1.5"/>
+    <foreignObject x="546" y="128" width="94" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\text{差 }\dfrac{q}{\hbar}\,\Phi\)</div></foreignObject>
+  </g>
+</svg>
+</figure>
+
+<p>如果磁力只是一種「力」，電子沒碰到磁場，就不該受任何影響。但兩路會合時，兩支相位箭頭差了一個角度，只由被圍住的磁場決定（Aharonov 與 Bohm 1959 預言）：</p>
+
+$$
+\text{轉角差} = \frac{q}{\hbar} \times \Phi
+$$
+
+<p>\(q\) 是電荷，\(\Phi\) 是被圍住的磁場乘上面積（磁通），\(\hbar\) 是 Planck 常數除以 \(2\pi\)。1986 年 Tonomura 等人把磁場關在一個微米大小、外面包著超導體的環形磁鐵裡，用電子干涉量到了這個角度差（Tonomura 等人 1986）。</p>
+
+<p>和地球儀並排：</p>
+
+<div class="table-scroll"><table>
+<thead><tr><th></th><th>繞一圈回來，箭頭轉了</th></tr></thead>
+<tbody>
+<tr><td>地球儀上的箭頭</td><td>曲率 × 面積</td></tr>
+<tr><td>電子的相位箭頭</td><td>\(\dfrac{q}{\hbar}\) × 磁場 × 面積</td></tr>
+</tbody>
+</table></div>
+
+<p>形式一模一樣：磁場扮演的正是曲率。不是地球儀的曲率，也不是時空的曲率，而是「時空每一點上的內部小圓（2.5），彼此怎麼接起來」的曲率（這個對應在數學上是嚴格的，吳大峻與楊振寧 1975）。電荷 \(q\) 決定箭頭對這個曲率轉得多快：帶兩份電，轉角加倍——正是 2.5 的「電荷＝繞小圓轉幾圈」。</p>
+
+<h3>【電荷為什麼是整數】</h3>
+
+<p>假設磁場有源頭——一顆磁單極，就像電荷之於電場。用一個球面把它包起來，讓電子的相位箭頭沿赤道繞一圈。這一圈圍住的磁通是多少？用北半球算，是穿過北半球的 \(\Phi_{\text{北}}\)；用南半球算，是穿過南半球的 \(\Phi_{\text{南}}\)，只是對南半球而言，繞的方向相反。</p>
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arrDM" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
+  </defs>
+  <path d="M80,150 A110,110 0 0,1 300,150 A110,30 0 0,1 80,150 z" fill="#e0a800" fill-opacity=".14"/>
+  <path d="M80,150 A110,30 0 0,0 300,150 A110,110 0 0,1 80,150 z" fill="#3584e4" fill-opacity=".14"/>
+  <circle cx="190" cy="150" r="110" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".8"/>
+  <path d="M80,150 A110,30 0 0,1 300,150" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="4 4" opacity=".5"/>
+  <path d="M80,150 A110,30 0 0,0 300,150" fill="none" stroke="currentColor" stroke-width="2"/>
+  <line x1="202.1" y1="143.0" x2="242.0" y2="120.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <line x1="190.0" y1="136.0" x2="190.0" y2="90.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <line x1="177.9" y1="143.0" x2="138.0" y2="120.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <line x1="177.9" y1="157.0" x2="138.0" y2="180.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <line x1="190.0" y1="164.0" x2="190.0" y2="210.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <line x1="202.1" y1="157.0" x2="242.0" y2="180.0" stroke="#fc6255" stroke-width="1.8" marker-end="url(#arrDM)"/>
+  <circle cx="190" cy="150" r="6" fill="#fc6255"/>
+  <text x="222" y="155" fill="currentColor" font-size="13">磁單極</text>
+  <text x="304" y="178" fill="currentColor" font-size="13">赤道一圈</text>
+  <circle r="5" fill="#e0a800"><animateMotion dur="6s" repeatCount="indefinite" path="M300,150 A110,30 0 1,0 80,150 A110,30 0 1,0 300,150"/></circle>
+  <foreignObject x="370" y="38" width="270" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{北半球算：}\dfrac{q}{\hbar}\,\Phi_{\text{北}}\)</div></foreignObject>
+  <foreignObject x="370" y="104" width="270" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#3584e4">\(\text{南半球算：}-\dfrac{q}{\hbar}\,\Phi_{\text{南}}\)</div></foreignObject>
+  <foreignObject x="370" y="178" width="270" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\text{差：}\dfrac{q}{\hbar}\,\Phi_{\text{全}} = 2\pi n\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>同一圈，兩種算法的轉角差了：</p>
+
+$$
+\frac{q}{\hbar}\,\Phi_{\text{北}} - \left(-\frac{q}{\hbar}\,\Phi_{\text{南}}\right)
+= \frac{q}{\hbar}\left(\Phi_{\text{北}} + \Phi_{\text{南}}\right)
+= \frac{q}{\hbar}\,\Phi_{\text{全}}
+$$
+
+<p>箭頭轉一整圈等於沒轉，所以兩種算法只准差整數圈：</p>
+
+$$
+\frac{q}{\hbar}\,\Phi_{\text{全}} = 2\pi n
+\qquad\Longrightarrow\qquad
+q = n \times \frac{2\pi\hbar}{\Phi_{\text{全}}}
+$$
+
+<p>只要宇宙中有一顆磁單極，所有電荷都必須是同一個單位的整數倍（Dirac 1931）。電荷確實是整數倍：質子與電子的電荷大小相等，差距小於電子電荷的 \(10^{-21}\)（Bressi 等人 2011）。但磁單極至今一顆也沒找到（MoEDAL 2022），所以這一步是有前提的推論。</p>
+
+<p>整理：</p>
+
+<div class="table-scroll"><table>
+<thead><tr><th>箭頭</th><th>活在哪裡</th><th>繞一圈回來</th><th>實驗</th></tr></thead>
+<tbody>
+<tr><td>地球儀上的箭頭</td><td>球面</td><td>轉了 面積 ÷ \(R^2\)</td><td>幾何定理（Girard 1629）</td></tr>
+<tr><td>陀螺儀的轉軸</td><td>時空</td><td>每圈約 0.0012 角秒（每年 6.6 角秒）</td><td>Gravity Probe B 2011</td></tr>
+<tr><td>電子的相位箭頭</td><td>內部小圓</td><td>轉了 \(\dfrac{q}{\hbar}\Phi\)</td><td>Tonomura 1986</td></tr>
+</tbody>
+</table></div>
+
+<p>引力與電磁力，在數學上是同一類東西：曲率。最明顯的差別是箭頭活在哪裡——陀螺儀活在時空裡，相位箭頭活在內部小圓上。如果那個小圓是空間真的多出來的一個方向（2.5），引力與電磁力是否就是同一個五維時空的曲率？這正是 Kaluza 1921 年的猜測；2.5 提過它的難題，至今也沒有任何實驗證據。</p>
+
 <!-- ==================== 第三部・第三章 ==================== -->
 
 <h1 id="part-3"><span class="part-label">第三部・電磁學</span>第三章　電磁學</h1>
 
-<h2 id="sec-3-1">3.1　（未完工）</h2>
+<h2 id="sec-3-1">3.1　磁就是電（未完工）</h2>
+
+<p>同一個電磁現象，在某一個基準看來是電的作用，在另一個基準看來卻可能是磁的作用；但是兩個基準算出來的運動結果完全相同。這一節只用靜電學和第一章的相對論，完全不用任何關於磁的定律，就能算出通電導線對一個運動中的電荷所施加的磁力。這個論證來自 Purcell（1965）。</p>
+
+<p><strong>基準 1</strong>：假設一條導線裡有兩排電荷。正電荷的線密度是 \(\lambda\)，它們以速度 \(v\) 向右移動；負電荷的線密度是 \(-\lambda\)，它們以同樣的速度 \(v\) 向左移動。因為正負電荷的密度互相抵消，所以這條導線不帶電；但是兩排電荷都在移動，所以導線上有電流：</p>
+
+$$
+I = 2\lambda v
+$$
+
+<p>另外，在距離導線 \(s\) 的地方，有一個電荷 \(q\) 以速度 \(u\) 向右移動，而且 \(u\) 比 \(v\) 小。由於導線不帶電，所以在基準 1 裡，電荷 \(q\) 不受任何電力。</p>
+
+<figure>
+<svg viewBox="0 0 640 390" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr31g" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="arr31b" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
+    <marker id="arr31r" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
+    <marker id="arr31c" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
+    <clipPath id="clip31a"><rect x="70" y="40" width="490" height="52" rx="26"/></clipPath>
+    <clipPath id="clip31b"><rect x="70" y="230" width="490" height="52" rx="26"/></clipPath>
+  </defs>
+  <text x="20" y="24" fill="currentColor">基準 1：兩排電荷一樣密，所以導線不帶電</text>
+  <rect x="70" y="40" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
+  <g clip-path="url(#clip31a)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-30.0 0" dur="0.833s" repeatCount="indefinite"/>
+    <circle cx="-20.0" cy="54" r="4" fill="#3584e4"/><circle cx="10.0" cy="54" r="4" fill="#3584e4"/><circle cx="40.0" cy="54" r="4" fill="#3584e4"/><circle cx="70.0" cy="54" r="4" fill="#3584e4"/><circle cx="100.0" cy="54" r="4" fill="#3584e4"/><circle cx="130.0" cy="54" r="4" fill="#3584e4"/><circle cx="160.0" cy="54" r="4" fill="#3584e4"/><circle cx="190.0" cy="54" r="4" fill="#3584e4"/><circle cx="220.0" cy="54" r="4" fill="#3584e4"/><circle cx="250.0" cy="54" r="4" fill="#3584e4"/><circle cx="280.0" cy="54" r="4" fill="#3584e4"/><circle cx="310.0" cy="54" r="4" fill="#3584e4"/><circle cx="340.0" cy="54" r="4" fill="#3584e4"/><circle cx="370.0" cy="54" r="4" fill="#3584e4"/><circle cx="400.0" cy="54" r="4" fill="#3584e4"/><circle cx="430.0" cy="54" r="4" fill="#3584e4"/><circle cx="460.0" cy="54" r="4" fill="#3584e4"/><circle cx="490.0" cy="54" r="4" fill="#3584e4"/><circle cx="520.0" cy="54" r="4" fill="#3584e4"/><circle cx="550.0" cy="54" r="4" fill="#3584e4"/><circle cx="580.0" cy="54" r="4" fill="#3584e4"/><circle cx="610.0" cy="54" r="4" fill="#3584e4"/><circle cx="640.0" cy="54" r="4" fill="#3584e4"/><circle cx="670.0" cy="54" r="4" fill="#3584e4"/><circle cx="700.0" cy="54" r="4" fill="#3584e4"/>
+  </g></g>
+  <g clip-path="url(#clip31a)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="30.0 0" dur="0.833s" repeatCount="indefinite"/>
+    <circle cx="-20.0" cy="78" r="4" fill="#e0a800"/><circle cx="10.0" cy="78" r="4" fill="#e0a800"/><circle cx="40.0" cy="78" r="4" fill="#e0a800"/><circle cx="70.0" cy="78" r="4" fill="#e0a800"/><circle cx="100.0" cy="78" r="4" fill="#e0a800"/><circle cx="130.0" cy="78" r="4" fill="#e0a800"/><circle cx="160.0" cy="78" r="4" fill="#e0a800"/><circle cx="190.0" cy="78" r="4" fill="#e0a800"/><circle cx="220.0" cy="78" r="4" fill="#e0a800"/><circle cx="250.0" cy="78" r="4" fill="#e0a800"/><circle cx="280.0" cy="78" r="4" fill="#e0a800"/><circle cx="310.0" cy="78" r="4" fill="#e0a800"/><circle cx="340.0" cy="78" r="4" fill="#e0a800"/><circle cx="370.0" cy="78" r="4" fill="#e0a800"/><circle cx="400.0" cy="78" r="4" fill="#e0a800"/><circle cx="430.0" cy="78" r="4" fill="#e0a800"/><circle cx="460.0" cy="78" r="4" fill="#e0a800"/><circle cx="490.0" cy="78" r="4" fill="#e0a800"/><circle cx="520.0" cy="78" r="4" fill="#e0a800"/><circle cx="550.0" cy="78" r="4" fill="#e0a800"/><circle cx="580.0" cy="78" r="4" fill="#e0a800"/><circle cx="610.0" cy="78" r="4" fill="#e0a800"/><circle cx="640.0" cy="78" r="4" fill="#e0a800"/><circle cx="670.0" cy="78" r="4" fill="#e0a800"/><circle cx="700.0" cy="78" r="4" fill="#e0a800"/>
+  </g></g>
+  <foreignObject x="20" y="40.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#3584e4">\(-\lambda\)</div></foreignObject>
+  <foreignObject x="20" y="64.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(+\lambda\)</div></foreignObject>
+  <line x1="612" y1="54" x2="572" y2="54" stroke="#3584e4" stroke-width="2" marker-end="url(#arr31b)"/>
+  <foreignObject x="572" y="24" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#3584e4">\(v\)</div></foreignObject>
+  <line x1="572" y1="78" x2="612" y2="78" stroke="#e0a800" stroke-width="2" marker-end="url(#arr31g)"/>
+  <foreignObject x="572" y="82" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(v\)</div></foreignObject>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;300 0" keyTimes="0;1" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.94;1" dur="10s" repeatCount="indefinite"/>
+    <line x1="150" y1="96" x2="150" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+    <foreignObject x="118" y="109.5" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(s\)</div></foreignObject>
+    <circle cx="150" cy="158" r="6" fill="currentColor"/>
+    <foreignObject x="118" y="158" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
+    <line x1="160" y1="158" x2="196" y2="158" stroke="currentColor" stroke-width="2" marker-end="url(#arr31c)"/>
+    <foreignObject x="204" y="144.5" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(u\)</div></foreignObject>
+  </g>
+  <text x="20" y="214" fill="currentColor">基準 2：跟著</text><foreignObject x="104" y="200" width="14" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:center;color:currentColor">\(q\)</div></foreignObject><text x="120" y="214" fill="currentColor">一起跑；負電荷排得比較密，所以導線帶負電</text>
+  <rect x="70" y="230" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
+  <g clip-path="url(#clip31b)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-19.99 0" dur="0.394s" repeatCount="indefinite"/>
+    <circle cx="0.0" cy="244" r="4" fill="#3584e4"/><circle cx="20.0" cy="244" r="4" fill="#3584e4"/><circle cx="40.0" cy="244" r="4" fill="#3584e4"/><circle cx="60.0" cy="244" r="4" fill="#3584e4"/><circle cx="80.0" cy="244" r="4" fill="#3584e4"/><circle cx="100.0" cy="244" r="4" fill="#3584e4"/><circle cx="119.9" cy="244" r="4" fill="#3584e4"/><circle cx="139.9" cy="244" r="4" fill="#3584e4"/><circle cx="159.9" cy="244" r="4" fill="#3584e4"/><circle cx="179.9" cy="244" r="4" fill="#3584e4"/><circle cx="199.9" cy="244" r="4" fill="#3584e4"/><circle cx="219.9" cy="244" r="4" fill="#3584e4"/><circle cx="239.9" cy="244" r="4" fill="#3584e4"/><circle cx="259.8" cy="244" r="4" fill="#3584e4"/><circle cx="279.8" cy="244" r="4" fill="#3584e4"/><circle cx="299.8" cy="244" r="4" fill="#3584e4"/><circle cx="319.8" cy="244" r="4" fill="#3584e4"/><circle cx="339.8" cy="244" r="4" fill="#3584e4"/><circle cx="359.8" cy="244" r="4" fill="#3584e4"/><circle cx="379.7" cy="244" r="4" fill="#3584e4"/><circle cx="399.7" cy="244" r="4" fill="#3584e4"/><circle cx="419.7" cy="244" r="4" fill="#3584e4"/><circle cx="439.7" cy="244" r="4" fill="#3584e4"/><circle cx="459.7" cy="244" r="4" fill="#3584e4"/><circle cx="479.7" cy="244" r="4" fill="#3584e4"/><circle cx="499.7" cy="244" r="4" fill="#3584e4"/><circle cx="519.6" cy="244" r="4" fill="#3584e4"/><circle cx="539.6" cy="244" r="4" fill="#3584e4"/><circle cx="559.6" cy="244" r="4" fill="#3584e4"/><circle cx="579.6" cy="244" r="4" fill="#3584e4"/><circle cx="599.6" cy="244" r="4" fill="#3584e4"/><circle cx="619.6" cy="244" r="4" fill="#3584e4"/><circle cx="639.6" cy="244" r="4" fill="#3584e4"/><circle cx="659.5" cy="244" r="4" fill="#3584e4"/><circle cx="679.5" cy="244" r="4" fill="#3584e4"/>
+  </g></g>
+  <g clip-path="url(#clip31b)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="37.12 0" dur="4.33s" repeatCount="indefinite"/>
+    <circle cx="-34.2" cy="268" r="4" fill="#e0a800"/><circle cx="2.9" cy="268" r="4" fill="#e0a800"/><circle cx="40.0" cy="268" r="4" fill="#e0a800"/><circle cx="77.1" cy="268" r="4" fill="#e0a800"/><circle cx="114.2" cy="268" r="4" fill="#e0a800"/><circle cx="151.3" cy="268" r="4" fill="#e0a800"/><circle cx="188.5" cy="268" r="4" fill="#e0a800"/><circle cx="225.6" cy="268" r="4" fill="#e0a800"/><circle cx="262.7" cy="268" r="4" fill="#e0a800"/><circle cx="299.8" cy="268" r="4" fill="#e0a800"/><circle cx="336.9" cy="268" r="4" fill="#e0a800"/><circle cx="374.0" cy="268" r="4" fill="#e0a800"/><circle cx="411.2" cy="268" r="4" fill="#e0a800"/><circle cx="448.3" cy="268" r="4" fill="#e0a800"/><circle cx="485.4" cy="268" r="4" fill="#e0a800"/><circle cx="522.5" cy="268" r="4" fill="#e0a800"/><circle cx="559.6" cy="268" r="4" fill="#e0a800"/><circle cx="596.7" cy="268" r="4" fill="#e0a800"/><circle cx="633.8" cy="268" r="4" fill="#e0a800"/><circle cx="671.0" cy="268" r="4" fill="#e0a800"/><circle cx="708.1" cy="268" r="4" fill="#e0a800"/>
+  </g></g>
+  <foreignObject x="20" y="230.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#3584e4">\(\lambda_-\)</div></foreignObject>
+  <foreignObject x="20" y="254.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(\lambda_+\)</div></foreignObject>
+  <line x1="630" y1="244" x2="572" y2="244" stroke="#3584e4" stroke-width="2" marker-end="url(#arr31b)"/>
+  <foreignObject x="579" y="214" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#3584e4">\(v_-\)</div></foreignObject>
+  <line x1="572" y1="268" x2="596" y2="268" stroke="#e0a800" stroke-width="2" marker-end="url(#arr31g)"/>
+  <foreignObject x="563" y="272" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(v_+\)</div></foreignObject>
+  <line x1="320" y1="286" x2="320" y2="340" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+  <foreignObject x="288" y="299.5" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(s\)</div></foreignObject>
+  <circle cx="320" cy="348" r="6" fill="currentColor"/>
+  <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
+  <g>
+    <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31r)"/>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_2\)</div></foreignObject>
+  </g>
+</svg>
+</figure>
+
+<p><strong>基準 2</strong>：現在換到另一個基準。這個基準以速度 \(u\) 向右移動，也就是跟著電荷 \(q\) 一起跑，所以在這個基準裡，\(q\) 是靜止的。用 1.5 的速度合成公式，可以把電荷在基準 1 裡的速度換成基準 2 裡的速度。因為基準 1 相對於基準 2 以速度 \(-u\) 移動，所以 1.5 式子裡的基準間速度要代入 \(-u\)。正電荷在基準 1 裡的速度是 \(v\)，換到基準 2 就變成 \(\dfrac{v-u}{1-vu/c^2}\)；負電荷在基準 1 裡的速度是 \(-v\)，換到基準 2 就變成 \(\dfrac{-v-u}{1+vu/c^2} = -\dfrac{v+u}{1+vu/c^2}\)，其中的負號表示向左。把兩排電荷的速率合起來寫成：</p>
+
+$$
+v_\pm = \frac{v \mp u}{1 \mp \dfrac{vu}{c^2}}
+$$
+
+<p>其中正電荷以 \(v_+\) 向右移動，負電荷以 \(v_-\) 向左移動。因為 \(v_-\) 比 \(v_+\) 大，所以在基準 2 裡，負電荷跑得比正電荷快。1.3 告訴我們，物體跑得越快，長度就縮得越多；因此電荷之間的間距也縮得越多，負電荷就排得比正電荷更密。假設電荷靜止時的線密度是 \(\lambda_0\)，那麼當電荷以速度 \(v\) 移動時，間距縮短為原來的 \(\dfrac{1}{\gamma}\)，密度就變成原來的 \(\gamma\) 倍：</p>
+
+$$
+\lambda = \gamma\,\lambda_0, \qquad \lambda_\pm = \pm\,\gamma_\pm\,\lambda_0
+\qquad \left(\gamma = \frac{1}{\sqrt{1 - v^2/c^2}},\ \ \gamma_\pm = \frac{1}{\sqrt{1 - v_\pm^2/c^2}}\right)
+$$
+
+<p>接下來計算 \(\gamma_\pm\)。先把 \(v_\pm\) 代入 \(1 - \dfrac{v_\pm^2}{c^2}\)，通分之後得到：</p>
+
+$$
+1 - \frac{v_\pm^2}{c^2}
+= \frac{\left(1 \mp \frac{vu}{c^2}\right)^2 - \frac{(v \mp u)^2}{c^2}}{\left(1 \mp \frac{vu}{c^2}\right)^2}
+$$
+
+<p>把分子展開以後，含 \(vu\) 的兩項正好互相抵消，剩下的部分可以分解成兩個因式相乘：</p>
+
+$$
+\begin{aligned}
+\left(1 \mp \tfrac{vu}{c^2}\right)^2 - \tfrac{(v \mp u)^2}{c^2}
+&= 1 \mp \tfrac{2vu}{c^2} + \tfrac{v^2u^2}{c^4} - \tfrac{v^2}{c^2} \pm \tfrac{2vu}{c^2} - \tfrac{u^2}{c^2}\\
+&= 1 - \tfrac{v^2}{c^2} - \tfrac{u^2}{c^2} + \tfrac{v^2u^2}{c^4}
+= \left(1 - \tfrac{v^2}{c^2}\right)\left(1 - \tfrac{u^2}{c^2}\right)
+\end{aligned}
+$$
+
+<p>所以</p>
+
+$$
+1 - \frac{v_\pm^2}{c^2} = \frac{\left(1 - \frac{v^2}{c^2}\right)\left(1 - \frac{u^2}{c^2}\right)}{\left(1 \mp \frac{vu}{c^2}\right)^2}
+$$
+
+<p>把這個結果開根號再取倒數，就得到：</p>
+
+$$
+\gamma_\pm = \gamma\,\frac{1 \mp \dfrac{vu}{c^2}}{\sqrt{1 - \dfrac{u^2}{c^2}}}
+$$
+
+<p>把兩排電荷的密度加起來，再用 \(\gamma\lambda_0 = \lambda\)，就得到導線在基準 2 裡的淨電荷密度：</p>
+
+$$
+\begin{aligned}
+\lambda_{\text{淨}} = \lambda_+ + \lambda_- = \lambda_0\,(\gamma_+ - \gamma_-)
+&= \gamma\lambda_0\,\frac{\left(1 - \frac{vu}{c^2}\right) - \left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}\\
+&= \lambda\,\frac{-2vu/c^2}{\sqrt{1 - u^2/c^2}}
+= -\frac{2\lambda v u}{c^2\sqrt{1 - u^2/c^2}}
+\end{aligned}
+$$
+
+<p>也就是說，在基準 1 裡不帶電的導線，到了基準 2 裡卻帶了負電。</p>
+
+<p>根據 Gauss 定律，一條帶電的長直線在距離 \(s\) 處產生的電場是 \(\dfrac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}\)，其中 \(\varepsilon_0\) 是真空的電容率。因此在基準 2 裡，靜止的電荷 \(q\) 會受到一個電力：</p>
+
+$$
+F_2 = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
+= -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s\sqrt{1 - u^2/c^2}}
+$$
+
+<p>式子裡的負號表示這個力指向導線；也就是說，導線吸引電荷 \(q\)。</p>
+
+<p>既然 \(q\) 在基準 2 裡受力，那麼它在基準 1 裡也必定受力。現在把這個力換回基準 1。這個力和 \(q\) 的運動方向垂直。力等於動量的變化除以所花的時間，所以我們先比較兩個基準裡的動量變化，再比較時間。根據 1.7，動量等於質量乘上速度，再乘上一個隨速度變大的因子；而根據 1.2，這個因子正好就是「基準量到的時間」與「\(q\) 自己的鐘走過的時間」的比值。兩者合起來，\(q\) 在垂直方向的動量就等於：質量 × 垂直位移 ÷ \(q\) 自己的鐘走過的時間。1.3 說長度只沿運動方向收縮，垂直方向不變，所以兩個基準量到的垂直位移相同；\(q\) 自己的鐘也只有一個讀數。因此，垂直方向的動量變化在兩個基準裡完全相同，不同的只是這段變化所花的時間。由於 \(q\) 在基準 2 裡是靜止的，所以基準 2 量到的時間就是 \(q\) 自己的鐘走過的時間；根據 1.2，基準 1 量到的時間比它長 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍。同樣大小的動量變化分攤到更長的時間上，所以在基準 1 裡，這個力就小了這麼多倍：</p>
+
+$$
+F_1 = \sqrt{1 - \frac{u^2}{c^2}}\;F_2 = -\frac{\lambda v}{\pi\varepsilon_0 c^2}\,\frac{qu}{s}
+$$
+
+<p>再利用 Maxwell 在 1865 年得到的關係 \(c^2 = \dfrac{1}{\varepsilon_0\mu_0}\)（其中 \(\mu_0\) 是真空的磁導率），以及電流 \(I = 2\lambda v\)，可以得到：</p>
+
+$$
+\frac{\lambda v}{\pi\varepsilon_0 c^2} = \frac{I}{2}\cdot\frac{\mu_0}{\pi} = \frac{\mu_0 I}{2\pi}
+$$
+
+<p>所以結果可以改寫成：</p>
+
+$$
+F_1 = -\,qu\left(\frac{\mu_0 I}{2\pi s}\right)
+$$
+
+<p>括號裡的量，正好就是一條長直導線在距離 \(s\) 處產生的磁場。因此，這個結果和在基準 1 裡直接用 Lorentz 力（電荷 × 速度 × 磁場）算出來的磁力完全一樣。</p>
+
+<p>在基準 2 裡，導線帶電而 \(q\) 靜止，所以 \(q\) 受到的是純粹的電力。在基準 1 裡，導線並不帶電，\(q\) 卻仍然受力；這個力就是我們所說的磁力。換句話說，磁力就是換了一個基準來看的電力；而讓導線在基準 2 裡帶電的原因，是 1.3 的長度收縮。</p>
+
+<h2 id="sec-3-2">3.2　（未完工）</h2>
 
 $$
 \frac{E}{pc} = \frac{c}{v} = \frac{c}{\;\dfrac{x}{t}\;} = \frac{ct}{x}
@@ -1850,7 +2193,7 @@ $$
 })();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="js/helix3d.js?v=28"></script>
+<script src="js/helix3d.js?v=32"></script>
 
 </body>
 </html>
