@@ -56,7 +56,7 @@ MathJax = {
         <a href="#part-3">三、電磁學</a>
         <ol class="sb-secs">
           <li><a href="#sec-3-1">3.1　磁就是電（未完工）</a></li>
-          <li><a href="#sec-3-2">3.2　（未完工）</a></li>
+          <li><a href="#sec-3-3">3.3　（未完工）</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -1932,6 +1932,8 @@ $$
 
 <p>同一個電磁現象，在某一個基準看來是電的作用，在另一個基準看來卻可能是磁的作用；但是兩個基準算出來的運動結果完全相同。這一節只用靜電學和第一章的相對論，完全不用任何關於磁的定律，就能算出通電導線對一個運動中的電荷所施加的磁力。這個論證來自 Purcell（1965）。</p>
 
+<h3>【方法一】</h3>
+
 <p><strong>基準 1</strong>：假設一條導線裡有兩排電荷。正電荷的線密度是 \(\lambda\)，它們以速度 \(v\) 向右移動；負電荷的線密度是 \(-\lambda\)，它們以同樣的速度 \(v\) 向左移動。因為正負電荷的密度互相抵消，所以這條導線不帶電；但是兩排電荷都在移動，所以導線上有電流：</p>
 
 $$
@@ -2090,7 +2092,124 @@ $$
 
 <p>在基準 2 裡，導線帶電而 \(q\) 靜止，所以 \(q\) 受到的是純粹的電力。在基準 1 裡，導線並不帶電，\(q\) 卻仍然受力；這個力就是我們所說的磁力。換句話說，磁力就是換了一個基準來看的電力；而讓導線在基準 2 裡帶電的原因，是 1.3 的長度收縮。</p>
 
-<h2 id="sec-3-2">3.2　（未完工）</h2>
+<h3>【方法二】</h3>
+
+<p>在真實的金屬導線裡，帶正電的金屬離子（也就是原子失去外層電子之後剩下的部分）固定不動，只有脫離原子的自由電子會沿著導線移動。現在我們就用這種導線，把同樣的結論再推導一次。</p>
+
+<p><strong>基準 1</strong>：正電荷靜止不動，線密度是 \(\lambda\)；負電荷的線密度是 \(-\lambda\)，它們以速度 \(v\) 向左移動。因為正負電荷的密度互相抵消，所以導線仍然不帶電；但是負電荷在移動，所以導線上有電流。這一次只有一排電荷在移動，所以電流是：</p>
+
+$$
+I = \lambda v
+$$
+
+<p>電荷 \(q\) 和方法一一樣，在距離導線 \(s\) 的地方以速度 \(u\) 向右移動。由於導線不帶電，所以在基準 1 裡，電荷 \(q\) 不受任何電力。</p>
+
+<figure>
+<svg viewBox="0 0 640 390" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="arr31Bg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="arr31Bb" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
+    <marker id="arr31Br" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
+    <marker id="arr31Bc" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
+    <clipPath id="clip31c"><rect x="70" y="40" width="490" height="52" rx="26"/></clipPath>
+    <clipPath id="clip31d"><rect x="70" y="230" width="490" height="52" rx="26"/></clipPath>
+  </defs>
+  <text x="20" y="24" fill="currentColor">基準 1：正電荷不動；兩排電荷一樣密，所以導線不帶電</text>
+  <rect x="70" y="40" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
+  <g clip-path="url(#clip31c)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-30.0 0" dur="0.833s" repeatCount="indefinite"/>
+    <circle cx="-20.0" cy="54" r="4" fill="#3584e4"/><circle cx="10.0" cy="54" r="4" fill="#3584e4"/><circle cx="40.0" cy="54" r="4" fill="#3584e4"/><circle cx="70.0" cy="54" r="4" fill="#3584e4"/><circle cx="100.0" cy="54" r="4" fill="#3584e4"/><circle cx="130.0" cy="54" r="4" fill="#3584e4"/><circle cx="160.0" cy="54" r="4" fill="#3584e4"/><circle cx="190.0" cy="54" r="4" fill="#3584e4"/><circle cx="220.0" cy="54" r="4" fill="#3584e4"/><circle cx="250.0" cy="54" r="4" fill="#3584e4"/><circle cx="280.0" cy="54" r="4" fill="#3584e4"/><circle cx="310.0" cy="54" r="4" fill="#3584e4"/><circle cx="340.0" cy="54" r="4" fill="#3584e4"/><circle cx="370.0" cy="54" r="4" fill="#3584e4"/><circle cx="400.0" cy="54" r="4" fill="#3584e4"/><circle cx="430.0" cy="54" r="4" fill="#3584e4"/><circle cx="460.0" cy="54" r="4" fill="#3584e4"/><circle cx="490.0" cy="54" r="4" fill="#3584e4"/><circle cx="520.0" cy="54" r="4" fill="#3584e4"/><circle cx="550.0" cy="54" r="4" fill="#3584e4"/><circle cx="580.0" cy="54" r="4" fill="#3584e4"/><circle cx="610.0" cy="54" r="4" fill="#3584e4"/><circle cx="640.0" cy="54" r="4" fill="#3584e4"/><circle cx="670.0" cy="54" r="4" fill="#3584e4"/><circle cx="700.0" cy="54" r="4" fill="#3584e4"/>
+  </g></g>
+  <g><circle cx="90" cy="78" r="4" fill="#e0a800"/><circle cx="120" cy="78" r="4" fill="#e0a800"/><circle cx="150" cy="78" r="4" fill="#e0a800"/><circle cx="180" cy="78" r="4" fill="#e0a800"/><circle cx="210" cy="78" r="4" fill="#e0a800"/><circle cx="240" cy="78" r="4" fill="#e0a800"/><circle cx="270" cy="78" r="4" fill="#e0a800"/><circle cx="300" cy="78" r="4" fill="#e0a800"/><circle cx="330" cy="78" r="4" fill="#e0a800"/><circle cx="360" cy="78" r="4" fill="#e0a800"/><circle cx="390" cy="78" r="4" fill="#e0a800"/><circle cx="420" cy="78" r="4" fill="#e0a800"/><circle cx="450" cy="78" r="4" fill="#e0a800"/><circle cx="480" cy="78" r="4" fill="#e0a800"/><circle cx="510" cy="78" r="4" fill="#e0a800"/><circle cx="540" cy="78" r="4" fill="#e0a800"/></g>
+  <foreignObject x="20" y="40.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#3584e4">\(-\lambda\)</div></foreignObject>
+  <foreignObject x="20" y="64.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(+\lambda\)</div></foreignObject>
+  <line x1="612" y1="54" x2="572" y2="54" stroke="#3584e4" stroke-width="2" marker-end="url(#arr31Bb)"/>
+  <foreignObject x="572" y="24" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#3584e4">\(v\)</div></foreignObject>
+  <text x="572" y="83" fill="#e0a800">靜止</text>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;300 0" keyTimes="0;1" dur="10s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.94;1" dur="10s" repeatCount="indefinite"/>
+    <line x1="150" y1="96" x2="150" y2="150" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+    <foreignObject x="118" y="109.5" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(s\)</div></foreignObject>
+    <circle cx="150" cy="158" r="6" fill="currentColor"/>
+    <foreignObject x="118" y="158" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
+    <line x1="160" y1="158" x2="196" y2="158" stroke="currentColor" stroke-width="2" marker-end="url(#arr31Bc)"/>
+    <foreignObject x="204" y="144.5" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(u\)</div></foreignObject>
+  </g>
+  <text x="20" y="214" fill="currentColor">基準 2：跟著</text><foreignObject x="104" y="200" width="14" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:center;color:currentColor">\(q\)</div></foreignObject><text x="120" y="214" fill="currentColor">一起跑；兩排電荷都變密，但是負電荷更密，所以導線帶負電</text>
+  <rect x="70" y="230" width="490" height="52" rx="26" fill="#bdbdbd" fill-opacity=".1" stroke="currentColor" stroke-opacity=".35"/>
+  <g clip-path="url(#clip31d)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-19.99 0" dur="0.394s" repeatCount="indefinite"/>
+    <circle cx="0.0" cy="244" r="4" fill="#3584e4"/><circle cx="20.0" cy="244" r="4" fill="#3584e4"/><circle cx="40.0" cy="244" r="4" fill="#3584e4"/><circle cx="60.0" cy="244" r="4" fill="#3584e4"/><circle cx="80.0" cy="244" r="4" fill="#3584e4"/><circle cx="100.0" cy="244" r="4" fill="#3584e4"/><circle cx="119.9" cy="244" r="4" fill="#3584e4"/><circle cx="139.9" cy="244" r="4" fill="#3584e4"/><circle cx="159.9" cy="244" r="4" fill="#3584e4"/><circle cx="179.9" cy="244" r="4" fill="#3584e4"/><circle cx="199.9" cy="244" r="4" fill="#3584e4"/><circle cx="219.9" cy="244" r="4" fill="#3584e4"/><circle cx="239.9" cy="244" r="4" fill="#3584e4"/><circle cx="259.8" cy="244" r="4" fill="#3584e4"/><circle cx="279.8" cy="244" r="4" fill="#3584e4"/><circle cx="299.8" cy="244" r="4" fill="#3584e4"/><circle cx="319.8" cy="244" r="4" fill="#3584e4"/><circle cx="339.8" cy="244" r="4" fill="#3584e4"/><circle cx="359.8" cy="244" r="4" fill="#3584e4"/><circle cx="379.7" cy="244" r="4" fill="#3584e4"/><circle cx="399.7" cy="244" r="4" fill="#3584e4"/><circle cx="419.7" cy="244" r="4" fill="#3584e4"/><circle cx="439.7" cy="244" r="4" fill="#3584e4"/><circle cx="459.7" cy="244" r="4" fill="#3584e4"/><circle cx="479.7" cy="244" r="4" fill="#3584e4"/><circle cx="499.7" cy="244" r="4" fill="#3584e4"/><circle cx="519.6" cy="244" r="4" fill="#3584e4"/><circle cx="539.6" cy="244" r="4" fill="#3584e4"/><circle cx="559.6" cy="244" r="4" fill="#3584e4"/><circle cx="579.6" cy="244" r="4" fill="#3584e4"/><circle cx="599.6" cy="244" r="4" fill="#3584e4"/><circle cx="619.6" cy="244" r="4" fill="#3584e4"/><circle cx="639.6" cy="244" r="4" fill="#3584e4"/><circle cx="659.5" cy="244" r="4" fill="#3584e4"/><circle cx="679.5" cy="244" r="4" fill="#3584e4"/>
+  </g></g>
+  <g clip-path="url(#clip31d)"><g>
+    <animateTransform attributeName="transform" type="translate" from="0 0" to="-25.98 0" dur="0.866s" repeatCount="indefinite"/>
+    <circle cx="-12.0" cy="268" r="4" fill="#e0a800"/><circle cx="14.0" cy="268" r="4" fill="#e0a800"/><circle cx="40.0" cy="268" r="4" fill="#e0a800"/><circle cx="66.0" cy="268" r="4" fill="#e0a800"/><circle cx="92.0" cy="268" r="4" fill="#e0a800"/><circle cx="117.9" cy="268" r="4" fill="#e0a800"/><circle cx="143.9" cy="268" r="4" fill="#e0a800"/><circle cx="169.9" cy="268" r="4" fill="#e0a800"/><circle cx="195.9" cy="268" r="4" fill="#e0a800"/><circle cx="221.9" cy="268" r="4" fill="#e0a800"/><circle cx="247.8" cy="268" r="4" fill="#e0a800"/><circle cx="273.8" cy="268" r="4" fill="#e0a800"/><circle cx="299.8" cy="268" r="4" fill="#e0a800"/><circle cx="325.8" cy="268" r="4" fill="#e0a800"/><circle cx="351.8" cy="268" r="4" fill="#e0a800"/><circle cx="377.7" cy="268" r="4" fill="#e0a800"/><circle cx="403.7" cy="268" r="4" fill="#e0a800"/><circle cx="429.7" cy="268" r="4" fill="#e0a800"/><circle cx="455.7" cy="268" r="4" fill="#e0a800"/><circle cx="481.7" cy="268" r="4" fill="#e0a800"/><circle cx="507.7" cy="268" r="4" fill="#e0a800"/><circle cx="533.6" cy="268" r="4" fill="#e0a800"/><circle cx="559.6" cy="268" r="4" fill="#e0a800"/><circle cx="585.6" cy="268" r="4" fill="#e0a800"/><circle cx="611.6" cy="268" r="4" fill="#e0a800"/><circle cx="637.6" cy="268" r="4" fill="#e0a800"/><circle cx="663.5" cy="268" r="4" fill="#e0a800"/><circle cx="689.5" cy="268" r="4" fill="#e0a800"/>
+  </g></g>
+  <foreignObject x="20" y="230.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#3584e4">\(\lambda_-\)</div></foreignObject>
+  <foreignObject x="20" y="254.5" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e0a800">\(\lambda_+\)</div></foreignObject>
+  <line x1="630" y1="244" x2="572" y2="244" stroke="#3584e4" stroke-width="2" marker-end="url(#arr31Bb)"/>
+  <foreignObject x="579" y="214" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#3584e4">\(v_-\)</div></foreignObject>
+  <line x1="606" y1="268" x2="572" y2="268" stroke="#e0a800" stroke-width="2" marker-end="url(#arr31Bg)"/>
+  <foreignObject x="568" y="272" width="44" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(u\)</div></foreignObject>
+  <line x1="320" y1="286" x2="320" y2="340" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".6"/>
+  <foreignObject x="288" y="299.5" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(s\)</div></foreignObject>
+  <circle cx="320" cy="348" r="6" fill="currentColor"/>
+  <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
+  <g>
+    <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31Br)"/>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_2\)</div></foreignObject>
+  </g>
+</svg>
+</figure>
+
+<p><strong>基準 2</strong>：和方法一一樣，換到以速度 \(u\) 向右移動的基準，也就是跟著電荷 \(q\) 一起跑，所以在這個基準裡，\(q\) 是靜止的。</p>
+
+<p>先看正電荷。正電荷在基準 1 裡靜止，所以 \(\lambda\) 就是它們靜止時的線密度。到了基準 2，它們以速度 \(u\) 向左移動；根據 1.3，它們之間的間距會縮短為原來的 \(\sqrt{1 - u^2/c^2}\) 倍，所以密度就變成原來的 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍：</p>
+
+$$
+\lambda_+ = \frac{\lambda}{\sqrt{1 - u^2/c^2}}
+$$
+
+<p>再看負電荷。負電荷在基準 1 裡以速度 \(v\) 向左移動，這和方法一的負電荷完全一樣，所以它們在基準 2 裡的速度也和方法一相同。在基準 1 裡，負電荷線密度的大小 \(\lambda\) 已經是它們靜止時的 \(\gamma\) 倍（\(\gamma\) 和方法一相同），所以它們靜止時線密度的大小是 \(\dfrac{\lambda}{\gamma}\)。再把方法一算出的 \(\gamma_- = \gamma\,\dfrac{1 + vu/c^2}{\sqrt{1 - u^2/c^2}}\) 代進去，就得到：</p>
+
+$$
+\lambda_- = -\,\gamma_-\,\frac{\lambda}{\gamma}
+= -\,\gamma\,\frac{1 + \frac{vu}{c^2}}{\sqrt{1 - u^2/c^2}}\cdot\frac{\lambda}{\gamma}
+= -\,\frac{\lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}
+$$
+
+<p>把兩者加起來，就得到導線在基準 2 裡的淨電荷密度：</p>
+
+$$
+\lambda_{\text{淨}} = \lambda_+ + \lambda_-
+= \frac{\lambda - \lambda\left(1 + \frac{vu}{c^2}\right)}{\sqrt{1 - u^2/c^2}}
+= -\,\frac{\lambda v u}{c^2\sqrt{1 - u^2/c^2}}
+= -\,\frac{I u}{c^2\sqrt{1 - u^2/c^2}}
+$$
+
+<p>雖然正電荷和負電荷在基準 2 裡都變密了，但是從上面兩個式子可以看出：和基準 1 相比，正電荷的密度變成 \(\dfrac{1}{\sqrt{1 - u^2/c^2}}\) 倍，負電荷的密度卻變成 \(\dfrac{1 + vu/c^2}{\sqrt{1 - u^2/c^2}}\) 倍，多了一個大於 1 的因子 \(1 + \dfrac{vu}{c^2}\)。這個因子之所以出現，是因為負電荷在基準 1 裡本來就向左跑，而基準 2 向右移動。所以負電荷變密得比較多，導線仍然帶負電。</p>
+
+<p>上式的最後一步，用到了方法二的電流 \(I = \lambda v\)。如果把方法一的結果 \(-\dfrac{2\lambda vu}{c^2\sqrt{1 - u^2/c^2}}\) 用方法一的電流 \(I = 2\lambda v\) 改寫，得到的也正好是 \(-\dfrac{Iu}{c^2\sqrt{1 - u^2/c^2}}\)。也就是說，只要電流 \(I\) 相同，兩種導線在基準 2 裡的淨電荷密度就完全相同。</p>
+
+<p>因此，接下來的步驟也和方法一完全相同。在基準 2 裡，靜止的電荷 \(q\) 受到的電力是：</p>
+
+$$
+F_2 = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 s}
+= -\,\frac{qIu}{2\pi\varepsilon_0 c^2\, s\sqrt{1 - u^2/c^2}}
+$$
+
+<p>用和方法一相同的理由換回基準 1，再利用 \(c^2 = \dfrac{1}{\varepsilon_0\mu_0}\)，就得到：</p>
+
+$$
+F_1 = \sqrt{1 - \frac{u^2}{c^2}}\;F_2
+= -\,\frac{qIu}{2\pi\varepsilon_0 c^2\, s}
+= -\,qu\left(\frac{\mu_0 I}{2\pi s}\right)
+$$
+
+<p>結果和方法一完全一樣，也正是長直導線對運動電荷的磁力。可見這個力只取決於電流 \(I\)，而和導線裡是哪一種電荷在移動無關。</p>
+
+<h2 id="sec-3-3">3.3　（未完工）</h2>
 
 $$
 \frac{E}{pc} = \frac{c}{v} = \frac{c}{\;\dfrac{x}{t}\;} = \frac{ct}{x}
