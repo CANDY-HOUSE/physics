@@ -156,7 +156,7 @@ MathJax = {
 <p>算出到底耗時多久。由上圖，光爬升 \(L\) 需時：</p>
 
 $$
-T = \frac{L}{\sqrt{c^2-v^2}} = \frac{L}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+\Delta t_{\text{地}} = \frac{L}{\sqrt{c^2-v^2}} = \frac{L}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
 $$
 
 <p>車上經過 \(\dfrac{L}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\) 倍。
@@ -174,11 +174,11 @@ $$
 速度＝長度／時間，而這個相對速度，車上與地上測得的大小必須相同：</p>
 
 $$
-v = \frac{L_{\text{地}}}{T_{\text{地}}} = \frac{L_{\text{車}}}{T_{\text{車}}}
+v = \frac{L_{\text{地}}}{\Delta t_{\text{地}}} = \frac{L_{\text{車}}}{\Delta t_{\text{車}}}
 $$
 
 <p>「經過甲點」與「經過乙點」兩個事件都發生在車頭同一位置，
-車上的鐘正是 1.2 節走得慢的那個：\(T_{\text{車}} = \dfrac{T_{\text{地}}}{\gamma}\)。
+車上的鐘正是 1.2 節走得慢的那個：\(\Delta t_{\text{車}} = \dfrac{\Delta t_{\text{地}}}{\gamma}\)。
 分母變小，分子必須跟著變小，比值才能不變：</p>
 
 $$
@@ -191,50 +191,50 @@ $$
 
 <h2 id="sec-1-4">1.4　Lorentz 變換</h2>
 
-<p>事件在基準 1 的座標為 \((x,\ t)\)，在基準 2（以 \(v\) 前進）的座標為 \((x',\ t')\)。
+<p>事件在基準 1 的座標為 \((x_1,\ t_1)\)，在基準 2（以 \(v\) 前進）的座標為 \((x_2,\ t_2)\)。
 用 1.3、1.2 的結論直接組出換算式。</p>
 
-<p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \(t'\)，地面原點位於 \(-vt'\)，
-所以事件離地面原點的距離，用基準 2 的尺量是 \(x' + vt'\)。
-但這段距離在地面上的長度是 \(x\)，而基準 2 看地面的長度縮短 \(\dfrac{1}{\gamma}\) 倍（1.3 節）：</p>
+<p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \(t_2\)，地面原點位於 \(-vt_2\)，
+所以事件離地面原點的距離，用基準 2 的尺量是 \(x_2 + vt_2\)。
+但這段距離在地面上的長度是 \(x_1\)，而基準 2 看地面的長度縮短 \(\dfrac{1}{\gamma}\) 倍（1.3 節）：</p>
 
 $$
-x' + vt' = \frac{x}{\gamma}
+x_2 + vt_2 = \frac{x_1}{\gamma}
 \qquad\Longrightarrow\qquad
-x = \gamma\,(x' + vt')
+x_1 = \gamma\,(x_2 + vt_2)
 $$
 
-<p><strong>第二式（對稱性）</strong>：把時間乘上 \(c\) 寫成 \(ct\)，單位就是距離——
+<p><strong>第二式（對稱性）</strong>：把時間乘上 \(c\) 寫成 \(ct_1\)，單位就是距離——
 時間和位置是同一種量，\(c\) 只是換算常數。第一式即</p>
 
 $$
-x = \gamma\left(x' + \tfrac{v}{c}\cdot ct'\right)
+x_1 = \gamma\left(x_2 + \tfrac{v}{c}\cdot ct_2\right)
 $$
 
-<p>光速不變說：\(x = ct\) 與 \(x' = ct'\) 是同一條光——\(x\) 與 \(ct\) 地位完全對稱。
-把第一式的 \(x \leftrightarrow ct\)、\(x' \leftrightarrow ct'\) 互換，式子必須照樣成立，直接得：</p>
+<p>光速不變說：\(x_1 = ct_1\) 與 \(x_2 = ct_2\) 是同一條光——\(x_1\) 與 \(ct_1\) 地位完全對稱。
+把第一式的 \(x_1 \leftrightarrow ct_1\)、\(x_2 \leftrightarrow ct_2\) 互換，式子必須照樣成立，直接得：</p>
 
 $$
-ct = \gamma\left(ct' + \tfrac{v}{c}\cdot x'\right)
+ct_1 = \gamma\left(ct_2 + \tfrac{v}{c}\cdot x_2\right)
 $$
 
-<p>（驗證：代入 \(x' = ct'\)，兩式右邊相等，得 \(x = ct\)——光在兩個基準都是光速。）</p>
+<p>（驗證：代入 \(x_2 = ct_2\)，兩式右邊相等，得 \(x_1 = ct_1\)——光在兩個基準都是光速。）</p>
 
-<p>第二式除以 \(c\) 還原回 \(t\)，整理：</p>
+<p>第二式除以 \(c\) 還原回 \(t_1\)，整理：</p>
 
 $$
-\boxed{\;x = \gamma\,(x' + v t'), \qquad t = \gamma\left(t' + \frac{v}{c^2}\,x'\right)\;}
+\boxed{\;x_1 = \gamma\,(x_2 + v t_2), \qquad t_1 = \gamma\left(t_2 + \frac{v}{c^2}\,x_2\right)\;}
 $$
 
 <p>這就是<strong>Lorentz 變換</strong>。反變換把 \(v\) 換成 \(-v\)：</p>
 
 $$
-x' = \gamma\,(x - v t), \qquad t' = \gamma\left(t - \frac{v}{c^2}\,x\right)
+x_2 = \gamma\,(x_1 - v t_1), \qquad t_2 = \gamma\left(t_1 - \frac{v}{c^2}\,x_1\right)
 $$
 
-<p>1.2 的時間膨脹是特例：取 \(x' = 0\)，得 \(t = \gamma t'\)。
-當 \(v \ll c\) 時 \(\gamma \to 1\)、\(\frac{v}{c^2}x' \to 0\)，退回伽利略變換
-\(x = x' + vt\)、\(t = t'\)。</p>
+<p>1.2 的時間膨脹是特例：取 \(x_2 = 0\)，得 \(t_1 = \gamma t_2\)。
+當 \(v \ll c\) 時 \(\gamma \to 1\)、\(\frac{v}{c^2}x_2 \to 0\)，退回伽利略變換
+\(x_1 = x_2 + vt_1\)、\(t_1 = t_2\)。</p>
 
 <h2 id="sec-1-5">1.5　新的速度合成則</h2>
 
