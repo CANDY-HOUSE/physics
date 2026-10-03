@@ -1307,39 +1307,41 @@ $$
 
 <p><strong>等加速的火箭</strong>：以火箭自己的尺量 \(h\)、以底部量到的加速度為 \(g\)，上下鐘的比值精確就是 \(1 + \dfrac{gh}{c^2}\)，一項都不必丟。四步。</p>
 
-<p>一、把 1.4 的變換代入 \((ct)^2 - x^2\)：</p>
+<p>一、把 1.4 的變換代入 \((c\cdot{}^{1}t)^2 - {}^{1}x^2\)：</p>
 
 $$
-(ct)^2 - x^2
-= \gamma^2\left[\left(ct' + \tfrac{v}{c}\,x'\right)^2 - \left(x' + \tfrac{v}{c}\,ct'\right)^2\right]
-= \gamma^2\left(1 - \tfrac{v^2}{c^2}\right)\left[(ct')^2 - x'^2\right]
-= (ct')^2 - x'^2
+\begin{aligned}
+(c\cdot{}^{1}t)^2 - {}^{1}x^2
+&= \gamma^2\left[\left(c\cdot{}^{2}t + \tfrac{v}{c}\cdot{}^{2}x\right)^2 - \left({}^{2}x + \tfrac{v}{c}\cdot c\cdot{}^{2}t\right)^2\right]\\
+&= \gamma^2\left(1 - \tfrac{v^2}{c^2}\right)\left[(c\cdot{}^{2}t)^2 - {}^{2}x^2\right]\\
+&= (c\cdot{}^{2}t)^2 - {}^{2}x^2
+\end{aligned}
 $$
 
 <p>換基準，這個差不變。</p>
 
-<p>二、火箭底部的世界線取雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g}\right)^2\)。兩邊對 \(t\) 微分：</p>
+<p>二、火箭底部的世界線取雙曲線 \({}^{1}x^2 - (c\cdot{}^{1}t)^2 = \left(\dfrac{c^2}{g}\right)^2\)。兩邊對 \({}^{1}t\) 微分：</p>
 
 $$
-2x\,\frac{dx}{dt} - 2c^2 t = 0
+2\cdot{}^{1}x\,\frac{d{}^{1}x}{d{}^{1}t} - 2c^2\cdot{}^{1}t = 0
 \qquad\Longrightarrow\qquad
-v = \frac{c^2 t}{x}
+v = \frac{c^2\cdot{}^{1}t}{{}^{1}x}
 $$
 
 <p>再微分一次：</p>
 
 $$
-\frac{dv}{dt}
-= \frac{c^2}{x} - \frac{c^2 t\,v}{x^2}
-= \frac{c^2}{x^3}\left(x^2 - c^2 t^2\right)
-= \frac{c^2}{x^3}\cdot\frac{c^4}{g^2}
+\frac{dv}{d{}^{1}t}
+= \frac{c^2}{{}^{1}x} - \frac{c^2\cdot{}^{1}t\,v}{{}^{1}x^2}
+= \frac{c^2}{{}^{1}x^3}\left({}^{1}x^2 - c^2\cdot{}^{1}t^2\right)
+= \frac{c^2}{{}^{1}x^3}\cdot\frac{c^4}{g^2}
 $$
 
-<p>\(t = 0\) 時 \(x = \dfrac{c^2}{g}\)、\(v = 0\)，代入得 \(\dfrac{dv}{dt} = g\)。由一，這條雙曲線在任何慣性基準看都是同一條；換到與火箭某一瞬間同速的基準，那一瞬間就是它的 \(t = 0\)，加速度是 \(g\)。火箭每一瞬間都感覺到 \(g\)——這就是等加速。</p>
+<p>\({}^{1}t = 0\) 時 \({}^{1}x = \dfrac{c^2}{g}\)、\(v = 0\)，代入得 \(\dfrac{dv}{d{}^{1}t} = g\)。由一，這條雙曲線在任何慣性基準看都是同一條；換到與火箭某一瞬間同速的基準，那一瞬間就是它的 \({}^{2}t = 0\)，加速度是 \(g\)。火箭每一瞬間都感覺到 \(g\)——這就是等加速。</p>
 
-<p>三、與火箭某一瞬間同速 \(v\) 的基準，它的「同一時刻」是 \(t' = 0\)。由 1.4，\(ct' = \gamma\left(ct - \tfrac{v}{c}\,x\right) = 0\)，即 \(ct = \tfrac{v}{c}\,x\)：一條過原點的直線。火箭那一點的 \(v = \dfrac{c^2 t}{x}\) 正好落在這條線上。所以火箭每一瞬間的「同時線」都過同一個點：原點是轉軸，同時線像指針掃過。</p>
+<p>三、與火箭某一瞬間同速 \(v\) 的基準，它的「同一時刻」是 \({}^{2}t = 0\)。由 1.4，\(c\cdot{}^{2}t = \gamma\left(c\cdot{}^{1}t - \tfrac{v}{c}\cdot{}^{1}x\right) = 0\)，即 \(c\cdot{}^{1}t = \tfrac{v}{c}\cdot{}^{1}x\)：一條過原點的直線。火箭那一點的 \(v = \dfrac{c^2\cdot{}^{1}t}{{}^{1}x}\) 正好落在這條線上。所以火箭每一瞬間的「同時線」都過同一個點：原點是轉軸，同時線像指針掃過。</p>
 
-<p>四、火箭頂部在底部上方 \(h\)（火箭自己的尺）：世界線是同心的另一條雙曲線 \(x^2 - (ct)^2 = \left(\dfrac{c^2}{g} + h\right)^2\)。它是底部那條以原點為中心放大 \(\dfrac{\frac{c^2}{g} + h}{\frac{c^2}{g}}\) 倍的圖形；同時線是過原點的直線，放大後還是自己。鐘自己走的時間：切成小段，每段在同速基準裡 \(\Delta x' = 0\)，由一，\((c\,\Delta t')^2 = (c\,\Delta t)^2 - (\Delta x)^2\)；全部座標放大幾倍，每一段的鐘時間就放大幾倍。所以兩條同時線之間：</p>
+<p>四、火箭頂部在底部上方 \(h\)（火箭自己的尺）：世界線是同心的另一條雙曲線 \({}^{1}x^2 - (c\cdot{}^{1}t)^2 = \left(\dfrac{c^2}{g} + h\right)^2\)。它是底部那條以原點為中心放大 \(\dfrac{\frac{c^2}{g} + h}{\frac{c^2}{g}}\) 倍的圖形；同時線是過原點的直線，放大後還是自己。鐘自己走的時間：切成小段，每段在同速基準裡 \(\Delta({}^{2}x) = 0\)，由一，\((c\,\Delta({}^{2}t))^2 = (c\,\Delta({}^{1}t))^2 - (\Delta({}^{1}x))^2\)；全部座標放大幾倍，每一段的鐘時間就放大幾倍。所以兩條同時線之間：</p>
 
 $$
 \frac{T_{\text{上}}}{T_{\text{下}}}
@@ -1357,8 +1359,8 @@ $$
   </defs>
   <line x1="60" y1="175" x2="620" y2="175" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrRd)" opacity=".7"/>
   <line x1="90" y1="330" x2="90" y2="30" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrRd)" opacity=".7"/>
-  <foreignObject x="596" y="181.75" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(x\)</div></foreignObject>
-  <foreignObject x="48" y="30.75" width="38" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(ct\)</div></foreignObject>
+  <foreignObject x="596" y="181.75" width="40" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{1}x\)</div></foreignObject>
+  <foreignObject x="48" y="30.75" width="38" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(c\cdot{}^{1}t\)</div></foreignObject>
   <line x1="90" y1="175" x2="230" y2="35" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
   <line x1="90" y1="175" x2="190" y2="275" stroke="currentColor" stroke-width="1" stroke-dasharray="3 4" opacity=".35"/>
   <polyline points="313.6,275.0 311.8,271.0 310.1,267.0 308.5,263.0 306.9,259.0 305.4,255.0 304.0,251.0 302.6,247.0 301.2,243.0 300.0,239.0 298.8,235.0 297.7,231.0 296.6,227.0 295.7,223.0 294.8,219.0 294.0,215.0 293.2,211.0 292.5,207.0 292.0,203.0 291.4,199.0 291.0,195.0 290.6,191.0 290.4,187.0 290.2,183.0 290.0,179.0 290.0,175.0 290.0,171.0 290.2,167.0 290.4,163.0 290.6,159.0 291.0,155.0 291.4,151.0 292.0,147.0 292.5,143.0 293.2,139.0 294.0,135.0 294.8,131.0 295.7,127.0 296.6,123.0 297.7,119.0 298.8,115.0 300.0,111.0 301.2,107.0 302.6,103.0 304.0,99.0 305.4,95.0 306.9,91.0 308.5,87.0 310.1,83.0 311.8,79.0 313.6,75.0 315.4,71.0 317.3,67.0 319.2,63.0 321.2,59.0 323.2,55.0 325.3,51.0 327.5,47.0 329.6,43.0 331.9,39.0 334.1,35.0" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".8"/>
@@ -1527,7 +1529,7 @@ $$
 
 <h3>【質量幾何化的最簡例：同一支箭的長度】</h3>
 
-<p>1.9：\(E^2 - (pc)^2 = (mc^2)^2\)，對所有基準同一差。畫出來：橫軸 \(pc\)、縱軸 \(E\)，一顆粒子是一支從原點出發的箭。換基準，箭的高（\(E\)）與寬（\(pc\)）都變，箭頭沿雙曲線滑動，\(\text{高}^2 - \text{寬}^2\) 不變——這是時空幾何裡的「長度」：轉動一根尺，長度不變（\((ct)^2 - x^2\) 同一個模樣，見上文等加速火箭的第一步）。</p>
+<p>1.9：\(E^2 - (pc)^2 = (mc^2)^2\)，對所有基準同一差。畫出來：橫軸 \(pc\)、縱軸 \(E\)，一顆粒子是一支從原點出發的箭。換基準，箭的高（\(E\)）與寬（\(pc\)）都變，箭頭沿雙曲線滑動，\(\text{高}^2 - \text{寬}^2\) 不變——這是時空幾何裡的「長度」：轉動一根尺，長度不變（\((c\cdot{}^{1}t)^2 - {}^{1}x^2\) 同一個模樣，見上文等加速火箭的第一步）。</p>
 
 <figure>
 <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2001,7 +2003,7 @@ $$
   <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
   <g>
     <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31r)"/>
-    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_q\)</div></foreignObject>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } {}^{q}F\)</div></foreignObject>
   </g>
 </svg>
 </figure>
@@ -2056,7 +2058,7 @@ $$
 <p>地面基準裡不帶電的導線，在 \(q\) 基準裡帶負電。帶電長直線的電場是 \(\dfrac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 r}\)（Gauss 定律），所以靜止的 \(q\) 受到電力：</p>
 
 $$
-F_q = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 r}
+{}^{q}F = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 r}
 = -\frac{\lambda u}{\pi\varepsilon_0 c^2}\,\frac{qv}{r\sqrt{1 - \frac{v^2}{c^2}}}
 $$
 
@@ -2070,12 +2072,12 @@ $$
 
 $$
 \begin{aligned}
-&\frac{dy_q}{dt_q} = 0 = \frac{dy_{\text{地}}}{dt_{\text{地}}} \;\Rightarrow\; \gamma_q = 1,\quad \gamma_{\text{地}} = \frac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}\\[4pt]
-&dt_{\text{地}} = \gamma_{\text{地}}\,dt_q\ \text{（1.2）},\quad dy_{\text{地}} = dy_q = dy\ \text{（1.3）}\\[4pt]
-&dp_{\perp q} = d\Big(\gamma_q m\,\frac{dy}{dt_q}\Big) = \gamma_q m\,d\frac{dy}{dt_q} + m\,\underbrace{\frac{dy}{dt_q}}_{0}\,d\gamma_q = m\,d\frac{dy}{dt_q}\\[4pt]
-&dp_{\perp\text{地}} = d\Big(\gamma_{\text{地}} m\,\frac{dy}{dt_{\text{地}}}\Big) = \gamma_{\text{地}} m\,d\frac{dy}{dt_{\text{地}}} + m\,\underbrace{\frac{dy}{dt_{\text{地}}}}_{0}\,d\gamma_{\text{地}} = \gamma_{\text{地}} m\,d\frac{dy}{dt_{\text{地}}}\\[4pt]
-&F_{\text{地}} = \frac{dp_{\perp\text{地}}}{dt_{\text{地}}} = \frac{\gamma_{\text{地}} m\,d\dfrac{dy}{dt_{\text{地}}}}{\gamma_{\text{地}}\,dt_q} = \frac{m\,d\dfrac{dy}{\gamma_{\text{地}}\,dt_q}}{dt_q} = \frac{F_q}{\gamma_{\text{地}}} = -\frac{\lambda u}{\pi\varepsilon_0 c^2}\,\frac{qv}{r}\\[4pt]
-&I = 2\lambda u \;\Rightarrow\; F_{\text{地}} = -\frac{2\lambda u}{2\pi\varepsilon_0 c^2}\,\frac{qv}{r} = -\,qv\left(\frac{\dfrac{1}{\varepsilon_0 c^2}\,I}{2\pi r}\right)
+&\frac{d{}^{q}y}{d{}^{q}t} = 0 = \frac{d{}^{\text{地}}y}{d{}^{\text{地}}t} \;\Rightarrow\; {}^{q}\gamma = 1,\quad {}^{\text{地}}\gamma = \frac{1}{\sqrt{1 - \dfrac{v^2}{c^2}}}\\[4pt]
+&d{}^{\text{地}}t = {}^{\text{地}}\gamma\,d{}^{q}t\ \text{（1.2）},\quad d{}^{\text{地}}y = d{}^{q}y = dy\ \text{（1.3）}\\[4pt]
+&d{}^{q}p_{\perp} = d\Big({}^{q}\gamma m\,\frac{dy}{d{}^{q}t}\Big) = {}^{q}\gamma m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma = m\,d\frac{dy}{d{}^{q}t}\\[4pt]
+&d{}^{\text{地}}p_{\perp} = d\Big({}^{\text{地}}\gamma m\,\frac{dy}{d{}^{\text{地}}t}\Big) = {}^{\text{地}}\gamma m\,d\frac{dy}{d{}^{\text{地}}t} + m\,\underbrace{\frac{dy}{d{}^{\text{地}}t}}_{0}\,d{}^{\text{地}}\gamma = {}^{\text{地}}\gamma m\,d\frac{dy}{d{}^{\text{地}}t}\\[4pt]
+&{}^{\text{地}}F = \frac{d{}^{\text{地}}p_{\perp}}{d{}^{\text{地}}t} = \frac{{}^{\text{地}}\gamma m\,d\dfrac{dy}{d{}^{\text{地}}t}}{{}^{\text{地}}\gamma\,d{}^{q}t} = \frac{m\,d\dfrac{dy}{{}^{\text{地}}\gamma\,d{}^{q}t}}{d{}^{q}t} = \frac{{}^{q}F}{{}^{\text{地}}\gamma} = -\frac{\lambda u}{\pi\varepsilon_0 c^2}\,\frac{qv}{r}\\[4pt]
+&I = 2\lambda u \;\Rightarrow\; {}^{\text{地}}F = -\frac{2\lambda u}{2\pi\varepsilon_0 c^2}\,\frac{qv}{r} = -\,qv\left(\frac{\dfrac{1}{\varepsilon_0 c^2}\,I}{2\pi r}\right)
 \end{aligned}
 $$
 
@@ -2095,7 +2097,7 @@ $$
   <polyline points="150.0,210.0 150.0,209.8 150.0,209.4 150.0,208.6 150.0,207.6 150.0,206.2 150.0,204.6 150.0,202.6 150.0,200.4 150.0,197.8 150.0,195.0 150.0,191.8 150.0,188.4 150.0,184.6 150.0,180.6 150.0,176.2 150.0,171.6 150.0,166.6 150.0,161.4 150.0,155.8 150.0,150.0" fill="none" stroke="#e4e2dd" stroke-opacity=".25" stroke-dasharray="3 4"/>
   <g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 0;0 0;0 0" keyTimes="0.0000;0.0833;0.2500;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -60;0 -60;0 0" keyTimes="0.0000;0.0833;0.2500;0.9667;1.0000" dur="12.0s" repeatCount="indefinite" calcMode="spline" keySplines="0 0 1 1;0.5 0 1 1;0 0 1 1;0 0 1 1"/><circle r="7" fill="#e4e2dd" cx="150" cy="210"/><foreignObject x="120" y="216" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e4e2dd">\(q\)</div></foreignObject></g></g>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="184" y1="208" x2="184" y2="152" stroke="#8a8a8a" stroke-width="1.2" marker-start="url(#fpd)" marker-end="url(#fpd)"/><text x="192" y="185" fill="#e4e2dd" font-size="13">垂直位移</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="150" y1="140" x2="150" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="158" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(dp_{\perp q}\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="150" y1="140" x2="150" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="158" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(d{}^{q}p_{\perp}\)</div></foreignObject></g>
   <circle cx="110" cy="290" r="26" fill="none" stroke="#e4e2dd" stroke-opacity=".7" stroke-width="1.5"/>
   <line x1="110.0" y1="268.0" x2="110.0" y2="264.0" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="121.0" y1="270.9" x2="123.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
@@ -2115,14 +2117,14 @@ $$
   <text x="146" y="306" fill="#58c4dd" font-size="13">走過的時間</text>
   <rect x="283" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;96.0;96.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;154.0;154.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="276" y1="250" x2="308" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_q\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\({}^{q}F\)</div></foreignObject></g>
   <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">地面基準：\(q\) 以 \(v\) 向右移動</div></foreignObject>
   <line x1="340" y1="70" x2="620" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <text x="620" y="62" text-anchor="end" fill="#8a8a8a" font-size="12">導線</text>
   <polyline points="380.0,210.0 386.0,209.8 392.0,209.4 398.0,208.6 404.0,207.6 410.0,206.2 416.0,204.6 422.0,202.6 428.0,200.4 434.0,197.8 440.0,195.0 446.0,191.8 452.0,188.4 458.0,184.6 464.0,180.6 470.0,176.2 476.0,171.6 482.0,166.6 488.0,161.4 494.0,155.8 500.0,150.0" fill="none" stroke="#e4e2dd" stroke-opacity=".25" stroke-dasharray="3 4"/>
   <g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;120 0;120 0;0 0" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><g><animateTransform attributeName="transform" type="translate" values="0 0;0 0;0 -60;0 -60;0 0" keyTimes="0.0000;0.0833;0.3333;0.9667;1.0000" dur="12.0s" repeatCount="indefinite" calcMode="spline" keySplines="0 0 1 1;0.5 0 1 1;0 0 1 1;0 0 1 1"/><circle r="7" fill="#e4e2dd" cx="380" cy="210"/><foreignObject x="350" y="216" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#e4e2dd">\(q\)</div></foreignObject></g></g>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="534" y1="208" x2="534" y2="152" stroke="#8a8a8a" stroke-width="1.2" marker-start="url(#fpd)" marker-end="url(#fpd)"/><text x="542" y="185" fill="#e4e2dd" font-size="13">垂直位移</text></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="500" y1="140" x2="500" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="508" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(dp_{\perp\text{地}}\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.4333;0.4833;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><line x1="500" y1="140" x2="500" y2="98" stroke="#e0a800" stroke-width="3" marker-end="url(#fpg)"/><foreignObject x="508" y="98" width="90" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(d{}^{\text{地}}p_{\perp}\)</div></foreignObject></g>
   <circle cx="430" cy="290" r="26" fill="none" stroke="#e4e2dd" stroke-opacity=".7" stroke-width="1.5"/>
   <line x1="430.0" y1="268.0" x2="430.0" y2="264.0" stroke="#e4e2dd" stroke-opacity=".5"/>
   <line x1="441.0" y1="270.9" x2="443.0" y2="267.5" stroke="#e4e2dd" stroke-opacity=".5"/>
@@ -2142,7 +2144,7 @@ $$
   <text x="466" y="306" fill="#e0a800" font-size="13">走過的時間較長</text>
   <rect x="603" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;64.0;64.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;186.0;186.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="596" y1="250" x2="628" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F_{\text{地}}\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\({}^{\text{地}}F\)</div></foreignObject></g>
   <foreignObject x="340" y="324" width="290" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;text-align:right;color:#8a8a8a">\(\text{（圖中 } v = \tfrac{\sqrt5}{3}\,c\text{，時間差 1.5 倍）}\)</div></foreignObject>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="343" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">兩邊的垂直位移相同（1.3），垂直動量也相同。</div></foreignObject></g>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="371" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是地面基準量到的時間比較長；力＝動量的變化÷時間，所以地面基準的力比較小。</div></foreignObject></g>
@@ -2217,7 +2219,7 @@ $$
   <foreignObject x="288" y="348" width="26" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(q\)</div></foreignObject>
   <g>
     <line x1="334" y1="340" x2="334" y2="300" stroke="#fc6255" stroke-width="2" marker-end="url(#arr31Br)"/>
-    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } F_q\)</div></foreignObject>
+    <foreignObject x="342" y="305.5" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#fc6255">\(\text{電力 } {}^{q}F\)</div></foreignObject>
   </g>
 </svg>
 </figure>
@@ -2248,12 +2250,12 @@ $$
 <p>負電荷多了因子 \(1 + \dfrac{uv}{c^2}\)，所以導線帶負電。用 \(I\) 寫出的結果和方法一（\(I = 2\lambda u\)）完全相同，以下步驟也相同：</p>
 
 $$
-F_q = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 r}
+{}^{q}F = q\,\frac{\lambda_{\text{淨}}}{2\pi\varepsilon_0 r}
 = -\,\frac{qIv}{2\pi\varepsilon_0 c^2\, r\sqrt{1 - \frac{v^2}{c^2}}}
 $$
 
 $$
-F_{\text{地}} = \frac{F_q}{\gamma_{\text{地}}}
+{}^{\text{地}}F = \frac{{}^{q}F}{{}^{\text{地}}\gamma}
 = -\,\frac{qIv}{2\pi\varepsilon_0 c^2\, r}
 = -\,qv\left(\frac{\dfrac{1}{\varepsilon_0 c^2}\,I}{2\pi r}\right)
 $$
@@ -2338,7 +2340,7 @@ $$
 
 <h3>【第二步：等速運動的電荷，電場被壓扁】</h3>
 
-<p>現在讓電荷 \(q\) 以速度 \(u\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；\(q\) 基準裡的量都加上一撇。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.1 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
+<p>現在讓電荷 \(q\) 以速度 \(u\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；需要區分兩個基準的時候，\(q\) 基準裡量到的量在左上角標上 \(q\)，例如 \({}^{q}E\)；地面基準裡量到的量則標上「地」，例如 \({}^{\text{地}}E\)。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.1 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
 
 <p><strong>垂直方向</strong>：和 3.1 一樣，只要記得力就是 \(\dfrac{dp}{dt}\)。\(Q\) 在地面基準裡靜止，在 \(q\) 基準裡則以 \(u\) 向左移動，角色正好和 3.1 對調：</p>
 
@@ -2379,7 +2381,7 @@ $$
   <text x="146" y="306" fill="#58c4dd" font-size="13">走過的時間</text>
   <rect x="283" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;96.0;96.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;154.0;154.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="276" y1="250" x2="308" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="262" y="122" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\({}^{\text{地}}F\)</div></foreignObject></g>
   <foreignObject x="340" y="18" width="280" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(q\) 基準：\(Q\) 以 \(u\) 向左移動</div></foreignObject>
   <line x1="340" y1="70" x2="620" y2="70" stroke="#8a8a8a" stroke-width="3" stroke-opacity=".6"/>
   <foreignObject x="540" y="44" width="80" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:12px;text-align:left;color:#8a8a8a;line-height:1.3">\(q\) 的路線</div></foreignObject>
@@ -2407,27 +2409,27 @@ $$
   <text x="466" y="306" fill="#e0a800" font-size="13">走過的時間較長</text>
   <rect x="603" y="250" width="18" height="0" fill="#fc6255" fill-opacity=".85"><animate attributeName="height" values="0;0;64.0;64.0;0;0" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><animate attributeName="y" values="250;250;186.0;186.0;250;250" keyTimes="0.0000;0.5167;0.6167;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/></rect>
   <line x1="596" y1="250" x2="628" y2="250" stroke="#8a8a8a"/>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\(F'\)</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.6167;0.6667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="582" y="154.0" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#fc6255">\({}^{q}F\)</div></foreignObject></g>
   <foreignObject x="340" y="324" width="290" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;text-align:right;color:#8a8a8a">\(\text{（圖中 } u \approx 0.75c\text{，時間差 1.5 倍）}\)</div></foreignObject>
   <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.3750;0.4250;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="343" width="600" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">兩邊的垂直位移相同（1.3），\(Q\) 自己的鐘也相同，所以垂直動量的變化 \(dp\) 相同。</div></foreignObject></g>
-  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="369" width="600" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是 \(q\) 基準量到的時間 \(dt\) 比較長，所以地面基準的 \(\frac{dp}{dt}\) 是 \(q\) 基準的 \(\gamma\) 倍。</div></foreignObject></g>
+  <g opacity="0"><animate attributeName="opacity" values="0;0;1;1;0;0" keyTimes="0.0000;0.5167;0.5667;0.9167;0.9667;1.0000" dur="12.0s" repeatCount="indefinite"/><foreignObject x="24" y="369" width="600" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-family:'Noto Sans TC',sans-serif;font-size:14px;text-align:left;color:#e4e2dd;line-height:1.3">可是 \(q\) 基準量到的時間 \(d{}^{q}t\) 比較長，所以地面基準的 \(\frac{dp}{d{}^{\text{地}}t}\) 是 \(q\) 基準的 \(\gamma\) 倍。</div></foreignObject></g>
 </svg>
 </figure>
 
-<p>垂直方向的 \(dp\) 在兩個基準裡相同；\(Q\) 在地面基準裡靜止，\(q\) 基準量到的 \(dt\) 卻長了 \(\gamma\) 倍，所以地面基準裡的 \(\dfrac{dp}{dt}\) 是 \(q\) 基準的 \(\gamma\) 倍。根據假設三，\(q\) 基準裡的 \(\dfrac{dp}{dt}\) 等於 \(Q\) 乘上 Coulomb 電場，即使 \(Q\) 在那裡是運動的；因此：</p>
+<p>垂直方向的 \(dp\) 在兩個基準裡相同；\(Q\) 在地面基準裡靜止，\(q\) 基準量到的 \(d{}^{q}t\) 卻長了 \(\gamma\) 倍，所以地面基準裡的 \(\dfrac{dp}{d{}^{\text{地}}t}\) 是 \(q\) 基準的 \(\gamma\) 倍。根據假設三，\(q\) 基準裡的 \(\dfrac{dp}{d{}^{q}t}\) 等於 \(Q\) 乘上 Coulomb 電場，即使 \(Q\) 在那裡是運動的；因此：</p>
 
 $$
-E_\perp = \gamma\,E'_\perp
+{}^{\text{地}}E_\perp = \gamma\cdot{}^{q}E_\perp
 $$
 
-<p><strong>平行方向</strong>：設 \(Q\) 的質量是 \(m\)，在地面基準裡沿著運動方向的速度是 \(w\)；我們看 \(Q\) 在地面基準裡靜止（\(w = 0\)）的那一瞬間。根據 1.5 的速度合成（地面基準相對於 \(q\) 基準以速度 \(-u\) 移動，所以和 3.1 一樣，1.5 式子裡的基準間速度要代入 \(-u\)），\(Q\) 在 \(q\) 基準裡的速度是 \(v' = \dfrac{w - u}{1 - \frac{uw}{c^2}}\)。對 \(w\) 微分：</p>
+<p><strong>平行方向</strong>：設 \(Q\) 的質量是 \(m\)，在地面基準裡沿著運動方向的速度是 \(w\)；我們看 \(Q\) 在地面基準裡靜止（\(w = 0\)）的那一瞬間。根據 1.5 的速度合成（地面基準相對於 \(q\) 基準以速度 \(-u\) 移動，所以和 3.1 一樣，1.5 式子裡的基準間速度要代入 \(-u\)），\(Q\) 在 \(q\) 基準裡的速度是 \({}^{q}v = \dfrac{w - u}{1 - \frac{uw}{c^2}}\)。對 \(w\) 微分：</p>
 
 $$
-\frac{dv'}{dw} = \frac{\left(1 - \frac{uw}{c^2}\right) + (w - u)\frac{u}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2} = \frac{1 - \frac{u^2}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2}
+\frac{d{}^{q}v}{dw} = \frac{\left(1 - \frac{uw}{c^2}\right) + (w - u)\frac{u}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2} = \frac{1 - \frac{u^2}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2}
 \qquad\xrightarrow{\ w\,=\,0\ }\qquad 1 - \frac{u^2}{c^2} = \frac{1}{\gamma^2}
 $$
 
-<p>也就是說，在這一瞬間 \(dv' = \dfrac{dw}{\gamma^2}\)。</p>
+<p>也就是說，在這一瞬間 \(d{}^{q}v = \dfrac{dw}{\gamma^2}\)。</p>
 
 <p>根據 1.7，動量是 \(m\gamma v\)，其中 \(\gamma = \dfrac{1}{\sqrt{1 - \frac{v^2}{c^2}}}\) 隨速度 \(v\) 而變。先算 \(\gamma\) 對速度的變化率：</p>
 
@@ -2443,22 +2445,22 @@ $$
 = \frac{1}{\left(1 - \frac{v^2}{c^2}\right)^{\frac{3}{2}}} = \gamma^3
 $$
 
-<p>在 \(q\) 基準裡，\(Q\) 的速率是 \(u\)，所以這裡的 \(\gamma\) 就是 \(\dfrac{1}{\sqrt{1 - \frac{u^2}{c^2}}}\)；從這裡開始，\(\gamma\) 一律指這個值。因此 \(q\) 基準裡的動量變化是 \(m\gamma^3\,dv' = m\gamma^3\,\dfrac{dw}{\gamma^2} = m\gamma\,dw\)；地面基準裡，\(Q\) 在這一瞬間靜止，\(\dfrac{d(\gamma w)}{dw} = 1\)，動量變化是 \(m\,dw\)。在這一瞬間，\(Q\) 在 \(q\) 基準裡的速率正好是 \(u\)，所以 \(q\) 基準量到的時間 \(dt' = \gamma\,dt\)，兩個基準裡的 \(\dfrac{dp}{dt}\) 是：</p>
+<p>在 \(q\) 基準裡，\(Q\) 的速率是 \(u\)，所以這裡的 \(\gamma\) 就是 \(\dfrac{1}{\sqrt{1 - \frac{u^2}{c^2}}}\)；從這裡開始，\(\gamma\) 一律指這個值。因此 \(q\) 基準裡的動量變化是 \(m\gamma^3\,d{}^{q}v = m\gamma^3\,\dfrac{dw}{\gamma^2} = m\gamma\,dw\)；地面基準裡，\(Q\) 在這一瞬間靜止，\(\dfrac{d(\gamma w)}{dw} = 1\)，動量變化是 \(m\,dw\)。在這一瞬間，\(Q\) 在 \(q\) 基準裡的速率正好是 \(u\)，所以 \(q\) 基準量到的時間 \(d{}^{q}t = \gamma\,d{}^{\text{地}}t\)，兩個基準裡的 \(\dfrac{dp}{dt}\) 是：</p>
 
 $$
-F'_\parallel = \frac{m\gamma\,dw}{\gamma\,dt} = \frac{m\,dw}{dt} = F_\parallel
+{}^{q}F_\parallel = \frac{m\gamma\,dw}{\gamma\,d{}^{\text{地}}t} = \frac{m\,dw}{d{}^{\text{地}}t} = {}^{\text{地}}F_\parallel
 $$
 
-<p>根據假設三，\(q\) 基準裡的力是 \(F'_\parallel = QE'_\parallel\)（即使 \(Q\) 在那裡是運動的）；\(Q\) 在地面基準裡靜止，所以 \(F_\parallel = QE_\parallel\)。兩個力相同，因此平行方向的電場也相同：</p>
+<p>根據假設三，\(q\) 基準裡的力是 \({}^{q}F_\parallel = Q\cdot{}^{q}E_\parallel\)（即使 \(Q\) 在那裡是運動的）；\(Q\) 在地面基準裡靜止，所以 \({}^{\text{地}}F_\parallel = Q\cdot{}^{\text{地}}E_\parallel\)。兩個力相同，因此平行方向的電場也相同：</p>
 
 $$
-E_\parallel = E'_\parallel
+{}^{\text{地}}E_\parallel = {}^{q}E_\parallel
 $$
 
 <p><strong>結果</strong>：設此刻 \(q\) 在原點，地面基準裡有一點在 \(q\) 的前方 \(X\)、側面 \(y\) 處。根據 1.3，地面基準量到的前後距離 \(X\) 是收縮過的，這段距離在 \(q\) 基準裡是 \(\gamma X\)；側面距離則不變。所以在 \(q\) 基準裡，這一點到 \(q\) 的距離是 \(D = \sqrt{\gamma^2X^2 + y^2}\)，Coulomb 電場的前後分量和側面分量分別是 \(\dfrac{q\gamma X}{4\pi\varepsilon_0 D^3}\) 和 \(\dfrac{qy}{4\pi\varepsilon_0 D^3}\)。因為平行分量不變、垂直分量乘上 \(\gamma\)，所以地面基準裡電場的前後分量和側面分量分別是：</p>
 
 $$
-E_\parallel = \frac{q\gamma X}{4\pi\varepsilon_0 D^3}, \qquad E_\perp = \frac{q\gamma y}{4\pi\varepsilon_0 D^3}
+{}^{\text{地}}E_\parallel = \frac{q\gamma X}{4\pi\varepsilon_0 D^3}, \qquad {}^{\text{地}}E_\perp = \frac{q\gamma y}{4\pi\varepsilon_0 D^3}
 $$
 
 <p>兩個分量的比，正好等於 \(X\) 和 \(y\) 的比，所以這個電場仍然從電荷「此刻」的位置筆直向外指，但是強弱會隨方向改變。設 \(\beta = \dfrac{u}{c}\)，並用距離 \(R = \sqrt{X^2 + y^2}\) 和「方向與運動方向的夾角」\(\theta\) 改寫：\(X = R\cos\theta\)、\(y = R\sin\theta\)。利用 \(\dfrac{1}{\gamma^2} = 1 - \beta^2\)：</p>
@@ -2529,39 +2531,39 @@ $$
 
 <h3>【第三步：跟速度有關的那一部分力，就是磁力】</h3>
 
-<p>現在讓試驗電荷 \(Q\) 也在運動：在地面基準裡，它以速度 \(v\) 沿著同一個方向（向右）移動。我們看它在垂直方向受的力。</p>
+<p>現在讓試驗電荷 \(Q\) 也在運動：在地面基準裡，它以速度 \({}^{\text{地}}v\) 沿著同一個方向（向右）移動。我們看它在垂直方向受的力。</p>
 
-<p>力就是 \(\dfrac{dp}{dt}\)。垂直方向的 \(dp\) 在兩個基準裡相同，所以兩個基準裡的力之比，就是時間 \(dt\) 之比的倒數。根據 1.4，\(t = \gamma\left(t' + \dfrac{u}{c^2}x'\right)\)，所以 \(Q\) 走一小段時，地面基準的時間與 \(q\) 基準的時間之比是：</p>
-
-$$
-\frac{dt}{dt'} = \gamma\left(1 + \frac{u}{c^2}\,\frac{dx'}{dt'}\right) = \gamma\left(1 + \frac{u\,v'}{c^2}\right)
-$$
-
-<p>其中 \(v'\) 是 \(Q\) 在 \(q\) 基準裡的速度。根據 1.5 的速度合成（基準間速度同樣代入 \(-u\)），\(v' = \dfrac{v - u}{1 - \frac{vu}{c^2}}\)，所以：</p>
+<p>力就是 \(\dfrac{dp}{dt}\)。垂直方向的 \(dp\) 在兩個基準裡相同，所以兩個基準裡的力之比，就是時間 \(dt\) 之比的倒數。根據 1.4，\({}^{\text{地}}t = \gamma\left({}^{q}t + \dfrac{u}{c^2}\cdot{}^{q}x\right)\)，所以 \(Q\) 走一小段時，地面基準的時間與 \(q\) 基準的時間之比是：</p>
 
 $$
-1 + \frac{u\,v'}{c^2} = \frac{\left(1 - \frac{vu}{c^2}\right) + \frac{u(v - u)}{c^2}}{1 - \frac{vu}{c^2}} = \frac{1 - \frac{u^2}{c^2}}{1 - \frac{vu}{c^2}}
+\frac{d{}^{\text{地}}t}{d{}^{q}t} = \gamma\left(1 + \frac{u}{c^2}\,\frac{d{}^{q}x}{d{}^{q}t}\right) = \gamma\left(1 + \frac{u\cdot{}^{q}v}{c^2}\right)
 $$
 
-<p>因此 \(\dfrac{dt}{dt'} = \dfrac{\gamma\left(1 - \frac{u^2}{c^2}\right)}{1 - \frac{vu}{c^2}} = \dfrac{1}{\gamma\left(1 - \frac{vu}{c^2}\right)}\)（用到 \(1 - \dfrac{u^2}{c^2} = \dfrac{1}{\gamma^2}\)）。力和時間成反比，所以地面基準裡垂直方向的力是：</p>
+<p>其中 \({}^{q}v\) 是 \(Q\) 在 \(q\) 基準裡的速度。根據 1.5 的速度合成（基準間速度同樣代入 \(-u\)），\({}^{q}v = \dfrac{{}^{\text{地}}v - u}{1 - \frac{{}^{\text{地}}v\,u}{c^2}}\)，所以：</p>
 
 $$
-F_\perp = \gamma\left(1 - \frac{vu}{c^2}\right)F'_\perp
+1 + \frac{u\cdot{}^{q}v}{c^2} = \frac{\left(1 - \frac{{}^{\text{地}}v\,u}{c^2}\right) + \frac{u({}^{\text{地}}v - u)}{c^2}}{1 - \frac{{}^{\text{地}}v\,u}{c^2}} = \frac{1 - \frac{u^2}{c^2}}{1 - \frac{{}^{\text{地}}v\,u}{c^2}}
 $$
 
-<p>根據假設三，\(F'_\perp = QE'_\perp\)；根據第二步，\(E'_\perp = \dfrac{E_\perp}{\gamma}\)。代入以後：</p>
+<p>因此 \(\dfrac{d{}^{\text{地}}t}{d{}^{q}t} = \dfrac{\gamma\left(1 - \frac{u^2}{c^2}\right)}{1 - \frac{{}^{\text{地}}v\,u}{c^2}} = \dfrac{1}{\gamma\left(1 - \frac{{}^{\text{地}}v\,u}{c^2}\right)}\)（用到 \(1 - \dfrac{u^2}{c^2} = \dfrac{1}{\gamma^2}\)）。力和時間成反比，所以地面基準裡垂直方向的力是：</p>
 
 $$
-F_\perp = \left(1 - \frac{vu}{c^2}\right)QE_\perp = QE_\perp - Qv\,\frac{u}{c^2}\,E_\perp
+{}^{\text{地}}F_\perp = \gamma\left(1 - \frac{{}^{\text{地}}v\,u}{c^2}\right)\cdot{}^{q}F_\perp
 $$
 
-<p>第一項是電力，它和 \(Q\) 的速度無關。第二項和 \(Q\) 的速度 \(v\) 成正比，而且方向和電力相反：這就是磁力。在 \(\dfrac{dp}{dt}\) 的看法下，磁力不是另一種東西：它只是動量的變化裡，和 \(Q\) 自己的速度有關的那一部分。把 \(\dfrac{u}{c^2}E_\perp\) 稱為磁場 \(B\)：</p>
+<p>根據假設三，\({}^{q}F_\perp = Q\cdot{}^{q}E_\perp\)；根據第二步，\({}^{q}E_\perp = \dfrac{{}^{\text{地}}E_\perp}{\gamma}\)。代入以後：</p>
 
 $$
-B = \frac{u}{c^2}\,E_\perp \qquad\Longrightarrow\qquad F_\perp = Q\,(E_\perp - vB)
+{}^{\text{地}}F_\perp = \left(1 - \frac{{}^{\text{地}}v\,u}{c^2}\right)Q\cdot{}^{\text{地}}E_\perp = Q\cdot{}^{\text{地}}E_\perp - Q\cdot{}^{\text{地}}v\,\frac{u}{c^2}\cdot{}^{\text{地}}E_\perp
 $$
 
-<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec u\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec v\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \(v = u\) 時，\(F_\perp = \left(1 - \dfrac{u^2}{c^2}\right)QE_\perp = \dfrac{QE_\perp}{\gamma^2} = \dfrac{F'_\perp}{\gamma}\)，正是 3.1 換回地面基準時用的規則。</p>
+<p>第一項是電力，它和 \(Q\) 的速度無關。第二項和 \(Q\) 的速度 \({}^{\text{地}}v\) 成正比，而且方向和電力相反：這就是磁力。在 \(\dfrac{dp}{dt}\) 的看法下，磁力不是另一種東西：它只是動量的變化裡，和 \(Q\) 自己的速度有關的那一部分。把 \(\dfrac{u}{c^2}\cdot{}^{\text{地}}E_\perp\) 稱為磁場 \(B\)：</p>
+
+$$
+B = \frac{u}{c^2}\cdot{}^{\text{地}}E_\perp \qquad\Longrightarrow\qquad {}^{\text{地}}F_\perp = Q\,\left({}^{\text{地}}E_\perp - {}^{\text{地}}v\,B\right)
+$$
+
+<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec u\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec v\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \({}^{\text{地}}v = u\) 時，\({}^{\text{地}}F_\perp = \left(1 - \dfrac{u^2}{c^2}\right)Q\cdot{}^{\text{地}}E_\perp = \dfrac{Q\cdot{}^{\text{地}}E_\perp}{\gamma^2} = \dfrac{{}^{q}F_\perp}{\gamma}\)，正是 3.1 換回地面基準時用的規則。</p>
 
 <p>這裡只算了 \(Q\) 沿著運動方向移動時，垂直方向的力。\(Q\) 往其他方向移動時，用同樣的方法也能算出同一個 Lorentz 力，但是需要知道動量在換基準時怎麼改變，那是 3.3 的內容。Lorentz 力的形式，從 Thomson 在 1897 年用電場和磁場偏轉陰極射線，到今天的大型強子對撞機用磁鐵讓質子轉彎，都一再被證實。</p>
 
@@ -2936,44 +2938,44 @@ $$
 <h2 id="sec-3-3">3.3　（未完工）</h2>
 
 $$
-\frac{E}{pc} = \frac{c}{v} = \frac{c}{\;\dfrac{x}{t}\;} = \frac{ct}{x}
+\frac{{}^{1}E}{{}^{1}pc} = \frac{c}{v} = \frac{c}{\;\dfrac{{}^{1}x}{{}^{1}t}\;} = \frac{c\cdot{}^{1}t}{{}^{1}x}
 $$
 
 <p>先寫出 Lorentz 變換：</p>
 
 $$
-x = \gamma\left(x' + \tfrac{v}{c}\,ct'\right), \qquad ct = \gamma\left(ct' + \tfrac{v}{c}\,x'\right)
+{}^{1}x = \gamma\left({}^{2}x + \tfrac{v}{c}\cdot c\cdot{}^{2}t\right), \qquad c\cdot{}^{1}t = \gamma\left(c\cdot{}^{2}t + \tfrac{v}{c}\cdot{}^{2}x\right)
 $$
 
 <p>又因為</p>
 
 $$
-\frac{E}{pc} = \frac{ct}{x}, \qquad \frac{E'}{p'c} = \frac{ct'}{x'}
+\frac{{}^{1}E}{{}^{1}pc} = \frac{c\cdot{}^{1}t}{{}^{1}x}, \qquad \frac{{}^{2}E}{{}^{2}pc} = \frac{c\cdot{}^{2}t}{{}^{2}x}
 $$
 
 $$
 \begin{aligned}
-E &= \gamma mc^2 = mc\cdot\frac{d(ct)}{d\tau}\\
-pc &= \gamma mvc = mc\cdot\frac{dx}{d\tau}
+{}^{1}E &= \gamma mc^2 = mc\cdot\frac{d(c\cdot{}^{1}t)}{d\tau}\\
+{}^{1}pc &= \gamma mvc = mc\cdot\frac{d{}^{1}x}{d\tau}
 \end{aligned}
 $$
 
-<p>所以直接把 Lorentz 變換的 \(ct\)、\(x\) 換成 \(E\)、\(pc\)：</p>
+<p>所以直接把 Lorentz 變換的 \(c\cdot{}^{1}t\)、\({}^{1}x\)、\(c\cdot{}^{2}t\)、\({}^{2}x\) 換成 \({}^{1}E\)、\({}^{1}pc\)、\({}^{2}E\)、\({}^{2}pc\)：</p>
 
 $$
-\boxed{\;pc = \gamma\left(p'c + \tfrac{v}{c}\,E'\right), \qquad E = \gamma\left(E' + \tfrac{v}{c}\,p'c\right)\;}
+\boxed{\;{}^{1}pc = \gamma\left({}^{2}pc + \tfrac{v}{c}\cdot{}^{2}E\right), \qquad {}^{1}E = \gamma\left({}^{2}E + \tfrac{v}{c}\cdot{}^{2}pc\right)\;}
 $$
 
-<p>驗證：粒子在基準 2 靜止，也就是在基準 1 以 \(v\) 前進：\(E' = mc^2\)、\(p' = 0\)，代入：</p>
+<p>驗證：粒子在基準 2 靜止，也就是在基準 1 以 \(v\) 前進：\({}^{2}E = mc^2\)、\({}^{2}p = 0\)，代入：</p>
 
 $$
-E = \gamma mc^2, \qquad pc = \gamma\,\tfrac{v}{c}\,mc^2 = \gamma m v c
+{}^{1}E = \gamma mc^2, \qquad {}^{1}pc = \gamma\,\tfrac{v}{c}\,mc^2 = \gamma m v c
 $$
 
-<p>光：\(m = 0\)，\(E = pc\)，就像 \(x = ct\)。基準 2 裡一道往前跑的光 \(E' = p'c\)，換到基準 1：</p>
+<p>光：\(m = 0\)，\({}^{1}E = {}^{1}pc\)，就像 \({}^{1}x = c\cdot{}^{1}t\)。基準 2 裡一道往前跑的光 \({}^{2}E = {}^{2}pc\)，換到基準 1：</p>
 
 $$
-E = \gamma\left(1 + \tfrac{v}{c}\right)E' = \sqrt{\frac{1 + \frac{v}{c}}{1 - \frac{v}{c}}}\;E'
+{}^{1}E = \gamma\left(1 + \tfrac{v}{c}\right)\cdot{}^{2}E = \sqrt{\frac{1 + \frac{v}{c}}{1 - \frac{v}{c}}}\cdot{}^{2}E
 $$
 
 <p>同一道光，換個基準，能量就變了：光源往光的方向跑，能量變大；反方向跑，能量變小。這是否就是光的 Doppler 效應？</p>
@@ -2986,30 +2988,30 @@ $$
   </defs>
   <line x1="60" y1="265.0" x2="60" y2="35" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrLT)" opacity=".7"/>
   <line x1="60" y1="265.0" x2="290" y2="265.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrLT)" opacity=".7"/>
-  <foreignObject x="2" y="26.5" width="50" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(ct\)</div></foreignObject>
-  <foreignObject x="298" y="251.5" width="22" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(x\)</div></foreignObject>
+  <foreignObject x="2" y="26.5" width="50" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(c\cdot{}^{1}t\)</div></foreignObject>
+  <foreignObject x="298" y="251.5" width="22" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{1}x\)</div></foreignObject>
   <polyline points="60.0,185.0 64.0,184.9 68.0,184.6 72.0,184.1 76.1,183.4 80.2,182.5 84.4,181.4 88.6,180.0 92.9,178.5 97.2,176.8 101.7,174.8 106.3,172.6 110.9,170.2 115.7,167.5 120.7,164.6 125.8,161.4 131.0,158.0 136.5,154.3 142.1,150.4 148.0,146.1 154.0,141.6 160.3,136.7 166.9,131.5 173.7,126.0 180.8,120.1 188.2,113.9 195.9,107.3 203.9,100.3 212.3,92.9 221.1,85.1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
   <line x1="60" y1="265.0" x2="260" y2="65.0" stroke="#e0a800" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
-  <foreignObject x="190" y="36" width="130" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{光：}x = ct\)</div></foreignObject>
-  <foreignObject x="-8" y="171.5" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(ct'\)</div></foreignObject>
+  <foreignObject x="190" y="36" width="130" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{光：}{}^{1}x = c\cdot{}^{1}t\)</div></foreignObject>
+  <foreignObject x="-8" y="171.5" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(c\cdot{}^{2}t\)</div></foreignObject>
   <line x1="60" y1="265.0" x2="60" y2="265.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"><animate attributeName="x1" dur="6s" repeatCount="indefinite" values="60.0;60.2;61.0;62.2;63.8;65.9;68.4;71.3;74.6;78.3;82.3;86.6;91.1;96.0;101.0;106.3;111.6;117.1;122.7;128.3;133.7;139.1;144.2;149.0;153.4;157.3;160.6;163.3;165.3;166.5;166.9;166.5;165.3;163.3;160.6;157.3;153.4;149.0;144.2;139.1;133.7;128.3;122.7;117.1;111.6;106.3;101.0;96.0;91.1;86.6;82.3;78.3;74.6;71.3;68.4;65.9;63.8;62.2;61.0;60.2;60.0"/><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="60.0;60.2;61.0;62.2;63.8;65.9;68.4;71.3;74.6;78.3;82.3;86.6;91.1;96.0;101.0;106.3;111.6;117.1;122.7;128.3;133.7;139.1;144.2;149.0;153.4;157.3;160.6;163.3;165.3;166.5;166.9;166.5;165.3;163.3;160.6;157.3;153.4;149.0;144.2;139.1;133.7;128.3;122.7;117.1;111.6;106.3;101.0;96.0;91.1;86.6;82.3;78.3;74.6;71.3;68.4;65.9;63.8;62.2;61.0;60.2;60.0"/><animate attributeName="y1" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="60" y1="185.0" x2="60" y2="185.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"><animate attributeName="x1" dur="6s" repeatCount="indefinite" values="60.0;60.2;61.0;62.2;63.8;65.9;68.4;71.3;74.6;78.3;82.3;86.6;91.1;96.0;101.0;106.3;111.6;117.1;122.7;128.3;133.7;139.1;144.2;149.0;153.4;157.3;160.6;163.3;165.3;166.5;166.9;166.5;165.3;163.3;160.6;157.3;153.4;149.0;144.2;139.1;133.7;128.3;122.7;117.1;111.6;106.3;101.0;96.0;91.1;86.6;82.3;78.3;74.6;71.3;68.4;65.9;63.8;62.2;61.0;60.2;60.0"/><animate attributeName="y1" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="60" y1="265.0" x2="60" y2="185.0" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrLT)"><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="60.0;60.2;61.0;62.2;63.8;65.9;68.4;71.3;74.6;78.3;82.3;86.6;91.1;96.0;101.0;106.3;111.6;117.1;122.7;128.3;133.7;139.1;144.2;149.0;153.4;157.3;160.6;163.3;165.3;166.5;166.9;166.5;165.3;163.3;160.6;157.3;153.4;149.0;144.2;139.1;133.7;128.3;122.7;117.1;111.6;106.3;101.0;96.0;91.1;86.6;82.3;78.3;74.6;71.3;68.4;65.9;63.8;62.2;61.0;60.2;60.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="60" y1="265.0" x2="120.0" y2="205.0" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrLTG)"><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="120.0;120.2;120.7;121.6;122.9;124.6;126.6;129.1;132.0;135.3;139.0;143.1;147.7;152.8;158.2;164.0;170.1;176.6;183.3;190.1;196.9;203.7;210.3;216.5;222.3;227.4;231.9;235.5;238.1;239.7;240.2;239.7;238.1;235.5;231.9;227.4;222.3;216.5;210.3;203.7;196.9;190.1;183.3;176.6;170.1;164.0;158.2;152.8;147.7;143.1;139.0;135.3;132.0;129.1;126.6;124.6;122.9;121.6;120.7;120.2;120.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="205.0;204.8;204.3;203.4;202.1;200.4;198.4;195.9;193.0;189.7;186.0;181.9;177.3;172.2;166.8;161.0;154.9;148.4;141.7;134.9;128.1;121.3;114.7;108.5;102.7;97.6;93.1;89.5;86.9;85.3;84.8;85.3;86.9;89.5;93.1;97.6;102.7;108.5;114.7;121.3;128.1;134.9;141.7;148.4;154.9;161.0;166.8;172.2;177.3;181.9;186.0;189.7;193.0;195.9;198.4;200.4;202.1;203.4;204.3;204.8;205.0"/></line>
-  <foreignObject x="80" y="283.0" width="190" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\((ct)^2 - x^2 = (ct')^2\)</div></foreignObject>
+  <foreignObject x="80" y="283.0" width="190" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\((c\cdot{}^{1}t)^2 - {}^{1}x^2 = (c\cdot{}^{2}t)^2\)</div></foreignObject>
   <line x1="380" y1="265.0" x2="380" y2="35" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrLT)" opacity=".7"/>
   <line x1="380" y1="265.0" x2="610" y2="265.0" stroke="currentColor" stroke-width="1.5" marker-end="url(#arrLT)" opacity=".7"/>
-  <foreignObject x="322" y="26.5" width="50" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(E\)</div></foreignObject>
-  <foreignObject x="618" y="251.5" width="22" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(pc\)</div></foreignObject>
+  <foreignObject x="322" y="26.5" width="50" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\({}^{1}E\)</div></foreignObject>
+  <foreignObject x="613" y="251.5" width="27" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{1}pc\)</div></foreignObject>
   <polyline points="380.0,185.0 384.0,184.9 388.0,184.6 392.0,184.1 396.1,183.4 400.2,182.5 404.4,181.4 408.6,180.0 412.9,178.5 417.2,176.8 421.7,174.8 426.3,172.6 430.9,170.2 435.7,167.5 440.7,164.6 445.8,161.4 451.0,158.0 456.5,154.3 462.1,150.4 468.0,146.1 474.0,141.6 480.3,136.7 486.9,131.5 493.7,126.0 500.8,120.1 508.2,113.9 515.9,107.3 523.9,100.3 532.3,92.9 541.1,85.1" fill="none" stroke="currentColor" stroke-width="1.2" stroke-dasharray="5 4" opacity=".6"/>
   <line x1="380" y1="265.0" x2="580" y2="65.0" stroke="#e0a800" stroke-width="1" stroke-dasharray="3 4" opacity=".6"/>
-  <foreignObject x="510" y="36" width="130" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{光：}E = pc\)</div></foreignObject>
+  <foreignObject x="510" y="36" width="130" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\(\text{光：}{}^{1}E = {}^{1}pc\)</div></foreignObject>
   <foreignObject x="312" y="171.5" width="60" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:currentColor">\(mc^2\)</div></foreignObject>
   <line x1="380" y1="265.0" x2="380" y2="265.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"><animate attributeName="x1" dur="6s" repeatCount="indefinite" values="380.0;380.2;381.0;382.2;383.8;385.9;388.4;391.3;394.6;398.3;402.3;406.6;411.1;416.0;421.0;426.3;431.6;437.1;442.7;448.3;453.7;459.1;464.2;469.0;473.4;477.3;480.6;483.3;485.3;486.5;486.9;486.5;485.3;483.3;480.6;477.3;473.4;469.0;464.2;459.1;453.7;448.3;442.7;437.1;431.6;426.3;421.0;416.0;411.1;406.6;402.3;398.3;394.6;391.3;388.4;385.9;383.8;382.2;381.0;380.2;380.0"/><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="380.0;380.2;381.0;382.2;383.8;385.9;388.4;391.3;394.6;398.3;402.3;406.6;411.1;416.0;421.0;426.3;431.6;437.1;442.7;448.3;453.7;459.1;464.2;469.0;473.4;477.3;480.6;483.3;485.3;486.5;486.9;486.5;485.3;483.3;480.6;477.3;473.4;469.0;464.2;459.1;453.7;448.3;442.7;437.1;431.6;426.3;421.0;416.0;411.1;406.6;402.3;398.3;394.6;391.3;388.4;385.9;383.8;382.2;381.0;380.2;380.0"/><animate attributeName="y1" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="380" y1="185.0" x2="380" y2="185.0" stroke="currentColor" stroke-width="1" stroke-dasharray="3 3" opacity=".5"><animate attributeName="x1" dur="6s" repeatCount="indefinite" values="380.0;380.2;381.0;382.2;383.8;385.9;388.4;391.3;394.6;398.3;402.3;406.6;411.1;416.0;421.0;426.3;431.6;437.1;442.7;448.3;453.7;459.1;464.2;469.0;473.4;477.3;480.6;483.3;485.3;486.5;486.9;486.5;485.3;483.3;480.6;477.3;473.4;469.0;464.2;459.1;453.7;448.3;442.7;437.1;431.6;426.3;421.0;416.0;411.1;406.6;402.3;398.3;394.6;391.3;388.4;385.9;383.8;382.2;381.0;380.2;380.0"/><animate attributeName="y1" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="380" y1="265.0" x2="380" y2="185.0" stroke="currentColor" stroke-width="2.5" marker-end="url(#arrLT)"><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="380.0;380.2;381.0;382.2;383.8;385.9;388.4;391.3;394.6;398.3;402.3;406.6;411.1;416.0;421.0;426.3;431.6;437.1;442.7;448.3;453.7;459.1;464.2;469.0;473.4;477.3;480.6;483.3;485.3;486.5;486.9;486.5;485.3;483.3;480.6;477.3;473.4;469.0;464.2;459.1;453.7;448.3;442.7;437.1;431.6;426.3;421.0;416.0;411.1;406.6;402.3;398.3;394.6;391.3;388.4;385.9;383.8;382.2;381.0;380.2;380.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="185.0;185.0;185.0;185.0;184.9;184.8;184.6;184.2;183.7;182.9;182.0;180.7;179.2;177.3;175.1;172.6;169.8;166.7;163.4;159.8;156.2;152.5;148.9;145.3;142.0;139.0;136.5;134.3;132.8;131.8;131.5;131.8;132.8;134.3;136.5;139.0;142.0;145.3;148.9;152.5;156.2;159.8;163.4;166.7;169.8;172.6;175.1;177.3;179.2;180.7;182.0;182.9;183.7;184.2;184.6;184.8;184.9;185.0;185.0;185.0;185.0"/></line>
   <line x1="380" y1="265.0" x2="440.0" y2="205.0" stroke="#e0a800" stroke-width="2.5" marker-end="url(#arrLTG)"><animate attributeName="x2" dur="6s" repeatCount="indefinite" values="440.0;440.2;440.7;441.6;442.9;444.6;446.6;449.1;452.0;455.3;459.0;463.1;467.7;472.8;478.2;484.0;490.1;496.6;503.3;510.1;516.9;523.7;530.3;536.5;542.3;547.4;551.9;555.5;558.1;559.7;560.2;559.7;558.1;555.5;551.9;547.4;542.3;536.5;530.3;523.7;516.9;510.1;503.3;496.6;490.1;484.0;478.2;472.8;467.7;463.1;459.0;455.3;452.0;449.1;446.6;444.6;442.9;441.6;440.7;440.2;440.0"/><animate attributeName="y2" dur="6s" repeatCount="indefinite" values="205.0;204.8;204.3;203.4;202.1;200.4;198.4;195.9;193.0;189.7;186.0;181.9;177.3;172.2;166.8;161.0;154.9;148.4;141.7;134.9;128.1;121.3;114.7;108.5;102.7;97.6;93.1;89.5;86.9;85.3;84.8;85.3;86.9;89.5;93.1;97.6;102.7;108.5;114.7;121.3;128.1;134.9;141.7;148.4;154.9;161.0;166.8;172.2;177.3;181.9;186.0;189.7;193.0;195.9;198.4;200.4;202.1;203.4;204.3;204.8;205.0"/></line>
-  <foreignObject x="400" y="283.0" width="190" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(E^2 - (pc)^2 = (mc^2)^2\)</div></foreignObject>
+  <foreignObject x="400" y="283.0" width="190" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\({}^{1}E^2 - ({}^{1}pc)^2 = (mc^2)^2\)</div></foreignObject>
 </svg>
 </figure>
 
