@@ -191,50 +191,50 @@ $$
 
 <h2 id="sec-1-4">1.4　Lorentz 變換</h2>
 
-<p>事件在基準 1 的座標為 \((x_1,\ t_1)\)，在基準 2（以 \(v\) 前進）的座標為 \((x_2,\ t_2)\)。
+<p>事件在基準 1 的座標為 \(({}^{1}x,\ {}^{1}t)\)，在基準 2（以 \(v\) 前進）的座標為 \(({}^{2}x,\ {}^{2}t)\)。
 用 1.3、1.2 的結論直接組出換算式。</p>
 
-<p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \(t_2\)，地面原點位於 \(-vt_2\)，
-所以事件離地面原點的距離，用基準 2 的尺量是 \(x_2 + vt_2\)。
-但這段距離在地面上的長度是 \(x_1\)，而基準 2 看地面的長度縮短 \(\dfrac{1}{\gamma}\) 倍（1.3 節）：</p>
+<p><strong>第一式（長度收縮）</strong>：在基準 2 的時刻 \({}^{2}t\)，地面原點位於 \(-v\cdot{}^{2}t\)，
+所以事件離地面原點的距離，用基準 2 的尺量是 \({}^{2}x + v\cdot{}^{2}t\)。
+但這段距離在地面上的長度是 \({}^{1}x\)，而基準 2 看地面的長度縮短 \(\dfrac{1}{\gamma}\) 倍（1.3 節）：</p>
 
 $$
-x_2 + vt_2 = \frac{x_1}{\gamma}
+{}^{2}x + v\cdot{}^{2}t = \frac{{}^{1}x}{\gamma}
 \qquad\Longrightarrow\qquad
-x_1 = \gamma\,(x_2 + vt_2)
+{}^{1}x = \gamma\,({}^{2}x + v\cdot{}^{2}t)
 $$
 
-<p><strong>第二式（對稱性）</strong>：把時間乘上 \(c\) 寫成 \(ct_1\)，單位就是距離——
+<p><strong>第二式（對稱性）</strong>：把時間乘上 \(c\) 寫成 \(c\cdot{}^{1}t\)，單位就是距離——
 時間和位置是同一種量，\(c\) 只是換算常數。第一式即</p>
 
 $$
-x_1 = \gamma\left(x_2 + \tfrac{v}{c}\cdot ct_2\right)
+{}^{1}x = \gamma\left({}^{2}x + \tfrac{v}{c}\cdot c\cdot{}^{2}t\right)
 $$
 
-<p>光速不變說：\(x_1 = ct_1\) 與 \(x_2 = ct_2\) 是同一條光——\(x_1\) 與 \(ct_1\) 地位完全對稱。
-把第一式的 \(x_1 \leftrightarrow ct_1\)、\(x_2 \leftrightarrow ct_2\) 互換，式子必須照樣成立，直接得：</p>
+<p>光速不變說：\({}^{1}x = c\cdot{}^{1}t\) 與 \({}^{2}x = c\cdot{}^{2}t\) 是同一條光——\({}^{1}x\) 與 \(c\cdot{}^{1}t\) 地位完全對稱。
+把第一式的 \({}^{1}x \leftrightarrow c\cdot{}^{1}t\)、\({}^{2}x \leftrightarrow c\cdot{}^{2}t\) 互換，式子必須照樣成立，直接得：</p>
 
 $$
-ct_1 = \gamma\left(ct_2 + \tfrac{v}{c}\cdot x_2\right)
+c\cdot{}^{1}t = \gamma\left(c\cdot{}^{2}t + \tfrac{v}{c}\cdot {}^{2}x\right)
 $$
 
-<p>（驗證：代入 \(x_2 = ct_2\)，兩式右邊相等，得 \(x_1 = ct_1\)——光在兩個基準都是光速。）</p>
+<p>（驗證：代入 \({}^{2}x = c\cdot{}^{2}t\)，兩式右邊相等，得 \({}^{1}x = c\cdot{}^{1}t\)——光在兩個基準都是光速。）</p>
 
-<p>第二式除以 \(c\) 還原回 \(t_1\)，整理：</p>
+<p>第二式除以 \(c\) 還原回 \({}^{1}t\)，整理：</p>
 
 $$
-\boxed{\;x_1 = \gamma\,(x_2 + v t_2), \qquad t_1 = \gamma\left(t_2 + \frac{v}{c^2}\,x_2\right)\;}
+\boxed{\;{}^{1}x = \gamma\,({}^{2}x + v\cdot{}^{2}t), \qquad {}^{1}t = \gamma\left({}^{2}t + \frac{v}{c^2}\cdot{}^{2}x\right)\;}
 $$
 
 <p>這就是<strong>Lorentz 變換</strong>。反變換把 \(v\) 換成 \(-v\)：</p>
 
 $$
-x_2 = \gamma\,(x_1 - v t_1), \qquad t_2 = \gamma\left(t_1 - \frac{v}{c^2}\,x_1\right)
+{}^{2}x = \gamma\,({}^{1}x - v\cdot{}^{1}t), \qquad {}^{2}t = \gamma\left({}^{1}t - \frac{v}{c^2}\cdot{}^{1}x\right)
 $$
 
-<p>1.2 的時間膨脹是特例：取 \(x_2 = 0\)，得 \(t_1 = \gamma t_2\)。
-當 \(v \ll c\) 時 \(\gamma \to 1\)、\(\frac{v}{c^2}x_2 \to 0\)，退回伽利略變換
-\(x_1 = x_2 + vt_1\)、\(t_1 = t_2\)。</p>
+<p>1.2 的時間膨脹是特例：取 \({}^{2}x = 0\)，得 \({}^{1}t = \gamma\cdot{}^{2}t\)。
+當 \(v \ll c\) 時 \(\gamma \to 1\)、\(\frac{v}{c^2}\cdot{}^{2}x \to 0\)，退回伽利略變換
+\({}^{1}x = {}^{2}x + v\cdot{}^{1}t\)、\({}^{1}t = {}^{2}t\)。</p>
 
 <h2 id="sec-1-5">1.5　新的速度合成則</h2>
 
