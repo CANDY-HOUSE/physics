@@ -238,27 +238,27 @@ $$
 
 <h2 id="sec-1-5">1.5　新的速度合成則</h2>
 
-<p>物體從原點出發等速運動，基準 1 測得速度 \(v_1 = \dfrac{x_1}{t_1}\)，
-基準 2 測得 \(v_2 = \dfrac{x_2}{t_2}\)，基準間速度為 \(v\)。將 Lorentz 變換代入：</p>
+<p>物體從原點出發等速運動，基準 1 測得速度 \({}^{1}v = \dfrac{{}^{1}x}{{}^{1}t}\)，
+基準 2 測得 \({}^{2}v = \dfrac{{}^{2}x}{{}^{2}t}\)，基準間速度為 \(v\)。將 Lorentz 變換代入：</p>
 
 $$
-v_1 = \frac{x_1}{t_1} = \frac{\gamma(x_2 + v t_2)}{\gamma\left(t_2 + \frac{v}{c^2}x_2\right)}
-= \frac{\frac{x_2}{t_2} + v}{1 + \frac{v}{c^2}\frac{x_2}{t_2}}
+{}^{1}v = \frac{{}^{1}x}{{}^{1}t} = \frac{\gamma({}^{2}x + v\cdot{}^{2}t)}{\gamma\left({}^{2}t + \frac{v}{c^2}\cdot{}^{2}x\right)}
+= \frac{\frac{{}^{2}x}{{}^{2}t} + v}{1 + \frac{v}{c^2}\frac{{}^{2}x}{{}^{2}t}}
 $$
 
 $$
-\boxed{\;v_1 = \frac{v_2 + v}{1 + \dfrac{v_2 v}{c^2}}\;}
+\boxed{\;{}^{1}v = \frac{{}^{2}v + v}{1 + \dfrac{{}^{2}v\,v}{c^2}}\;}
 $$
 
-<p>這條式子取代 \(v_1 = v_2 + v\)。驗證三種情況：</p>
+<p>這條式子取代 \({}^{1}v = {}^{2}v + v\)。驗證三種情況：</p>
 
-<p><strong>日常速度</strong>：\(v_2, v \ll c\) 時分母趨近 1，回到 \(v_1 = v_2 + v\)。
+<p><strong>日常速度</strong>：\({}^{2}v, v \ll c\) 時分母趨近 1，回到 \({}^{1}v = {}^{2}v + v\)。
 日常生活察覺不到差異，理所當然。</p>
 
-<p><strong>光</strong>：代入 \(v_2 = c\)：</p>
+<p><strong>光</strong>：代入 \({}^{2}v = c\)：</p>
 
 $$
-v_1 = \frac{c + v}{1 + \frac{v}{c}} = \frac{(c+v)\,c}{c + v} = c
+{}^{1}v = \frac{c + v}{1 + \frac{v}{c}} = \frac{(c+v)\,c}{c + v} = c
 $$
 
 <p>不論 \(v\) 多大，結果都是 \(c\)——光速不變被公式自動保證。</p>
@@ -266,7 +266,7 @@ $$
 <p><strong>高速疊加</strong>：以 \(0.9c\) 行駛的電車上，把球以 \(0.9c\)（相對電車）向前丟。地上看：</p>
 
 $$
-v_1 = \frac{0.9c + 0.9c}{1 + 0.9^2} = \frac{1.8c}{1.81} \approx 0.994c
+{}^{1}v = \frac{0.9c + 0.9c}{1 + 0.9^2} = \frac{1.8c}{1.81} \approx 0.994c
 $$
 
 <p>怎麼疊都不會超過 \(c\)。</p>
@@ -308,7 +308,7 @@ $$
 </svg>
 </figure>
 
-<p>換到跟著 B 移動的基準（B 靜止）；\({}_{A}v_{B}\) 表示 A 相對於 B 的速度：</p>
+<p>換到跟著 B 移動的基準（B 靜止）；\({}^{B}v_{A}\) 表示在 B 的基準裡量到的 A 的速度：</p>
 
 <figure>
 <svg viewBox="0 0 640 150" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="15">
@@ -324,7 +324,7 @@ $$
     <text x="90" y="45" text-anchor="middle" fill="currentColor">A</text>
     <foreignObject x="20" y="90.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor;opacity:.7">\(m\)</div></foreignObject>
     <line x1="110" y1="70" x2="235" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrS)"/>
-    <foreignObject x="102" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\({}_{A}v_{B}\)</div></foreignObject>
+    <foreignObject x="102" y="43.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\({}^{B}v_{A}\)</div></foreignObject>
   </g>
   <g transform="translate(-22.5,0)">
   <g>
@@ -344,7 +344,7 @@ $$
 </figure>
 
 <p>相對論之前，速度直接相加：
-\({}_{A}v_{B} = 2v\)、\({}_{C}v_{B} = v\)。整體的動量等於 A、B 的動量之和；用 \(p = mv\)：</p>
+\({}^{B}v_{A} = 2v\)、\({}^{B}v_{C} = v\)。整體的動量等於 A、B 的動量之和；用 \(p = mv\)：</p>
 
 $$
 m\,(2v) = M\,v
@@ -355,10 +355,10 @@ $$
 <p>動量相加，順便給出質量相加。但 1.5 節已經知道速度不能直接相加，真正的速度是</p>
 
 $$
-{}_{A}v_{B} = \frac{2v}{1+\left(\frac{v}{c}\right)^2}\,, \qquad {}_{C}v_{B} = v
+{}^{B}v_{A} = \frac{2v}{1+\left(\frac{v}{c}\right)^2}\,, \qquad {}^{B}v_{C} = v
 $$
 
-<p>代回：\(m\,{}_{A}v_{B} = Mv\)。若 \(M = 2m\)，左邊小於右邊，等號不成立。
+<p>代回：\(m\cdot{}^{B}v_{A} = Mv\)。若 \(M = 2m\)，左邊小於右邊，等號不成立。
 我們選擇保住「整體的動量＝各部分的動量之和」——這只是人類的假設，不然沒有抓手——於是 \(p = mv\) 這個定義非修不可。</p>
 
 <h2 id="sec-1-7">1.7　動量的修正</h2>
@@ -374,7 +374,7 @@ $$
 B 基準的動量相加式變成</p>
 
 $$
-k({}_{A}v_{B})\, m\, {}_{A}v_{B} = k(v)\, M v \tag{1}
+k({}^{B}v_{A})\, m\cdot{}^{B}v_{A} = k(v)\, M v \tag{1}
 $$
 
 <p>缺 \(M\)。讓整個系統多帶一個<strong>縱向</strong>速度——
@@ -442,21 +442,21 @@ $$
 2\,k(v)\, m = M \tag{2}
 $$
 
-<p>把 \({}_{A}v_{B} = \dfrac{2v}{1+\left(\frac{v}{c}\right)^2}\) 與 (2) 的 \(M = 2k(v)m\) 代入 (1)：</p>
+<p>把 \({}^{B}v_{A} = \dfrac{2v}{1+\left(\frac{v}{c}\right)^2}\) 與 (2) 的 \(M = 2k(v)m\) 代入 (1)：</p>
 
 $$
-k({}_{A}v_{B})\; m\;\frac{2v}{1+\left(\frac{v}{c}\right)^2} \;=\; k(v)\cdot 2k(v)m \cdot v
+k({}^{B}v_{A})\; m\;\frac{2v}{1+\left(\frac{v}{c}\right)^2} \;=\; k(v)\cdot 2k(v)m \cdot v
 $$
 
 <p>兩邊除以 \(2mv\)：</p>
 
 $$
-\frac{k({}_{A}v_{B})}{1+\left(\frac{v}{c}\right)^2} = k(v)^2
+\frac{k({}^{B}v_{A})}{1+\left(\frac{v}{c}\right)^2} = k(v)^2
 \qquad\Longrightarrow\qquad
-k({}_{A}v_{B}) = k(v)^2\left(1+\left(\tfrac{v}{c}\right)^2\right) \tag{3}
+k({}^{B}v_{A}) = k(v)^2\left(1+\left(\tfrac{v}{c}\right)^2\right) \tag{3}
 $$
 
-<p>還差一條。B 基準看到的是「A 以 \({}_{A}v_{B}\) 飛向靜止的 B，質心 C 以 \(v\) 前進」——
+<p>還差一條。B 基準看到的是「A 以 \({}^{B}v_{A}\) 飛向靜止的 B，質心 C 以 \(v\) 前進」——
 對它重施故技：全體共同帶上縱向的 \(u\)，橫向照舊。</p>
 
 <figure>
@@ -472,7 +472,7 @@ $$
   <circle cx="90" cy="130" r="7" fill="none" stroke="currentColor" stroke-width="2"/>
   <text x="90" y="165" text-anchor="middle" fill="currentColor">A</text>
   <line x1="110" y1="130" x2="235" y2="130" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
-  <foreignObject x="102" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\({}_{A}v_{B}\)</div></foreignObject>
+  <foreignObject x="102" y="103.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\({}^{B}v_{A}\)</div></foreignObject>
   <line x1="90" y1="118" x2="90" y2="70" stroke="currentColor" stroke-width="2" marker-end="url(#arrR)"/>
   <foreignObject x="6" y="75.75" width="140" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(u\)</div></foreignObject>
   </g>
@@ -504,18 +504,18 @@ $$
 <p>縱向動量相加：</p>
 
 $$
-k(u)\,k({}_{A}v_{B})\,mu + k(u)\,k(0)\,mu = k(u)\,k(v)\,Mu
+k(u)\,k({}^{B}v_{A})\,mu + k(u)\,k(0)\,mu = k(u)\,k(v)\,Mu
 $$
 
 <p>兩邊除以 \(k(u)\,mu\)，再用 (2) 的 \(M = 2k(v)m\)：</p>
 
 $$
-k({}_{A}v_{B}) + 1 = k(v)\,\frac{M}{m} = 2k(v)^2
+k({}^{B}v_{A}) + 1 = k(v)\,\frac{M}{m} = 2k(v)^2
 \qquad\Longrightarrow\qquad
-k({}_{A}v_{B}) = 2k(v)^2 - 1 \tag{4}
+k({}^{B}v_{A}) = 2k(v)^2 - 1 \tag{4}
 $$
 
-<p>(3)、(4) 聯立，消去 \(k({}_{A}v_{B})\)：</p>
+<p>(3)、(4) 聯立，消去 \(k({}^{B}v_{A})\)：</p>
 
 $$
 2k(v)^2 - 1 = k(v)^2\left(1+\left(\tfrac{v}{c}\right)^2\right)
