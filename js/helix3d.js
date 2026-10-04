@@ -51,9 +51,9 @@
 
   function setup(fig, opts) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     renderer.autoClear = false;
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     var svg = fig.querySelector('svg');
@@ -229,9 +229,9 @@
   // 2.4：從側面看螺旋＝簡諧運動（3D 螺旋投影到牆上）
   function setupShm(fig) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     var svg = fig.querySelector('svg');
     fig.insertBefore(canvas, fig.firstChild);
@@ -328,9 +328,9 @@
   // 2.5：螺旋繞成甜甜圈的駐波（兩道反向繞行的螺旋疊加）
   function setupTorus(fig) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     fig.insertBefore(canvas, fig.firstChild);
 
@@ -414,9 +414,9 @@
   // 2.5：猜測——電子是一顆繞兩圈的光子（Williamson 與 van der Mark 1997）
   function setupDoubleLoop(fig) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     fig.insertBefore(canvas, fig.firstChild);
 
@@ -500,9 +500,9 @@
   // 右：電荷＝繞看不見小圓單向打轉的波（駐波正反各半、淨電荷為零）→ 周圍的小圓轉速改變 → 順繞的被推開、逆繞的被拉近、不繞的不動（電力，有正有負）
   function setupUnify(fig) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     fig.insertBefore(canvas, fig.firstChild);
     var scene = new THREE.Scene();
@@ -631,9 +631,9 @@
   var RED3 = 0xfc6255, GREEN3 = 0x83c167, BLUE3 = 0x58c4dd;
   function stage(fig, height, build) {
     var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
     renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(BG, 1);
+    renderer.setClearColor(0x000000, 0);
     canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
     fig.insertBefore(canvas, fig.firstChild);
     var scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(36, 640 / height, 0.1, 100);
@@ -932,9 +932,9 @@
     var figs = [].slice.call(container.querySelectorAll('canvas[data-mode]'));
     if (!figs.length) return null;
     var glCanvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: glCanvas, antialias: true }); } catch (e) { return null; }
+    try { renderer = new THREE.WebGLRenderer({ canvas: glCanvas, antialias: true, alpha: true }); } catch (e) { return null; }
     var DPR = Math.min(window.devicePixelRatio || 1, 2), W = 320, H = 210;
-    renderer.setPixelRatio(DPR); renderer.setSize(W, H, false); renderer.setClearColor(BG, 1);
+    renderer.setPixelRatio(DPR); renderer.setSize(W, H, false); renderer.setClearColor(0x000000, 0);
     var up = new THREE.Vector3(0, 1, 0);
 
     function beads(n, color, r) {
@@ -1069,6 +1069,7 @@
       items.forEach(function (it) {
         if (!force && !it.visible) return;
         it.m.update(t); renderer.render(it.m.scene, it.cam);
+        it.ctx.clearRect(0, 0, it.cv.width, it.cv.height);
         it.ctx.drawImage(renderer.domElement, 0, 0, it.cv.width, it.cv.height);
       });
       frames++;
