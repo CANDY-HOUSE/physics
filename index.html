@@ -55,9 +55,10 @@ MathJax = {
       <li>
         <a href="#part-3">三、電磁學</a>
         <ol class="sb-secs">
-          <li><a href="#sec-3-1">3.1　磁就是電（未完工）</a></li>
-          <li><a href="#sec-3-2">3.2　Maxwell 方程（未完工）</a></li>
-          <li><a href="#sec-3-3">3.3　（未完工）</a></li>
+          <li><a href="#sec-3-2">3.2　磁就是電！安培定律的來源</a></li>
+          <li><a href="#sec-3-3">3.3　磁就是電！Biot-Savart定律的來源</a></li>
+          <li><a href="#sec-3-4">3.4　Maxwell 方程（未完工）</a></li>
+          <li><a href="#sec-3-5">3.5　（未完工）</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -1931,7 +1932,7 @@ $$
 
 <h1 id="part-3"><span class="part-label">第三部・電磁學</span>第三章　電磁學</h1>
 
-<h2 id="sec-3-1">3.1　磁就是電（未完工）</h2>
+<h2 id="sec-3-2">3.2　磁就是電！安培定律的來源</h2>
 
 <p>這一節只用靜電學和第一章的相對論，算出通電導線對運動電荷的磁力（Purcell 1965）。</p>
 
@@ -2262,7 +2263,56 @@ $$
 
 <p>磁力只取決於電流 \(I\)，和導線裡是哪一種電荷在移動無關。</p>
 
-<h2 id="sec-3-2">3.2　Maxwell 方程（未完工）</h2>
+<h2 id="sec-3-3">3.3　磁就是電！Biot-Savart定律的來源</h2>
+
+<figure>
+<svg id="bs3d" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="bsW" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#FFFFFF"/></marker>
+    <marker id="bsG" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#83C167"/></marker>
+    <marker id="bsT" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#5CD0B3"/></marker>
+    <marker id="bsP" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#D147BD"/></marker>
+    <marker id="bsA" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#888888"/></marker>
+    <marker id="bsDim" markerUnits="userSpaceOnUse" markerWidth="6" markerHeight="4" refX="4.3" refY="2" orient="auto-start-reverse"><path d="M0,0 L6,2 L0,4 z" fill="#FC6255"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="420" rx="10" fill="#0b0b0f"/>
+  <line id="axFar" stroke="#888888" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <path id="plane" fill="#1C758A" fill-opacity=".35" stroke="#BBBBBB" stroke-width="1.6" stroke-linejoin="round"/>
+  <line id="cx1" stroke="#BBBBBB" stroke-opacity=".55" stroke-width="1"/>
+  <line id="cx2" stroke="#BBBBBB" stroke-opacity=".55" stroke-width="1"/>
+  <path id="circ" fill="none" stroke="#58C4DD" stroke-width="2.6"/>
+  <line id="rad" stroke="#FC6255" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <line id="axNear" stroke="#888888" stroke-width="1.5" stroke-dasharray="6 6"/>
+  <line id="aDim" stroke="#FC6255" stroke-width="1.2" marker-start="url(#bsDim)" marker-end="url(#bsDim)"/>
+  <path id="wire" fill="none" stroke="#D147BD" stroke-width="5" stroke-linecap="round" stroke-opacity=".9" marker-end="url(#bsP)"/>
+  <path id="wireFlow" fill="none" stroke="#DC75CD" stroke-width="2" stroke-linecap="round" stroke-dasharray="3 22"/>
+  <path id="wedge" fill="#58C4DD" fill-opacity=".55" stroke="#58C4DD" stroke-width="1"/>
+  <line id="rvec" stroke="#FFFFFF" stroke-width="2.4" marker-end="url(#bsW)"/>
+  <line id="dl" stroke="#83C167" stroke-width="5" marker-end="url(#bsG)"/>
+  <line id="dB" stroke="#5CD0B3" stroke-width="4" marker-end="url(#bsT)"/>
+  <circle id="Pdot" r="6" fill="#FFFF00"/>
+  <line id="tx" stroke="#FFFFFF" stroke-width="1.6" marker-end="url(#bsW)"/>
+  <line id="ty" stroke="#FFFFFF" stroke-width="1.6" marker-end="url(#bsW)"/>
+  <line id="tz" stroke="#FFFFFF" stroke-width="1.6" marker-end="url(#bsW)"/>
+  <foreignObject id="Ltx" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#FFFFFF;height:24px;display:flex;align-items:center;justify-content:center">\(x\)</div></foreignObject>
+  <foreignObject id="Lty" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#FFFFFF;height:24px;display:flex;align-items:center;justify-content:center">\(y\)</div></foreignObject>
+  <foreignObject id="Ltz" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#FFFFFF;height:24px;display:flex;align-items:center;justify-content:center">\(z\)</div></foreignObject>
+  <foreignObject id="Lr" x="0" y="0" width="36" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:20px;color:#FFFFFF;height:30px;display:flex;align-items:center;justify-content:center">\(\vec r\)</div></foreignObject>
+  <foreignObject id="Lth" x="0" y="0" width="30" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#58C4DD;height:26px;display:flex;align-items:center;justify-content:center">\(\theta\)</div></foreignObject>
+  <foreignObject id="Ldl" x="0" y="0" width="70" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:19px;color:#83C167;height:30px;display:flex;align-items:center;justify-content:center">\(I\,d\vec\ell\)</div></foreignObject>
+  <foreignObject id="LdB" x="0" y="0" width="54" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:19px;color:#5CD0B3;height:30px;display:flex;align-items:center;justify-content:center">\(d\vec B\)</div></foreignObject>
+  <foreignObject id="LR" x="0" y="0" width="28" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#FC6255;height:26px;display:flex;align-items:center;justify-content:center">\(R\)</div></foreignObject>
+  <foreignObject id="La" x="0" y="0" width="28" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#FC6255;height:26px;display:flex;align-items:center;justify-content:center">\(a\)</div></foreignObject>
+  <foreignObject id="LI" x="0" y="0" width="26" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#D147BD;height:26px;display:flex;align-items:center;justify-content:center">\(I\)</div></foreignObject>
+</svg>
+</figure>
+
+$$
+\left|d\vec B\right| = \frac{\dfrac{1}{\varepsilon_0 c^2}\,I\,d\ell\,\sin\theta}{4\pi r^2}
+$$
+
+
+<h2 id="sec-3-4">3.4　Maxwell 方程（未完工）</h2>
 
 <p>電磁學的基本定律，可以濃縮成四條方程，稱為 Maxwell 方程：</p>
 
@@ -2277,7 +2327,7 @@ $$
 
 <p>第一、二條的左邊，是把一個封閉曲面分成許多小塊，把每一小塊的面積乘上垂直穿出這一小塊的電場（或磁場），再全部加起來；它算的是穿出這個曲面的電場線（或磁場線）有多少，稱為電通量（或磁通量）。第一條右邊的 \(Q_{\text{內}}\)，是曲面裡面所有電荷的總和。第三、四條的左邊，是沿著一個封閉的圈走一圈，把每一小段的長度乘上沿著這一段的電場（或磁場），再全部加起來。\(\Phi_B\) 和 \(\Phi_E\) 分別是穿過這個圈的磁通量和電通量，\(I\) 是穿過這個圈的電流。除了這四條方程，還需要一條式子說明電場和磁場怎麼推動電荷，那就是第三步的 Lorentz 力。</p>
 
-<p>3.1 已經用 Coulomb 定律和相對論推出了導線的磁力。這一節要問：能不能只用 Coulomb 定律和第一章的相對論，推出全部四條方程？答案是：對於一直以固定速度運動的電荷，可以，而且是精確的（這一節推導其中有代表性的例子，一般情形留到 3.3）；但是除了 Coulomb 定律之外，還需要三個假設（假設一到三），每一個都已經被實驗證實。對於加速運動的電荷，還需要再多一個假設（假設四），而它也已經被實驗證實。下面先列出這些前提，再一步一步推導。</p>
+<p>3.2 已經用 Coulomb 定律和相對論推出了導線的磁力。這一節要問：能不能只用 Coulomb 定律和第一章的相對論，推出全部四條方程？答案是：對於一直以固定速度運動的電荷，可以，而且是精確的（這一節推導其中有代表性的例子，一般情形留到 3.5）；但是除了 Coulomb 定律之外，還需要三個假設（假設一到三），每一個都已經被實驗證實。對於加速運動的電荷，還需要再多一個假設（假設四），而它也已經被實驗證實。下面先列出這些前提，再一步一步推導。</p>
 
 <p><strong>實驗一（Coulomb 定律）</strong>：兩個靜止的電荷之間的力，和兩者電荷的乘積成正比，和距離的平方成反比：靜止的電荷 \(q\) 對距離 \(r\) 處另一個靜止的電荷 \(Q\) 的作用力，等於 \(Q\) 乘上 \(\dfrac{q}{4\pi\varepsilon_0 r^2}\)，方向沿著兩者的連線。\(\dfrac{q}{4\pi\varepsilon_0 r^2}\) 稱為 \(q\) 在那一點的電場（Coulomb 電場）；也就是說，電場就是靜止的試驗電荷的動量每秒改變多少，再除以它的電荷。Williams、Faller 與 Hill 在 1971 年測得，這個「平方」的 2 和真正的指數相差不到 \(10^{-15}\)。</p>
 
@@ -2340,9 +2390,9 @@ $$
 
 <h3>【第二步：等速運動的電荷，電場被壓扁】</h3>
 
-<p>現在讓電荷 \(q\) 以速度 \(u\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；需要區分兩個基準的時候，\(q\) 基準裡量到的量在左上角標上 \(q\)，例如 \({}^{q}E\)；地面基準裡量到的量則標上「地」，例如 \({}^{\text{地}}E\)。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.1 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
+<p>現在讓電荷 \(q\) 以速度 \(u\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；需要區分兩個基準的時候，\(q\) 基準裡量到的量在左上角標上 \(q\)，例如 \({}^{q}E\)；地面基準裡量到的量則標上「地」，例如 \({}^{\text{地}}E\)。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.2 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
 
-<p><strong>垂直方向</strong>：和 3.1 一樣，只要記得力就是 \(\dfrac{dp}{dt}\)。\(Q\) 在地面基準裡靜止，在 \(q\) 基準裡則以 \(u\) 向左移動，角色正好和 3.1 對調：</p>
+<p><strong>垂直方向</strong>：和 3.2 一樣，只要記得力就是 \(\dfrac{dp}{dt}\)。\(Q\) 在地面基準裡靜止，在 \(q\) 基準裡則以 \(u\) 向左移動，角色正好和 3.2 對調：</p>
 
 <figure>
 <svg viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2422,7 +2472,7 @@ $$
 {}^{\text{地}}E_\perp = \gamma\cdot{}^{q}E_\perp
 $$
 
-<p><strong>平行方向</strong>：設 \(Q\) 的質量是 \(m\)，在地面基準裡沿著運動方向的速度是 \(w\)；我們看 \(Q\) 在地面基準裡靜止（\(w = 0\)）的那一瞬間。根據 1.5 的速度合成（地面基準相對於 \(q\) 基準以速度 \(-u\) 移動，所以和 3.1 一樣，1.5 式子裡的基準間速度要代入 \(-u\)），\(Q\) 在 \(q\) 基準裡的速度是 \({}^{q}v = \dfrac{w - u}{1 - \frac{uw}{c^2}}\)。對 \(w\) 微分：</p>
+<p><strong>平行方向</strong>：設 \(Q\) 的質量是 \(m\)，在地面基準裡沿著運動方向的速度是 \(w\)；我們看 \(Q\) 在地面基準裡靜止（\(w = 0\)）的那一瞬間。根據 1.5 的速度合成（地面基準相對於 \(q\) 基準以速度 \(-u\) 移動，所以和 3.2 一樣，1.5 式子裡的基準間速度要代入 \(-u\)），\(Q\) 在 \(q\) 基準裡的速度是 \({}^{q}v = \dfrac{w - u}{1 - \frac{uw}{c^2}}\)。對 \(w\) 微分：</p>
 
 $$
 \frac{d{}^{q}v}{dw} = \frac{\left(1 - \frac{uw}{c^2}\right) + (w - u)\frac{u}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2} = \frac{1 - \frac{u^2}{c^2}}{\left(1 - \frac{uw}{c^2}\right)^2}
@@ -2527,7 +2577,7 @@ $$
 = \frac{q}{\varepsilon_0}
 $$
 
-<p>其中用到 \(\dfrac{1}{\left(a^2 + \beta^2k^2\right)^{\frac{3}{2}}}\) 的反導函數是 \(\dfrac{k}{a^2\sqrt{a^2 + \beta^2k^2}}\)；代入 \(k = \pm 1\)，並利用 \(a^2 + \beta^2 = 1\)，就得到 \(\dfrac{2}{a^2}\)。電通量不變。這個電場仍然從電荷此刻的位置筆直向外指，而且在每個方向上都和距離的平方成反比，所以第一步的細圓錐論證照樣成立：任何包住電荷的封閉曲面，穿出的電通量都是 \(\dfrac{q}{\varepsilon_0}\)。也就是說，運動的電荷同樣滿足第一條方程；3.1 在 \(q\) 基準裡對運動中的導線使用 Gauss 定律，靠的正是這個結果。實驗上，高速電子束旁邊這張「電場餅」，已經可以用光學方法直接量到（Wilke 等人 2002）。</p>
+<p>其中用到 \(\dfrac{1}{\left(a^2 + \beta^2k^2\right)^{\frac{3}{2}}}\) 的反導函數是 \(\dfrac{k}{a^2\sqrt{a^2 + \beta^2k^2}}\)；代入 \(k = \pm 1\)，並利用 \(a^2 + \beta^2 = 1\)，就得到 \(\dfrac{2}{a^2}\)。電通量不變。這個電場仍然從電荷此刻的位置筆直向外指，而且在每個方向上都和距離的平方成反比，所以第一步的細圓錐論證照樣成立：任何包住電荷的封閉曲面，穿出的電通量都是 \(\dfrac{q}{\varepsilon_0}\)。也就是說，運動的電荷同樣滿足第一條方程；3.2 在 \(q\) 基準裡對運動中的導線使用 Gauss 定律，靠的正是這個結果。實驗上，高速電子束旁邊這張「電場餅」，已經可以用光學方法直接量到（Wilke 等人 2002）。</p>
 
 <h3>【第三步：跟速度有關的那一部分力，就是磁力】</h3>
 
@@ -2563,9 +2613,9 @@ $$
 B = \frac{u}{c^2}\cdot{}^{\text{地}}E_\perp \qquad\Longrightarrow\qquad {}^{\text{地}}F_\perp = Q\,\left({}^{\text{地}}E_\perp - {}^{\text{地}}v\,B\right)
 $$
 
-<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec u\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec v\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \({}^{\text{地}}v = u\) 時，\({}^{\text{地}}F_\perp = \left(1 - \dfrac{u^2}{c^2}\right)Q\cdot{}^{\text{地}}E_\perp = \dfrac{Q\cdot{}^{\text{地}}E_\perp}{\gamma^2} = \dfrac{{}^{q}F_\perp}{\gamma}\)，正是 3.1 換回地面基準時用的規則。</p>
+<p>磁場的方向，是繞著電荷運動路線的圓圈：用右手的拇指指向電荷 \(q\) 的運動方向，四指彎曲的方向就是磁場的方向（\(q\) 是正電荷時；\(q\) 是負電荷時，方向相反）。寫成向量，\(\vec B = \dfrac{\vec u\times\vec E}{c^2}\)（\(\times\) 是向量的外積，它的方向就是右手定則給的方向），力就是 \(\vec F = Q\left(\vec E + \vec v\times\vec B\right)\)，這正是 Lorentz 力。檢查一下：當 \({}^{\text{地}}v = u\) 時，\({}^{\text{地}}F_\perp = \left(1 - \dfrac{u^2}{c^2}\right)Q\cdot{}^{\text{地}}E_\perp = \dfrac{Q\cdot{}^{\text{地}}E_\perp}{\gamma^2} = \dfrac{{}^{q}F_\perp}{\gamma}\)，正是 3.2 換回地面基準時用的規則。</p>
 
-<p>這裡只算了 \(Q\) 沿著運動方向移動時，垂直方向的力。\(Q\) 往其他方向移動時，用同樣的方法也能算出同一個 Lorentz 力，但是需要知道動量在換基準時怎麼改變，那是 3.3 的內容。Lorentz 力的形式，從 Thomson 在 1897 年用電場和磁場偏轉陰極射線，到今天的大型強子對撞機用磁鐵讓質子轉彎，都一再被證實。</p>
+<p>這裡只算了 \(Q\) 沿著運動方向移動時，垂直方向的力。\(Q\) 往其他方向移動時，用同樣的方法也能算出同一個 Lorentz 力，但是需要知道動量在換基準時怎麼改變，那是 3.5 的內容。Lorentz 力的形式，從 Thomson 在 1897 年用電場和磁場偏轉陰極射線，到今天的大型強子對撞機用磁鐵讓質子轉彎，都一再被證實。</p>
 
 <h3>【第四步：磁場線是一圈圈的環】</h3>
 
@@ -2614,13 +2664,13 @@ $$
 
 <h3>【第五步：長直導線與 Ampère 定律】</h3>
 
-<p>3.1 的方法二裡，導線中的電子以速度 \(u\) 向左移動，正離子靜止。電子產生的電場和正離子產生的電場互相抵消，所以導線外沒有電場；但是電子在運動，所以它們會產生磁場。把第三步的 \(B = \dfrac{u}{c^2}E_\perp\) 用在電子上：電子的線密度大小是 \(\lambda\)；根據第二步，運動的電荷同樣滿足 Gauss 定律，所以電子在距離 \(s\) 處的電場，大小和同樣密度的靜止電荷一樣，是 \(\dfrac{\lambda}{2\pi\varepsilon_0 s}\)。因此：</p>
+<p>3.2 的方法二裡，導線中的電子以速度 \(u\) 向左移動，正離子靜止。電子產生的電場和正離子產生的電場互相抵消，所以導線外沒有電場；但是電子在運動，所以它們會產生磁場。把第三步的 \(B = \dfrac{u}{c^2}E_\perp\) 用在電子上：電子的線密度大小是 \(\lambda\)；根據第二步，運動的電荷同樣滿足 Gauss 定律，所以電子在距離 \(s\) 處的電場，大小和同樣密度的靜止電荷一樣，是 \(\dfrac{\lambda}{2\pi\varepsilon_0 s}\)。因此：</p>
 
 $$
 B = \frac{u}{c^2}\cdot\frac{\lambda}{2\pi\varepsilon_0 s} = \frac{1}{\varepsilon_0c^2}\cdot\frac{\lambda u}{2\pi s} = \frac{\mu_0 I}{2\pi s}
 $$
 
-<p>其中 \(I = \lambda u\)，並且把 \(\dfrac{1}{\varepsilon_0c^2}\) 記作 \(\mu_0\)。在這裡，\(\mu_0\) 只是一個記號；它的實驗意義是：從電流之間的磁力測得的常數，正好等於這個值。換句話說，用電力測出 \(\varepsilon_0\)、用磁力測出 \(\mu_0\)，\(\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}\) 就應該等於光速。Weber 與 Kohlrausch 在 1856 年由電學和磁學的量測，得到這個速度是每秒 310,740 公里，非常接近光速。國際單位制早已用 \(\varepsilon_0 = \dfrac{1}{\mu_0c^2}\) 來定義 \(\varepsilon_0\)（2019 年改制後仍然如此），所以今天它已經不再是一個檢驗。以數字來說，1 安培的電流在 1 公分外產生 20 微特斯拉的磁場，和地磁差不多大。這裡把電子當成平滑流動的流體，但是真實的電子不斷碰撞；3.1 也做了同樣的簡化。</p>
+<p>其中 \(I = \lambda u\)，並且把 \(\dfrac{1}{\varepsilon_0c^2}\) 記作 \(\mu_0\)。在這裡，\(\mu_0\) 只是一個記號；它的實驗意義是：從電流之間的磁力測得的常數，正好等於這個值。換句話說，用電力測出 \(\varepsilon_0\)、用磁力測出 \(\mu_0\)，\(\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}\) 就應該等於光速。Weber 與 Kohlrausch 在 1856 年由電學和磁學的量測，得到這個速度是每秒 310,740 公里，非常接近光速。國際單位制早已用 \(\varepsilon_0 = \dfrac{1}{\mu_0c^2}\) 來定義 \(\varepsilon_0\)（2019 年改制後仍然如此），所以今天它已經不再是一個檢驗。以數字來說，1 安培的電流在 1 公分外產生 20 微特斯拉的磁場，和地磁差不多大。這裡把電子當成平滑流動的流體，但是真實的電子不斷碰撞；3.2 也做了同樣的簡化。</p>
 
 <p>這個磁場為什麼能被我們感覺到？截面 1 平方毫米的銅線通過 1 安培的電流時，電子的漂移速度只有每秒約 0.07 毫米；對另一條導線裡同樣漂移的電子來說，磁力只是電子之間電力的 \(\dfrac{u^2}{c^2}\) 倍，小得驚人。可是每公尺導線裡移動的電子，帶著大約 1.4 萬庫侖的電荷。磁力是一個極小的比例乘上極大的電荷；它能被感覺到，是因為正負電荷的電力完全抵消了。</p>
 
@@ -2775,15 +2825,15 @@ $$
 
 <p>兩者的大小相等：電動勢等於磁通量的變化率。電動勢推動的電流，方向總是使它自己產生的磁場去抵抗磁通量的變化（Lenz 定律）；把這個方向記成負號，就寫成 \(\mathcal{E} = -\dfrac{d\Phi_B}{dt}\)。</p>
 
-<p><strong>（二）換到桿子的基準。</strong>在桿子自己的基準裡，桿子的電荷是靜止的，所以磁力不可能推動它們。可是電流一定還在，因為圈裡有沒有電流（例如接線會不會發熱），是每個基準都同意的事。那麼，推動電荷的是什麼？3.1 已經回答：在跟著桿子跑的基準裡，導線裡正負電荷的密度不再相等，導線帶了電，它產生的電場沿著桿子推動電荷。同一個電動勢，在一個基準裡來自磁力，在另一個基準裡來自電力。Einstein 在 1905 年那篇相對論論文的開頭，談的正是這件事：磁鐵不動而導體運動，和導體不動而磁鐵運動，產生的電流相同，但是當時的理論卻用兩種不同的原因解釋；相對論說，兩者只是同一件事從兩個基準來看。</p>
+<p><strong>（二）換到桿子的基準。</strong>在桿子自己的基準裡，桿子的電荷是靜止的，所以磁力不可能推動它們。可是電流一定還在，因為圈裡有沒有電流（例如接線會不會發熱），是每個基準都同意的事。那麼，推動電荷的是什麼？3.2 已經回答：在跟著桿子跑的基準裡，導線裡正負電荷的密度不再相等，導線帶了電，它產生的電場沿著桿子推動電荷。同一個電動勢，在一個基準裡來自磁力，在另一個基準裡來自電力。Einstein 在 1905 年那篇相對論論文的開頭，談的正是這件事：磁鐵不動而導體運動，和導體不動而磁鐵運動，產生的電流相同，但是當時的理論卻用兩種不同的原因解釋；相對論說，兩者只是同一件事從兩個基準來看。</p>
 
-<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.3（見下文）。這就是第三條方程：</p>
+<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.5（見下文）。這就是第三條方程：</p>
 
 $$
 \oint \vec E\cdot d\vec l = -\frac{d\Phi_B}{dt}
 $$
 
-<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{\vec u\times\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.3 的動量變換。</p>
+<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{\vec u\times\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.5 的動量變換。</p>
 
 <p><strong>（四）沒有任何東西在動。</strong>變壓器裡的線圈都不動，只是一個線圈的電流隨時間改變，另一個線圈就產生電動勢（Faraday 1831）。電流改變，代表電荷在加速，這已經超出等速運動電荷的範圍，所以需要第八步的假設四；變壓器和電子感應加速器的運作，正是這個假設的實驗證據。</p>
 
@@ -2831,7 +2881,7 @@ $$
 \oint\vec B\cdot d\vec l = \mu_0 I + \mu_0\varepsilon_0\,\frac{d\Phi_E}{dt}
 $$
 
-<p>這裡只算了電荷沿著圓環軸線運動的情形；對任意形狀的圈、任意一群等速運動的電荷，同樣的等式也成立，一般的證明留到 3.3。</p>
+<p>這裡只算了電荷沿著圓環軸線運動的情形；對任意形狀的圈、任意一群等速運動的電荷，同樣的等式也成立，一般的證明留到 3.5。</p>
 
 <figure>
 <svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -2876,11 +2926,11 @@ $$
 
 <h3>【第八步：加速的電荷——多一個假設，換來光】</h3>
 
-<p>到這裡，四條方程都已經在等速運動電荷的例子裡推出；（三）、（四）的一般情形，留到 3.3 補完。可是電荷一旦加速，相對論本身並不告訴我們它的場會怎樣：場裡可能多出一部分，它只和加速度有關，在等速運動時恰好是零。因此，Frisch 與 Wilets（1956）等人都必須另外加上一個假設。需要的假設是：</p>
+<p>到這裡，四條方程都已經在等速運動電荷的例子裡推出；（三）、（四）的一般情形，留到 3.5 補完。可是電荷一旦加速，相對論本身並不告訴我們它的場會怎樣：場裡可能多出一部分，它只和加速度有關，在等速運動時恰好是零。因此，Frisch 與 Wilets（1956）等人都必須另外加上一個假設。需要的假設是：</p>
 
 <p><strong>假設四</strong>：（甲）兩條 Gauss 定律，在每一個慣性基準、每一個瞬間都成立，不論電荷怎麼運動；（乙）Lorentz 力 \(Q\left(\vec E + \vec v\times\vec B\right)\) 在每一個慣性基準都成立；（丙）場由電荷過去的運動決定，沒有從無窮遠處憑空射來的波。</p>
 
-<p>（甲）再加上電場和磁場的換基準規則（它由（乙）決定，完整的形式要用到 3.3），在邏輯上和四條 Maxwell 方程等價；（乙）本身則給出場對電荷的力。所以老實說，這不是從相對論「推出」加速電荷的行為，而是把 Maxwell 方程重新說成一句話：<strong>Maxwell 方程，就是兩條 Gauss 定律在每一個慣性基準、每一個瞬間都成立。</strong>它對不對，要靠實驗回答。</p>
+<p>（甲）再加上電場和磁場的換基準規則（它由（乙）決定，完整的形式要用到 3.5），在邏輯上和四條 Maxwell 方程等價；（乙）本身則給出場對電荷的力。所以老實說，這不是從相對論「推出」加速電荷的行為，而是把 Maxwell 方程重新說成一句話：<strong>Maxwell 方程，就是兩條 Gauss 定律在每一個慣性基準、每一個瞬間都成立。</strong>它對不對，要靠實驗回答。</p>
 
 <p>為什麼加速的電荷會發光？設想一個等速運動的電荷突然停下。根據假設四，「停下」這個消息以光速向外傳（為什麼是光速，見下一段；（丙）保證它是向外傳，而不是從外面傳進來）。停下以後經過時間 \(t\)，在以停止點為球心、半徑為 \(ct\) 的球面以內，電場已經是靜止電荷的 Coulomb 電場；在球面以外，電場還是原本那張「餅」，仍然指向電荷「如果沒有停下、此刻應該在」的位置。根據假設四（甲），電場線不能憑空斷掉，所以它們必須在球面附近的一層薄殼裡橫著接起來。這段橫向的折角以光速向外跑，它就是光（Purcell 的論證）。</p>
 
@@ -2928,14 +2978,14 @@ $$
 <tbody>
 <tr><td>（一）電場的 Gauss 定律</td><td>包住多少電荷，就有多少電場線穿出來</td><td>推出（包括等速運動的電荷）</td><td>Williams、Faller 與 Hill 1971</td></tr>
 <tr><td>（二）磁場的 Gauss 定律</td><td>磁場線是封閉的環</td><td>推出（等速運動的電荷）；是否另有磁單極，要靠實驗</td><td>IceCube 2022、MoEDAL 2022</td></tr>
-<tr><td>（三）Faraday 定律</td><td>磁通量改變，產生繞圈的電場</td><td>運動造成的部分在例子中推出，一般情形見 3.3；電流改變時需要假設四</td><td>Faraday 1831、變壓器</td></tr>
-<tr><td>（四）Ampère–Maxwell 定律</td><td>電流和電通量的改變，產生繞圈的磁場</td><td>在例子中推出（等速運動的電荷），一般情形見 3.3</td><td>Hertz 1887、電磁波</td></tr>
+<tr><td>（三）Faraday 定律</td><td>磁通量改變，產生繞圈的電場</td><td>運動造成的部分在例子中推出，一般情形見 3.5；電流改變時需要假設四</td><td>Faraday 1831、變壓器</td></tr>
+<tr><td>（四）Ampère–Maxwell 定律</td><td>電流和電通量的改變，產生繞圈的磁場</td><td>在例子中推出（等速運動的電荷），一般情形見 3.5</td><td>Hertz 1887、電磁波</td></tr>
 </tbody>
 </table></div>
 
-<p>從 Coulomb 定律、第一章的相對論和假設一到三出發，可以推出：對等速運動的電荷，四條 Maxwell 方程在這些例子裡精確成立，一般情形留到 3.3 補完；加速的電荷需要假設四，而無線電、光和同步輻射都證實了它。電場和磁場也不再是兩種東西：換一個基準，一部分電場就變成磁場，一部分磁場就變成電場。2.6 說磁場是「內部小圓彼此怎麼接起來」的曲率；這一節則顯示，換一個基準，電場和磁場會互相轉換，這表示兩者合起來才是那個完整的曲率，不同的基準看到它的不同部分。</p>
+<p>從 Coulomb 定律、第一章的相對論和假設一到三出發，可以推出：對等速運動的電荷，四條 Maxwell 方程在這些例子裡精確成立，一般情形留到 3.5 補完；加速的電荷需要假設四，而無線電、光和同步輻射都證實了它。電場和磁場也不再是兩種東西：換一個基準，一部分電場就變成磁場，一部分磁場就變成電場。2.6 說磁場是「內部小圓彼此怎麼接起來」的曲率；這一節則顯示，換一個基準，電場和磁場會互相轉換，這表示兩者合起來才是那個完整的曲率，不同的基準看到它的不同部分。</p>
 
-<h2 id="sec-3-3">3.3　（未完工）</h2>
+<h2 id="sec-3-5">3.5　（未完工）</h2>
 
 $$
 \frac{{}^{1}E}{{}^{1}pc} = \frac{c}{v} = \frac{c}{\;\dfrac{{}^{1}x}{{}^{1}t}\;} = \frac{c\cdot{}^{1}t}{{}^{1}x}
@@ -3039,6 +3089,7 @@ $$
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=32"></script>
+<script src="js/bs3d.js?v=8"></script>
 
 </body>
 </html>
