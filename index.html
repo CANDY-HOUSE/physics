@@ -2539,8 +2539,10 @@ $$
 </figure>
 
 $$
-{}^{q}E_{\perp} = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{q}\gamma_{Q}\,r_{\perp}}{\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2\right]^{\frac{3}{2}}},\qquad
+\begin{gathered}
+{}^{q}E_{\perp} = \frac{Q}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2\right]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{Q}\\[8pt]
 {}^{q}\gamma_{Q} = \frac{1}{\sqrt{1 - \dfrac{{}^{q}V^2}{c^2}}}
+\end{gathered}
 $$
 
 <p><strong>\(q\) 基準</strong>：</p>
@@ -2669,12 +2671,12 @@ $$
 
 $$
 \begin{aligned}
-d{}^{q}E_{\perp+} &= \frac{\lambda_{+}\,d{}^{q}\ell_{+}}{4\pi\varepsilon_0}\cdot\frac{{}^{q}\gamma_{+}\,r_{\perp}}{\left[\left({}^{q}\gamma_{+}\cdot{}^{q}x_{+}\right)^2 + r_{\perp}^2\right]^{\frac{3}{2}}}\\[4pt]
-&= \frac{\lambda_{+}}{4\pi\varepsilon_0}\cdot\frac{\big(\underbrace{{}^{q}\gamma_{+}\cdot d{}^{q}\ell_{+}}_{d{}^{\text{地}}\ell}\big)\,r_{\perp}}{\Big[\big(\underbrace{{}^{q}\gamma_{+}\cdot{}^{q}x_{+}}_{-\,{}^{\text{地}}r_{/\mkern-5mu/}}\big)^2 + r_{\perp}^2\Big]^{\frac{3}{2}}}\\[4pt]
-&= \frac{\lambda_{+}\,d{}^{\text{地}}\ell\,\sin{}^{\text{地}}\theta}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}\\[10pt]
-d{}^{q}E_{\perp-} &= \frac{\lambda_{-}\,d{}^{q}\ell_{-}}{4\pi\varepsilon_0}\cdot\frac{{}^{q}\gamma_{-}\,r_{\perp}}{\left[\left({}^{q}\gamma_{-}\cdot{}^{q}x_{-}\right)^2 + r_{\perp}^2\right]^{\frac{3}{2}}}\\[4pt]
-&= \frac{\lambda_{-}}{4\pi\varepsilon_0}\cdot\frac{\big(\underbrace{{}^{q}\gamma_{-}\cdot d{}^{q}\ell_{-}}_{d{}^{\text{地}}\ell}\big)\,r_{\perp}}{\Big[\big(\underbrace{{}^{q}\gamma_{-}\cdot{}^{q}x_{-}}_{-\,{}^{\text{地}}r_{/\mkern-5mu/}}\big)^2 + r_{\perp}^2\Big]^{\frac{3}{2}}}\\[4pt]
-&= \frac{\lambda_{-}\,d{}^{\text{地}}\ell\,\sin{}^{\text{地}}\theta}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}
+d{}^{q}E_{\perp+} &= \frac{\lambda_{+}\,d{}^{q}\ell_{+}}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{+}\cdot{}^{q}x_{+}\right)^2 + r_{\perp}^2\right]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{+}\cdot{}^{q}x_{+}\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{+}\\[6pt]
+&= \frac{\lambda_{+}\,\big(\underbrace{{}^{q}\gamma_{+}\cdot d{}^{q}\ell_{+}}_{d{}^{\text{地}}\ell}\big)}{4\pi\varepsilon_0\Big[\big(\underbrace{{}^{q}\gamma_{+}\cdot{}^{q}x_{+}}_{-\,{}^{\text{地}}r_{/\mkern-5mu/}}\big)^2 + r_{\perp}^2\Big]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{+}\cdot{}^{q}x_{+}\right)^2 + r_{\perp}^2}}\\[6pt]
+&= \frac{\lambda_{+}\,d{}^{\text{地}}\ell}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}\cdot\frac{r_{\perp}}{{}^{\text{地}}r} = \frac{\lambda_{+}\,d{}^{\text{地}}\ell\,\sin{}^{\text{地}}\theta}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}\\[12pt]
+d{}^{q}E_{\perp-} &= \frac{\lambda_{-}\,d{}^{q}\ell_{-}}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{-}\cdot{}^{q}x_{-}\right)^2 + r_{\perp}^2\right]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{-}\cdot{}^{q}x_{-}\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{-}\\[6pt]
+&= \frac{\lambda_{-}\,\big(\underbrace{{}^{q}\gamma_{-}\cdot d{}^{q}\ell_{-}}_{d{}^{\text{地}}\ell}\big)}{4\pi\varepsilon_0\Big[\big(\underbrace{{}^{q}\gamma_{-}\cdot{}^{q}x_{-}}_{-\,{}^{\text{地}}r_{/\mkern-5mu/}}\big)^2 + r_{\perp}^2\Big]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{-}\cdot{}^{q}x_{-}\right)^2 + r_{\perp}^2}}\\[6pt]
+&= \frac{\lambda_{-}\,d{}^{\text{地}}\ell}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}\cdot\frac{r_{\perp}}{{}^{\text{地}}r} = \frac{\lambda_{-}\,d{}^{\text{地}}\ell\,\sin{}^{\text{地}}\theta}{4\pi\varepsilon_0\cdot{}^{\text{地}}r^2}
 \end{aligned}
 $$
 
