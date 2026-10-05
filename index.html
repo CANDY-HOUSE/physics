@@ -2547,6 +2547,7 @@ $$
 <svg id="bsqC" viewBox="0 0 680 222" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <marker id="bsqR2" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#FC6255"/></marker>
+    <marker id="bsqT2" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#5CD0B3"/></marker>
     <marker id="bsqB2" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#58C4DD"/></marker>
     <marker id="bsqC2" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
     <marker id="bsqD2" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="5" refX="5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L7,2.5 L0,5 z" fill="#F0AC5F"/></marker>
@@ -2624,8 +2625,12 @@ $$
   <line x1="352.3" y1="190.0" x2="470.0" y2="190.0" stroke="#F0AC5F" stroke-width="1.6" marker-start="url(#bsqD2)" marker-end="url(#bsqD2)"/>
   <foreignObject x="388.2" y="192.0" width="46" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}x_{-}\)</div></foreignObject>
   <line x1="470.0" y1="48.0" x2="470.0" y2="190.0" stroke="#BBBBBB" stroke-opacity=".55" stroke-width="1.2" stroke-dasharray="3 5"/>
+  <line x1="470.0" y1="35.0" x2="470.0" y2="13.0" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#bsqT2)"/>
+  <line x1="470.0" y1="53.0" x2="470.0" y2="81.6" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#bsqT2)"/>
   <circle cx="470.0" cy="44.0" r="6.5" fill="currentColor"/>
-  <foreignObject x="485.0" y="32.0" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)（靜止）</div></foreignObject>
+  <foreignObject x="389.0" y="32.0" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)（靜止）</div></foreignObject>
+  <foreignObject x="482.0" y="10.0" width="64" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(d{}^{q}E_{\perp+}\)</div></foreignObject>
+  <foreignObject x="482.0" y="64.0" width="64" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(d{}^{q}E_{\perp-}\)</div></foreignObject>
   <line x1="150" y1="109.0" x2="102" y2="109.0" stroke="#FC6255" stroke-width="2.4" marker-end="url(#bsqR2)"/>
   <foreignObject x="155.0" y="97.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:17px;color:#FC6255;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(v\)</div></foreignObject>
   <line x1="150" y1="171.0" x2="102" y2="171.0" stroke="#58C4DD" stroke-width="2.4" marker-end="url(#bsqB2)"/>
@@ -2650,7 +2655,15 @@ $$
 \end{aligned}
 $$
 
-<p>兩段的電量是 \(\lambda_{+}\,d{}^{q}\ell_{+}\)、\(\lambda_{-}\,d{}^{q}\ell_{-}\)（\(\lambda_{\pm}\) 是 3.2 方法二裡 \(q\) 基準的線密度）。把兩段分別代入被壓扁的電場，並利用 \(1 - \dfrac{v^2}{c^2} = \dfrac{1}{{}^{\text{地}}\gamma_{q}^2}\)、\(1 - \dfrac{u_-^2}{c^2} = \dfrac{1}{{}^{\text{負}}\gamma_{q}^2}\)，得到兩段在 \(q\) 處產生的電場垂直分量 \(d{}^{q}E_{\perp+}\)、\(d{}^{q}E_{\perp-}\)：</p>
+<p>兩段分別代入被壓扁的電場（\(\lambda_{\pm}\)：3.2 方法二）：</p>
+
+<div class="table-scroll"><table>
+<thead><tr><th></th><th>\(Q\)</th><th>\({}^{q}V\)</th><th>\({}^{q}x_{Q}\)</th><th>\(1 - \dfrac{{}^{q}V^2}{c^2}\)</th></tr></thead>
+<tbody>
+<tr><td><span style="color:#FC6255">⊕</span> 段 → \(d{}^{q}E_{\perp+}\)</td><td>\(\lambda_{+}\,d{}^{q}\ell_{+}\)</td><td>\(v\)</td><td>\({}^{q}x_{+}\)</td><td>\(\dfrac{1}{{}^{\text{地}}\gamma_{q}^2}\)</td></tr>
+<tr><td><span style="color:#58C4DD">⊖</span> 段 → \(d{}^{q}E_{\perp-}\)</td><td>\(\lambda_{-}\,d{}^{q}\ell_{-}\)</td><td>\(u_-\)</td><td>\({}^{q}x_{-}\)</td><td>\(\dfrac{1}{{}^{\text{負}}\gamma_{q}^2}\)</td></tr>
+</tbody>
+</table></div>
 
 $$
 \begin{aligned}
