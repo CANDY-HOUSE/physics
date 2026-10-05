@@ -2715,57 +2715,6 @@ $$
 
 <h2 id="sec-3-4">3.4　（未完工）</h2>
 
-<h3>【第一步：Coulomb 定律推出電場的 Gauss 定律】</h3>
-
-<p>在一個靜止的電荷 \(q\) 周圍，畫一個以它為球心、半徑為 \(r\) 的球面。Coulomb 定律說，球面上每一點的電場都是 \(\dfrac{q}{4\pi\varepsilon_0 r^2}\)，而且垂直穿出球面。球面的面積是 \(4\pi r^2\)，所以穿出整個球面的電通量是：</p>
-
-$$
-\frac{q}{4\pi\varepsilon_0 r^2}\times 4\pi r^2 = \frac{q}{\varepsilon_0}
-$$
-
-<p>半徑 \(r\) 被約掉了：球越大，電場就越弱，但是面積正好以同樣的比例變大，所以穿出的電場線總數不變。這正是「平方反比」的意義，也正是 1971 年那個實驗所檢驗的事。</p>
-
-<figure>
-<svg viewBox="0 0 640 260" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
-  <defs>
-    <marker id="mxAg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
-    <marker id="mxAb" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
-    <marker id="mxAr" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
-    <marker id="mxAc" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
-  </defs>
-  <line x1="179.0" y1="130.0" x2="288.0" y2="130.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="177.8" y1="125.5" x2="272.2" y2="71.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="174.5" y1="122.2" x2="229.0" y2="27.8" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="170.0" y1="121.0" x2="170.0" y2="12.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="165.5" y1="122.2" x2="111.0" y2="27.8" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="162.2" y1="125.5" x2="67.8" y2="71.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="161.0" y1="130.0" x2="52.0" y2="130.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="162.2" y1="134.5" x2="67.8" y2="189.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="165.5" y1="137.8" x2="111.0" y2="232.2" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="170.0" y1="139.0" x2="170.0" y2="248.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="174.5" y1="137.8" x2="229.0" y2="232.2" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <line x1="177.8" y1="134.5" x2="272.2" y2="189.0" stroke="currentColor" stroke-width="1.4" opacity=".7" marker-end="url(#mxAc)"/>
-  <polygon points="249.9,130.0 252.6,122.8 254.2,115.2 254.5,107.4 253.4,99.6 250.9,92.3 246.9,85.6 241.6,79.8 235.3,75.2 228.2,71.8 220.7,69.6 213.0,68.5 205.5,68.5 198.4,69.2 191.7,70.3 185.7,71.6 180.1,72.7 174.9,73.5 170.0,73.8 165.1,73.5 159.9,72.7 154.3,71.6 148.3,70.3 141.6,69.2 134.5,68.5 127.0,68.5 119.3,69.6 111.8,71.8 104.7,75.2 98.4,79.8 93.1,85.6 89.1,92.3 86.6,99.6 85.5,107.4 85.8,115.2 87.4,122.8 90.1,130.0 93.5,136.7 97.5,142.8 101.7,148.3 105.8,153.4 109.8,158.0 113.6,162.6 117.1,167.0 120.4,171.6 123.6,176.4 126.9,181.4 130.5,186.4 134.5,191.5 139.0,196.4 144.2,200.8 150.0,204.6 156.3,207.5 163.1,209.3 170.0,209.9 176.9,209.3 183.7,207.5 190.0,204.6 195.8,200.8 201.0,196.4 205.5,191.5 209.5,186.4 213.1,181.4 216.4,176.4 219.6,171.6 222.9,167.0 226.4,162.6 230.2,158.0 234.2,153.4 238.3,148.3 242.5,142.8 246.5,136.7 249.9,130.0" fill="none" stroke="#3584e4" stroke-width="1.5" stroke-dasharray="5 4"/>
-  <circle cx="170" cy="130" r="45" fill="#e0a800" fill-opacity=".07" stroke="#e0a800" stroke-width="2"><animate attributeName="r" values="45;100;45" dur="8s" repeatCount="indefinite"/></circle>
-  <circle cx="170" cy="130" r="6" fill="#e0a800"/>
-  <foreignObject x="190.0" y="109.0" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\(q\)</div></foreignObject>
-  <text x="360" y="58" fill="#e0a800">金色球面：半徑來回變化</text>
-  <foreignObject x="360.0" y="70.0" width="270" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\text{電場} = \dfrac{q}{4\pi\varepsilon_0 r^2}\)</div></foreignObject>
-  <foreignObject x="360.0" y="116.0" width="270" height="30"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\text{面積} = 4\pi r^2\)</div></foreignObject>
-  <foreignObject x="360.0" y="150.0" width="270" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\(\text{電通量} = \dfrac{q}{\varepsilon_0}\ \ \text{（和 } r \text{ 無關）}\)</div></foreignObject>
-  <text x="360" y="214" fill="#3584e4">藍色虛線：任何形狀的封閉曲面，</text>
-  <text x="360" y="234" fill="#3584e4">穿出的電場線一樣多</text>
-</svg>
-</figure>
-
-<p>如果曲面不是球面，結果仍然一樣。從電荷出發畫一個很細的圓錐。這個圓錐在任何曲面上截出一小塊，穿過這一小塊的電場線，和穿過它在球面上截出的那一小塊的電場線一樣多：曲面斜一點，截出的面積就大一點，但是垂直穿過的電場分量也以同樣的比例變小；曲面遠一點，截出的面積就隨距離的平方變大，電場卻隨距離的平方變小。所以任何包住電荷的封閉曲面，穿出的電通量都是 \(\dfrac{q}{\varepsilon_0}\)。如果電荷在曲面外面，每一個圓錐穿進曲面幾次，就穿出幾次，進出互相抵消，電通量就是零。最後用假設一把曲面裡面所有電荷的貢獻加起來，就得到第一條方程（\(Q_{\text{內}}\) 是曲面裡面的總電荷，和試驗電荷 \(Q\) 無關）：</p>
-
-$$
-\oint \vec E\cdot d\vec A = \frac{Q_{\text{內}}}{\varepsilon_0}
-$$
-
-<p>另外，對靜止電荷的電場來說，沿著任何一個封閉的圈走一圈，把每一小段的長度乘上沿著這一段的電場，再全部加起來，總和是零。把圈分成很多小段，每一小段都可以拆成「和電荷距離不變的圓弧」與「沿著徑向（朝著或背著電荷）的線段」：沿著圓弧時，電場和路徑垂直，貢獻是零；沿著徑向時，電場的大小只和距離有關，所以走出去和走回來的部分互相抵消。下面會看到，電荷一旦運動，這一點就必須修改，而修改的結果正是第三條方程。</p>
-
 <h3>【第二步：等速運動的電荷，電場被壓扁】</h3>
 
 <p>現在讓電荷 \(q\) 以速度 \(u\) 向右移動，而且一直以這個速度移動。把看到 \(q\) 這樣移動的基準稱為地面基準；跟著 \(q\) 一起跑的基準稱為 \(q\) 基準。在 \(q\) 基準裡，\(q\) 是靜止的，所以它的電場就是 Coulomb 電場；需要區分兩個基準的時候，\(q\) 基準裡量到的量在左上角標上 \(q\)，例如 \({}^{q}E\)；地面基準裡量到的量則標上「地」，例如 \({}^{\text{地}}E\)。注意，這裡的 \(q\) 是產生電場的電荷，\(Q\) 才是被推動的試驗電荷，兩者的角色和 3.2 不同。在地面基準裡放一個靜止的試驗電荷 \(Q\)，看它受的力。</p>
