@@ -344,3 +344,6 @@ figure svg foreignObject { overflow: visible; }
   font-family: "Noto Serif TC", "Songti TC", serif;
 }
 .fo-math mjx-container { margin: 0 !important; }
+
+/* \cancel / \bcancel 的刪除線：3B1B 紅 */
+mjx-menclose > mjx-dstrike { border-top-color: #FC6255 !important; }
