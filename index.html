@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>從時空到控制</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=12">
+<link rel="stylesheet" href="css/style.css?v=13">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -2060,9 +2060,9 @@ $$
 &\frac{dy}{d{}^{q}t} = 0 = \frac{dy}{d{}^{Q}t},\qquad \big|{}^{Q}\vec v_{q}\big| = {}^{q}V\ \text{（1.3）}\\[6pt]
 &d{}^{Q}t = {}^{q}\gamma_{Q}\,d{}^{q}t\ \text{（1.2）},\qquad d{}^{Q}y = d{}^{q}y = dy\ \text{（1.3）}\\[6pt]
 &d{}^{q}p_{q\perp} = d\Big({}^{q}\gamma_{q}\,m\,\frac{dy}{d{}^{q}t}\Big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma_{q} = m\,d\frac{dy}{d{}^{q}t}\\[6pt]
-&d{}^{Q}p_{q\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = \underbrace{{}^{Q}\gamma_{q}}_{{}^{q}\gamma_{Q}}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{q}\gamma_{Q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
+&d{}^{Q}p_{q\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = {}^{Q}\gamma_{q}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{Q}\gamma_{q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
 &d\frac{dy}{d{}^{Q}t} = d\Big(\frac{dy}{d{}^{q}t}\cdot\frac{d{}^{q}t}{d{}^{Q}t}\Big) = \underbrace{\frac{d{}^{q}t}{d{}^{Q}t}}_{\frac{1}{{}^{q}\gamma_{Q}}}\,d\frac{dy}{d{}^{q}t} + \underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d\frac{d{}^{q}t}{d{}^{Q}t} = \frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t}\\[6pt]
-&{}^{Q}F_{q\perp} = \frac{d{}^{Q}p_{q\perp}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m}{{}^{q}\gamma_{Q}\,d{}^{q}t}\cdot\frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t} = \frac{1}{{}^{q}\gamma_{Q}}\cdot\frac{d{}^{q}p_{q\perp}}{d{}^{q}t} = \frac{{}^{q}F_{q\perp}}{{}^{q}\gamma_{Q}}
+&{}^{Q}F_{q\perp} = \frac{d{}^{Q}p_{q\perp}}{d{}^{Q}t} = \frac{\bcancel{{}^{Q}\gamma_{q}}\,m\,d\dfrac{dy}{d{}^{Q}t}}{\bcancel{{}^{q}\gamma_{Q}}\,d{}^{q}t} = \frac{m\,d\dfrac{dy}{d{}^{Q}t}}{d{}^{q}t} = \frac{m\,d\dfrac{dy}{d{}^{q}t}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{{}^{q}F_{q\perp}}{{}^{q}\gamma_{Q}}
 \end{aligned}
 $$
 
