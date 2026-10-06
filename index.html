@@ -55,7 +55,7 @@ MathJax = {
       <li>
         <a href="#part-3">三、電磁學</a>
         <ol class="sb-secs">
-          <li><a href="#sec-3-1">3.1　（未完工）</a></li>
+          <li><a href="#sec-3-1">3.1　等速運動的電荷，電場被壓扁（未完工）</a></li>
           <li><a href="#sec-3-2">3.2　磁就是電！Ampère's law 的來源</a></li>
           <li><a href="#sec-3-3">3.3　磁就是電！Biot-Savart law 的來源</a></li>
           <li><a href="#sec-3-4">3.4　（未完工）</a></li>
@@ -1933,7 +1933,202 @@ $$
 
 <h1 id="part-3"><span class="part-label">第三部・電磁學</span>第三章　電磁學</h1>
 
-<h2 id="sec-3-1">3.1　（未完工）</h2>
+<h2 id="sec-3-1">3.1　等速運動的電荷，電場被壓扁（未完工）</h2>
+
+<p>在 \(q\) 基準裡，試驗電荷 \(q\)（質量 \(m\)）此刻（\({}^{q}t = 0\)）靜止，電荷 \(Q\) 一直以 \({}^{q}V\) 等速移動。\(Q\) 基準跟著 \(Q\) 移動。</p>
+
+<figure>
+<svg id="sq1" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="sqG" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#83C167"/></marker>
+    <marker id="sqT" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#5CD0B3"/></marker>
+    <marker id="sqC" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="sqD" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="5" refX="5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L7,2.5 L0,5 z" fill="#F0AC5F"/></marker>
+  </defs>
+  <line x1="450.0" y1="20" x2="450.0" y2="420.0" stroke="#BBBBBB" stroke-opacity=".5" stroke-width="1.2" stroke-dasharray="3 5"/>
+  <foreignObject x="385.0" y="1.0" width="130" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:currentColor;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap">原點\(\;({}^{q}t = 0)\)</div></foreignObject>
+  <text x="20" y="34" fill="currentColor" font-size="15" font-weight="700">Q 基準</text>
+  <line x1="24" y1="178.0" x2="616" y2="178.0" stroke="currentColor" stroke-opacity=".35" stroke-width="1.2" marker-end="url(#sqC)"/>
+  <foreignObject x="582.0" y="184.0" width="36" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{Q}x\)</div></foreignObject>
+  <line x1="250.0" y1="204.0" x2="450.0" y2="204.0" stroke="#F0AC5F" stroke-width="1.6" marker-start="url(#sqD)" marker-end="url(#sqD)"/>
+  <foreignObject x="317.0" y="208.0" width="66" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(-{}^{Q}x_{Q}\)</div></foreignObject>
+  <line x1="570.0" y1="68.0" x2="570.0" y2="178.0" stroke="#F0AC5F" stroke-width="1.6" marker-start="url(#sqD)" marker-end="url(#sqD)"/>
+  <foreignObject x="575.0" y="111.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(r_{\perp}\)</div></foreignObject>
+  <line x1="250.0" y1="178.0" x2="450.0" y2="68.0" stroke="#BBBBBB" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="5 5"/>
+  <foreignObject x="320.0" y="93.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{Q}r\)</div></foreignObject>
+  <foreignObject x="417.0" y="22.0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{Q}y\)</div></foreignObject>
+    <line x1="261.9" y1="176.1" x2="299.4" y2="170.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="260.7" y1="172.6" x2="294.6" y2="155.3" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="258.5" y1="169.5" x2="285.4" y2="142.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="255.4" y1="167.3" x2="272.7" y2="133.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="251.9" y1="166.1" x2="257.8" y2="128.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="248.1" y1="166.1" x2="242.2" y2="128.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="244.6" y1="167.3" x2="227.3" y2="133.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="241.5" y1="169.5" x2="214.6" y2="142.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="239.3" y1="172.6" x2="205.4" y2="155.3" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="238.1" y1="176.1" x2="200.6" y2="170.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="238.1" y1="179.9" x2="200.6" y2="185.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="239.3" y1="183.4" x2="205.4" y2="200.7" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="241.5" y1="186.5" x2="214.6" y2="213.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="244.6" y1="188.7" x2="227.3" y2="222.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="248.1" y1="189.9" x2="242.2" y2="227.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="251.9" y1="189.9" x2="257.8" y2="227.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="255.4" y1="188.7" x2="272.7" y2="222.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="258.5" y1="186.5" x2="285.4" y2="213.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="260.7" y1="183.4" x2="294.6" y2="200.7" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="261.9" y1="179.9" x2="299.4" y2="185.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <circle cx="250.0" cy="178.0" r="10" fill="#FC6255"/><text x="250.0" y="183.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  <circle cx="450.0" cy="68.0" r="7.5" fill="none" stroke="currentColor" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line x1="450.0" y1="68.0" x2="500.0" y2="68.0" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#sqT)"/>
+  <line x1="450.0" y1="68.0" x2="450.0" y2="40.5" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#sqT)"/>
+  <foreignObject x="504.0" y="58.0" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{Q}E_{/\mkern-5mu/}\)</div></foreignObject>
+  <foreignObject x="452.0" y="30.5" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{Q}E_{\perp}\)</div></foreignObject>
+  <g><animateTransform attributeName="transform" type="translate" from="32.0 0" to="-32.0 0" dur="8.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8.0s" repeatCount="indefinite"/>
+    <circle cx="450.0" cy="68.0" r="6.5" fill="currentColor"/>
+    <line x1="470.0" y1="98.0" x2="416.0" y2="98.0" stroke="#83C167" stroke-width="2.4" marker-end="url(#sqG)"/>
+  <foreignObject x="397.0" y="104.0" width="66" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(-{}^{Q}v_{q}\)</div></foreignObject>
+  <foreignObject x="453.0" y="72.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  </g>
+  <text x="20" y="250.0" fill="currentColor" font-size="15" font-weight="700">q 基準</text>
+  <line x1="24" y1="410.0" x2="616" y2="410.0" stroke="currentColor" stroke-opacity=".35" stroke-width="1.2" marker-end="url(#sqC)"/>
+  <foreignObject x="582.0" y="416.0" width="36" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}x\)</div></foreignObject>
+  <line x1="330.0" y1="436.0" x2="450.0" y2="436.0" stroke="#F0AC5F" stroke-width="1.6" marker-start="url(#sqD)" marker-end="url(#sqD)"/>
+  <foreignObject x="387.0" y="440.0" width="66" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(-{}^{q}x_{Q}\)</div></foreignObject>
+  <line x1="570.0" y1="300.0" x2="570.0" y2="410.0" stroke="#F0AC5F" stroke-width="1.6" marker-start="url(#sqD)" marker-end="url(#sqD)"/>
+  <foreignObject x="575.0" y="343.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(r_{\perp}\)</div></foreignObject>
+  <line x1="330.0" y1="410.0" x2="450.0" y2="300.0" stroke="#BBBBBB" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="5 5"/>
+  <foreignObject x="388.0" y="360.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}r\)</div></foreignObject>
+  <foreignObject x="417.0" y="248.0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}y\)</div></foreignObject>
+  <circle cx="330.0" cy="410.0" r="11" fill="none" stroke="#FC6255" stroke-width="1.6" stroke-dasharray="4 3"/>
+  <g><animateTransform attributeName="transform" type="translate" from="-32.0 0" to="32.0 0" dur="8.0s" repeatCount="indefinite"/><animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="8.0s" repeatCount="indefinite"/>
+    <line x1="341.6" y1="406.9" x2="378.3" y2="397.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="339.1" y1="402.2" x2="368.1" y2="377.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="336.2" y1="399.7" x2="355.7" y2="367.1" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="333.5" y1="398.5" x2="344.6" y2="362.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="331.1" y1="398.1" x2="334.7" y2="360.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="328.9" y1="398.1" x2="325.3" y2="360.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="326.5" y1="398.5" x2="315.4" y2="362.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="323.8" y1="399.7" x2="304.3" y2="367.1" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="320.9" y1="402.2" x2="291.9" y2="377.6" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="318.4" y1="406.9" x2="281.7" y2="397.2" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="318.4" y1="413.1" x2="281.7" y2="422.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="320.9" y1="417.8" x2="291.9" y2="442.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="323.8" y1="420.3" x2="304.3" y2="452.9" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="326.5" y1="421.5" x2="315.4" y2="457.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="328.9" y1="421.9" x2="325.3" y2="459.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="331.1" y1="421.9" x2="334.7" y2="459.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="333.5" y1="421.5" x2="344.6" y2="457.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="336.2" y1="420.3" x2="355.7" y2="452.9" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="339.1" y1="417.8" x2="368.1" y2="442.4" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <line x1="341.6" y1="413.1" x2="378.3" y2="422.8" stroke="#FC6255" stroke-opacity=".5" stroke-width="1.4"/>
+    <circle cx="330.0" cy="410.0" r="10" fill="#FC6255"/><text x="330.0" y="415.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+    <line x1="303.0" y1="344.0" x2="357.0" y2="344.0" stroke="#83C167" stroke-width="2.4" marker-end="url(#sqG)"/>
+  <foreignObject x="310.0" y="314.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}V\)</div></foreignObject>
+  </g>
+  <line x1="450.0" y1="300.0" x2="500.0" y2="300.0" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#sqT)"/>
+  <line x1="450.0" y1="300.0" x2="450.0" y2="254.2" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#sqT)"/>
+  <foreignObject x="504.0" y="290.0" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}E_{/\mkern-5mu/}\)</div></foreignObject>
+  <foreignObject x="452.0" y="244.2" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}E_{\perp}\)</div></foreignObject>
+  <circle cx="450.0" cy="300.0" r="6.5" fill="currentColor"/>
+  <foreignObject x="453.0" y="304.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+</svg>
+</figure>
+
+$$
+\begin{gathered}
+{}^{q}\gamma_{Q} = \frac{1}{\sqrt{1 - \dfrac{{}^{q}V^2}{c^2}}}\\[6pt]
+{}^{Q}x_{Q} = {}^{q}\gamma_{Q}\cdot{}^{q}x_{Q},\qquad r_{\perp}\ \text{兩個基準相同}\ \text{（1.3）}\\[6pt]
+{}^{Q}r^2 = {}^{Q}x_{Q}^2 + r_{\perp}^2,\qquad {}^{q}r^2 = {}^{q}x_{Q}^2 + r_{\perp}^2
+\end{gathered}
+$$
+
+<p><strong>實驗</strong>（Bucherer 1908、Bertozzi 1964）：在 \(Q\) 基準裡，不論 \(q\) 跑多快，都有：</p>
+
+$$
+\begin{gathered}
+\frac{d{}^{Q}\vec p_{q}}{d{}^{Q}t} = q\cdot{}^{Q}\vec E\\[6pt]
+{}^{Q}\vec p_{q} = {}^{Q}\gamma_{q}\,m\cdot{}^{Q}\vec v_{q}\ \text{（1.7）},\qquad
+{}^{Q}\gamma_{q} = \frac{1}{\sqrt{1 - \dfrac{\big|{}^{Q}\vec v_{q}\big|^2}{c^2}}}\\[6pt]
+{}^{Q}E = \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\ \text{（Coulomb；}\varepsilon_0\text{ 是真空電容率）}
+\end{gathered}
+$$
+
+<p><strong>垂直方向</strong>（沿圖中的 \(y\) 軸）：</p>
+
+$$
+\begin{aligned}
+&\frac{dy}{d{}^{q}t} = 0 = \frac{dy}{d{}^{Q}t},\qquad \big|{}^{Q}\vec v_{q}\big| = {}^{q}V\ \text{（1.3）}\\[6pt]
+&d{}^{Q}t = {}^{q}\gamma_{Q}\,d{}^{q}t\ \text{（1.2）},\qquad d{}^{Q}y = d{}^{q}y = dy\ \text{（1.3）}\\[6pt]
+&d{}^{q}p_{\perp} = d\Big({}^{q}\gamma_{q}\,m\,\frac{dy}{d{}^{q}t}\Big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma_{q} = m\,d\frac{dy}{d{}^{q}t}\\[6pt]
+&d{}^{Q}p_{\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = \underbrace{{}^{Q}\gamma_{q}}_{{}^{q}\gamma_{Q}}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{q}\gamma_{Q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
+&d\frac{dy}{d{}^{Q}t} = d\Big(\frac{dy}{d{}^{q}t}\cdot\frac{d{}^{q}t}{d{}^{Q}t}\Big) = \underbrace{\frac{d{}^{q}t}{d{}^{Q}t}}_{\frac{1}{{}^{q}\gamma_{Q}}}\,d\frac{dy}{d{}^{q}t} + \underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d\frac{d{}^{q}t}{d{}^{Q}t} = \frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t}\\[6pt]
+&{}^{Q}F_{\perp} = \frac{d{}^{Q}p_{\perp}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m}{{}^{q}\gamma_{Q}\,d{}^{q}t}\cdot\frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t} = \frac{1}{{}^{q}\gamma_{Q}}\cdot\frac{d{}^{q}p_{\perp}}{d{}^{q}t} = \frac{{}^{q}F_{\perp}}{{}^{q}\gamma_{Q}}
+\end{aligned}
+$$
+
+<p><strong>平行方向</strong>（沿 \(x\) 軸；\({}^{q}v_{q}\) 是 \(q\) 在 \(q\) 基準裡的速度，此刻 \({}^{q}v_{q} = 0\)）：</p>
+
+$$
+\begin{aligned}
+&{}^{Q}v_{q} = \frac{{}^{q}v_{q} - {}^{q}V}{1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}}\ \text{（1.5，基準間速度代入 }-\,{}^{q}V\text{）}\\[6pt]
+&\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}} = \frac{1 - \dfrac{{}^{q}V^2}{c^2}}{\Big(1 - \dfrac{\underbrace{{}^{q}v_{q}}_{0}\cdot{}^{q}V}{c^2}\Big)^2} = \frac{1}{{}^{q}\gamma_{Q}^2}\\[6pt]
+&d{}^{Q}\gamma_{q} = d\,\frac{1}{\sqrt{1 - \dfrac{{}^{Q}v_{q}^2}{c^2} - \dfrac{1}{c^2}\Big(\dfrac{dy}{d{}^{Q}t}\Big)^2}} = \frac{{}^{Q}\gamma_{q}^3}{c^2}\Big({}^{Q}v_{q}\,d{}^{Q}v_{q} + \underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d\frac{dy}{d{}^{Q}t}\Big)\\[6pt]
+&d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = {}^{Q}\gamma_{q}\,d{}^{Q}v_{q} + {}^{Q}v_{q}\,d{}^{Q}\gamma_{q} = {}^{Q}\gamma_{q}\,\underbrace{\Big(1 + \frac{{}^{Q}\gamma_{q}^2\cdot{}^{Q}v_{q}^2}{c^2}\Big)}_{{}^{Q}\gamma_{q}^2}\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,d{}^{Q}v_{q}\\[6pt]
+&d{}^{Q}p_{/\mkern-5mu/} = m\,d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = m\cdot\underbrace{{}^{Q}\gamma_{q}^3}_{{}^{q}\gamma_{Q}^3}\cdot d{}^{Q}v_{q} = m\cdot{}^{q}\gamma_{Q}^3\cdot\frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2} = {}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}\\[6pt]
+&d{}^{q}p_{/\mkern-5mu/} = d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_{q}\big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d{}^{q}v_{q} + m\,\underbrace{{}^{q}v_{q}}_{0}\,d{}^{q}\gamma_{q} = m\,d{}^{q}v_{q}\\[6pt]
+&{}^{Q}F_{/\mkern-5mu/} = \frac{d{}^{Q}p_{/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{/\mkern-5mu/}
+\end{aligned}
+$$
+
+<p><strong>\(q\) 基準的電場</strong>：\(q\) 此刻在 \(q\) 基準裡靜止，所以 \({}^{q}\vec F = q\cdot{}^{q}\vec E\) 就是 \(q\) 基準電場的定義；在 \(Q\) 基準裡，實驗給出 \({}^{Q}\vec F = q\cdot{}^{Q}\vec E\)。</p>
+
+$$
+{}^{q}E_{\perp} = {}^{q}\gamma_{Q}\cdot{}^{Q}E_{\perp},\qquad {}^{q}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/}
+$$
+
+$$
+\begin{aligned}
+{}^{q}E_{\perp} &= \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\cdot\frac{r_{\perp}}{{}^{Q}r}\cdot{}^{q}\gamma_{Q}\\[6pt]
+&= \frac{Q}{4\pi\varepsilon_0\Big[\big(\underbrace{{}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}}_{{}^{Q}x_{Q}}\big)^2 + r_{\perp}^2\Big]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{Q}\\[8pt]
+{}^{q}E_{/\mkern-5mu/} &= \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\cdot\frac{-{}^{Q}x_{Q}}{{}^{Q}r}\\[6pt]
+&= \frac{Q}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2\right]}\cdot\frac{-\,{}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x_{Q}\right)^2 + r_{\perp}^2}}
+\end{aligned}
+$$
+
+$$
+\frac{{}^{q}E_{/\mkern-5mu/}}{{}^{q}E_{\perp}} = \frac{-\,{}^{q}x_{Q}}{r_{\perp}}
+$$
+
+<p>電場從 \(Q\) 此刻的位置筆直向外，但被壓成一張餅：</p>
+
+<div class="table-scroll"><table>
+<thead><tr><th>\(q\) 的位置</th><th>\({}^{q}E\)</th><th>和距離 \({}^{q}r\) 處的 Coulomb 電場相比</th></tr></thead>
+<tbody>
+<tr><td>正側面（\({}^{q}x_{Q} = 0\)）</td><td>\(\dfrac{Q}{4\pi\varepsilon_0\,r_{\perp}^2}\cdot{}^{q}\gamma_{Q}\)</td><td>\(\times\,{}^{q}\gamma_{Q}\)</td></tr>
+<tr><td>正前、正後（\(r_{\perp} = 0\)）</td><td>\(\dfrac{Q}{4\pi\varepsilon_0\cdot{}^{q}x_{Q}^2}\cdot\dfrac{1}{{}^{q}\gamma_{Q}^2}\)</td><td>\(\times\,\dfrac{1}{{}^{q}\gamma_{Q}^2}\)</td></tr>
+</tbody>
+</table></div>
+
+<p><strong>一整條等速移動的線電荷</strong>：每一段都以 \({}^{q}V\) 移動，\(q\) 基準裡的線密度是 \({}^{q}\lambda\)；\(Q\) 基準跟著線電荷移動。每一段代入：</p>
+
+<div class="table-scroll"><table>
+<thead><tr><th>\(Q\)</th><th>\({}^{q}x_{Q}\)</th><th>代入得到</th></tr></thead>
+<tbody><tr><td>\({}^{q}\lambda\,d{}^{q}x\)</td><td>\({}^{q}x\)</td><td>\(d{}^{q}E_{\perp}\)、\(d{}^{q}E_{/\mkern-5mu/}\)</td></tr></tbody>
+</table></div>
+
+$$
+\begin{aligned}
+{}^{q}E_{\perp} &= \int_{-\infty}^{\infty}\frac{{}^{q}\lambda\,d{}^{q}x}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2\right]}\\[4pt]
+&\qquad\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{Q}\\[6pt]
+&= \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\int_{-\infty}^{\infty}\frac{r_{\perp}\,\big(\underbrace{{}^{q}\gamma_{Q}\cdot d{}^{q}x}_{d{}^{Q}x}\big)}{\Big[\big(\underbrace{{}^{q}\gamma_{Q}\cdot{}^{q}x}_{{}^{Q}x}\big)^2 + r_{\perp}^2\Big]^{\frac{3}{2}}}\\[6pt]
+&= \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\left[\frac{{}^{Q}x}{r_{\perp}\sqrt{{}^{Q}x^2 + r_{\perp}^2}}\right]_{-\infty}^{\infty}
+= \frac{{}^{q}\lambda}{2\pi\varepsilon_0\,r_{\perp}}\\[10pt]
+{}^{q}E_{/\mkern-5mu/} &= \int_{-\infty}^{\infty}\frac{{}^{q}\lambda\,d{}^{q}x}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2\right]}\\[4pt]
+&\qquad\cdot\frac{-\,{}^{q}\gamma_{Q}\cdot{}^{q}x}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2}} = 0\ \text{（奇函數）}
+\end{aligned}
+$$
+
+<p>\({}^{q}E_{\perp}\) 和 \({}^{q}\gamma_{Q}\) 無關：只要 \(q\) 基準裡的線密度是 \({}^{q}\lambda\)，線電荷不論跑多快，電場都和線密度為 \({}^{q}\lambda\) 的靜止線電荷相同。</p>
 
 <h2 id="sec-3-2">3.2　磁就是電！Ampère's law 的來源</h2>
 
