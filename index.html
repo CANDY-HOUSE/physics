@@ -2071,12 +2071,13 @@ $$
 $$
 \begin{aligned}
 &{}^{Q}v_{q} = \frac{{}^{q}v_{q} - {}^{q}V}{1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}}\ \text{（1.5，基準間速度代入 }-\,{}^{q}V\text{）}\\[6pt]
-&\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}} = \frac{1 - \dfrac{{}^{q}V^2}{c^2}}{\Big(1 - \dfrac{\underbrace{{}^{q}v_{q}}_{0}\cdot{}^{q}V}{c^2}\Big)^2} = \frac{1}{{}^{q}\gamma_{Q}^2}\\[6pt]
+&\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}} = \frac{1 - \dfrac{{}^{q}V^2}{c^2}}{\Big(1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}\Big)^2} = 1 - \frac{{}^{q}V^2}{c^2} = \frac{1}{{}^{q}\gamma_{Q}^2}\\[6pt]
+&d{}^{Q}v_{q} = \frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2}\\[6pt]
 &d{}^{Q}\gamma_{q} = d\,\frac{1}{\sqrt{1 - \dfrac{{}^{Q}v_{q}^2}{c^2} - \dfrac{1}{c^2}\Big(\dfrac{dy}{d{}^{Q}t}\Big)^2}} = \frac{{}^{Q}\gamma_{q}^3}{c^2}\Big({}^{Q}v_{q}\,d{}^{Q}v_{q} + \underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d\frac{dy}{d{}^{Q}t}\Big)\\[6pt]
-&d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = {}^{Q}\gamma_{q}\,d{}^{Q}v_{q} + {}^{Q}v_{q}\,d{}^{Q}\gamma_{q} = {}^{Q}\gamma_{q}\,\underbrace{\Big(1 + \frac{{}^{Q}\gamma_{q}^2\cdot{}^{Q}v_{q}^2}{c^2}\Big)}_{{}^{Q}\gamma_{q}^2}\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,d{}^{Q}v_{q}\\[6pt]
-&d{}^{Q}p_{q/\mkern-5mu/} = m\,d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = m\cdot\underbrace{{}^{Q}\gamma_{q}^3}_{{}^{q}\gamma_{Q}^3}\cdot d{}^{Q}v_{q} = m\cdot{}^{q}\gamma_{Q}^3\cdot\frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2} = {}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}\\[6pt]
+&d{}^{Q}p_{q/\mkern-5mu/} = d\big({}^{Q}\gamma_{q}\,m\cdot{}^{Q}v_{q}\big) = m\,\big({}^{Q}\gamma_{q}\,d{}^{Q}v_{q} + {}^{Q}v_{q}\,d{}^{Q}\gamma_{q}\big)\\[6pt]
+&\phantom{d{}^{Q}p_{q/\mkern-5mu/}} = {}^{Q}\gamma_{q}\,m\,\underbrace{\Big(1 + \frac{{}^{Q}\gamma_{q}^2\cdot{}^{Q}v_{q}^2}{c^2}\Big)}_{{}^{Q}\gamma_{q}^2}\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,m\,d{}^{Q}v_{q}\\[6pt]
 &d{}^{q}p_{q/\mkern-5mu/} = d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_{q}\big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d{}^{q}v_{q} + m\,\underbrace{{}^{q}v_{q}}_{0}\,d{}^{q}\gamma_{q} = m\,d{}^{q}v_{q}\\[6pt]
-&{}^{Q}F_{q/\mkern-5mu/} = \frac{d{}^{Q}p_{q/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{q/\mkern-5mu/}
+&{}^{Q}F_{q/\mkern-5mu/} = \frac{d{}^{Q}p_{q/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{Q}\gamma_{q}^3\,m\,d{}^{Q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{\bcancel{{}^{Q}\gamma_{q}^3}\,m\,d{}^{q}v_{q}}{\bcancel{{}^{q}\gamma_{Q}^3}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{q/\mkern-5mu/}
 \end{aligned}
 $$
 
