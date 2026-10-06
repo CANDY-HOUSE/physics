@@ -2059,10 +2059,10 @@ $$
 \begin{aligned}
 &\frac{dy}{d{}^{q}t} = 0 = \frac{dy}{d{}^{Q}t},\qquad \big|{}^{Q}\vec v_{q}\big| = {}^{q}V\ \text{（1.3）}\\[6pt]
 &d{}^{Q}t = {}^{q}\gamma_{Q}\,d{}^{q}t\ \text{（1.2）},\qquad d{}^{Q}y = d{}^{q}y = dy\ \text{（1.3）}\\[6pt]
-&d{}^{q}p_{\perp} = d\Big({}^{q}\gamma_{q}\,m\,\frac{dy}{d{}^{q}t}\Big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma_{q} = m\,d\frac{dy}{d{}^{q}t}\\[6pt]
-&d{}^{Q}p_{\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = \underbrace{{}^{Q}\gamma_{q}}_{{}^{q}\gamma_{Q}}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{q}\gamma_{Q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
+&d{}^{q}p_{q\perp} = d\Big({}^{q}\gamma_{q}\,m\,\frac{dy}{d{}^{q}t}\Big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma_{q} = m\,d\frac{dy}{d{}^{q}t}\\[6pt]
+&d{}^{Q}p_{q\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = \underbrace{{}^{Q}\gamma_{q}}_{{}^{q}\gamma_{Q}}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{q}\gamma_{Q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
 &d\frac{dy}{d{}^{Q}t} = d\Big(\frac{dy}{d{}^{q}t}\cdot\frac{d{}^{q}t}{d{}^{Q}t}\Big) = \underbrace{\frac{d{}^{q}t}{d{}^{Q}t}}_{\frac{1}{{}^{q}\gamma_{Q}}}\,d\frac{dy}{d{}^{q}t} + \underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d\frac{d{}^{q}t}{d{}^{Q}t} = \frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t}\\[6pt]
-&{}^{Q}F_{\perp} = \frac{d{}^{Q}p_{\perp}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m}{{}^{q}\gamma_{Q}\,d{}^{q}t}\cdot\frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t} = \frac{1}{{}^{q}\gamma_{Q}}\cdot\frac{d{}^{q}p_{\perp}}{d{}^{q}t} = \frac{{}^{q}F_{\perp}}{{}^{q}\gamma_{Q}}
+&{}^{Q}F_{q\perp} = \frac{d{}^{Q}p_{q\perp}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m}{{}^{q}\gamma_{Q}\,d{}^{q}t}\cdot\frac{1}{{}^{q}\gamma_{Q}}\,d\frac{dy}{d{}^{q}t} = \frac{1}{{}^{q}\gamma_{Q}}\cdot\frac{d{}^{q}p_{q\perp}}{d{}^{q}t} = \frac{{}^{q}F_{q\perp}}{{}^{q}\gamma_{Q}}
 \end{aligned}
 $$
 
@@ -2074,13 +2074,13 @@ $$
 &\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}} = \frac{1 - \dfrac{{}^{q}V^2}{c^2}}{\Big(1 - \dfrac{\underbrace{{}^{q}v_{q}}_{0}\cdot{}^{q}V}{c^2}\Big)^2} = \frac{1}{{}^{q}\gamma_{Q}^2}\\[6pt]
 &d{}^{Q}\gamma_{q} = d\,\frac{1}{\sqrt{1 - \dfrac{{}^{Q}v_{q}^2}{c^2} - \dfrac{1}{c^2}\Big(\dfrac{dy}{d{}^{Q}t}\Big)^2}} = \frac{{}^{Q}\gamma_{q}^3}{c^2}\Big({}^{Q}v_{q}\,d{}^{Q}v_{q} + \underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d\frac{dy}{d{}^{Q}t}\Big)\\[6pt]
 &d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = {}^{Q}\gamma_{q}\,d{}^{Q}v_{q} + {}^{Q}v_{q}\,d{}^{Q}\gamma_{q} = {}^{Q}\gamma_{q}\,\underbrace{\Big(1 + \frac{{}^{Q}\gamma_{q}^2\cdot{}^{Q}v_{q}^2}{c^2}\Big)}_{{}^{Q}\gamma_{q}^2}\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,d{}^{Q}v_{q}\\[6pt]
-&d{}^{Q}p_{/\mkern-5mu/} = m\,d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = m\cdot\underbrace{{}^{Q}\gamma_{q}^3}_{{}^{q}\gamma_{Q}^3}\cdot d{}^{Q}v_{q} = m\cdot{}^{q}\gamma_{Q}^3\cdot\frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2} = {}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}\\[6pt]
-&d{}^{q}p_{/\mkern-5mu/} = d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_{q}\big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d{}^{q}v_{q} + m\,\underbrace{{}^{q}v_{q}}_{0}\,d{}^{q}\gamma_{q} = m\,d{}^{q}v_{q}\\[6pt]
-&{}^{Q}F_{/\mkern-5mu/} = \frac{d{}^{Q}p_{/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{/\mkern-5mu/}
+&d{}^{Q}p_{q/\mkern-5mu/} = m\,d\big({}^{Q}\gamma_{q}\cdot{}^{Q}v_{q}\big) = m\cdot\underbrace{{}^{Q}\gamma_{q}^3}_{{}^{q}\gamma_{Q}^3}\cdot d{}^{Q}v_{q} = m\cdot{}^{q}\gamma_{Q}^3\cdot\frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2} = {}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}\\[6pt]
+&d{}^{q}p_{q/\mkern-5mu/} = d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_{q}\big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d{}^{q}v_{q} + m\,\underbrace{{}^{q}v_{q}}_{0}\,d{}^{q}\gamma_{q} = m\,d{}^{q}v_{q}\\[6pt]
+&{}^{Q}F_{q/\mkern-5mu/} = \frac{d{}^{Q}p_{q/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{q}\gamma_{Q}\,m\,d{}^{q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{q/\mkern-5mu/}
 \end{aligned}
 $$
 
-<p><strong>\(q\) 基準的電場</strong>：\(q\) 此刻在 \(q\) 基準裡靜止，所以 \({}^{q}\vec F = q\cdot{}^{q}\vec E\) 就是 \(q\) 基準電場的定義；在 \(Q\) 基準裡，實驗給出 \({}^{Q}\vec F = q\cdot{}^{Q}\vec E\)。</p>
+<p><strong>\(q\) 基準的電場</strong>：\(q\) 此刻在 \(q\) 基準裡靜止，所以 \({}^{q}\vec F_{q} = q\cdot{}^{q}\vec E\) 就是 \(q\) 基準電場的定義；在 \(Q\) 基準裡，實驗給出 \({}^{Q}\vec F_{q} = q\cdot{}^{Q}\vec E\)。</p>
 
 $$
 {}^{q}E_{\perp} = {}^{q}\gamma_{Q}\cdot{}^{Q}E_{\perp},\qquad {}^{q}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/}
