@@ -2048,7 +2048,7 @@ $$
 \begin{gathered}
 \frac{d{}^{Q}\vec p_{q}}{d{}^{Q}t} = q\cdot{}^{Q}\vec E\\[6pt]
 {}^{Q}\vec p_{q} = {}^{Q}\gamma_{q}\,m\cdot{}^{Q}\vec v_{q}\ \text{（1.7）},\qquad
-{}^{Q}\gamma_{q} = \frac{1}{\sqrt{1 - \dfrac{\big|{}^{Q}\vec v_{q}\big|^2}{c^2}}}\\[6pt]
+{}^{Q}\gamma_{q} = \frac{1}{\sqrt{1 - \dfrac{|{}^{Q}\vec v_{q}|^2}{c^2}}}\\[6pt]
 {}^{Q}E = \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\ \text{（Coulomb；}\varepsilon_0\text{ 是真空電容率）}
 \end{gathered}
 $$
@@ -2057,7 +2057,7 @@ $$
 
 $$
 \begin{aligned}
-&\frac{dy}{d{}^{q}t} = 0 = \frac{dy}{d{}^{Q}t},\qquad \big|{}^{Q}\vec v_{q}\big| = {}^{q}V\ \text{（1.3）}\\[6pt]
+&\frac{dy}{d{}^{q}t} = 0 = \frac{dy}{d{}^{Q}t},\qquad |{}^{Q}\vec v_{q}| = {}^{q}V\ \text{（1.3）}\\[6pt]
 &d{}^{Q}t = {}^{q}\gamma_{Q}\,d{}^{q}t\ \text{（1.2）},\qquad d{}^{Q}y = d{}^{q}y = dy\ \text{（1.3）}\\[6pt]
 &d{}^{q}p_{q\perp} = d\Big({}^{q}\gamma_{q}\,m\,\frac{dy}{d{}^{q}t}\Big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d\frac{dy}{d{}^{q}t} + m\,\underbrace{\frac{dy}{d{}^{q}t}}_{0}\,d{}^{q}\gamma_{q} = m\,d\frac{dy}{d{}^{q}t}\\[6pt]
 &d{}^{Q}p_{q\perp} = d\Big({}^{Q}\gamma_{q}\,m\,\frac{dy}{d{}^{Q}t}\Big) = {}^{Q}\gamma_{q}\,m\,d\frac{dy}{d{}^{Q}t} + m\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d{}^{Q}\gamma_{q} = {}^{Q}\gamma_{q}\,m\,d\frac{dy}{d{}^{Q}t}\\[6pt]
@@ -2074,13 +2074,10 @@ $$
 &\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}} = \frac{1\cdot\Big(1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}\Big) - \big({}^{q}v_{q} - {}^{q}V\big)\cdot\Big(-\dfrac{{}^{q}V}{c^2}\Big)}{\Big(1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}\Big)^2}\\[6pt]
 &\phantom{\frac{d{}^{Q}v_{q}}{d{}^{q}v_{q}}} = \frac{1 - \dfrac{{}^{q}V^2}{c^2}}{\Big(1 - \dfrac{{}^{q}v_{q}\cdot{}^{q}V}{c^2}\Big)^2} = 1 - \frac{{}^{q}V^2}{c^2} = \frac{1}{{}^{q}\gamma_{Q}^2}\\[6pt]
 &d{}^{Q}v_{q} = \frac{d{}^{q}v_{q}}{{}^{q}\gamma_{Q}^2}\\[6pt]
-&d\big|{}^{Q}\vec v_{q}\big|^2 = d\Big({}^{Q}v_{q}^2 + \Big(\frac{dy}{d{}^{Q}t}\Big)^2\Big)\\[6pt]
-&\phantom{d\big|{}^{Q}\vec v_{q}\big|^2} = 2\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q} + 2\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d\frac{dy}{d{}^{Q}t} = 2\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q}\\[6pt]
-&d{}^{Q}\gamma_{q} = d\,\frac{1}{\sqrt{1 - \dfrac{\big|{}^{Q}\vec v_{q}\big|^2}{c^2}}} = -\frac{1}{2}\,\underbrace{\Big(1 - \frac{\big|{}^{Q}\vec v_{q}\big|^2}{c^2}\Big)^{-\frac{3}{2}}}_{{}^{Q}\gamma_{q}^3}\cdot\Big(-\frac{d\big|{}^{Q}\vec v_{q}\big|^2}{c^2}\Big)\\[6pt]
-&\phantom{d{}^{Q}\gamma_{q}} = \frac{{}^{Q}\gamma_{q}^3}{c^2}\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q}\\[6pt]
+&d|{}^{Q}\vec v_{q}|^2 = d\Big({}^{Q}v_{q}^2 + \Big(\frac{dy}{d{}^{Q}t}\Big)^2\Big) = 2\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q} + 2\,\underbrace{\frac{dy}{d{}^{Q}t}}_{0}\,d\frac{dy}{d{}^{Q}t} = 2\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q}\\[6pt]
+&d{}^{Q}\gamma_{q} = d\frac{1}{\sqrt{1 - \dfrac{|{}^{Q}\vec v_{q}|^2}{c^2}}} = -\tfrac{1}{2}\underbrace{\Big(1 - \frac{|{}^{Q}\vec v_{q}|^2}{c^2}\Big)^{-\frac{3}{2}}}_{{}^{Q}\gamma_{q}^3}\Big(-\frac{d|{}^{Q}\vec v_{q}|^2}{c^2}\Big) = \frac{{}^{Q}\gamma_{q}^3}{c^2}\cdot{}^{Q}v_{q}\,d{}^{Q}v_{q}\\[6pt]
 &d{}^{Q}p_{q/\mkern-5mu/} = d\big({}^{Q}\gamma_{q}\,m\cdot{}^{Q}v_{q}\big) = m\,\big({}^{Q}\gamma_{q}\,d{}^{Q}v_{q} + {}^{Q}v_{q}\,d{}^{Q}\gamma_{q}\big)\\[6pt]
-&\phantom{d{}^{Q}p_{q/\mkern-5mu/}} = m\,\Big({}^{Q}\gamma_{q} + {}^{Q}v_{q}\cdot\frac{{}^{Q}\gamma_{q}^3}{c^2}\cdot{}^{Q}v_{q}\Big)\,d{}^{Q}v_{q}\\[6pt]
-&\phantom{d{}^{Q}p_{q/\mkern-5mu/}} = {}^{Q}\gamma_{q}^3\,m\,\Big(\frac{1}{{}^{Q}\gamma_{q}^2} + \frac{{}^{Q}v_{q}^2}{c^2}\Big)\,d{}^{Q}v_{q}\\[6pt]
+&\phantom{d{}^{Q}p_{q/\mkern-5mu/}} = m\,\Big({}^{Q}\gamma_{q} + {}^{Q}v_{q}\cdot\frac{{}^{Q}\gamma_{q}^3}{c^2}\cdot{}^{Q}v_{q}\Big)\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,m\,\Big(\frac{1}{{}^{Q}\gamma_{q}^2} + \frac{{}^{Q}v_{q}^2}{c^2}\Big)\,d{}^{Q}v_{q}\\[6pt]
 &\phantom{d{}^{Q}p_{q/\mkern-5mu/}} = {}^{Q}\gamma_{q}^3\,m\,\Big(1 - \bcancel{\frac{{}^{Q}v_{q}^2}{c^2}} + \bcancel{\frac{{}^{Q}v_{q}^2}{c^2}}\Big)\,d{}^{Q}v_{q} = {}^{Q}\gamma_{q}^3\,m\,d{}^{Q}v_{q}\\[6pt]
 &d{}^{q}p_{q/\mkern-5mu/} = d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_{q}\big) = \underbrace{{}^{q}\gamma_{q}}_{1}\,m\,d{}^{q}v_{q} + m\,\underbrace{{}^{q}v_{q}}_{0}\,d{}^{q}\gamma_{q} = m\,d{}^{q}v_{q}\\[6pt]
 &{}^{Q}F_{q/\mkern-5mu/} = \frac{d{}^{Q}p_{q/\mkern-5mu/}}{d{}^{Q}t} = \frac{{}^{Q}\gamma_{q}^3\,m\,d{}^{Q}v_{q}}{{}^{q}\gamma_{Q}\,d{}^{q}t} = \frac{\bcancel{{}^{Q}\gamma_{q}^3}\,m\,d{}^{q}v_{q}}{\bcancel{{}^{q}\gamma_{Q}^3}\,d{}^{q}t} = \frac{m\,d{}^{q}v_{q}}{d{}^{q}t} = {}^{q}F_{q/\mkern-5mu/}
@@ -2237,8 +2234,7 @@ $$
 $$
 \begin{aligned}
 {}^{q}E_{\perp} &= \int_{-\infty}^{\infty}\frac{{}^{q}\lambda\,d{}^{q}x}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2\right]}\cdot\frac{r_{\perp}}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2}}\cdot{}^{q}\gamma_{Q}\\[6pt]
-&= \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\int_{-\infty}^{\infty}\frac{r_{\perp}\,\big(\underbrace{{}^{q}\gamma_{Q}\cdot d{}^{q}x}_{d{}^{Q}x}\big)}{\Big[\big(\underbrace{{}^{q}\gamma_{Q}\cdot{}^{q}x}_{{}^{Q}x}\big)^2 + r_{\perp}^2\Big]^{\frac{3}{2}}}\\[6pt]
-&= \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{r_{\perp}\cdot\dfrac{r_{\perp}\,d\varphi}{\cos^2\varphi}}{\Big(\dfrac{r_{\perp}}{\cos\varphi}\Big)^{3}}\\[6pt]
+&= \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\int_{-\infty}^{\infty}\frac{r_{\perp}\,\big(\underbrace{{}^{q}\gamma_{Q}\cdot d{}^{q}x}_{d{}^{Q}x}\big)}{\Big[\big(\underbrace{{}^{q}\gamma_{Q}\cdot{}^{q}x}_{{}^{Q}x}\big)^2 + r_{\perp}^2\Big]^{\frac{3}{2}}} = \frac{{}^{q}\lambda}{4\pi\varepsilon_0}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{r_{\perp}\cdot\dfrac{r_{\perp}\,d\varphi}{\cos^2\varphi}}{\Big(\dfrac{r_{\perp}}{\cos\varphi}\Big)^{3}}\\[6pt]
 &= \frac{{}^{q}\lambda}{4\pi\varepsilon_0\,r_{\perp}}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos\varphi\,d\varphi = \frac{{}^{q}\lambda}{4\pi\varepsilon_0\,r_{\perp}}\cdot 2 = \frac{{}^{q}\lambda}{2\pi\varepsilon_0\,r_{\perp}}\\[10pt]
 {}^{q}E_{/\mkern-5mu/} &= \int_{-\infty}^{\infty}\frac{{}^{q}\lambda\,d{}^{q}x}{4\pi\varepsilon_0\left[\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2\right]}\cdot\frac{-\,{}^{q}\gamma_{Q}\cdot{}^{q}x}{\sqrt{\left({}^{q}\gamma_{Q}\cdot{}^{q}x\right)^2 + r_{\perp}^2}} = 0\ \text{（奇函數）}
 \end{aligned}
