@@ -3330,50 +3330,16 @@ $$
 {}^{\text{地}}\vec F_{q} = q\cdot\Big({}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)\ \text{（Lorentz 力）}
 $$
 
-<h3>【第四步：磁場線是一圈圈的環】</h3>
-
-<p>由 \({}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\) 可知，運動電荷的磁場永遠垂直於運動方向，也垂直於電場，所以磁場線是一個個以運動路線為軸的圓圈，沒有起點，也沒有終點；而且同一個圓圈上，磁場的大小處處相同。因此，任何一個封閉曲面，有多少磁場線穿進來，就有多少磁場線穿出去：</p>
+<p>磁場，是僅次於「時間」的最大 workaround，也許根本不存在磁場。大費周章，先用 \({}^{\text{地}}\vec u\) 與 \({}^{\text{地}}\vec E\) 的外積造出 \({}^{\text{地}}\vec B\)，再用 \({}^{\text{地}}\vec u\) 與 \({}^{\text{地}}\vec B\) 的外積，繞了一圈，又回到 \(-\,{}^{\text{地}}\vec E_{\perp}\) 的方向：</p>
 
 $$
-\oint {}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec A = 0
+\begin{gathered}
+{}^{\text{地}}\vec u\times\left({}^{\text{地}}\vec u\times{}^{\text{地}}\vec E\right) = -\,{}^{\text{地}}u^2\cdot{}^{\text{地}}\vec E_{\perp}\\[8pt]
+{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B = {}^{\text{地}}\vec v\times\frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2} = -\,\frac{{}^{\text{地}}v\cdot{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}\vec E_{\perp}\ \text{（補充：}{}^{\text{地}}\vec v\text{ 與 }{}^{\text{地}}\vec u\text{ 同方向）}
+\end{gathered}
 $$
 
-<figure>
-<svg viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
-  <defs>
-    <marker id="mxCg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
-    <marker id="mxCb" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
-    <marker id="mxCr" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
-    <marker id="mxCc" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
-  </defs>
-  <line x1="30" y1="125" x2="420" y2="125" stroke="currentColor" stroke-dasharray="4 4" opacity=".35"/>
-  <g>
-    <animateTransform attributeName="transform" type="translate" values="0 0;150 0" dur="8s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="8s" repeatCount="indefinite" keyTimes="0;0.08;0.92;1"/>
-    <line x1="110" y1="125" x2="165.1" y2="96.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="129.5" y2="66.1" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="90.5" y2="66.1" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="54.9" y2="96.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="54.9" y2="153.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="90.5" y2="183.9" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="129.5" y2="183.9" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <line x1="110" y1="125" x2="165.1" y2="153.5" stroke="currentColor" stroke-width="1.2" opacity=".4"/>
-    <g opacity="0.5"><ellipse cx="55" cy="125" rx="11" ry="36" fill="none" stroke="#3584e4" stroke-width="1.8"/><circle cx="55" cy="89" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><circle cx="55" cy="89" r="1.8" fill="#3584e4"/><circle cx="55" cy="161" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><path d="M51.5,157.5 L58.5,164.5 M58.5,157.5 L51.5,164.5" stroke="#3584e4" stroke-width="1.5"/></g>
-    <g opacity="1"><ellipse cx="110" cy="125" rx="11" ry="52" fill="none" stroke="#3584e4" stroke-width="1.8"/><circle cx="110" cy="73" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><circle cx="110" cy="73" r="1.8" fill="#3584e4"/><circle cx="110" cy="177" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><path d="M106.5,173.5 L113.5,180.5 M113.5,173.5 L106.5,180.5" stroke="#3584e4" stroke-width="1.5"/></g>
-    <g opacity="0.5"><ellipse cx="165" cy="125" rx="11" ry="36" fill="none" stroke="#3584e4" stroke-width="1.8"/><circle cx="165" cy="89" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><circle cx="165" cy="89" r="1.8" fill="#3584e4"/><circle cx="165" cy="161" r="6" style="fill:var(--bg)" stroke="#3584e4" stroke-width="1.5"/><path d="M161.5,157.5 L168.5,164.5 M168.5,157.5 L161.5,164.5" stroke="#3584e4" stroke-width="1.5"/></g>
-    <circle cx="110" cy="125" r="7" fill="#e0a800"/>
-    <line x1="180" y1="125" x2="206" y2="125" stroke="#e0a800" stroke-width="2.2" marker-end="url(#mxCg)"/>
-    <foreignObject x="178.0" y="97.0" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:#e0a800">\({}^{\text{地}}u\)</div></foreignObject>
-  </g>
-  <text x="440" y="70" fill="#3584e4">藍色：磁場線</text>
-  <text x="440" y="100" fill="currentColor">繞著運動路線的圓圈</text>
-  <text x="440" y="130" fill="currentColor">上方 ⊙ 穿出紙面，</text>
-  <text x="440" y="155" fill="currentColor">下方 ⊗ 穿入紙面</text>
-  <text x="440" y="185" fill="currentColor">沒有起點，也沒有終點</text>
-</svg>
-</figure>
-
-<p>再用假設一把許多等速運動電荷的磁場加起來，結果仍然成立。這說明電荷產生的磁場沒有「磁荷」作為源頭。至於宇宙中是否另外存在磁單極（2.6），相對論並不禁止它存在，所以這要靠實驗回答；至今的搜尋（例如 IceCube 2022、MoEDAL 2022）都沒有找到。</p>
+<p>磁力終究只是 \({}^{\text{地}}E\) 的一部分，這不是脫褲子放屁嗎？所謂的磁場，只是人類用來描述指南針與鐵粉排列這些現象的說法而已。</p>
 
 <h3>【第五步：長直導線與 Ampère 定律】</h3>
 
