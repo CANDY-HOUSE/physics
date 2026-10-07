@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>從時空到控制</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=13">
+<link rel="stylesheet" href="css/style.css?v=14">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -3707,6 +3707,34 @@ $$
   document.addEventListener('keydown', function (e) {
     if (e.key === 'Escape' && document.body.classList.contains('menu-open')) { set(false); btn.focus(); }
   });
+})();
+// 目錄跟著閱讀位置：標題捲過畫面 30% 高度的那一節亮起
+(function () {
+  var sb = document.getElementById('sidebar');
+  var items = [].slice.call(document.querySelectorAll('.sidebar a[href^="#part-"], .sidebar a[href^="#sec-"]'))
+    .map(function (a) { return { a: a, h: document.getElementById(a.getAttribute('href').slice(1)) }; })
+    .filter(function (it) { return it.h; });
+  if (!sb || !items.length) return;
+  var cur = null;
+  function update() {
+    var pick = null, line = window.innerHeight * 0.3;
+    if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 2) pick = items[items.length - 1];
+    else for (var i = 0; i < items.length; i++) if (items[i].h.getBoundingClientRect().top <= line) pick = items[i];
+    if (pick === cur) return;
+    if (cur) { cur.a.removeAttribute('aria-current'); cur.a.parentNode.classList.remove('is-current'); }
+    cur = pick;
+    if (!cur) return;
+    cur.a.setAttribute('aria-current', 'location');
+    cur.a.parentNode.classList.add('is-current');
+    if (sb.scrollHeight > sb.clientHeight) {
+      var r = cur.a.getBoundingClientRect(), s = sb.getBoundingClientRect();
+      if (r.top < s.top + 40 || r.bottom > s.bottom - 40) sb.scrollTop += r.top - s.top - sb.clientHeight / 2;
+    }
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  window.addEventListener('load', update);
+  update();
 })();
 </script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>

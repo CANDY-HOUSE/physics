@@ -207,6 +207,19 @@ figcaption {
 }
 .sidebar ol.sb-secs a { color: var(--fg-soft); }
 .sidebar ol.sb-secs a:hover { color: var(--accent); }
+/* 目前閱讀的小節：文字亮起，左邊的線也亮起一段 */
+.sidebar ol.sb-parts > li > a[aria-current],
+.sidebar ol.sb-secs a[aria-current] { color: var(--accent); }
+.sidebar ol.sb-secs > li { position: relative; }
+.sidebar ol.sb-secs > li.is-current::before {
+  content: "";
+  position: absolute;
+  left: calc(-1rem - 2px);
+  top: .2em;
+  bottom: .2em;
+  width: 2px;
+  background: var(--accent);
+}
 .layout > .wrap { flex: 1; min-width: 0; }
 /* 手機：頁首固定在上方，按選單鈕從左側滑出側欄 */
 .menu-btn, .sb-close, .menu-backdrop { display: none; }
