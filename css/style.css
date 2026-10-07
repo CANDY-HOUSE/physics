@@ -195,6 +195,17 @@ figcaption {
   font-size: .88rem;
   line-height: 1.7;
 }
+/* 桌面：書名併入側欄頂端，不另佔一列頁首；手機仍用頁首 */
+.sidebar .sb-title {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--fg);
+  padding-bottom: .8rem;
+  margin-bottom: .6rem;
+  border-bottom: 1px solid var(--border);
+}
+@media (min-width: 901px) { header.site { display: none; } }
 .sidebar ol { list-style: none; margin: 0; padding: 0; }
 .sidebar ol.sb-parts > li { margin: .55rem 0; color: var(--fg-soft); }
 .sidebar ol.sb-parts > li.pending { opacity: .55; }
@@ -224,6 +235,7 @@ figcaption {
 /* 手機：頁首固定在上方，按選單鈕從左側滑出側欄 */
 .menu-btn, .sb-close, .menu-backdrop { display: none; }
 @media (max-width: 900px) {
+  .sidebar .sb-title { display: none; }
   header.site {
     position: sticky;
     top: 0;
