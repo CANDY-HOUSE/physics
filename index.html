@@ -60,8 +60,9 @@ MathJax = {
           <li><a href="#sec-3-2">3.2　磁就是電！Ampère's law 的來源</a></li>
           <li><a href="#sec-3-3">3.3　磁就是電！Biot-Savart law 的來源</a></li>
           <li><a href="#sec-3-4">3.4　磁就是電！Lorentz force 的來源</a></li>
-          <li><a href="#sec-3-5">3.5　（未完工）</a></li>
+          <li><a href="#sec-3-5">3.5　電力線、電通量並不存在的 Gaussian Law</a></li>
           <li><a href="#sec-3-6">3.6　（未完工）</a></li>
+          <li><a href="#sec-3-7">3.7　（未完工）</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -3525,13 +3526,11 @@ d{}^{\text{地}}B = \frac{{}^{\text{地}}u}{c^2}\cdot d{}^{\text{地}}E_{\perp-}
 = \underbrace{\frac{\dfrac{1}{\varepsilon_0 c^2}\cdot{}^{\text{地}}I\,d{}^{\text{地}}\ell\,\sin{}^{\text{地}}\theta}{4\pi\cdot{}^{\text{地}}r^2}}_{\text{Biot-Savart Law}}
 $$
 
-<h2 id="sec-3-5">3.5　（未完工）</h2>
+<h2 id="sec-3-5">3.5　電力線、電通量並不存在的 Gaussian Law</h2>
 
-<h3>【電力線、電通量並不存在】</h3>
+<p>首先，力並不存在。3.1 提到，力只是動量隨時間的變化：Coulomb 在 1785 年用扭秤量到的 \(\dfrac{Q\,q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\)，其實只是 \(q\) 的動量每秒改變了多少。這一個式子是大學「靜電學」的最底層邏輯：有了它，就可以建構整個「靜電學」；再加上相對論，連「靜磁學」也建構得出來（3.3）。</p>
 
-<p>首先，力並不存在。3.1 說過，力只是動量隨時間的變化：Coulomb 在 1785 年用扭秤量到的 \(\dfrac{Q\,q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\)，其實只是 \(q\) 的動量每秒改變了多少。這一個式子是大學「靜電學」的最底層邏輯：有了它，就可以建構整個「靜電學」；再加上相對論，連「靜磁學」也建構得出來（3.3）。</p>
-
-<p>可是，為什麼偏偏是 \({}^{Q}r^2\)？想像 \(Q\) 的影響力像燈泡發出的光，向四面八方均勻地散開。到了距離 \({}^{Q}r\) 的地方，它攤在一整個球面上；距離加倍，球面就變成四倍大，同樣多的影響力攤得更薄，每一小塊只分到四分之一。\(Q\) 的影響力並沒有變弱，只是越來越稀薄：</p>
+<p>為了去解釋 \({}^{Q}r^2\)，兩百年前的人想像 \(Q\) 的影響力像燈泡發出的光，向四面八方均勻地散開。到了距離 \({}^{Q}r\) 的地方，它攤在一整個球面上；距離加倍，球面就變成四倍大，同樣多的影響力攤得更薄，每一小塊只分到四分之一。</p>
 
 <figure>
 <svg id="flx" viewBox="0 0 640 404" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -3599,21 +3598,120 @@ $$
   <text x="520.0" y="72.0" text-anchor="middle" fill="#F0AC5F" font-size="14">9 格</text>
   <foreignObject x="500.0" y="332.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(3r\)</div></foreignObject>
   <text x="520.0" y="368.0" text-anchor="middle" fill="#5CD0B3" font-size="14">每格 1 條</text>
-  <text x="320" y="392" text-anchor="middle" fill="currentColor" fill-opacity=".8" font-size="14">每一面都穿過同樣 9 條線（電通量相同）；面越大，每一格分到的線越少</text>
+  <text x="320" y="392" text-anchor="middle" fill="currentColor" fill-opacity=".8" font-size="14">每一面都穿過同樣 9 條線</text>
 </svg>
 </figure>
 
-<p>十九世紀的 Faraday 沒有受過數學訓練。他在磁鐵旁撒上鐵粉，看見鐵粉排成一條條的曲線，就把它們叫做「力線」；後來他也用同樣的線描述電荷周圍的電場，並且相信這些線真的存在。Gauss 則把它寫成數學：穿過一個封閉曲面的力線數目（電通量），只看曲面裡面有多少電荷。後來 Maxwell（1855）把 Faraday 的力線寫成方程式，十年後寫出了整套電磁方程式（1865）。</p>
+<p>十九世紀的 Faraday 沒有受過數學訓練。他在磁鐵旁撒上鐵粉，看見鐵粉排成一條條的曲線，就把它們叫做「力線」；後來他也用同樣的線描述電荷周圍的電場，並且相信這些線真的存在。Gauss 則把它寫成數學：穿過一個封閉曲面的力線數目，只看曲面裡面有多少電荷。後來 Maxwell（1855）把 Faraday 的力線寫成方程式，十年後寫出了整套電磁方程式（1865）。</p>
 
 <p>可是，電力線也是人想出來的，也許根本不存在；也許真正存在的是時空的變形，只是剛好和這些假想的線吻合。就像地圖用等高線描述地形：等高線越密，山坡越陡；可是走上山，地上並沒有一條白色的等高線。等高線雖然不存在，用來數山坡卻非常方便；電力線也一樣。下面就用它，數出 Gauss 的那句話。</p>
 
-<p><strong>電通量</strong>（\(Q\) 基準）：電場有多大，就畫多密的電力線：每單位垂直面積穿過的條數，就是電場的大小。一小塊面積 \(d{}^{Q}A\) 朝外的方向和 \({}^{Q}\vec E\) 夾角 \(\alpha\) 時，電力線看到的是它的投影 \(\cos\alpha\cdot d{}^{Q}A\)，所以穿過它的電力線條數是：</p>
+<p><strong>電通量</strong>（\(Q\) 基準）：電通量，就是電力線的通量，也就是穿過一個面的電力線條數。單位垂直面積穿過的電力線條數，就是電場的大小。若一小塊面積 \(d{}^{Q}A\) 的朝外方向與 \({}^{Q}\vec E\) 的夾角為 \(\alpha\)，穿過它的電力線，與穿過其投影 \(\cos\alpha\cdot d{}^{Q}A\) 的電力線相同，因此條數為：</p>
 
 $$
 d{}^{Q}\Phi_E \overset{\text{定義}}{=} {}^{Q}E\cdot\cos\alpha\cdot d{}^{Q}A = {}^{Q}\vec E\cdot d{}^{Q}\vec A
 $$
 
-<p>（\(d{}^{Q}\vec A\)：大小是 \(d{}^{Q}A\)、方向朝外的箭頭。）整個封閉曲面加起來，就是穿過它的電通量 \({}^{Q}\Phi_E = \oint{}^{Q}\vec E\cdot d{}^{Q}\vec A\)；穿出為正，穿進為負。</p>
+<p>（\(d{}^{Q}\vec A\)：大小為 \(d{}^{Q}A\)、方向朝外的向量。）對整個封閉曲面求和，即得穿過它的電通量 \({}^{Q}\Phi_E = \oint{}^{Q}\vec E\cdot d{}^{Q}\vec A\)；穿出為正，穿進為負。</p>
+
+<p><strong>電場的兩個定義</strong>：定義一來自物理（3.1）：在該點放置一個電荷 \(q\)，單位 \(q\) 的動量隨時間的變化，就是電場：</p>
+
+$$
+{}^{Q}\vec E \overset{\text{定義一}}{=} \frac{1}{q}\cdot\frac{d{}^{Q}\vec p_{q}}{d{}^{Q}t}
+$$
+
+<p>定義二來自圖像：在該點取一小塊與電力線垂直的面積 \(d{}^{Q}A_{\perp}\)，穿過它的電力線條數（即電通量 \(d{}^{Q}\Phi_E\)）除以該面積，就是電場的大小；電場的方向，即電力線的方向：</p>
+
+$$
+{}^{Q}E \overset{\text{定義二}}{=} \frac{d{}^{Q}\Phi_E}{d{}^{Q}A_{\perp}}
+$$
+
+<p>此外還有第三個式子。它不是定義，而是觀察結果（Coulomb 1785）：以定義一去量，距離 \(Q\) 為 \({}^{Q}r\) 處的電場大小為：</p>
+
+$$
+{}^{Q}E \overset{\text{觀察}}{=} \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}
+$$
+
+<figure>
+<svg id="efd" viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="efdT" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#5CD0B3"/></marker>
+  </defs>
+  <text x="20" y="34" fill="currentColor" font-size="15" font-weight="700">定義一：單位 q 的動量隨時間的變化</text>
+  <line x1="72.0" y1="170.0" x2="221.0" y2="170.0" stroke="#BBBBBB" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <foreignObject x="128.0" y="142.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{Q}r\)</span></div></foreignObject>
+  <circle cx="60.0" cy="170.0" r="10" fill="#FC6255"/><text x="60.0" y="175.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  <line x1="239.0" y1="170.0" x2="290.0" y2="170.0" stroke="#5CD0B3" stroke-width="3" marker-end="url(#efdT)"><animate attributeName="x2" values="244.0;290.0;290.0;244.0" keyTimes="0;0.45;0.85;1" dur="3s" repeatCount="indefinite"/></line>
+  <circle cx="230.0" cy="170.0" r="7" fill="currentColor"/>
+  <foreignObject x="215.0" y="180.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(q\)</span></div></foreignObject>
+  <foreignObject x="238.0" y="133.0" width="60" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:26px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(d{}^{Q}\vec p_{q}\)</span></div></foreignObject>
+  <foreignObject x="205.0" y="206.0" width="110" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">在 \(d{}^{Q}t\) 之內</span></div></foreignObject>
+  <text x="342" y="34" fill="currentColor" font-size="15" font-weight="700">定義二：單位垂直面積穿過的電力線條數</text>
+  <line x1="383.9" y1="168.4" x2="628.0" y2="136.3" stroke="#5CD0B3" stroke-opacity="1" stroke-width="2"/>
+  <circle cx="542.0" cy="147.6" r="4" fill="#5CD0B3"/>
+  <line x1="383.1" y1="165.4" x2="628.0" y2="64.0" stroke="#5CD0B3" stroke-opacity="1" stroke-width="2"/>
+  <circle cx="542.0" cy="99.6" r="4" fill="#5CD0B3"/>
+  <line x1="381.5" y1="162.7" x2="531.0" y2="48.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="379.3" y1="160.5" x2="465.6" y2="48.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="376.6" y1="158.9" x2="422.5" y2="48.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="373.6" y1="158.1" x2="388.1" y2="48.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="370.4" y1="158.1" x2="355.9" y2="48.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="367.4" y1="158.9" x2="332.0" y2="73.4" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="364.7" y1="160.5" x2="332.0" y2="117.9" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="362.5" y1="162.7" x2="332.0" y2="139.3" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="360.9" y1="165.4" x2="332.0" y2="153.4" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="360.1" y1="168.4" x2="332.0" y2="164.7" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="360.1" y1="171.6" x2="332.0" y2="175.3" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="360.9" y1="174.6" x2="332.0" y2="186.6" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="362.5" y1="177.3" x2="332.0" y2="200.7" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="364.7" y1="179.5" x2="332.0" y2="222.1" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="367.4" y1="181.1" x2="332.0" y2="266.6" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="370.4" y1="181.9" x2="355.9" y2="292.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="373.6" y1="181.9" x2="388.1" y2="292.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="376.6" y1="181.1" x2="422.5" y2="292.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="379.3" y1="179.5" x2="465.6" y2="292.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="381.5" y1="177.3" x2="531.0" y2="292.0" stroke="#5CD0B3" stroke-opacity="0.3" stroke-width="1.2"/>
+  <line x1="383.1" y1="174.6" x2="628.0" y2="276.0" stroke="#5CD0B3" stroke-opacity="1" stroke-width="2"/>
+  <circle cx="542.0" cy="240.4" r="4" fill="#5CD0B3"/>
+  <line x1="383.9" y1="171.6" x2="628.0" y2="203.7" stroke="#5CD0B3" stroke-opacity="1" stroke-width="2"/>
+  <circle cx="542.0" cy="192.4" r="4" fill="#5CD0B3"/>
+  <line x1="542.0" y1="94.0" x2="542.0" y2="246.0" stroke="#F0AC5F" stroke-width="5" stroke-linecap="round"/>
+  <line x1="384.0" y1="170.0" x2="538.0" y2="170.0" stroke="#BBBBBB" stroke-opacity=".6" stroke-width="1.2" stroke-dasharray="4 4"/>
+  <foreignObject x="420.0" y="142.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{Q}r\)</span></div></foreignObject>
+  <circle cx="372.0" cy="170.0" r="10" fill="#FC6255"/><text x="372.0" y="175.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  <foreignObject x="462.0" y="255.0" width="160" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:26px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="background:var(--bg);padding:0 4px;display:flex;align-items:center;gap:.3em">垂直面積 \(d{}^{Q}A_{\perp}\)</span></div></foreignObject>
+  <foreignObject x="457.0" y="59.0" width="170" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#5CD0B3;height:26px;display:flex;align-items:center;justify-content:center;gap:.3em;white-space:nowrap"><span style="background:var(--bg);padding:0 4px;display:flex;align-items:center;gap:.3em">穿過的條數 \(d{}^{Q}\Phi_E\)</span></div></foreignObject>
+  <line x1="320" y1="48" x2="320" y2="292" stroke="#BBBBBB" stroke-opacity=".35"/>
+  <text x="320" y="318" text-anchor="middle" fill="currentColor" fill-opacity=".8" font-size="14">同一點、同一電場</text>
+</svg>
+</figure>
+
+<p>兩個定義描述的是同一個電場，數值必須一致。取一個以 \(Q\) 為球心、半徑為 \({}^{Q}r\) 的球面來比較：球面處處與電力線垂直，\(Q\) 發出的 \({}^{Q}\Phi_E\) 條電力線，均勻分布在面積 \(4\pi\cdot{}^{Q}r^2\) 上。</p>
+
+$$
+\begin{gathered}
+{}^{Q}E = \frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2}\ \text{（觀察結果）}\\[6pt]
+{}^{Q}E = \frac{{}^{Q}\Phi_E}{4\pi\cdot{}^{Q}r^2}\ \text{（定義二：線數 ÷ 球面面積）}\\[6pt]
+\frac{{}^{Q}\Phi_E}{\bcancel{4\pi\cdot{}^{Q}r^2}} = \frac{Q}{\varepsilon_0\cdot\bcancel{4\pi\cdot{}^{Q}r^2}}\quad\Longrightarrow\quad{}^{Q}\Phi_E = \frac{Q}{\varepsilon_0}
+\end{gathered}
+$$
+
+<p>\({}^{Q}r\) 被消去了：無論球面多大，穿出的電力線都是 \(\dfrac{Q}{\varepsilon_0}\) 條，這正是前面圖中「每一面都穿過同樣 9 條線」的原因。因此，只要規定每一個電荷 \(Q\) 發出 \(\dfrac{Q}{\varepsilon_0}\) 條電力線，兩個定義便給出同一個電場。</p>
+
+<p>為什麼是 \(\dfrac{Q}{\varepsilon_0}\) 條，而不是 \(Q\) 條？人類一定是單位選錯了。\(\varepsilon_0\) 只是電荷單位（庫侖）與力學單位（牛頓、公尺）之間的換算常數；如果電荷也改用力學單位來量（\(\varepsilon_0 = 1\)；仿 3.4，用 Fraktur 表示這種單位下的量），結果裡就不會有 \(\varepsilon_0\)：</p>
+
+$$
+\begin{gathered}
+\mathfrak Q = \frac{Q}{\sqrt{\varepsilon_0}},\qquad \mathfrak q = \frac{q}{\sqrt{\varepsilon_0}},\qquad {}^{Q}\vec{\mathfrak E} = \sqrt{\varepsilon_0}\cdot{}^{Q}\vec E\\[8pt]
+{}^{Q}\Phi_{\mathfrak E} = \oint{}^{Q}\vec{\mathfrak E}\cdot d{}^{Q}\vec A = \sqrt{\varepsilon_0}\cdot{}^{Q}\Phi_E = \sqrt{\varepsilon_0}\cdot\frac{Q}{\varepsilon_0} = \frac{Q}{\sqrt{\varepsilon_0}} = \mathfrak Q\\[8pt]
+{}^{Q}\mathfrak E = \sqrt{\varepsilon_0}\cdot\frac{Q}{4\pi\varepsilon_0\cdot{}^{Q}r^2} = \frac{Q}{\sqrt{\varepsilon_0}\cdot 4\pi\cdot{}^{Q}r^2} = \frac{\mathfrak Q}{4\pi\cdot{}^{Q}r^2}\\[8pt]
+\frac{d{}^{Q}\vec p_{q}}{d{}^{Q}t} = q\cdot{}^{Q}\vec E = \frac{q}{\sqrt{\varepsilon_0}}\cdot\sqrt{\varepsilon_0}\cdot{}^{Q}\vec E = \mathfrak q\cdot{}^{Q}\vec{\mathfrak E}
+\end{gathered}
+$$
+
+<p>在這種單位下，電荷量是多少，發出的電力線就是多少條。</p>
+
+<p>然而，若曲面不是以 \(Q\) 為球心的球面，穿出的電力線仍是同樣多條嗎？是。</p>
 
 <p><strong>Gauss 定律</strong>（\(Q\) 基準：\(Q\) 靜止）：把一個封閉曲面切成許多小塊，其中一小塊到 \(Q\) 的距離是 \({}^{Q}r\)。從 \(Q\) 看出去，這一小塊和半徑 1 的球面上的一小塊，正好被同一個細錐切下：</p>
 
@@ -3763,6 +3861,8 @@ $$
 $$
 \nabla\cdot\vec E = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z} = \frac{\rho}{\varepsilon_0}\ \text{（Gauss 定律的微分形式）}
 $$
+
+<h2 id="sec-3-6">3.6　（未完工）</h2>
 
 <h3>【磁力線並不存在】</h3>
 
@@ -3919,13 +4019,13 @@ $$
 
 <p><strong>（二）換到桿子的基準。</strong>在桿子自己的基準裡，桿子的電荷是靜止的，所以磁力不可能推動它們。可是電流一定還在，因為圈裡有沒有電流（例如接線會不會發熱），是每個基準都同意的事。那麼，推動電荷的是什麼？3.2 已經回答：在跟著桿子跑的基準裡，導線裡正負電荷的密度不再相等，導線帶了電，它產生的電場沿著桿子推動電荷。同一個電動勢，在一個基準裡來自磁力，在另一個基準裡來自電力。Einstein 在 1905 年那篇相對論論文的開頭，談的正是這件事：磁鐵不動而導體運動，和導體不動而磁鐵運動，產生的電流相同，但是當時的理論卻用兩種不同的原因解釋；相對論說，兩者只是同一件事從兩個基準來看。</p>
 
-<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.6（見下文）。這就是第三條方程：</p>
+<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.7（見下文）。這就是第三條方程：</p>
 
 $$
 \oint \vec E\cdot d\vec\ell = -\frac{d\Phi_B}{dt}
 $$
 
-<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{{}^{\text{地}}u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.6 的動量變換。</p>
+<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{{}^{\text{地}}u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.7 的動量變換。</p>
 
 <p><strong>（四）沒有任何東西在動。</strong>變壓器裡的線圈都不動，只是一個線圈的電流隨時間改變，另一個線圈就產生電動勢（Faraday 1831）。電流改變，代表電荷在加速，這已經超出等速運動電荷的範圍，所以需要第八步的假設四；變壓器和電子感應加速器的運作，正是這個假設的實驗證據。</p>
 
@@ -3972,7 +4072,7 @@ $$
 \oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \mu_0\cdot{}^{\text{地}}I + \mu_0\varepsilon_0\,\frac{d{}^{\text{地}}\Phi_E}{d{}^{\text{地}}t}
 $$
 
-<p>這裡只算了電荷沿著圓環軸線運動的情形；對任意形狀的圈、任意一群等速運動的電荷，同樣的等式也成立，一般的證明留到 3.6。</p>
+<p>這裡只算了電荷沿著圓環軸線運動的情形；對任意形狀的圈、任意一群等速運動的電荷，同樣的等式也成立，一般的證明留到 3.7。</p>
 
 <figure>
 <svg viewBox="0 0 640 350" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -4017,11 +4117,11 @@ $$
 
 <h3>【第八步：加速的電荷——多一個假設，換來光】</h3>
 
-<p>到這裡，四條方程都已經在等速運動電荷的例子裡推出；（三）、（四）的一般情形，留到 3.6 補完。可是電荷一旦加速，相對論本身並不告訴我們它的場會怎樣：場裡可能多出一部分，它只和加速度有關，在等速運動時恰好是零。因此，Frisch 與 Wilets（1956）等人都必須另外加上一個假設。需要的假設是：</p>
+<p>到這裡，四條方程都已經在等速運動電荷的例子裡推出；（三）、（四）的一般情形，留到 3.7 補完。可是電荷一旦加速，相對論本身並不告訴我們它的場會怎樣：場裡可能多出一部分，它只和加速度有關，在等速運動時恰好是零。因此，Frisch 與 Wilets（1956）等人都必須另外加上一個假設。需要的假設是：</p>
 
 <p><strong>假設四</strong>：（甲）兩條 Gauss 定律，在每一個慣性基準、每一個瞬間都成立，不論電荷怎麼運動；（乙）Lorentz 力 \(q\left(\vec E + \vec v\times\vec B\right)\) 在每一個慣性基準都成立；（丙）場由電荷過去的運動決定，沒有從無窮遠處憑空射來的波。</p>
 
-<p>（甲）再加上電場和磁場的換基準規則（它由（乙）決定，完整的形式要用到 3.6），在邏輯上和四條 Maxwell 方程等價；（乙）本身則給出場對電荷的力。所以老實說，這不是從相對論「推出」加速電荷的行為，而是把 Maxwell 方程重新說成一句話：<strong>Maxwell 方程，就是兩條 Gauss 定律在每一個慣性基準、每一個瞬間都成立。</strong>它對不對，要靠實驗回答。</p>
+<p>（甲）再加上電場和磁場的換基準規則（它由（乙）決定，完整的形式要用到 3.7），在邏輯上和四條 Maxwell 方程等價；（乙）本身則給出場對電荷的力。所以老實說，這不是從相對論「推出」加速電荷的行為，而是把 Maxwell 方程重新說成一句話：<strong>Maxwell 方程，就是兩條 Gauss 定律在每一個慣性基準、每一個瞬間都成立。</strong>它對不對，要靠實驗回答。</p>
 
 <p>為什麼加速的電荷會發光？設想一個等速運動的電荷突然停下。根據假設四，「停下」這個消息以光速向外傳（為什麼是光速，見下一段；（丙）保證它是向外傳，而不是從外面傳進來）。停下以後經過時間 \(t\)，在以停止點為球心、半徑為 \(ct\) 的球面以內，電場已經是靜止電荷的 Coulomb 電場；在球面以外，電場還是原本那張「餅」，仍然指向電荷「如果沒有停下、此刻應該在」的位置。根據假設四（甲），電場線不能憑空斷掉，所以它們必須在球面附近的一層薄殼裡橫著接起來。這段橫向的折角以光速向外跑，它就是光（Purcell 的論證）。</p>
 
@@ -4058,7 +4158,7 @@ $$
 
 <p>假設四對不對？實驗的回答是肯定的。在沒有電荷的空間裡，第三、四條方程合起來，說明電場和磁場可以脫離電荷、以速度 \(\dfrac{1}{\sqrt{\varepsilon_0\mu_0}}\) 傳播；因為第五步把 \(\mu_0\) 定義成 \(\dfrac{1}{\varepsilon_0c^2}\)，所以這個速度就是 \(c\)。真正的實驗內容是：Weber 與 Kohlrausch 由電學與磁學量到的速度是每秒 310,740 公里，而 Fizeau 量到的光速是每秒 314,858 公里；Maxwell 據此提出，光就是這種電磁波。Hertz 在 1887 到 1888 年用火花放電產生並偵測到電磁波。1947 年，人們在同步加速器裡看到高速轉彎的電子發出的光；1956 年，Tomboulian 與 Hartman 量到它的光譜，和理論相符。變壓器和電子感應加速器（Kerst 1941）則證實了第六步（四）的情形：沒有任何東西在動、只有電流改變時，Faraday 定律同樣成立。</p>
 
-<h2 id="sec-3-6">3.6　（未完工）</h2>
+<h2 id="sec-3-7">3.7　（未完工）</h2>
 
 $$
 \frac{{}^{1}E}{{}^{1}pc} = \frac{c}{v} = \frac{c}{\;\dfrac{{}^{1}x}{{}^{1}t}\;} = \frac{c\cdot{}^{1}t}{{}^{1}x}
