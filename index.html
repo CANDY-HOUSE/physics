@@ -61,7 +61,7 @@ MathJax = {
           <li><a href="#sec-3-3">3.3　磁就是電！Biot-Savart law 的來源</a></li>
           <li><a href="#sec-3-4">3.4　磁就是電！Lorentz force 的來源</a></li>
           <li><a href="#sec-3-5">3.5　電力線、電通量並不存在的 Gaussian Law</a></li>
-          <li><a href="#sec-3-6">3.6　磁力線、磁通量並不存在（未完工）</a></li>
+          <li><a href="#sec-3-6">3.6　磁力線、磁通量並不存在</a></li>
           <li><a href="#sec-3-7">3.7　（未完工）</a></li>
           <li><a href="#sec-3-8">3.8　（未完工）</a></li>
           <li><a href="#sec-3-9">3.9　（未完工）</a></li>
@@ -3865,7 +3865,7 @@ $$
 \nabla\cdot\vec E = \frac{\partial E_x}{\partial x} + \frac{\partial E_y}{\partial y} + \frac{\partial E_z}{\partial z} = \frac{\rho}{\varepsilon_0}\ \text{（Gauss 定律的微分形式）}
 $$
 
-<h2 id="sec-3-6">3.6　磁力線、磁通量並不存在（未完工）</h2>
+<h2 id="sec-3-6">3.6　磁力線、磁通量並不存在</h2>
 
 <p>Faraday 把鐵粉在磁鐵旁描出的曲線叫做「磁力線」，並在 1852 年論證它們真的存在；Maxwell（1855–56）再把它們寫成數學：一根根裝著不可壓縮假想流體的細管。下面的「環管」就是這種細管。然而，這只是他們為了硬要解釋的無知方案，就像氣象圖上的等壓線：也許有氣壓場，天空裡卻沒有一條線。</p>
 
@@ -4045,6 +4045,124 @@ $$
 
 <p>究其根本，是因為世界上有電荷，卻沒有磁荷，至少到目前為止還沒有被發現。沒有就是沒有！磁力線不是從磁荷發出來的，只是假想的線；穿進一個封閉曲面，就從它穿出，有進就有出，包起來的總和永遠是零。</p>
 
+<h2 id="sec-3-7">3.7　（未完工）</h2>
+
+<h3>【Faraday 定律】</h3>
+
+<p><strong>（一）導體在磁場中運動。</strong>在長直導線旁邊，平行於導線放兩條軌道，分別距離導線 \(a\) 和 \(b\)；再把一根垂直於導線的金屬桿架在兩條軌道上，讓它以速度 \({}^{\text{地}}v\) 沿著導線的方向滑動。桿子裡的電荷跟著桿子以 \({}^{\text{地}}v\) 移動，方向和導線平行，所以第三步的結果可以直接使用：每個電荷都受到沿著桿子方向的磁力 \(q\cdot{}^{\text{地}}v\cdot{}^{\text{地}}B\)。把每一小段上的力除以電荷，再乘上這一小段的長度，然後沿著桿子加起來，就是推動電流的電動勢 \({}^{\text{地}}\mathcal{E}\)（\(\dfrac{1}{r_{\perp}}\) 的反導函數是 \(\ln r_{\perp}\)）：</p>
+
+$$
+{}^{\text{地}}\mathcal{E} = \int_a^b {}^{\text{地}}v\cdot{}^{\text{地}}B\,dr_{\perp} = {}^{\text{地}}v\int_a^b \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi r_{\perp}}\,dr_{\perp} = {}^{\text{地}}v\cdot\frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\frac{b}{a}
+$$
+
+<figure>
+<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="mxEg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
+    <marker id="mxEb" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
+    <marker id="mxEr" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
+    <marker id="mxEc" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
+    <marker id="mxEd" markerUnits="userSpaceOnUse" markerWidth="6" markerHeight="4" refX="4.3" refY="2" orient="auto-start-reverse"><path d="M0,0 L6,2 L0,4 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="30" y1="268" x2="610" y2="268" stroke="#e0a800" stroke-width="4"/>
+  <line x1="520" y1="282" x2="580" y2="282" stroke="#e0a800" stroke-width="2" marker-end="url(#mxEg)"/>
+  <foreignObject x="585.0" y="272.8" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\({}^{\text{地}}I\)</div></foreignObject>
+  <line x1="70" y1="196" x2="610" y2="196" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <line x1="70" y1="92" x2="610" y2="92" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <line x1="80" y1="92" x2="80" y2="196" stroke="currentColor" stroke-width="2" opacity=".6"/>
+  <rect x="80" y="92" width="100" height="104" fill="#3584e4" fill-opacity=".14"><animate attributeName="width" values="100;440;440" dur="7s" repeatCount="indefinite" keyTimes="0;0.86;1"/></rect>
+  <circle cx="103" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="103" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="125" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="125" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="147" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="147" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="169" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="169" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="191" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="191" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="213" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="213" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="235" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="235" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="257" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="257" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="279" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="279" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="301" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="301" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="323" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="323" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="345" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="345" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="367" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="367" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="389" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="389" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="411" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="411" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="433" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="433" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="455" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="455" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="477" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="477" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="499" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="499" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="521" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="521" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="543" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="543" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="565" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="565" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="587" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="587" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="108" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="108" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="140" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="140" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="172" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="172" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="204" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="204" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="236" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="236" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="268" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="268" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="300" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="300" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="332" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="332" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="364" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="364" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="396" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="396" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="428" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="428" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="460" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="460" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="492" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="492" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="524" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="524" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="556" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="556" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="588" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="588" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="114" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="114" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="158" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="158" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="202" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="202" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="246" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="246" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="290" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="290" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="334" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="334" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="378" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="378" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="422" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="422" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="466" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="466" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="510" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="510" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="554" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="554" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <circle cx="598" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="598" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
+  <foreignObject x="90.0" y="70.0" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#3584e4">\(\text{磁通量 } {}^{\text{地}}\Phi_B\)</div></foreignObject>
+  <line x1="40" y1="265" x2="40" y2="198" stroke="currentColor" stroke-width="1" opacity=".7" marker-start="url(#mxEd)" marker-end="url(#mxEd)"/>
+  <line x1="56" y1="265" x2="56" y2="94" stroke="currentColor" stroke-width="1" opacity=".7" marker-start="url(#mxEd)" marker-end="url(#mxEd)"/>
+  <foreignObject x="18.0" y="218.0" width="20" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(a\)</div></foreignObject>
+  <foreignObject x="60.0" y="166.0" width="20" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(b\)</div></foreignObject>
+  <g>
+    <animateTransform attributeName="transform" type="translate" values="0 0;340 0;340 0" keyTimes="0;0.86;1" dur="7s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.05;0.94;1"/>
+    <line x1="180" y1="86" x2="180" y2="202" stroke="currentColor" stroke-width="5"/>
+    <line x1="190" y1="144" x2="226" y2="144" stroke="currentColor" stroke-width="2" marker-end="url(#mxEc)"/>
+    <foreignObject x="230.0" y="134.8" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{\text{地}}v\)</div></foreignObject>
+    <line x1="170" y1="106" x2="170" y2="136" stroke="#fc6255" stroke-width="2" marker-end="url(#mxEr)"/>
+    <line x1="170" y1="152" x2="170" y2="182" stroke="#fc6255" stroke-width="2" marker-end="url(#mxEr)"/>
+    <foreignObject x="54.0" y="159.0" width="106" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#fc6255">\(q\cdot{}^{\text{地}}v\cdot{}^{\text{地}}B\)</div></foreignObject>
+  </g>
+  <foreignObject x="400.0" y="18.0" width="230" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{\text{地}}\mathcal{E} = -\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>另一方面，桿子、兩條軌道和軌道另一端的接線，圍成一個長方形的圈。桿子每秒移動 \({}^{\text{地}}v\)，這個圈沿著導線方向的長度就每秒增加 \({}^{\text{地}}v\)。穿過圈的磁通量，是圈沿著導線方向的長度乘上 \(\int_a^b {}^{\text{地}}B\,dr_{\perp}\)，也就是乘上 \(\dfrac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\dfrac{b}{a}\)，所以它每秒增加：</p>
+
+$$
+\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t} = {}^{\text{地}}v\cdot\frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\frac{b}{a}
+$$
+
+<p>兩者的大小相等：電動勢等於磁通量的變化率。電動勢推動的電流，方向總是使它自己產生的磁場去抵抗磁通量的變化（Lenz 定律）；把這個方向記成負號，就寫成 \({}^{\text{地}}\mathcal{E} = -\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\)。</p>
+
+<p><strong>（二）換到桿子的基準。</strong>在桿子自己的基準裡，桿子的電荷是靜止的，所以磁力不可能推動它們。可是電流一定還在，因為圈裡有沒有電流（例如接線會不會發熱），是每個基準都同意的事。那麼，推動電荷的是什麼？3.2 已經回答：在跟著桿子跑的基準裡，導線裡正負電荷的密度不再相等，導線帶了電，它產生的電場沿著桿子推動電荷。同一個電動勢，在一個基準裡來自磁力，在另一個基準裡來自電力。Einstein 在 1905 年那篇相對論論文的開頭，談的正是這件事：磁鐵不動而導體運動，和導體不動而磁鐵運動，產生的電流相同，但是當時的理論卻用兩種不同的原因解釋；相對論說，兩者只是同一件事從兩個基準來看。</p>
+
+<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.10（見下文）。這就是第三條方程：</p>
+
+$$
+\oint \vec E\cdot d\vec\ell = -\frac{d\Phi_B}{dt}
+$$
+
+<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{{}^{\text{地}}u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.10 的動量變換。</p>
+
+<p><strong>（四）沒有任何東西在動。</strong>變壓器裡的線圈都不動，只是一個線圈的電流隨時間改變，另一個線圈就產生電動勢（Faraday 1831）。電流改變，代表電荷在加速，這已經超出等速運動電荷的範圍，所以需要 3.9 的假設四；變壓器和電子感應加速器的運作，正是這個假設的實驗證據。</p>
+
+<h2 id="sec-3-8">3.8　（未完工）</h2>
+
 <p>以下只討論一種情形：每一顆移動的電荷，都屬於一條無限長、連續、線密度處處相同、沿直線等速前進的電荷流（直導線），而且這些直線在地面基準裡不動，所以每一點的電場、磁場都不隨時間改變。單獨一顆等速運動的電荷不屬於這種情形：它經過時，附近的電場隨時間改變，下面的結果須再加一項（3.8）。</p>
 
 <p><strong>直導線的磁場</strong>（地面基準）：把 3.4 結果裡的 \(\dfrac{1}{\varepsilon_0c^2}\) 記作 \(\mu_0\)：</p>
@@ -4201,123 +4319,6 @@ $$
 
 <p>彎曲的導線裡，電子在轉彎處有加速度，這已超出等速運動電荷的範圍，須用到 3.9 的假設四；不過 Biot、Savart 與 Ampère 在 1820 年已用實驗量過彎曲導線的磁場，結果同樣滿足 Ampère's Law。</p>
 
-<h2 id="sec-3-7">3.7　（未完工）</h2>
-
-<h3>【Faraday 定律】</h3>
-
-<p><strong>（一）導體在磁場中運動。</strong>在長直導線旁邊，平行於導線放兩條軌道，分別距離導線 \(a\) 和 \(b\)；再把一根垂直於導線的金屬桿架在兩條軌道上，讓它以速度 \({}^{\text{地}}v\) 沿著導線的方向滑動。桿子裡的電荷跟著桿子以 \({}^{\text{地}}v\) 移動，方向和導線平行，所以第三步的結果可以直接使用：每個電荷都受到沿著桿子方向的磁力 \(q\cdot{}^{\text{地}}v\cdot{}^{\text{地}}B\)。把每一小段上的力除以電荷，再乘上這一小段的長度，然後沿著桿子加起來，就是推動電流的電動勢 \({}^{\text{地}}\mathcal{E}\)（\(\dfrac{1}{r_{\perp}}\) 的反導函數是 \(\ln r_{\perp}\)）：</p>
-
-$$
-{}^{\text{地}}\mathcal{E} = \int_a^b {}^{\text{地}}v\cdot{}^{\text{地}}B\,dr_{\perp} = {}^{\text{地}}v\int_a^b \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi r_{\perp}}\,dr_{\perp} = {}^{\text{地}}v\cdot\frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\frac{b}{a}
-$$
-
-<figure>
-<svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
-  <defs>
-    <marker id="mxEg" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#e0a800"/></marker>
-    <marker id="mxEb" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#3584e4"/></marker>
-    <marker id="mxEr" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#fc6255"/></marker>
-    <marker id="mxEc" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
-    <marker id="mxEd" markerUnits="userSpaceOnUse" markerWidth="6" markerHeight="4" refX="4.3" refY="2" orient="auto-start-reverse"><path d="M0,0 L6,2 L0,4 z" fill="currentColor"/></marker>
-  </defs>
-  <line x1="30" y1="268" x2="610" y2="268" stroke="#e0a800" stroke-width="4"/>
-  <line x1="520" y1="282" x2="580" y2="282" stroke="#e0a800" stroke-width="2" marker-end="url(#mxEg)"/>
-  <foreignObject x="585.0" y="272.8" width="30" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#e0a800">\({}^{\text{地}}I\)</div></foreignObject>
-  <line x1="70" y1="196" x2="610" y2="196" stroke="currentColor" stroke-width="2" opacity=".6"/>
-  <line x1="70" y1="92" x2="610" y2="92" stroke="currentColor" stroke-width="2" opacity=".6"/>
-  <line x1="80" y1="92" x2="80" y2="196" stroke="currentColor" stroke-width="2" opacity=".6"/>
-  <rect x="80" y="92" width="100" height="104" fill="#3584e4" fill-opacity=".14"><animate attributeName="width" values="100;440;440" dur="7s" repeatCount="indefinite" keyTimes="0;0.86;1"/></rect>
-  <circle cx="103" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="103" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="125" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="125" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="147" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="147" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="169" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="169" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="191" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="191" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="213" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="213" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="235" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="235" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="257" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="257" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="279" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="279" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="301" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="301" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="323" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="323" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="345" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="345" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="367" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="367" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="389" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="389" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="411" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="411" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="433" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="433" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="455" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="455" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="477" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="477" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="499" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="499" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="521" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="521" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="543" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="543" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="565" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="565" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="587" cy="186" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="587" cy="186" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="108" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="108" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="140" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="140" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="172" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="172" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="204" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="204" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="236" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="236" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="268" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="268" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="300" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="300" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="332" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="332" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="364" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="364" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="396" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="396" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="428" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="428" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="460" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="460" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="492" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="492" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="524" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="524" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="556" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="556" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="588" cy="150" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="588" cy="150" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="114" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="114" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="158" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="158" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="202" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="202" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="246" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="246" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="290" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="290" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="334" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="334" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="378" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="378" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="422" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="422" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="466" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="466" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="510" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="510" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="554" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="554" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <circle cx="598" cy="112" r="4" fill="none" stroke="#3584e4" stroke-width="1" opacity=".55"/><circle cx="598" cy="112" r="1.2" fill="#3584e4" opacity=".55"/>
-  <foreignObject x="90.0" y="70.0" width="120" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:#3584e4">\(\text{磁通量 } {}^{\text{地}}\Phi_B\)</div></foreignObject>
-  <line x1="40" y1="265" x2="40" y2="198" stroke="currentColor" stroke-width="1" opacity=".7" marker-start="url(#mxEd)" marker-end="url(#mxEd)"/>
-  <line x1="56" y1="265" x2="56" y2="94" stroke="currentColor" stroke-width="1" opacity=".7" marker-start="url(#mxEd)" marker-end="url(#mxEd)"/>
-  <foreignObject x="18.0" y="218.0" width="20" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(a\)</div></foreignObject>
-  <foreignObject x="60.0" y="166.0" width="20" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:center;color:currentColor">\(b\)</div></foreignObject>
-  <g>
-    <animateTransform attributeName="transform" type="translate" values="0 0;340 0;340 0" keyTimes="0;0.86;1" dur="7s" repeatCount="indefinite"/>
-    <animate attributeName="opacity" values="0;1;1;0" dur="7s" repeatCount="indefinite" keyTimes="0;0.05;0.94;1"/>
-    <line x1="180" y1="86" x2="180" y2="202" stroke="currentColor" stroke-width="5"/>
-    <line x1="190" y1="144" x2="226" y2="144" stroke="currentColor" stroke-width="2" marker-end="url(#mxEc)"/>
-    <foreignObject x="230.0" y="134.8" width="24" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{\text{地}}v\)</div></foreignObject>
-    <line x1="170" y1="106" x2="170" y2="136" stroke="#fc6255" stroke-width="2" marker-end="url(#mxEr)"/>
-    <line x1="170" y1="152" x2="170" y2="182" stroke="#fc6255" stroke-width="2" marker-end="url(#mxEr)"/>
-    <foreignObject x="54.0" y="159.0" width="106" height="27"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:right;color:#fc6255">\(q\cdot{}^{\text{地}}v\cdot{}^{\text{地}}B\)</div></foreignObject>
-  </g>
-  <foreignObject x="400.0" y="18.0" width="230" height="44"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;text-align:left;color:currentColor">\({}^{\text{地}}\mathcal{E} = -\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\)</div></foreignObject>
-</svg>
-</figure>
-
-<p>另一方面，桿子、兩條軌道和軌道另一端的接線，圍成一個長方形的圈。桿子每秒移動 \({}^{\text{地}}v\)，這個圈沿著導線方向的長度就每秒增加 \({}^{\text{地}}v\)。穿過圈的磁通量，是圈沿著導線方向的長度乘上 \(\int_a^b {}^{\text{地}}B\,dr_{\perp}\)，也就是乘上 \(\dfrac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\dfrac{b}{a}\)，所以它每秒增加：</p>
-
-$$
-\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t} = {}^{\text{地}}v\cdot\frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\ln\frac{b}{a}
-$$
-
-<p>兩者的大小相等：電動勢等於磁通量的變化率。電動勢推動的電流，方向總是使它自己產生的磁場去抵抗磁通量的變化（Lenz 定律）；把這個方向記成負號，就寫成 \({}^{\text{地}}\mathcal{E} = -\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\)。</p>
-
-<p><strong>（二）換到桿子的基準。</strong>在桿子自己的基準裡，桿子的電荷是靜止的，所以磁力不可能推動它們。可是電流一定還在，因為圈裡有沒有電流（例如接線會不會發熱），是每個基準都同意的事。那麼，推動電荷的是什麼？3.2 已經回答：在跟著桿子跑的基準裡，導線裡正負電荷的密度不再相等，導線帶了電，它產生的電場沿著桿子推動電荷。同一個電動勢，在一個基準裡來自磁力，在另一個基準裡來自電力。Einstein 在 1905 年那篇相對論論文的開頭，談的正是這件事：磁鐵不動而導體運動，和導體不動而磁鐵運動，產生的電流相同，但是當時的理論卻用兩種不同的原因解釋；相對論說，兩者只是同一件事從兩個基準來看。</p>
-
-<p><strong>（三）磁場隨時間改變。</strong>如果改成導線朝著一個靜止的線圈移動，線圈裡的磁場就會隨時間改變。在導線的基準裡，這是線圈朝著導線移動，線圈的電荷受到磁力，所以線圈上有電動勢；而有沒有電流，是每個基準都同意的事。在線圈的基準裡，線圈的電荷是靜止的，只有電場能推動它們，所以線圈上一定出現一個繞圈的電場；它繞一圈的總和等於磁通量的變化率，不過這種運動方向的完整計算要用到 3.10（見下文）。這就是第三條方程：</p>
-
-$$
-\oint \vec E\cdot d\vec\ell = -\frac{d\Phi_B}{dt}
-$$
-
-<p>它修改了第一步「靜止電荷的電場繞一圈總和是零」：電荷一旦運動，電場就可以繞圈。如果運動電荷只是帶著原本的 Coulomb 電場一起移動、沒有被壓扁，而磁場仍然是 \(\dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\)，那麼它仍然會滿足第一、二、四條方程，卻會違反這一條，差別和 \(\dfrac{{}^{\text{地}}u^2}{c^2}\) 成正比；所以 Faraday 定律正是長度收縮留下的痕跡。嚴格驗證（三）需要電場與磁場在任意方向上的完整變換，而這個變換要用到 3.10 的動量變換。</p>
-
-<p><strong>（四）沒有任何東西在動。</strong>變壓器裡的線圈都不動，只是一個線圈的電流隨時間改變，另一個線圈就產生電動勢（Faraday 1831）。電流改變，代表電荷在加速，這已經超出等速運動電荷的範圍，所以需要 3.9 的假設四；變壓器和電子感應加速器的運作，正是這個假設的實驗證據。</p>
-
-<h2 id="sec-3-8">3.8　（未完工）</h2>
 
 <h3>【位移電流、一個電荷穿過圓環】</h3>
 
