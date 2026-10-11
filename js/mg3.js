@@ -73,7 +73,7 @@
 
   var ax = $('mg3ax'), mov = $('mg3mov'), qc = $('mg3qc'), qt = $('mg3qt'), uu = $('mg3u'), rr = $('mg3r');
   var LB = $('mg3LB'), LE = $('mg3LE'), Lu = $('mg3Lu'), Lr = $('mg3Lr'), Lax = $('mg3Lax');
-  var vE = $('mg3E'), vEa = $('mg3Ea'), vEp = $('mg3Ep'), vB = $('mg3Bv'), dotP = $('mg3P'), g1 = $('mg3g1'), g2 = $('mg3g2');
+  var vQP = $('mg3QP'), vE = $('mg3E'), vEa = $('mg3Ea'), vEp = $('mg3Ep'), vB = $('mg3Bv'), dotP = $('mg3P'), g1 = $('mg3g1'), g2 = $('mg3g2');
   var LEa = $('mg3LEa'), LEp = $('mg3LEp');
   var T = 8, X0 = -1.25, X1 = 1.25;
 
@@ -84,7 +84,7 @@
     var Q = [xq, 0, 0];
 
     setLine(ax, [-2.5, 0, 0], [2.5, 0, 0]);
-    var sa = P([2.5, 0, 0]); Lax.setAttribute('x', f(Math.min(sa[0] + 6, 612))); Lax.setAttribute('y', f(sa[1] - 8));
+    label(Lax, [2.5, 0, 0], 8, -16);
 
     rings.forEach(function (g) {
       var cx = xq + g.dx, bk = '', fr = '', lastB = -2, lastF = -2, i, pts = [];
@@ -118,7 +118,7 @@
     var Pp = [xq + 0.5, 1.0, 0], eh = unit(sub(Pp, Q)), EL = 0.62;
     var Ea = [eh[0] * EL, 0, 0], Ep = [0, eh[1] * EL, 0], Et = add(Pp, mul(eh, EL));
     var bh = cross([1, 0, 0], unit([0, Pp[1], Pp[2]]));   // x̂ × r̂：沿著繞軸的圓
-    setLine(vE, Pp, Et); setLine(vEa, Pp, add(Pp, Ea)); setLine(vEp, Pp, add(Pp, Ep));
+    setLine(vQP, Q, Pp); setLine(vE, Pp, Et); setLine(vEa, Pp, add(Pp, Ea)); setLine(vEp, Pp, add(Pp, Ep));
     setLine(g1, add(Pp, Ea), Et); setLine(g2, add(Pp, Ep), Et);
     setLine(vB, Pp, add(Pp, mul(bh, 0.55)));
     var sP = P(Pp); dotP.setAttribute('cx', f(sP[0])); dotP.setAttribute('cy', f(sP[1]));
