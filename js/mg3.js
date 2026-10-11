@@ -84,7 +84,7 @@
     var Q = [xq, 0, 0];
 
     setLine(ax, [-2.5, 0, 0], [2.5, 0, 0]);
-    label(Lax, [2.5, 0, 0], 8, -16);
+    label(Lax, [2.5, 0, 0], 8, -16); if (+Lax.getAttribute('x') > 640 - 74) Lax.setAttribute('x', 640 - 74);
 
     rings.forEach(function (g) {
       var cx = xq + g.dx, bk = '', fr = '', lastB = -2, lastF = -2, i, pts = [];
