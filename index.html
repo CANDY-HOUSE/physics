@@ -4185,7 +4185,7 @@ $$
 \end{aligned}
 $$
 
-<p>地面上的線圈，電場繞一圈不是零。這就是 Faraday's Law，裡面沒有磁場；下面只是把它改寫成課本的樣子。</p>
+<p>地面上的線圈，電場繞一圈不是零。這就是 Faraday's Law，裡面沒有磁場；下面只是把它改寫成 Faraday 看到的樣子。</p>
 
 $$
 \begin{gathered}
@@ -4220,8 +4220,6 @@ $$
   </g>
 </svg>
 </figure>
-
-<p>線圈逆時針繞，面積的方向是 ⊙（右手定則）：</p>
 
 <figure>
 <svg id="fdb" viewBox="0 0 640 520" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -4273,8 +4271,12 @@ $$
 &= \oint\frac{{}^{\text{地}}u\cdot{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}u\cdot d{}^{\text{地}}\vec\ell_{\perp}\big) = \oint\frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\\[6pt]
 &\phantom{=\ }\text{（}{}^{\text{地}}\vec u\,\times\text{ 把向上變成 ⊙、向下變成 ⊗，長度乘上 }{}^{\text{地}}u\text{）}\\[6pt]
 &= \oint{}^{\text{地}}\vec B\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\ \text{（代入 }{}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\text{）}\\[6pt]
-&= -\frac{1}{d{}^{\text{地}}t}\oint{}^{\text{地}}\vec B\cdot\big(-{}^{\text{地}}\vec u\,d{}^{\text{地}}t\times d{}^{\text{地}}\vec\ell_{\perp}\big) = -\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\ \text{（Faraday's Law）}\\[6pt]
-&\phantom{=\ }\text{（上圖的兩個平行四邊形）}
+&= \frac{1}{d{}^{\text{地}}t}\Big(\underbrace{\sum_{\text{往上走的邊}}{}^{\text{地}}\vec B\cdot\big({}^{\text{地}}\vec u\,d{}^{\text{地}}t\times d{}^{\text{地}}\vec\ell_{\perp}\big)}_{\text{滑出的磁通量}} + \underbrace{\sum_{\text{往下走的邊}}{}^{\text{地}}\vec B\cdot\big({}^{\text{地}}\vec u\,d{}^{\text{地}}t\times d{}^{\text{地}}\vec\ell_{\perp}\big)}_{-\text{（滑進的磁通量）}}\Big)\\[6pt]
+&\phantom{=\ }\text{（}{}^{\text{地}}\vec B\text{ 朝 ⊙；}{}^{\text{地}}\vec u\,d{}^{\text{地}}t\times d{}^{\text{地}}\vec\ell_{\perp}\text{：往上走的邊朝 ⊙，往下走的邊朝 ⊗）}\\[6pt]
+&\phantom{=\ }\text{（}{}^{\text{地}}\vec u\,d{}^{\text{地}}t\times d{}^{\text{地}}\vec\ell_{\perp}\text{ 的大小：上圖兩個平行四邊形的面積）}\\[6pt]
+&= \frac{\text{（滑出的磁通量）} - \text{（滑進的磁通量）}}{d{}^{\text{地}}t} = -\frac{\text{（滑進的磁通量）} - \text{（滑出的磁通量）}}{d{}^{\text{地}}t}\\[6pt]
+&= -\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\ \text{（Faraday's Law）}\\[6pt]
+&\phantom{=\ }\text{（線圈裡的磁通量在 }d{}^{\text{地}}t\text{ 內的變化：}d{}^{\text{地}}\Phi_B = \text{滑進的} - \text{滑出的）}
 \end{aligned}
 $$
 
