@@ -4136,28 +4136,26 @@ $$
 </svg>
 </figure>
 
-<p><strong>地面基準</strong>（3.1）：電場被壓扁，平行分量不變，垂直分量乘上 \({}^{\text{地}}\gamma_{Q}\)；地面上的線圈，對應到 Q 基準時，沿著運動方向的長度是 \({}^{\text{地}}\gamma_{Q}\) 倍：</p>
+<p><strong>Q 基準</strong>：\({}^{Q}E\) 沿著半徑，大小只看 \({}^{Q}r\)，所以 \({}^{Q}\vec E\cdot d{}^{Q}\vec\ell\) 只剩沿著半徑的部分；繞一圈，\({}^{Q}r\) 回到原值：</p>
 
 $$
-{}^{\text{地}}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/},\quad {}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp},\quad d{}^{Q}\ell_{/\mkern-5mu/} = {}^{\text{地}}\gamma_{Q}\cdot d{}^{\text{地}}\ell_{/\mkern-5mu/},\quad d{}^{Q}\vec\ell_{\perp} = d{}^{\text{地}}\vec\ell_{\perp}
+\oint{}^{Q}E_{/\mkern-5mu/}\,d{}^{Q}\ell_{/\mkern-5mu/} + \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \oint{}^{Q}\vec E\cdot d{}^{Q}\vec\ell = \oint{}^{Q}E\,d{}^{Q}r = 0
 $$
-
-<p>代入：</p>
 
 $$
 \begin{aligned}
 &\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
 &= \oint{}^{\text{地}}E_{/\mkern-5mu/}\,d{}^{\text{地}}\ell_{/\mkern-5mu/} + \oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
 &= \oint{}^{Q}E_{/\mkern-5mu/}\cdot\frac{d{}^{Q}\ell_{/\mkern-5mu/}}{{}^{\text{地}}\gamma_{Q}} + \oint{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
-&\phantom{=\ }\text{（代入 }{}^{\text{地}}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/}\text{、}d{}^{\text{地}}\ell_{/\mkern-5mu/} = \tfrac{1}{{}^{\text{地}}\gamma_{Q}}\,d{}^{Q}\ell_{/\mkern-5mu/}\text{）}\\[6pt]
-&\phantom{=\ }\text{（代入 }{}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\text{、}d{}^{\text{地}}\vec\ell_{\perp} = d{}^{Q}\vec\ell_{\perp}\text{）}\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/}\text{、}d{}^{\text{地}}\ell_{/\mkern-5mu/} = \tfrac{1}{{}^{\text{地}}\gamma_{Q}}\,d{}^{Q}\ell_{/\mkern-5mu/}\text{、}{}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\text{、}d{}^{\text{地}}\vec\ell_{\perp} = d{}^{Q}\vec\ell_{\perp}\text{）}\\[6pt]
 &= \frac{1}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}E_{/\mkern-5mu/}\,d{}^{Q}\ell_{/\mkern-5mu/} + {}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
 &= \frac{1}{{}^{\text{地}}\gamma_{Q}}\Big(\underbrace{\oint{}^{Q}E_{/\mkern-5mu/}\,d{}^{Q}\ell_{/\mkern-5mu/} + \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}}_{=\,0\ \text{（Q 基準）}} - \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\Big) + {}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
 &= \Big({}^{\text{地}}\gamma_{Q} - \frac{1}{{}^{\text{地}}\gamma_{Q}}\Big)\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}\gamma_{Q}^2 - 1}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&= \frac{\dfrac{1}{\big(\sqrt{1 - \tfrac{{}^{\text{地}}u^2}{c^2}}\big)^2} - \dfrac{\big(\sqrt{1 - \tfrac{{}^{\text{地}}u^2}{c^2}}\big)^2}{\big(\sqrt{1 - \tfrac{{}^{\text{地}}u^2}{c^2}}\big)^2}}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&= \frac{\dfrac{1 - \big(1 - \tfrac{{}^{\text{地}}u^2}{c^2}\big)}{1 - \tfrac{{}^{\text{地}}u^2}{c^2}}}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{\dfrac{1}{1 - \tfrac{{}^{\text{地}}u^2}{c^2}}\cdot\tfrac{{}^{\text{地}}u^2}{c^2}}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
 &= \frac{{}^{\text{地}}\gamma_{Q}^2\cdot\tfrac{{}^{\text{地}}u^2}{c^2}}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\cdot{}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
-&\phantom{=\ }\text{（代入 }{}^{\text{地}}\gamma_{Q}^2 - 1 = {}^{\text{地}}\gamma_{Q}^2\cdot\tfrac{{}^{\text{地}}u^2}{c^2}\text{；因為 }{}^{\text{地}}\gamma_{Q}^2\cdot\big(1 - \tfrac{{}^{\text{地}}u^2}{c^2}\big) = 1\text{）}\\[6pt]
-&= \frac{{}^{\text{地}}u^2}{c^2}\oint\big({}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\big)\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
-&\phantom{=\ }\text{（代入 }{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp} = {}^{\text{地}}\vec E_{\perp}\text{、}d{}^{Q}\vec\ell_{\perp} = d{}^{\text{地}}\vec\ell_{\perp}\text{）}
+&= \frac{{}^{\text{地}}u^2}{c^2}\oint\big({}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\big)\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp} \neq 0\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp} = {}^{\text{地}}\vec E_{\perp}\text{、}d{}^{Q}\vec\ell_{\perp} = d{}^{\text{地}}\vec\ell_{\perp}\text{；}{}^{\text{地}}\gamma_{Q} = {}^{Q}\gamma_{\text{地}}\text{）}
 \end{aligned}
 $$
 
