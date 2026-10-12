@@ -4136,12 +4136,6 @@ $$
 </svg>
 </figure>
 
-<p><strong>Q 基準</strong>：\({}^{Q}E\) 沿著半徑，大小只看 \({}^{Q}r\)，所以 \({}^{Q}\vec E\cdot d{}^{Q}\vec\ell\) 只剩沿著半徑的部分；繞一圈，\({}^{Q}r\) 回到原值：</p>
-
-$$
-\oint{}^{Q}\vec E\cdot d{}^{Q}\vec\ell = \oint{}^{Q}E\,d{}^{Q}r = 0
-$$
-
 <p><strong>地面基準</strong>（3.1）：電場被壓扁，平行分量不變，垂直分量乘上 \({}^{\text{地}}\gamma_{Q}\)；地面上的線圈，對應到 Q 基準時，沿著運動方向的長度是 \({}^{\text{地}}\gamma_{Q}\) 倍：</p>
 
 $$
@@ -4152,10 +4146,18 @@ $$
 
 $$
 \begin{aligned}
-\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell &= \oint{}^{\text{地}}E_{/\mkern-5mu/}\,d{}^{\text{地}}\ell_{/\mkern-5mu/} + \oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
+&\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
+&= \oint{}^{\text{地}}E_{/\mkern-5mu/}\,d{}^{\text{地}}\ell_{/\mkern-5mu/} + \oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
+&= \oint{}^{Q}E_{/\mkern-5mu/}\cdot\frac{d{}^{Q}\ell_{/\mkern-5mu/}}{{}^{\text{地}}\gamma_{Q}} + \oint{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}E_{/\mkern-5mu/} = {}^{Q}E_{/\mkern-5mu/}\text{、}d{}^{\text{地}}\ell_{/\mkern-5mu/} = \tfrac{1}{{}^{\text{地}}\gamma_{Q}}\,d{}^{Q}\ell_{/\mkern-5mu/}\text{）}\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\text{、}d{}^{\text{地}}\vec\ell_{\perp} = d{}^{Q}\vec\ell_{\perp}\text{）}\\[6pt]
 &= \frac{1}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}E_{/\mkern-5mu/}\,d{}^{Q}\ell_{/\mkern-5mu/} + {}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
-&= \Big({}^{\text{地}}\gamma_{Q} - \frac{1}{{}^{\text{地}}\gamma_{Q}}\Big)\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\ \text{（Q 基準繞一圈是零）}\\[6pt]
-&= \frac{{}^{\text{地}}u^2}{c^2}\cdot{}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell
+&= \frac{1}{{}^{\text{地}}\gamma_{Q}}\Big(\underbrace{\oint{}^{Q}E_{/\mkern-5mu/}\,d{}^{Q}\ell_{/\mkern-5mu/} + \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}}_{=\,0\ \text{（Q 基準）}} - \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\Big) + {}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&= \Big({}^{\text{地}}\gamma_{Q} - \frac{1}{{}^{\text{地}}\gamma_{Q}}\Big)\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}\gamma_{Q}^2 - 1}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&= \frac{{}^{\text{地}}\gamma_{Q}^2\cdot\tfrac{{}^{\text{地}}u^2}{c^2}}{{}^{\text{地}}\gamma_{Q}}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\cdot{}^{\text{地}}\gamma_{Q}\oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}\gamma_{Q}^2 - 1 = {}^{\text{地}}\gamma_{Q}^2\cdot\tfrac{{}^{\text{地}}u^2}{c^2}\text{；因為 }{}^{\text{地}}\gamma_{Q}^2\cdot\big(1 - \tfrac{{}^{\text{地}}u^2}{c^2}\big) = 1\text{）}\\[6pt]
+&= \frac{{}^{\text{地}}u^2}{c^2}\oint\big({}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\big)\cdot d{}^{Q}\vec\ell_{\perp} = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
+&\phantom{=\ }\text{（代入 }{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp} = {}^{\text{地}}\vec E_{\perp}\text{、}d{}^{Q}\vec\ell_{\perp} = d{}^{\text{地}}\vec\ell_{\perp}\text{）}
 \end{aligned}
 $$
 
@@ -4243,13 +4245,14 @@ $$
 \begin{gathered}
 d{}^{\text{地}}\Phi_B = \oint\big({}^{\text{地}}\vec u\,d{}^{\text{地}}t\times{}^{\text{地}}\vec B\big)\cdot d{}^{\text{地}}\vec\ell\\[6pt]
 {}^{\text{地}}\vec u\times{}^{\text{地}}\vec B = \frac{{}^{\text{地}}\vec u\times\big({}^{\text{地}}\vec u\times{}^{\text{地}}\vec E\big)}{c^2} = -\frac{{}^{\text{地}}u^2}{c^2}\cdot{}^{\text{地}}\vec E_{\perp}\ \text{（3.4）}\\[6pt]
-\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\ \text{（Faraday's Law）}
+\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t} = -\frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell = -\frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\ \text{（}{}^{\text{地}}\vec E_{\perp}\text{ 和 }d{}^{\text{地}}\vec\ell_{/\mkern-5mu/}\text{ 垂直）}\\[6pt]
+\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp} = -\frac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\ \text{（Faraday's Law）}
 \end{gathered}
 $$
 
 <p>許多等速運動的電荷：每一顆各自成立，相加也成立。</p>
 
-<p><strong>磁場不必存在</strong>：線圈裡的電荷是靜止的，推動它們的只有電場（3.1）；電動勢 \(\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\) 完全由電場算出。磁場只是把 \(\dfrac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell\) 換個名字、寫成 \(-\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\) 的記帳工具，從頭到尾沒有出力。</p>
+<p><strong>磁場不必存在</strong>：線圈裡的電荷是靜止的，推動它們的只有電場（3.1）；電動勢 \(\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\) 完全由電場算出。磁場只是把 \(\dfrac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\) 換個名字、寫成 \(-\dfrac{d{}^{\text{地}}\Phi_B}{d{}^{\text{地}}t}\) 的記帳工具，從頭到尾沒有出力。</p>
 
 <p>（線圈若等速平移，換到線圈自己的基準，上式在那個基準照樣成立。電流改變、彎曲的導線、旋轉的線圈、在軌道上滑動的桿子，都牽涉加速的電荷，或各部分彼此相對運動，不在本節範圍內。）</p>
 
