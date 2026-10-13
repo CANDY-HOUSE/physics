@@ -4172,7 +4172,7 @@ $$
 
 $$
 \begin{aligned}
-&\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
+&\text{對單位電荷做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
 &= \oint{}^{\text{地}}\vec E_{/\mkern-5mu/}\cdot d{}^{\text{地}}\vec\ell_{/\mkern-5mu/} + \oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
 &= \oint{}^{Q}\vec E_{/\mkern-5mu/}\cdot\frac{d{}^{Q}\vec\ell_{/\mkern-5mu/}}{{}^{\text{地}}\gamma_{Q}} + \oint{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
 &\phantom{=\ }\text{（代入 }{}^{\text{地}}\vec E_{/\mkern-5mu/} = {}^{Q}\vec E_{/\mkern-5mu/}\text{、}d{}^{\text{地}}\vec\ell_{/\mkern-5mu/} = \tfrac{1}{{}^{\text{地}}\gamma_{Q}}\,d{}^{Q}\vec\ell_{/\mkern-5mu/}\text{、}{}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\text{、}d{}^{\text{地}}\vec\ell_{\perp} = d{}^{Q}\vec\ell_{\perp}\text{）}\\[6pt]
@@ -4270,7 +4270,8 @@ $$
 
 $$
 \begin{aligned}
-&\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\ \text{（上面的推導）}\\[6pt]
+&\text{對單位電荷做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
+&\phantom{=\ }\text{（上面的推導）}\\[6pt]
 &= \oint\frac{{}^{\text{地}}u\cdot{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}u\cdot d{}^{\text{地}}\vec\ell_{\perp}\big) = \oint\frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\\[6pt]
 &\phantom{=\ }\text{（}{}^{\text{地}}\vec u\,\times\text{ 把向上變成 ⊙、向下變成 ⊗，長度乘上 }{}^{\text{地}}u\text{）}\\[6pt]
 &= \oint{}^{\text{地}}\vec B\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\ \text{（代入 }{}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\text{）}\\[6pt]
@@ -4285,7 +4286,7 @@ $$
 
 $$
 \begin{gathered}
-\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\\[6pt]
+\text{對單位電荷做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\\[6pt]
 \frac{\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell}{d{}^{\text{地}}A} = -\frac{1}{d{}^{\text{地}}A}\cdot\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t} = -\frac{\partial{}^{\text{地}}\vec B}{\partial{}^{\text{地}}t}\\[6pt]
 \text{（小塊的磁通量 }{}^{\text{地}}\vec\Phi_B = {}^{\text{地}}\vec B\cdot d{}^{\text{地}}A\text{（3.6））}\\[6pt]
 \text{（第二列：兩邊同除以小塊的面積 }d{}^{\text{地}}A\text{）}
@@ -4542,6 +4543,8 @@ $$
 </svg>
 </figure>
 
+<p>我並不認為世界上真的有磁力、磁場；磁場繞一圈，也沒有電場繞一圈那種「對單位電荷做功一圈」的意義。不過，\({}^{\text{地}}B\) 確實和 \(2\pi r_{\perp}\) 成反比，所以不妨繞一圈，看看把 \(2\pi r_{\perp}\) 消掉會怎樣：</p>
+
 $$
 \begin{gathered}
 {}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi\bcancel{r_{\perp}}}\cdot\bcancel{r_{\perp}}\,d\varphi = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi}\,d\varphi\\[6pt]
@@ -4615,12 +4618,10 @@ $$
 <p>\(yz\)、\(zx\) 兩個小長方形同理：</p>
 
 $$
-\nabla\times{}^{\text{地}}\vec B = \dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}\vec J\ \text{（Ampère's Law 的微分形式）}
+\nabla\times{}^{\text{地}}\vec B = \dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}\vec J\ \text{（Ampère's Law 的穩態微分形式）}
 $$
 
-<p>彎曲的導線裡，電子轉彎時加速，要用 3.9 的假設四；Biot、Savart 與 Ampère 在 1820 年量到的彎曲導線的磁場，同樣滿足 Ampère's Law。</p>
-
-<h3>【位移電流、一個電荷穿過圓環】</h3>
+<h3>【暫態、Transient State】</h3>
 
 <p>3.6 的 Ampère's Law 只看電流。現在讓一個電荷 \(Q\) 以速度 \({}^{\text{地}}u\) 沿著一個半徑為 \(r_{\perp}\) 的圓環的軸線，向右穿過這個圓環。電荷在圓環左邊時，沒有任何電流穿過圓環所圍的圓盤；可是電荷在運動，所以圓環上處處都有磁場。以圓盤中心為原點，\({}^{\text{地}}x_{Q}\) 是電荷此刻的位置，電荷在圓盤左邊時 \({}^{\text{地}}x_{Q}\) 是負的。圓環上每一點到軸線的距離都是 \(r_{\perp}\)，所以 3.1 的結果（把 \(q\) 基準換成地面基準）就是圓環上電場的垂直分量；再用第三步的 \({}^{\text{地}}B = \dfrac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}E_\perp\) 算出磁場，然後沿著圓環繞一圈：</p>
 
