@@ -4125,7 +4125,7 @@ $$
 </figure>
 
 $$
-\oint{}^{Q}\vec E_{/\mkern-5mu/}\cdot d{}^{Q}\vec\ell_{/\mkern-5mu/} + \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \oint{}^{Q}\vec E\cdot d{}^{Q}\vec\ell = 0
+\oint{}^{Q}\vec E_{/\mkern-5mu/}\cdot d{}^{Q}\vec\ell_{/\mkern-5mu/} + \oint{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp} = \oint{}^{Q}\vec E\cdot d{}^{Q}\vec\ell = 0\ \text{（白做功一圈）}
 $$
 
 <figure>
@@ -4172,7 +4172,7 @@ $$
 
 $$
 \begin{aligned}
-&\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
+&\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\\[6pt]
 &= \oint{}^{\text{地}}\vec E_{/\mkern-5mu/}\cdot d{}^{\text{地}}\vec\ell_{/\mkern-5mu/} + \oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\\[6pt]
 &= \oint{}^{Q}\vec E_{/\mkern-5mu/}\cdot\frac{d{}^{Q}\vec\ell_{/\mkern-5mu/}}{{}^{\text{地}}\gamma_{Q}} + \oint{}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\cdot d{}^{Q}\vec\ell_{\perp}\\[6pt]
 &\phantom{=\ }\text{（代入 }{}^{\text{地}}\vec E_{/\mkern-5mu/} = {}^{Q}\vec E_{/\mkern-5mu/}\text{、}d{}^{\text{地}}\vec\ell_{/\mkern-5mu/} = \tfrac{1}{{}^{\text{地}}\gamma_{Q}}\,d{}^{Q}\vec\ell_{/\mkern-5mu/}\text{、}{}^{\text{地}}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\cdot{}^{Q}\vec E_{\perp}\text{、}d{}^{\text{地}}\vec\ell_{\perp} = d{}^{Q}\vec\ell_{\perp}\text{）}\\[6pt]
@@ -4270,7 +4270,7 @@ $$
 
 $$
 \begin{aligned}
-&\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\ \text{（上面的推導）}\\[6pt]
+&\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = \frac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\ \text{（上面的推導）}\\[6pt]
 &= \oint\frac{{}^{\text{地}}u\cdot{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}u\cdot d{}^{\text{地}}\vec\ell_{\perp}\big) = \oint\frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\\[6pt]
 &\phantom{=\ }\text{（}{}^{\text{地}}\vec u\,\times\text{ 把向上變成 ⊙、向下變成 ⊗，長度乘上 }{}^{\text{地}}u\text{）}\\[6pt]
 &= \oint{}^{\text{地}}\vec B\cdot\big({}^{\text{地}}\vec u\times d{}^{\text{地}}\vec\ell_{\perp}\big)\ \text{（代入 }{}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E_{\perp}}{c^2}\text{）}\\[6pt]
@@ -4285,7 +4285,7 @@ $$
 
 $$
 \begin{gathered}
-\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\\[6pt]
+\text{做功一圈} = \oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\\[6pt]
 \frac{\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell}{d{}^{\text{地}}A} = -\frac{1}{d{}^{\text{地}}A}\cdot\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t} = -\frac{\partial{}^{\text{地}}\vec B}{\partial{}^{\text{地}}t}\\[6pt]
 \text{（小塊的磁通量 }{}^{\text{地}}\vec\Phi_B = {}^{\text{地}}\vec B\cdot d{}^{\text{地}}A\text{（3.6））}\\[6pt]
 \text{（第二列：兩邊同除以小塊的面積 }d{}^{\text{地}}A\text{）}
@@ -4451,21 +4451,44 @@ $$
 
 <h2 id="sec-3-8">3.8　（未完工）</h2>
 
-<p>以下只討論一種情形：每一顆移動的電荷，都屬於一條無限長、連續、線密度處處相同、沿直線等速前進的電荷流（直導線），而且這些直線在地面基準裡不動，所以每一點的電場、磁場都不隨時間改變。單獨一顆等速運動的電荷不屬於這種情形：它經過時，附近的電場隨時間改變，下面的結果須再加一項（3.8）。</p>
+<h3>【穩態 Steady State】</h3>
 
-<p><strong>直導線的磁場</strong>（地面基準）：把 3.4 結果裡的 \(\dfrac{1}{\varepsilon_0c^2}\) 記作 \(\mu_0\)：</p>
+<p>電荷沿著長直導線等速前進、電荷密度處處相同。</p>
+
+<figure>
+<svg id="amd" viewBox="0 0 640 250" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="amdG" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#83C167"/></marker>
+    <marker id="amdR" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#FC6255"/></marker>
+    <marker id="amdD" markerUnits="userSpaceOnUse" markerWidth="7" markerHeight="5" refX="5" refY="2.5" orient="auto-start-reverse"><path d="M0,0 L7,2.5 L0,5 z" fill="#F0AC5F"/></marker>
+  </defs>
+  <text x="24" y="30" fill="currentColor" font-size="15" font-weight="700">地面基準：無限長的直導線（不動）</text>
+  <rect x="40" y="133.0" width="560" height="14" rx="7" fill="#BBBBBB" fill-opacity=".18" stroke="#BBBBBB" stroke-opacity=".6"/>
+  <text x="606" y="145.0" fill="#BBBBBB" font-size="16">…</text><text x="22" y="145.0" fill="#BBBBBB" font-size="16">…</text>
+  <circle cx="80.0" cy="140.0" r="5" fill="#58C4DD"/><text x="80.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="146.0" cy="140.0" r="5" fill="#58C4DD"/><text x="146.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="212.0" cy="140.0" r="5" fill="#58C4DD"/><text x="212.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="278.0" cy="140.0" r="5" fill="#58C4DD"/><text x="278.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="344.0" cy="140.0" r="5" fill="#58C4DD"/><text x="344.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="410.0" cy="140.0" r="5" fill="#58C4DD"/><text x="410.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="476.0" cy="140.0" r="5" fill="#58C4DD"/><text x="476.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <circle cx="542.0" cy="140.0" r="5" fill="#58C4DD"/><text x="542.0" y="143.5" text-anchor="middle" font-size="10" font-weight="700" fill="#1a1a1a">−</text>
+  <line x1="210" y1="170.0" x2="140" y2="170.0" stroke="#83C167" stroke-width="3" marker-end="url(#amdG)"/>
+  <foreignObject x="123.0" y="180.0" width="110" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">電子 \({}^{\text{地}}\vec u\)</span></div></foreignObject>
+  <line x1="420" y1="170.0" x2="500" y2="170.0" stroke="#FC6255" stroke-width="3" marker-end="url(#amdR)"/>
+  <foreignObject x="407.0" y="180.0" width="110" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#FC6255;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">電流 \({}^{\text{地}}I\)</span></div></foreignObject>
+  <circle cx="320.0" cy="70.0" r="9" fill="none" stroke="#58C4DD" stroke-width="1.8"/><circle cx="320.0" cy="70.0" r="2.6" fill="#58C4DD"/>
+  <circle cx="320.0" cy="210.0" r="9" fill="none" stroke="#58C4DD" stroke-width="1.8"/><line x1="314.0" y1="204.0" x2="326.0" y2="216.0" stroke="#58C4DD" stroke-width="1.8"/><line x1="314.0" y1="216.0" x2="326.0" y2="204.0" stroke="#58C4DD" stroke-width="1.8"/>
+  <foreignObject x="334.0" y="58.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\({}^{\text{地}}\vec B\)</span></div></foreignObject>
+  <foreignObject x="334.0" y="198.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\({}^{\text{地}}\vec B\)</span></div></foreignObject>
+  <line x1="280.0" y1="131.0" x2="280.0" y2="70.0" stroke="#F0AC5F" stroke-width="1.4" marker-start="url(#amdD)" marker-end="url(#amdD)"/>
+  <line x1="274.0" y1="70.0" x2="310.0" y2="70.0" stroke="#F0AC5F" stroke-opacity=".5" stroke-width="1" stroke-dasharray="3 3"/>
+  <foreignObject x="241.0" y="89.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(r_{\perp}\)</span></div></foreignObject>
+</svg>
+</figure>
 
 $$
-\mu_0 \overset{\text{定義}}{=} \frac{1}{\varepsilon_0c^2},\qquad
-{}^{\text{地}}B = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi r_{\perp}} = \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi r_{\perp}}
-$$
-
-<p>電流的方向，規定為正電荷移動的方向，也就是負電荷移動的反方向（3.4 的電子向左移動，電流向右）。把 \({}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\) 用在電子上（只用電子自己的電場）：電子的 \({}^{\text{地}}\vec u\) 向左；電子帶負電，它的 \({}^{\text{地}}\vec E\) 指向導線；兩個方向都反過來，所以 \({}^{\text{地}}\vec u\times{}^{\text{地}}\vec E\) 和「向右 × 向外」同方向。可得：右手拇指指向電流時，四指彎曲的方向就是 \({}^{\text{地}}\vec B\) 的方向，沿著繞導線的圓。</p>
-
-<p><strong>繞一圈</strong>：取一個不碰到導線的圈（形狀任意，也不必落在同一個平面上），\(d{}^{\text{地}}\vec\ell\) 是順著繞行方向的一小段；把 \({}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell\) 沿著圈一段一段加起來，記作 \(\oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell\)。把圈投影到和導線垂直的平面上：導線的影子是一點，\(d{}^{\text{地}}\vec\ell\) 的影子對這一點張開角度 \(d\varphi\)（順著 \({}^{\text{地}}\vec B\) 的方向為正）。\(d{}^{\text{地}}\vec\ell\) 平行於導線的分量、指向導線的分量，都和 \({}^{\text{地}}\vec B\) 垂直，只剩下沿著圓周的分量 \(r_{\perp}\,d\varphi\)：</p>
-
-$$
-{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi\bcancel{r_{\perp}}}\cdot\bcancel{r_{\perp}}\,d\varphi = \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\,d\varphi
+{}^{\text{地}}\vec B = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi r_{\perp}}\cdot\big({}^{\text{地}}\hat I\times\hat r_{\perp}\big)\ \text{（3.2）}
 $$
 
 <figure>
@@ -4516,29 +4539,22 @@ $$
   <foreignObject x="341.0" y="207.0" width="34" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#FC6255;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\({}^{\text{地}}I\)</span></div></foreignObject>
   <text x="346" y="34" fill="currentColor" font-size="15" font-weight="700">圈沒有包住導線</text>
   <line x1="330" y1="44" x2="330" y2="290" stroke="#BBBBBB" stroke-opacity=".35"/>
-  <text x="320" y="320" text-anchor="middle" fill="currentColor" fill-opacity=".85" font-size="13">包住：角度加起來 2π；沒包住：每一個角度一正一負，相消</text>
 </svg>
 </figure>
 
-<p>\(r_{\perp}\) 也被消去了：3.5 消去的是球面面積裡的 \({}^{Q}r^2\)，這裡消去的是圓周長度裡的 \(r_{\perp}\)。圈包住導線時，繞一圈的角度加起來是 \(2\pi\)（繞行方向與電流符合右手定則時為正；繞 \(N\) 圈則為 \(N\) 倍）；沒有包住時，每一個角度一正一負，剛好抵消：</p>
-
 $$
-\oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \frac{\mu_0\cdot{}^{\text{地}}I}{2\pi}\cdot 2\pi = \mu_0\cdot{}^{\text{地}}I\ \text{（包住）},\qquad
+\begin{gathered}
+{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi\bcancel{r_{\perp}}}\cdot\bcancel{r_{\perp}}\,d\varphi = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi}\,d\varphi\\[6pt]
+\text{（}d{}^{\text{地}}\vec\ell\text{ 只有沿著圓周的分量 }r_{\perp}\,d\varphi\text{ 和 }{}^{\text{地}}\vec B\text{ 同方向）}\\[10pt]
+\oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I}{2\pi}\cdot 2\pi = \dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I\ \text{（包住）}\\[6pt]
 \oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell = 0\ \text{（沒包住）}
+\end{gathered}
 $$
 
-<p>許多直導線（方向可以不同）：每一條的貢獻直接相加；沒包住的都貢獻零，只剩穿過圈所圍曲面的電流：和繞行方向符合右手定則的為正，相反的為負（被繞 \(N\) 圈的算 \(N\) 次），加起來記作 \(I_{\text{內}}\)：</p>
-
-$$
-\oint\vec B\cdot d\vec\ell = \mu_0\cdot I_{\text{內}}\ \text{（Ampère's Law 的積分形式）}
-$$
-
-<p><strong>電流密度</strong> \(\vec J\)：比照 3.5 電場的定義二，\(\vec J\) 的大小是單位垂直面積流過的電流，方向是電流的方向；傾斜的一小塊面積 \(dA\)，流過的電流是 \(\vec J\cdot d\vec A\)（3.5 的投影）。</p>
-
-<p><strong>微分形式</strong>：在點 \((x, y, z)\) 取一個小長方形，兩邊是 \(dx\)、\(dy\)，繞行方向從 \(+z\) 方向看是逆時針；穿過它的電流是 \(J_z\cdot dx\cdot dy\)：</p>
+<p><strong>微分形式</strong>：取一小塊，同除以它的面積。\({}^{\text{地}}\vec J\)：單位垂直面積流過的電流，方向是電流的方向：</p>
 
 <figure>
-<svg id="crl" viewBox="0 0 640 330" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+<svg id="crl" viewBox="0 0 640 310" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <marker id="crlB" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#58C4DD"/></marker>
     <marker id="crlW" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="currentColor"/></marker>
@@ -4579,34 +4595,30 @@ $$
   <foreignObject x="116.0" y="281.0" width="20" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(x\)</div></foreignObject>
   <foreignObject x="56.0" y="218.0" width="20" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(y\)</div></foreignObject>
   <foreignObject x="38.0" y="281.0" width="20" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(z\)</div></foreignObject>
-  <text x="320" y="314" text-anchor="middle" fill="currentColor" fill-opacity=".85" font-size="13">從 +z 看，逆時針繞一圈；yz、zx 兩個小長方形同理</text>
 </svg>
 </figure>
 
 $$
 \begin{aligned}
-\text{下、上兩邊：}&\ B_x(y)\cdot dx - B_x(y + dy)\cdot dx = -\frac{\partial B_x}{\partial y}\,dy\cdot dx\\[6pt]
-\text{右、左兩邊：}&\ B_y(x + dx)\cdot dy - B_y(x)\cdot dy = \frac{\partial B_y}{\partial x}\,dx\cdot dy
+\text{下、上兩邊：}&\ {}^{\text{地}}B_x(y)\cdot d{}^{\text{地}}x - {}^{\text{地}}B_x(y + d{}^{\text{地}}y)\cdot d{}^{\text{地}}x = -\frac{\partial{}^{\text{地}}B_x}{\partial{}^{\text{地}}y}\,d{}^{\text{地}}y\cdot d{}^{\text{地}}x\\[6pt]
+\text{右、左兩邊：}&\ {}^{\text{地}}B_y(x + d{}^{\text{地}}x)\cdot d{}^{\text{地}}y - {}^{\text{地}}B_y(x)\cdot d{}^{\text{地}}y = \frac{\partial{}^{\text{地}}B_y}{\partial{}^{\text{地}}x}\,d{}^{\text{地}}x\cdot d{}^{\text{地}}y
 \end{aligned}
 $$
 
-<p>四邊加起來，就是繞小長方形一圈的 \(\oint\vec B\cdot d\vec\ell\)；由 Ampère's Law，它等於 \(\mu_0\) 乘以穿過的電流：</p>
-
 $$
-\Big(\frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}\Big)\,dx\cdot dy = \mu_0\cdot J_z\cdot dx\cdot dy
-$$
-
-<p>兩邊同除以 \(dx\cdot dy\)；\(yz\)、\(zx\) 兩個小長方形同理（把 \(x, y, z\) 輪換成 \(y, z, x\)，再輪換成 \(z, x, y\)）。把 \(\nabla\) 和 \(\vec B\) 的外積記作 \(\nabla\times\vec B\)：</p>
-
-$$
-\begin{gathered}
-\nabla\times\vec B = \Big(\frac{\partial B_z}{\partial y} - \frac{\partial B_y}{\partial z},\ \frac{\partial B_x}{\partial z} - \frac{\partial B_z}{\partial x},\ \frac{\partial B_y}{\partial x} - \frac{\partial B_x}{\partial y}\Big)\\[6pt]
-\nabla\times\vec B = \mu_0\cdot\vec J\ \text{（Ampère's Law 的微分形式）}
-\end{gathered}
+\begin{aligned}
+&\frac{\oint{}^{\text{地}}\vec B\cdot d{}^{\text{地}}\vec\ell}{d{}^{\text{地}}x\cdot d{}^{\text{地}}y} = \frac{\partial{}^{\text{地}}B_y}{\partial{}^{\text{地}}x} - \frac{\partial{}^{\text{地}}B_x}{\partial{}^{\text{地}}y} = \Big(\frac{\partial}{\partial{}^{\text{地}}x},\ \frac{\partial}{\partial{}^{\text{地}}y}\Big)\times\big({}^{\text{地}}B_x,\ {}^{\text{地}}B_y\big)\\[6pt]
+&\frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}I_{\text{內}}}{d{}^{\text{地}}x\cdot d{}^{\text{地}}y} = \frac{\dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}J_z\cdot d{}^{\text{地}}x\cdot d{}^{\text{地}}y}{d{}^{\text{地}}x\cdot d{}^{\text{地}}y} = \dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}J_z
+\end{aligned}
 $$
 
-<p>彎曲的導線裡，電子在轉彎處有加速度，這已超出等速運動電荷的範圍，須用到 3.9 的假設四；不過 Biot、Savart 與 Ampère 在 1820 年已用實驗量過彎曲導線的磁場，結果同樣滿足 Ampère's Law。</p>
+<p>\(yz\)、\(zx\) 兩個小長方形同理：</p>
 
+$$
+\nabla\times{}^{\text{地}}\vec B = \dfrac{1}{\varepsilon_0c^2}\cdot{}^{\text{地}}\vec J\ \text{（Ampère's Law 的微分形式）}
+$$
+
+<p>彎曲的導線裡，電子轉彎時加速，要用 3.9 的假設四；Biot、Savart 與 Ampère 在 1820 年量到的彎曲導線的磁場，同樣滿足 Ampère's Law。</p>
 
 <h3>【位移電流、一個電荷穿過圓環】</h3>
 
@@ -5522,9 +5534,87 @@ $$
 
 <h3>【產生電場的電荷加速】</h3>
 
-<p>上面的推導裡，產生電場的電荷都一直沿直線等速運動；線圈裡的電荷則可以任意加速。若產生電場的電荷 \(Q\) 本身加速，就沒有任何一個慣性基準能讓 \(Q\) 一直靜止，所以無法用 3.1 的實驗（在 \(Q\) 基準裡量到 Coulomb 定律）決定它的電場。即使把 \(Q\) 固定在上面的火箭裡，火箭也不是慣性基準，3.1 的實驗同樣無法使用。</p>
+<p>\(Q\) 加速時，沒有任何一個慣性基準能讓它一直靜止，3.1 的實驗用不上，因此加上 3.9 的假設四。先把等速的 \(Q\) 的電場、磁場（3.1、3.4）寫成兩個量的微分。地面基準裡，\(Q\) 以 \({}^{\text{地}}u\) 沿 \(x\) 等速前進，\({}^{\text{地}}t = 0\) 時經過原點；場點在 \(Q\) 的路徑所在的平面上（\(z = 0\)）：</p>
 
-<p>Coulomb 定律只描述一直靜止的電荷的電場；相對論（第一章）只把一個慣性基準裡的量換到另一個慣性基準。兩者都無法決定加速電荷的電場，因此需要 3.9 的假設四。</p>
+$$
+\begin{gathered}
+X = {}^{\text{地}}x - {}^{\text{地}}u\cdot{}^{\text{地}}t,\qquad D = \sqrt{{}^{\text{地}}\gamma_{Q}^2\,X^2 + y^2 + z^2}\\[6pt]
+{}^{\text{地}}\varphi \overset{\text{定義}}{=} \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}}{D},\qquad
+{}^{\text{地}}\vec A \overset{\text{定義}}{=} \frac{{}^{\text{地}}\vec u}{c^2}\cdot{}^{\text{地}}\varphi = \Big(\frac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}\varphi,\ 0,\ 0\Big)
+\end{gathered}
+$$
+
+<p>（\(X\)：場點和 \(Q\) 此刻的位置沿 \(x\) 的距離。）偏微分：</p>
+
+$$
+\begin{aligned}
+&\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x} = \frac{Q}{4\pi\varepsilon_0}\cdot{}^{\text{地}}\gamma_{Q}\cdot\Big(-\frac{1}{2}\Big)\cdot\frac{2\,{}^{\text{地}}\gamma_{Q}^2\,X}{D^3} = -\frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}^3\,X}{D^3}\\[6pt]
+&\phantom{=\ }\text{（}\tfrac{\partial X}{\partial{}^{\text{地}}x} = 1\text{）}\\[6pt]
+&\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}t} = \frac{Q}{4\pi\varepsilon_0}\cdot{}^{\text{地}}\gamma_{Q}\cdot\Big(-\frac{1}{2}\Big)\cdot\frac{2\,{}^{\text{地}}\gamma_{Q}^2\,X\cdot\big(-{}^{\text{地}}u\big)}{D^3} = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}^3\,X\cdot{}^{\text{地}}u}{D^3}\\[6pt]
+&\phantom{=\ }\text{（}\tfrac{\partial X}{\partial{}^{\text{地}}t} = -\,{}^{\text{地}}u\text{）}\\[6pt]
+&\frac{\partial{}^{\text{地}}\varphi}{\partial y} = \frac{Q}{4\pi\varepsilon_0}\cdot{}^{\text{地}}\gamma_{Q}\cdot\Big(-\frac{1}{2}\Big)\cdot\frac{2y}{D^3} = -\frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}\,y}{D^3}\\[6pt]
+&\frac{\partial{}^{\text{地}}\varphi}{\partial z} = -\frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}\,z}{D^3} = 0\ \text{（}z = 0\text{）}
+\end{aligned}
+$$
+
+<p>電場：</p>
+
+$$
+\begin{aligned}
+&-\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x} - \frac{\partial{}^{\text{地}}A_x}{\partial{}^{\text{地}}t} = -\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x} - \frac{{}^{\text{地}}u}{c^2}\cdot\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}t}\\[6pt]
+&= \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}^3\,X}{D^3} - \frac{{}^{\text{地}}u}{c^2}\cdot\frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}^3\,X\cdot{}^{\text{地}}u}{D^3}\\[6pt]
+&\phantom{=\ }\text{（代入上面兩式）}\\[6pt]
+&= \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}^3\,X}{D^3}\cdot\Big(1 - \frac{{}^{\text{地}}u^2}{c^2}\Big) = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}\,X}{D^3} = {}^{\text{地}}E_{/\mkern-5mu/}\\[6pt]
+&\phantom{=\ }\text{（}{}^{\text{地}}\gamma_{Q}^2\cdot\big(1 - \tfrac{{}^{\text{地}}u^2}{c^2}\big) = 1\text{；最後一步：3.1 的 }E_{/\mkern-5mu/}\text{，}X\text{ 就是 3.1 的 }-x_{Q}\text{）}\\[10pt]
+&-\frac{\partial{}^{\text{地}}\varphi}{\partial y} - \frac{\partial{}^{\text{地}}A_y}{\partial{}^{\text{地}}t} = -\frac{\partial{}^{\text{地}}\varphi}{\partial y} - 0 = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{\text{地}}\gamma_{Q}\,y}{D^3} = {}^{\text{地}}E_{\perp}\\[6pt]
+&\phantom{=\ }\text{（3.1 的 }E_{\perp}\text{，}y\text{ 就是 }r_{\perp}\text{）}
+\end{aligned}
+$$
+
+<p>磁場：\({}^{\text{地}}\vec A\) 只有 \(x\) 分量；在 \(z = 0\) 的平面上，\(\dfrac{\partial{}^{\text{地}}A_x}{\partial z} = \dfrac{{}^{\text{地}}u}{c^2}\cdot\dfrac{\partial{}^{\text{地}}\varphi}{\partial z} = 0\)：</p>
+
+$$
+\begin{aligned}
+&\nabla\times{}^{\text{地}}\vec A = \Big(\frac{\partial{}^{\text{地}}A_z}{\partial y} - \frac{\partial{}^{\text{地}}A_y}{\partial z},\ \frac{\partial{}^{\text{地}}A_x}{\partial z} - \frac{\partial{}^{\text{地}}A_z}{\partial{}^{\text{地}}x},\ \frac{\partial{}^{\text{地}}A_y}{\partial{}^{\text{地}}x} - \frac{\partial{}^{\text{地}}A_x}{\partial y}\Big)\\[6pt]
+&= \Big(0,\ 0,\ -\frac{\partial{}^{\text{地}}A_x}{\partial y}\Big)\\[6pt]
+&-\frac{\partial{}^{\text{地}}A_x}{\partial y} = -\frac{{}^{\text{地}}u}{c^2}\cdot\frac{\partial{}^{\text{地}}\varphi}{\partial y} = \frac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}E_{\perp} = {}^{\text{地}}B\\[6pt]
+&\phantom{=\ }\text{（3.4：}{}^{\text{地}}\vec B = \tfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\text{，朝 ⊙）}
+\end{aligned}
+$$
+
+<p>每一點都在某一個包含 \(Q\) 的路徑的平面上，所以在每一點：</p>
+
+$$
+\begin{gathered}
+{}^{\text{地}}\vec E = -\nabla{}^{\text{地}}\varphi - \frac{\partial{}^{\text{地}}\vec A}{\partial{}^{\text{地}}t},\qquad {}^{\text{地}}\vec B = \nabla\times{}^{\text{地}}\vec A\\[6pt]
+\nabla{}^{\text{地}}\varphi = \Big(\frac{\partial{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x},\ \frac{\partial{}^{\text{地}}\varphi}{\partial y},\ \frac{\partial{}^{\text{地}}\varphi}{\partial z}\Big)
+\end{gathered}
+$$
+
+<p><strong>只要電場、磁場是這樣由 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\) 微分出來的，Faraday's Law 就一定成立</strong>（偏微分的先後次序可以交換）：</p>
+
+$$
+\begin{aligned}
+&\big(\nabla\times\nabla{}^{\text{地}}\varphi\big)_x = \frac{\partial^2{}^{\text{地}}\varphi}{\partial y\,\partial z} - \frac{\partial^2{}^{\text{地}}\varphi}{\partial z\,\partial y} = 0\\[6pt]
+&\big(\nabla\times\nabla{}^{\text{地}}\varphi\big)_y = \frac{\partial^2{}^{\text{地}}\varphi}{\partial z\,\partial{}^{\text{地}}x} - \frac{\partial^2{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x\,\partial z} = 0\\[6pt]
+&\big(\nabla\times\nabla{}^{\text{地}}\varphi\big)_z = \frac{\partial^2{}^{\text{地}}\varphi}{\partial{}^{\text{地}}x\,\partial y} - \frac{\partial^2{}^{\text{地}}\varphi}{\partial y\,\partial{}^{\text{地}}x} = 0\\[6pt]
+&\nabla\times\frac{\partial{}^{\text{地}}\vec A}{\partial{}^{\text{地}}t} = \frac{\partial}{\partial{}^{\text{地}}t}\big(\nabla\times{}^{\text{地}}\vec A\big) = \frac{\partial{}^{\text{地}}\vec B}{\partial{}^{\text{地}}t}\\[6pt]
+&\nabla\times{}^{\text{地}}\vec E = -\nabla\times\nabla{}^{\text{地}}\varphi - \nabla\times\frac{\partial{}^{\text{地}}\vec A}{\partial{}^{\text{地}}t} = -\frac{\partial{}^{\text{地}}\vec B}{\partial{}^{\text{地}}t}\ \text{（代入上面四式）}
+\end{aligned}
+$$
+
+<p><strong>假設四</strong>（3.9 的同一件事，寫成 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\) 的形式）：\(Q\) 任意運動時，場點 \(P\) 此刻的 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\)，等於一顆一直等速運動的電荷在 \(P\) 的 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\)（上面的定義）；這顆電荷在「延遲時刻」和 \(Q\) 的位置相同、速度相同。延遲時刻是：\(Q\) 在那一刻發出的光，此刻剛好到達 \(P\)。電場、磁場仍然是 \({}^{\text{地}}\vec E = -\nabla{}^{\text{地}}\varphi - \dfrac{\partial{}^{\text{地}}\vec A}{\partial{}^{\text{地}}t}\)、\({}^{\text{地}}\vec B = \nabla\times{}^{\text{地}}\vec A\)。</p>
+
+<p>\(Q\) 一直等速時，這顆電荷就是 \(Q\) 自己，回到 3.1、3.4。\(Q\) 加速時，延遲時刻隨 \(P\) 和此刻改變，\({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\) 的微分裡會多出和加速度有關的項（3.9 的光就是這一部分）；但電場、磁場仍然由 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\) 微分出來，所以上面的推導照樣成立：</p>
+
+$$
+\begin{gathered}
+\nabla\times{}^{\text{地}}\vec E = -\frac{\partial{}^{\text{地}}\vec B}{\partial{}^{\text{地}}t}\ \text{（}Q\text{ 任意加速；Faraday's Law 的微分形式）}\\[6pt]
+\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell = -\frac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\ \text{（3.7：小塊拼成大線圈）}
+\end{gathered}
+$$
+
+<p>許多電荷各自任意運動時，每一顆的 \({}^{\text{地}}\varphi\)、\({}^{\text{地}}\vec A\) 相加，上式照樣成立。線圈本身移動時，再加上這一節第一段的 \({}^{\text{地}}\vec w\times{}^{\text{地}}\vec B\)。</p>
 
 </main>
 
