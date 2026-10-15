@@ -186,7 +186,7 @@ figcaption {
 .sidebar {
   position: sticky;
   top: 0;
-  flex: 0 0 250px;
+  flex: 0 0 var(--sb-w, 250px);
   max-height: 100vh;
   overflow-y: auto;
   padding: 1.5rem 1.25rem 2rem;
@@ -258,7 +258,7 @@ figcaption {
 }
 .layout > .wrap { flex: 1; min-width: 0; }
 /* 桌面：側欄右上角的按鈕收起側欄；收起後左上角的按鈕再展開 */
-.sb-collapse, .sb-open { display: none; }
+.sb-collapse, .sb-open, .sb-resize { display: none; }
 @media (min-width: 901px) {
   .sidebar .sb-title { padding-right: 1.9rem; }
   .sb-collapse, .sb-open {
@@ -280,7 +280,23 @@ figcaption {
     height: 1.7rem;
     padding: 0;
   }
-  body.sb-collapsed .sidebar { display: none; }
+  body.sb-collapsed .sidebar, body.sb-collapsed .sb-resize { display: none; }
+  .sb-resize {
+    display: block;
+    position: sticky;
+    top: 0;
+    flex: 0 0 9px;
+    height: 100vh;
+    margin-left: -5px;
+    z-index: 5;
+    cursor: col-resize;
+    touch-action: none;
+  }
+  .sb-resize:hover, .sb-resize:focus-visible, body.sb-resizing .sb-resize {
+    outline: none;
+    background: linear-gradient(to right, transparent 4px, var(--accent) 4px, var(--accent) 6px, transparent 6px);
+  }
+  body.sb-resizing { cursor: col-resize; user-select: none; }
   body.sb-collapsed .sb-open {
     display: inline-flex;
     position: fixed;

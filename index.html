@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=18">
+<link rel="stylesheet" href="css/style.css?v=19">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -15,7 +15,7 @@ MathJax = {
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
 </head>
 <body>
-<script>try { if (localStorage.getItem('sbCollapsed') === '1') document.body.classList.add('sb-collapsed'); } catch (e) {}</script>
+<script>try { if (localStorage.getItem('sbCollapsed') === '1') document.body.classList.add('sb-collapsed'); var w = +localStorage.getItem('sbWidth'); if (w >= 180 && w <= 520) document.documentElement.style.setProperty('--sb-w', w + 'px'); } catch (e) {}</script>
 
 <header class="site">
   <button class="menu-btn" type="button" aria-label="目錄" aria-controls="sidebar" aria-expanded="false"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 1h14M1 6h14M1 11h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
@@ -84,6 +84,7 @@ MathJax = {
     </ol>
   </nav>
 </aside>
+<div class="sb-resize" role="separator" aria-orientation="vertical" aria-label="調整目錄寬度" aria-controls="sidebar" aria-valuemin="180" aria-valuemax="520" tabindex="0"></div>
 <div class="menu-backdrop"></div>
 <button class="sb-open" type="button" aria-label="展開目錄" aria-controls="sidebar" aria-expanded="false"><svg width="16" height="12" viewBox="0 0 16 12" aria-hidden="true"><path d="M1 1h14M1 6h14M1 11h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
 
@@ -5982,6 +5983,44 @@ $$
   set(document.body.classList.contains('sb-collapsed'));
   col.addEventListener('click', function () { set(true); op.focus(); });
   op.addEventListener('click', function () { set(false); col.focus(); });
+})();
+// 桌面：拖曳側欄右緣調整寬度（左右鍵也可以；雙擊回到預設），寬度記在這台瀏覽器
+(function () {
+  var h = document.querySelector('.sb-resize'), sb = document.getElementById('sidebar');
+  if (!h || !sb) return;
+  var MIN = 180, MAX = 520;
+  function setW(w, save) {
+    w = Math.max(MIN, Math.min(MAX, Math.round(w)));
+    document.documentElement.style.setProperty('--sb-w', w + 'px');
+    h.setAttribute('aria-valuenow', w);
+    if (save) try { localStorage.setItem('sbWidth', w); } catch (e) {}
+  }
+  h.addEventListener('pointerdown', function (e) {
+    e.preventDefault();
+    h.setPointerCapture(e.pointerId);
+    document.body.classList.add('sb-resizing');
+    var left = sb.getBoundingClientRect().left;
+    function move(ev) { setW(ev.clientX - left, false); }
+    function up() {
+      h.removeEventListener('pointermove', move);
+      h.removeEventListener('pointerup', up);
+      h.removeEventListener('pointercancel', up);
+      document.body.classList.remove('sb-resizing');
+      setW(sb.getBoundingClientRect().width, true);
+    }
+    h.addEventListener('pointermove', move);
+    h.addEventListener('pointerup', up);
+    h.addEventListener('pointercancel', up);
+  });
+  h.addEventListener('keydown', function (e) {
+    var w = sb.getBoundingClientRect().width;
+    if (e.key === 'ArrowLeft') { setW(w - 16, true); e.preventDefault(); }
+    else if (e.key === 'ArrowRight') { setW(w + 16, true); e.preventDefault(); }
+  });
+  h.addEventListener('dblclick', function () {
+    document.documentElement.style.removeProperty('--sb-w');
+    try { localStorage.removeItem('sbWidth'); } catch (e) {}
+  });
 })();
 // 目錄跟著閱讀位置：標題捲過畫面 30% 高度的那一節亮起
 (function () {
