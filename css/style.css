@@ -201,10 +201,35 @@ figcaption {
   font-weight: 700;
   font-size: 1.05rem;
   color: var(--fg);
+}
+/* 書名下方的作者署名，點了跳到全書最後的「關於作者」 */
+.sidebar .sb-author {
+  display: block;
+  font-size: .8rem;
+  color: var(--fg-soft);
+  padding: .15rem 0 .45rem;
+}
+/* 語言切換：譯稿完成前只有中文有效，其他按了沒有作用 */
+.lang-switch {
+  display: flex;
+  gap: .35rem;
   padding-bottom: .8rem;
   margin-bottom: .6rem;
   border-bottom: 1px solid var(--border);
+  font-size: .78rem;
 }
+.lang-switch button {
+  font: inherit;
+  line-height: 1.6;
+  color: var(--fg-soft);
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  padding: .05rem .5rem;
+  cursor: pointer;
+}
+.lang-switch button[aria-pressed="true"] { color: var(--accent); border-color: var(--accent); }
+.lang-switch button[aria-disabled="true"] { opacity: .6; cursor: default; }
 @media (min-width: 901px) { header.site { display: none; } }
 .sidebar ol { list-style: none; margin: 0; padding: 0; }
 .sidebar ol.sb-parts > li { margin: .55rem 0; color: var(--fg-soft); }
@@ -232,6 +257,39 @@ figcaption {
   background: var(--accent);
 }
 .layout > .wrap { flex: 1; min-width: 0; }
+/* 桌面：側欄右上角的按鈕收起側欄；收起後左上角的按鈕再展開 */
+.sb-collapse, .sb-open { display: none; }
+@media (min-width: 901px) {
+  .sidebar .sb-title { padding-right: 1.9rem; }
+  .sb-collapse, .sb-open {
+    align-items: center;
+    justify-content: center;
+    color: var(--fg-soft);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .sb-collapse:hover, .sb-open:hover { color: var(--accent); border-color: var(--accent); }
+  .sb-collapse {
+    display: inline-flex;
+    position: absolute;
+    top: 1.55rem;
+    right: .75rem;
+    width: 1.7rem;
+    height: 1.7rem;
+    padding: 0;
+  }
+  body.sb-collapsed .sidebar { display: none; }
+  body.sb-collapsed .sb-open {
+    display: inline-flex;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 60;
+    padding: .45rem .6rem;
+  }
+}
 /* 手機：頁首固定在上方，按選單鈕從左側滑出側欄 */
 .menu-btn, .sb-close, .menu-backdrop { display: none; }
 @media (max-width: 900px) {
