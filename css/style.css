@@ -279,7 +279,45 @@ figcaption {
     width: 1.7rem;
     height: 1.7rem;
     padding: 0;
+    transition: top .25s ease, width .25s ease, height .25s ease;
   }
+  /* 書名區：固定在側欄頂端；目錄往上捲時縮成一列（.is-compact） */
+  .sb-head {
+    position: sticky;
+    top: -1.5rem;
+    z-index: 3;
+    margin: -1.5rem -1.25rem .6rem;
+    padding: 1.5rem 1.25rem .8rem;
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    transition: padding .25s ease, box-shadow .25s ease;
+  }
+  .sb-head .sb-title { transition: font-size .25s ease, padding .25s ease; padding-bottom: .1rem; }
+  .sb-head .sb-title::after {
+    content: "";
+    display: block;
+    width: 2.2rem;
+    height: 2px;
+    margin-top: .35rem;
+    border-radius: 1px;
+    background: var(--accent);
+    transition: width .25s ease, opacity .2s ease, margin .25s ease;
+  }
+  .sb-head .sb-author { transition: font-size .25s ease, padding .25s ease; }
+  .sb-head .lang-switch {
+    border-bottom: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    transition: font-size .25s ease, margin .25s ease;
+  }
+  .sidebar.is-compact .sb-head { padding-top: .65rem; padding-bottom: .55rem; box-shadow: 0 10px 16px -14px rgba(0, 0, 0, .55); }
+  .sidebar.is-compact .sb-head .sb-title { font-size: .95rem; }
+  .sidebar.is-compact .sb-head .sb-title::after { width: 0; opacity: 0; margin-top: 0; }
+  .sidebar.is-compact .sb-head .sb-author { font-size: .72rem; padding: 0; }
+  .sidebar.is-compact .sb-head .lang-switch { font-size: .68rem; margin-top: .3rem; }
+  .sidebar.is-compact .sb-collapse { top: .62rem; width: 1.45rem; height: 1.45rem; }
   body.sb-collapsed .sidebar, body.sb-collapsed .sb-resize { display: none; }
   .sb-resize {
     display: block;
@@ -308,16 +346,46 @@ figcaption {
 }
 /* 手機：頁首固定在上方，按選單鈕從左側滑出側欄 */
 .menu-btn, .sb-close, .menu-backdrop { display: none; }
+.read-progress { display: none; }
 @media (max-width: 900px) {
-  .sidebar .sb-title { display: none; }
+  /* 頁首：半透明模糊背景；往下捲以後縮小並出現陰影，底部細線是閱讀進度 */
   header.site {
     position: sticky;
     top: 0;
     z-index: 50;
-    background: var(--bg);
+    background: color-mix(in srgb, var(--bg) 86%, transparent);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
     align-items: center;
     padding: .6rem 1rem;
+    transition: padding .25s ease, box-shadow .25s ease;
   }
+  header.site .book-title { margin-top: 0; transition: font-size .25s ease; }
+  body.scrolled header.site { padding: .35rem 1rem; box-shadow: 0 10px 16px -14px rgba(0, 0, 0, .55); }
+  body.scrolled header.site .book-title { font-size: .95rem; }
+  .read-progress {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -1px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  /* 目錄抽屜：書名、作者、語言和關閉鈕固定在頂端 */
+  .sb-head {
+    position: sticky;
+    top: -1.5rem;
+    z-index: 3;
+    margin: -1.5rem -1.25rem .6rem;
+    padding: 1.3rem 1.25rem .8rem;
+    background: var(--bg);
+    border-bottom: 1px solid var(--border);
+  }
+  .sb-head .sb-title { padding-right: 2rem; }
+  .sb-head .lang-switch { border-bottom: 0; margin-bottom: 0; padding-bottom: 0; }
   .menu-btn {
     display: inline-flex;
     align-items: center;
@@ -347,7 +415,10 @@ figcaption {
   body.menu-open .sidebar { transform: none; visibility: visible; transition: transform .25s ease; }
   .sb-close {
     display: block;
-    margin: -.4rem -.25rem 0 auto;
+    position: absolute;
+    top: 1.05rem;
+    right: .9rem;
+    margin: 0;
     font-size: 1.6rem;
     line-height: 1;
     color: var(--fg-soft);
