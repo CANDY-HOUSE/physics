@@ -529,7 +529,9 @@ figure.fig-live { text-align: left; }
 .fig-ctl output { min-width: 3.2em; color: var(--fg); font-variant-numeric: tabular-nums; }
 .fig-ctl button { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2rem; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--fg); cursor: pointer; }
 .fig-ctl button:hover { background: var(--accent-soft); }
-.fig-live svg { display: block; width: 100%; }
+.fig-live > svg { display: block; width: 100%; }
+.fig-ctl button svg { display: block; }
+.fig-ctl output i { font-family: "Noto Serif TC", serif; }
 .fig-legend { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.5; color: var(--fg-soft); margin-top: .5rem; }
 .fig-legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .fig-legend i { display: inline-block; font-style: normal; }

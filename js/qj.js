@@ -27,11 +27,11 @@
       cut2: el('line', { stroke: TEAL, 'stroke-width': 1.6 }, g) });
   }
   var t0ring = el('circle', { cx: XE, cy: Y, fill: 'none', stroke: GOLD, 'stroke-opacity': .85, 'stroke-dasharray': '6 5', 'stroke-width': 1.6 }, gR);
-  var q = $('q'), ua = $('u'), ul = $('ulab');
+  var q = $('q'), qt = $('qt'), qn = $('qnow'), ua = $('u'), ul = $('ulab');
 
   function emag(vx, vy) { var d2 = vx * vx + vy * vy, s2 = vy * vy / d2; return (1 - B * B) / Math.pow(1 - B * B * s2, 1.5) / d2; }
   function hide(e) { e.setAttribute('visibility', 'hidden'); }
-  function show(e) { e.setAttribute('visibility', 'visible'); }
+  function show(e) { e.removeAttribute('visibility'); }
   function seg(e, x1, y1, x2, y2) { e.setAttribute('x1', f(x1)); e.setAttribute('y1', f(y1)); e.setAttribute('x2', f(x2)); e.setAttribute('y2', f(y2)); }
 
   // 箭頭尖端在 (px,py)、方向 (ux,uy)、長度 L；超出可用長度 avail 時截短並加斷號
@@ -50,7 +50,7 @@
   function render() {
     var gm = 1 / Math.sqrt(1 - B * B), xq = XE + B * s, K = KBASE * mult, ang = [], i;
     for (i = 0; i < NL; i++) { var th = (i + 0.5) * 2 * Math.PI / NL; ang.push(Math.atan2(Math.sin(th), Math.cos(th) / gm)); }
-    gF.setAttribute('visibility', flines ? 'visible' : 'hidden');
+    if (flines) show(gF); else hide(gF);
     for (i = 0; i < NL; i++) seg(lines[i], xq + 10 * Math.cos(ang[i]), Y - 10 * Math.sin(ang[i]), xq + 1200 * Math.cos(ang[i]), Y - 1200 * Math.sin(ang[i]));
     var n = 0;
     if (irings) {
@@ -69,22 +69,22 @@
       if (s <= 0 || px < -10 || px > W + 10 || py < -10 || py > H + 10 || d < 1e-6) { hide(arrows[i].g); continue; }
       vec(arrows[i], px, py, ux, uy, K * emag(d * ux, d * uy), d - QR - 3);
     }
-    q.setAttribute('cx', f(xq));
-    var L = 10 + 60 * B;
-    if (B > 0) { show(ua); seg(ua, xq + 12, Y, xq + 12 + L - 5, Y); show(ul); ul.setAttribute('x', f(xq + 12 + L / 2 - 20)); }
+    q.setAttribute('cx', f(xq)); qt.setAttribute('x', f(xq));
+    qn.setAttribute('x', f(xq - 35)); if (xq - XE > 70) show(qn); else hide(qn);
+    var L = 18 + 60 * B;
+    if (B > 0) { show(ua); seg(ua, xq + QR + 3, Y, xq + QR + 3 + L, Y); show(ul); ul.setAttribute('x', f(xq + QR + 3 + L / 2 - 20)); }
     else { hide(ua); hide(ul); }
-    $('out').textContent = '半徑 ' + Math.round(s);
     $('t').value = Math.round(s / SMAX * 1000);
   }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var play = !reduce, visible = true, last = 0;
   var bp = $('play');
-  function setPlay(p) { play = p; bp.setAttribute('aria-pressed', p ? 'true' : 'false'); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
+  function setPlay(p) { play = p; bp.setAttribute('aria-label', p ? '暫停' : '播放'); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
   if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg);
   bp.addEventListener('click', function () { setPlay(!play); });
   $('t').addEventListener('input', function (e) { s = +e.target.value / 1000 * SMAX; render(); });
-  $('b').addEventListener('input', function (e) { B = +e.target.value; $('bo').textContent = B.toFixed(1) + ' c'; render(); });
+  $('b').addEventListener('input', function (e) { B = +e.target.value; $('bo').innerHTML = B.toFixed(1) + ' <i>c</i>'; render(); });
   $('sp').addEventListener('input', function (e) { spd = +e.target.value; $('spo').textContent = spd + '×'; });
   $('k').addEventListener('input', function (e) { mult = Math.pow(10, +e.target.value); $('ko').textContent = '×' + Math.round(mult); render(); });
   $('cf').addEventListener('change', function (e) { flines = e.target.checked; render(); });
