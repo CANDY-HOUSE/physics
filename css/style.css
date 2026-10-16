@@ -517,3 +517,24 @@ figure svg foreignObject { overflow: visible; }
 
 /* \cancel / \bcancel 的刪除線：3B1B 紅 */
 mjx-menclose > mjx-dstrike { border-top-color: #FC6255 !important; }
+
+/* ---------- 互動圖：控制列與圖例 ---------- */
+figure.fig-live { text-align: left; }
+.fig-ctl { font-family: "Noto Sans TC", sans-serif; font-size: .82rem; line-height: 1.4; color: var(--fg-soft); margin: 0 0 .5rem; }
+.fig-ctl .row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.1rem; margin: .35rem 0; }
+.fig-ctl label { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; }
+.fig-ctl input[type=range] { accent-color: var(--accent); width: 6.5rem; }
+.fig-ctl input[type=range].grow { flex: 1; min-width: 8rem; width: auto; }
+.fig-ctl input[type=checkbox] { accent-color: var(--accent); margin: 0; }
+.fig-ctl output { min-width: 3.2em; color: var(--fg); font-variant-numeric: tabular-nums; }
+.fig-ctl button { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2rem; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--fg); cursor: pointer; }
+.fig-ctl button:hover { background: var(--accent-soft); }
+.fig-live svg { display: block; width: 100%; }
+.fig-legend { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.5; color: var(--fg-soft); margin-top: .5rem; }
+.fig-legend span { display: inline-flex; align-items: center; gap: .4rem; }
+.fig-legend i { display: inline-block; font-style: normal; }
+.fig-legend .lg-dot { width: 11px; height: 11px; border: 1.8px solid #F0AC5F; border-radius: 50%; }
+.fig-legend .lg-ring { width: 15px; height: 15px; border: 1.6px dashed #F0AC5F; border-radius: 50%; }
+.fig-legend .lg-ring.faint { border-width: 1px; opacity: .5; }
+.fig-legend .lg-bar { width: 18px; border-top: 3px solid #5CD0B3; }
+.fig-legend .lg-cut { color: #5CD0B3; font-weight: 700; }
