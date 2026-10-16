@@ -55,7 +55,7 @@ MathJax = {
           <li><a href="#sec-2-1">2.1　複習：Doppler 效應</a></li>
           <li><a href="#sec-2-2">2.2　加速的火箭：上下的鐘</a></li>
           <li><a href="#sec-2-3">2.3　引力幾何化。人類的猜測：加速度＝重力</a></li>
-          <li><a href="#sec-2-4">2.4　E = hν 的能量幾何化</a></li>
+          <li><a href="#sec-2-4">2.4　（未完工）</a></li>
           <li><a href="#sec-2-5">2.5　（未完工）</a></li>
           <li><a href="#sec-2-6">2.6　（未完工）</a></li>
         </ol>
@@ -1106,7 +1106,7 @@ $$
 <p>每秒偏轉 \(\dfrac{g}{c}\)。一顆以速度 \(c\) 水平丟出的石頭，垂直速度每秒增加 \(g\)，方向每秒也偏 \(\dfrac{g}{c}\)——一模一樣。
 推導裡沒有任何「力」，只用了不同高度的時間走速不同，光就往下彎。引力是否根本不是力，而是時空的形狀？——這是「引力幾何化」的猜測。</p>
 
-<h2 id="sec-2-4">2.4　E = hν 的能量幾何化</h2>
+<h2 id="sec-2-4">2.4　（未完工）</h2>
 
 <p>翻書讓光宏觀上等速前進；但光其實是螺旋式前進——相位螺旋式變化。每翻幾頁書，螺旋一次。</p>
 
@@ -5052,6 +5052,31 @@ $$
 
 <h2 id="sec-3-9">3.9　（未完工）</h2>
 
+<p>首先看一顆憑空出現、靜止不動的 \(Q\)。它的電場不是一出現就遍布各處，而是受光速限制：從 \(Q\) 所在的位置開始，以 \(c\) 往外建立；經過時間 \(t\)，只有半徑 \(c\,t\) 以內的地方有 \(Q\) 的電場。</p>
+
+$$
+E = \frac{1}{4\pi\varepsilon_0}\cdot\frac{Q}{r^2}\ \text{（}r\text{：到 }Q\text{ 的距離；}r < c\,t\text{）}
+$$
+
+<figure>
+<svg id="qb" viewBox="0 0 640 400" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <clipPath id="qbC"><rect x="0" y="44" width="640" height="356"/></clipPath>
+  </defs>
+  <text x="24" y="30" fill="currentColor" font-size="15" font-weight="700">Q 靜止，在時刻 0 憑空出現</text>
+  <g clip-path="url(#qbC)">
+    <g id="qblines"></g>
+    <circle id="qbfront" cx="320" cy="210" r="0" fill="none" stroke="#F0AC5F" stroke-width="2" stroke-dasharray="7 5"/>
+  </g>
+  <text id="qbnone" x="548" y="352" text-anchor="middle" fill="currentColor" fill-opacity=".55" font-size="14">還沒有 Q 的電場</text>
+  <foreignObject id="qblab" x="0" y="0" width="170" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#F0AC5F;height:26px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">電場的前緣：半徑 \(c\,t\)</span></div></foreignObject>
+  <g id="qbq">
+    <circle cx="320" cy="210" r="11" fill="#FC6255"/><text x="320" y="215" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  </g>
+</svg>
+</figure>
+
+
 <figure>
 <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
@@ -6089,6 +6114,7 @@ $$
 <script src="js/mgt.js?v=10"></script>
 <script src="js/bsr.js?v=2"></script>
 <script src="js/fda.js?v=4"></script>
+<script src="js/qb.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
