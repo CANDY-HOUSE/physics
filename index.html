@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=24">
+<link rel="stylesheet" href="css/style.css?v=25">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -7373,25 +7373,25 @@ $$
 <figure class="fig-live">
 <div class="fig-ctl">
   <div class="row">
-    <button type="button" class="qj-play" aria-label="播放或暫停" aria-pressed="true"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <button type="button" class="qj-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>時間</span>
     <input type="range" class="qj-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
-    <output class="qj-out"></output>
   </div>
   <div class="row">
-    <label>\(Q\) 的速度 \({}^{\text{地}}u\) <input type="range" class="qj-b" min="0" max="0.9" step="0.1" value="0.7"><output class="qj-bo">0.7 c</output></label>
+    <label>\(Q\) 的速度 \({}^{\text{地}}u\) <input type="range" class="qj-b" min="0" max="0.9" step="0.1" value="0.7"><output class="qj-bo">0.7 <i>c</i></output></label>
     <label>播放速度 <input type="range" class="qj-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="qj-spo">0.5×</output></label>
     <label>箭頭比例 <input type="range" class="qj-k" min="0" max="3" step="0.5" value="0"><output class="qj-ko">×1</output></label>
   </div>
   <div class="row">
     <label><input type="checkbox" class="qj-cf" checked> 電場線</label>
     <label><input type="checkbox" class="qj-cr" checked> 時刻 \(t_0\) 送出的消息前緣</label>
-    <label><input type="checkbox" class="qj-ci" checked> 等時間間隔送出的消息前緣</label>
+    <label><input type="checkbox" class="qj-ci" checked> 其他時刻（等時間間隔）送出的消息前緣</label>
   </div>
 </div>
 <svg id="qj" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <clipPath id="qjC"><rect x="0" y="0" width="680" height="600"/></clipPath>
-    <marker id="qjG" markerWidth="10" markerHeight="8" refX="6.5" refY="3" orient="auto"><path d="M0,0 L8,3 L0,6 z" fill="#83C167"/></marker>
+    <marker id="qjG" markerUnits="userSpaceOnUse" markerWidth="16" markerHeight="12" refX="2" refY="6" orient="auto"><path d="M0,0 L14,6 L0,12 z" fill="#83C167"/></marker>
   </defs>
   <g clip-path="url(#qjC)">
     <line x1="0" y1="300" x2="680" y2="300" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
@@ -7400,19 +7400,20 @@ $$
     <g class="qj-ring"></g>
     <circle cx="110" cy="300" r="6" fill="none" stroke="#F0AC5F" stroke-width="1.8"/>
     <g class="qj-arrows"></g>
-    <circle class="qj-q" cx="110" cy="300" r="9" fill="#FC6255"/>
+    <circle class="qj-q" cx="110" cy="300" r="10" fill="#FC6255"/><text class="qj-qt" x="110" y="305" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a1a">Q</text>
     <line class="qj-u" x1="122" y1="300" x2="170" y2="300" stroke="#83C167" stroke-width="3" marker-end="url(#qjG)"/>
   </g>
-  <foreignObject class="qj-ulab" x="140.0" y="270.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="">\({}^{\text{地}}\vec u\)</span></div></foreignObject>
+  <foreignObject class="qj-qnow" x="75" y="314" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span>Q 此刻</span></div></foreignObject>
+  <foreignObject class="qj-ulab" x="140.0" y="264.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="">\({}^{\text{地}}\vec u\)</span></div></foreignObject>
   <foreignObject x="75.0" y="314.0" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="">\(Q(t_0)\)</span></div></foreignObject>
   <foreignObject x="12.0" y="9.0" width="600" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;font-weight:700;color:currentColor;height:26px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;">地面基準：\(Q\) 以 \({}^{\text{地}}\vec u\) 等速前進，在時刻 \(t_0\) 送出一圈消息</span></div></foreignObject>
 </svg>
 <div class="fig-legend">
-  <span><i class="lg-dot"></i>\(Q(t_0)\)：時刻 \(t_0\) 時 \(Q\) 的位置</span>
+  <span><i class="lg-dot"></i>\(Q(t_0)\)：\(Q\) 在時刻 \(t_0\) 的位置</span>
   <span><i class="lg-ring"></i>時刻 \(t_0\) 送出的消息前緣</span>
   <span><i class="lg-ring faint"></i>其他時刻（等時間間隔）送出的消息前緣</span>
   <span><i class="lg-bar"></i>箭頭長度與電場強度成正比</span>
-  <span><i class="lg-cut">//</i>斷號：實際更長</span>
+  <span><i class="lg-cut">//</i>有斷開記號的箭頭，實際長度更長</span>
 </div>
 </figure>
 
@@ -8456,7 +8457,7 @@ $$
 <script src="js/bsr.js?v=2"></script>
 <script src="js/fda.js?v=4"></script>
 <script src="js/qb.js?v=1"></script>
-<script src="js/qj.js?v=1"></script>
+<script src="js/qj.js?v=2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
