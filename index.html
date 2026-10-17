@@ -124,12 +124,12 @@ MathJax = {
 
 <h2 id="sec-1-2">1.2　時間膨脹：向車頂發射的光</h2>
 
-<p>電車地板有光源，向正上方的天花板鏡子發光，光反射回地板。地板到鏡子高度為 \(L\)。</p>
+<p>電車地板有光源，向正上方的天花板鏡子發光，光反射回地板。地板到鏡子高度為 \(h\)。</p>
 
-<p><strong>車上基準</strong>：光直上直下，來回耗時 \(\dfrac{2L}{c}\)。</p>
+<p><strong>車上基準</strong>：光直上直下，來回耗時 \(\dfrac{2h}{c}\)。</p>
 
-<p><strong>地上基準</strong>：光來回期間電車在移動，所以光走的是斜線，總路徑比 \(2L\) 長。
-光速仍是 \(c\)，路徑較長，耗時就比 \(\dfrac{2L}{c}\) 長。</p>
+<p><strong>地上基準</strong>：光來回期間電車在移動，所以光走的是斜線，總路徑比 \(2h\) 長。
+光速仍是 \(c\)，路徑較長，耗時就比 \(\dfrac{2h}{c}\) 長。</p>
 
 <figure>
 <svg viewBox="0 0 640 300" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -139,7 +139,7 @@ MathJax = {
     <line x1="120" y1="52" x2="120" y2="228" stroke="#e0a800" stroke-width="3"/>
     <circle r="6" fill="#e0a800"><animateMotion dur="3.6s" repeatCount="indefinite" path="M120,228 L120,52 L120,228" calcMode="linear" keyPoints="0;0.5;1;1" keyTimes="0;0.4167;0.8333;1"/></circle>
     <text x="120" y="285" text-anchor="middle" fill="currentColor">車上基準：直上直下</text>
-    <foreignObject x="138" y="131.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:left;color:currentColor;opacity:.7">\(L\)</div></foreignObject>
+    <foreignObject x="138" y="131.7" width="140" height="25.2"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;text-align:left;color:currentColor;opacity:.7">\(h\)</div></foreignObject>
   </g>
   <g>
     <rect x="330" y="40" width="90" height="8" fill="currentColor" opacity=".35"/>
@@ -174,13 +174,13 @@ MathJax = {
 <figcaption>同一道光，兩個基準看到的路徑。</figcaption>
 </figure>
 
-<p>算出到底耗時多久。由上圖，光爬升 \(L\) 需時：</p>
+<p>算出到底耗時多久。由上圖，光爬升 \(h\) 需時：</p>
 
 $$
-\Delta{}^{\text{地}}t = \frac{L}{\sqrt{c^2-v^2}} = \frac{L}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+\Delta{}^{\text{地}}t = \frac{h}{\sqrt{c^2-v^2}} = \frac{h}{c}\,\frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
 $$
 
-<p>車上經過 \(\dfrac{L}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\) 倍。
+<p>車上經過 \(\dfrac{h}{c}\) 的時間，地上就經過它的 \(\dfrac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\) 倍。
 這個因子之後不斷出現，記作：</p>
 
 $$
@@ -7417,6 +7417,55 @@ $$
 </div>
 </figure>
 
+<figure>
+<svg id="qm" viewBox="0 0 640 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <foreignObject x="20" y="9" width="600" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;font-weight:700;color:currentColor;height:26px;display:flex;align-items:center;white-space:nowrap"><span style="padding:0 4px">地面基準＝\(q\) 基準：\(q\) 靜止在 \(\vec P_0\)，\(Q\) 等速前進</span></div></foreignObject>
+  <clipPath id="qmC"><rect x="0" y="40" width="640" height="383"/></clipPath>
+  <line x1="20" y1="420" x2="620" y2="420" stroke="#BBBBBB" stroke-opacity=".5" stroke-dasharray="4 4"/>
+  <g clip-path="url(#qmC)"><circle id="qmFront" cx="50.2" cy="420" r="399.6" fill="none" stroke="#F0AC5F" stroke-opacity=".6" stroke-width="1.7" stroke-dasharray="7 5"/></g>
+  <polygon id="qmTri" points="50.2,420 250.0,420 250.0,73.9" fill="#83C167" fill-opacity=".12"/>
+  <line id="qmD" x1="50.2" y1="420" x2="250.0" y2="420" stroke="#83C167" stroke-width="3.4"/>
+  <line id="qmHt" x1="250.0" y1="420" x2="250.0" y2="73.9" stroke="#83C167" stroke-width="3.4"/>
+  <line id="qmHyp" x1="50.2" y1="420" x2="250.0" y2="73.9" stroke="#83C167" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <path id="qmRA" d="M240.0,420 L240.0,410 L250.0,410" fill="none" stroke="#83C167" stroke-width="1.2"/>
+  <circle id="qmTop" cx="250.0" cy="73.9" r="4" fill="#83C167"/>
+  <line id="qmR" x1="50.2" y1="420" x2="356.3" y2="163.1" stroke="#F0AC5F" stroke-width="2.6"/>
+  <line id="qmQr" x1="250.0" y1="420" x2="356.3" y2="163.1" stroke="#BBBBBB" stroke-width="1.6" stroke-dasharray="5 4"/>
+  <line id="qmPerp" x1="250.0" y1="420" x2="167.4" y2="321.6" stroke="#D147BD" stroke-width="1.4" stroke-dasharray="3 3"/>
+  <line id="qmHP" x1="167.4" y1="321.6" x2="356.3" y2="163.1" stroke="#D147BD" stroke-width="5" stroke-opacity=".75"/>
+  <path id="qmHA" d="M175.1,315.2 L181.5,322.9 L173.9,329.3" fill="none" stroke="#D147BD" stroke-width="1.2"/>
+  <circle id="qmHd" cx="167.4" cy="321.6" r="4" fill="#D147BD"/>
+  <circle cx="50.2" cy="420" r="7" fill="none" stroke="#F0AC5F" stroke-width="2"/>
+  <g id="qmQ" transform="translate(250.0,0)"><circle cx="0" cy="420" r="10" fill="#FC6255"/><text x="0" y="425" text-anchor="middle" font-size="13" font-weight="700" fill="#1a1a1a">Q</text></g>
+  <circle id="qmP0" cx="356.3" cy="163.1" r="6" fill="#F0AC5F"/>
+  <foreignObject x="15.2" y="432.0" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q(t_0)\)</span></div></foreignObject>
+  <foreignObject id="qmLn" data-a="start" x="258.0" y="432.0" width="70" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">Q 此刻</span></div></foreignObject>
+  <foreignObject id="qmLd" data-a="center" x="135.1" y="394.0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(d\)</span></div></foreignObject>
+  <foreignObject id="qmLh" data-a="start" x="260.0" y="265.0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(h\)</span></div></foreignObject>
+  <foreignObject id="qmLq" data-a="start" x="366.3" y="141.1" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(q\)</span></div></foreignObject>
+  <foreignObject id="qmLH" data-a="end" x="129.4" y="305.6" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#D147BD;height:24px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(H\)</span></div></foreignObject>
+  <foreignObject id="qmLHP" data-a="end" x="187.9" y="218.4" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#D147BD;height:24px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(HP_0\)</span></div></foreignObject>
+  <foreignObject id="qmLR" data-a="end" x="68.8" y="352.8" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(R\)</span></div></foreignObject>
+  <foreignObject id="qmLqr" data-a="start" x="313.2" y="287.6" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\({}^{q}r\)</span></div></foreignObject>
+  <text x="420" y="250" fill="#83C167" font-size="14">綠色直角三角形：1.2 的光鐘</text>
+  <foreignObject x="420.0" y="261.0" width="210" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#83C167;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(R\)：地面的錶 \(\times\, c\)</span></div></foreignObject>
+  <foreignObject x="420.0" y="283.0" width="210" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#83C167;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(h\)：\(Q\) 自己的錶 \(\times\, c\)</span></div></foreignObject>
+  <foreignObject x="420.0" y="305.0" width="210" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#83C167;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(d\)：\(Q\) 走過的距離</span></div></foreignObject>
+  <text x="420" y="352" fill="#D147BD" font-size="14">H：Q 此刻到 R 的垂足</text>
+  <text x="420" y="388" fill="currentColor" font-size="14">消息跑得越遠，三角形一起放大，</text>
+  <text x="420" y="410" fill="currentColor" font-size="14">各邊的比例都不變</text>
+</svg>
+</figure>
+
+$$
+\begin{aligned}
+&{}^{q}\gamma_{Q} = \frac{R}{h}\ \text{（綠色直角三角形：1.2 的光鐘）}\\[6pt]
+&{}^{Q}r = {}^{q}\gamma_{Q}\cdot HP_0 = \frac{R\cdot HP_0}{h}\ \text{（可用畢氏定理驗證）}\\[6pt]
+&\frac{Q}{4\pi\varepsilon_0}\cdot\frac{{}^{q}\gamma_{Q}\cdot{}^{q}r}{{}^{Q}r^3} = \frac{Q}{4\pi\varepsilon_0}\cdot\frac{\dfrac{R}{h}\cdot{}^{q}r}{\dfrac{R^3\cdot HP_0^3}{h^3}} = \frac{Q}{4\pi\varepsilon_0\cdot R^2}\cdot\frac{{}^{q}r\cdot h^2}{HP_0^3}
+\end{aligned}
+$$
+
+
 <p>和 3.1 的電場比較：</p>
 
 $$
@@ -8467,6 +8516,7 @@ $$
 <script src="js/fda.js?v=4"></script>
 <script src="js/qb.js?v=1"></script>
 <script src="js/qj.js?v=2"></script>
+<script src="js/qm.js?v=1"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
