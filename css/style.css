@@ -539,4 +539,6 @@ figure.fig-live { text-align: left; }
 .fig-legend .lg-ring { width: 15px; height: 15px; border: 1.6px dashed #F0AC5F; border-radius: 50%; }
 .fig-legend .lg-ring.faint { border-width: 1px; opacity: .5; }
 .fig-legend .lg-bar { width: 18px; border-top: 3px solid #5CD0B3; }
+.fig-legend .lg-arrow { position: relative; width: 14px; margin-right: 8px; border-top: 3px solid #5CD0B3; }
+.fig-legend .lg-arrow::after { content: ""; position: absolute; left: 13px; top: -6.5px; border-left: 9px solid #5CD0B3; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
 .fig-legend .lg-cut { color: #5CD0B3; font-weight: 700; }
