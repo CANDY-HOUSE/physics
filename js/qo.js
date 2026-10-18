@@ -1,4 +1,4 @@
-/* 3.9 動畫：地面基準＝q 基準，Q 以 u 等速前進，在時刻 t0 送出一圈消息（同 qj），q 靜止。
+/* 3.9 動畫：地面基準＝q 基準，Q 以 u 等速前進，在時刻 t0 送出一圈消息，q 靜止。
    上圖（qo）：電場線、消息前緣、t0 消息前緣上的箭頭，以及 q 處的電場箭頭；
    下圖（qp）：q 處的電場強度隨時間的變化，橫軸與上圖 Q 的位置對齊。 */
 (function () {
@@ -15,6 +15,8 @@
   var BY = 210, PK = 2;                      // 下圖：基線、曲線高度 ＝ PK × 箭頭長度（箭頭比例 ×1）
   var TEAL = '#5CD0B3', GOLD = '#F0AC5F';
   var B = 0.7, s = 0, spd = 0.5, mult = 1, flines = true, ring = true, irings = true;
+  var followers = [];                        // 共用這組控制與迴圈的其他圖（例如 qr、qs）
+  function state() { return { B: B, s: s, mult: mult, flines: flines, ring: ring, irings: irings }; }
 
   var gI = $('irings'), gF = $('lines'), gR = $('ring'), gA = $('arrows'), gQ = $('qe');
   var iring = [], lines = [], arrows = [];
@@ -105,6 +107,7 @@
     var nw = $2('now'); nw.setAttribute('x1', f(xq)); nw.setAttribute('x2', f(xq));
     $2('q').setAttribute('cx', f(xq)); $2('qt').setAttribute('x', f(xq));   // 與上圖的 Q 上下對齊
     $('t').value = Math.round(s / smax() * 1000);
+    for (var fi = 0; fi < followers.length; fi++) followers[fi].render(state());
   }
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -117,14 +120,15 @@
   }
   bp.addEventListener('click', function () { setPlay(!play); });
   $('t').addEventListener('input', function (e) { s = +e.target.value / 1000 * smax(); render(); });
-  $('b').addEventListener('input', function (e) { var fr = s / smax(); B = +e.target.value; $('bo').innerHTML = B.toFixed(1) + ' <i>c</i>'; s = fr * smax(); curve(); render(); });
+  $('b').addEventListener('input', function (e) { var fr = s / smax(); B = +e.target.value; $('bo').innerHTML = B.toFixed(1) + ' <i>c</i>'; s = fr * smax(); curve(); for (var fi = 0; fi < followers.length; fi++) followers[fi].curve(state()); render(); });
   $('sp').addEventListener('input', function (e) { spd = +e.target.value; $('spo').textContent = spd + '×'; });
   $('k').addEventListener('input', function (e) { mult = Math.pow(10, +e.target.value); $('ko').textContent = '×' + Math.round(mult); render(); });
   $('cf').addEventListener('change', function (e) { flines = e.target.checked; render(); });
   $('cr').addEventListener('change', function (e) { ring = e.target.checked; render(); });
   $('ci').addEventListener('change', function (e) { irings = e.target.checked; render(); });
   function loop(ts) {
-    if (play && (vis1 || vis2) && ts - last > 33) { last = ts; s += 2 * spd; if (s > smax()) s = 0; render(); }
+    var vf = followers.some(function (fl) { return fl.vis.some(Boolean); });
+    if (play && (vis1 || vis2 || vf) && ts - last > 33) { last = ts; s += 2 * spd; if (s > smax()) s = 0; render(); }
     requestAnimationFrame(loop);
   }
   if (!play) s = 0.4 * smax();
@@ -132,5 +136,10 @@
   curve();
   render();
   requestAnimationFrame(loop);
-  window.qo = { at: function (v) { setPlay(false); s = v * smax(); render(); }, play: function () { setPlay(true); } };
+  window.qo = { at: function (v) { setPlay(false); s = v * smax(); render(); }, play: function () { setPlay(true); },
+    follow: function (fl) {                    // fl：{ svgs, render(st), curve(st) }
+      fl.vis = fl.svgs.map(function () { return true; });
+      if ('IntersectionObserver' in window) fl.svgs.forEach(function (sv, i) { new IntersectionObserver(function (es) { fl.vis[i] = es[0].isIntersecting; }, { threshold: 0.05 }).observe(sv); });
+      followers.push(fl); fl.curve(state()); fl.render(state());
+    } };
 })();

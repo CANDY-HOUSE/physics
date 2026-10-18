@@ -1,6 +1,7 @@
 /* 3.9 動畫（同 qo、qp）：一排等距的 Q 以 u 等速前進，每一顆各在時刻 t0 送出一圈消息；q 靜止。
    上圖（qr）：每一顆 Q 的電場線、消息前緣、t0 消息前緣上的箭頭（各自的電場），以及 q 處的電場（所有 Q 相加）；
-   下圖（qs）：q 處的電場強度隨時間的變化，橫軸與上圖第一顆 Q（從 Q(t0) 出發的那顆）的位置對齊。 */
+   下圖（qs）：q 處的電場強度隨時間的變化，橫軸與上圖第一顆 Q（從 Q(t0) 出發的那顆）的位置對齊。
+   沒有自己的控制與迴圈：跟著 qo 那組控制（window.qo.follow）。 */
 (function () {
   var svg = document.getElementById('qr'), svg2 = document.getElementById('qs');
   if (!svg || !svg2) return;
@@ -12,7 +13,7 @@
   function f(n) { return n.toFixed(1); }
 
   var W = 680, H = 600, Y = 300, XE = 110, XEND = 630, QX = 370, QY = 170, NL = 24, QR = 9, DI = 60, KBASE = 60 * 100 * 100;
-  var SP = 200, KS = 80;                       // 相鄰兩顆 Q 的間距；q 處相加時取 −KS…KS 顆
+  var SP = 200, KS = 80, R1 = 700, R2 = 900;   // R1～R2：其他時刻的消息前緣漸淡                       // 相鄰兩顆 Q 的間距；q 處相加時取 −KS…KS 顆
   var BY = 210, TOP = 30, PK = 2;              // 下圖：基線、頂端；PK 依最大值調整
   var TEAL = '#5CD0B3', GOLD = '#F0AC5F', RED = '#FC6255';
   var B = 0.7, s = 0, spd = 0.5, mult = 1, flines = true, ring = true, irings = true;
@@ -74,10 +75,11 @@
     for (var bb = 0.1; bb < 0.95; bb += 0.1) { B = bb; for (var x = XE; x <= XEND; x += 4) { var e = etot(x); mx = Math.max(mx, Math.hypot(e[0], e[1])); } }
     B = b0; PK = Math.min(2, (BY - TOP - 18) / (KBASE * mx));
   }
+  var cache = [];                              // 曲線上每 2 px 一點（速度改變時重算）
   function curve() {
-    var pts = [];
-    for (var x = XE; x <= XEND + 0.01; x += 2) pts.push(f(x) + ',' + f(plotY(x)));
-    $2('all').setAttribute('points', pts.join(' '));
+    cache = [];
+    for (var x = XE; x <= XEND + 0.01; x += 2) cache.push(f(x) + ',' + f(plotY(x)));
+    $2('all').setAttribute('points', cache.join(' '));
   }
 
   function render() {
@@ -87,17 +89,22 @@
     // 電場線（每一顆 Q 各自的）
     if (flines) show(gF); else hide(gF);
     n = 0;
-    for (k = kmin; k <= kmax; k++) { var xq = x0 + k * SP; for (i = 0; i < NL; i++) { var ln = lines.get(n++); show(ln); seg(ln, xq + 10 * Math.cos(ang[i]), Y - 10 * Math.sin(ang[i]), xq + 1200 * Math.cos(ang[i]), Y - 1200 * Math.sin(ang[i])); } }
+    for (k = Math.ceil((-SP - x0) / SP); x0 + k * SP <= W + SP; k++) {
+      var xq = x0 + k * SP, op = 0.2 * Math.max(0, 1 - near(xq) / SP);   // 離開畫面越遠越淡
+      if (op <= 0) continue;
+      for (i = 0; i < NL; i++) { var ln = lines.get(n++); show(ln); ln.setAttribute('stroke-opacity', op.toFixed(3)); seg(ln, xq + 10 * Math.cos(ang[i]), Y - 10 * Math.sin(ang[i]), xq + 1200 * Math.cos(ang[i]), Y - 1200 * Math.sin(ang[i])); }
+    }
     lines.hideFrom(n);
     // 其他時刻送出的消息前緣（每一顆 Q 各自的）
     n = 0;
     if (irings) {
-      for (k = kmin - 1; k <= kmax + 1; k++) {                // 畫面附近的 Q
+      for (k = Math.ceil((-R2 - x0) / SP); x0 + k * SP <= W + R2 + B * R2; k++) {
         for (var j = Math.floor(s / DI); ; j--) {
           var r = s - j * DI, cx = XE + k * SP + B * j * DI;
-          if (r >= far(cx)) break;
+          if (r >= R2 || r >= far(cx)) break;               // 更早送出的也一樣：太舊，或已把整個畫面包住
           if (j === 0 || r <= 0 || r < near(cx)) continue;
           var c = iring.get(n++); show(c); c.setAttribute('cx', f(cx)); c.setAttribute('cy', Y); c.setAttribute('r', f(r));
+          c.setAttribute('stroke-opacity', (0.18 * Math.min(1, (R2 - r) / (R2 - R1))).toFixed(3));
         }
       }
     }
@@ -127,43 +134,20 @@
     var L = 18 + 60 * B;
     show(ua); seg(ua, x0 + QR + 3, Y, x0 + QR + 3 + L, Y); show(ul); ul.setAttribute('x', f(x0 + QR + 3 + L / 2 - 20));
     // 下圖
-    var pts = [];
-    for (var x = XE; x < x0; x += 2) pts.push(f(x) + ',' + f(plotY(x)));
+    var pts = cache.slice(0, Math.max(0, Math.ceil((x0 - XE) / 2)));
     pts.push(f(x0) + ',' + f(plotY(x0)));
     $2('past').setAttribute('points', pts.join(' '));
     var dot = $2('dot'); dot.setAttribute('cx', f(x0)); dot.setAttribute('cy', f(plotY(x0)));
     var nw = $2('now'); nw.setAttribute('x1', f(x0)); nw.setAttribute('x2', f(x0));
     n = 0;
-    for (k = Math.ceil((XE - 12 - x0) / SP); x0 + k * SP <= XEND + 12; k++) { var pg = pdots.get(n++); show(pg); pg.setAttribute('transform', 'translate(' + f(x0 + k * SP) + ',0)'); }
+    for (k = kmin; k <= kmax; k++) { var pg = pdots.get(n++); show(pg); pg.setAttribute('transform', 'translate(' + f(x0 + k * SP) + ',0)'); }
     pdots.hideFrom(n);
-    $('t').value = Math.round(s / smax() * 1000);
   }
 
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var play = !reduce, vis1 = true, vis2 = true, last = 0;
-  var bp = $('play');
-  function setPlay(p) { play = p; bp.setAttribute('aria-label', p ? '暫停' : '播放'); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
-  if ('IntersectionObserver' in window) {
-    new IntersectionObserver(function (es) { vis1 = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg);
-    new IntersectionObserver(function (es) { vis2 = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg2);
-  }
-  bp.addEventListener('click', function () { setPlay(!play); });
-  $('t').addEventListener('input', function (e) { s = +e.target.value / 1000 * smax(); render(); });
-  $('b').addEventListener('input', function (e) { var fr = s / smax(); B = +e.target.value; $('bo').innerHTML = B.toFixed(1) + ' <i>c</i>'; s = fr * smax(); curve(); render(); });
-  $('sp').addEventListener('input', function (e) { spd = +e.target.value; $('spo').textContent = spd + '×'; });
-  $('k').addEventListener('input', function (e) { mult = Math.pow(10, +e.target.value); $('ko').textContent = '×' + Math.round(mult); render(); });
-  $('cf').addEventListener('change', function (e) { flines = e.target.checked; render(); });
-  $('cr').addEventListener('change', function (e) { ring = e.target.checked; render(); });
-  $('ci').addEventListener('change', function (e) { irings = e.target.checked; render(); });
-  function loop(ts) {
-    if (play && (vis1 || vis2) && ts - last > 33) { last = ts; s += 2 * spd; if (s > smax()) s = 0; render(); }
-    requestAnimationFrame(loop);
-  }
-  if (!play) s = 0.4 * smax();
-  setPlay(play);
+  function apply(st) { B = st.B; s = st.s; mult = st.mult; flines = st.flines; ring = st.ring; irings = st.irings; }
+  if (!window.qo || !window.qo.follow) return;
   scale();
-  curve();
-  render();
-  requestAnimationFrame(loop);
-  window.qr = { at: function (v) { setPlay(false); s = v * smax(); render(); }, play: function () { setPlay(true); } };
+  window.qo.follow({ svgs: [svg, svg2],
+    render: function (st) { apply(st); render(); },
+    curve: function (st) { apply(st); curve(); } });
 })();
