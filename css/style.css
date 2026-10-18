@@ -520,18 +520,36 @@ mjx-menclose > mjx-dstrike { border-top-color: #FC6255 !important; }
 
 /* ---------- 互動圖：控制列與圖例 ---------- */
 figure.fig-live { text-align: left; }
-.fig-ctl { font-family: "Noto Sans TC", sans-serif; font-size: .82rem; line-height: 1.4; color: var(--fg-soft); margin: 0 0 .5rem; }
-.fig-ctl .row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.1rem; margin: .35rem 0; }
-.fig-ctl label { display: inline-flex; align-items: center; gap: .4rem; cursor: pointer; }
-.fig-ctl input[type=range] { accent-color: var(--accent); width: 6.5rem; }
-.fig-ctl input[type=range].grow { flex: 1; min-width: 8rem; width: auto; }
-.fig-ctl input[type=checkbox] { accent-color: var(--accent); margin: 0; }
-.fig-ctl output { min-width: 3.2em; color: var(--fg); font-variant-numeric: tabular-nums; }
-.fig-ctl button { display: inline-flex; align-items: center; justify-content: center; width: 2.4rem; height: 2rem; border: 1px solid var(--border); border-radius: 6px; background: transparent; color: var(--fg); cursor: pointer; }
-.fig-ctl button:hover { background: var(--accent-soft); }
-.fig-live > svg { display: block; width: 100%; }
-.fig-ctl button svg { display: block; }
+.fig-ctl { --ctl-line: color-mix(in srgb, var(--fg) 22%, transparent); font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.4; color: var(--fg-soft); background: var(--code-bg); border-radius: 10px; padding: .55rem .8rem; margin: 0 0 .6rem; }
+.fig-ctl .row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.4rem; margin: .3rem 0; }
+.fig-ctl label { display: inline-flex; align-items: center; gap: .55rem; cursor: pointer; white-space: nowrap; }
+.fig-ctl .row:has(> label > input[type=range]) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem 1.4rem; }
+@media (max-width: 560px) { .fig-ctl .row:has(> label > input[type=range]) { grid-template-columns: minmax(0, 1fr); } }
+.fig-ctl label:has(input[type=range]) input { flex: 1; min-width: 3.5rem; width: auto; }
+.fig-ctl output { min-width: 2.8em; text-align: right; color: var(--fg); font-variant-numeric: tabular-nums; }
 .fig-ctl output i { font-family: "Noto Serif TC", serif; }
+/* 滑桿：細線＋小圓點 */
+.fig-ctl input[type=range] { -webkit-appearance: none; appearance: none; height: 18px; margin: 0; background: transparent; cursor: pointer; width: 6.5rem; }
+.fig-ctl input[type=range].grow { flex: 1; min-width: 8rem; width: auto; }
+.fig-ctl input[type=range]::-webkit-slider-runnable-track { height: 2px; border-radius: 1px; background: var(--ctl-line); }
+.fig-ctl input[type=range]::-moz-range-track { height: 2px; border-radius: 1px; background: var(--ctl-line); }
+.fig-ctl input[type=range]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 12px; height: 12px; margin-top: -5px; border: none; border-radius: 50%; background: var(--fg); }
+.fig-ctl input[type=range]::-moz-range-thumb { width: 12px; height: 12px; border: none; border-radius: 50%; background: var(--fg); }
+.fig-ctl input[type=range]:focus-visible { outline: none; }
+.fig-ctl input[type=range]:focus-visible::-webkit-slider-thumb { box-shadow: 0 0 0 3px var(--ctl-line); }
+.fig-ctl input[type=range]:focus-visible::-moz-range-thumb { box-shadow: 0 0 0 3px var(--ctl-line); }
+/* 勾選框：方框＋勾號 */
+.fig-ctl input[type=checkbox] { -webkit-appearance: none; appearance: none; display: inline-grid; place-content: center; flex: none; width: 14px; height: 14px; margin: 0; border: 1.4px solid var(--fg-soft); border-radius: 3px; background: transparent; cursor: pointer; }
+.fig-ctl input[type=checkbox]::after { content: ""; width: 7px; height: 3.5px; border-left: 2px solid var(--bg); border-bottom: 2px solid var(--bg); transform: translateY(-1px) rotate(-45deg); opacity: 0; }
+.fig-ctl input[type=checkbox]:checked { background: var(--fg); border-color: var(--fg); }
+.fig-ctl input[type=checkbox]:checked::after { opacity: 1; }
+.fig-ctl input[type=checkbox]:focus-visible { outline: 2px solid var(--ctl-line); outline-offset: 2px; }
+.fig-ctl label:has(input[type=checkbox]:checked) { color: var(--fg); }
+/* 播放鍵 */
+.fig-ctl button { display: inline-flex; align-items: center; justify-content: center; width: 1.9rem; height: 1.9rem; border: none; border-radius: 50%; background: color-mix(in srgb, var(--fg) 10%, transparent); color: var(--fg); cursor: pointer; flex: none; }
+.fig-ctl button:hover { background: color-mix(in srgb, var(--fg) 18%, transparent); }
+.fig-ctl button svg { display: block; transform: scale(.85); }
+.fig-live > svg { display: block; width: 100%; }
 .fig-legend { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.5; color: var(--fg-soft); margin-top: .5rem; }
 .fig-legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .fig-legend i { display: inline-block; font-style: normal; }
