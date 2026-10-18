@@ -22,7 +22,7 @@
   SEG.forEach(function (g) { TD += g[0]; DX += (g[1] + g[2]) / 2 * g[0]; });
   var XD = XS - DX, T1 = (XD - XE) / B, T2 = T1 + TD, SMAX = T2 + 460;   // 開始減速的位置、時刻；停下的時刻；動畫結束的時刻
   var TEAL = '#5CD0B3';
-  var s = 0, spd = 0.5, fronts = false, others = false;
+  var s = 0, spd = 0.5, fronts = true, others = false;
 
   function traj(t) {                             // 時刻 t 的位置與速度
     if (t <= T1) return [XE + B * t, B];
