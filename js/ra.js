@@ -54,6 +54,9 @@
   }
 
   var gL = $('lines'), gF = $('fronts'), gQ = $('qs'), gO = $('oth'), lines = [], beads = [], olines = [];
+  // q 處的電場箭頭（所有 Q 的電場相加）：垂直分量 E⊥ 固定，畫成 LQ 長；沿平面的分量 E∥ = −E⊥·v(t − y_q)，消息還沒到時為 0
+  var QX = 370, QY = 170, LQ = 36, QRAD = 8;
+  var qa = el('g', {}, svg), qaS = el('line', { stroke: TEAL, 'stroke-width': 2.2 }, qa), qaH = el('path', { fill: TEAL }, qa);
   function line() { var p = el('path', { fill: 'none', stroke: TEAL, 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, gL); lines.push(p); return p; }
   function bead() {
     var g = el('g', {}, gQ); el('circle', { cx: 0, cy: Y, r: 9, fill: RED }, g);
@@ -94,7 +97,11 @@
         }
     }
     for (; no < olines.length; no++) hide(olines[no]);
-    var U = s - T1;
+    var U = s - T1, yq = Y - QY, bq_ = yq < U ? B * Math.sin(OM * (U - yq)) : 0;
+    var ax = -bq_ * LQ, ay = -LQ, al = Math.hypot(ax, ay), ux = ax / al, uy = ay / al;          // 箭頭從 q 的圓點外緣開始
+    var x1 = QX + QRAD * ux, y1 = QY + QRAD * uy, x2 = x1 + ax, y2 = y1 + ay, hh = 7, an = Math.atan2(uy, ux);
+    qaS.setAttribute('x1', f(x1)); qaS.setAttribute('y1', f(y1)); qaS.setAttribute('x2', f(x2 - 0.6 * hh * ux)); qaS.setAttribute('y2', f(y2 - 0.6 * hh * uy));
+    qaH.setAttribute('d', 'M' + f(x2) + ',' + f(y2) + 'L' + f(x2 - hh * Math.cos(an - 0.42)) + ',' + f(y2 - hh * Math.sin(an - 0.42)) + 'L' + f(x2 - hh * Math.cos(an + 0.42)) + ',' + f(y2 - hh * Math.sin(an + 0.42)) + 'Z');
     if (fronts && U > 0) { show(fu); show(fd); fu.setAttribute('y1', f(Y - U)); fu.setAttribute('y2', f(Y - U)); fd.setAttribute('y1', f(Y + U)); fd.setAttribute('y2', f(Y + U)); } else { hide(fu); hide(fd); }
     $('t').value = Math.round(s / SMAX * 1000);
   }
