@@ -526,6 +526,9 @@ figure.fig-live { text-align: left; }
 .fig-ctl .row:has(> label > input[type=range]) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem 1.4rem; }
 @media (max-width: 560px) { .fig-ctl .row:has(> label > input[type=range]) { grid-template-columns: minmax(0, 1fr); } }
 .fig-ctl label:has(input[type=range]) input { flex: 1; min-width: 3.5rem; width: auto; }
+.fig-ctl select { font: inherit; color: var(--fg); background: transparent; border: 1px solid var(--ctl-line); border-radius: 6px; padding: .15rem .35rem; cursor: pointer; }
+.fig-ctl label:has(select) { min-width: 0; }
+.fig-ctl label:has(select) select { flex: 1; min-width: 0; width: 0; }
 .fig-ctl output { min-width: 2.8em; text-align: right; color: var(--fg); font-variant-numeric: tabular-nums; }
 .fig-ctl output i { font-family: "Noto Serif TC", serif; }
 /* 滑桿：細線＋小圓點 */

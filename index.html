@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=30">
+<link rel="stylesheet" href="css/style.css?v=32">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -5705,6 +5705,80 @@ $$
 </svg>
 </figure>
 
+<p>如何分析有加速度的 \(Q\) 所建立的電場？</p>
+
+<p>兩則消息在 \(Q\) 基準看來方向相同（\({}^{Q}\theta_0 = {}^{Q}\theta_1\)）；但 \(Q\) 在 \(t_0\)、\(t_1\) 的速度不同。從地面上看，垂直方向不伸縮，水平方向的伸縮程度則隨 \(Q\) 的速度而變（1.3），所以兩條 \(\overrightarrow{QP}\) 的方向 \({}^{q}\theta_0\)、\({}^{q}\theta_1\) 也不同。</p>
+
+<figure>
+<svg viewBox="0 0 680 424" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+    <line x1="10" y1="360" x2="560" y2="360" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
+  <path d="M-170.0,360 A320,320 0 0,1 470.0,360" fill="none" stroke="#F0AC5F" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <path d="M18.5,360 A190,190 0 0,1 398.5,360" fill="none" stroke="#58C4DD" stroke-opacity=".55" stroke-width="1.4" stroke-dasharray="5 4"/>
+  <line x1="208.5" y1="360" x2="373.0" y2="265.0" stroke="#58C4DD" stroke-width="1.2" stroke-opacity=".6" stroke-dasharray="3 3"/>
+  <line x1="150.0" y1="360" x2="427.1" y2="200.0" stroke="#F0AC5F" stroke-width="1.8"/>
+  <line x1="208.5" y1="360" x2="386.2" y2="292.9" stroke="#58C4DD" stroke-width="1.8"/>
+  <path d="M373.0,265.0 A190,190 0 0,1 386.2,292.9" fill="none" stroke="#C55F73" stroke-width="4"/>
+  <line x1="370.1" y1="329.5" x2="443.2" y2="163.4" stroke="#5CD0B3" stroke-width="3"/>
+  <circle cx="427.1" cy="200.0" r="5" fill="#F0AC5F"/>
+  <circle cx="386.2" cy="292.9" r="5" fill="#58C4DD"/>
+  <circle cx="373.0" cy="265.0" r="4" fill="#58C4DD" fill-opacity=".45"/>
+  <circle cx="150.0" cy="360" r="6" fill="none" stroke="#F0AC5F" stroke-width="2"/>
+  <circle cx="208.5" cy="360" r="6" fill="none" stroke="#58C4DD" stroke-width="2"/>
+  <path d="M190.0,360 A40,40 0 0,0 184.6,340.0" fill="none" stroke="#F0AC5F" stroke-width="1.4"/>
+  <path d="M252.5,360 A44,44 0 0,0 249.7,344.5" fill="none" stroke="#58C4DD" stroke-width="1.4"/>
+    <foreignObject x="187.8" y="334.1" width="36" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{q}\theta_0\)</span></div></foreignObject>
+  <foreignObject x="249.5" y="339.2" width="36" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#58C4DD;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{q}\theta_1\)</span></div></foreignObject>
+  <foreignObject x="437.1" y="199.0" width="40" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#F0AC5F;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_0\)</span></div></foreignObject>
+  <foreignObject x="398.2" y="289.9" width="40" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#58C4DD;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_1\)</span></div></foreignObject>
+  <foreignObject x="115.0" y="371.0" width="70" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q(t_0)\)</span></div></foreignObject>
+  <foreignObject x="173.5" y="371.0" width="70" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#58C4DD;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q(t_1)\)</span></div></foreignObject>
+  <foreignObject x="195.0" y="241.0" width="170" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#58C4DD;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">方向沒轉時的 \(\vec P_1\)</span></div></foreignObject>
+  <foreignObject x="280.2" y="272.7" width="90" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#C55F73;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">沿前緣的弧</span></div></foreignObject>
+  <foreignObject x="451.2" y="149.4" width="200" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#5CD0B3;height:20px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">兩點的連線＝電場的方向</span></div></foreignObject>
+  <foreignObject x="12.0" y="9.0" width="656" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:26px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">地面基準：\(Q\) 正在加速，在時刻 \(t_0\)、\(t_1\) 各送出一則消息，在 \(Q\) 基準看來方向相同</span></div></foreignObject>
+  <foreignObject x="12.0" y="395.0" width="656" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:currentColor;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em"><span style="color:#F0AC5F">\(t_0\)：\(Q\) 送出第一則消息</span><span style="margin-left:1.2em;color:#58C4DD">\(t_1\)：\(Q\) 送出第二則消息</span><span style="margin-left:1.2em">\(t\)：此刻，兩則消息分別到達 \(\vec P_0\)、\(\vec P_1\)</span></span></div></foreignObject>
+</svg>
+</figure>
+
+$$
+\begin{aligned}
+&\vec P_0 - \vec P_1 = \underbrace{c\,dt\;\hat r_0 - \big(v\,dt + {\color[RGB]{252,98,85}\enclose{updiagonalstrike}{\style{color:var(--fg)}{\tfrac12\,a\,dt^2}}}\big)\,\hat x}_{\text{與 3.9 相同}} + \underbrace{c\,(t-t_1)\,(\hat r_0 - \hat r_1)}_{\text{沿前緣的弧}}\\[6pt]
+&\text{（}dt\text{：兩次送出的時間間隔；}\hat r_0\text{、}\hat r_1\text{：兩條 }\overrightarrow{QP}\text{ 的方向）}\\
+&\text{（}v\text{、}a\text{：}Q\text{ 在 }t_0\text{ 的速度、加速度；}Q(t_0)\text{ 到 }Q(t_1)\text{ 的距離是 }v\,dt + \tfrac12\,a\,dt^2\text{）}
+\end{aligned}
+$$
+
+<figure class="fig-live">
+<div class="fig-ctl">
+  <div class="row">
+    <label>送出幾圈 <input type="range" class="rb-n" min="5" max="40" step="1" value="12"><output class="rb-no">12</output></label>
+    <label>\(\overrightarrow{QP}\) 的方向 \({}^{Q}\theta\) <input type="range" class="rb-th" min="30" max="90" step="5" value="60"><output class="rb-tho">60°</output></label>
+    <label>\(Q\) 的運動 <select class="rb-mv"><option value="acc" selected>加速（0.1c→0.7c）</option><option value="dec">減速（0.7c→0.1c）</option><option value="shm">來回</option></select></label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" class="rb-cw"> 疊上 \(Q\) 的位置隨時間的圖（時間往上是越早）</label>
+    <label><input type="checkbox" class="rb-co"> \(Q\) 此刻的其他電場線</label>
+  </div>
+</div>
+<svg id="rb" viewBox="0 0 680 440" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <line x1="10" y1="380" x2="670" y2="380" stroke="currentColor" stroke-opacity=".35" stroke-dasharray="4 4"/>
+  <g class="rb-fronts"></g>
+  <g class="rb-rays"></g>
+  <g class="rb-wl"></g>
+  <g class="rb-others"></g>
+  <g class="rb-curve"></g>
+  <g class="rb-pts"></g>
+  <foreignObject class="rb-l0" x="0" y="0" width="150" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#58C4DD;height:22px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_0\)<span>（最早送出）</span></span></div></foreignObject>
+  <foreignObject class="rb-ln" x="0" y="0" width="60" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q\)<span>此刻</span></span></div></foreignObject>
+  <foreignObject class="rb-lq" x="0" y="0" width="60" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q(t_0)\)</span></div></foreignObject>
+</svg>
+</figure>
+
+<p>接著，與 3.1 同理，用 Coulomb's Law + 狹義相對論，就可以分析有加速度的 \(Q\) 所建立的電場。只不過，這樣會得到一個很醜、又沒有什麼規律的數學式，到頭來還是要靠數值解。</p>
+
+<p>等等！？為什麼扯到加速度，卻不需要廣義相對論？<br>
+因為 \(Q\) 是一個點，不是一艘有長度的火箭。用每一個瞬間的 \(Q(t_i)\)，就能分析整個過程；有加速度的情形，與等速的情形其實沒有什麼區別。</p>
+
 <p>如果換成一整片無限大的平面，均勻布滿 \(Q\)，原本靜止，忽然開始作簡諧運動呢？</p>
 
 $$
@@ -5996,6 +6070,7 @@ $$
 <script src="js/qv.js?v=7"></script>
 <script src="js/qz.js?v=4"></script>
 <script src="js/ra.js?v=21"></script>
+<script src="js/rb.js?v=5"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
