@@ -19,7 +19,7 @@
   function f(n) { return n.toFixed(1); }
 
   var W = 680, H = 600, Y = 300, XE = 110, D = 24, LE = 2;    // D：相鄰兩顆 Q 的間距；每 LE 顆 Q 畫一條電場線
-  var T1 = 60, PER = 80, OM = 2 * Math.PI / PER, SMAX = T1 + 640, DR = 2, NR = Math.ceil(Math.max(Y, H - Y) / DR) + 1;
+  var T1 = 60, PER = 160, OM = 2 * Math.PI / PER, SMAX = T1 + 640, DR = 2, NR = Math.ceil(Math.max(Y, H - Y) / DR) + 1;
   var GOLD = '#F0AC5F', RED = '#FC6255', TEAL = '#5CD0B3';
   var B = 0.7, s = 0, spd = 0.5, fronts = true, others = false, NO = 12;   // NO：每一顆 Q 各自畫幾條電場線
   var shift = new Float64Array(NR);                               // shift[i]：電場線在 y = i·DR 處相對於它所在的 Q 的水平位移
@@ -58,7 +58,6 @@
   var QX = 370, QY = 170, LQ = 36, QRAD = 8;
   // 右下角：振動的相位 2πft（半徑轉 2πft，它在 x 軸上的投影就是 x = cos 2πft）；半徑＝Q 實際的振幅 u/ω，隨最大速度改變
   var PHX = 590, PHY = 572, gP = $('ph');
-  var phC = el('circle', { cx: PHX, cy: PHY, fill: 'none', stroke: 'currentColor', 'stroke-opacity': .45, 'stroke-width': 1 }, gP);
   var phA = el('path', { fill: 'none', stroke: GOLD, 'stroke-width': 1.6 }, gP);
   var phR = el('line', { x1: PHX, y1: PHY, stroke: GOLD, 'stroke-width': 1.6 }, gP);
   var phD = el('line', { stroke: GOLD, 'stroke-width': 1, 'stroke-dasharray': '3 3', 'stroke-opacity': .7 }, gP);
@@ -104,8 +103,7 @@
         }
     }
     for (; no < olines.length; no++) hide(olines[no]);
-    var PHR = B / OM, ph = s <= T1 ? 0 : OM * (s - T1), pm = ph % (2 * Math.PI), ex = PHX + PHR * Math.cos(ph), ey = PHY - PHR * Math.sin(ph), ar = 0.55 * PHR;
-    phC.setAttribute('r', f(PHR));
+    var PHR = B / OM, ph = s <= T1 ? 0 : OM * (s - T1), pm = ph % (2 * Math.PI), ex = PHX + PHR * Math.cos(ph), ey = PHY - PHR * Math.sin(ph), ar = PHR;   // 橘色角弧與灰色圓半徑相同＝Q 的振幅
     phR.setAttribute('x2', f(ex)); phR.setAttribute('y2', f(ey));
     phD.setAttribute('x1', f(ex)); phD.setAttribute('y1', f(ey)); phD.setAttribute('x2', f(ex)); phD.setAttribute('y2', PHY);
     phP.setAttribute('cx', f(ex));
