@@ -5903,6 +5903,7 @@ $$
   </div>
   <div class="row">
     <label><input type="checkbox" class="ra-cs" checked> \(Q\) 開始簡諧運動時送出的消息前緣</label>
+    <label><input type="checkbox" class="ra-co"> 依線性疊加原理互相抵消的其他電場線</label>
   </div>
 </div>
 <svg id="ra" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -5910,6 +5911,7 @@ $$
     <clipPath id="raC"><rect x="0" y="0" width="680" height="600"/></clipPath>
   </defs>
   <g clip-path="url(#raC)">
+    <g class="ra-oth"></g>
     <g class="ra-lines"></g>
     <g class="ra-fronts"></g>
     <circle cx="370" cy="170" r="6" fill="currentColor"/>
@@ -6949,7 +6951,7 @@ $$
 <script src="js/qu.js?v=4"></script>
 <script src="js/qv.js?v=7"></script>
 <script src="js/qz.js?v=4"></script>
-<script src="js/ra.js?v=7"></script>
+<script src="js/ra.js?v=9"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 

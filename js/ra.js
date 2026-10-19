@@ -21,7 +21,7 @@
   var W = 680, H = 600, Y = 300, XE = 110, D = 24, LE = 2;    // D：相鄰兩顆 Q 的間距；每 LE 顆 Q 畫一條電場線
   var T1 = 60, PER = 80, OM = 2 * Math.PI / PER, SMAX = T1 + 640, DR = 2, NR = Math.ceil(Math.max(Y, H - Y) / DR) + 1;
   var GOLD = '#F0AC5F', RED = '#FC6255', TEAL = '#5CD0B3';
-  var B = 0.7, s = 0, spd = 0.5, fronts = true;
+  var B = 0.7, s = 0, spd = 0.5, fronts = true, others = false, NO = 12;   // NO：每一顆 Q 各自畫幾條電場線
   var shift = new Float64Array(NR);                               // shift[i]：電場線在 y = i·DR 處相對於它所在的 Q 的水平位移
 
   function computeShift() {                                       // 上式，逐點寫出（精確的式子，不是數值積分）
@@ -33,7 +33,27 @@
   }
   function xq(k, t) { var c0 = XE + k * D; return t <= T1 ? c0 : c0 + B / OM * (1 - Math.cos(OM * (t - T1))); }   // 第 k 顆 Q 的位置
 
-  var gL = $('lines'), gF = $('fronts'), gQ = $('qs'), lines = [], beads = [];
+  // 每一顆 Q 各自的電場線（各自的電場；疊加後才是上面的總電場線）：
+  // 「各時刻 τ 在 Q 的瞬時靜止基準中以同一角度 θ' 送出」的點連成的線，τ 時刻送出的點此刻在 x(τ) + (s − τ)(cos θ, sin θ)，
+  // cos θ = (cos θ' + β)/(1 + β cos θ')；開始簡諧運動前送出的部分，是從原本靜止的位置放射的直線
+  function bq(t) { return t <= T1 ? 0 : B * Math.sin(OM * (t - T1)); }
+  function pt(k, t, c, sn) { var b = bq(t), dn = 1 + b * c, R = s - t; return [xq(k, t) + R * (c + b) / dn, Y - R * sn * Math.sqrt(1 - b * b) / dn]; }
+  function inView(p) { return p[0] > -40 && p[0] < W + 40 && p[1] > -40 && p[1] < H + 40; }
+  function opath(k, i) {
+    var th = (i + 0.5) * 2 * Math.PI / NO, c = Math.cos(th), sn = Math.sin(th), c0 = XE + k * D, far = 'L' + f(c0 + 1200 * c) + ',' + f(Y - 1200 * sn);
+    if (s <= T1 + 8) { var a0 = s <= T1 ? 0 : s - T1; return 'M' + f(c0 + Math.max(10, a0) * c) + ',' + f(Y - Math.max(10, a0) * sn) + far; }
+    var te = s - 8, p0 = pt(k, te, c, sn), d = 'M' + f(p0[0]) + ',' + f(p0[1]), t0 = te, DT = 2;
+    for (var t = te - DT; ; t -= DT) {                            // 每 2 取一點（遠小於半週期 40，不會漏掉折返）；相鄰兩點超過 3 px 且在畫面附近時再細分
+      if (t < T1) t = T1;
+      var p = pt(k, t, c, sn), j = Math.hypot(p[0] - p0[0], p[1] - p0[1]);
+      if (j > 3 && (inView(p) || inView(p0))) for (var m = 1, n = Math.min(24, Math.ceil(j / 3)); m < n; m++) { var pm = pt(k, t0 + (t - t0) * m / n, c, sn); d += 'L' + f(pm[0]) + ',' + f(pm[1]); }
+      d += 'L' + f(p[0]) + ',' + f(p[1]); p0 = p; t0 = t;
+      if (t <= T1) break;
+    }
+    return d + far;
+  }
+
+  var gL = $('lines'), gF = $('fronts'), gQ = $('qs'), gO = $('oth'), lines = [], beads = [], olines = [];
   function line() { var p = el('path', { fill: 'none', stroke: TEAL, 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, gL); lines.push(p); return p; }
   function bead() {
     var g = el('g', {}, gQ); el('circle', { cx: 0, cy: Y, r: 9, fill: RED }, g);
@@ -65,6 +85,15 @@
       show(p); p.setAttribute('d', d);
     }
     for (; nl < lines.length; nl++) hide(lines[nl]);
+    var no = 0;
+    if (others) {                                                 // 每一顆 Q 各自的電場線：畫面左右各多取 200 px 內的 Q
+      for (k = Math.ceil((-200 - XE) / D); XE + k * D <= W + 200; k++)
+        for (var io = 0; io < NO; io++) {
+          var po = no < olines.length ? olines[no] : (olines.push(el('path', { fill: 'none', stroke: TEAL, 'stroke-opacity': .16, 'stroke-width': 1 }, gO)), olines[no]); no++;
+          show(po); po.setAttribute('d', opath(k, io));
+        }
+    }
+    for (; no < olines.length; no++) hide(olines[no]);
     var U = s - T1;
     if (fronts && U > 0) { show(fu); show(fd); fu.setAttribute('y1', f(Y - U)); fu.setAttribute('y2', f(Y - U)); fd.setAttribute('y1', f(Y + U)); fd.setAttribute('y2', f(Y + U)); } else { hide(fu); hide(fd); }
     $('t').value = Math.round(s / SMAX * 1000);
@@ -80,6 +109,7 @@
   $('b').addEventListener('input', function (e) { B = +e.target.value; $('bo').innerHTML = B.toFixed(1) + ' <i>c</i>'; render(); });
   $('sp').addEventListener('input', function (e) { spd = +e.target.value; $('spo').textContent = spd + '×'; });
   $('cs').addEventListener('change', function (e) { fronts = e.target.checked; render(); });
+  $('co').addEventListener('change', function (e) { others = e.target.checked; render(); });
   function loop(ts) {
     if (play && vis && ts - last > 33) { last = ts; s += 2 * spd; if (s > SMAX) s = 0; render(); }
     requestAnimationFrame(loop);
