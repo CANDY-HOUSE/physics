@@ -1,12 +1,12 @@
 /* 3.9 動畫（布滿 Q 的無限大平面原本靜止，忽然開始作簡諧運動）：地面基準＝q 基準；側視圖（平面垂直於紙面，只看到它的邊）。
    平面上均勻布滿 Q（每單位面積的電量 σ 固定）；整片原本靜止，
-   在時刻 T1 起沿紙面水平方向作簡諧運動 x = c0 + (u/ω)(1 − cos ω(t − T1))，速度 v = u sin ω(t − T1)（從 0 開始，速度連續；u：最大速度）。
+   在時刻 T1 起沿紙面水平方向作簡諧運動 x = c0 − (u/ω)(1 − cos ω(t − T1))（即以 c0 − u/ω 為中心的 x = (u/ω) cos ω(t − T1)，與書中 x = cos 2πft 相同），速度 v = −u sin ω(t − T1)（從 0 開始、先往左，速度連續；u：最大速度）。
    平面的電場不擴散（c = 1，y：到平面的距離）：
      垂直於平面的分量 E⊥ = σ/(2ε0) 處處相同（Gauss 定律，電量分布不變）；
      沿平面的分量來自面電流 σv 的變化，以光速傳出、不衰減：E∥ = −(μ0 σ/2) v(t − y)，所以 E∥ / E⊥ = −v(t − y)
      （消息還沒到時 v = 0，為 0）。
    電場線上 dx/dy = E∥/E⊥，從平面上每一顆 Q 出發往上、往下：
-     y < t − T1：x = x_Q − (u/ω)[cos ω(t − T1 − y) − cos ω(t − T1)]；
+     y < t − T1：x = x_Q + (u/ω)[cos ω(t − T1 − y) − cos ω(t − T1)]；
      y ≥ t − T1：鉛直線，位在這顆 Q 原本靜止的位置 c0。
    有自己的一組控制與迴圈。 */
 (function () {
@@ -28,15 +28,15 @@
     var U = s - T1, A = B / OM;
     for (var i = 0; i < NR; i++) {
       var y = i * DR;
-      shift[i] = U <= 0 ? 0 : (y < U ? -A * (Math.cos(OM * (U - y)) - Math.cos(OM * U)) : -A * (1 - Math.cos(OM * U)));
+      shift[i] = U <= 0 ? 0 : (y < U ? A * (Math.cos(OM * (U - y)) - Math.cos(OM * U)) : A * (1 - Math.cos(OM * U)));
     }
   }
-  function xq(k, t) { var c0 = XE + k * D; return t <= T1 ? c0 : c0 + B / OM * (1 - Math.cos(OM * (t - T1))); }   // 第 k 顆 Q 的位置
+  function xq(k, t) { var c0 = XE + k * D; return t <= T1 ? c0 : c0 - B / OM * (1 - Math.cos(OM * (t - T1))); }   // 第 k 顆 Q 的位置
 
   // 每一顆 Q 各自的電場線（各自的電場；疊加後才是上面的總電場線）：
   // 「各時刻 τ 在 Q 的瞬時靜止基準中以同一角度 θ' 送出」的點連成的線，τ 時刻送出的點此刻在 x(τ) + (s − τ)(cos θ, sin θ)，
   // cos θ = (cos θ' + β)/(1 + β cos θ')；開始簡諧運動前送出的部分，是從原本靜止的位置放射的直線
-  function bq(t) { return t <= T1 ? 0 : B * Math.sin(OM * (t - T1)); }
+  function bq(t) { return t <= T1 ? 0 : -B * Math.sin(OM * (t - T1)); }
   function pt(k, t, c, sn) { var b = bq(t), dn = 1 + b * c, R = s - t; return [xq(k, t) + R * (c + b) / dn, Y - R * sn * Math.sqrt(1 - b * b) / dn]; }
   function inView(p) { return p[0] > -40 && p[0] < W + 40 && p[1] > -40 && p[1] < H + 40; }
   function opath(k, i) {
@@ -56,6 +56,13 @@
   var gL = $('lines'), gF = $('fronts'), gQ = $('qs'), gO = $('oth'), lines = [], beads = [], olines = [];
   // q 處的電場箭頭（所有 Q 的電場相加）：垂直分量 E⊥ 固定，畫成 LQ 長；沿平面的分量 E∥ = −E⊥·v(t − y_q)，消息還沒到時為 0
   var QX = 370, QY = 170, LQ = 36, QRAD = 8;
+  // 右下角：振動的相位 2πft（半徑轉 2πft，它在 x 軸上的投影就是 x = cos 2πft）；半徑＝Q 實際的振幅 u/ω，隨最大速度改變
+  var PHX = 590, PHY = 572, gP = $('ph');
+  var phC = el('circle', { cx: PHX, cy: PHY, fill: 'none', stroke: 'currentColor', 'stroke-opacity': .45, 'stroke-width': 1 }, gP);
+  var phA = el('path', { fill: 'none', stroke: GOLD, 'stroke-width': 1.6 }, gP);
+  var phR = el('line', { x1: PHX, y1: PHY, stroke: GOLD, 'stroke-width': 1.6 }, gP);
+  var phD = el('line', { stroke: GOLD, 'stroke-width': 1, 'stroke-dasharray': '3 3', 'stroke-opacity': .7 }, gP);
+  var phP = el('circle', { cy: PHY, r: 2.5, fill: RED }, gP);
   var qa = el('g', {}, svg), qaS = el('line', { stroke: TEAL, 'stroke-width': 2.2 }, qa), qaH = el('path', { fill: TEAL }, qa);
   function line() { var p = el('path', { fill: 'none', stroke: TEAL, 'stroke-width': 1.6, 'stroke-linejoin': 'round' }, gL); lines.push(p); return p; }
   function bead() {
@@ -97,7 +104,13 @@
         }
     }
     for (; no < olines.length; no++) hide(olines[no]);
-    var U = s - T1, yq = Y - QY, bq_ = yq < U ? B * Math.sin(OM * (U - yq)) : 0;
+    var PHR = B / OM, ph = s <= T1 ? 0 : OM * (s - T1), pm = ph % (2 * Math.PI), ex = PHX + PHR * Math.cos(ph), ey = PHY - PHR * Math.sin(ph), ar = 0.55 * PHR;
+    phC.setAttribute('r', f(PHR));
+    phR.setAttribute('x2', f(ex)); phR.setAttribute('y2', f(ey));
+    phD.setAttribute('x1', f(ex)); phD.setAttribute('y1', f(ey)); phD.setAttribute('x2', f(ex)); phD.setAttribute('y2', PHY);
+    phP.setAttribute('cx', f(ex));
+    phA.setAttribute('d', pm < 1e-3 ? '' : 'M' + (PHX + ar) + ',' + PHY + ' A' + ar + ',' + ar + ' 0 ' + (pm > Math.PI ? 1 : 0) + ',0 ' + f(PHX + ar * Math.cos(pm)) + ',' + f(PHY - ar * Math.sin(pm)));
+    var U = s - T1, yq = Y - QY, bq_ = yq < U ? -B * Math.sin(OM * (U - yq)) : 0;
     var ax = -bq_ * LQ, ay = -LQ, al = Math.hypot(ax, ay), ux = ax / al, uy = ay / al;          // 箭頭從 q 的圓點外緣開始
     var x1 = QX + QRAD * ux, y1 = QY + QRAD * uy, x2 = x1 + ax, y2 = y1 + ay, hh = 7, an = Math.atan2(uy, ux);
     qaS.setAttribute('x1', f(x1)); qaS.setAttribute('y1', f(y1)); qaS.setAttribute('x2', f(x2 - 0.6 * hh * ux)); qaS.setAttribute('y2', f(y2 - 0.6 * hh * uy));
@@ -126,5 +139,5 @@
   render();
   requestAnimationFrame(loop);
   window.ra = { at: function (v) { setPlay(false); s = v * SMAX; render(); }, play: function () { setPlay(true); },
-    check: function () { var U = s - T1; return U > 0 && U < (NR - 1) * DR ? [shift[Math.round(U / DR)], -B / OM * (1 - Math.cos(OM * U))] : null; } };
+    check: function () { var U = s - T1; return U > 0 && U < (NR - 1) * DR ? [shift[Math.round(U / DR)], B / OM * (1 - Math.cos(OM * U))] : null; } };
 })();
