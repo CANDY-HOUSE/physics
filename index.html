@@ -5667,20 +5667,6 @@ $$
 </figure>
 
 <figure class="fig-live">
-<div class="fig-ctl">
-  <div class="row">
-    <button type="button" class="qz-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
-    <span>時間</span>
-    <input type="range" class="qz-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
-  </div>
-  <div class="row">
-    <label>播放速度 <input type="range" class="qz-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="qz-spo">0.5×</output></label>
-  </div>
-  <div class="row">
-    <label><input type="checkbox" class="qz-cs" checked> \(Q\) 開始減速、停下時送出的消息前緣</label>
-    <label><input type="checkbox" class="qz-co"> 其他電場線</label>
-  </div>
-</div>
 <svg id="qz" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <clipPath id="qzC"><rect x="0" y="0" width="680" height="600"/></clipPath>
@@ -5703,6 +5689,20 @@ $$
   <foreignObject class="qz-gl" x="35.0" y="314.0" width="150" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em"><span>若未減速，Q 此刻的位置</span></span></div></foreignObject>
   <foreignObject x="12.0" y="8.0" width="656" height="52"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;font-weight:700;color:currentColor;line-height:1.6;white-space:normal"><span style="background:var(--bg);padding:0 3px;-webkit-box-decoration-break:clone;box-decoration-break:clone">地面基準＝\(q\) 基準：\(Q\) 以 \({}^{\text{地}}\vec u\) 等速前進；之後加速度的大小固定：先減速到停下，再往回加速到 \({}^{\text{地}}u\)，再減速到停下，再往前加速到 \({}^{\text{地}}u\)；如此來回 3 次，最後減速到停下</span></div></foreignObject>
 </svg>
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="qz-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>時間</span>
+    <input type="range" class="qz-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
+  </div>
+  <div class="row">
+    <label>播放速度 <input type="range" class="qz-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="qz-spo">0.5×</output></label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" class="qz-cs" checked> \(Q\) 開始減速、停下時送出的消息前緣</label>
+    <label><input type="checkbox" class="qz-co"> 其他電場線</label>
+  </div>
+</div>
 </figure>
 
 <p>如何分析有加速度的 \(Q\) 所建立的電場？</p>
@@ -5791,21 +5791,6 @@ $$
 $$
 
 <figure class="fig-live">
-<div class="fig-ctl">
-  <div class="row">
-    <button type="button" class="ra-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
-    <span>時間</span>
-    <input type="range" class="ra-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
-  </div>
-  <div class="row">
-    <label>\(Q\) 的最大速度 \({}^{\text{地}}u_{\max}\) <input type="range" class="ra-b" min="0.1" max="0.9" step="0.1" value="0.7"><output class="ra-bo">0.7 <i>c</i></output></label>
-    <label>播放速度 <input type="range" class="ra-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="ra-spo">0.5×</output></label>
-  </div>
-  <div class="row">
-    <label><input type="checkbox" class="ra-cs" checked> \(Q\) 開始簡諧運動時送出的消息前緣</label>
-    <label><input type="checkbox" class="ra-co"> 依線性疊加原理互相抵消的其他電場線</label>
-  </div>
-</div>
 <svg id="ra" viewBox="0 0 680 600" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <defs>
     <clipPath id="raC"><rect x="0" y="0" width="680" height="600"/></clipPath>
@@ -5826,6 +5811,21 @@ $$
   <foreignObject x="355.0" y="180.0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(q\)</span></div></foreignObject>
   <foreignObject x="12.0" y="9.0" width="656" height="26"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;font-weight:700;color:currentColor;height:26px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">地面基準＝\(q\) 基準（側視圖）：布滿 \(Q\) 的無限大平面原本靜止，之後忽然開始作簡諧運動</span></div></foreignObject>
 </svg>
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="ra-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>時間</span>
+    <input type="range" class="ra-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
+  </div>
+  <div class="row">
+    <label>\(Q\) 的最大速度 <input type="range" class="ra-b" min="0.1" max="0.9" step="0.1" value="0.7"><output class="ra-bo">0.7 <i>c</i></output></label>
+    <label>播放速度 <input type="range" class="ra-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="ra-spo">0.5×</output></label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" class="ra-cs" checked> \(Q\) 開始簡諧運動時送出的消息前緣</label>
+    <label><input type="checkbox" class="ra-co"> 依線性疊加原理互相抵消的其他電場線</label>
+  </div>
+</div>
 </figure>
 
 <p>產生的波看起來是 sin 波，但它真的是 sin 波嗎？</p>
@@ -6041,6 +6041,13 @@ $$
 $$
 
 <figure class="fig-live">
+<svg id="rw" viewBox="0 0 680 470" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14" style="touch-action:none;cursor:grab">
+  <foreignObject class="rw-lx" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat x\)</span></div></foreignObject>
+  <foreignObject class="rw-ly" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat y\)</span></div></foreignObject>
+  <foreignObject class="rw-lz" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat z\)</span></div></foreignObject>
+  <foreignObject class="rw-lb" x="0" y="0" width="190" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#F0AC5F;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{q}\vec B\)<span>只是假想，不存在</span></span></div></foreignObject>
+  <foreignObject class="rw-lf" x="0" y="0" width="110" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em"><span>消息的前緣</span></span></div></foreignObject>
+</svg>
 <div class="fig-ctl">
   <div class="row">
     <button type="button" class="rw-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
@@ -6054,12 +6061,6 @@ $$
     <label><input type="checkbox" class="rw-cb" checked> 顯示 \({}^{q}\vec B\)</label>
   </div>
 </div>
-<svg id="rw" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14" style="touch-action:none;cursor:grab">
-  <foreignObject class="rw-lx" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat x\)</span></div></foreignObject>
-  <foreignObject class="rw-ly" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat y\)</span></div></foreignObject>
-  <foreignObject class="rw-lz" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat z\)</span></div></foreignObject>
-  <foreignObject class="rw-lf" x="0" y="0" width="110" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em"><span>消息的前緣</span></span></div></foreignObject>
-</svg>
 <div class="fig-legend">
   <span><i class="lg-bar"></i>\({}^{q}E_x\)（\(\hat x\) 方向）</span>
   <span><i class="lg-bar" style="border-color:#F0AC5F"></i>\({}^{q}B_z\)（\(\hat z\) 方向）</span>
@@ -6303,7 +6304,7 @@ $$
 <script src="js/ra.js?v=21"></script>
 <script src="js/rb.js?v=5"></script>
 <script src="js/rd.js?v=5"></script>
-<script src="js/rw.js?v=3"></script>
+<script src="js/rw.js?v=6"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 

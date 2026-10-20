@@ -11,7 +11,7 @@
   function f1(n) { return n.toFixed(1); }
 
   var TEAL = '#5CD0B3', GOLD = '#F0AC5F', RED = '#FC6255';
-  var CX = 340, CY = 400, S = 105, YMAX = 3, HALF = 1.3, AMP = 0.75, NY = 60, SMAX = 9;
+  var CX = 340, CY = 375, S = 105, YMAX = 3, HALF = 1.3, AMP = 0.75, NY = 60, SMAX = 9;
   var phi = -0.35, theta = 0.45, s = 0, spd = 0.5, showB = true;
 
   function P(x, y, z) {                                   // 投影：回傳 [sx, sy]
@@ -80,6 +80,14 @@
     }
     if (showB && cb) el('path', { d: cb, fill: 'none', stroke: GOLD, 'stroke-width': 2, 'stroke-opacity': .9 }, g);
     if (ce) el('path', { d: ce, fill: 'none', stroke: TEAL, 'stroke-width': 2 }, g);
+    // 標注像「消息的前緣」一樣跟著 B 波往上走：貼在最上面那個波峰（B_z 朝 +z 最大處：y = t + 1/4 − n）；
+    // 那個波峰走出圖的上緣後，才換到下一個波峰
+    var lb = $('lb'), ytop = Math.min(yf, YMAX - 0.1), yb = t + 0.25 - Math.max(1, Math.ceil(t + 0.25 - ytop));
+    if (showB && yb >= 0.3) {
+      var pb2 = P(0, yb, AMP); el('circle', { cx: f1(pb2[0]), cy: f1(pb2[1]), r: 3.5, fill: GOLD }, g);
+      var w = +lb.getAttribute('width'), hh = +lb.getAttribute('height');
+      lb.setAttribute('x', f1(pb2[0] - 12 - w)); lb.setAttribute('y', f1(pb2[1] - hh / 2)); lb.removeAttribute('visibility');
+    } else lb.setAttribute('visibility', 'hidden');
     $('t').value = Math.round(s / SMAX * 1000);
   }
 
