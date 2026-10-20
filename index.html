@@ -6023,13 +6023,18 @@ $$
 </svg>
 </figure>
 
+<p>聚焦在 \(\vec P_1\)。等速時，\(\overrightarrow{P_2P_0}\) 與紅線左右對稱，水平的部分互相抵消。加速時，兩條線的下端都比等速時多往右移了 \(\tfrac12\,a\,(2dt)^2\)：</p>
+
 $$
 \begin{aligned}
-&\vec P_0 - \vec P_1 = c\,dt\;\hat y - u\,dt\;\hat x,\qquad \vec P_1 - \vec P_2 = c\,dt\;\hat y - (u + a\,dt)\,dt\;\hat x\\[6pt]
-&\text{經過 }t_1\text{ 送出的前緣，}E_x\text{ 改變 }-\,\frac{a\,dt}{c}\cdot E_y\\[6pt]
-&\text{（}a\text{：}Q\text{ 在 }t_1\text{ 的加速度；等速時 }a = 0\text{，不轉彎）}
+&\overrightarrow{P_2P_0}\text{：水平 }-\,u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
+&\text{紅線：水平 }+\,u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
+&\text{加起來：水平 }-\,a\,(2dt)^2,\qquad \text{垂直 }2\cdot c\,(2dt)\qquad\Rightarrow\qquad \frac{-\,a\,(2dt)^2}{2\cdot c\,(2dt)} = -\,\frac{a\,dt}{c}\\[6pt]
+&\text{（}a\text{：}Q\text{ 的加速度；等速時 }a = 0\text{，左右完全抵消）}
 \end{aligned}
 $$
+
+<p>也就是說，經過 \(t_1\) 送出的前緣，\(E_x\) 改變 \(-\,\frac{a\,dt}{c}\cdot E_y\)。平面原本靜止時，最早的前緣以上電場垂直；由上往下，把每一個前緣的改變加起來：</p>
 
 $$
 \begin{aligned}
@@ -6038,7 +6043,7 @@ $$
 \end{aligned}
 $$
 
-<p>這正是上面的結果。反過來，一直以 \(u\) 等速前進的平面，從來沒有轉彎，電場是垂直的（3.1）；這時 \(\vec P_0\)、\(\vec P_1\) 的連線並不是電場的方向。所以取正上方的點，只適用於原本靜止的平面。</p>
+<p>反過來，一直以 \(u\) 等速前進的平面，從來沒有加速，每一個前緣都左右完全抵消，電場是垂直的（3.1）。</p>
 
 <p>代入 \(u = -\,{}^{\text{地}}u_{\max}\cdot\sin 2\pi f t_0\)：</p>
 
@@ -6286,7 +6291,7 @@ $$
 <script src="js/ra.js?v=21"></script>
 <script src="js/rb.js?v=5"></script>
 <script src="js/rc.js?v=2"></script>
-<script src="js/rd.js?v=3"></script>
+<script src="js/rd.js?v=4"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
