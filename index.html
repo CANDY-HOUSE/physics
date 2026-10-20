@@ -70,7 +70,7 @@ MathJax = {
           <li><a href="#sec-3-6">3.6　磁力線、磁通量並不存在</a></li>
           <li><a href="#sec-3-7">3.7　磁就是電！Faraday's Law 的來源</a></li>
           <li><a href="#sec-3-8">3.8　Ampère's Law 暫態與穩態</a></li>
-          <li><a href="#sec-3-9">3.9　（未完工）</a></li>
+          <li><a href="#sec-3-9">3.9　輻射電磁波</a></li>
           <li><a href="#sec-3-10">3.10　（未完工）</a></li>
         </ol>
       </li>
@@ -4867,7 +4867,7 @@ $$
 
 <p>微分形式只涉及一點附近，是最基本的單元；把它積分起來，就適用於任意形狀的圈、任意一群等速運動的電荷。</p>
 
-<h2 id="sec-3-9">3.9　（未完工）</h2>
+<h2 id="sec-3-9">3.9　輻射電磁波</h2>
 
 <p>首先看一顆憑空出現、靜止不動的 \(Q\)。它的電場不是一出現就遍布各處，而是受光速限制：從 \(Q\) 所在的位置開始，以 \(c\) 往外建立；經過時間 \(t\)，只有半徑 \(c\,t\) 以內的地方有 \(Q\) 的電場。</p>
 
@@ -5783,10 +5783,10 @@ $$
 
 $$
 \begin{aligned}
-&x = \cos 2\pi f t\\[6pt]
-&u = -\,2\pi f\cdot\sin 2\pi f t\\[6pt]
+&{}^{q}x = \cos 2\pi f t\\[6pt]
+&{}^{q}u = -\,2\pi f\cdot\sin 2\pi f t\\[6pt]
 &\text{（振幅取 1；}f\text{：頻率；以振動的中心為原點；}\\
-&\text{　}t\text{ 從開始振動起算，}t = 0\text{ 時 }Q\text{ 靜止在 }x = 1\text{）}
+&\text{　}t\text{ 從開始振動起算，}t = 0\text{ 時 }Q\text{ 靜止在 }{}^{q}x = 1\text{）}
 \end{aligned}
 $$
 
@@ -5830,7 +5830,7 @@ $$
 
 <p>產生的波看起來是 sin 波，但它真的是 sin 波嗎？</p>
 
-<p>先看 \({}^{q}E_y\)。若平面以 \(u\) 等速前進，有兩種推理。</p>
+<p>先看 \({}^{q}E_y\)。若平面以 \({}^{q}u\) 等速前進，有兩種推理。</p>
 
 <p><strong>推理一</strong>（1.3）：換到 \(Q\) 基準，平面是靜止的；再用 3.1 的結果換回 \(q\) 基準。</p>
 
@@ -5877,8 +5877,8 @@ $$
   <foreignObject x="14.0" y="20.0" width="400" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(Q\) 基準：平面靜止</span></div></foreignObject>
   <foreignObject x="350.0" y="220.0" width="60" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{q}E_y\)</span></div></foreignObject>
   <foreignObject x="102.0" y="350.0" width="80" height="20"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">間距</span></div></foreignObject>
-  <foreignObject x="14.0" y="200.0" width="400" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(q\) 基準：平面以 \(u\) 前進</span></div></foreignObject>
-  <foreignObject x="560.0" y="253.0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#83C167;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(u\)</span></div></foreignObject>
+  <foreignObject x="14.0" y="200.0" width="400" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\(q\) 基準：平面以 \({}^{q}u\) 前進</span></div></foreignObject>
+  <foreignObject x="560.0" y="253.0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#83C167;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{q}u\)</span></div></foreignObject>
 </svg>
 </figure>
 
@@ -5887,7 +5887,7 @@ $$
 &{}^{Q}E_y = \frac{{}^{Q}\sigma}{2\varepsilon_0}\quad\text{（Coulomb's Law 逐塊相加，整片平面佔半個球面）}\\[6pt]
 &{}^{q}\sigma = \gamma\cdot{}^{Q}\sigma\quad\text{（間距縮短，1.3）}\\[6pt]
 &{}^{q}E_y = \gamma\cdot{}^{Q}E_y = \frac{\gamma\cdot{}^{Q}\sigma}{2\varepsilon_0} = \frac{{}^{q}\sigma}{2\varepsilon_0}\quad\text{（垂直分量，3.1）}\\[6pt]
-&\text{（}\sigma\text{：平面每單位面積的電量；}\gamma\text{ 以平面的速度 }u\text{ 計算）}
+&\text{（}\sigma\text{：平面每單位面積的電量；}\gamma\text{ 以平面的速度 }{}^{q}u\text{ 計算）}
 \end{aligned}
 $$
 
@@ -5901,8 +5901,8 @@ $$
 \end{aligned}
 $$
 
-<p>不論平面的速度 \(u\) 有多快，\({}^{q}E_y\) 只看 \({}^{q}\sigma\)，\({}^{Q}E_y\) 只看 \({}^{Q}\sigma\)；而且對任意的加速度都成立，因為分析有加速度的情形時，只需要分析那一瞬間的速度。<br>
-不過要注意：這裡的平面，每一個 \({}^{\text{地}}Q\) 都照同一個 \(x = \cos 2\pi f t\) 運動，地面上相鄰兩顆 \({}^{\text{地}}Q\) 的距離永遠不變；所以不變的是 \({}^{q}\sigma\)，\({}^{q}E_y\) 也就不變。隨 \(u\) 改變的是 \({}^{Q}\sigma = \dfrac{{}^{q}\sigma}{\gamma}\)。<br>
+<p>不論平面的速度 \({}^{q}u\) 有多快，\({}^{q}E_y\) 只看 \({}^{q}\sigma\)，\({}^{Q}E_y\) 只看 \({}^{Q}\sigma\)；而且對任意的加速度都成立，因為分析有加速度的情形時，只需要分析那一瞬間的速度。<br>
+不過要注意：這裡的平面，每一個 \({}^{\text{地}}Q\) 都照同一個 \({}^{q}x = \cos 2\pi f t\) 運動，地面上相鄰兩顆 \({}^{\text{地}}Q\) 的距離永遠不變；所以不變的是 \({}^{q}\sigma\)，\({}^{q}E_y\) 也就不變。隨 \({}^{q}u\) 改變的是 \({}^{Q}\sigma = \dfrac{{}^{q}\sigma}{\gamma}\)。<br>
 工程上如何實現？不能把 \(Q\) 固定在一塊剛性的板上再推動整塊板：板自己的長度不變，在地面上看會縮短（1.3），間距就變小了。必須讓每一個 \({}^{\text{地}}Q\) 在地面上同時受到同樣的 \({}^{\text{地}}\)力\((t)\)，例如導體中的自由電子，被處處相同的電場 \({}^{\text{地}}E(t)\) 推動；它們的加速度、速度、位移都一樣，所以不論電場怎麼隨時間增強，彼此的距離都不變。3.2 的導線通電時，在地面基準中仍然不帶電，正是這個道理。</p>
 
 <p>那麼 \({}^{q}E_x\) 呢？</p>
@@ -6004,8 +6004,8 @@ $$
 
 $$
 \begin{aligned}
-&\overrightarrow{P_2P_0}\text{：水平 }-\,u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
-&\text{紅線：水平 }+\,u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
+&\overrightarrow{P_2P_0}\text{：水平 }-\,{}^{q}u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
+&\text{紅線：水平 }+\,{}^{q}u\,(2dt) - \tfrac12\,a\,(2dt)^2,\qquad \text{垂直 }c\,(2dt)\\[6pt]
 &\text{加起來：水平 }-\,a\,(2dt)^2,\qquad \text{垂直 }2\cdot c\,(2dt)\qquad\Rightarrow\qquad \frac{-\,a\,(2dt)^2}{2\cdot c\,(2dt)} = -\,\frac{a\,dt}{c}\\[6pt]
 &\text{（}a\text{：}Q\text{ 的加速度；等速時 }a = 0\text{，左右完全抵消）}
 \end{aligned}
@@ -6015,7 +6015,7 @@ $$
 
 $$
 \begin{aligned}
-&{}^{q}E_x = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} a\,dt = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} \frac{du}{dt}\,dt\\[6pt]
+&{}^{q}E_x = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} a\,dt = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} \frac{d\,{}^{q}u}{dt}\,dt\\[6pt]
 &\phantom{{}^{q}E_x} = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} \frac{d\big(-\,2\pi f\cdot\sin 2\pi f t\big)}{dt}\,dt\\[6pt]
 &\phantom{{}^{q}E_x} = -\,\frac{{}^{q}E_y}{c}\Big[-\,2\pi f\cdot\sin 2\pi f t\Big]_{t=0}^{t-\frac{y}{c}}\\[6pt]
 &\phantom{{}^{q}E_x} = \frac{{}^{q}E_y}{c}\Big(2\pi f\cdot\sin 2\pi f\Big(t-\frac{y}{c}\Big)\Big)
@@ -6035,7 +6035,7 @@ $$
 $$
 \begin{aligned}
 &{}^{q}\vec B = \frac{{}^{q}\vec u\times{}^{q}\vec E}{c^2}\qquad\text{（3.4；地面基準＝}q\text{ 基準）}\\[6pt]
-&\phantom{{}^{q}\vec B} = \frac{u\,\hat x\times\big({}^{q}E_x\,\hat x + {}^{q}E_y\,\hat y\big)}{c^2} = \frac{u\cdot{}^{q}E_y}{c^2}\,\hat z\\[6pt]
+&\phantom{{}^{q}\vec B} = \frac{{}^{q}u\,\hat x\times\big({}^{q}E_x\,\hat x + {}^{q}E_y\,\hat y\big)}{c^2} = \frac{{}^{q}u\cdot{}^{q}E_y}{c^2}\,\hat z\\[6pt]
 &{}^{q}\vec B = \frac{{}^{q}E_y}{c^2}\cdot\Big(-\,2\pi f\cdot\sin 2\pi f\Big(t-\frac{y}{c}\Big)\Big)\,\hat z = -\,\frac{{}^{q}E_x}{c}\,\hat z
 \end{aligned}
 $$
