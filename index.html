@@ -5991,12 +5991,69 @@ $$
 </svg>
 </figure>
 
+<figure class="fig-live">
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="rd-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>時間</span>
+    <input type="range" class="rd-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
+  </div>
+  <div class="row">
+    <label>播放速度 <input type="range" class="rd-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="rd-spo">0.5×</output></label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" class="rd-cr" checked> 與 \(\vec P_0\vec P_1\vec P_2\) 左右對稱的紅線</label>
+    <label><input type="checkbox" class="rd-co"> 其他紅線</label>
+  </div>
+</div>
+<svg id="rd" viewBox="0 0 680 720" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <g class="rd-g0"></g>
+  <g class="rd-g1"></g>
+  <foreignObject class="rd-f00" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_0\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p00" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_0\)</span></div></foreignObject>
+  <foreignObject class="rd-f01" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#58C4DD;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_1\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p01" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#58C4DD;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_1\)</span></div></foreignObject>
+  <foreignObject class="rd-f02" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#B189F5;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_2\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p02" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#B189F5;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_2\)</span></div></foreignObject>
+  <foreignObject class="rd-q00" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{左}2}\)</span></div></foreignObject>
+  <foreignObject class="rd-q01" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{左}}\)</span></div></foreignObject>
+  <foreignObject class="rd-q02" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q\)</span></div></foreignObject>
+  <foreignObject class="rd-q03" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{右}}\)</span></div></foreignObject>
+  <foreignObject class="rd-q04" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{右}2}\)</span></div></foreignObject>
+  <foreignObject class="rd-f10" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_0\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p10" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_0\)</span></div></foreignObject>
+  <foreignObject class="rd-f11" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#58C4DD;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_1\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p11" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#58C4DD;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_1\)</span></div></foreignObject>
+  <foreignObject class="rd-f12" x="0" y="0" width="120" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#B189F5;height:20px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(t_2\) 送出的前緣</span></div></foreignObject>
+  <foreignObject class="rd-p12" x="0" y="0" width="40" height="22" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#B189F5;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\vec P_2\)</span></div></foreignObject>
+  <foreignObject class="rd-q10" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{左}2}\)</span></div></foreignObject>
+  <foreignObject class="rd-q11" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{左}}\)</span></div></foreignObject>
+  <foreignObject class="rd-q12" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q\)</span></div></foreignObject>
+  <foreignObject class="rd-q13" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{右}}\)</span></div></foreignObject>
+  <foreignObject class="rd-q14" x="0" y="0" width="70" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#FC6255;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q_{\text{右}2}\)</span></div></foreignObject>
+  <foreignObject x="14" y="6" width="640" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">等速：後一顆的點，落在前一顆的點正下方</span></div></foreignObject>
+  <foreignObject x="14" y="376" width="640" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;font-weight:700;color:currentColor;height:24px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">加速：\(t_2\) 那一排對不上 \(t_1\) 那一排</span></div></foreignObject>
+</svg>
+</figure>
+
 $$
 \begin{aligned}
-&d\vec P = \vec P_0 - \vec P_1 = c\,dt\;\hat y - u\,dt\;\hat x\\[6pt]
-&E_x = -\,\frac{u}{c}\cdot E_y,\qquad E_y = \frac{\sigma}{2\varepsilon_0}
+&\vec P_0 - \vec P_1 = c\,dt\;\hat y - u\,dt\;\hat x,\qquad \vec P_1 - \vec P_2 = c\,dt\;\hat y - (u + a\,dt)\,dt\;\hat x\\[6pt]
+&\text{經過 }t_1\text{ 送出的前緣，}E_x\text{ 改變 }-\,\frac{a\,dt}{c}\cdot E_y\\[6pt]
+&\text{（}a\text{：}Q\text{ 在 }t_1\text{ 的加速度；等速時 }a = 0\text{，不轉彎）}
 \end{aligned}
 $$
+
+<p>平面的前緣互相平行，\(\vec P_0\)、\(\vec P_1\)、\(\vec P_2\) 又都在正上方，所以沒有「沿前緣的弧」那一項；三點的相對位置只與送出的時刻有關，與此刻 \(t\) 無關。因此，每一個轉彎都跟著它的前緣往上，大小不變。平面原本靜止時，最早的前緣以上只有 Coulomb 電場，方向垂直；由上往下，把每一個前緣的轉彎加起來：</p>
+
+$$
+\begin{aligned}
+&E_x = -\,\frac{E_y}{c}\int a\,dt = -\,\frac{u}{c}\cdot E_y\\[6pt]
+&\text{（從平面開始運動到 }t - \frac{y}{c}\text{，把 }a\,dt\text{ 全部加起來，就是那時的速度 }u\text{）}
+\end{aligned}
+$$
+
+<p>這正是上面的結果。反過來，一直以 \(u\) 等速前進的平面，從來沒有轉彎，電場是垂直的（3.1）；這時 \(\vec P_0\)、\(\vec P_1\) 的連線並不是電場的方向。所以取正上方的點，只適用於原本靜止的平面。</p>
 
 <p>代入 \(u = -\,{}^{\text{地}}u_{\max}\cdot\sin 2\pi f t_0\)：</p>
 
@@ -6244,6 +6301,7 @@ $$
 <script src="js/ra.js?v=21"></script>
 <script src="js/rb.js?v=5"></script>
 <script src="js/rc.js?v=1"></script>
+<script src="js/rd.js?v=2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
