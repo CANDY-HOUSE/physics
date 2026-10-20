@@ -58,7 +58,7 @@
     });
     for (j = 0; j < 3; j++) { var lp = $('p' + k + j); if (pt[0] && pt[0][j]) place(lp, pt[0][j][0] - 8, pt[0][j][1] - 13, 'end'); else hide(lp); }
   }
-  function render() { panel(0); panel(1); }
+  function render() { panel(0); panel(1); if (window.rcAnim) window.rcAnim.render(s / SMAX); }   // 共用播放器：上方 rc 的動畫用同一個進度
 
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var play = !reduce, vis = true, last = 0, bp = $('play');

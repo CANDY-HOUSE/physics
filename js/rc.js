@@ -1,6 +1,7 @@
 /* 3.9 動畫（側視圖）：布滿 Q 的平面以很慢的速度 u 往右移動；在 t0、t1 各送出一則消息。
    兩個前緣（水平的平面）以 c 往上；P0、P1 在 Q(t0)、Q(t1) 正上方，跟著各自的前緣往上。
-   兩點的連線＝電場的方向：水平相差 u·(t1 − t0)，垂直相差 c·(t1 − t0)，所以前緣往上時方向不變。 */
+   兩點的連線＝電場的方向：水平相差 u·(t1 − t0)，垂直相差 c·(t1 − t0)，所以前緣往上時方向不變。
+   播放器與下方五顆 Q 的動畫（rd.js）共用。 */
 (function () {
   var svg = document.getElementById('rc');
   if (!svg) return;
@@ -59,19 +60,8 @@
     if (ext < 20) hide(lt);
   }
 
-  var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var play = !reduce, vis = true, last = 0, bp = $('play');
-  function setPlay(p) { play = p; bp.setAttribute('aria-label', p ? '暫停' : '播放'); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
-  if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg);
-  bp.addEventListener('click', function () { setPlay(!play); });
-  $('t').addEventListener('input', function (e) { s = +e.target.value / 1000 * SMAX; render(); });
-  $('sp').addEventListener('input', function (e) { spd = +e.target.value; $('spo').textContent = spd + '×'; });
-  function loop(ts) {
-    if (play && vis && ts - last > 33) { last = ts; s += 2 * spd; if (s > SMAX) s = 0; render(); $('t').value = Math.round(s / SMAX * 1000); }
-    requestAnimationFrame(loop);
-  }
-  if (!play) s = TE[1] + 110;
-  setPlay(play);
+  // 播放器與 rd（五顆 Q 的動畫）共用：rd.js 以同一個進度 p（0～1）呼叫這裡
+  window.rcAnim = { render: function (p) { s = p * SMAX; render(); } };
+  s = TE[1] + 110;
   render();
-  requestAnimationFrame(loop);
 })();
