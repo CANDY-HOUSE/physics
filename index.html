@@ -6040,6 +6040,34 @@ $$
 \end{aligned}
 $$
 
+<figure class="fig-live">
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="rw-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>時間</span>
+    <input type="range" class="rw-t grow" min="0" max="1000" step="1" value="0" aria-label="時間">
+  </div>
+  <div class="row">
+    <label>播放速度 <input type="range" class="rw-sp" min="0.25" max="2" step="0.25" value="0.5"><output class="rw-spo">0.5×</output></label>
+  </div>
+  <div class="row">
+    <label><input type="checkbox" class="rw-cb" checked> 顯示 \({}^{q}\vec B\)</label>
+  </div>
+</div>
+<svg id="rw" viewBox="0 0 680 460" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14" style="touch-action:none;cursor:grab">
+  <foreignObject class="rw-lx" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat x\)</span></div></foreignObject>
+  <foreignObject class="rw-ly" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat y\)</span></div></foreignObject>
+  <foreignObject class="rw-lz" x="0" y="0" width="30" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#bdbdbd;height:22px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(\hat z\)</span></div></foreignObject>
+  <foreignObject class="rw-lf" x="0" y="0" width="110" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em"><span>消息的前緣</span></span></div></foreignObject>
+</svg>
+<div class="fig-legend">
+  <span><i class="lg-bar"></i>\({}^{q}E_x\)（\(\hat x\) 方向）</span>
+  <span><i class="lg-bar" style="border-color:#F0AC5F"></i>\({}^{q}B_z\)（\(\hat z\) 方向）</span>
+  <span><i class="lg-dot" style="border-color:#FC6255;background:#FC6255"></i>布滿 \(Q\) 的平面（地，\(x\,z\) 平面）</span>
+  <span>拖曳可旋轉視角</span>
+</div>
+</figure>
+
 <h2 id="sec-3-10">3.10　（未完工）</h2>
 
 $$
@@ -6275,6 +6303,7 @@ $$
 <script src="js/ra.js?v=21"></script>
 <script src="js/rb.js?v=5"></script>
 <script src="js/rd.js?v=5"></script>
+<script src="js/rw.js?v=3"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
