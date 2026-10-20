@@ -5785,8 +5785,8 @@ $$
 \begin{aligned}
 &x = \cos 2\pi f t\\[6pt]
 &u = -\,2\pi f\cdot\sin 2\pi f t\\[6pt]
-&\text{（振幅取 1；}f\text{：頻率；以振動的中心為原點；}t\text{ 從開始振動起算，}t = 0\text{ 時 }Q\text{ 靜止在 }x = 1\text{）}\\
-&\text{（最大速度 }{}^{\text{地}}u_{\max} = 2\pi f\text{）}
+&\text{（振幅取 1；}f\text{：頻率；以振動的中心為原點；}\\
+&\text{　}t\text{ 從開始振動起算，}t = 0\text{ 時 }Q\text{ 靜止在 }x = 1\text{）}
 \end{aligned}
 $$
 
@@ -6011,25 +6011,23 @@ $$
 \end{aligned}
 $$
 
-<p>也就是說，當 \(dt\) 很小時，\(\vec P_1\) 那一點附近的電場 \(\dfrac{E_x}{E_y} = -\,\dfrac{a\,dt}{c}\)。</p>
+<p>也就是說，當 \(dt\) 很小時，\(\vec P_1\) 那一點附近的電場 \(\dfrac{{}^{q}E_x}{{}^{q}E_y} = -\,\dfrac{a\,dt}{c}\)，而 \({}^{q}E_y\) 是個定值常數。</p>
 
 $$
 \begin{aligned}
-&E_x = -\,\frac{E_y}{c}\int a\,dt = -\,\frac{u}{c}\cdot E_y\\[6pt]
-&\text{（從平面開始運動到 }t - \frac{y}{c}\text{，把 }a\,dt\text{ 全部加起來，就是那時的速度 }u\text{）}
+&{}^{q}E_x = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} a\,dt = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} \frac{du}{dt}\,dt\\[6pt]
+&\phantom{{}^{q}E_x} = -\,\frac{{}^{q}E_y}{c}\int_{t=0}^{t-\frac{y}{c}} \frac{d\big(-\,2\pi f\cdot\sin 2\pi f t\big)}{dt}\,dt\\[6pt]
+&\phantom{{}^{q}E_x} = -\,\frac{{}^{q}E_y}{c}\Big[-\,2\pi f\cdot\sin 2\pi f t\Big]_{t=0}^{t-\frac{y}{c}}\\[6pt]
+&\phantom{{}^{q}E_x} = \frac{{}^{q}E_y}{c}\Big(2\pi f\cdot\sin 2\pi f\Big(t-\frac{y}{c}\Big)\Big)
 \end{aligned}
 $$
 
-<p>反過來，一直以 \(u\) 等速前進的平面，從來沒有加速，每一個前緣都左右完全抵消，電場是垂直的（3.1）。</p>
-
-<p>代入 \(u = -\,{}^{\text{地}}u_{\max}\cdot\sin 2\pi f t_0\)：</p>
-
 $$
 \begin{aligned}
-&E_x = E_{x,\max} \sin\left(2\pi f t - 2\pi\cdot\frac{y}{\lambda}\right),\qquad E_{x,\max} = \frac{\sigma}{2\varepsilon_0}\cdot\frac{{}^{\text{地}}u_{\max}}{c},\qquad \lambda = \frac{c}{f}\\[6pt]
-&E_y = \frac{\sigma}{2\varepsilon_0}\ \text{（平面上方；任何時刻、任何高度都一樣）}\\[6pt]
-&\text{（}t\text{：從 }Q\text{ 開始簡諧運動起算；}y\text{：到平面的距離，}0 < y < c\,t\text{；更外面 }E_x = 0\text{）}\\
-&\text{（}\sigma\text{：平面每單位面積的電量；}{}^{\text{地}}u_{\max}\text{：}Q\text{ 的最大速度）}
+&{}^{q}E_x = \frac{{}^{q}\sigma}{2\varepsilon_0}\cdot\frac{2\pi f}{c}\cdot\sin\left(2\pi f t - 2\pi\cdot\frac{y}{\lambda}\right),\qquad \lambda = \frac{c}{f}\\[6pt]
+&{}^{q}E_y = \frac{{}^{q}\sigma}{2\varepsilon_0}\ \text{（平面上方；任何時刻、任何高度都一樣）}\\[6pt]
+&\text{（}t\text{：從 }Q\text{ 開始簡諧運動起算；}y\text{：到平面的距離，}0 < y < c\,t\text{；更外面 }{}^{q}E_x = 0\text{）}\\
+&\text{（}{}^{q}\sigma\text{：平面每單位面積的電量）}
 \end{aligned}
 $$
 
