@@ -24,6 +24,12 @@
     { top: 370, D: 30, x: function (t) { var s = t - 20; if (s < 0) return 260 + V0 * s; if (s <= 180) return 260 + V0 * s + 0.5 * A * s * s; return X2 + V2 * (s - 180); } }
   ];
   var OFF = [-2, -1, 0, 1, 2], s = 0, spd = 0.5;
+  // 箭頭：Q 的 P0P1P2 與紅線，在上端（朝 t0 的前緣）畫箭頭
+  var defs = el('defs', {}, svg);
+  [['rdT', TEAL], ['rdR', RED]].forEach(function (m) {
+    var mk = el('marker', { id: m[0], markerUnits: 'userSpaceOnUse', markerWidth: 14, markerHeight: 12, refX: 12, refY: 6, orient: 'auto-start-reverse' }, defs);
+    el('path', { d: 'M0,0 L14,6 L0,12 z', fill: m[1] }, mk);
+  });
 
   function panel(k) {
     var m = P[k], g = $('g' + k), top = m.top, Y = top + 300, t = Math.min(s, TEND);
@@ -43,7 +49,7 @@
     if (all) [[2, $('cr').checked], [1, $('co').checked], [-1, $('co').checked], [-2, $('co').checked]].forEach(function (r) {
       if (!r[1]) return;
       var a = pt[r[0]][0], b = pt[-r[0]][2];
-      el('path', { d: 'M' + f(a[0]) + ',' + f(a[1]) + ' L' + f(p1[0]) + ',' + f(p1[1]) + ' L' + f(b[0]) + ',' + f(b[1]), fill: 'none', stroke: RED, 'stroke-width': r[0] === 2 ? 2.4 : 1.6, 'stroke-opacity': r[0] === 2 ? .95 : .7, 'stroke-linejoin': 'round' }, g);
+      el('path', { d: 'M' + f(a[0]) + ',' + f(a[1]) + ' L' + f(p1[0]) + ',' + f(p1[1]) + ' L' + f(b[0]) + ',' + f(b[1]), fill: 'none', stroke: RED, 'stroke-width': r[0] === 2 ? 2.4 : 1.6, 'stroke-opacity': r[0] === 2 ? .95 : .7, 'stroke-linejoin': 'round', 'marker-start': 'url(#rdR)' }, g);
     });
     if (all && $('co').checked) {                    // 水平的紅線：沿 t1 的前緣，從 P1 連到左右的點
       var l = pt[-2][1], r = pt[2][1];
@@ -51,7 +57,8 @@
     }
     OFF.forEach(function (q) {
       var ps = (pt[q] || []).filter(Boolean);
-      if (ps.length > 1) el('path', { d: ps.map(function (p, i) { return (i ? 'L' : 'M') + f(p[0]) + ',' + f(p[1]); }).join(''), fill: 'none', stroke: TEAL, 'stroke-width': q ? 1.8 : 3, 'stroke-opacity': q ? .7 : 1, 'stroke-linejoin': 'round' }, g);
+      if (ps.length > 1) { var cv = el('path', { d: ps.map(function (p, i) { return (i ? 'L' : 'M') + f(p[0]) + ',' + f(p[1]); }).join(''), fill: 'none', stroke: TEAL, 'stroke-width': q ? 1.8 : 3, 'stroke-opacity': q ? .7 : 1, 'stroke-linejoin': 'round' }, g);
+        if (!q) cv.setAttribute('marker-start', 'url(#rdT)'); }
       (pt[q] || []).forEach(function (p, j) { if (p) el('circle', { cx: f(p[0]), cy: f(p[1]), r: q ? 4 : 5.5, fill: C[j] }, g); });
       var xn = m.x(t) + q * m.D; el('circle', { cx: f(xn), cy: Y, r: 6, fill: RED }, g);
       place($('q' + k + (q + 2)), xn, Y + ((q + 2) % 2 ? 38 : 20), 'center');
