@@ -71,7 +71,7 @@ MathJax = {
           <li><a href="#sec-3-7">3.7　磁就是電！Faraday's Law 的來源</a></li>
           <li><a href="#sec-3-8">3.8　Ampère's Law 暫態與穩態</a></li>
           <li><a href="#sec-3-9">3.9　輻射電磁波</a></li>
-          <li><a href="#sec-3-10">3.10　（未完工）</a></li>
+          <li><a href="#sec-3-10">3.10　封裝成矩陣（未完工）</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -6069,7 +6069,394 @@ $$
 </div>
 </figure>
 
-<h2 id="sec-3-10">3.10　（未完工）</h2>
+<h2 id="sec-3-10">3.10　封裝成矩陣（未完工）</h2>
+
+<p>完全沿用 3.4 的例子：</p>
+
+<figure>
+<svg id="ta" viewBox="0 0 640 516" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="taG" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#83C167"/></marker>
+    <marker id="taT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#5CD0B3"/></marker>
+    <marker id="taC" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="currentColor"/></marker>
+  </defs>
+  <text x="20" y="40" fill="currentColor" font-size="15" font-weight="700">地面基準</text>
+  <line x1="24.0" y1="216.0" x2="616.0" y2="216.0" stroke="currentColor" stroke-width="1.2" stroke-opacity=".35" marker-end="url(#taC)"/>
+  <foreignObject x="582.0" y="222.0" width="36" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}x\)</div></foreignObject>
+  <line x1="210.0" y1="216.0" x2="417.5" y2="25.8" stroke="#BBBBBB" stroke-width="1.2" stroke-opacity=".7" stroke-dasharray="3 5"/>
+  <circle cx="210.0" cy="216" r="10" fill="#FC6255"/><text x="210.0" y="221" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  <line x1="222.0" y1="216.0" x2="302.0" y2="216.0" stroke="#83C167" stroke-width="2.4" marker-end="url(#taG)"/>
+  <foreignObject x="237.0" y="224.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}u\)</div></foreignObject>
+  <line x1="330.0" y1="106.0" x2="330.0" y2="41.8" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="330.0" y1="41.8" x2="400.0" y2="41.8" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="330.0" y1="106.0" x2="400.0" y2="41.8" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#taT)"/>
+  <foreignObject x="282.0" y="61.9" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_{\perp}\)</div></foreignObject>
+  <foreignObject x="341.0" y="15.8" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_{/\mkern-5mu/}\)</div></foreignObject>
+  <foreignObject x="402.0" y="25.8" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec E\)</div></foreignObject>
+  <circle cx="330.0" cy="106.0" r="12" fill="none" stroke="#F0AC5F" stroke-width="1.8"/>
+  <circle cx="330" cy="106" r="5.5" fill="currentColor"/>
+  <foreignObject x="293.0" y="96.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject x="316.0" y="124.0" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec B\)</div></foreignObject>
+  <line x1="344.0" y1="106.0" x2="404.0" y2="106.0" stroke="#83C167" stroke-width="2.4" marker-end="url(#taG)"/>
+  <foreignObject x="406.0" y="94.0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v\)</div></foreignObject>
+  <text x="20" y="290" fill="currentColor" font-size="15" font-weight="700">q 基準</text>
+  <line x1="24.0" y1="466.0" x2="616.0" y2="466.0" stroke="currentColor" stroke-width="1.2" stroke-opacity=".35" marker-end="url(#taC)"/>
+  <foreignObject x="582.0" y="472.0" width="36" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}x\)</div></foreignObject>
+  <line x1="145.4" y1="466.0" x2="417.5" y2="303.9" stroke="#BBBBBB" stroke-width="1.2" stroke-opacity=".7" stroke-dasharray="3 5"/>
+  <circle cx="145.4" cy="466" r="10" fill="#FC6255"/><text x="145.4" y="471" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
+  <line x1="157.4" y1="466.0" x2="195.8" y2="466.0" stroke="#83C167" stroke-width="2.4" marker-end="url(#taG)"/>
+  <foreignObject x="151.6" y="474.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}V\)</div></foreignObject>
+  <line x1="330.0" y1="356.0" x2="330.0" y2="314.3" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="330.0" y1="314.3" x2="400.0" y2="314.3" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="330.0" y1="356.0" x2="400.0" y2="314.3" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#taT)"/>
+  <foreignObject x="282.0" y="323.1" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}E_{\perp}\)</div></foreignObject>
+  <foreignObject x="341.0" y="288.3" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}E_{/\mkern-5mu/}\)</div></foreignObject>
+  <foreignObject x="402.0" y="298.3" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}\vec E\)</div></foreignObject>
+  <circle cx="330.0" cy="356.0" r="12" fill="none" stroke="#F0AC5F" stroke-width="1.8"/>
+  <circle cx="330" cy="356" r="5.5" fill="currentColor"/>
+  <foreignObject x="293.0" y="346.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject x="316.0" y="374.0" width="48" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{q}\vec B\)</div></foreignObject>
+  <text x="350" y="361" fill="currentColor" fill-opacity=".72" font-size="13">靜止</text>
+  <foreignObject x="340.0" y="493.0" width="290" height="22"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12px;color:#BBBBBB;height:22px;display:flex;align-items:center;justify-content:flex-end;white-space:nowrap">\(\text{（圖中 }{}^{\text{地}}u = 0.8c\text{、}{}^{\text{地}}v = 0.6c\text{；}\odot\text{：朝向讀者）}\)</div></foreignObject>
+</svg>
+</figure>
+
+<p><strong>電場</strong>：把 3.4 的結果改用 \(q\) 基準來寫：</p>
+
+$$
+\begin{gathered}
+{}^{\text{地}}\vec F_{q} = q\cdot\Big({}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)\ \text{（3.4）},\qquad
+{}^{q}\vec F_{q} = q\cdot{}^{q}\vec E\\[6pt]
+{}^{q}F_{q\perp} = {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}F_{q\perp},\qquad
+{}^{q}F_{q/\mkern-5mu/} = {}^{\text{地}}F_{q/\mkern-5mu/}\ \text{（3.1）}\\[10pt]
+\boxed{\;{}^{q}\vec E_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)_{\perp},\qquad
+{}^{q}E_{/\mkern-5mu/} = {}^{\text{地}}E_{/\mkern-5mu/}\;}
+\end{gathered}
+$$
+
+<p><strong>磁場</strong>：把 3.4 的 \({}^{\text{地}}\vec B = \dfrac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\) 改用 \(q\) 基準來寫。\(Q\) 在 \(q\) 基準裡的速度是 \({}^{q}V\)（3.4），不是 \({}^{\text{地}}u\)：</p>
+
+$$
+\begin{aligned}
+{}^{q}\vec B &= \frac{{}^{q}\vec V\times{}^{q}\vec E}{c^2}
+= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)_{\perp}\\[6pt]
+&= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp}\underbrace{- {}^{\text{地}}v\cdot\frac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}\vec E_{\perp}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\ \text{（3.4）}}\Big)\\[6pt]
+&= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)\cdot{}^{\text{地}}\vec E_{\perp}\\[6pt]
+&= \frac{{}^{\text{地}}\gamma_{q}}{c^2}\cdot{}^{q}V\cdot\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)\,\underbrace{\hat x\times{}^{\text{地}}\vec E_{\perp}}_{\hat x\times{}^{\text{地}}\vec E\ \ (\hat x\times{}^{\text{地}}\vec E_{/\mkern-5mu/} = 0)}\\[6pt]
+&= \frac{{}^{\text{地}}\gamma_{q}}{c^2}\cdot\frac{{}^{\text{地}}u - {}^{\text{地}}v}{\bcancel{1 - \dfrac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}}}\cdot\bcancel{\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)}\,\hat x\times{}^{\text{地}}\vec E\qquad\text{（1.5）}\\[6pt]
+&= \frac{{}^{\text{地}}\gamma_{q}}{c^2}\cdot\big({}^{\text{地}}u - {}^{\text{地}}v\big)\,\hat x\times{}^{\text{地}}\vec E\\[6pt]
+&= {}^{\text{地}}\gamma_{q}\Big(\frac{{}^{\text{地}}u\,\hat x\times{}^{\text{地}}\vec E}{c^2} - \frac{{}^{\text{地}}v\,\hat x\times{}^{\text{地}}\vec E}{c^2}\Big)\\[6pt]
+&= {}^{\text{地}}\gamma_{q}\Big(\underbrace{\frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}}_{{}^{\text{地}}\vec B} - \frac{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec E}{c^2}\Big)
+\end{aligned}
+$$
+
+$$
+\boxed{\;{}^{q}\vec B_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec B - \frac{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec E}{c^2}\Big)_{\perp},\qquad
+{}^{q}B_{/\mkern-5mu/} = {}^{\text{地}}B_{/\mkern-5mu/}\ (= 0)\;}
+$$
+
+<h3>【封裝：x y 平面】</h3>
+
+<p>\(q\) 在 \(x\,y\) 平面上以 \({}^{\text{地}}\vec v\) 移動；\(q\) 所在處的 \({}^{\text{地}}\vec E\) 也在 \(x\,y\) 平面上，\({}^{\text{地}}\vec B\) 沿 \(z\) 軸。</p>
+
+<figure>
+<svg id="tb" viewBox="0 0 640 450" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <defs>
+    <marker id="tbG" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#83C167"/></marker>
+    <marker id="tbT" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#5CD0B3"/></marker>
+    <marker id="tbB" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="#58C4DD"/></marker>
+    <marker id="tbC" markerUnits="userSpaceOnUse" markerWidth="12" markerHeight="10" refX="10" refY="5" orient="auto"><path d="M0,0 L12,5 L0,10 z" fill="currentColor"/></marker>
+  </defs>
+  <line x1="40.0" y1="235.0" x2="610.0" y2="235.0" stroke="currentColor" stroke-width="1.2" stroke-opacity=".35" marker-end="url(#tbC)"/>
+  <line x1="300.0" y1="430.0" x2="300.0" y2="26.0" stroke="currentColor" stroke-width="1.2" stroke-opacity=".35" marker-end="url(#tbC)"/>
+  <foreignObject x="601.0" y="241.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(x\)</div></foreignObject>
+  <foreignObject x="305.0" y="18.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(y\)</div></foreignObject>
+  <circle cx="60.0" cy="50.0" r="9" fill="none" stroke="currentColor" stroke-width="1.4"/>
+  <circle cx="60" cy="50" r="2.6" fill="currentColor"/>
+  <foreignObject x="73.0" y="38.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(z\)</div></foreignObject>
+  <line x1="300.0" y1="235.0" x2="450.0" y2="235.0" stroke="#83C167" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="450.0" y1="235.0" x2="450.0" y2="165.0" stroke="#83C167" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="300.0" y1="235.0" x2="450.0" y2="165.0" stroke="#83C167" stroke-width="2.6" marker-end="url(#tbG)"/>
+  <foreignObject x="370.0" y="241.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_x\)</div></foreignObject>
+  <foreignObject x="453.0" y="188.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_y\)</div></foreignObject>
+  <foreignObject x="455.0" y="143.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec v\)</div></foreignObject>
+  <line x1="300.0" y1="235.0" x2="300.0" y2="85.0" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="300.0" y1="85.0" x2="360.0" y2="85.0" stroke="#5CD0B3" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="300.0" y1="235.0" x2="360.0" y2="85.0" stroke="#5CD0B3" stroke-width="2.6" marker-end="url(#tbT)"/>
+  <foreignObject x="247.0" y="128.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_y\)</div></foreignObject>
+  <foreignObject x="305.0" y="59.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_x\)</div></foreignObject>
+  <foreignObject x="365.0" y="77.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec E\)</div></foreignObject>
+  <line x1="300.0" y1="235.0" x2="300.0" y2="340.0" stroke="#58C4DD" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="300.0" y1="340.0" x2="349.0" y2="340.0" stroke="#58C4DD" stroke-width="1.6" stroke-opacity=".85" stroke-dasharray="5 4"/>
+  <line x1="300.0" y1="235.0" x2="349.0" y2="340.0" stroke="#58C4DD" stroke-width="2.6" marker-end="url(#tbB)"/>
+  <foreignObject x="211.0" y="289.5" width="86" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\)</div></foreignObject>
+  <foreignObject x="287.5" y="346.0" width="86" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_y\cdot{}^{\text{地}}B_z\)</div></foreignObject>
+  <foreignObject x="357.0" y="330.0" width="100" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\)</div></foreignObject>
+  <polyline points="312.7,229.1 318.6,241.8 305.9,247.7" fill="none" stroke="currentColor" stroke-opacity=".6" stroke-width="1.2"/>
+  <circle cx="300.0" cy="235.0" r="12" fill="none" stroke="#F0AC5F" stroke-width="1.8"/>
+  <circle cx="300" cy="235" r="5.5" fill="currentColor"/>
+  <foreignObject x="265.0" y="205.0" width="22" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject x="245.0" y="241.0" width="50" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}B_z\)</div></foreignObject>
+</svg>
+</figure>
+
+<p><strong>外積</strong>（\(\hat x\times\hat z = -\hat y\)，\(\hat y\times\hat z = \hat x\)）：</p>
+
+$$
+{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B
+= \big({}^{\text{地}}v_x\,\hat x + {}^{\text{地}}v_y\,\hat y\big)\times{}^{\text{地}}B_z\,\hat z
+= {}^{\text{地}}v_y\cdot{}^{\text{地}}B_z\,\hat x - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\,\hat y
+$$
+
+<p>以下的 \(q\) 可以朝任何方向移動，\({}^{\text{地}}\vec E\)、\({}^{\text{地}}\vec B\) 也不一定只來自一顆 \(Q\)。3.4 只推導了 \(q\) 沿 \(x\) 軸、場只來自 \(Q\) 的情形；以下取 Lorentz 力在這些情形也成立，而且在每一個基準裡都成立（1.1 的相對性原理）。</p>
+
+<p><strong>動量</strong>（1.7；Lorentz 力）：</p>
+
+$$
+\begin{aligned}
+\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t} &= q\cdot\big({}^{\text{地}}E_x + {}^{\text{地}}v_y\cdot{}^{\text{地}}B_z\big)\\[6pt]
+\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t} &= q\cdot\big({}^{\text{地}}E_y - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)
+\end{aligned}
+\qquad\quad
+{}^{\text{地}}\gamma_{q} = \frac{1}{\sqrt{1 - \dfrac{{}^{\text{地}}v_x^2 + {}^{\text{地}}v_y^2}{c^2}}}
+$$
+
+<p><strong>能量</strong>（1.8、1.9）：</p>
+
+$$
+\big({}^{\text{地}}\gamma_{q}\,mc^2\big)^2 - c^2\Big[\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)^2 + \big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)^2\Big] = \big(mc^2\big)^2
+$$
+
+<p>對 \({}^{\text{地}}t\) 微分，再除以 \(2\cdot{}^{\text{地}}\gamma_{q}\,mc^2\)：</p>
+
+$$
+\begin{aligned}
+\frac{d\big({}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
+&= {}^{\text{地}}v_x\cdot\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t} + {}^{\text{地}}v_y\cdot\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t}\\[6pt]
+&= q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + \bcancel{{}^{\text{地}}v_x\cdot{}^{\text{地}}v_y\cdot{}^{\text{地}}B_z}\\[6pt]
+&\qquad\quad + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y - \bcancel{{}^{\text{地}}v_x\cdot{}^{\text{地}}v_y\cdot{}^{\text{地}}B_z}\big)\\[6pt]
+&= q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y\big)
+\end{aligned}
+$$
+
+<p><strong>排成矩陣</strong>：能量的式子除以 \(c\)。每一式都寫成 \(c\)、\({}^{\text{地}}v_x\)、\({}^{\text{地}}v_y\) 各乘上一個係數再相加，缺少的項係數為 0：</p>
+
+$$
+\begin{alignedat}{4}
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& 0\cdot c && {}+ \dfrac{{}^{\text{地}}E_x}{c}\cdot{}^{\text{地}}v_x && {}+ \dfrac{{}^{\text{地}}E_y}{c}\cdot{}^{\text{地}}v_y\Big)\\[16pt]
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& \dfrac{{}^{\text{地}}E_x}{c}\cdot c && {}+ 0\cdot{}^{\text{地}}v_x && {}+ {}^{\text{地}}B_z\cdot{}^{\text{地}}v_y\Big)\\[16pt]
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& \dfrac{{}^{\text{地}}E_y}{c}\cdot c && {}- {}^{\text{地}}B_z\cdot{}^{\text{地}}v_x && {}+ 0\cdot{}^{\text{地}}v_y\Big)
+\end{alignedat}
+$$
+
+$$
+\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}{}^{\text{地}}\gamma_{q}\,mc\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\end{pmatrix}
+= q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c}\\[6pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z\\[6pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0\end{pmatrix}
+\begin{pmatrix}c\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\end{pmatrix}
+$$
+
+<p><strong>改用 \(q\) 自己的鐘 \({}^{q}t\)</strong>（1.2）：</p>
+
+$$
+\frac{d}{d{}^{q}t} = {}^{\text{地}}\gamma_{q}\cdot\frac{d}{d{}^{\text{地}}t},\qquad
+{}^{\text{地}}\gamma_{q}\begin{pmatrix}c\\ {}^{\text{地}}v_x\\ {}^{\text{地}}v_y\end{pmatrix} = \frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\ {}^{\text{地}}x\\ {}^{\text{地}}y\end{pmatrix}
+$$
+
+<p>兩邊乘上 \({}^{\text{地}}\gamma_{q}\)：</p>
+
+$$
+\boxed{\;m\,\frac{d^2}{d{}^{q}t^2}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\end{pmatrix}
+= q\cdot\underbrace{\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c}\\[6pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z\\[6pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0\end{pmatrix}}_{\text{地面基準的場}}
+\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\end{pmatrix}\;}
+$$
+
+<p><strong>Lorentz 變換也排成矩陣</strong>：換到以 \({}^{\text{地}}u\) 沿 \(x\) 軸前進的 \(Q\) 基準（1.4；垂直方向不伸縮，1.3）。每一式都寫成 \(c\cdot{}^{\text{地}}t\)、\({}^{\text{地}}x\)、\({}^{\text{地}}y\) 各乘上一個係數再相加：</p>
+
+$$
+\begin{alignedat}{4}
+c\cdot{}^{Q}t &=&& {}^{\text{地}}\gamma_{Q}\cdot c\cdot{}^{\text{地}}t && {}- \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c}\cdot{}^{\text{地}}x && {}+ 0\cdot{}^{\text{地}}y\\[14pt]
+{}^{Q}x &=&& -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c}\cdot c\cdot{}^{\text{地}}t && {}+ {}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}x && {}+ 0\cdot{}^{\text{地}}y\\[14pt]
+{}^{Q}y &=&& 0\cdot c\cdot{}^{\text{地}}t && {}+ 0\cdot{}^{\text{地}}x && {}+ 1\cdot{}^{\text{地}}y
+\end{alignedat}
+$$
+
+$$
+\begin{pmatrix}c\cdot{}^{Q}t\\[4pt] {}^{Q}x\\[4pt] {}^{Q}y\end{pmatrix}
+= \underbrace{\begin{pmatrix}{}^{\text{地}}\gamma_{Q} & -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0\\[6pt] -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0\\[6pt] 0 & 0 & 1\end{pmatrix}}_{\text{Lorentz 變換}}
+\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\end{pmatrix}
+$$
+
+$$
+\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\end{pmatrix}
+= \underbrace{\begin{pmatrix}{}^{\text{地}}\gamma_{Q} & \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0\\[6pt] \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0\\[6pt] 0 & 0 & 1\end{pmatrix}}_{\text{反變換（1.4：}{}^{\text{地}}u\text{ 換成 }-\,{}^{\text{地}}u\text{）}}
+\begin{pmatrix}c\cdot{}^{Q}t\\[4pt] {}^{Q}x\\[4pt] {}^{Q}y\end{pmatrix}
+$$
+
+<p><strong>換基準</strong>：\(q\) 自己的鐘 \({}^{q}t\) 在兩個基準裡是同一個鐘，Lorentz 變換的係數又都是常數。框起來的式子兩邊乘上 Lorentz 變換，右邊的 \(\big(c\cdot{}^{\text{地}}t,\ {}^{\text{地}}x,\ {}^{\text{地}}y\big)\) 改寫成反變換乘上 \(\big(c\cdot{}^{Q}t,\ {}^{Q}x,\ {}^{Q}y\big)\)：</p>
+
+$$
+m\,\frac{d^2}{d{}^{q}t^2}\begin{pmatrix}c\cdot{}^{Q}t\\[4pt] {}^{Q}x\\[4pt] {}^{Q}y\end{pmatrix}
+= q\cdot\Big[\text{Lorentz 變換}\Big]\Big[\text{地面基準的場}\Big]\Big[\text{反變換}\Big]\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{Q}t\\[4pt] {}^{Q}x\\[4pt] {}^{Q}y\end{pmatrix}
+$$
+
+<p>在 \(Q\) 基準裡寫出同一個框，中間的矩陣就是 \(Q\) 基準的場。\(q\) 的速度可以是 \(x\,y\) 平面上的任何方向、小於 \(c\) 的任何大小，所以兩者相等：</p>
+
+$$
+\begin{aligned}
+&\begin{pmatrix}0 & \dfrac{{}^{Q}E_x}{c} & \dfrac{{}^{Q}E_y}{c}\\[6pt] \dfrac{{}^{Q}E_x}{c} & 0 & {}^{Q}B_z\\[6pt] \dfrac{{}^{Q}E_y}{c} & -{}^{Q}B_z & 0\end{pmatrix}\\[10pt]
+&= \begin{pmatrix}{}^{\text{地}}\gamma_{Q} & -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0\\[6pt] -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0\\[6pt] 0 & 0 & 1\end{pmatrix}
+\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c}\\[6pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z\\[6pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0\end{pmatrix}\\[10pt]
+&\qquad\cdot\begin{pmatrix}{}^{\text{地}}\gamma_{Q} & \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0\\[6pt] \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0\\[6pt] 0 & 0 & 1\end{pmatrix}\\[10pt]
+&= \begin{pmatrix}{}^{\text{地}}\gamma_{Q} & -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0\\[6pt] -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0\\[6pt] 0 & 0 & 1\end{pmatrix}\\[10pt]
+&\qquad\cdot\begin{pmatrix}\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u\cdot{}^{\text{地}}E_x}{c^2} & \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c}\\[6pt]
+\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u\cdot{}^{\text{地}}E_x}{c^2} & {}^{\text{地}}B_z\\[6pt]
+\tfrac{{}^{\text{地}}\gamma_{Q}}{c}\big({}^{\text{地}}E_y - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\big) & {}^{\text{地}}\gamma_{Q}\big(\tfrac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2} - {}^{\text{地}}B_z\big) & 0\end{pmatrix}\\[10pt]
+&= \begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \tfrac{{}^{\text{地}}\gamma_{Q}}{c}\big({}^{\text{地}}E_y - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\big)\\[6pt]
+\dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{Q}\big({}^{\text{地}}B_z - \tfrac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2}\big)\\[6pt]
+\tfrac{{}^{\text{地}}\gamma_{Q}}{c}\big({}^{\text{地}}E_y - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\big) & -\,{}^{\text{地}}\gamma_{Q}\big({}^{\text{地}}B_z - \tfrac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2}\big) & 0\end{pmatrix}
+\end{aligned}
+$$
+
+$$
+\boxed{\;\begin{gathered}
+{}^{Q}E_x = {}^{\text{地}}E_x\\[8pt]
+{}^{Q}E_y = {}^{\text{地}}\gamma_{Q}\big({}^{\text{地}}E_y - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\big),\qquad {}^{Q}B_z = {}^{\text{地}}\gamma_{Q}\Big({}^{\text{地}}B_z - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2}\Big)
+\end{gathered}\;}
+$$
+
+<p>\(q\) 沿 \(x\) 軸以 \({}^{\text{地}}v\) 移動時（本節開頭的情形），把 \(Q\) 基準換成 \(q\) 基準（\({}^{\text{地}}u\) 換成 \({}^{\text{地}}v\)），就是本節開頭的兩個框。只有 \(Q\) 時，\({}^{\text{地}}B_z = \dfrac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2}\)（3.4），得 \({}^{Q}B_z = 0\)、\({}^{Q}E_y = \dfrac{{}^{\text{地}}E_y}{{}^{\text{地}}\gamma_{Q}}\)（3.1）。</p>
+
+<h3>【封裝：x y z 空間】</h3>
+
+<p>\({}^{\text{地}}\vec v\)、\({}^{\text{地}}\vec E\)、\({}^{\text{地}}\vec B\) 都不平行於任何一軸：在 \(x\)、\(y\)、\(z\) 上都有分量。</p>
+
+<figure class="fig-live">
+<svg id="tc" viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14" style="touch-action:none;cursor:grab">
+  <foreignObject class="tc-vlx" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(x\)</div></foreignObject>
+  <foreignObject class="tc-vly" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(y\)</div></foreignObject>
+  <foreignObject class="tc-vlz" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(z\)</div></foreignObject>
+  <foreignObject class="tc-vq" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject class="tc-v" x="0" y="0" width="44" height="24" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec v\)</div></foreignObject>
+  <foreignObject class="tc-v0" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#83C167;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_x\)</div></foreignObject>
+  <foreignObject class="tc-v1" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#83C167;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_y\)</div></foreignObject>
+  <foreignObject class="tc-v2" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#83C167;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}v_z\)</div></foreignObject>
+  <foreignObject class="tc-elx" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(x\)</div></foreignObject>
+  <foreignObject class="tc-ely" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(y\)</div></foreignObject>
+  <foreignObject class="tc-elz" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(z\)</div></foreignObject>
+  <foreignObject class="tc-eq" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject class="tc-e" x="0" y="0" width="44" height="24" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#5CD0B3;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec E\)</div></foreignObject>
+  <foreignObject class="tc-e0" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#5CD0B3;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_x\)</div></foreignObject>
+  <foreignObject class="tc-e1" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#5CD0B3;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_y\)</div></foreignObject>
+  <foreignObject class="tc-e2" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#5CD0B3;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}E_z\)</div></foreignObject>
+  <foreignObject class="tc-blx" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(x\)</div></foreignObject>
+  <foreignObject class="tc-bly" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(y\)</div></foreignObject>
+  <foreignObject class="tc-blz" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#BBBBBB;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(z\)</div></foreignObject>
+  <foreignObject class="tc-bq" x="0" y="0" width="20" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:currentColor;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(q\)</div></foreignObject>
+  <foreignObject class="tc-b" x="0" y="0" width="44" height="24" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}\vec B\)</div></foreignObject>
+  <foreignObject class="tc-b0" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}B_x\)</div></foreignObject>
+  <foreignObject class="tc-b1" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}B_y\)</div></foreignObject>
+  <foreignObject class="tc-b2" x="0" y="0" width="44" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:13px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\({}^{\text{地}}B_z\)</div></foreignObject>
+</svg>
+<div class="fig-legend">
+  <span>三個向量都在 \(q\) 所在處</span>
+  <span>拖曳可旋轉視角（三個一起轉）</span>
+</div>
+</figure>
+
+<p><strong>外積</strong>（\(\hat x\times\hat y = \hat z\)，\(\hat y\times\hat z = \hat x\)，\(\hat z\times\hat x = \hat y\)；順序對調則差一個負號）：</p>
+
+$$
+\begin{aligned}
+{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B
+&= \big({}^{\text{地}}v_x\,\hat x + {}^{\text{地}}v_y\,\hat y + {}^{\text{地}}v_z\,\hat z\big)\times\big({}^{\text{地}}B_x\,\hat x + {}^{\text{地}}B_y\,\hat y + {}^{\text{地}}B_z\,\hat z\big)\\[6pt]
+&= \big({}^{\text{地}}v_y\cdot{}^{\text{地}}B_z - {}^{\text{地}}v_z\cdot{}^{\text{地}}B_y\big)\,\hat x
++ \big({}^{\text{地}}v_z\cdot{}^{\text{地}}B_x - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\,\hat y\\[6pt]
+&\quad + \big({}^{\text{地}}v_x\cdot{}^{\text{地}}B_y - {}^{\text{地}}v_y\cdot{}^{\text{地}}B_x\big)\,\hat z
+\end{aligned}
+$$
+
+<p><strong>動量</strong>（1.7；Lorentz 力）：</p>
+
+$$
+\begin{gathered}
+{}^{\text{地}}\gamma_{q} = \frac{1}{\sqrt{1 - \dfrac{{}^{\text{地}}v_x^2 + {}^{\text{地}}v_y^2 + {}^{\text{地}}v_z^2}{c^2}}}\\[10pt]
+\begin{aligned}
+\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t} &= q\cdot\big({}^{\text{地}}E_x + {}^{\text{地}}v_y\cdot{}^{\text{地}}B_z - {}^{\text{地}}v_z\cdot{}^{\text{地}}B_y\big)\\[6pt]
+\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t} &= q\cdot\big({}^{\text{地}}E_y + {}^{\text{地}}v_z\cdot{}^{\text{地}}B_x - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\\[6pt]
+\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t} &= q\cdot\big({}^{\text{地}}E_z + {}^{\text{地}}v_x\cdot{}^{\text{地}}B_y - {}^{\text{地}}v_y\cdot{}^{\text{地}}B_x\big)
+\end{aligned}
+\end{gathered}
+$$
+
+<p><strong>能量</strong>（同上，1.9 對 \({}^{\text{地}}t\) 微分）：</p>
+
+$$
+\begin{aligned}
+\frac{d\big({}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
+&= {}^{\text{地}}\vec v\cdot\frac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}\vec v\big)}{d{}^{\text{地}}t}
+= q\cdot{}^{\text{地}}\vec v\cdot{}^{\text{地}}\vec E + q\cdot\underbrace{{}^{\text{地}}\vec v\cdot\big({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\big)}_{0\text{（互相垂直）}}\\[6pt]
+&= q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)
+\end{aligned}
+$$
+
+<p><strong>排成矩陣</strong>：</p>
+
+$$
+\begin{alignedat}{5}
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& 0\cdot c && {}+ \dfrac{{}^{\text{地}}E_x}{c}\cdot{}^{\text{地}}v_x && {}+ \dfrac{{}^{\text{地}}E_y}{c}\cdot{}^{\text{地}}v_y && {}+ \dfrac{{}^{\text{地}}E_z}{c}\cdot{}^{\text{地}}v_z\Big)\\[16pt]
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& \dfrac{{}^{\text{地}}E_x}{c}\cdot c && {}+ 0\cdot{}^{\text{地}}v_x && {}+ {}^{\text{地}}B_z\cdot{}^{\text{地}}v_y && {}- {}^{\text{地}}B_y\cdot{}^{\text{地}}v_z\Big)\\[16pt]
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& \dfrac{{}^{\text{地}}E_y}{c}\cdot c && {}- {}^{\text{地}}B_z\cdot{}^{\text{地}}v_x && {}+ 0\cdot{}^{\text{地}}v_y && {}+ {}^{\text{地}}B_x\cdot{}^{\text{地}}v_z\Big)\\[16pt]
+\dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t} &= q\cdot\Big(&& \dfrac{{}^{\text{地}}E_z}{c}\cdot c && {}+ {}^{\text{地}}B_y\cdot{}^{\text{地}}v_x && {}- {}^{\text{地}}B_x\cdot{}^{\text{地}}v_y && {}+ 0\cdot{}^{\text{地}}v_z\Big)
+\end{alignedat}
+$$
+
+<p>同上，改用 \(q\) 自己的鐘 \({}^{q}t\)（1.2）：</p>
+
+$$
+\boxed{\;m\,\frac{d^2}{d{}^{q}t^2}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}
+= q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[6pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[6pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[6pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}
+\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\;}
+$$
+
+<p><strong>Lorentz 變換</strong>（\({}^{Q}z = {}^{\text{地}}z\)，1.3）：</p>
+
+$$
+\begin{pmatrix}c\cdot{}^{Q}t\\[4pt] {}^{Q}x\\[4pt] {}^{Q}y\\[4pt] {}^{Q}z\end{pmatrix}
+= \underbrace{\begin{pmatrix}{}^{\text{地}}\gamma_{Q} & -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0 & 0\\[6pt] -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0 & 0\\[6pt] 0 & 0 & 1 & 0\\[6pt] 0 & 0 & 0 & 1\end{pmatrix}}_{\text{Lorentz 變換；反變換：}{}^{\text{地}}u\text{ 換成 }-\,{}^{\text{地}}u}
+\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}
+$$
+
+<p><strong>換基準</strong>（同上；\(q\) 的速度可以是任何方向、小於 \(c\) 的任何大小）：</p>
+
+$$
+\begin{aligned}
+&\begin{pmatrix}0 & \dfrac{{}^{Q}E_x}{c} & \dfrac{{}^{Q}E_y}{c} & \dfrac{{}^{Q}E_z}{c}\\[6pt] \dfrac{{}^{Q}E_x}{c} & 0 & {}^{Q}B_z & -{}^{Q}B_y\\[6pt] \dfrac{{}^{Q}E_y}{c} & -{}^{Q}B_z & 0 & {}^{Q}B_x\\[6pt] \dfrac{{}^{Q}E_z}{c} & {}^{Q}B_y & -{}^{Q}B_x & 0\end{pmatrix}\\[10pt]
+&= \begin{pmatrix}{}^{\text{地}}\gamma_{Q} & -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0 & 0\\[6pt] -\dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0 & 0\\[6pt] 0 & 0 & 1 & 0\\[6pt] 0 & 0 & 0 & 1\end{pmatrix}
+\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[6pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[6pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[6pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\\[10pt]
+&\qquad\cdot\begin{pmatrix}{}^{\text{地}}\gamma_{Q} & \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & 0 & 0\\[6pt] \dfrac{{}^{\text{地}}\gamma_{Q}\cdot{}^{\text{地}}u}{c} & {}^{\text{地}}\gamma_{Q} & 0 & 0\\[6pt] 0 & 0 & 1 & 0\\[6pt] 0 & 0 & 0 & 1\end{pmatrix}
+\end{aligned}
+$$
+
+<p>乘開，和左邊逐項比對：</p>
+
+$$
+\boxed{\;\begin{gathered}
+{}^{Q}E_x = {}^{\text{地}}E_x,\qquad {}^{Q}B_x = {}^{\text{地}}B_x\\[8pt]
+{}^{Q}E_y = {}^{\text{地}}\gamma_{Q}\big({}^{\text{地}}E_y - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\big),\qquad {}^{Q}B_z = {}^{\text{地}}\gamma_{Q}\Big({}^{\text{地}}B_z - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}E_y}{c^2}\Big)\\[8pt]
+{}^{Q}E_z = {}^{\text{地}}\gamma_{Q}\big({}^{\text{地}}E_z + {}^{\text{地}}u\cdot{}^{\text{地}}B_y\big),\qquad {}^{Q}B_y = {}^{\text{地}}\gamma_{Q}\Big({}^{\text{地}}B_y + \frac{{}^{\text{地}}u\cdot{}^{\text{地}}E_z}{c^2}\Big)
+\end{gathered}\;}
+$$
+
+<p>寫回向量（\({}^{\text{地}}\vec u\times{}^{\text{地}}\vec B = {}^{\text{地}}u\cdot{}^{\text{地}}B_y\,\hat z - {}^{\text{地}}u\cdot{}^{\text{地}}B_z\,\hat y\)，\({}^{\text{地}}\vec u\times{}^{\text{地}}\vec E = {}^{\text{地}}u\cdot{}^{\text{地}}E_y\,\hat z - {}^{\text{地}}u\cdot{}^{\text{地}}E_z\,\hat y\)）：</p>
+
+$$
+\begin{gathered}
+{}^{Q}\vec E_{\perp} = {}^{\text{地}}\gamma_{Q}\Big({}^{\text{地}}\vec E + {}^{\text{地}}\vec u\times{}^{\text{地}}\vec B\Big)_{\perp},\qquad {}^{Q}E_{/\mkern-5mu/} = {}^{\text{地}}E_{/\mkern-5mu/}\\[8pt]
+{}^{Q}\vec B_{\perp} = {}^{\text{地}}\gamma_{Q}\Big({}^{\text{地}}\vec B - \frac{{}^{\text{地}}\vec u\times{}^{\text{地}}\vec E}{c^2}\Big)_{\perp},\qquad {}^{Q}B_{/\mkern-5mu/} = {}^{\text{地}}B_{/\mkern-5mu/}
+\end{gathered}
+$$
+
+<p>\(q\) 沿 \(x\) 軸以 \({}^{\text{地}}v\) 移動時，把 \(Q\) 基準換成 \(q\) 基準（\({}^{\text{地}}\vec u\) 換成 \({}^{\text{地}}\vec v\)），就是本節開頭的兩個框。</p>
 
 <h1 id="about">關於作者</h1>
 
@@ -6227,6 +6614,7 @@ $$
 <script src="js/rb.js?v=5"></script>
 <script src="js/rd.js?v=5"></script>
 <script src="js/rw.js?v=6"></script>
+<script src="js/tc.js?v=10"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
