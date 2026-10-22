@@ -97,7 +97,7 @@
   svg.addEventListener('pointermove', function (e) {
     if (!drag) return;
     phi = drag[2] + (e.clientX - drag[0]) * 0.01;
-    theta = Math.max(0.05, Math.min(1.2, drag[3] + (e.clientY - drag[1]) * 0.01));
+    theta = drag[3] + (e.clientY - drag[1]) * 0.01;          // 上下也不設限，可以轉很多圈
     render();
   });
   svg.addEventListener('pointerup', function () { drag = null; });

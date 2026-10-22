@@ -118,8 +118,8 @@
   svg.addEventListener('pointermove', function (e) {
     if (!drag) return;
     if (e.pointerType === 'mouse' && (e.buttons & 1) === 0) { drag = null; return; }
-    phi = Math.max(-1.4, Math.min(0.2, drag[2] + (e.clientX - drag[0]) * 0.01));
-    theta = Math.max(-0.1, Math.min(0.9, drag[3] + (e.clientY - drag[1]) * 0.01));
+    phi = drag[2] + (e.clientX - drag[0]) * 0.01;          // 左右、上下都不設限，可以轉很多圈
+    theta = drag[3] + (e.clientY - drag[1]) * 0.01;
     render();
   });
   ['pointerup', 'pointercancel', 'lostpointercapture', 'contextmenu'].forEach(function (t) { svg.addEventListener(t, function () { drag = null; }); });
