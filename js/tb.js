@@ -1,8 +1,11 @@
 /* 3.10 立體圖：同一個例子（3.4、圖 ta）在三維空間裡。上：地面基準；下：q 基準。拖曳任何一個面板，兩個一起旋轉。
-   x 軸是 Q 的運動線；y、z 軸從 q 在 x 軸上的垂足畫出，y z 平面通過 q。E⊥ 的分量：先沿 z、再沿 y；E = E⊥ 再接 E_x（不與 q 的速度重疊）。
+   x 軸是 Q 的運動線；y、z 軸從 q 在 x 軸上的垂足畫出，y z 平面通過 q。每一個半徑方向上都是 E⊥，不必再拆成 y、z 分量。
+   切面：以 x 軸為邊、沿半徑張開的半平面；它與 y 軸的夾角（從 y 量向 z）由滑桿拖動，q 落在切面與正圓的交點。
+   切面與 y 軸重合（0°）時 E⊥ 就是 E_y，與 z 軸重合（90°）時就是 E_z，標籤跟著換。
    q 此刻在 Q 的右方 X、垂直距離 R（在 y z 平面裡，與 y 軸夾 AL）。E 沿 Q 此刻的位置 → q 的方向（3.1）：
    E_x 兩個基準相同；E⊥ 在 q 基準裡乘上 ^地γ_q(1 − ^地u·^地v/c²)。q 基準裡 Q 此刻的水平距離是 ^地γ_Q·X / ^qγ_Q（兩者的 Q 基準距離相同）。
-   滑桿改變 ^地v：q 基準裡的 E⊥ 整體伸縮，y、z 分量等比例；淡線是地面基準的 E⊥（同一個比例尺），用來比較。
+   以 Q 的 x 軸為軸心，y z 平面上的 E⊥ 是對稱的正圓：圓上每一點（半徑 R，每隔 30°）的 E⊥ 都沿半徑、一樣長。
+   滑桿改變 ^地v：q 基準裡整圈 E⊥ 沿半徑同步等比例伸縮，y、z 分量也等比例；淡線是地面基準的 E⊥（同一個比例尺），用來比較。
    JS 驅動的 SVG 投影：繞 y 轉 φ、往下俯視 θ。畫面上 x 向右、y 向上、z 朝向讀者（右手座標）。 */
 (function () {
   var svg = document.getElementById('tb');
@@ -13,10 +16,10 @@
   function el(t, a, p) { var e = document.createElementNS(NS, t); for (var k in a) e.setAttribute(k, a[k]); (p || svg).appendChild(e); return e; }
   function f1(n) { return n.toFixed(1); }
 
-  var GREEN = '#83C167', TEAL = '#5CD0B3', RED = '#FC6255', GREY = '#BBBBBB';
-  var U = 0.8, GU = 1 / Math.sqrt(1 - U * U), V = 0.6;
-  var X = 1.1, R = 1.2, AL = 35 * Math.PI / 180, EX = 1.2, EP = EX * R / X;
-  var CA = Math.cos(AL), SA = Math.sin(AL), S = 100, CX = 330, PIV = [-0.5, 1.0, 0.6];
+  var GREEN = '#83C167', TEAL = '#5CD0B3', BLUE = '#58C4DD', RED = '#FC6255', GREY = '#BBBBBB';
+  var U = 0.8, GU = 1 / Math.sqrt(1 - U * U), V = 0.6;   // E∥ 畫成 EX（只用來定 E⊥ 的長度：E 沿 Q→q）
+  var X = 1.6, R = 1.2, AL = 35 * Math.PI / 180, EX = 1.0, EP = EX * R / X, NR = 12, PL = 2.2;   // AL：切面與 y 軸的夾角
+  var S = 70, CX = 330, PIV = [-0.5, 0, 0];
   var PANELS = [{ k: 'g', top: 0, Qx: -X, uQ: U, Ep: EP }, { k: 'q', top: 380, vq: 0 }];
   function setV(v) {                                  // q 基準的量隨 ^地v 改變
     V = v;
@@ -25,12 +28,12 @@
     PANELS[1].Qx = -GU * X / GQQ; PANELS[1].uQ = QV; PANELS[1].Ep = GV * (1 - U * V) * EP;
   }
   setV(V);
-  var phi = -0.6, theta = 0.35;
+  var phi = -1.0, theta = 0.3;
 
   function P(p, pn) {
     var x = p[0] - PIV[0], y = p[1] - PIV[1], z = p[2] - PIV[2];
     var c = Math.cos(phi), s = Math.sin(phi), xr = x * c + z * s, zr = -x * s + z * c;
-    return [CX + S * xr, pn.top + 192 - S * (y * Math.cos(theta) - zr * Math.sin(theta))];
+    return [CX + S * xr, pn.top + 195 - S * (y * Math.cos(theta) - zr * Math.sin(theta))];
   }
   function add(a, b, k) { return [a[0] + k * b[0], a[1] + k * b[1], a[2] + k * b[2]]; }
   function line(a, b, pn, attr, g) { var p = P(a, pn), q = P(b, pn); attr.x1 = f1(p[0]); attr.y1 = f1(p[1]); attr.x2 = f1(q[0]); attr.y2 = f1(q[1]); return el('line', attr, g); }
@@ -62,16 +65,33 @@
       var g = pn.d;
       while (g.firstChild) g.removeChild(g.firstChild);
       var L = function (k) { return $(pn.k + '-' + k); };
-      var O = [0, 0, 0], q = [0, R * CA, R * SA], Q = [pn.Qx, 0, 0];
-      var Eperp = [0, pn.Ep * CA, pn.Ep * SA], Ez = [0, 0, pn.Ep * SA];
-      var pTip = add(q, Eperp, 1), tip = add(pTip, [EX, 0, 0], 1), zTip = add(q, Ez, 1);
-      // y z 平面（通過 q）與座標軸
-      el('polygon', { points: [[0, -0.2, -0.2], [0, 2.5, -0.2], [0, 2.5, 1.85], [0, -0.2, 1.85]].map(function (p) { var s = P(p, pn); return f1(s[0]) + ',' + f1(s[1]); }).join(' '),
+      var CA = Math.cos(AL), SA = Math.sin(AL), O = [0, 0, 0], q = [0, R * CA, R * SA], Q = [pn.Qx, 0, 0];
+      var pTip = add(q, [0, pn.Ep * CA, pn.Ep * SA], 1), tip = add(pTip, [EX, 0, 0], 1);   // E = E⊥ 再接 E_x（整支 E 在切面裡）
+      // y z 平面（通過 q，以 x 軸為中心）與座標軸
+      el('polygon', { points: [[0, -PL, -PL], [0, PL, -PL], [0, PL, PL], [0, -PL, PL]].map(function (p) { var s = P(p, pn); return f1(s[0]) + ',' + f1(s[1]); }).join(' '),
         fill: 'currentColor', 'fill-opacity': .05, stroke: 'currentColor', 'stroke-opacity': .3, 'stroke-dasharray': '4 4' }, g);
-      line([-2.2, 0, 0], [1.9, 0, 0], pn, { stroke: 'currentColor', 'stroke-opacity': .45, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
-      line(O, [0, 2.65, 0], pn, { stroke: GREY, 'stroke-opacity': .8, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
-      line(O, [0, 0, 2.0], pn, { stroke: GREY, 'stroke-opacity': .8, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
-      place(L('lx'), P([2.08, 0, 0], pn)); place(L('ly'), P([0, 2.85, 0], pn)); place(L('lz'), P([0, 0, 2.2], pn));
+      line([-3.0, 0, 0], [1.9, 0, 0], pn, { stroke: 'currentColor', 'stroke-opacity': .45, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
+      line(O, [0, PL + 0.2, 0], pn, { stroke: GREY, 'stroke-opacity': .8, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
+      line(O, [0, 0, PL + 0.2], pn, { stroke: GREY, 'stroke-opacity': .8, 'stroke-width': 1.3, 'marker-end': 'url(#tbA)' }, g);
+      place(L('lx'), P([2.08, 0, 0], pn)); place(L('ly'), P([0, PL + 0.4, 0], pn)); place(L('lz'), P([0, 0, PL + 0.4], pn));
+      // 切面：以 x 軸為邊、沿半徑張開的半平面
+      el('polygon', { points: [[-3.0, 0, 0], [1.9, 0, 0], [1.9, PL * CA, PL * SA], [-3.0, PL * CA, PL * SA]].map(function (p) { var s = P(p, pn); return f1(s[0]) + ',' + f1(s[1]); }).join(' '),
+        fill: BLUE, 'fill-opacity': .1, stroke: BLUE, 'stroke-opacity': .55, 'stroke-dasharray': '5 4' }, g);
+      // 切面與 y 軸的夾角（從 y 量向 z）
+      if (AL > 0.01) {
+        var arc = [];
+        for (var k = 0; k <= 40; k++) { var t = AL * k / 40, sa = P([0, 0.42 * Math.cos(t), 0.42 * Math.sin(t)], pn); arc.push(f1(sa[0]) + ',' + f1(sa[1])); }
+        el('polyline', { points: arc.join(' '), fill: 'none', stroke: BLUE, 'stroke-width': 1.4 }, g);   // 角度的數值顯示在滑桿旁
+      }
+      // 正圓：圓上每一點的 E⊥ 都沿半徑、一樣長（q 自己的那一支在下面另外畫）
+      var ring = [];
+      for (var j = 0; j <= 72; j++) { var w = j * Math.PI / 36, s2 = P([0, R * Math.cos(w), R * Math.sin(w)], pn); ring.push(f1(s2[0]) + ',' + f1(s2[1])); }
+      el('polyline', { points: ring.join(' '), fill: 'none', stroke: TEAL, 'stroke-opacity': .45, 'stroke-dasharray': '3 4' }, g);
+      for (var i = 0; i < NR; i++) {
+        var w2 = AL + i * 2 * Math.PI / NR, rd = [0, Math.cos(w2), Math.sin(w2)], p0 = add(O, rd, R);
+        if (pn.k === 'q') line(p0, add(p0, rd, EP), pn, { stroke: TEAL, 'stroke-width': 1.2, 'stroke-opacity': .3, 'stroke-dasharray': '6 4' }, g);   // 淡線：地面基準
+        if (i > 0) line(p0, add(p0, rd, pn.Ep), pn, { stroke: TEAL, 'stroke-width': 1.5, 'stroke-opacity': .75, 'marker-end': 'url(#tbT)' }, g);
+      }
       // Q → q 的虛線（E 沿這個方向）
       line(Q, add(q, [EX, pn.Ep * CA, pn.Ep * SA], 1.25), pn, { stroke: GREY, 'stroke-opacity': .7, 'stroke-width': 1.2, 'stroke-dasharray': '3 5' }, g);
       // Q 與它的速度
@@ -81,34 +101,36 @@
       var mQ = P(add(a0, [pn.uQ / 2, 0, 0], 1), pn); place(L('u'), [mQ[0], mQ[1] + 20]);
       el('circle', { cx: f1(sQ[0]), cy: f1(sQ[1]), r: 10, fill: RED }, g);
       el('text', { x: f1(sQ[0]), y: f1(sQ[1] + 5), 'text-anchor': 'middle', 'font-size': 14, 'font-weight': 700, fill: '#1a1a1a' }, g).textContent = 'Q';
-      if (pn.k === 'q') {                             // 淡線：地面基準的 E⊥ 與它的 z、y 分量
-        var gz = add(q, [0, 0, EP * SA], 1), gp = add(q, [0, EP * CA, EP * SA], 1), ghost = { stroke: TEAL, 'stroke-width': 1.2, 'stroke-opacity': .35 };
-        line(q, gz, pn, Object.assign({ 'stroke-dasharray': '2 3' }, ghost), g);
-        line(gz, gp, pn, Object.assign({ 'stroke-dasharray': '2 3' }, ghost), g);
-        line(q, gp, pn, Object.assign({ 'stroke-dasharray': '6 4' }, ghost), g);
-      }
-      // E⊥ 在 y z 平面裡的分量：先沿 z，再沿 y
-      line(q, zTip, pn, { stroke: TEAL, 'stroke-width': 1.3, 'stroke-dasharray': '2 3', 'stroke-opacity': .9 }, g);
-      line(zTip, pTip, pn, { stroke: TEAL, 'stroke-width': 1.3, 'stroke-dasharray': '2 3', 'stroke-opacity': .9 }, g);
-      // E = E⊥ + E_x（虛線箭頭），再加上 E 本身
-      line(q, pTip, pn, { stroke: TEAL, 'stroke-width': 1.8, 'stroke-dasharray': '6 4', 'marker-end': 'url(#tbT)' }, g);
+      // q 的 E⊥（圓上的其中一支，加粗），再接 E_x（虛線），以及整支 E
+      line(q, pTip, pn, { stroke: TEAL, 'stroke-width': 2.8, 'marker-end': 'url(#tbT)' }, g);
       line(pTip, tip, pn, { stroke: TEAL, 'stroke-width': 1.8, 'stroke-dasharray': '6 4', 'marker-end': 'url(#tbT)' }, g);
-      line(q, tip, pn, { stroke: TEAL, 'stroke-width': 2.8, 'marker-end': 'url(#tbT)' }, g);
-      var sq = P(q, pn), sp = P(pTip, pn), st = P(tip, pn), sz = P(zTip, pn);
-      place(L('Ez'), pn.k === 'g' ? side(sq, sz, sp, -18, 0.45) : side(sq, sz, sp, 16, 0.8));
-      var ex = P([0, 0, 1.85], pn)[0], dir = sp[0] < sq[0] ? -1 : 1;           // E_y 的標籤放在 y z 平面外
-      place(L('Ey'), [(dir < 0 ? Math.min(ex, sp[0]) : Math.max(ex, sp[0])) + dir * 22, (sz[1] + sp[1]) / 2]);
-      place(L('Ep'), side(sq, sp, st, -18, 0.42));
-      place(L('Ex'), side(sp, st, sq, 15, 0.68));
-      place(L('E'), side(sq, st, sp, 22, 1));
+      line(q, tip, pn, { stroke: TEAL, 'stroke-width': 2.2, 'stroke-opacity': .9, 'marker-end': 'url(#tbT)' }, g);
+      var st = P(tip, pn);
+      var sq = P(q, pn), sp = P(pTip, pn), rx = sp[0] - sq[0], ry = sp[1] - sq[1], rn = Math.hypot(rx, ry) || 1, nx = -ry / rn, ny = rx / rn;
+      var exPos = side(sp, st, sq, 15, 0.6), ePos = side(sq, st, sp, 22, 1), mx0 = (sq[0] + sp[0]) / 2, my0 = (sq[1] + sp[1]) / 2;
+      function far(px, py) { return Math.min(Math.hypot(px - exPos[0], py - exPos[1]), Math.hypot(px - ePos[0], py - ePos[1])); }
+      if (far(mx0 + 20 * nx, my0 + 20 * ny) < far(mx0 - 20 * nx, my0 - 20 * ny)) { nx = -nx; ny = -ny; }   // n：E⊥ 標籤那一側（離 E_x、E 的標籤較遠）
+      var deg = Math.round(AL * 180 / Math.PI) % 360, lk = deg === 0 ? 'Ey' : deg === 90 ? 'Ez' : 'Ep';   // 切面與 y 軸重合：E⊥ 就是 E_y；與 z 軸重合：就是 E_z
+      ['Ep', 'Ey', 'Ez'].forEach(function (k) { L(k).setAttribute('visibility', k === lk ? 'visible' : 'hidden'); });
+      var epPos = [(sq[0] + sp[0]) / 2 + 20 * nx, (sq[1] + sp[1]) / 2 + 20 * ny], used = [exPos, ePos, epPos];
+      function far3(c) { return Math.min.apply(null, used.map(function (u) { return Math.hypot(c[0] - u[0], c[1] - u[1]); })); }
+      function best(cs) { cs.sort(function (a, b) { return far3(b) - far3(a); }); used.push(cs[0]); return cs[0]; }
+      place(L(lk), epPos);
+      place(L('Ex'), exPos);
+      place(L('E'), ePos);
       // q 與它的速度
       if (pn.vq > 0) {
         line(add(q, [0.1, 0, 0], 1), add(q, [0.1 + pn.vq, 0, 0], 1), pn, { stroke: GREEN, 'stroke-width': 2.4, 'marker-end': 'url(#tbG)' }, g);
-        var mv = P(add(q, [0.1 + pn.vq, 0, 0], 1), pn); place(L('v'), [mv[0] + 18, mv[1] + 10]); L('v').removeAttribute('visibility');
-      } else if (pn.k === 'q') place(L('v'), [sq[0] + 6, sq[1] + 44]);
+        var mv = P(add(q, [0.1 + pn.vq, 0, 0], 1), pn), mx = mv[0] - sq[0], my = mv[1] - sq[1], mn = Math.hypot(mx, my) || 1;
+        var c1 = [mv[0] + 16 * mx / mn - 14 * my / mn, mv[1] + 16 * my / mn + 14 * mx / mn], c2 = [mv[0] + 16 * mx / mn + 14 * my / mn, mv[1] + 16 * my / mn - 14 * mx / mn];
+        place(L('v'), best([c1, c2])); L('v').removeAttribute('visibility');   // 箭頭前端，選離其他標籤較遠的一側
+      } else if (pn.k === 'q') {                      // 靜止：q 附近，選離 E、E_x 標籤最遠的位置
+        var cs = [[sq[0] - 18 * nx + 30, sq[1] - 18 * ny], [sq[0] - 18 * nx - 30, sq[1] - 18 * ny], [sq[0] - 34 * nx, sq[1] - 34 * ny]];
+        place(L('v'), best(cs));
+      }
       else L('v').setAttribute('visibility', 'hidden');
       el('circle', { cx: f1(sq[0]), cy: f1(sq[1]), r: 6, fill: 'currentColor' }, g);
-      place(L('q'), [sq[0] + 6, sq[1] + 24]);
+      place(L('q'), best([[sq[0] - 18 * nx, sq[1] - 18 * ny], [sq[0], sq[1] + 20], [sq[0] - 20, sq[1]], [sq[0] + 20, sq[1]], [sq[0], sq[1] - 20]]));   // q 的標籤：選離其他標籤最遠的位置
     });
   }
 
@@ -123,6 +145,7 @@
     render();
   });
   ['pointerup', 'pointercancel', 'lostpointercapture', 'contextmenu'].forEach(function (t) { svg.addEventListener(t, function () { drag = null; }); });
+  $('a').addEventListener('input', function (e) { AL = +e.target.value * Math.PI / 180; $('ao').textContent = e.target.value + '°'; render(); });
   $('v').addEventListener('input', function (e) { setV(+e.target.value); $('vo').textContent = V.toFixed(2) + 'c'; $('fo').textContent = (PANELS[1].Ep / EP).toFixed(2); render(); });
   window.tb = { view: function (p, t) { phi = p; theta = t; render(); }, v: function (v) { setV(v); render(); } };
   render();
