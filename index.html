@@ -6118,8 +6118,9 @@ $$
 {}^{q}\vec F_{q} = q\cdot{}^{q}\vec E\\[6pt]
 {}^{q}F_{q\perp} = {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}F_{q\perp},\qquad
 {}^{q}F_{q/\mkern-5mu/} = {}^{\text{地}}F_{q/\mkern-5mu/}\ \text{（3.1）}\\[10pt]
-\boxed{\;{}^{q}\vec E_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big),\qquad
-{}^{q}E_{/\mkern-5mu/} = {}^{\text{地}}E_{/\mkern-5mu/}\;}
+\boxed{\;{}^{q}\vec E_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B_{\perp}\Big),\qquad
+{}^{q}E_{/\mkern-5mu/} = {}^{\text{地}}E_{/\mkern-5mu/}\;}\\[6pt]
+\big({}^{\text{地}}\vec v = {}^{\text{地}}v\,\hat x\ \Longrightarrow\ {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B_{/\mkern-5mu/} = 0\big)
 \end{gathered}
 $$
 
@@ -6128,8 +6129,8 @@ $$
 $$
 \begin{aligned}
 {}^{q}\vec B &= \frac{{}^{q}\vec V\times{}^{q}\vec E}{c^2}
-= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)\\[6pt]
-&= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp}\underbrace{- {}^{\text{地}}v\cdot\frac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}\vec E_{\perp}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\ \text{（3.4）}}\Big)\\[6pt]
+= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B_{\perp}\Big)\\[6pt]
+&= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp}\underbrace{- {}^{\text{地}}v\cdot\frac{{}^{\text{地}}u}{c^2}\cdot{}^{\text{地}}\vec E_{\perp}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B_{\perp}\ \text{（3.4）}}\Big)\\[6pt]
 &= \frac{{}^{q}V}{c^2}\,\hat x\times{}^{\text{地}}\gamma_{q}\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)\cdot{}^{\text{地}}\vec E_{\perp}\\[6pt]
 &= \frac{{}^{\text{地}}\gamma_{q}}{c^2}\cdot{}^{q}V\cdot\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)\,\underbrace{\hat x\times{}^{\text{地}}\vec E_{\perp}}_{\hat x\times{}^{\text{地}}\vec E\ \ (\hat x\times{}^{\text{地}}\vec E_{/\mkern-5mu/} = 0)}\\[6pt]
 &= \frac{{}^{\text{地}}\gamma_{q}}{c^2}\cdot\frac{{}^{\text{地}}u - {}^{\text{地}}v}{\bcancel{1 - \dfrac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}}}\cdot\bcancel{\Big(1 - \frac{{}^{\text{地}}u\cdot{}^{\text{地}}v}{c^2}\Big)}\,\hat x\times{}^{\text{地}}\vec E\qquad\text{（1.5）}\\[6pt]
@@ -6140,8 +6141,11 @@ $$
 $$
 
 $$
-\boxed{\;{}^{q}\vec B_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec B_{\perp} - \frac{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec E}{c^2}\Big),\qquad
-{}^{q}B_{/\mkern-5mu/} = {}^{\text{地}}B_{/\mkern-5mu/}\ (= 0)\;}
+\begin{gathered}
+\boxed{\;{}^{q}\vec B_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec B_{\perp} - \frac{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec E_{\perp}}{c^2}\Big),\qquad
+{}^{q}B_{/\mkern-5mu/} = {}^{\text{地}}B_{/\mkern-5mu/}\ (= 0)\;}\\[6pt]
+\big({}^{\text{地}}\vec v = {}^{\text{地}}v\,\hat x\ \Longrightarrow\ {}^{\text{地}}\vec v\times{}^{\text{地}}\vec E_{/\mkern-5mu/} = 0\big)
+\end{gathered}
 $$
 
 <p>三維空間呢？</p>
@@ -6188,12 +6192,12 @@ $$
 </div>
 </figure>
 
-<p>以 \(Q\) 的 \(x\) 軸為軸心，\(y\,z\) 平面上的 \(\vec E_{\perp}\) 是一個對稱的正圓。由稍早的結論 \({}^{q}\vec E_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\Big)\)，這個正圓沿半徑方向同步等比例縮放。把切面轉到與 \(y\) 軸重合，\(E_{\perp}\) 就是 \(E_y\)；轉到與 \(z\) 軸重合，\(E_{\perp}\) 就是 \(E_z\)：</p>
+<p>以 \(Q\) 的 \(x\) 軸為軸心，\(y\,z\) 平面上的 \(\vec E_{\perp}\) 是一個對稱的正圓。由稍早的結論 \({}^{q}\vec E_{\perp} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}\vec E_{\perp} + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B_{\perp}\Big)\)，這個正圓沿半徑方向同步等比例縮放。把切面轉到與 \(y\) 軸重合，\(E_{\perp}\) 就是 \(E_y\)；轉到與 \(z\) 軸重合，\(E_{\perp}\) 就是 \(E_z\)：</p>
 
 $$
 \begin{aligned}
-{}^{q}E_y &= {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}E_y + \big({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\big)_{y}\Big)\\[8pt]
-{}^{q}E_z &= {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}E_z + \big({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\big)_{z}\Big)\\[8pt]
+{}^{q}E_y &= {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}E_y + \underbrace{\big({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\big)_{y}}_{-\,{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z}\Big) = {}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\\[8pt]
+{}^{q}E_z &= {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}E_z + \underbrace{\big({}^{\text{地}}\vec v\times{}^{\text{地}}\vec B\big)_{z}}_{{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y}\Big) = {}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z + {}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)\\[8pt]
 {}^{q}E_x &= {}^{q}E_{/\mkern-5mu/} = {}^{\text{地}}E_{/\mkern-5mu/} = {}^{\text{地}}E_x
 \end{aligned}
 $$
@@ -6202,8 +6206,8 @@ $$
 
 $$
 \begin{aligned}
-{}^{q}B_z\,\hat z &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_y\,\underbrace{\hat x\times\hat y}_{\hat z} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y - {}^{\text{地}}v\cdot{}^{\text{地}}B_z\big)\,\underbrace{\hat x\times\hat y}_{\hat z}\\[10pt]
-{}^{q}B_y\,\hat y &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_z\,\underbrace{\hat x\times\hat z}_{-\hat y} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z + {}^{\text{地}}v\cdot{}^{\text{地}}B_y\big)\,\underbrace{\hat x\times\hat z}_{-\hat y}\\[10pt]
+{}^{q}B_z\,\hat z &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_y\,\underbrace{\hat x\times\hat y}_{\hat z} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\,\underbrace{\hat x\times\hat y}_{\hat z}\\[10pt]
+{}^{q}B_y\,\hat y &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_z\,\underbrace{\hat x\times\hat z}_{-\hat y} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z + {}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)\,\underbrace{\hat x\times\hat z}_{-\hat y}\\[10pt]
 {}^{q}B_x\,\hat x &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_x\,\underbrace{\hat x\times\hat x}_{0} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}E_x\,\underbrace{\hat x\times\hat x}_{0}
 \end{aligned}
 $$
