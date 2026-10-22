@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=32">
+<link rel="stylesheet" href="css/style.css?v=34">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -6182,7 +6182,7 @@ $$
   <div class="row">
     <label>\(q\) 的速度 \({}^{\text{地}}v\) <input type="range" class="tb-v" min="0" max="0.95" step="0.01" value="0.6" aria-label="q 的速度"><output class="tb-vo">0.60c</output></label>
     <label>\(E_{\perp}\) 的倍率 <output class="tb-fo">0.65</output></label>
-    <label>切面與 \(y\) 軸的夾角 <input type="range" class="tb-a" min="0" max="360" step="1" value="35" aria-label="切面與 y 軸的夾角"><output class="tb-ao">35°</output></label>
+    <label>切面與 \(y\) 軸的夾角 <span class="tb-a dial" role="slider" tabindex="0" aria-label="切面與 y 軸的夾角" aria-valuemin="0" aria-valuemax="359" aria-valuenow="35"></span><output class="tb-ao">35°</output></label>
   </div>
 </div>
 <div class="fig-legend">
@@ -6204,13 +6204,15 @@ $$
 
 <p>三式同步乘上 \({}^{q}\vec V\times\)、除以 \(c^2\)（\({}^{q}\vec V = {}^{q}V\,\hat x\)）：</p>
 
+<div class="math-fit">
 $$
 \begin{aligned}
-{}^{q}B_z\,\hat z &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_y\,\underbrace{\hat x\times\hat y}_{\hat z} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\,\underbrace{\hat x\times\hat y}_{\hat z}\\[10pt]
-{}^{q}B_y\,\hat y &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_z\,\underbrace{\hat x\times\hat z}_{-\hat y} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z + {}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)\,\underbrace{\hat x\times\hat z}_{-\hat y}\\[10pt]
-{}^{q}B_x\,\hat x &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_x\,\underbrace{\hat x\times\hat x}_{0} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}E_x\,\underbrace{\hat x\times\hat x}_{0}
+{}^{q}B_z\,\hat z &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_y\,\underbrace{\hat x\times\hat y}_{\hat z} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y - {}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)\,\underbrace{\hat x\times\hat y}_{\hat z} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z - \frac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big)\,\hat z\\[10pt]
+{}^{q}B_y\,\hat y &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_z\,\underbrace{\hat x\times\hat z}_{-\hat y} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z + {}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)\,\underbrace{\hat x\times\hat z}_{-\hat y} = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y + \frac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\,\hat y\\[10pt]
+{}^{q}B_x\,\hat x &= \frac{{}^{q}V}{c^2}\cdot{}^{q}E_x\,\underbrace{\hat x\times\hat x}_{0} = \frac{{}^{q}V}{c^2}\cdot{}^{\text{地}}E_x\,\underbrace{\hat x\times\hat x}_{0} = 0 = {}^{\text{地}}B_x\,\hat x
 \end{aligned}
 $$
+</div>
 
 <p>排成矩陣：</p>
 
@@ -6371,7 +6373,7 @@ $$
 <script src="js/rd.js?v=5"></script>
 <script src="js/rw.js?v=7"></script>
 <script src="js/ta.js?v=4"></script>
-<script src="js/tb.js?v=33"></script>
+<script src="js/tb.js?v=34"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 

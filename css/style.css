@@ -146,6 +146,9 @@ mjx-container[display="true"] {
   padding: .25rem 0;
 }
 
+/* 特別寬、又不能換行的一組公式：整組稍微縮小，免得出現橫向捲軸 */
+.math-fit { font-size: .88em; }
+
 /* ---------- 表格 ---------- */
 .table-scroll { overflow-x: auto; }
 table {
@@ -549,6 +552,26 @@ figure.fig-live { text-align: left; }
 .fig-ctl input[type=checkbox]:focus-visible { outline: 2px solid var(--ctl-line); outline-offset: 2px; }
 .fig-ctl label:has(input[type=checkbox]:checked) { color: var(--fg); }
 /* 播放鍵 */
+/* 圓形旋鈕（可以轉無限圈）；吸附到座標軸時發光彈跳 */
+.fig-ctl .dial { display: inline-grid; place-items: center; flex: none; width: 56px; height: 56px; border-radius: 50%; cursor: grab; touch-action: none; outline: none; transition: filter .25s, transform .25s; }
+.fig-ctl .dial:active { cursor: grabbing; }
+.fig-ctl .dial:focus-visible { box-shadow: 0 0 0 3px var(--ctl-line); }
+.fig-ctl .dial svg { display: block; overflow: visible; }
+.fig-ctl .dial .dial-track { fill: color-mix(in srgb, var(--fg) 6%, transparent); stroke: var(--ctl-line); stroke-width: 2; }
+.fig-ctl .dial .dial-tick { stroke: var(--fg-soft); stroke-width: 1.2; }
+.fig-ctl .dial .dial-lab { fill: var(--fg-soft); font: italic 8px "Noto Serif TC", serif; text-anchor: middle; }
+.fig-ctl .dial .dial-hand { stroke: var(--fg); stroke-width: 2; stroke-linecap: round; }
+.fig-ctl .dial .dial-knob { fill: var(--fg); }
+.fig-ctl .dial .dial-hub { fill: var(--fg-soft); }
+.fig-ctl .dial.hit { filter: drop-shadow(0 0 6px #5CD0B3) drop-shadow(0 0 14px rgba(92, 208, 179, .55)); }
+.fig-ctl .dial.hit .dial-track { stroke: #5CD0B3; fill: rgba(92, 208, 179, .14); }
+.fig-ctl .dial.hit .dial-hand, .fig-ctl .dial.hit .dial-tick { stroke: #5CD0B3; }
+.fig-ctl .dial.hit .dial-knob { fill: #5CD0B3; }
+.fig-ctl .dial.hit .dial-lab { fill: #5CD0B3; font-weight: 700; }
+.fig-ctl .dial.pop { animation: dialPop .45s ease-out; }
+@keyframes dialPop { 0% { transform: scale(1); } 35% { transform: scale(1.28) rotate(-4deg); } 70% { transform: scale(.94); } 100% { transform: scale(1); } }
+.fig-ctl output.hit { color: #5CD0B3; font-weight: 700; text-shadow: 0 0 8px rgba(92, 208, 179, .7); }
+@media (prefers-reduced-motion: reduce) { .fig-ctl .dial.pop { animation: none; } }
 .fig-ctl button { display: inline-flex; align-items: center; justify-content: center; width: 1.9rem; height: 1.9rem; border: none; border-radius: 50%; background: color-mix(in srgb, var(--fg) 10%, transparent); color: var(--fg); cursor: pointer; flex: none; }
 .fig-ctl button:hover { background: color-mix(in srgb, var(--fg) 18%, transparent); }
 .fig-ctl button svg { display: block; transform: scale(.85); }
