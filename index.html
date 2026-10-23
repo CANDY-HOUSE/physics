@@ -6221,14 +6221,10 @@ $$
 $$
 \begin{aligned}
 {}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B
-&= {}^{\text{地}}\vec E + {}^{\text{地}}v_x\,\big(\hat x\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_y\,\big(\hat y\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_z\,\big(\hat z\times{}^{\text{地}}\vec B\big)
+&= {}^{\text{地}}\vec E + {}^{\text{地}}v_x\,\big(\hat x\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_y\,\big(\hat y\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_z\,\big(\hat z\times{}^{\text{地}}\vec B\big)\\[10pt]
+&= {}^{\text{地}}\vec E + {}^{\text{地}}v_x\begin{pmatrix}0\\[4pt] -{}^{\text{地}}B_z\\[4pt] {}^{\text{地}}B_y\end{pmatrix} + {}^{\text{地}}v_y\begin{pmatrix}{}^{\text{地}}B_z\\[4pt] 0\\[4pt] -{}^{\text{地}}B_x\end{pmatrix} + {}^{\text{地}}v_z\begin{pmatrix}-{}^{\text{地}}B_y\\[4pt] {}^{\text{地}}B_x\\[4pt] 0\end{pmatrix}\\[10pt]
+&= {}^{\text{地}}\vec E + \underbrace{\begin{pmatrix}0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[4pt] -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[4pt] {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B}
 \end{aligned}
-$$
-
-$$
-\hat x\times{}^{\text{地}}\vec B = \begin{pmatrix}0\\[4pt] -{}^{\text{地}}B_z\\[4pt] {}^{\text{地}}B_y\end{pmatrix},\qquad
-\hat y\times{}^{\text{地}}\vec B = \begin{pmatrix}{}^{\text{地}}B_z\\[4pt] 0\\[4pt] -{}^{\text{地}}B_x\end{pmatrix},\qquad
-\hat z\times{}^{\text{地}}\vec B = \begin{pmatrix}-{}^{\text{地}}B_y\\[4pt] {}^{\text{地}}B_x\\[4pt] 0\end{pmatrix}
 $$
 
 <p>四個向量排成四欄：</p>
