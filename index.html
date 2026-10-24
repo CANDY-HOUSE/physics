@@ -6423,6 +6423,29 @@ $$
 
 <p>與（3.10）非以矩陣手法獲得的結果完全一致，神奇吧！</p>
 
+<p>為什麼硬魔改出來的第一 row 竟然行得通？無論這個詮釋能不能說服人，還是給人硬凹之感，都不重要，因為算數上，在地基準裡，第一 row 不影響下面三 row；雖然換到 \(q\) 基準時，1.4 矩陣的反矩陣會把第一 row 混進第二 row。例如「經計算」的矩陣第二 row、第三格，就要用到第一 row 的 \(\dfrac{{}^{\text{地}}E_y}{c}\)：</p>
+
+$$
+-\,{}^{\text{地}}\gamma_{q}\,\frac{{}^{\text{地}}v_x}{c}\cdot\frac{{}^{\text{地}}E_y}{c} + {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}B_z = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z - \frac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big)
+$$
+
+<p>但 1.4 矩陣左右對稱，所以左乘它的反矩陣、右乘它之後，「first column = first row」的對稱仍然保得住：</p>
+
+<figure class="fig-live">
+<svg id="tsy" viewBox="0 0 640 270" xmlns="http://www.w3.org/2000/svg" font-family="Noto Serif TC, serif" font-size="16"></svg>
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="tsy-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>\(q\) 的速度 \({}^{\text{地}}v_x\)</span>
+    <input type="range" class="tsy-b grow" min="0" max="0.9" step="0.01" value="0" aria-label="q 的速度">
+    <output class="tsy-bo">0.00c</output>
+  </div>
+</div>
+<div class="fig-legend">
+  <span>數字是一組例子：地基準的 \(\dfrac{{}^{\text{地}}\vec E}{c} = (0.5,\ 0.8,\ -0.4)\)、\({}^{\text{地}}\vec B = (0.3,\ -0.6,\ 0.7)\)</span>
+</div>
+</figure>
+
 <h1 id="about">關於作者</h1>
 
 <p>物理在根本上的突破，已經停滯了將近一百年。原因可能在於：物理從來沒有被建構成一套公理化的體系。理論東長一個分支、西長一個分支，沒有從同一個根長出來，彼此之間也沒有串連。</p>
@@ -6582,6 +6605,7 @@ $$
 <script src="js/ta.js?v=4"></script>
 <script src="js/tb.js?v=34"></script>
 <script src="js/tm.js?v=4"></script>
+<script src="js/tsy.js?v=2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
