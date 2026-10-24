@@ -267,6 +267,17 @@ $$
 \begin{pmatrix}c\cdot{}^{2}t\\[4pt] {}^{2}x\end{pmatrix} = \begin{pmatrix}\gamma & -\gamma\,\dfrac{v}{c}\\[8pt] -\gamma\,\dfrac{v}{c} & \gamma\end{pmatrix}\begin{pmatrix}c\cdot{}^{1}t\\[4pt] {}^{1}x\end{pmatrix}
 $$
 
+<p>驗證：兩個矩陣相乘，得到單位矩陣（1.2：\(\gamma = \dfrac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}\)，所以 \(\gamma^2\Big(1-\left(\dfrac{v}{c}\right)^2\Big) = 1\)）：</p>
+
+$$
+\begin{aligned}
+&\begin{pmatrix}\gamma & \gamma\,\dfrac{v}{c}\\[8pt] \gamma\,\dfrac{v}{c} & \gamma\end{pmatrix}\begin{pmatrix}\gamma & -\gamma\,\dfrac{v}{c}\\[8pt] -\gamma\,\dfrac{v}{c} & \gamma\end{pmatrix}\\[14pt]
+&= \begin{pmatrix}\gamma^2 - \gamma^2\left(\dfrac{v}{c}\right)^2 & -\gamma^2\,\dfrac{v}{c} + \gamma^2\,\dfrac{v}{c}\\[8pt] \gamma^2\,\dfrac{v}{c} - \gamma^2\,\dfrac{v}{c} & -\gamma^2\left(\dfrac{v}{c}\right)^2 + \gamma^2\end{pmatrix}\\[14pt]
+&= \begin{pmatrix}\gamma^2\Big(1-\left(\dfrac{v}{c}\right)^2\Big) & 0\\[8pt] 0 & \gamma^2\Big(1-\left(\dfrac{v}{c}\right)^2\Big)\end{pmatrix}
+= \begin{pmatrix}1 & 0\\[4pt] 0 & 1\end{pmatrix}
+\end{aligned}
+$$
+
 <h2 id="sec-1-5">1.5　新的速度合成則</h2>
 
 <p>物體從原點出發等速運動，基準 1 測得速度 \({}^{1}v = \dfrac{{}^{1}x}{{}^{1}t}\)，
