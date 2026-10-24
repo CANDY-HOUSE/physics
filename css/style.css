@@ -149,6 +149,12 @@ mjx-container[display="true"] {
 /* 特別寬、又不能換行的一組公式：整組稍微縮小，免得出現橫向捲軸 */
 .math-fit { font-size: .88em; }
 
+/* 註解用的底箭頭：整條式子縮得很小時，MathJax 的箭頭跟著變細；改用 CSS 畫固定粗細的箭頭（長度仍由 MathJax 決定，顏色跟著 \color） */
+.arrow-thick mjx-under:has(> mjx-mo > mjx-stretchy-h) { position: relative; }
+.arrow-thick mjx-under > mjx-mo > mjx-stretchy-h { visibility: hidden; }
+.arrow-thick mjx-under:has(> mjx-mo > mjx-stretchy-h)::before { content: ""; position: absolute; left: 8px; right: 0; top: 50%; border-top: 2px solid currentColor; transform: translateY(-50%); }
+.arrow-thick mjx-under:has(> mjx-mo > mjx-stretchy-h)::after { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-right: 10px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
+
 /* ---------- 分隔線 ---------- */
 hr { border: 0; border-top: 1px solid currentColor; opacity: .3; margin: 2.2rem 0; }
 
