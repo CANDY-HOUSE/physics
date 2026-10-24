@@ -529,6 +529,8 @@ figure svg foreignObject { overflow: visible; }
 
 /* \cancel / \bcancel 的刪除線：3B1B 紅 */
 mjx-menclose > mjx-dstrike { border-top-color: #FC6255 !important; }
+/* \cancelto 的斜箭頭：同樣用 3B1B 紅，和底下的字分開 */
+mjx-menclose > mjx-arrow { color: #FC6255; }
 
 /* ---------- 互動圖：控制列與圖例 ---------- */
 figure.fig-live { text-align: left; }
