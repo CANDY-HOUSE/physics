@@ -149,6 +149,9 @@ mjx-container[display="true"] {
 /* 特別寬、又不能換行的一組公式：整組稍微縮小，免得出現橫向捲軸 */
 .math-fit { font-size: .88em; }
 
+/* ---------- 分隔線 ---------- */
+hr { border: 0; border-top: 1px solid currentColor; opacity: .3; margin: 2.2rem 0; }
+
 /* ---------- 表格 ---------- */
 .table-scroll { overflow-x: auto; }
 table {
