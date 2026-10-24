@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=35">
+<link rel="stylesheet" href="css/style.css?v=38">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -6360,9 +6360,15 @@ $$
 
 <p>左右同乘反矩陣，使成為 3Blue1Brown 的經典 <a href="https://youtu.be/P2LTAUO1TdA" target="_blank" rel="noopener">Jennifer Change of basis</a> 問題：</p>
 
-<div class="math-fit" style="font-size:.405em">
+<div class="math-fit arrow-thick" style="font-size:.405em">
 $$
 {\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}d\big({}^{\text{地}}\gamma_{q}\,mc\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)\end{pmatrix} \overset{?}{=} q\cdot\underset{\color{#58C4DD}{\substack{{\huge \text{換回 }q\text{ 基準}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}}}}}\underset{\color{#B189F5}{\substack{{\huge \text{地基準已知的}}\\[2pt] {\huge \text{linear transformation}}}}}{\color{#B189F5}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}}}}}\cdot\underset{\color{#58C4DD}{\substack{{\huge \text{把 }q\text{ 基準換成}}\\[2pt] {\huge \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(c\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}}}}
+$$
+</div>
+
+<div class="math-fit" style="font-size:.265em">
+$$
+{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix} \overset{\text{經計算}}{=} \begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}
 $$
 </div>
 
