@@ -643,20 +643,6 @@ $$
 \boxed{\;\frac{E}{pc} = \frac{c}{v}\;}
 $$
 
-<p>這兩條框起來的式子裡沒有 \(\gamma\)，所以連 \(v = c\) 都能用——比 \(E = \gamma mc^2\)、\(p = \gamma mv\) 更廣。
-代 \(m = 0\) 進第一條：\(E = pc\)；再代進第二條：\(\frac{c}{v} = \frac{E}{pc} = 1\)——
-質量為零的粒子照樣有能量與動量，但被迫永遠以光速跑，這是否暗示就是光子？
-反過來，\(v = c \Rightarrow E = pc \Rightarrow m = 0\)：這是否暗示以光速跑的東西必定沒有質量？</p>
-
-<p>低速檢查：把第一條開根號、逐項展開（\(\sqrt{1+x} = 1 + \tfrac12 x - \tfrac18 x^2 + \cdots\)）：</p>
-
-$$
-E = mc^2\sqrt{1+\left(\tfrac{p}{mc}\right)^2}
-= mc^2 + \frac{p^2}{2m} - \frac{p^4}{8m^3c^2} + \cdots
-$$
-
-<p>第二項正是牛頓動能的動量寫法 \(\dfrac{p^2}{2m}\)，其後是高速修正。</p>
-
 <figure>
 <svg viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" font-family="Noto Serif TC, serif" font-size="22" font-style="italic">
   <!-- 直角三角形：底 pc、直角邊 mc²、斜邊 E -->
@@ -679,6 +665,37 @@ $$
   <foreignObject x="290" y="210.8" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(\sqrt{c^2-v^2}\)</div></foreignObject>
 </svg>
 </figure>
+
+<p>代 \(m = 0\) 或 \(m \to 0\) 進第一條：\(E = pc\)；再代進第二條：\(\frac{c}{v} = \frac{E}{pc} = 1\)——
+質量為零，或說質量相對地很小很小的粒子照樣有能量與動量，但被迫永遠以光速跑，這是否暗示就是光子？
+反過來，\(v = c \Rightarrow E = pc \Rightarrow m = 0\) 或 \(m \to 0\)：這是否暗示以光速跑的東西必定沒有質量，或說質量相對地很小很小？</p>
+
+<figure>
+<svg id="tm" viewBox="0 0 640 320" xmlns="http://www.w3.org/2000/svg" font-family="Noto Serif TC, serif" font-size="22" font-style="italic">
+  <!-- 同一個直角三角形，由 js/tm.js 驅動：先 pc 固定、底角縮到 6°；再 mc² 固定、左頂點跑到畫面外，E 與 pc 變成平行 -->
+  <polygon class="tm-tri" points="120,260 520,260 520,60.0" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/>
+  <line class="tm-hyp" x1="120" y1="260" x2="520" y2="60.0" stroke="#e0a800" stroke-width="3.5"/>
+  <polyline class="tm-rt" points="496,260 496,236 520,236" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+  <path class="tm-arc" d="M160,260 A40,40 0 0 0 155.8,242.1" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".7"/>
+  <polyline class="tm-sm" points="120,260 352.6,260 352.6,143.7" fill="none" stroke="currentColor" stroke-width="1.5" opacity=".85"/>
+  <polyline class="tm-srt" points="340.6,260 340.6,248 352.6,248" fill="none" stroke="currentColor" stroke-width="1.2" opacity=".6"/>
+  <foreignObject class="tm-pc" x="250" y="275.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:center;color:currentColor">\(pc\)</div></foreignObject>
+  <foreignObject class="tm-mc" x="548" y="147.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:left;color:currentColor">\(mc^2\)</div></foreignObject>
+  <foreignObject class="tm-E" x="242" y="125.1" width="140" height="39.6"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:22px;text-align:center;color:#e0a800">\(E\)</div></foreignObject>
+  <foreignObject class="tm-c" x="156.5" y="166" width="140" height="32.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:18px;text-align:center;color:#e0a800">\(c\)</div></foreignObject>
+  <foreignObject class="tm-v" x="166.3" y="235.8" width="140" height="32.4"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:18px;text-align:center;color:currentColor">\(v\)</div></foreignObject>
+  <foreignObject class="tm-r" x="362.6" y="190.5" width="140" height="28.8"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;text-align:left;color:currentColor">\(\sqrt{c^2-v^2}\)</div></foreignObject>
+</svg>
+</figure>
+
+<p>低速檢查：把第一條開根號、逐項展開（\(\sqrt{1+x} = 1 + \tfrac12 x - \tfrac18 x^2 + \cdots\)）：</p>
+
+$$
+E = mc^2\sqrt{1+\dfrac{(pc)^2}{(mc^2)^2}}
+= mc^2 + \frac{p^2}{2m} - \frac{p^4}{8m^3c^2} + \cdots
+$$
+
+<p>第二項正是牛頓動能的動量寫法 \(\dfrac{p^2}{2m}\)，其後是高速修正。</p>
 
 <!-- ==================== 第二部・第二章 ==================== -->
 
@@ -6473,6 +6490,7 @@ $$
 <script src="js/rw.js?v=7"></script>
 <script src="js/ta.js?v=4"></script>
 <script src="js/tb.js?v=34"></script>
+<script src="js/tm.js?v=3"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
