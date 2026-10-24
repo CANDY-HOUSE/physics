@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=38">
+<link rel="stylesheet" href="css/style.css?v=39">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -6379,6 +6379,49 @@ $$
 \end{aligned}
 $$
 </div>
+
+<p>然後看等號左邊。動量那一欄也能用 1.4 換算，每一步如下：</p>
+
+<div class="math-fit arrow-thick" style="font-size:.82em">
+$$
+\begin{aligned}
+&\begin{pmatrix}{}^{\text{地}}\gamma_{q}\,mc\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix}\\[6pt]
+&= {}^{\text{地}}\gamma_{q}\,m\begin{pmatrix}c\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix} = {}^{\text{地}}\gamma_{q}\,m\,\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\\[6pt]
+&= m\cdot\frac{d{}^{\text{地}}t}{d{}^{q}t}\cdot\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix} = m\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\qquad\text{（1.2：}d{}^{\text{地}}t={}^{\text{地}}\gamma_{q}\cdot d{}^{q}t\text{）}\\[6pt]
+&= m\,\frac{d}{d{}^{q}t}\Big(\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}}}}}\Big)\qquad\text{（1.4）}\\[6pt]
+&= m\,\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix} = m\,\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}\\[6pt]
+&= \begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,mc\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_x\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_y\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_z\end{pmatrix}\quad\text{（}q\text{ 在 }q\text{ 基準靜止）}
+\end{aligned}
+$$
+</div>
+
+$$
+\Longrightarrow\quad {\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\,d\begin{pmatrix}{}^{\text{地}}\gamma_{q}\,mc\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix} = d\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix}
+$$
+
+<p>所以：</p>
+
+<div class="math-fit" style="font-size:.54em">
+$$
+d\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\,d\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}
+$$
+</div>
+
+<p>兩邊同除以 \(d{}^{q}t\)：</p>
+
+<div class="math-fit" style="font-size:.52em">
+$$
+\frac{d}{d{}^{q}t}\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}
+$$
+</div>
+
+<div class="math-fit" style="font-size:.55em">
+$$
+\begin{pmatrix}\dfrac{d\big({}^{q}\gamma_{q}\,mc\big)}{d{}^{q}t}\\[8pt] {}^{q}F_{q,x}\\[6pt] {}^{q}F_{q,y}\\[6pt] {}^{q}F_{q,z}\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
+$$
+</div>
+
+<p>與（3.10）非以矩陣手法獲得的結果完全一致，神奇吧！</p>
 
 <h1 id="about">關於作者</h1>
 
