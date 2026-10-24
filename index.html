@@ -6278,18 +6278,18 @@ $$
 $$
 </div>
 
-<p>咦！只差一點點就成為反對稱矩陣！我想知道補成反對稱矩陣會發生什麼事。</p>
+<p>咦！只差一排就能成為 4×4 矩陣！我想知道硬魔改成 4×4 矩陣會發生什麼事。</p>
 
 $$
-{}^{\text{地}}\vec F_{q} \underset{\text{🤔}}{\overset{\color{#FC6255}{??}}{=}} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{-{}^{\text{地}}E_x}} & {\color{#FC6255}{-{}^{\text{地}}E_y}} & {\color{#FC6255}{-{}^{\text{地}}E_z}}\\[8pt] {}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+{}^{\text{地}}\vec F_{q} \underset{\text{🤔}}{\overset{\color{#FC6255}{??}}{=}} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{{}^{\text{地}}E_x}} & {\color{#FC6255}{{}^{\text{地}}E_y}} & {\color{#FC6255}{{}^{\text{地}}E_z}}\\[8pt] {}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
 $$
 
 <p>紅色那一列乘上右邊的向量：</p>
 
 $$
 \begin{aligned}
-&q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{-{}^{\text{地}}E_x}} & {\color{#FC6255}{-{}^{\text{地}}E_y}} & {\color{#FC6255}{-{}^{\text{地}}E_z}}\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}\\[8pt]
-&= q\cdot\big({\color{#FC6255}{0}}\cdot 1 {\color{#FC6255}{-{}^{\text{地}}E_x}}\cdot{}^{\text{地}}v_x {\color{#FC6255}{-{}^{\text{地}}E_y}}\cdot{}^{\text{地}}v_y {\color{#FC6255}{-{}^{\text{地}}E_z}}\cdot{}^{\text{地}}v_z\big)
+&q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{{}^{\text{地}}E_x}} & {\color{#FC6255}{{}^{\text{地}}E_y}} & {\color{#FC6255}{{}^{\text{地}}E_z}}\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}\\[8pt]
+&= q\cdot\big({\color{#FC6255}{0}}\cdot 1 + {\color{#FC6255}{{}^{\text{地}}E_x}}\cdot{}^{\text{地}}v_x + {\color{#FC6255}{{}^{\text{地}}E_y}}\cdot{}^{\text{地}}v_y + {\color{#FC6255}{{}^{\text{地}}E_z}}\cdot{}^{\text{地}}v_z\big)
 \end{aligned}
 $$
 
@@ -6297,7 +6297,7 @@ $$
 
 <div class="math-fit">
 $$
--\,q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big) = \frac{d\big(-\text{能量}\big)}{d{}^{\text{地}}t} \overset{\text{1.8}}{=} \frac{d\big(-{}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
+q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big) = \frac{d\big(\text{能量}\big)}{d{}^{\text{地}}t} \overset{\text{1.8}}{=} \frac{d\big({}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
 $$
 </div>
 
@@ -6305,7 +6305,7 @@ $$
 
 <div class="math-fit">
 $$
-\frac{-\,q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)}{c} = {\color{#FC6255}{\frac{d\big(-{}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}} \overset{\text{1.7}}{=} \frac{d\big(-\text{動量}\big)}{d{}^{\text{地}}t}
+\frac{q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)}{c} = {\color{#FC6255}{\frac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}} \overset{\text{1.7}}{=} \frac{d\big(\text{動量}\big)}{d{}^{\text{地}}t}
 $$
 </div>
 
@@ -6314,19 +6314,19 @@ $$
 <p>好吧，姑且兩邊同除以 \(c\)。同時，為了保持改成反對稱矩陣之前的結論，把 \(1\) 改成 \(c\) 試試：</p>
 
 $$
-{}^{\text{地}}\vec F_{q} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{c}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+{}^{\text{地}}\vec F_{q} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{c}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
 $$
 
 <p>看起來都成功變成力的單位，力的單位是對了，但該怎麼詮釋？</p>
 
 $$
-\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(-{}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] {}^{\text{地}}F_{q,x}\\[4pt] {}^{\text{地}}F_{q,y}\\[4pt] {}^{\text{地}}F_{q,z}\end{pmatrix} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] {}^{\text{地}}F_{q,x}\\[4pt] {}^{\text{地}}F_{q,y}\\[4pt] {}^{\text{地}}F_{q,z}\end{pmatrix} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
 $$
 
-<p>繼續將 \({}^{\text{地}}F_{q,x}\)、\({}^{\text{地}}F_{q,y}\)、\({}^{\text{地}}F_{q,z}\) 展開，發現——天哪！第一格，竟然和它們展開後的格式一模一樣，只是把 \({}^{\text{地}}v_x\) 換成了 \(c\)！雖然差了一個負號：</p>
+<p>繼續將 \({}^{\text{地}}F_{q,x}\)、\({}^{\text{地}}F_{q,y}\)、\({}^{\text{地}}F_{q,z}\) 展開，發現——天哪！第一格，竟然和它們展開後的格式一模一樣，只是把 \({}^{\text{地}}v_x\) 換成了 \(c\)！</p>
 
 $$
-\overset{\color{#FC6255}{\textstyle\begin{matrix}\text{第一格}\\ \Big\downarrow\end{matrix}}}{\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(-{}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t}\end{pmatrix}} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{-\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+\overset{\color{#FC6255}{\textstyle\begin{matrix}\text{第一格}\\ \Big\downarrow\end{matrix}}}{\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t}\end{pmatrix}} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
 $$
 
 <p>如何詮釋？該不會是印證了 1.1 吧？！時間 \(t\) 也許根本不存在，只是翻頁書的頁數；\(c\) 只是把頁數換算成距離的係數，\(c\cdot{}^{\text{地}}t\) 就是頁數換算成的距離。這樣看來，似乎存在著 \(t\) 方向的動量 \({}^{\text{地}}\gamma_{q}\,m\cdot c\) 對時間的變化；而 \(q\) 在 \(t\) 方向以光速 \(c\) 前進，或說，翻頁的速度是 \(c\)。</p>
