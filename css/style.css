@@ -163,11 +163,11 @@ mjx-container[display="true"] {
 .ct-lt::before { content: "因為 Lorentz Transformation\A的形式要求，\A這裡必須是 c·t"; position: absolute; left: calc(100% + 4.7em); top: 50%; transform: translateY(-50%); white-space: pre; text-align: left; line-height: 1.45; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: .95em; color: #FC6255; }
 .ct-lt::after { content: ""; position: absolute; left: calc(100% + 1.1em); top: 50%; width: 3.3em; height: 10px; transform: translateY(-50%); background: #FC6255; clip-path: polygon(0 5px, 9px 0, 9px 4px, 100% 4px, 100% 6px, 9px 6px, 9px 10px); }
 .unk-note { position: relative; display: inline-block; border: 2px solid #FC6255; border-radius: 8px; padding: 3px 5px; }
-.unk-note::before { content: "這是什麼不重要了，後面用不到了"; position: absolute; right: 0; bottom: calc(100% + 7.6em); white-space: nowrap; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: .95em; color: #FC6255; }
-.unk-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .25em); width: 10px; height: 7.2em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
-.u5-note { position: relative; }
-.u5-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .25em); width: 10px; height: 2.3em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
-.u5-text { display: inline-block; transform: translate(calc(-50% - 1.25em), -4.5em); }
+.unk-note::before { content: "這些是什麼不重要了，後面用不到了"; position: absolute; right: 0; bottom: calc(100% + 7.6em); white-space: nowrap; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: .95em; color: #FC6255; }
+.unk-note::after { content: ""; position: absolute; left: -7.2em; top: -6.4em; width: 9.13em; height: 6.15em; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 913 615'><path d='M30 570 L30 10 L883 10 L883 570' fill='none' stroke='%23FC6255' stroke-width='10' stroke-linejoin='round'/><polygon points='30,615 8,570 52,570' fill='%23FC6255'/><polygon points='883,615 861,570 905,570' fill='%23FC6255'/></svg>") no-repeat; background-size: 100% 100%; pointer-events: none; }
+.u5-note { position: relative; display: inline-block; border: 2px solid #FC6255; border-radius: 8px; padding: 3px 5px; }
+.u5-note::after { content: ""; position: absolute; left: -1.4em; top: -2.2em; width: 1.8em; height: 2.2em; background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 180 220'><path d='M20 10 L129.4 168' fill='none' stroke='%23FC6255' stroke-width='10' stroke-linecap='round'/><polygon points='155,205 111.3,180.5 147.5,155.5' fill='%23FC6255'/></svg>") no-repeat; background-size: 100% 100%; pointer-events: none; }
+.u5-text { display: inline-block; transform: translate(calc(-50% - 7.75em), -4.5em); }
 .u5-text mjx-utext { font-family: "Noto Sans TC", sans-serif !important; font-style: normal; }
 
 /* ---------- 分隔線 ---------- */
