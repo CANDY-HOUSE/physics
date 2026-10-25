@@ -157,8 +157,18 @@ mjx-container[display="true"] {
 
 /* 3.10：指著 d(c·qt) 的紅色註解，放在式子上方的空白處 */
 .ct-note { position: relative; }
-.ct-note::before { content: "Lorentz Transformation 的形式要求這裡必須是 c·t，\A所以地基準矩陣第一 column 的分母也要是 c（紅色）"; position: absolute; right: -.3em; bottom: calc(100% + 3.9em); white-space: pre; text-align: right; line-height: 1.45; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: 1.2em; color: #FC6255; }
+.ct-note::before { content: "Lorentz Transformation 的形式要求\A這裡必須是 c·t，所以地基準矩陣\A第一 column 的分母也要是 c（紅色）"; position: absolute; right: -.3em; bottom: calc(100% + 3.9em); white-space: pre; text-align: right; line-height: 1.45; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: 1.2em; color: #FC6255; }
 .ct-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .15em); width: 10px; height: 3.6em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
+.ct-lt { position: relative; }
+.ct-lt::before { content: "因為 Lorentz Transformation\A的形式要求，\A這裡必須是 c·t"; position: absolute; left: calc(100% + 4.7em); top: 50%; transform: translateY(-50%); white-space: pre; text-align: left; line-height: 1.45; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: .95em; color: #FC6255; }
+.ct-lt::after { content: ""; position: absolute; left: calc(100% + 1.1em); top: 50%; width: 3.3em; height: 10px; transform: translateY(-50%); background: #FC6255; clip-path: polygon(0 5px, 9px 0, 9px 4px, 100% 4px, 100% 6px, 9px 6px, 9px 10px); }
+.unk-note { position: relative; display: inline-block; border: 2px solid #FC6255; border-radius: 8px; padding: 3px 5px; }
+.unk-note::before { content: "這是什麼不重要了，後面用不到了"; position: absolute; right: 0; bottom: calc(100% + 7.6em); white-space: nowrap; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: .95em; color: #FC6255; }
+.unk-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .25em); width: 10px; height: 7.2em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
+.u5-note { position: relative; }
+.u5-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .25em); width: 10px; height: 2.3em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
+.u5-text { display: inline-block; transform: translate(calc(-50% - 1.25em), -4.5em); }
+.u5-text mjx-utext { font-family: "Noto Sans TC", sans-serif !important; font-style: normal; }
 
 /* ---------- 分隔線 ---------- */
 hr { border: 0; border-top: 1px solid currentColor; opacity: .3; margin: 2.2rem 0; }

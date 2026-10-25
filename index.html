@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=41">
+<link rel="stylesheet" href="css/style.css?v=54">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -6264,131 +6264,75 @@ $$
 
 <hr>
 
-<p>如果 \(Q\) 的速度 \({}^{\text{地}}\vec u\)、\(q\) 的速度 \({}^{\text{地}}\vec v\) 都不在 \(x\) 軸上，甚至不在 \(xy\)、\(yz\)、\(zx\) 任何一個平面上，而是斜指向空間，要如何用 \(x\)、\(y\)、\(z\) 座標分析？其實很簡單。</p>
+<p>把以上的過程用矩陣重新走一遍：</p>
 
-<p>把 \({}^{\text{地}}\vec v\) 拆成 \(x\)、\(y\)、\(z\) 三個分量，各自與 \({}^{\text{地}}\vec B\) 外積，再全部加起來，然後再改用 \(q\) 基準改寫：</p>
-
+<div class="math-fit" style="font-size:.98em">
 $$
 \begin{aligned}
 {}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B
 &= {}^{\text{地}}\vec E + {}^{\text{地}}v_x\,\big(\hat x\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_y\,\big(\hat y\times{}^{\text{地}}\vec B\big) + {}^{\text{地}}v_z\,\big(\hat z\times{}^{\text{地}}\vec B\big)\\[10pt]
-&= {}^{\text{地}}\vec E + {}^{\text{地}}v_x\begin{pmatrix}0\\[4pt] -{}^{\text{地}}B_z\\[4pt] {}^{\text{地}}B_y\end{pmatrix} + {}^{\text{地}}v_y\begin{pmatrix}{}^{\text{地}}B_z\\[4pt] 0\\[4pt] -{}^{\text{地}}B_x\end{pmatrix} + {}^{\text{地}}v_z\begin{pmatrix}-{}^{\text{地}}B_y\\[4pt] {}^{\text{地}}B_x\\[4pt] 0\end{pmatrix}\\[10pt]
-&= {}^{\text{地}}\vec E + \underbrace{\begin{pmatrix}0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[4pt] -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[4pt] {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B}
-\end{aligned}
-$$
-
-<p>四個向量排成四欄：</p>
-
-<div class="math-fit">
-$$
-\begin{aligned}
-{}^{\text{地}}\vec E + {}^{\text{地}}\vec v\times{}^{\text{地}}\vec B
 &= 1\begin{pmatrix}{}^{\text{地}}E_x\\[4pt] {}^{\text{地}}E_y\\[4pt] {}^{\text{地}}E_z\end{pmatrix} + {}^{\text{地}}v_x\begin{pmatrix}0\\[4pt] -{}^{\text{地}}B_z\\[4pt] {}^{\text{地}}B_y\end{pmatrix} + {}^{\text{地}}v_y\begin{pmatrix}{}^{\text{地}}B_z\\[4pt] 0\\[4pt] -{}^{\text{地}}B_x\end{pmatrix} + {}^{\text{地}}v_z\begin{pmatrix}-{}^{\text{地}}B_y\\[4pt] {}^{\text{地}}B_x\\[4pt] 0\end{pmatrix}\\[10pt]
-&= \frac{{}^{\text{地}}\vec F_{q}}{q} = \begin{pmatrix}{}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+&= 1\begin{pmatrix}{}^{\text{地}}E_x\\[4pt] {}^{\text{地}}E_y\\[4pt] {}^{\text{地}}E_z\end{pmatrix} + \underbrace{\begin{pmatrix}0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[4pt] -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[4pt] {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}}_{{}^{\text{地}}\vec v\times{}^{\text{地}}\vec B}
 \end{aligned}
 $$
 </div>
 
-<p>咦！只差一排就能成為 4×4 矩陣！我想知道硬魔改成 4×4 矩陣會發生什麼事。</p>
-
-$$
-{}^{\text{地}}\vec F_{q} \underset{\text{🤔}}{\overset{\color{#FC6255}{??}}{=}} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{{}^{\text{地}}E_x}} & {\color{#FC6255}{{}^{\text{地}}E_y}} & {\color{#FC6255}{{}^{\text{地}}E_z}}\\[8pt] {}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
-$$
-
-<p>紅色那一列乘上右邊的向量：</p>
-
-$$
-\begin{aligned}
-&q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{{}^{\text{地}}E_x}} & {\color{#FC6255}{{}^{\text{地}}E_y}} & {\color{#FC6255}{{}^{\text{地}}E_z}}\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}\\[8pt]
-&= q\cdot\big({\color{#FC6255}{0}}\cdot 1 + {\color{#FC6255}{{}^{\text{地}}E_x}}\cdot{}^{\text{地}}v_x + {\color{#FC6255}{{}^{\text{地}}E_y}}\cdot{}^{\text{地}}v_y + {\color{#FC6255}{{}^{\text{地}}E_z}}\cdot{}^{\text{地}}v_z\big)
-\end{aligned}
-$$
-
-<p>是什麼？是電場對 \(q\) 做功的功率嗎？代入 1.8 的「能量 \(= {}^{\text{地}}\gamma_{q}\,mc^2\)」試試：</p>
-
 <div class="math-fit">
 $$
-q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big) = \frac{d\big(\text{能量}\big)}{d{}^{\text{地}}t} \overset{\text{1.8}}{=} \frac{d\big({}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
+\overset{\text{四個向量排成四 column}}{=} \begin{pmatrix}{}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix} = \frac{{}^{\text{地}}\vec F_{q}}{q}
 $$
 </div>
 
-<p>如果進一步兩邊同除以 \(c\)：</p>
+<p>咦！只差一排就能成為 4×4 矩陣！若不是 4×4 矩陣，就無法做 Change of basis。</p>
 
-<div class="math-fit">
 $$
-\frac{q\cdot\big(0\cdot 1 + {}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)}{c} = {\color{#FC6255}{\frac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}} \overset{\text{1.7}}{=} \frac{d\big(\text{動量}\big)}{d{}^{\text{地}}t}
+{}^{\text{地}}\vec F_{q} \underset{\text{🤔}}{\overset{\color{#FC6255}{??}}{=}} q\cdot\begin{pmatrix}{\color{#FC6255}{\text{未知}}} & {\color{#FC6255}{\text{未知}}} & {\color{#FC6255}{\text{未知}}} & {\color{#FC6255}{\text{未知}}}\\[8pt] {}^{\text{地}}E_x & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] {}^{\text{地}}E_y & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] {}^{\text{地}}E_z & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}1\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+$$
+
+<p>這 4 個未知應該是什麼？</p>
+
+<p>要用 \(q\) 基準改寫（Change of basis），首先我想到了 1.4 Lorentz Transformation 的矩陣線性變換，但 Lorentz Transformation 只適用於長度而不是速度，故我們把速度那一欄的 \(d{}^{\text{地}}t\) 提出去到 \(q\) 那。此外，Lorentz Transformation 的形式要求右邊那一欄的第一格必須是 \(c\cdot t\)，所以我們把 \(1\) 改成 \(c\)；為了保持原本的結論，地基準矩陣第一 column 的分母也要是 \(c\)（紅色）：</p>
+
+<div class="math-fit" style="font-size:.91em">
+$$
+\begin{pmatrix}\text{未知}\\[8pt] {}^{\text{地}}F_{q,x}\\[6pt] {}^{\text{地}}F_{q,y}\\[6pt] {}^{\text{地}}F_{q,z}\end{pmatrix} \overset{?}{=} \frac{q}{d{}^{\text{地}}t}\cdot\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\underbrace{\begin{pmatrix}d\big(\textcolor{#FC6255}{c}\cdot{}^{\text{地}}t\big)\\[4pt] d{}^{\text{地}}x\\[4pt] d{}^{\text{地}}y\\[4pt] d{}^{\text{地}}z\end{pmatrix}}_{\text{用 }q\text{ 基準表達}}
 $$
 </div>
-
-<p>也就是某動量對時間的變化。這是某種力？？！！</p>
-
-<p>好吧，姑且兩邊同除以 \(c\)。同時，為了保持改成反對稱矩陣之前的結論，把 \(1\) 改成 \(c\) 試試：</p>
-
-$$
-{}^{\text{地}}\vec F_{q} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{c}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
-$$
-
-<p>看起來都成功變成力的單位，力的單位是對了，但該怎麼詮釋？</p>
-
-$$
-\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] {}^{\text{地}}F_{q,x}\\[4pt] {}^{\text{地}}F_{q,y}\\[4pt] {}^{\text{地}}F_{q,z}\end{pmatrix} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
-$$
-
-<p>繼續將 \({}^{\text{地}}F_{q,x}\)、\({}^{\text{地}}F_{q,y}\)、\({}^{\text{地}}F_{q,z}\) 展開，發現——天哪！第一格，竟然和它們展開後的格式一模一樣，只是把 \({}^{\text{地}}v_x\) 換成了 \(c\)！</p>
-
-$$
-\overset{\color{#FC6255}{\textstyle\begin{matrix}\text{第一格}\\ \Big\downarrow\end{matrix}}}{\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t}\end{pmatrix}} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{{\color{#FC6255}{c}}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{{\color{#FC6255}{c}}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{{\color{#FC6255}{c}}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
-$$
-
-<p>如何詮釋？該不會是印證了 1.1 吧？！時間 \(t\) 也許根本不存在，只是翻頁書的頁數；\(c\) 只是把頁數換算成距離的係數，\(c\cdot{}^{\text{地}}t\) 就是頁數換算成的距離。這樣看來，似乎存在著 \(t\) 方向的動量 \({}^{\text{地}}\gamma_{q}\,m\cdot c\) 對時間的變化；而 \(q\) 在 \(t\) 方向以光速 \(c\) 前進，或說，翻頁的速度是 \(c\)。</p>
-
-<p>瞎猜時間方向、翻頁書頁數、什麼的這種概念性的，也不知道對不對，沒有用。我們改用 \(q\) 基準改寫，看看這個 4×4 矩陣線性變換之後，驗證到底符不符合事實、到底有沒有用。</p>
-
-<p>要用 \(q\) 基準改寫，首先我想到了 1.4 Lorentz Transformation 的矩陣線性變換，但 Lorentz Transformation 只適用於長度而不是速度，故我們兩邊同乘 \(d{}^{\text{地}}t\)：</p>
-
-$$
-\begin{pmatrix}d\big({}^{\text{地}}\gamma_{q}\,mc\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)\end{pmatrix} \overset{?}{=} q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\underbrace{\begin{pmatrix}d\big(c\cdot{}^{\text{地}}t\big)\\[4pt] d{}^{\text{地}}x\\[4pt] d{}^{\text{地}}y\\[4pt] d{}^{\text{地}}z\end{pmatrix}}_{\text{用 }q\text{ 基準表達}}
-$$
 
 <p>把右邊那一欄的距離改用 \(q\) 基準表達：</p>
 
-<div class="math-fit" style="font-size:.75em">
+<div class="math-fit" style="font-size:.66em">
 $$
-\begin{pmatrix}d\big({}^{\text{地}}\gamma_{q}\,mc\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)\end{pmatrix} \overset{?}{=} q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\cdot\underbrace{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(c\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}_{\text{1.4}}
+\rule{0pt}{14em}\begin{pmatrix}\text{未知}\\[8pt] {}^{\text{地}}F_{q,x}\\[6pt] {}^{\text{地}}F_{q,y}\\[6pt] {}^{\text{地}}F_{q,z}\end{pmatrix} \overset{?}{=} \frac{q}{d{}^{\text{地}}t}\cdot\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\cdot\underbrace{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\class{ct-note}{d\big(\textcolor{#FC6255}{c}\cdot{}^{q}t\big)}\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}_{\text{1.4}}
+$$
+</div>
+
+<div class="math-fit" style="font-size:.66em">
+$$
+\begin{pmatrix}\text{未知}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{\bcancel{d{}^{\text{地}}t}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{\bcancel{d{}^{\text{地}}t}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{\bcancel{d{}^{\text{地}}t}}\end{pmatrix} \overset{?}{=} \frac{q}{\bcancel{d{}^{\text{地}}t}}\cdot\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\cdot\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(\textcolor{#FC6255}{c}\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}
 $$
 </div>
 
 <p>左右同乘反矩陣，使成為 3Blue1Brown 的經典 <a href="https://youtu.be/P2LTAUO1TdA" target="_blank" rel="noopener">Jennifer Change of basis</a> 問題：</p>
 
-<div class="math-fit arrow-thick" style="font-size:.66em">
+<div class="math-fit arrow-thick" style="font-size:.64em">
 $$
 \begin{aligned}
-&{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}d\big({}^{\text{地}}\gamma_{q}\,mc\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)\end{pmatrix}\\[8pt]
-&\overset{?}{=} q\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{換回 }q\text{ 基準}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}}}}}\underset{\color{#B189F5}{\substack{{\Large \text{地基準已知的}}\\[2pt] {\Large \text{linear transformation}}}}}{\color{#B189F5}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}}}}}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(c\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}}}}
+&{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}\text{未知5}\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)\\[8pt] d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)\end{pmatrix}\\[8pt]
+&\overset{?}{=} q\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{換回 }q\text{ 基準}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}}}}}\underset{\color{#B189F5}{\substack{{\Large \text{地基準已知的}}\\[2pt] {\Large \text{linear transformation}}}}}{\color{#B189F5}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}}}}}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(\textcolor{#FC6255}{c}\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}}}}
 \end{aligned}
 $$
 </div>
 
-<p>其中：</p>
-
-<div class="math-fit" style="font-size:.67em">
-$$
-\begin{aligned}
-&{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\\[10pt]
-&\overset{\text{經計算}}{=} \begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}
-\end{aligned}
-$$
-</div>
-
-<p>然後看等號左邊。動量那一 column 也用 Lorentz Transformation 改寫成 \(q\) 基準：</p>
+<p>等號左邊也用 Lorentz Transformation 改寫成 \(q\) 基準。</p>
 
 <div class="math-fit arrow-thick" style="font-size:.82em">
 $$
 \begin{aligned}
-&\begin{pmatrix}{}^{\text{地}}\gamma_{q}\,mc\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix}\\[6pt]
-&= {}^{\text{地}}\gamma_{q}\,m\begin{pmatrix}c\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix} = {}^{\text{地}}\gamma_{q}\,m\,\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\\[6pt]
-&= m\cdot\frac{d{}^{\text{地}}t}{d{}^{q}t}\cdot\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix} = m\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{\text{地}}t\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\qquad\text{（1.2：}d{}^{\text{地}}t={}^{\text{地}}\gamma_{q}\cdot d{}^{q}t\text{）}\\[6pt]
-&= m\,\frac{d}{d{}^{q}t}\Big(\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}}}}}\Big)\qquad\text{（1.4）}\\[6pt]
+&\begin{pmatrix}\text{未知5}\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix}\\[6pt]
+&= {}^{\text{地}}\gamma_{q}\,m\begin{pmatrix}\text{未知5}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix} = {}^{\text{地}}\gamma_{q}\,m\,\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}\text{未知5}\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\\[6pt]
+&= m\cdot\frac{d{}^{\text{地}}t}{d{}^{q}t}\cdot\frac{d}{d{}^{\text{地}}t}\begin{pmatrix}\text{未知5}\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix} = m\,\frac{d}{d{}^{q}t}\begin{pmatrix}\text{未知5}\\[4pt] {}^{\text{地}}x\\[4pt] {}^{\text{地}}y\\[4pt] {}^{\text{地}}z\end{pmatrix}\qquad\text{（1.2：}d{}^{\text{地}}t={}^{\text{地}}\gamma_{q}\cdot d{}^{q}t\text{）}\\[6pt]
+&= m\,\frac{d}{d{}^{q}t}\Big(\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\class{ct-lt}{\cancelto{\color{#FC6255}{\textstyle c\cdot{}^{q}t}}{\text{未知5}}}\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}}}}}\Big)\qquad\text{（1.4）}\\[6pt]
 &= m\,\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix} = m\,\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}\\[6pt]
 &= \begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,mc\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_x\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_y\\[4pt] \cancelto{\color{#FC6255}{1}}{{}^{q}\gamma_{q}}\,m\cdot{}^{q}v_z\end{pmatrix}\quad\text{（}q\text{ 在 }q\text{ 基準靜止）}
 \end{aligned}
@@ -6396,45 +6340,46 @@ $$
 </div>
 
 $$
-\Longrightarrow\quad {\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\,d\begin{pmatrix}{}^{\text{地}}\gamma_{q}\,mc\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix} = d\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix}
+\rule{0pt}{13em}\Longrightarrow\quad {\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\,d\begin{pmatrix}\class{u5-note}{\text{未知5}}\smash{\rlap{\class{u5-text}{\color{#FC6255}{\begin{array}{c}\text{By the way，}\\ \text{未知5 可反推為 }{}^{\text{地}}\gamma_{q}\,mc\end{array}}}}}\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\\[4pt] {}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\end{pmatrix} = d\begin{pmatrix}\class{unk-note}{{}^{q}\gamma_{q}\,mc}\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix}
 $$
 
-<p>所以：</p>
+<p>於是我們獲得：</p>
 
-<div class="math-fit" style="font-size:.54em">
+<div class="math-fit" style="font-size:.64em">
 $$
-d\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\,d\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}
+\begin{aligned}
+&d\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix}\\[8pt]
+&\overset{?}{=} q\cdot{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\cdot\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}d\big(c\cdot{}^{q}t\big)\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}
+\end{aligned}
 $$
 </div>
 
 <p>兩邊同除以 \(d{}^{q}t\)：</p>
 
-<div class="math-fit" style="font-size:.52em">
-$$
-\frac{d}{d{}^{q}t}\begin{pmatrix}{}^{q}\gamma_{q}\,mc\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\\[4pt] {}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\,\frac{d}{d{}^{q}t}\begin{pmatrix}c\cdot{}^{q}t\\[4pt] {}^{q}x\\[4pt] {}^{q}y\\[4pt] {}^{q}z\end{pmatrix}
-$$
-</div>
-
-<div class="math-fit" style="font-size:.55em">
-$$
-\begin{pmatrix}\dfrac{d\big({}^{q}\gamma_{q}\,mc\big)}{d{}^{q}t}\\[8pt] {}^{q}F_{q,x}\\[6pt] {}^{q}F_{q,y}\\[6pt] {}^{q}F_{q,z}\end{pmatrix} = q\cdot\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
-$$
-</div>
-
-<p>與（3.10）非以矩陣手法獲得的結果完全一致，神奇吧！</p>
-
-<p>對於魔改成 4×4 矩陣這件事，先說答案、再硬凹解釋，我覺得還是無法讓人信服。換個推導方式：</p>
-
-<div class="math-fit arrow-thick" style="font-size:.64em">
+<div class="math-fit" style="font-size:.64em">
 $$
 \begin{aligned}
-&\begin{pmatrix}\text{不重要，反正整個過程沒用到}\\[8pt] {}^{q}F_{q,x}\\[6pt] {}^{q}F_{q,y}\\[6pt] {}^{q}F_{q,z}\end{pmatrix}\\[8pt]
-&\overset{?}{=} \frac{q}{d{}^{q}t}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{換回 }q\text{ 基準}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}}}}}\underset{\color{#B189F5}{\substack{{\Large \text{地基準已知的}}\\[2pt] {\Large \text{linear transformation}}}}}{\color{#B189F5}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}}}}}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\class{ct-note}{d\big(\textcolor{#FC6255}{c}\cdot{}^{q}t\big)}\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}}}}
+&\begin{pmatrix}\dfrac{d\big({}^{q}\gamma_{q}\,mc\big)}{d{}^{q}t}\\[10pt] \dfrac{d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_x\big)}{d{}^{q}t}\\[10pt] \dfrac{d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_y\big)}{d{}^{q}t}\\[10pt] \dfrac{d\big({}^{q}\gamma_{q}\,m\cdot{}^{q}v_z\big)}{d{}^{q}t}\end{pmatrix} = \begin{pmatrix}\dfrac{d\big({}^{q}\gamma_{q}\,mc\big)}{d{}^{q}t}\\[10pt] {}^{q}F_{q,x}\\[10pt] {}^{q}F_{q,y}\\[10pt] {}^{q}F_{q,z}\end{pmatrix}\\[8pt]
+&\overset{?}{=} q\cdot{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\cdot\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\dfrac{d\big(c\cdot{}^{q}t\big)}{d{}^{q}t}\\[10pt] \dfrac{d{}^{q}x}{d{}^{q}t}\\[10pt] \dfrac{d{}^{q}y}{d{}^{q}t}\\[10pt] \dfrac{d{}^{q}z}{d{}^{q}t}\end{pmatrix}
 \end{aligned}
 $$
 </div>
 
-<p>把等式右邊乘開，結果必須符合非矩陣手法獲得的 6 個結論（3.10 前面的六式）。未知只出現在第二 row，第二 row 的 4 格各自要等於六式給的值：</p>
+<p>又因為：</p>
+
+$$
+\begin{pmatrix}{}^{q}F_{q,x}\\[10pt] {}^{q}F_{q,y}\\[10pt] {}^{q}F_{q,z}\end{pmatrix} \underset{\text{應該要成立吧}}{\overset{\text{只是 Change of basis 而已，}}{=}} q\cdot\begin{pmatrix}\dfrac{{}^{q}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{q}B_z & -{}^{q}B_y\\[10pt] \dfrac{{}^{q}E_y}{\textcolor{#FC6255}{c}} & -{}^{q}B_z & 0 & {}^{q}B_x\\[10pt] \dfrac{{}^{q}E_z}{\textcolor{#FC6255}{c}} & {}^{q}B_y & -{}^{q}B_x & 0\end{pmatrix}\begin{pmatrix}\textcolor{#FC6255}{c}\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
+$$
+
+<div class="math-fit" style="font-size:.56em">
+$$
+\begin{aligned}
+&\underset{\text{獲得的六式結論}}{\overset{\text{根據稍早以非矩陣手法}}{=}} q\cdot\begin{pmatrix}\dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
+\end{aligned}
+$$
+</div>
+
+<p>最後把等式右邊三個矩陣乘開，逐格比對。</p>
 
 <div class="math-fit">
 $$
@@ -6447,11 +6392,66 @@ $$
 $$
 </div>
 
-<p>4 條方程、4 個未知，解出來（\({}^{\text{地}}v_x \neq 0\) 時唯一）正是先前硬魔改的那一 row：</p>
+<p>4 條方程、4 個未知，解出來（\({}^{\text{地}}v_x \neq 0\) 時唯一）：</p>
 
 $$
 \big(\textcolor{#FC6255}{\text{未知1}},\ \textcolor{#FC6255}{\text{未知2}},\ \textcolor{#FC6255}{\text{未知3}},\ \textcolor{#FC6255}{\text{未知4}}\big) = \Big(0,\ \dfrac{{}^{\text{地}}E_x}{c},\ \dfrac{{}^{\text{地}}E_y}{c},\ \dfrac{{}^{\text{地}}E_z}{c}\Big)
 $$
+
+<p>填回地基準的 4×4 矩陣之後，矩陣封裝即告結束，大功告成：</p>
+
+$$
+{}^{\text{地}}\vec F_{q} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+$$
+
+<p>但等等！紅色那一列乘上右邊的向量：</p>
+
+$$
+\begin{aligned}
+&q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}\\[8pt]
+&= q\cdot\Big({\color{#FC6255}{0}}\cdot c + {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}}\cdot{}^{\text{地}}v_x + {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}}\cdot{}^{\text{地}}v_y + {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\cdot{}^{\text{地}}v_z\Big)\\[8pt]
+&= \frac{q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)}{c}
+\end{aligned}
+$$
+
+<p>是什麼？分子是電場對 \(q\) 做功的功率嗎？代入 1.8 的「能量 \(= {}^{\text{地}}\gamma_{q}\,mc^2\)」試試：</p>
+
+<div class="math-fit">
+$$
+q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big) = \frac{d\big(\text{能量}\big)}{d{}^{\text{地}}t} \overset{\text{1.8}}{=} \frac{d\big({}^{\text{地}}\gamma_{q}\,mc^2\big)}{d{}^{\text{地}}t}
+$$
+</div>
+
+<p>聽矩陣說的兩邊進一步同除以 \(c\)：</p>
+
+<div class="math-fit">
+$$
+\frac{q\cdot\big({}^{\text{地}}E_x\cdot{}^{\text{地}}v_x + {}^{\text{地}}E_y\cdot{}^{\text{地}}v_y + {}^{\text{地}}E_z\cdot{}^{\text{地}}v_z\big)}{c} = {\color{#FC6255}{\frac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}} \overset{\text{1.7}}{=} \frac{d\big(\text{動量}\big)}{d{}^{\text{地}}t}
+$$
+</div>
+
+<p>也就是某動量對時間的變化。這是某種力？？！！而且，\({}^{\text{地}}\gamma_{q}\,mc\) 剛好就是我們稍早用 Lorentz Transformation 反推出來的未知5！</p>
+
+<p>繼續將 \({}^{\text{地}}F_{q,x}\)、\({}^{\text{地}}F_{q,y}\)、\({}^{\text{地}}F_{q,z}\) 展開，發現第一格，竟然和它們展開後的格式一模一樣，只是把 \({}^{\text{地}}v_x\) 換成了 \(c\)！</p>
+
+<div class="math-fit" style="font-size:.84em">
+$$
+\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] {}^{\text{地}}F_{q,x}\\[4pt] {}^{\text{地}}F_{q,y}\\[4pt] {}^{\text{地}}F_{q,z}\end{pmatrix} = \overset{\color{#FC6255}{\textstyle\begin{matrix}\text{第一格}\\ \Big\downarrow\end{matrix}}}{\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big({}^{\text{地}}\gamma_{q}\,mc\big)}{d{}^{\text{地}}t}}}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_x\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_y\big)}{d{}^{\text{地}}t}\\[8pt] \dfrac{d\big({}^{\text{地}}\gamma_{q}\,m\cdot{}^{\text{地}}v_z\big)}{d{}^{\text{地}}t}\end{pmatrix}} \overset{\color{#FC6255}{?}}{=} q\cdot\begin{pmatrix}{\color{#FC6255}{0}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_x}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_y}{c}}} & {\color{#FC6255}{\dfrac{{}^{\text{地}}E_z}{c}}}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{\color{#FC6255}{\dfrac{d\big(c\cdot{}^{\text{地}}t\big)}{d{}^{\text{地}}t}}}\\[4pt] {}^{\text{地}}v_x\\[4pt] {}^{\text{地}}v_y\\[4pt] {}^{\text{地}}v_z\end{pmatrix}
+$$
+</div>
+
+<p>如何詮釋？該不會是印證了 1.1 吧？！時間 \(t\) 也許根本不存在，只是翻頁書的頁數；\(c\) 只是把頁數換算成距離的係數，\(c\cdot{}^{\text{地}}t\) 就是頁數換算成的距離。這樣看來，似乎存在著 \(t\) 方向的動量 \({}^{\text{地}}\gamma_{q}\,m\cdot c\) 對時間的變化；而 \(q\) 在 \(t\) 方向以光速 \(c\) 前進，或說，翻頁的速度是 \(c\)。</p>
+
+<p>By the way：</p>
+
+<div class="math-fit" style="font-size:.67em">
+$$
+\begin{aligned}
+&{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}\begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}E_y}{c} & \dfrac{{}^{\text{地}}E_z}{c}\\[8pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{c} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{c} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\\[10pt]
+&\overset{\text{經計算}}{=} \begin{pmatrix}0 & \dfrac{{}^{\text{地}}E_x}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c}\\[10pt] \dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}
+\end{aligned}
+$$
+</div>
 
 <h1 id="about">關於作者</h1>
 
