@@ -155,6 +155,11 @@ mjx-container[display="true"] {
 .arrow-thick mjx-under:has(> mjx-mo > mjx-stretchy-h)::before { content: ""; position: absolute; left: 8px; right: 0; top: 50%; border-top: 2px solid currentColor; transform: translateY(-50%); }
 .arrow-thick mjx-under:has(> mjx-mo > mjx-stretchy-h)::after { content: ""; position: absolute; left: 0; top: 50%; transform: translateY(-50%); border-right: 10px solid currentColor; border-top: 5px solid transparent; border-bottom: 5px solid transparent; }
 
+/* 3.10：指著 d(c·qt) 的紅色註解，放在式子上方的空白處 */
+.ct-note { position: relative; }
+.ct-note::before { content: "Lorentz Transformation 的形式要求這裡必須是 c·t，\A所以地基準矩陣第一 column 的分母也要是 c（紅色）"; position: absolute; right: -.3em; bottom: calc(100% + 3.9em); white-space: pre; text-align: right; line-height: 1.45; font-family: "Noto Sans TC", sans-serif; font-style: normal; font-size: 1.2em; color: #FC6255; }
+.ct-note::after { content: ""; position: absolute; left: calc(50% - 5px); bottom: calc(100% + .15em); width: 10px; height: 3.6em; background: #FC6255; clip-path: polygon(4px 0, 6px 0, 6px calc(100% - 9px), 10px calc(100% - 9px), 5px 100%, 0 calc(100% - 9px), 4px calc(100% - 9px)); }
+
 /* ---------- 分隔線 ---------- */
 hr { border: 0; border-top: 1px solid currentColor; opacity: .3; margin: 2.2rem 0; }
 

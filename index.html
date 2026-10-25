@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>物理學的公理化與幾何化</title>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&family=Noto+Serif+TC:wght@400;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/style.css?v=39">
+<link rel="stylesheet" href="css/style.css?v=41">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
@@ -6423,36 +6423,35 @@ $$
 
 <p>與（3.10）非以矩陣手法獲得的結果完全一致，神奇吧！</p>
 
-<p>為什麼硬魔改出來的第一 row 竟然行得通？無論這個詮釋能不能說服人，還是給人硬凹之感，都不重要，算數上有兩個理由：</p>
+<p>對於魔改成 4×4 矩陣這件事，先說答案、再硬凹解釋，我覺得還是無法讓人信服。換個推導方式：</p>
 
-<p><strong>理由一</strong>：在地基準 Linear transformation 裡，第一 row 不影響下面三 row。</p>
+<div class="math-fit arrow-thick" style="font-size:.64em">
+$$
+\begin{aligned}
+&\begin{pmatrix}\text{不重要，反正整個過程沒用到}\\[8pt] {}^{q}F_{q,x}\\[6pt] {}^{q}F_{q,y}\\[6pt] {}^{q}F_{q,z}\end{pmatrix}\\[8pt]
+&\overset{?}{=} \frac{q}{d{}^{q}t}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{換回 }q\text{ 基準}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}}^{-1}}}}}\underset{\color{#B189F5}{\substack{{\Large \text{地基準已知的}}\\[2pt] {\Large \text{linear transformation}}}}}{\color{#B189F5}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}\text{未知1} & \text{未知2} & \text{未知3} & \text{未知4}\\[8pt] \dfrac{{}^{\text{地}}E_x}{\textcolor{#FC6255}{c}} & 0 & {}^{\text{地}}B_z & -{}^{\text{地}}B_y\\[8pt] \dfrac{{}^{\text{地}}E_y}{\textcolor{#FC6255}{c}} & -{}^{\text{地}}B_z & 0 & {}^{\text{地}}B_x\\[8pt] \dfrac{{}^{\text{地}}E_z}{\textcolor{#FC6255}{c}} & {}^{\text{地}}B_y & -{}^{\text{地}}B_x & 0\end{pmatrix}}}}}\cdot\underset{\color{#58C4DD}{\substack{{\Large \text{把 }q\text{ 基準換成}}\\[2pt] {\Large \text{地基準表達}}}}}{\color{#58C4DD}{\underleftarrow{\color{var(--fg)}{\begin{pmatrix}{}^{\text{地}}\gamma_{q} & {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & 0 & 0\\[8pt] {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c} & {}^{\text{地}}\gamma_{q} & 0 & 0\\[8pt] 0 & 0 & 1 & 0\\[4pt] 0 & 0 & 0 & 1\end{pmatrix}\begin{pmatrix}\class{ct-note}{d\big(\textcolor{#FC6255}{c}\cdot{}^{q}t\big)}\\[4pt] d{}^{q}x\\[4pt] d{}^{q}y\\[4pt] d{}^{q}z\end{pmatrix}}}}}
+\end{aligned}
+$$
+</div>
 
-<p><strong>理由二</strong>：雖然換到 \(q\) 基準時，1.4 矩陣的反矩陣會把第一 row 混進第二 row。例如「經計算」的矩陣第二 row、第三格，就要用到第一 row 的 \(\dfrac{{}^{\text{地}}E_y}{c}\)：</p>
+<p>把等式右邊乘開，結果必須符合非矩陣手法獲得的 6 個結論（3.10 前面的六式）。未知只出現在第二 row，第二 row 的 4 格各自要等於六式給的值：</p>
+
+<div class="math-fit">
+$$
+\begin{aligned}
+-{}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\Big({}^{\text{地}}\gamma_{q}\,\textcolor{#FC6255}{\text{未知1}} + {}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\,\textcolor{#FC6255}{\text{未知2}}\Big) + {}^{\text{地}}\gamma_{q}^{\,2}\,\dfrac{{}^{\text{地}}E_x}{c} &= \dfrac{{}^{\text{地}}E_x}{c}\\[10pt]
+-{}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\Big({}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\,\textcolor{#FC6255}{\text{未知1}} + {}^{\text{地}}\gamma_{q}\,\textcolor{#FC6255}{\text{未知2}}\Big) + {}^{\text{地}}\gamma_{q}^{\,2}\,\dfrac{{}^{\text{地}}v_x}{c}\,\dfrac{{}^{\text{地}}E_x}{c} &= 0\\[10pt]
+-{}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\,\textcolor{#FC6255}{\text{未知3}} + {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}B_z &= {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z - \dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big)\\[10pt]
+-{}^{\text{地}}\gamma_{q}\,\dfrac{{}^{\text{地}}v_x}{c}\,\textcolor{#FC6255}{\text{未知4}} - {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}B_y &= -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y + \dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)
+\end{aligned}
+$$
+</div>
+
+<p>4 條方程、4 個未知，解出來（\({}^{\text{地}}v_x \neq 0\) 時唯一）正是先前硬魔改的那一 row：</p>
 
 $$
--\,{}^{\text{地}}\gamma_{q}\,\frac{{}^{\text{地}}v_x}{c}\cdot\frac{{}^{\text{地}}E_y}{c} + {}^{\text{地}}\gamma_{q}\cdot{}^{\text{地}}B_z = {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z - \frac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big)
+\big(\textcolor{#FC6255}{\text{未知1}},\ \textcolor{#FC6255}{\text{未知2}},\ \textcolor{#FC6255}{\text{未知3}},\ \textcolor{#FC6255}{\text{未知4}}\big) = \Big(0,\ \dfrac{{}^{\text{地}}E_x}{c},\ \dfrac{{}^{\text{地}}E_y}{c},\ \dfrac{{}^{\text{地}}E_z}{c}\Big)
 $$
-
-<p>但地基準 Linear Transformation 的「first column = first row」本來就是對稱的；再經過對稱的 Lorentz Transformation 操作（左乘它的反矩陣、右乘它），這個對稱仍然保得住，其他 row、column 的反對稱也不受破壞：</p>
-
-<figure class="fig-live">
-<svg id="tcb" viewBox="0 0 640 420" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14" style="touch-action:none;cursor:grab">
-  <g class="tcb-g"></g>
-  <text class="tcb-cap" x="20" y="28" font-size="15" fill="currentColor"></text>
-</svg>
-<div class="fig-ctl">
-  <div class="row">
-    <button type="button" class="tcb-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
-    <span>進度</span>
-    <input type="range" class="tcb-t grow" min="0" max="1000" step="1" value="0" aria-label="進度">
-  </div>
-</div>
-<div class="fig-legend">
-  <span><i class="lg-arrow" style="border-top-color:#F0AC5F"></i>速度那一欄（\(q\) 在 \(q\) 基準裡靜止，只有時間方向）</span>
-  <span>拖曳可旋轉視角</span>
-  <span style="display:inline">例子：\(q\) 的速度 \(0.6c\)，地基準 \(\dfrac{{}^{\text{地}}E_x}{c} = 0.5\)、\(\dfrac{{}^{\text{地}}E_y}{c} = 0.8\)、\({}^{\text{地}}B_z = 0.7\)；只畫 \(c\cdot t\)、\(x\)、\(y\) 三個方向</span>
-</div>
-</figure>
 
 <h1 id="about">關於作者</h1>
 
@@ -6613,7 +6612,6 @@ $$
 <script src="js/ta.js?v=4"></script>
 <script src="js/tb.js?v=34"></script>
 <script src="js/tm.js?v=4"></script>
-<script src="js/tcb.js?v=2"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=33"></script>
 
