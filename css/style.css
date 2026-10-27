@@ -549,11 +549,12 @@ mjx-menclose > mjx-arrow { color: #FC6255; }
 
 /* ---------- 互動圖：控制列與圖例 ---------- */
 figure.fig-live { text-align: left; }
-.fig-ctl { --ctl-line: color-mix(in srgb, var(--fg) 22%, transparent); font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.4; color: var(--fg-soft); background: var(--code-bg); border-radius: 10px; padding: .55rem .8rem; margin: 0 0 .6rem; }
+.fig-ctl { container-type: inline-size; --ctl-line: color-mix(in srgb, var(--fg) 22%, transparent); font-family: "Noto Sans TC", sans-serif; font-size: .8rem; line-height: 1.4; color: var(--fg-soft); background: var(--code-bg); border-radius: 10px; padding: .55rem .8rem; margin: 0 0 .6rem; }
 .fig-ctl .row { display: flex; flex-wrap: wrap; align-items: center; gap: .45rem 1.4rem; margin: .3rem 0; }
 .fig-ctl label { display: inline-flex; align-items: center; gap: .55rem; cursor: pointer; white-space: nowrap; }
 .fig-ctl .row:has(> label > input[type=range]) { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .45rem 1.4rem; }
-@media (max-width: 560px) { .fig-ctl .row:has(> label > input[type=range]) { grid-template-columns: minmax(0, 1fr); } }
+/* 依控制列本身的寬度（不是視窗寬度）決定要不要改成一欄：側欄展開時欄寬可能很窄 */
+@container (max-width: 660px) { .fig-ctl .row:has(> label > input[type=range]) { grid-template-columns: minmax(0, 1fr); } }
 .fig-ctl label:has(input[type=range]) input { flex: 1; min-width: 3.5rem; width: auto; }
 .fig-ctl select { font: inherit; color: var(--fg); background: transparent; border: 1px solid var(--ctl-line); border-radius: 6px; padding: .15rem .35rem; cursor: pointer; }
 .fig-ctl label:has(select) { min-width: 0; }
