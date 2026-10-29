@@ -2,7 +2,7 @@
    WebGL 不可用時保留原本的 SVG 動畫。 */
 (function () {
   if (typeof THREE === 'undefined') return;
-  var BLUE = 0x58c4dd, BLUE_HI = 0xbfeaf5, GOLD = 0xe0a800, RED = 0xfc6255, GRAY = 0xbdbdbd;
+  var BLUE = 0x58c4dd, BLUE_HI = 0xbfeaf5, GOLD = 0xe0a800, GRAY = 0xbdbdbd;
 
   // 箭頭：沿 +Y，長 len；回傳 group（rotation.x = 相位）
   function arrow(len, color, opacity, shaftR, headR, headL) {
@@ -31,174 +31,6 @@
     var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
     sp.scale.set(height * w / c.height, height, 1);
     return sp;
-  }
-
-  // 2.5：螺旋繞成甜甜圈的駐波（兩道反向繞行的螺旋疊加）
-  function setupTorus(fig) {
-    var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(0x000000, 0);
-    canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
-    fig.insertBefore(canvas, fig.firstChild);
-
-    var scene = new THREE.Scene();
-    var RM = 1.7, A = 0.55, NW = 5, T = 2.4, om = 2 * Math.PI / T, NA = 80, NK = 400;
-    var up = new THREE.Vector3(0, 1, 0);
-
-    // 淡淡的甜甜圈表面與中心圓
-    var torusGeo = new THREE.TorusGeometry(RM, A, 24, 120);
-    var torus = new THREE.Mesh(torusGeo, new THREE.MeshBasicMaterial({ color: GRAY, transparent: true, opacity: 0.05, side: THREE.DoubleSide, depthWrite: false }));
-    torus.rotation.x = Math.PI / 2; scene.add(torus);
-    var wire = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.TorusGeometry(RM, A, 10, 60)), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.08 }));
-    wire.rotation.x = Math.PI / 2; scene.add(wire);
-    var ringPts = [];
-    for (var i = 0; i <= 180; i++) { var q = 2 * Math.PI * i / 180; ringPts.push(new THREE.Vector3(RM * Math.cos(q), 0, RM * Math.sin(q))); }
-    scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(ringPts), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.5 })));
-
-    // 兩道反向繞行的螺旋（形狀固定，整條繞 y 軸轉 ±ωt/NW）
-    function knot(sign, color) {
-      var pts = [];
-      for (var i = 0; i <= NK; i++) {
-        var th = 2 * Math.PI * i / NK, ph = sign * NW * th;
-        var rr = RM + A * Math.cos(ph);
-        pts.push(new THREE.Vector3(rr * Math.cos(th), A * Math.sin(ph), rr * Math.sin(th)));
-      }
-      var m = new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 800, 0.016, 6, true),
-        new THREE.MeshBasicMaterial({ color: color, transparent: true, opacity: 0.55 }));
-      scene.add(m); return m;
-    }
-    var k1 = knot(1, BLUE), k2 = knot(-1, GOLD);
-
-    // 駐波：兩道螺旋的平均。每一處的箭頭一起轉（相位＝能量），長度 |cos(NW θ)| 固定，節點不動
-    var arrows = [], thetas = [];
-    for (var j = 0; j < NA; j++) {
-      var th = 2 * Math.PI * j / NA;
-      var a = arrow(A, BLUE_HI, 0.95, 0.018, 0.05, 0.18);
-      a.position.set(RM * Math.cos(th), 0, RM * Math.sin(th));
-      scene.add(a); arrows.push(a); thetas.push(th);
-    }
-    var tipPos = new Float32Array((NA + 1) * 3), tipGeo = new THREE.BufferGeometry();
-    tipGeo.setAttribute('position', new THREE.BufferAttribute(tipPos, 3));
-    scene.add(new THREE.Line(tipGeo, new THREE.LineBasicMaterial({ color: BLUE_HI, transparent: true, opacity: 0.6 })));
-
-    var cam = new THREE.PerspectiveCamera(36, 2, 0.1, 100);
-    var Wd = 640, Hd = 320;
-    function resize() { Wd = Math.min(fig.clientWidth || 640, 640); Hd = Math.round(Wd * 320 / 640); renderer.setSize(Wd, Hd, false); cam.aspect = Wd / Hd; cam.updateProjectionMatrix(); }
-    resize(); window.addEventListener('resize', resize);
-    var visible = true;
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(canvas);
-
-    var dir = new THREE.Vector3(), rhat = new THREE.Vector3();
-    var frames = 0, start = null;
-    function update(t) {
-      k1.rotation.y = -om * t / NW;       // 螺旋 1 往一個方向繞
-      k2.rotation.y = om * t / NW;        // 螺旋 2 往反方向繞
-      var ps = -om * t;
-      for (var j = 0; j < NA; j++) {
-        var th = thetas[j], amp = Math.cos(NW * th);
-        rhat.set(Math.cos(th), 0, Math.sin(th));
-        var psi = amp >= 0 ? ps : ps + Math.PI;
-        dir.copy(rhat).multiplyScalar(Math.cos(psi)).addScaledVector(up, Math.sin(psi));
-        arrows[j].quaternion.setFromUnitVectors(up, dir);
-        var s = Math.abs(amp); arrows[j].scale.setScalar(Math.max(s, 0.001)); arrows[j].visible = s > 0.04;
-        var base = arrows[j].position;
-        tipPos[3 * j] = base.x + A * amp * Math.cos(ps) * rhat.x; tipPos[3 * j + 1] = A * amp * Math.sin(ps); tipPos[3 * j + 2] = base.z + A * amp * Math.cos(ps) * rhat.z;
-      }
-      tipPos[3 * NA] = tipPos[0]; tipPos[3 * NA + 1] = tipPos[1]; tipPos[3 * NA + 2] = tipPos[2];
-      tipGeo.attributes.position.needsUpdate = true;
-      var az = 0.5 + 0.35 * Math.sin(t * 0.12);
-      cam.position.set(5.2 * Math.sin(az), 2.6 + 0.2 * Math.sin(t * 0.1), 5.2 * Math.cos(az));
-      cam.lookAt(0, -0.1, 0);
-      renderer.render(scene, cam);
-      frames++;
-    }
-    function frame(now) { requestAnimationFrame(frame); if (!visible || document.hidden) return; if (start === null) start = now; update((now - start) / 1000); }
-    requestAnimationFrame(frame);
-    return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
-  }
-
-  // 2.5：猜測——電子是一顆繞兩圈的光子（Williamson 與 van der Mark 1997）
-  function setupDoubleLoop(fig) {
-    var canvas = document.createElement('canvas'), renderer;
-    try { renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true }); } catch (e) { return null; }
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
-    renderer.setClearColor(0x000000, 0);
-    canvas.style.display = 'block'; canvas.style.width = '100%'; canvas.style.maxWidth = '640px'; canvas.style.margin = '0 auto'; canvas.style.borderRadius = '6px';
-    fig.insertBefore(canvas, fig.firstChild);
-
-    var scene = new THREE.Scene();
-    var RM = 1.5, A = 0.6, TL = 3, om = 2 * Math.PI / TL;       // 一圈 3 秒，兩圈 6 秒
-    var up = new THREE.Vector3(0, 1, 0);
-    function pathPoint(s, out) {                                  // s：繞大圓的角度；繞管子的角度是 s/2
-      var ph = s / 2, rr = RM + A * Math.cos(ph);
-      return (out || new THREE.Vector3()).set(rr * Math.cos(s), A * Math.sin(ph), rr * Math.sin(s));
-    }
-
-    // 淡淡的甜甜圈
-    var torus = new THREE.Mesh(new THREE.TorusGeometry(RM, A, 24, 120), new THREE.MeshBasicMaterial({ color: GRAY, transparent: true, opacity: 0.05, side: THREE.DoubleSide, depthWrite: false }));
-    torus.rotation.x = Math.PI / 2; scene.add(torus);
-    var wire = new THREE.LineSegments(new THREE.WireframeGeometry(new THREE.TorusGeometry(RM, A, 10, 60)), new THREE.LineBasicMaterial({ color: GRAY, transparent: true, opacity: 0.07 }));
-    wire.rotation.x = Math.PI / 2; scene.add(wire);
-
-    // 光子的路徑：繞大圓兩圈、繞管子一圈才首尾相接
-    var pts = [];
-    for (var i = 0; i <= 480; i++) pts.push(pathPoint(4 * Math.PI * i / 480));
-    scene.add(new THREE.Mesh(new THREE.TubeGeometry(new THREE.CatmullRomCurve3(pts, true), 960, 0.015, 6, true),
-      new THREE.MeshBasicMaterial({ color: GOLD, transparent: true, opacity: 0.45 })));
-
-    // 光子與它身上的電場箭頭（從管子中心指向光子；繞一圈翻轉，繞兩圈才復原）
-    var photon = new THREE.Mesh(new THREE.SphereGeometry(0.09, 20, 14), new THREE.MeshBasicMaterial({ color: GOLD }));
-    scene.add(photon);
-    var efield = arrow(0.75, BLUE_HI, 1, 0.022, 0.065, 0.24); scene.add(efield);
-    var trail = [], NT = 60;
-    var trailPos = new Float32Array(NT * 3), trailGeo = new THREE.BufferGeometry();
-    trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
-    scene.add(new THREE.Line(trailGeo, new THREE.LineBasicMaterial({ color: GOLD })));
-
-    // 外圍：從遠處看，電場都朝外，像一個電荷
-    var golden = Math.PI * (3 - Math.sqrt(5)), NR = 30, RO = 3.1;
-    for (var k = 0; k < NR; k++) {
-      var yv = 1 - 2 * (k + 0.5) / NR, rad = Math.sqrt(1 - yv * yv), th = golden * k;
-      var d = new THREE.Vector3(rad * Math.cos(th), yv, rad * Math.sin(th));
-      var fa = arrow(0.38, BLUE, 0.45, 0.012, 0.04, 0.14);
-      fa.position.copy(d).multiplyScalar(RO); fa.quaternion.setFromUnitVectors(up, d); scene.add(fa);
-    }
-
-    var lap1 = textSprite('第 1 圈', '#e4e2dd', 0.34), lap2 = textSprite('第 2 圈', '#e4e2dd', 0.34);
-    [lap1, lap2].forEach(function (sp) { sp.position.set(0, 1.35, 0); scene.add(sp); });
-
-    var cam = new THREE.PerspectiveCamera(36, 2, 0.1, 100);
-    var Wd = 640, Hd = 320;
-    function resize() { Wd = Math.min(fig.clientWidth || 640, 640); Hd = Math.round(Wd * 320 / 640); renderer.setSize(Wd, Hd, false); cam.aspect = Wd / Hd; cam.updateProjectionMatrix(); }
-    resize(); window.addEventListener('resize', resize);
-    var visible = true;
-    if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { visible = es[0].isIntersecting; }, { threshold: 0.05 }).observe(canvas);
-
-    var p = new THREE.Vector3(), core = new THREE.Vector3(), dir = new THREE.Vector3(), tmp = new THREE.Vector3();
-    var frames = 0, start = null;
-    function update(t) {
-      var s = (om * t) % (4 * Math.PI);
-      pathPoint(s, p); photon.position.copy(p);
-      core.set(RM * Math.cos(s), 0, RM * Math.sin(s));             // 管子中心
-      dir.copy(p).sub(core).normalize();
-      efield.position.copy(p); efield.quaternion.setFromUnitVectors(up, dir);
-      for (var i = 0; i < NT; i++) {
-        pathPoint(s - 0.9 * i / (NT - 1), tmp);
-        trailPos[3 * i] = tmp.x; trailPos[3 * i + 1] = tmp.y; trailPos[3 * i + 2] = tmp.z;
-      }
-      trailGeo.attributes.position.needsUpdate = true;
-      var second = s >= 2 * Math.PI;
-      lap1.visible = !second; lap2.visible = second;
-      var az = 0.7 + 0.3 * Math.sin(t * 0.1);
-      cam.position.set(5.9 * Math.sin(az), 2.7 + 0.2 * Math.sin(t * 0.08), 5.9 * Math.cos(az));
-      cam.lookAt(0, 0.25, 0);
-      renderer.render(scene, cam);
-      frames++;
-    }
-    function frame(now) { requestAnimationFrame(frame); if (!visible || document.hidden) return; if (start === null) start = now; update((now - start) / 1000); }
-    requestAnimationFrame(frame);
-    return { get frames() { return frames; }, renderer: renderer, renderOnce: update };
   }
 
   // 2.5：猜測——萬物由光組成？
@@ -697,10 +529,6 @@
 
   function init() {
     window.__helix3d = {};
-    var tor = document.getElementById('torus3d');
-    if (tor) window.__helix3d.torus = setupTorus(tor);
-    var dl = document.getElementById('loop3d');
-    if (dl) window.__helix3d.loop = setupDoubleLoop(dl);
     var un = document.getElementById('unify3d');
     if (un) window.__helix3d.unify = setupUnify(un);
     [['shapes3d', setupShapes, 'shapes'], ['order3d', setupOrder, 'order'], ['squash3d', setupSquash, 'squash'], ['eleven3d', setupEleven, 'eleven']].forEach(function (e) { var el = document.getElementById(e[0]); if (el) window.__helix3d[e[2]] = e[1](el); });
