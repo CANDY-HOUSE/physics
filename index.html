@@ -71,7 +71,7 @@ MathJax = {
           <li><a href="#sec-3-8">3.8　Ampère's Law 暫態與穩態</a></li>
           <li><a href="#sec-3-9">3.9　輻射電磁波</a></li>
           <li><a href="#sec-3-10">3.10　封裝成矩陣</a></li>
-          <li><a href="#sec-3-11">3.11　金屬屏蔽（未完工）</a></li>
+          <li><a href="#sec-3-11">3.11　金屬屏蔽只是經濟學</a></li>
         </ol>
       </li>
       <li class="pending">四、Schrödinger 方程與 Dirac 矩陣</li>
@@ -6321,9 +6321,9 @@ $$
 $$
 </div>
 
-<h2 id="sec-3-11">3.11　金屬屏蔽（未完工）</h2>
+<h2 id="sec-3-11">3.11　金屬屏蔽只是經濟學</h2>
 
-<p>分析金屬屏蔽時，不該用「電力線」，也不該說什麼「電力線不穿過金屬內部」；因到頭來，還是解釋不了：為什麼電力線不穿過金屬內部？我們應該回到只用 Coulomb 定律重新出發。</p>
+<p>分析金屬屏蔽時，不該用「電力線」，也不該說什麼「電力線不穿過金屬內部」；因到頭來，還是解釋不了：為什麼電力線不穿過金屬內部？甚至不該提「電場」，我們應該回到只用 Coulomb 定律重新出發，關注單一個粒子受到的力。</p>
 
 <figure class="fig-live">
 <svg id="mh" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
@@ -6532,7 +6532,24 @@ $$
 
 <p>殼就是最外一層原子，而且最外一層也大多是中和的。約每 9.2 萬個表面原子，才有 1 個空洞。</p>
 
-<p>把金屬屏蔽想清楚之後，會發現：從微觀來看，金屬屏蔽比較像經濟學，而不是物理學。因此，除了薄薄一層殼，金屬內部全部是電中性，而且處於靜力平衡：金屬內部的每一顆電子，所受的合力都為零，也就是一般所說的「沒有電力線通過」。那麼，乾脆把金屬內部挖掉一個大洞，也無妨吧？應該沒有差別吧？</p>
+<p>把金屬屏蔽想清楚之後，會發現：從微觀來看，金屬屏蔽比較像經濟學，而不是物理學。這與供需原理相同：\(Q\) 的吸引力是需求，殼上電荷的斥力是供給；需求大於供給時，電子海就再供應一顆電子到表面，殼上電荷的斥力隨之增加；直到供給等於需求，電子便不再移動。電子海只供應恰好需要的電子，其餘的電子留在原處。因此，除了薄薄一層殼，金屬內部全部是電中性，而且處處靜力平衡：金屬內部的每一顆電子，所受的合力都為零，也就是一般所說的「沒有電力線通過」。那麼，乾脆把金屬內部挖掉一個大洞，無妨吧？沒差吧？反正沒人在乎。</p>
+
+<figure class="fig-live">
+<svg id="mh2" data-cavity="62" viewBox="0 0 680 360" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
+  <g class="mh-dyn"></g>
+  <foreignObject class="mh-lq" x="84" y="152" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:16px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(Q\)</div></foreignObject>
+  <foreignObject class="mh-la" x="0" y="0" width="64" height="20" visibility="hidden"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:12.5px;color:#F0AC5F;height:20px;display:flex;align-items:center;justify-content:flex-start;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\(Q\)<span>的吸引</span></span></div></foreignObject>
+</svg>
+<div class="fig-ctl">
+  <div class="row">
+    <button type="button" class="mh-play" aria-label="暫停"><svg class="ic-pause" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true"><rect x="1" y="1" width="3.5" height="12" fill="currentColor"/><rect x="7.5" y="1" width="3.5" height="12" fill="currentColor"/></svg><svg class="ic-play" width="12" height="14" viewBox="0 0 12 14" aria-hidden="true" style="display:none"><path d="M2 1 L11 7 L2 13 Z" fill="currentColor"/></svg></button>
+    <span>接力的進度</span>
+    <input type="range" class="mh-t grow" min="0" max="1000" step="1" value="0" aria-label="接力的進度">
+  </div>
+</div>
+</figure>
+
+<p>因此，金屬塊的內部屏蔽了來自 \(Q\) 的 Coulomb 力，也就是所謂的電場或電力線。以上講的都是靜止的情形，也就是電子移動到吸不動為止。而磁只是換到另一個基準時看到的電（3.4、3.9、3.10）；即便電磁波的電場一直在變，我們分析時也只要看那一瞬間相關各方的快照（3.9）。只要電子海跟得上 \(Q\) 的速度，就能在一定程度上保護金屬內部的電子同胞，保障內部電子海的電中性與靜力平衡；於是，人們所看到的電磁波，就這樣被屏蔽了。實際上，金屬對無線電波到可見光確實跟得上；但到了紫外線以上就跟不上了，電磁波會穿透金屬。</p>
 
 <h1 id="about">關於作者</h1>
 
@@ -6677,7 +6694,7 @@ $$
 </script>
 <script src="js/mg3.js?v=7"></script>
 <script src="js/mgt.js?v=10"></script>
-<script src="js/mh.js?v=10"></script>
+<script src="js/mh.js?v=13"></script>
 <script src="js/bsr.js?v=2"></script>
 <script src="js/fda.js?v=4"></script>
 <script src="js/qb.js?v=1"></script>
