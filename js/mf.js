@@ -9,7 +9,7 @@
   function f(n) { return n.toFixed(1); }
 
   var OX = 440, OY = 180, RP = 110, RED = '#FC6255', BLUE = '#58C4DD', GREEN = '#83C167', PINK = '#D147BD';
-  var th = 60 * Math.PI / 180, X = 1.8, gF = $('mf-g'), gQ = $('mq-g');
+  var th = 45 * Math.PI / 180, X = 1.8, gF = $('mf-g'), gQ = $('mq-g');
 
   function el(g, tag, a) {
     var e = document.createElementNS(NS, tag);
