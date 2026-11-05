@@ -1,6 +1,6 @@
 /* 3.11 兩張圖共用 θ、x。
-   上圖：P 處的電場，Q 的（紅）與 −Q₁ 的（藍），兩者之和（綠）垂直球面；箭頭長度比 |E_{−Q₁}| : |E_Q| = x : R。
-   下圖：在球心 O 放 Q₁，Q₁ 的電場（粉紅）沿著 OP；箭頭長度比 |E_{Q₁}| : |E_Q| = r² : (x R)，|綠| : |E_Q| = (x² − R²) : (R r)。 */
+   上圖：P 處的電子受 Q 的吸引（紅）與 −Q₁ 的力（藍），兩力之和（綠）垂直球面；箭頭長度比 |F_{−Q₁}| : |F_Q| = x : R。
+   下圖：在球心 O 放 Q₁，Q₁ 的吸引（粉紅）沿著 PO；箭頭長度比 |Q₁ 的吸引| : |F_Q| = r² : (x R)，|綠| : |F_Q| = (x² − R²) : (R r)。 */
 (function () {
   var svgF = document.getElementById('mf'), svgQ = document.getElementById('mq');
   if (!svgF || !svgQ) return;
@@ -32,7 +32,7 @@
   }
   function dots(g, Q, P) {
     el(g, 'circle', { cx: OX, cy: OY, r: 3, fill: 'currentColor' });
-    el(g, 'circle', { cx: f(P[0]), cy: f(P[1]), r: 4.5, fill: 'currentColor' });
+    el(g, 'circle', { cx: f(P[0]), cy: f(P[1]), r: 5, fill: '#BBBBBB', stroke: 'currentColor', 'stroke-width': 1 });
     el(g, 'circle', { cx: f(Q[0]), cy: f(Q[1]), r: 10, fill: RED });
     el(g, 'text', { x: f(Q[0]), y: f(Q[1] + 5), 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: '#1a1a1a' }).textContent = 'Q';
   }
@@ -40,12 +40,12 @@
   function render() {
     gF.textContent = ''; gQ.textContent = '';
     var Q = [OX - X * RP, OY], Q1 = [OX - RP / X, OY], P = [OX - RP * Math.cos(th), OY - RP * Math.sin(th)];
-    var n = [(P[0] - OX) / RP, (P[1] - OY) / RP], t = [-n[1], n[0]], lab = [P[0] + n[0] * 18 + n[1] * 12, P[1] + n[1] * 18 - n[0] * 12];
+    var n = [(P[0] - OX) / RP, (P[1] - OY) / RP], t = [-n[1], n[0]], lab = [P[0] + n[0] * 18 + n[1] * 30, P[1] + n[1] * 18 - n[0] * 30];
     var r = Math.hypot(P[0] - Q[0], P[1] - Q[1]), r1 = Math.hypot(P[0] - Q1[0], P[1] - Q1[1]);
 
     // 上圖
-    var L0 = Math.min(38, 64 / X), FQ = [(P[0] - Q[0]) / r * L0, (P[1] - Q[1]) / r * L0];             // Q 的電場：背離 Q
-    var F1 = [(Q1[0] - P[0]) / r1 * L0 * X, (Q1[1] - P[1]) / r1 * L0 * X], FS = [FQ[0] + F1[0], FQ[1] + F1[1]];   // −Q₁ 的電場：指向 −Q₁
+    var L0 = Math.min(38, 64 / X), FQ = [(Q[0] - P[0]) / r * L0, (Q[1] - P[1]) / r * L0];
+    var F1 = [(P[0] - Q1[0]) / r1 * L0 * X, (P[1] - Q1[1]) / r1 * L0 * X], FS = [FQ[0] + F1[0], FQ[1] + F1[1]];
     base(gF, Q, P);
     el(gF, 'circle', { cx: f(Q1[0]), cy: OY, r: 7, fill: 'none', stroke: BLUE, 'stroke-width': '1.6', 'stroke-dasharray': '3 2' });
     line(gF, Q, P, { stroke: RED, 'stroke-width': '.8', 'stroke-dasharray': '3 3' });
@@ -54,7 +54,6 @@
     dots(gF, Q, P);
     put('mf-O', OX + 12, OY + 15); put('mf-Q1', Q1[0] - 20, OY + 16); put('mf-P', lab[0], lab[1]);
     var ang = Math.abs(Math.atan2(FS[0] * n[1] - FS[1] * n[0], FS[0] * n[0] + FS[1] * n[1])) * 180 / Math.PI;
-    ang = Math.min(ang, 180 - ang);                                                       // 與直線 OP 的夾角
     $('mf-ro').textContent = ang.toFixed(2) + '°';
 
     // 下圖
@@ -66,8 +65,8 @@
     el(gQ, 'polyline', { points: f(s[0]) + ',' + f(s[1]) + ' ' + f(m[0]) + ',' + f(m[1]) + ' ' + f(k[0]) + ',' + f(k[1]), fill: 'none', stroke: 'currentColor', 'stroke-width': '1' });
     el(gQ, 'circle', { cx: f(Q1[0]), cy: OY, r: 7, fill: 'none', stroke: BLUE, 'stroke-width': '1.6', 'stroke-dasharray': '3 2' });
     el(gQ, 'circle', { cx: OX, cy: OY, r: 9, fill: 'none', stroke: RED, 'stroke-width': '1.6', 'stroke-dasharray': '3 2' });
-    arrow(gQ, P, [P[0] - n[0] * lg, P[1] - n[1] * lg], GREEN, 3.2);                      // Q 與 −Q₁ 的電場之和：朝 O
-    arrow(gQ, P, [P[0] + n[0] * lp, P[1] + n[1] * lp], PINK, 3);                         // Q₁ 的電場：背離 O
+    arrow(gQ, P, [P[0] + n[0] * lg, P[1] + n[1] * lg], GREEN, 3.2);
+    arrow(gQ, P, [P[0] - n[0] * lp, P[1] - n[1] * lp], PINK, 3);
     dots(gQ, Q, P);
     put('mq-O', OX + 13, OY + 17); put('mq-Q1', OX + 8, OY - 23); put('mq-mQ1', Q1[0] - 20, OY + 16); put('mq-P', lab[0], lab[1]); put('mq-line', 120, OY + 36);
   }
