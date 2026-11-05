@@ -6357,13 +6357,14 @@ $$
 
 <p>自由電子被 \(Q\)（\(Q>0\)）吸引到金屬球的表面。被吸到表面的 \(P\) 處自由電子（電荷 \(-e\)，\(e>0\)）竟然靜止了，而不是繼續亂動；這表示 \(P\) 處自由電子處於靜力平衡：金屬球上其他的自由電子與原子核對 \(P\) 處自由電子的力，平衡了 \(Q\) 對 \(P\) 處自由電子的吸引。因此，切線方向的力想必已互相抵銷，只剩下垂直於球面的正向力。</p>
 
-<p>一定存在一個等效電荷 \(-Q_1\)（\(Q_1>0\)），使 \(P\) 處自由電子達到靜力平衡。而球心 \(O\) 位於 \(P\) 處垂直於球面的方向上，所以在 \(O\) 點放一個 \(Q_1\) 也不礙事：它對 \(P\) 處自由電子的吸引沿著半徑，既不增加切線方向的力，又能使金屬球保持電中性（\(-Q_1+Q_1=0\)）。同時，\(Q\)、\(-Q_1\)、\(Q_1\) 共線，達成宏觀的靜力平衡。\(-Q_1\) 與 \(Q_1\) 是金屬球上其他的自由電子與原子核的一對等效電荷。</p>
+<p>一定存在一個可包含 \(P\) 處自由電子之等效電荷 \(-Q_1\)（\(Q_1>0\)），使 \(P\) 處自由電子達到靜力平衡。而球心 \(O\) 位於 \(P\) 處垂直於球面的方向上，所以在 \(O\) 點放一個可包含 \(P\) 處自由電子之等效電荷 \(Q_1\) 也不礙事：它對 \(P\) 處自由電子的吸引沿著半徑，既不增加切線方向的力，又能使金屬球保持電中性（\(-Q_1+Q_1=0\)）。同時，\(Q\)、\(-Q_1\)、\(Q_1\) 共線，達成宏觀的靜力平衡。\(-Q_1\) 與 \(Q_1\) 是金屬球上所有的自由電子與原子核（<strong>包含 \(P\) 處自由電子 \(-e\)</strong>）的一對等效電荷，只是 \(-Q_1\)、\(Q_1\) 之中 \(-e\) 的部分，不對 \(P\) 處自由電子 \(-e\) 本身施力。</p>
 
 <figure class="fig-live">
 <svg id="mx" viewBox="0 30 680 355" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans TC, sans-serif" font-size="14">
   <circle cx="450" cy="195" r="130" fill="currentColor" fill-opacity=".1" stroke="currentColor" stroke-opacity=".45"/>
   <g class="mx-g"></g>
-  <foreignObject class="mx-O" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(O\)</div></foreignObject>
+    <foreignObject class="mx-Q1" x="0" y="0" width="30" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#FC6255;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(Q_1\)</div></foreignObject>
+<foreignObject class="mx-O" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(O\)</div></foreignObject>
   <foreignObject class="mx-P" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(P\)</div></foreignObject>
   <foreignObject class="mx-mQ1" x="0" y="0" width="40" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(-Q_1\)</div></foreignObject>
   <foreignObject class="mx-R" x="0" y="0" width="24" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:currentColor;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap">\(R\)</div></foreignObject>
@@ -6429,7 +6430,7 @@ Q_1=\frac{Q\,x}{\dfrac{R^2}{x}}\Big(\frac{R}{x}\Big)^{3}=\frac{R}{x}\,Q\qquad\te
 \end{gathered}
 $$
 
-<p>因為 \(Q_1\)、\(x_1\) 都與 \(\theta\) 無關，所以 \(Q_1\)、\(-Q_1\)、\(x_1\) 是金屬球上其他的自由電子與原子核的一對等效電荷之唯一解。</p>
+<p>因為 \(Q_1\)、\(x_1\) 都與 \(\theta\) 無關，所以 \(Q_1\)、\(-Q_1\)、\(x_1\) 是金屬球上所有的自由電子與原子核的一對等效電荷之唯一解。</p>
 
 <h1 id="about">關於作者</h1>
 
@@ -6594,7 +6595,7 @@ $$
 <script src="js/helix3d.js?v=36"></script>
 <script src="js/mathfit.js?v=3"></script>
 <script src="js/mf.js?v=4"></script>
-<script src="js/mx.js?v=10"></script>
+<script src="js/mx.js?v=11"></script>
 
 </body>
 </html>

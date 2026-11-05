@@ -56,12 +56,15 @@
     line(g, [Q[0], OY + 11], [Q[0], Y2], gd); line(g, [Q1[0], OY + 8], [Q1[0], Y1], gd); line(g, [OX, OY + 4], [OX, Y2], gd);
     bracket(Q1[0], OX, Y1); bracket(Q[0], OX, Y2);
     el(g, 'circle', { cx: f(Q1[0]), cy: OY, r: 7, fill: 'none', stroke: BLUE, 'stroke-width': '1.6', 'stroke-dasharray': '3 2' });
+    el(g, 'circle', { cx: OX, cy: OY, r: 9, fill: 'none', stroke: RED, 'stroke-width': '1.6', 'stroke-dasharray': '3 2' });
     el(g, 'circle', { cx: OX, cy: OY, r: 3, fill: 'currentColor' });
     el(g, 'circle', { cx: f(P[0]), cy: f(P[1]), r: 4.5, fill: 'currentColor' });
     el(g, 'circle', { cx: f(Q[0]), cy: f(Q[1]), r: 10, fill: RED });
     el(g, 'text', { x: f(Q[0]), y: f(Q[1] + 5), 'text-anchor': 'middle', 'font-size': 13, 'font-weight': 700, fill: '#1a1a1a' }).textContent = 'Q';
 
-    put('O', OX + 13, OY + 15); put('P', P[0] + u[0] * 16 - t[0] * 12, P[1] + u[1] * 16 - t[1] * 12);
+    put('O', OX + 13, OY + 15);
+    if (th < Math.PI / 2) put('Q1', OX, OY - 24); else put('Q1', OX + 30, OY + 30);   // Q₁ 在 O：θ < 90° 時 O 的正上方空著
+    put('P', P[0] + u[0] * 16 - t[0] * 12, P[1] + u[1] * 16 - t[1] * 12);
     put('mQ1', Q1[0] - 26, OY + (th < Math.PI / 2 ? 16 : -14));
     put('R', (OX + P[0]) / 2 + t[0] * 13, (OY + P[1]) / 2 + t[1] * 13);
     put('th', OX + 38 * Math.cos(Math.PI - th / 2), OY - 38 * Math.sin(Math.PI - th / 2));
