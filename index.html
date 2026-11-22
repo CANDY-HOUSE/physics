@@ -46,7 +46,7 @@ MathJax = {
           <li><a href="#sec-1-6">1.6　動量不守恆？</a></li>
           <li><a href="#sec-1-7">1.7　動量的修正</a></li>
           <li><a href="#sec-1-8">1.8　能量的修正</a></li>
-          <li><a href="#sec-1-9">1.9　動量與能量的關係</a></li>
+          <li><a href="#sec-1-9">1.9　動量、能量、力的關係</a></li>
         </ol>
       </li>
       <li>
@@ -612,7 +612,7 @@ $$
 v = 0:\ \boxed{\;E_0 = mc^2\;}
 $$
 
-<h2 id="sec-1-9">1.9　動量與能量的關係</h2>
+<h2 id="sec-1-9">1.9　動量、能量、力的關係</h2>
 
 <p>手上兩條式子，都含著隨基準而變的 \(v\)：</p>
 
@@ -704,6 +704,68 @@ E = mc^2\sqrt{1+\dfrac{(pc)^2}{(mc^2)^2}}
 $$
 
 <p>第二項正是牛頓動能的動量寫法 \(\dfrac{p^2}{2m}\)，其後是高速修正。</p>
+
+<p>力呢？其實我們仍然說不清楚力是什麼；或許力並不存在，存在的只是 \(\dfrac{d(\gamma m v)}{dt}\) 這個現象。那麼，\(\displaystyle\int\dfrac{d(\gamma m v)}{dt}\,ds\) 會得到什麼？其中 \(s\) 是物體走過的路程，\(ds = v\,dt\)：</p>
+
+$$
+\int\frac{d(\gamma m v)}{dt}\,ds = \int\frac{d(\gamma m v)}{dt}\,v\,dt = \int v\,d(\gamma m v)
+$$
+
+$$
+\gamma = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
+\qquad\Longrightarrow\qquad
+\gamma^2 c^2 - \gamma^2 v^2 = c^2
+$$
+
+<p>兩邊微分：</p>
+
+$$
+2\gamma c^2\,d\gamma = 2(\gamma v)\,d(\gamma v)
+\qquad\Longrightarrow\qquad
+c^2\,d\gamma = v\,d(\gamma v)
+$$
+
+<p>兩邊乘上 \(m\)：</p>
+
+$$
+v\,d(\gamma m v) = mc^2\,d\gamma = d(\gamma m c^2)
+$$
+
+<p>從靜止積分到速度 \(v\)：</p>
+
+$$
+\int_{\text{靜止}}^{v}\frac{d(\gamma m v)}{dt}\,ds = \gamma m c^2 - mc^2
+$$
+
+<p>結果正是 1.8 的能量 \(\gamma mc^2\) 減去靜止時的 \(mc^2\)。最後，把 \(v\,d(\gamma m v) = d(\gamma m c^2)\) 兩邊除以 \(ds = v\,dt\)（\(v \neq 0\)）：</p>
+
+$$
+\frac{v\,d(\gamma m v)}{v\,dt} = \frac{d(\gamma m c^2)}{ds}
+\qquad\Longrightarrow\qquad
+\boxed{\;\frac{d(\gamma m v)}{dt} = \frac{d(\gamma m c^2)}{ds}\;}
+$$
+
+<p>動量對時間的變化，等於能量對路程的變化；我們把 \(\dfrac{d(\gamma m v)}{dt}\) 或 \(\dfrac{d(\gamma m c^2)}{ds}\) 稱為力。</p>
+
+<p>反過來，\(\displaystyle\int\dfrac{d(\gamma m c^2)}{ds}\,dt\) 會得到什麼？把 \(\dfrac{d(\gamma m c^2)}{ds} = \dfrac{d(\gamma m v)}{dt}\) 代入，約掉 \(dt\)：</p>
+
+$$
+\int\frac{d(\gamma m c^2)}{ds}\,dt = \int\frac{d(\gamma m v)}{dt}\,dt = \int d(\gamma m v)
+$$
+
+<p>從靜止積分到速度 \(v\)：</p>
+
+$$
+\int_{\text{靜止}}^{v}\frac{d(\gamma m c^2)}{ds}\,dt = \gamma m v - 0 = \gamma m v
+$$
+
+<p>結果正是 1.7 的動量。力對路程積分，得到 1.8 的能量的變化；力對時間積分，得到 1.7 的動量的變化：</p>
+
+$$
+\int_{\text{靜止}}^{v}\text{力}\,ds = \gamma m c^2 - mc^2
+\qquad\qquad
+\int_{\text{靜止}}^{v}\text{力}\,dt = \gamma m v - 0
+$$
 
 <!-- ==================== 第二部・第二章 ==================== -->
 
