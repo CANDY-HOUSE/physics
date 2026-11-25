@@ -631,6 +631,12 @@ html[lang="en"] .fig-legend span, html[lang="ja"] .fig-legend span { display: bl
 html[lang="en"] .fig-legend span > i, html[lang="ja"] .fig-legend span > i { vertical-align: middle; margin-right: .4rem; }
 html[lang="en"] .fig-ctl label:has(> input[type=checkbox]), html[lang="ja"] .fig-ctl label:has(> input[type=checkbox]) { display: block; }
 html[lang="en"] .fig-ctl label > input[type=checkbox], html[lang="ja"] .fig-ctl label > input[type=checkbox] { vertical-align: -2px; margin-right: .55rem; }
+html[lang="en"] .fig-ctl label:has(.dial), html[lang="ja"] .fig-ctl label:has(.dial) { display: block; }
+html[lang="en"] .fig-ctl label .dial, html[lang="ja"] .fig-ctl label .dial { vertical-align: middle; margin: 0 .4rem; }
+html[lang="en"] .fig-ctl label:has(> input[type=checkbox]), html[lang="ja"] .fig-ctl label:has(> input[type=checkbox]) { padding-left: calc(14px + .55rem); text-indent: calc(-14px - .55rem); }
+html[lang="en"] .fig-legend span, html[lang="ja"] .fig-legend span { padding-left: 1.7rem; text-indent: -1.7rem; }
+html[lang="en"] .fig-legend span > i.lg-arrow, html[lang="ja"] .fig-legend span > i.lg-arrow { margin-right: calc(8px + .4rem); }
+html[lang="en"] .fig-legend span *, html[lang="ja"] .fig-legend span *, html[lang="en"] .fig-ctl label *, html[lang="ja"] .fig-ctl label * { text-indent: 0; }
 .fig-legend .lg-dot { width: 11px; height: 11px; border: 1.8px solid #F0AC5F; border-radius: 50%; }
 .fig-legend .lg-ring { width: 15px; height: 15px; border: 1.6px dashed #F0AC5F; border-radius: 50%; }
 .fig-legend .lg-ring.faint { border-width: 1px; opacity: .5; }
