@@ -21,11 +21,11 @@
   function textSprite(text, cssColor, height) {
     var fs = 56, pad = 12;
     var c = document.createElement('canvas'), g = c.getContext('2d');
-    g.font = '600 ' + fs + 'px "Noto Sans TC", sans-serif';
+    g.font = '600 ' + fs + 'px ' + I18N.sans;
     var w = Math.ceil(g.measureText(text).width) + pad * 2;
     c.width = w; c.height = fs + pad * 2;
     g = c.getContext('2d');
-    g.font = '600 ' + fs + 'px "Noto Sans TC", sans-serif'; g.textAlign = 'center'; g.textBaseline = 'middle';
+    g.font = '600 ' + fs + 'px ' + I18N.sans; g.textAlign = 'center'; g.textBaseline = 'middle';
     g.fillStyle = cssColor; g.fillText(text, w / 2, c.height / 2 + 2);
     var tex = new THREE.CanvasTexture(c); tex.minFilter = THREE.LinearFilter;
     var sp = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false }));
@@ -110,10 +110,10 @@
 
     // 標題
     function label(txt, color, h, x, y) { var s = textSprite(txt, color, h); s.position.set(x, y, -1.6); scene.add(s); return s; }
-    label('質量＝關住的光', '#e0a800', 0.32, CL, 1.95);
-    label('周圍的鐘變慢，萬物都往裡掉', '#e4e2dd', 0.24, CL, 1.58);
-    label('電荷＝繞小圓打轉的波', '#e0a800', 0.32, CR, 1.95);
-    label('周圍的小圓轉快，只有繞的會動', '#e4e2dd', 0.24, CR, 1.58);
+    label(I18N.t('質量＝關住的光'), '#e0a800', 0.32, CL, 1.95);
+    label(I18N.t('周圍的鐘變慢，萬物都往裡掉'), '#e4e2dd', 0.24, CL, 1.58);
+    label(I18N.t('電荷＝繞小圓打轉的波'), '#e0a800', 0.32, CR, 1.95);
+    label(I18N.t('周圍的小圓轉快，只有繞的會動'), '#e4e2dd', 0.24, CR, 1.58);
 
     var cam = new THREE.PerspectiveCamera(34, 2, 0.1, 100);
     var Wd = 640, Hd = 340;
@@ -244,10 +244,10 @@
       var psi0 = [[0.78, 0], [0.5, 0.2], [0.26, -0.18]]; var nrm = Math.sqrt(psi0.reduce(function (s, z) { return s + z[0] * z[0] + z[1] * z[1]; }, 0)); psi0 = psi0.map(function (z) { return [z[0] / nrm, z[1] / nrm]; });
       // 標籤
       function lbl(txt, col, h, x, y) { var s = textSprite(txt, col, h); s.position.set(x, y, 0); scene.add(s); return s; }
-      lbl('圓', '#e4e2dd', 0.3, X[0], 1.55); lbl('球面', '#e4e2dd', 0.3, X[1], 1.55); lbl('CP²（4 維，以三色相位代表）', '#e4e2dd', 0.24, X[2], 1.55);
-      lbl('1 種轉法：光子', '#e0a800', 0.26, X[0], -1.35); lbl('3 種轉法：W⁺ W⁻ Z', '#e0a800', 0.26, X[1], -1.35); lbl('8 種轉法：8 種膠子', '#e0a800', 0.26, X[2], -1.35);
-      var sCount = [1, 2, 3].map(function (k) { var s = lbl('第 ' + k + ' 種', '#bdbdbd', 0.2, X[1], -1.72); return s; });
-      var gCount = [1, 2, 3, 4, 5, 6, 7, 8].map(function (k) { return lbl('第 ' + k + ' 種', '#bdbdbd', 0.2, X[2], -1.72); });
+      lbl(I18N.t('圓'), '#e4e2dd', 0.3, X[0], 1.55); lbl(I18N.t('球面'), '#e4e2dd', 0.3, X[1], 1.55); lbl(I18N.t('CP²（4 維，以三色相位代表）'), '#e4e2dd', 0.24, X[2], 1.55);
+      lbl(I18N.t('1 種轉法：光子'), '#e0a800', 0.26, X[0], -1.35); lbl(I18N.t('3 種轉法：W⁺ W⁻ Z'), '#e0a800', 0.26, X[1], -1.35); lbl(I18N.t('8 種轉法：8 種膠子'), '#e0a800', 0.26, X[2], -1.35);
+      var sCount = [1, 2, 3].map(function (k) { var s = lbl(I18N.t('第 {n} 種').replace('{n}', k), '#bdbdbd', 0.2, X[1], -1.72); return s; });
+      var gCount = [1, 2, 3, 4, 5, 6, 7, 8].map(function (k) { return lbl(I18N.t('第 {n} 種').replace('{n}', k), '#bdbdbd', 0.2, X[2], -1.72); });
       var q = new THREE.Quaternion(), q0 = new THREE.Quaternion();
       cam.position.set(0, 1.0, 9.2); cam.lookAt(0, -0.05, 0);
       return function (t) {
@@ -285,10 +285,10 @@
         var body = new THREE.Group(); g.add(body); body.add(wireSphere(R, GRAY, 0.22)); body.add(orientMarker(R));
         return body;
       });
-      lbl('圓：先 α 再 β', '#e4e2dd', 0.21, X[0], 1.45); lbl('圓：先 β 再 α', '#e4e2dd', 0.21, X[1], 1.45);
-      lbl('球面：先繞 x 再繞 y', '#e4e2dd', 0.21, X[2], 1.45); lbl('球面：先繞 y 再繞 x', '#e4e2dd', 0.21, X[3], 1.45);
-      var same = lbl('結果一樣：光子不互相扭動', '#83c167', 0.24, (X[0] + X[1]) / 2, -1.45);
-      var diff = lbl('結果不同：W 與膠子會互相扭動', '#fc6255', 0.24, (X[2] + X[3]) / 2, -1.45);
+      lbl(I18N.t('圓：先 α 再 β'), '#e4e2dd', 0.21, X[0], 1.45); lbl(I18N.t('圓：先 β 再 α'), '#e4e2dd', 0.21, X[1], 1.45);
+      lbl(I18N.t('球面：先繞 x 再繞 y'), '#e4e2dd', 0.21, X[2], 1.45); lbl(I18N.t('球面：先繞 y 再繞 x'), '#e4e2dd', 0.21, X[3], 1.45);
+      var same = lbl(I18N.t('結果一樣：光子不互相扭動'), '#83c167', 0.24, (X[0] + X[1]) / 2, -1.45);
+      var diff = lbl(I18N.t('結果不同：W 與膠子會互相扭動'), '#fc6255', 0.24, (X[2] + X[3]) / 2, -1.45);
       var ex = new THREE.Vector3(1, 0, 0), ey = new THREE.Vector3(0, 1, 0);
       var qa = new THREE.Quaternion(), qb = new THREE.Quaternion(), qt = new THREE.Quaternion(), id = new THREE.Quaternion();
       var A1 = 0.9, B1 = 1.6;                                    // 圓的兩個轉角
@@ -320,7 +320,7 @@
       var axes = [new THREE.Vector3(0, 1, 0), new THREE.Vector3(1, 0, 0), new THREE.Vector3(0, 0, 1)], cols = [GREEN3, RED3, RED3];
       var axisArrows = axes.map(function (v, i) { var a = arrow(1.6, cols[i], 1, 0.02, 0.06, 0.2); a.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), v); scene.add(a); return a; });
       function lbl(txt, col, h, x, y) { var s = textSprite(txt, col, h); s.position.set(x, y, 0); scene.add(s); return s; }
-      var titles = [lbl('圓球：三種轉法都不費力', '#e4e2dd', 0.28, 0, 1.85), lbl('壓扁', '#e4e2dd', 0.28, 0, 1.85), lbl('繞對稱軸轉：形狀不變，不費力，粒子沒有質量', '#83c167', 0.24, 0, 1.85), lbl('繞其他軸轉：形狀改變，費力，粒子變重（W、Z）', '#fc6255', 0.24, 0, 1.85)];
+      var titles = [lbl(I18N.t('圓球：三種轉法都不費力'), '#e4e2dd', 0.28, 0, 1.85), lbl(I18N.t('壓扁'), '#e4e2dd', 0.28, 0, 1.85), lbl(I18N.t('繞對稱軸轉：形狀不變，不費力，粒子沒有質量'), '#83c167', 0.24, 0, 1.85), lbl(I18N.t('繞其他軸轉：形狀改變，費力，粒子變重（W、Z）'), '#fc6255', 0.24, 0, 1.85)];
       var q = new THREE.Quaternion();
       cam.position.set(0, 1.6, 6.4); cam.lookAt(0, 0.1, 0);
       return function (t) {
@@ -358,8 +358,8 @@
         sites.push({ x: x, z: z, cd: cd, s: s, tds: tds });
       }
       function lbl(txt, col, h, x, y, zz) { var sp = textSprite(txt, col, h); sp.position.set(x, y, zz || 0); scene.add(sp); return sp; }
-      lbl('我們的 4 維 ＋ 圓 1 ＋ 球面 2 ＋ CP² 4 ＝ 11 維', '#e4e2dd', 0.34, 0, 2.3);
-      lbl('金：圓（電磁）　白：球面（弱）　三色：CP²（強）', '#bdbdbd', 0.24, 0, 1.85);
+      lbl(I18N.t('我們的 4 維 ＋ 圓 1 ＋ 球面 2 ＋ CP² 4 ＝ 11 維'), '#e4e2dd', 0.34, 0, 2.3);
+      lbl(I18N.t('金：圓（電磁）　白：球面（弱）　三色：CP²（強）'), '#bdbdbd', 0.24, 0, 1.85);
       var q = new THREE.Quaternion(), axis = new THREE.Vector3();
       cam.position.set(0, 4.2, 9); cam.lookAt(0, 0.2, 0);
       return function (t) {

@@ -117,7 +117,7 @@
         if (l >= 3) rows.push({ o: o, tp: tp, col: col, w: w, lab: lab, ux: v[0] * K / l });
       }
       row(16, a, GLD, 2.2, null);
-      row(31, [-a[0] * frac, -a[1] * frac], BLU, 2.2, '殼上電荷的斥力');
+      row(31, [-a[0] * frac, -a[1] * frac], BLU, 2.2, I18N.t('殼上電荷的斥力'));
       row(-18, [a[0] * (1 - frac), a[1] * (1 - frac)], 'currentColor', 2.6, netLab);
       placed.push([e[0] - 9, e[1] - 9, e[0] + 9, e[1] + 9]);
       rows.forEach(function (r) {
@@ -137,7 +137,7 @@
     var IN = [16, 10, 262, 138], IC = [120, 80], SC = 31 / 13;
     function inset(e) {
       var o = '<rect x="' + IN[0] + '" y="' + IN[1] + '" width="' + IN[2] + '" height="' + IN[3] + '" rx="8" fill="none" stroke="currentColor" stroke-opacity=".3"/>';
-      o += txt(IN[0] + IN[2] - 8, IN[1] + 12, '放大：四周的正離子', 'currentColor', 12, 0.6, 'end');
+      o += txt(IN[0] + IN[2] - 8, IN[1] + 12, I18N.t('放大：四周的正離子'), 'currentColor', 12, 0.6, 'end');
       if (e) o += '<line x1="' + (IN[0] + IN[2]) + '" y1="' + (IN[1] + IN[3] - 14) + '" x2="' + f1(e[0] - 9) + '" y2="' + f1(e[1] + 6) + '" stroke="currentColor" stroke-opacity=".35" stroke-width=".8" stroke-dasharray="2 2"/>';
       var dl = 13 * SC, du = dyR * SC, lr = 24, ud = lr * (13 / dyR) * (13 / dyR);
       o += glyph([IC[0] - dl, IC[1]], '+', RED, 18, 1) + ring([IC[0] - dl, IC[1]], 12);
@@ -146,8 +146,8 @@
       o += glyph(IC, '−', BLU, 19, 1);
       o += arrow([IC[0] - 6, IC[1]], [IC[0] - 6 - lr, IC[1]], PNK, 2) + arrow([IC[0] + 6, IC[1]], [IC[0] + 6 + lr, IC[1]], PNK, 2);
       o += arrow([IC[0], IC[1] - 7], [IC[0], IC[1] - 7 - ud], RED, 2) + arrow([IC[0], IC[1] + 7], [IC[0], IC[1] + 7 + ud], RED, 2);
-      o += txt(IC[0], IC[1] + 26, '左右兩個空洞的吸引互相抵銷', PNK, 12, 1, 'middle');
-      o += txt(IC[0] + 18, IC[1] - 38, '上下兩個正離子的吸引', RED, 12, 1, 'start') + txt(IC[0] + 18, IC[1] - 22, '互相抵銷', RED, 12, 1, 'start');
+      o += txt(IC[0], IC[1] + 26, I18N.t('左右兩個空洞的吸引互相抵銷'), PNK, 12, 1, 'middle');
+      o += txt(IC[0] + 18, IC[1] - 38, I18N.t('上下兩個正離子的吸引'), RED, 12, 1, 'start') + txt(IC[0] + 18, IC[1] - 22, I18N.t('互相抵銷'), RED, 12, 1, 'start');
       return o;
     }
 
@@ -193,22 +193,22 @@
         if (j >= 1) o += ring(iP(curP[j - 1]));
         if (t > 0) o += ring(iP(from));
       }
-      if (CAV) o += txt(C[0], C[1] - (st.end ? 9 : 0), '挖掉的大洞', 'currentColor', 12.5, 0.6, 'middle') + (st.end ? txt(C[0], C[1] + 9, '洞壁上沒有電荷', 'currentColor', 12.5, 0.85, 'middle') : '');
+      if (CAV) o += txt(C[0], C[1] - (st.end ? 9 : 0), I18N.t('挖掉的大洞'), 'currentColor', 12.5, 0.6, 'middle') + (st.end ? txt(C[0], C[1] + 9, I18N.t('洞壁上沒有電荷'), 'currentColor', 12.5, 0.85, 'middle') : '');
       if (CAV) placed.push([C[0] - CAV, C[1] - 18, C[0] + CAV, C[1] + 18]);
       var frac = st.end ? 1 : (st.r + (j + st.t) / lanes[st.r].N) / NF, so = '';
       placed.push([IN[0], IN[1], IN[0] + IN[2], IN[1] + IN[3]]);
       so += inset(mov);
       if (mov) {
         so += '<circle cx="' + f1(mov[0]) + '" cy="' + f1(mov[1]) + '" r="8" fill="none" stroke="currentColor" stroke-width="1.2"/>';
-        so += stack(mov, frac, '合力：還吸得動');
+        so += stack(mov, frac, I18N.t('合力：還吸得動'));
       } else {
         var e = eP(lanes[0].P[0]);
         so += '<circle cx="' + f1(e[0]) + '" cy="' + f1(e[1]) + '" r="8" fill="none" stroke="currentColor" stroke-width="1.2"/>';
-        so += stack(e, 1, '合力 = 0：吸不動');
+        so += stack(e, 1, I18N.t('合力 = 0：吸不動'));
       }
-      if (curP) { var le = iP(curP[curP.length - 1]); o += put(le[0] + 4, le[1] - 15, st.r === 0 ? '第 1 條車道' : '隔壁車道', 'currentColor', 'end', 12, 0.75); }
-      if (extra.length) { var lo = extra.reduce(function (a, b) { return b[1] > a[1] ? b : a; }); o += put(lo[0] - 10, lo[1] + 40, '多出的電子', 'currentColor', 'end', 12.5, 0.75); }
-      if (holes.length) { var hi2 = iP(holes.reduce(function (a, b) { return b.p[1] > a.p[1] ? b : a; })); o += put(hi2[0] + 14, hi2[1] + 26, '空洞停在遠離 Q 的表面', PNK, 'middle', 12.5); }
+      if (curP) { var le = iP(curP[curP.length - 1]); o += put(le[0] + 4, le[1] - 15, st.r === 0 ? I18N.t('第 1 條車道') : I18N.t('隔壁車道'), 'currentColor', 'end', 12, 0.75); }
+      if (extra.length) { var lo = extra.reduce(function (a, b) { return b[1] > a[1] ? b : a; }); o += put(lo[0] - 10, lo[1] + 40, I18N.t('多出的電子'), 'currentColor', 'end', 12.5, 0.75); }
+      if (holes.length) { var hi2 = iP(holes.reduce(function (a, b) { return b.p[1] > a.p[1] ? b : a; })); o += put(hi2[0] + 14, hi2[1] + 26, I18N.t('空洞停在遠離 Q 的表面'), PNK, 'middle', 12.5); }
       dyn.innerHTML = o + so;
     }
 
@@ -219,7 +219,7 @@
     var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     var play = !reduce, vis = true, s = 0, hold = 1500, last = null, tFix = null, btn = $('play'), sl = $('t');
     function nextStop(v) { for (var i = 0; i < stops.length; i++) if (stops[i][0] > v + 1e-6) return stops[i]; return null; }
-    function setPlay(v) { play = v; btn.setAttribute('aria-label', v ? '暫停' : '播放'); btn.querySelector('.ic-pause').style.display = v ? '' : 'none'; btn.querySelector('.ic-play').style.display = v ? 'none' : ''; }
+    function setPlay(v) { play = v; btn.setAttribute('aria-label', v ? I18N.t('暫停') : I18N.t('播放')); btn.querySelector('.ic-pause').style.display = v ? '' : 'none'; btn.querySelector('.ic-play').style.display = v ? 'none' : ''; }
     if ('IntersectionObserver' in window) new IntersectionObserver(function (es) { vis = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg);
     btn.addEventListener('click', function () { if (!play && s >= STOT) { s = 0; hold = 1500; render(s); sl.value = 0; } setPlay(!play); });
     var TOL = STOT / 2000 + 1e-6;                        // 半個滑桿刻度：每個停頓點都拖得到

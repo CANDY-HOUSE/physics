@@ -113,7 +113,7 @@
   var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   var play = !reduce, vis1 = true, vis2 = true, last = 0;
   var bp = $('play');
-  function setPlay(p) { play = p; bp.setAttribute('aria-label', p ? '暫停' : '播放'); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
+  function setPlay(p) { play = p; bp.setAttribute('aria-label', p ? I18N.t('暫停') : I18N.t('播放')); bp.querySelector('.ic-pause').style.display = p ? '' : 'none'; bp.querySelector('.ic-play').style.display = p ? 'none' : ''; }
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(function (es) { vis1 = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg);
     new IntersectionObserver(function (es) { vis2 = es[0].isIntersecting; }, { threshold: 0.05 }).observe(svg2);

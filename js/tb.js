@@ -148,7 +148,7 @@
   });
   ['pointerup', 'pointercancel', 'lostpointercapture', 'contextmenu'].forEach(function (t) { svg.addEventListener(t, function () { drag = null; }); });
   // 圓形旋鈕：y 在上、z 在左（從 +x 看過去），角度從 y 量向 z（逆時針）；可以轉無限圈
-  var dial = $('a'), AX4 = ['y 軸', 'z 軸', '−y 軸', '−z 軸'], acc = 35, last = null;
+  var dial = $('a'), AX4 = [I18N.t('y 軸'), I18N.t('z 軸'), I18N.t('−y 軸'), I18N.t('−z 軸')], acc = 35, last = null;
   dial.innerHTML = '<svg viewBox="-30 -30 60 60" width="56" height="56" aria-hidden="true">' +
     '<circle class="dial-track" r="20"/>' +
     [0, 90, 180, 270].map(function (d, i) {
