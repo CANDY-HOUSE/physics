@@ -576,6 +576,9 @@ figure.fig-live { text-align: left; }
 .fig-ctl select { font: inherit; color: var(--fg); background: transparent; border: 1px solid var(--ctl-line); border-radius: 6px; padding: .15rem .35rem; cursor: pointer; }
 .fig-ctl label:has(select) { min-width: 0; }
 .fig-ctl label:has(select) select { flex: 1; min-width: 0; width: 0; }
+/* 英文版、日文版：控制列的標籤比中文長，允許換行，避免把滑桿、數值擠到隔壁欄；下拉選單依內容決定寬度 */
+html[lang="en"] .fig-ctl label, html[lang="ja"] .fig-ctl label { white-space: normal; min-width: 0; }
+html[lang="en"] .fig-ctl label:has(select) select, html[lang="ja"] .fig-ctl label:has(select) select { flex: 0 1 auto; width: auto; min-width: 0; max-width: 100%; }
 .fig-ctl output { min-width: 2.8em; text-align: right; color: var(--fg); font-variant-numeric: tabular-nums; }
 .fig-ctl output i { font-family: var(--serif); }
 /* 滑桿：細線＋小圓點 */

@@ -8,11 +8,11 @@
 <link rel="alternate" hreflang="zh-Hant" href="index.html">
 <link rel="alternate" hreflang="en" href="en.html">
 <link rel="alternate" hreflang="ja" href="ja.html">
-<link rel="stylesheet" href="css/style.css?v=62">
+<link rel="stylesheet" href="css/style.css?v=63">
 <script>
 MathJax = {
   tex: { inlineMath: [['\\(', '\\)'], ['$', '$']], displayMath: [['\\[', '\\]'], ['$$', '$$']] },
-  chtml: { scale: 1.02 }
+  chtml: { scale: 1.02, matchFontHeight: false }
 };
 </script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -710,7 +710,7 @@ $$
 
 <h3>【力】</h3>
 
-<p>では力は？実は私たちは、力が何であるかを今でもはっきり説明できない。もしかすると力は存在せず、わかっているのは結果の変化だけなのかもしれない。何の結果が、どのように変化するのか？</p>
+<p>では力は？実は私たちは、力が何であるかを今でもはっきり説明できない。もしかすると力は存在しないのかもしれず、私たちにわかっているのは結果の変化だけである。何の結果が、どのように変化するのか？</p>
 
 $$
 \gamma = \frac{1}{\sqrt{1-\left(\frac{v}{c}\right)^2}}
@@ -957,7 +957,7 @@ $$
 同じ物体を基準系 1 で測ると \({}^{1}v\)、基準系 2 で測ると \({}^{2}v\) になるとき、両者をどう換算するか。ここでは基準系を換えていない：
 光の位置 \(c\,\Delta T\)、頂部の位置 \(h + v\,\Delta T + \tfrac12 a\,\Delta T^2\) は、
 すべて同じ一つの慣性系で、同じ一組の時計と物差しで測った座標であり、「光が頂部に追いつく」とは二つの座標が等しくなることであって、座標の引き算は純粋な算術である。
-\(c - v\) もまた何かの速度ではなく、間隔が縮まる速さである——この種の量はもともと \(c\) を超えてよい（二本の光が向かい合って進めば、間隔は \(2c\) で縮まり、まったく正当である）。</p>
+\(c - v\) もまた、いかなるものの速度でもなく、間隔が縮まる速さである——この種の量はもともと \(c\) を超えてよい（二本の光が向かい合って進めば、間隔は \(2c\) で縮まり、まったく正当である）。</p>
 
 <p>この間に頂部は加速され、光を受け取るときの速度は \(v + a\dfrac{h}{c - v}\) である。</p>
 
@@ -1166,7 +1166,7 @@ $$
 
 <p>高い所の時計は低い所の時計より速く進む——実験事実である：1960 年、Pound と Rebka は高さ 22.5 m の塔の中で、Fe-57 原子核が発する光を使ってこの差を測定し、10% の精度で一致する結果を得た。
 その後、高度一万キロメートルの衛星（1976、\(7\times10^{-5}\)）から 33 cm（2010）、高さ 1 mm の原子雲（2022）に至るまで、六十年あまりの間に \(\dfrac{gh}{c^2}\) から外れたことは一度もない。
-高い所にある GPS 衛星の時計は、地上より一日あたり 45 μs 速く進み（運動している時計は 7 μs 遅れ、正味で 38 μs 速い）、補正しなければ、位置の誤差が一日に十キロメートルずつ蓄積する。</p>
+GPS 衛星の時計は、高い所では地上より一日あたり 45 μs 速く進み（運動している時計は 7 μs 遅れ、正味で 38 μs 速い）、補正しなければ、位置の誤差が一日に十キロメートルずつ蓄積する。</p>
 
 <h3>【引力の幾何化の最も簡単な例：光が下へ曲がる】</h3>
 
@@ -1243,7 +1243,7 @@ $$
 <p>中には質量をもつものが何もないのに、箱には質量がある——箱を押せば抵抗し、地面に置けば重さがある。</p>
 
 <p>これは空想ではなく、測定できる事実である。陽子はクォークとグルーオンからできている。グルーオンには質量がなく、三つのクォークの静止質量を合計しても陽子の質量の 1% にしかならず、残りの 99% は中に閉じ込められた運動エネルギーと場のエネルギーである（格子 QCD、2018）。
-あなたの体の重さのほとんどすべては、この質量のない質量なのである。</p>
+あなたの体の重さのほとんどすべては、この種の質量のない質量なのである。</p>
 
 <p>逆向きの過程も測定できる。陽子と中性子が結合して重陽子になるとき、エネルギー 2.224 MeV の一粒の光を放出し、重陽子は陽子と中性子を足し合わせたものよりちょうどそれだけ軽くなる。
 2005 年の実験では、一方で光の波長からエネルギーを測り、他方で磁場中のイオンのサイクロトロン振動数から質量を測り、両者で \(E = mc^2\) を照合したところ、差は 0.00004% 未満であった。</p>
@@ -1709,7 +1709,7 @@ Klein の 1926 年の換算では、\(L\) は約 \(10^{-32}\) m で、原子核�
 </figure>
 
 <figure id="shapes3d">
-<figcaption>見えない形に回し方が何通りあるかで、力を伝える粒子の種類の数が決まる：円は 1 種類（光子）、球面は 3 種類（W⁺、W⁻、Z）、CP² は 8 種類（グルーオン）。CP² は 4 次元で描けないので、ここでは赤・緑・青の三つの位相で CP² の一点を表す</figcaption>
+<figcaption>見えない形の回し方の数だけ、力を伝える粒子の種類がある：円は 1 種類（光子）、球面は 3 種類（W⁺、W⁻、Z）、CP² は 8 種類（グルーオン）。CP² は 4 次元で描けないので、ここでは赤・緑・青の三つの位相で CP² の一点を表す</figcaption>
 </figure>
 
 <figure id="order3d">
@@ -3407,7 +3407,7 @@ $$
 </svg>
 </figure>
 
-<p>十九世紀の Faraday は数学の訓練を受けていなかった。Faraday は磁石のそばに砂鉄をまき、砂鉄が一本一本の曲線に並ぶのを見て、それらの曲線を「力線」と呼んだ。Faraday は同じ線で電荷の周りの電場も描写し、しかも、これらの線が実在すると信じる傾向にあった。Faraday より前に、Gauss（1813 年に証明、1840 年に一般形を発表）はすでに数学によって次のことを算出していた：閉曲面上で力の法線成分を足し合わせた和は、曲面の内側にどれだけの質量または電荷があるかだけで決まる。力線の言葉に言い換えれば、閉曲面を貫く力線の本数は、内側にどれだけの電荷があるかだけで決まる。のちに Maxwell（1855–56）は Faraday の力線を体系的に方程式として書き表し、十年後に電磁気の方程式一式を書き上げた（1865）。</p>
+<p>十九世紀の Faraday は数学の訓練を受けていなかった。Faraday は磁石のそばに砂鉄をまき、砂鉄が一本一本の曲線に並ぶのを見て、それらの曲線を「力線」と呼んだ。Faraday は同じ線で電荷の周りの電場も描写し、しかも、これらの線が実在すると信じる傾向にあった。Faraday よりさらに前に、Gauss（1813 年に証明、1840 年に一般形を発表）はすでに数学によって次のことを算出していた：閉曲面上で力の法線成分を足し合わせた和は、曲面の内側にどれだけの質量または電荷があるかだけで決まる。力線の言葉に言い換えれば、閉曲面を貫く力線の本数は、内側にどれだけの電荷があるかだけで決まる。のちに Maxwell（1855–56）は Faraday の力線を体系的に方程式として書き表し、十年後に電磁気の方程式一式を書き上げた（1865）。</p>
 
 <p>しかし、電気力線も人が考え出したものであり、そもそも存在しないのかもしれない。本当に存在するのは時空の変形であって、時空の変形がたまたまこれらの仮想の線と一致しているだけなのかもしれない。地図が等高線で地形を描写するのと同じである：等高線が密であるほど、山の斜面は急である。しかし山に登っても、地面に白い等高線は一本も引かれていない。等高線は存在しないが、山の斜面を数で捉えるには非常に便利である。電気力線も同じである。以下では電気力線を数えて、Gauss のあの言葉を導き出す。</p>
 
@@ -3704,7 +3704,7 @@ $$
 </svg>
 </figure>
 
-<p>Faraday は、磁石のそばで砂鉄が描き出す曲線を「磁力線」と呼び、1852 年に磁力線が実在すると論証した。Maxwell（1855–56）はさらに磁力線を数学として書き表した：非圧縮性の仮想流体を満たした一本一本の細い管である。以下の「環状の管」がこの細い管である。しかし、これは Faraday と Maxwell が無理やり説明しようとした無知な方策にすぎず、天気図の等圧線と同じである：気圧の場はあるかもしれないが、空には一本の線もない。</p>
+<p>Faraday は、磁石のそばで砂鉄が描き出す曲線を「磁力線」と呼び、1852 年に磁力線が実在すると論証した。Maxwell（1855–56）はさらに磁力線を数学として書き表した：非圧縮性の仮想流体を満たした一本一本の細い管である。以下の「環状の管」がこの種の細い管である。しかし、これは Faraday と Maxwell が無理やり説明しようとした無知な方策にすぎず、天気図の等圧線と同じである：気圧の場はあるかもしれないが、空には一本の線もない。</p>
 
 <p>3.4 で述べたように、磁気力は結局 \({}^{\text{地}}E\) の一部にすぎず、磁場はそもそも存在しないのかもしれない。したがって、磁力線は仮想の場の上に描かれた仮想の線である。</p>
 
@@ -4015,8 +4015,8 @@ $$
   <foreignObject x="360.7" y="169.7" width="110" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#F0AC5F;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">ループ（静止）</span></div></foreignObject>
   <circle cx="486" cy="70" r="7" fill="none" stroke="#58C4DD" stroke-width="1.6"/><circle cx="486" cy="70" r="2.2" fill="#58C4DD"/>
   <foreignObject x="497.0" y="58.0" width="110" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:14px;color:#58C4DD;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="display:flex;align-items:center;gap:.3em">\({}^{\text{地}}\vec B\)（大きいほど強い）</span></div></foreignObject>
-  <text x="170.8" y="150.2" text-anchor="middle" fill="#F0AC5F" font-size="15" font-weight="700">滑り込む</text>
-  <text x="359.7" y="265.0" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="700">滑り出る</text>
+  <text x="170.8" y="150.2" text-anchor="middle" fill="#F0AC5F" font-size="15" font-weight="700">入る</text>
+  <text x="359.7" y="265.0" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="700">出る</text>
   <g id="fdaq">
     <line id="fdau" x1="0" y1="352.0" x2="0" y2="352.0" stroke="#83C167" stroke-width="3" marker-end="url(#fdaG)"/>
     <circle id="fdaqc" cx="200.0" cy="352.0" r="10" fill="#FC6255"/><text id="fdaqt" x="200.0" y="357.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
@@ -4049,7 +4049,7 @@ $$
   <circle cx="311.3" cy="145.9" r="7" fill="none" stroke="#58C4DD" stroke-opacity="1" stroke-width="1.6"/><circle cx="311.3" cy="145.9" r="2.2" fill="#58C4DD" fill-opacity="1"/>
   <circle cx="367.3" cy="145.9" r="7" fill="none" stroke="#58C4DD" stroke-opacity="0.45" stroke-width="1.6" stroke-dasharray="3 2"/><circle cx="367.3" cy="145.9" r="2.2" fill="#58C4DD" fill-opacity="0.45"/>
   <line x1="320.3" y1="145.9" x2="357.3" y2="145.9" stroke="#83C167" stroke-width="2.2" marker-end="url(#fdbG)"/>
-  <text x="397.3" y="150.9" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="700">滑り出る</text>
+  <text x="397.3" y="150.9" text-anchor="middle" fill="#E0E0E0" font-size="15" font-weight="700">出る</text>
   <line x1="420.8" y1="178.2" x2="420.8" y2="113.5" stroke="#FFFF00" stroke-width="1.6" stroke-dasharray="4 3" marker-end="url(#fdbY)"/>
   <line x1="361.8" y1="178.2" x2="425.8" y2="178.2" stroke="#FFFF00" stroke-opacity=".55" stroke-width="1"/>
   <line x1="322.8" y1="113.5" x2="425.8" y2="113.5" stroke="#FFFF00" stroke-opacity=".55" stroke-width="1"/>
@@ -4062,7 +4062,7 @@ $$
   <circle cx="172.9" cy="189.3" r="7" fill="none" stroke="#58C4DD" stroke-opacity="1" stroke-width="1.6"/><circle cx="172.9" cy="189.3" r="2.2" fill="#58C4DD" fill-opacity="1"/>
   <circle cx="228.9" cy="189.3" r="7" fill="none" stroke="#58C4DD" stroke-opacity="0.45" stroke-width="1.6" stroke-dasharray="3 2"/><circle cx="228.9" cy="189.3" r="2.2" fill="#58C4DD" fill-opacity="0.45"/>
   <line x1="181.9" y1="189.3" x2="218.9" y2="189.3" stroke="#83C167" stroke-width="2.2" marker-end="url(#fdbG)"/>
-  <text x="116.9" y="194.3" text-anchor="middle" fill="#F0AC5F" font-size="15" font-weight="700">滑り込む</text>
+  <text x="116.9" y="194.3" text-anchor="middle" fill="#F0AC5F" font-size="15" font-weight="700">入る</text>
   <circle cx="170.0" cy="470.0" r="10" fill="#FC6255"/><text x="170.0" y="475.0" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">Q</text>
   <line x1="182.0" y1="470.0" x2="240.0" y2="470.0" stroke="#83C167" stroke-width="3" marker-end="url(#fdbG)"/>
   <foreignObject x="192.0" y="478.0" width="44" height="24"><div xmlns="http://www.w3.org/1999/xhtml" class="fo-math" style="font-size:15px;color:#83C167;height:24px;display:flex;align-items:center;justify-content:center;white-space:nowrap"><span style="background:var(--bg);padding:0 3px;display:flex;align-items:center;gap:.3em">\({}^{\text{地}}\vec u\)</span></div></foreignObject>
@@ -4509,7 +4509,7 @@ $$
 
 <p>多数の電荷がそれぞれこの平面上の直線に沿って等速運動するとき、上の式は電荷 1 個ごとに個別に成り立つ。電場も磁束も電荷 1 個ずつ足し合わされるので、全体を合わせても成り立つ。</p>
 
-<p><strong>磁場は存在する必要がない</strong>：ループの中の電荷は静止しており、ループの中の電荷を動かすのは電場だけである（3.1）。起電力 \(\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\) は完全に電場から計算される。磁場とは、\(\dfrac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\) に別の名前をつけて \(-\dfrac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\) と書いただけのものであり、磁場は最初から最後まで力を出していない。</p>
+<p><strong>磁場は存在する必要がない</strong>：ループの中の電荷は静止しており、ループの中の電荷を動かすのは電場だけである（3.1）。起電力 \(\oint{}^{\text{地}}\vec E\cdot d{}^{\text{地}}\vec\ell\) は完全に電場から計算される。磁場は、\(\dfrac{{}^{\text{地}}u^2}{c^2}\oint{}^{\text{地}}\vec E_{\perp}\cdot d{}^{\text{地}}\vec\ell_{\perp}\) に別の名前をつけて \(-\dfrac{d{}^{\text{地}}\vec\Phi_B}{d{}^{\text{地}}t}\) と書いただけであり、磁場は最初から最後まで力を出していない。</p>
 
 <p>ループの等速平行移動、曲がった導線、回転するループ、レールの上を滑る棒は、いずれも射影・分解によってこの例の組み合わせにすることができ、ベクトル形式の数式はまったく同じである。この例こそが Faraday's Law の最も根底にある論理である。</p>
 
@@ -5472,7 +5472,7 @@ $$
 </svg>
 </figure>
 
-<p>しかし実際には、瞬時に止まり、加速度が無限大で、そのため光速では追いつけない、という状況に私たちはまだ出会ったことがない。以下は、\(Q\) が等加速度で減速し、完全に止まるまでの場合である。</p>
+<p>しかし実際には、瞬時に止まり、加速度が無限大で、そのため光速では追いつけない、という状況に私たちはまだ出会ったこともない。以下は、\(Q\) が等加速度で減速し、完全に止まるまでの場合である。</p>
 
 <figure class="fig-live">
 <svg id="qx" viewBox="0 0 680 266" xmlns="http://www.w3.org/2000/svg" font-family="Noto Sans JP, Hiragino Sans, sans-serif" font-size="14">
@@ -5869,7 +5869,7 @@ $$
 \end{aligned}
 $$
 
-<p><strong>推論二</strong>（1.2）：\({}^{Q}E_y\)、\({}^{q}\sigma\) は推論一と同じである。\({}^{q}E_y\) と \({}^{Q}E_y\) の関係は、時間の遅れから見ることにする。\(q\) 基準系で静止している試験電荷 \(q\) の垂直方向の運動量変化は、二つの基準系で同じである。しかし、同じ一つの変化について、\(Q\) 基準系で測った時間は \(\gamma\) 倍長い（1.2）。力は運動量の変化 ÷ 時間であるから、\(q\) 基準系で測った力は \(\gamma\) 倍大きい：</p>
+<p><strong>推論二</strong>（1.2）：\({}^{Q}E_y\)、\({}^{q}\sigma\) は推論一と同じである。\({}^{q}E_y\) と \({}^{Q}E_y\) の関係は、今度は時間の遅れから見る。\(q\) 基準系で静止している試験電荷 \(q\) の垂直方向の運動量変化は、二つの基準系で同じである。しかし、同じ一つの変化について、\(Q\) 基準系で測った時間は \(\gamma\) 倍長い（1.2）。力は運動量の変化 ÷ 時間であるから、\(q\) 基準系で測った力は \(\gamma\) 倍大きい：</p>
 
 $$
 \begin{aligned}
@@ -6088,7 +6088,7 @@ $$
 </div>
 </figure>
 
-<p><strong>電場</strong>：3.4 の結果を \(q\) 基準系で書き直す。\(q\) 基準系では \(q\) の速度は 0 であり、磁気力を受けない。あるいは 3.1 と同じように、そもそも磁場を考える必要はない。磁場はもともと存在しないからである。したがって \(q\) が受ける力はすべて \({}^{q}\vec E\) から来る：</p>
+<p><strong>電場</strong>：3.4 の結果を \(q\) 基準系で書き直す。\(q\) 基準系では \(q\) の速度は 0 であり、\(q\) は磁気力を受けない。あるいは 3.1 と同じように、そもそも磁場を考える必要はない。磁場はもともと存在しないからである。したがって \(q\) が受ける力はすべて \({}^{q}\vec E\) から来る：</p>
 
 $$
 \begin{gathered}
@@ -6229,7 +6229,7 @@ $$
 $$
 </div>
 
-<p>右側の列の距離を \(q\) 基準系で表す：</p>
+<p>右側の列の距離を \(q\) 基準系で表し直す：</p>
 
 <div class="math-fit" style="font-size:.66em">
 $$
@@ -6304,7 +6304,7 @@ $$
 <div class="math-fit" style="font-size:.56em">
 $$
 \begin{aligned}
-&\underset{\text{得られた 6 式の結論}}{\overset{\text{先ほど行列を使わない方法で}}{=}} q\cdot\begin{pmatrix}\dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
+&\underset{\text{得られた 6 式の結論による}}{\overset{\text{先ほど行列を使わない方法で}}{=}} q\cdot\begin{pmatrix}\dfrac{{}^{\text{地}}E_x}{c} & 0 & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big)\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_y-{}^{\text{地}}v_x\cdot{}^{\text{地}}B_z\big)}{c} & -{}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_z-\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_y}{c^2}\Big) & 0 & {}^{\text{地}}B_x\\[10pt] \dfrac{{}^{\text{地}}\gamma_{q}\big({}^{\text{地}}E_z+{}^{\text{地}}v_x\cdot{}^{\text{地}}B_y\big)}{c} & {}^{\text{地}}\gamma_{q}\Big({}^{\text{地}}B_y+\dfrac{{}^{\text{地}}v_x\cdot{}^{\text{地}}E_z}{c^2}\Big) & -{}^{\text{地}}B_x & 0\end{pmatrix}\begin{pmatrix}c\\[4pt] {}^{q}v_x\\[4pt] {}^{q}v_y\\[4pt] {}^{q}v_z\end{pmatrix}
 \end{aligned}
 $$
 </div>
@@ -6613,7 +6613,7 @@ $$
 
 <h1 id="about">著者について</h1>
 
-<p>物理学における根本的なブレークスルーは、ほぼ百年にわたって停滞している。その原因は、物理学が一度も公理化された体系として構築されたことがない点にあるのかもしれない。理論はあちらに一本、こちらに一本と枝を伸ばしてきたが、同じ根から育ったものではなく、枝どうしのつながりもない。</p>
+<p>物理学における根本的なブレークスルーは、すでにほぼ百年にわたって停滞している。その原因は、物理学が一度も公理化された体系として構築されたことがない点にあるのかもしれない。理論はあちらに一本、こちらに一本と枝を伸ばしてきたが、同じ根から育ったものではなく、枝どうしのつながりもない。</p>
 
 <p>理論物理学を研究するときの手がかりは、たいてい、何も考えずにまず、わかったようでわからない、過度にパッケージ化された純粋数学を持ち出すことであって、最も基本的な描像ではない。しかし、数学が生まれたのは、まさに人類が具体的に経験した描像を記述するためではなかったか？記号をもてあそぶだけなら、その純粋数学に根本的な論理の誤りがないと、どうしてわかるのか？</p>
 
@@ -6756,7 +6756,7 @@ document.querySelectorAll('.lang-switch button[data-href]').forEach(function (b)
   update();
 })();
 </script>
-<script src="js/i18n.js?v=4"></script>
+<script src="js/i18n.js?v=6"></script>
 <script src="js/mg3.js?v=7"></script>
 <script src="js/mgt.js?v=10"></script>
 <script src="js/mh.js?v=14"></script>
@@ -6779,7 +6779,7 @@ document.querySelectorAll('.lang-switch button[data-href]').forEach(function (b)
 <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
 <script src="js/helix3d.js?v=37"></script>
 <script src="js/mathfit.js?v=3"></script>
-<script src="js/labelfit.js?v=1"></script>
+<script src="js/labelfit.js?v=2"></script>
 
 </body>
 </html>

@@ -17,8 +17,8 @@
       if (t.dataset.fs0 === undefined) t.dataset.fs0 = parseFloat(getComputedStyle(t).fontSize);
       t.style.fontSize = '';
     });
-    // 超出圖框
-    texts.forEach(function (t) {
+    // 超出圖框（只看有字的標籤；單一符號如 +、− 會隨動畫移出圖框，不能縮）
+    texts.filter(function (t) { return t.textContent.trim().length > 3; }).forEach(function (t) {
       var fs0 = +t.dataset.fs0, z = 1, a = anchorFrac(t);
       for (var i = 0; i < 4; i++) {
         var r = t.getBoundingClientRect(); if (!visible(r)) return;

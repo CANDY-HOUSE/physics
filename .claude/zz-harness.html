@@ -1,0 +1,39 @@
+<!doctype html><meta charset="utf-8"><title>harness</title>
+<body style="margin:0"><pre id="out">PENDING</pre>
+<iframe id="f" style="width:1200px;height:900px;border:0"></iframe>
+<script>
+const page = new URLSearchParams(location.search).get('page');
+const sleep = ms => new Promise(r => setTimeout(r, ms));
+const H = s => { let h = 5381; for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0; return (h >>> 0).toString(36); };
+const ATTR = ['x','y','x1','y1','x2','y2','cx','cy','r','rx','ry','d','points','transform','width','height','opacity','display','visibility'];
+(async () => {
+  const f = document.getElementById('f'); f.src = '/' + page;
+  await new Promise(r => f.onload = r);
+  const w = f.contentWindow, d = f.contentDocument; const errs = [];
+  w.addEventListener('error', e => errs.push(String(e.message)));
+  await sleep(6000); if (w.MathJax && w.MathJax.startup) await w.MathJax.startup.promise; await sleep(1500);
+  const geo = s => { const parts = []; s.querySelectorAll('*').forEach(e => { if (e.closest('foreignObject') || e.closest('mjx-container')) return; const t = e.tagName; if (['text','tspan','foreignObject','title','desc'].includes(t)) return; parts.push(t + ATTR.map(a => e.getAttribute(a) || '').join('|')); }); return H(parts.join(';')); };
+  const svgs = [...d.querySelectorAll('figure svg')].filter(s => !s.closest('button') && s.getBoundingClientRect().width > 100);
+  const figs = [];
+  for (let i = 0; i < svgs.length; i++) {
+    const s = svgs[i]; s.scrollIntoView({ block: 'center' }); await sleep(900);
+    const sr = s.getBoundingClientRect();
+    // labels
+    const labs = [];
+    s.querySelectorAll('text').forEach(t => { const tx = t.textContent.trim(); if (!tx) return; const r = t.getBoundingClientRect(); if (r.width && r.height) labs.push({ tx: tx.slice(0, 40), r, fs: parseFloat(w.getComputedStyle(t).fontSize), fs0: t.dataset.fs0 ? +t.dataset.fs0 : null }); });
+    s.querySelectorAll('foreignObject').forEach(fo => { const c = fo.firstElementChild; if (!c || !c.textContent.trim()) return; const cs = w.getComputedStyle(fo); if (cs.display === 'none' || cs.visibility === 'hidden') return; const runs = []; const tw = d.createTreeWalker(c, 4); let n; while (n = tw.nextNode()) { if (!n.textContent.trim() || n.parentElement.closest('mjx-assistive-mml')) continue; const rg = d.createRange(); rg.selectNodeContents(n); const rr = rg.getBoundingClientRect(); if (rr.width) runs.push(rr); } c.querySelectorAll('mjx-container').forEach(m => { const rr = m.getBoundingClientRect(); if (rr.width) runs.push(rr); }); if (!runs.length) return; labs.push({ tx: c.textContent.trim().slice(0, 40), r: { left: Math.min(...runs.map(r => r.left)), right: Math.max(...runs.map(r => r.right)), top: Math.min(...runs.map(r => r.top)), bottom: Math.max(...runs.map(r => r.bottom)) }, zoom: parseFloat(c.style.zoom) || 1 }); });
+    const outside = labs.filter(l => l.tx.length > 2 && (l.r.left < sr.left - 3 || l.r.right > sr.right + 3 || l.r.top < sr.top - 3 || l.r.bottom > sr.bottom + 3)).map(l => l.tx);
+    const ov = []; for (let a = 0; a < labs.length; a++) for (let b = a + 1; b < labs.length; b++) { const A = labs[a].r, B = labs[b].r; const x = Math.min(A.right, B.right) - Math.max(A.left, B.left), y = Math.min(A.bottom, B.bottom) - Math.max(A.top, B.top); if (x > 1 && y > 1) ov.push(labs[a].tx + ' ⟷ ' + labs[b].tx); }
+    const small = labs.filter(l => (l.fs0 && l.fs < 10.5 && l.fs < l.fs0) || (l.zoom && l.zoom < 0.75)).map(l => [l.tx, l.fs ? Math.round(l.fs * 10) / 10 : null, l.zoom || null]);
+    // animation
+    const g1 = geo(s); await sleep(1200); const g2 = geo(s);
+    const fig = s.closest('figure'); const btn = fig ? fig.querySelector('button[aria-label]') : null;
+    let btnInfo = null;
+    if (btn) { const l0 = btn.getAttribute('aria-label'); btn.click(); await sleep(500); const l1 = btn.getAttribute('aria-label'); const p1 = geo(s); await sleep(900); const p2 = geo(s); btn.click(); await sleep(500); const l2 = btn.getAttribute('aria-label'); const q1 = geo(s); await sleep(900); const q2 = geo(s); btnInfo = { l0, l1, l2, movingAfter1stClick: p1 !== p2, movingAfter2ndClick: q1 !== q2 }; }
+    const rng = [];
+    for (const r of fig ? fig.querySelectorAll('input[type=range]') : []) { const before = geo(s); const old = r.value; r.value = String(+r.min + (+r.max - +r.min) * 0.37); r.dispatchEvent(new w.Event('input', { bubbles: true })); await sleep(400); rng.push(before !== geo(s)); r.value = old; r.dispatchEvent(new w.Event('input', { bubbles: true })); }
+    figs.push({ i, id: s.id, n: labs.length, outside, ov, small, animating: g1 !== g2, btn: btnInfo, rng });
+  }
+  document.getElementById('out').textContent = JSON.stringify({ page, errs, merr: d.querySelectorAll('mjx-merror').length, figs });
+})();
+</script>

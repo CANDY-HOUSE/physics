@@ -1,0 +1,12 @@
+<!doctype html><meta charset="utf-8"><body style="margin:0"><pre id="out">PENDING</pre><iframe id="f" style="width:1200px;height:900px;border:0"></iframe>
+<script>
+const q=new URLSearchParams(location.search), page=q.get('page'), idx=q.get('figs').split(',').map(Number);
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const H=s=>{let h=5381;for(let i=0;i<s.length;i++)h=((h<<5)+h+s.charCodeAt(i))|0;return(h>>>0).toString(36)};
+const ATTR=['x','y','x1','y1','x2','y2','cx','cy','r','d','points','transform','opacity','display'];
+(async()=>{const f=document.getElementById('f');f.src='/'+page;await new Promise(r=>f.onload=r);const w=f.contentWindow,d=f.contentDocument;await sleep(6000);if(w.MathJax&&w.MathJax.startup)await w.MathJax.startup.promise;
+const geo=s=>{const p=[];s.querySelectorAll('*').forEach(e=>{if(e.closest('foreignObject')||e.closest('mjx-container'))return;if(['text','tspan','foreignObject'].includes(e.tagName))return;p.push(e.tagName+ATTR.map(a=>e.getAttribute(a)||'').join('|'))});return H(p.join(';'))};
+const svgs=[...d.querySelectorAll('figure svg')].filter(s=>!s.closest('button')&&s.getBoundingClientRect().width>100);const out={};
+for(const i of idx){const s=svgs[i];s.scrollIntoView({block:'center'});await sleep(500);const states=new Set();for(let k=0;k<40;k++){states.add(geo(s));await sleep(500);}out[i]={id:s.id,distinctStates:states.size};}
+document.getElementById('out').textContent=JSON.stringify({page,out});})();
+</script>
