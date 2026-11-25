@@ -626,6 +626,11 @@ html[lang="en"] .fig-ctl label:has(select) select, html[lang="ja"] .fig-ctl labe
 .fig-legend { display: flex; flex-wrap: wrap; gap: .35rem 1.1rem; font-family: var(--sans); font-size: .8rem; line-height: 1.5; color: var(--fg-soft); margin-top: .5rem; }
 .fig-legend span { display: inline-flex; align-items: center; gap: .4rem; }
 .fig-legend i { display: inline-block; font-style: normal; }
+/* 英文版、日文版：圖例與勾選框的句子較長，換行時數學符號要跟著句子一起排，不能各自成欄 */
+html[lang="en"] .fig-legend span, html[lang="ja"] .fig-legend span { display: block; }
+html[lang="en"] .fig-legend span > i, html[lang="ja"] .fig-legend span > i { vertical-align: middle; margin-right: .4rem; }
+html[lang="en"] .fig-ctl label:has(> input[type=checkbox]), html[lang="ja"] .fig-ctl label:has(> input[type=checkbox]) { display: block; }
+html[lang="en"] .fig-ctl label > input[type=checkbox], html[lang="ja"] .fig-ctl label > input[type=checkbox] { vertical-align: -2px; margin-right: .55rem; }
 .fig-legend .lg-dot { width: 11px; height: 11px; border: 1.8px solid #F0AC5F; border-radius: 50%; }
 .fig-legend .lg-ring { width: 15px; height: 15px; border: 1.6px dashed #F0AC5F; border-radius: 50%; }
 .fig-legend .lg-ring.faint { border-width: 1px; opacity: .5; }
