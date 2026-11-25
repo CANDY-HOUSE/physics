@@ -1,7 +1,0 @@
-<!doctype html><meta charset="utf-8"><body style="margin:0"><pre id="out">PENDING</pre><iframe id="f" style="width:1200px;height:900px;border:0"></iframe>
-<script>const q=new URLSearchParams(location.search),page=q.get('page'),idx=q.get('figs').split(',').map(Number),need=q.get('need').split('|');
-(async()=>{const f=document.getElementById('f');f.src='/'+page;await new Promise(r=>f.onload=r);const d=f.contentDocument,w=f.contentWindow;await new Promise(r=>setTimeout(r,6000));if(w.MathJax&&w.MathJax.startup)await w.MathJax.startup.promise;await new Promise(r=>setTimeout(r,1500));
-const svgs=[...d.querySelectorAll('figure svg')].filter(s=>!s.closest('button')&&s.getBoundingClientRect().width>100);const out={};
-for(const i of idx){const s=svgs[i];s.scrollIntoView({block:'center'});await new Promise(r=>setTimeout(r,800));const sr=s.getBoundingClientRect();const k=s.viewBox.baseVal.width/sr.width;
-out[i]=[...s.querySelectorAll('text,foreignObject')].filter(e=>need.some(n=>e.textContent.includes(n))).map(e=>{let r=e.getBoundingClientRect();if(e.tagName==='foreignObject'){const c=e.firstElementChild;const m=c.querySelector('mjx-container');if(m)r=m.getBoundingClientRect();}return[e.tagName,e.textContent.trim().slice(0,20),[(r.left-sr.left)*k,(r.top-sr.top)*k,(r.right-sr.left)*k,(r.bottom-sr.top)*k].map(v=>Math.round(v*10)/10),e.tagName==='foreignObject'?(e.firstElementChild.style.zoom||''):(e.style.fontSize||'')]});}
-document.getElementById('out').textContent=JSON.stringify(out);})();</script>

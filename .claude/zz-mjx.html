@@ -1,5 +1,0 @@
-<!doctype html><meta charset="utf-8"><body><pre id="out">PENDING</pre><iframe id="f" style="width:1200px;height:900px;border:0"></iframe>
-<script>const page=new URLSearchParams(location.search).get('page');(async()=>{const f=document.getElementById('f');f.src='/'+page;await new Promise(r=>f.onload=r);await new Promise(r=>setTimeout(r,6000));const d=f.contentDocument,w=f.contentWindow;if(w.MathJax&&w.MathJax.startup)await w.MathJax.startup.promise;await new Promise(r=>setTimeout(r,1500));
-const fig=[...d.querySelectorAll('svg foreignObject mjx-container')].map(m=>m.style.fontSize);const prose=[...d.querySelectorAll('p mjx-container')].map(m=>m.style.fontSize);
-const cnt=a=>{const c={};a.forEach(x=>c[x]=(c[x]||0)+1);return Object.entries(c).sort((a,b)=>b[1]-a[1]).slice(0,4)};
-document.getElementById('out').textContent=JSON.stringify({fig:cnt(fig),prose:cnt(prose),cfg:JSON.stringify(w.MathJax.config.chtml||{})});})();</script>

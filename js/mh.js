@@ -87,7 +87,9 @@
 
     // 標籤擺放：避開已放好的標籤與箭頭，並留在圖框內
     var placed = [];
-    function tw(t, sz) { return Array.from(t).reduce(function (a, ch) { return a + (ch.charCodeAt(0) > 255 ? 1 : 0.58); }, 0) * sz; }
+    // 英文版、日文版：實際量測文字寬度（中文版沿用原本的估算）
+    var TWC = (window.I18N && I18N.lang !== 'zh') ? document.createElement('canvas').getContext('2d') : null;
+    function tw(t, sz) { if (TWC) { TWC.font = sz + 'px ' + I18N.sans; return TWC.measureText(t).width; } return Array.from(t).reduce(function (a, ch) { return a + (ch.charCodeAt(0) > 255 ? 1 : 0.58); }, 0) * sz; }
     var CAND = [[0, 0], [0, 14], [0, -14], [0, 28], [0, -28], [0, 42], [0, -42]];
     [-50, 50, -100, 100].forEach(function (d) { [0, 14, -14, 28].forEach(function (t) { CAND.push([d, t]); }); });
     [[0, 56], [0, -56], [0, 70], [0, -70]].forEach(function (c) { CAND.push(c); });
